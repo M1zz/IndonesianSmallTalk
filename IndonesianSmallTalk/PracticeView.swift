@@ -3,6 +3,8 @@ import SwiftUI
 struct PracticeView: View {
     @StateObject var session: PracticeSession
     @EnvironmentObject var userReplyStore: UserReplyStore
+    @EnvironmentObject var sharedReplyStore: SharedReplyStore
+    @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
     @StateObject private var speech = SpeechManager()
     @Environment(\.dismiss) private var dismiss
     @State private var showCoachTip = false
@@ -18,9 +20,15 @@ struct PracticeView: View {
         session.currentPath.last?.id ?? ""
     }
 
+    /// 현재 시나리오가 공유 시나리오면 그 SharedScenario 반환 (없으면 nil)
+    private var matchingSharedScenario: SharedScenario? {
+        sharedScenarioStore.allScenarios.first { $0.id == session.scenario.id }
+    }
+
     private var mergedChoices: [ConversationNode] {
-        session.availableChoices
-            + userReplyStore.replies(for: currentParentId).map { $0.toNode() }
+        let local = userReplyStore.replies(for: currentParentId).map { $0.toNode() }
+        let shared = sharedReplyStore.replies(for: currentParentId).map { $0.toNode() }
+        return session.availableChoices + local + shared
     }
 
     /// 마지막 노드가 상대방 발화면 사용자 차례 — 선택지(+ 추가 버튼)를 항상 노출
@@ -111,7 +119,10 @@ struct PracticeView: View {
             CoachTipView(node: node)
         }
         .sheet(isPresented: $showAddReply) {
-            AddUserReplyView(parentNodeId: currentParentId)
+            AddUserReplyView(
+                parentNodeId: currentParentId,
+                sharedScenario: matchingSharedScenario
+            )
         }
         .navigationDestination(isPresented: $showResult) {
             ResultView(session: session, onRestart: {
@@ -240,7 +251,12 @@ struct PracticeView: View {
                 .contextMenu {
                     if choice.isUserAdded, let rid = choice.userReplyId {
                         Button(role: .destructive) {
-                            userReplyStore.delete(id: rid)
+                            if let sharedScenario = matchingSharedScenario,
+                               sharedReplyStore.replies.contains(where: { $0.id == rid }) {
+                                Task { await sharedReplyStore.delete(id: rid, parentScenario: sharedScenario) }
+                            } else {
+                                userReplyStore.delete(id: rid)
+                            }
                         } label: {
                             Label("내 대답 삭제", systemImage: "trash")
                         }

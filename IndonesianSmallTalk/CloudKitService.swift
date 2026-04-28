@@ -42,19 +42,32 @@ final class CloudKitService {
         zoneEnsured = true
     }
 
-    // MARK: - Save
+    // MARK: - Save (fetch-or-create + .changedKeys 로 필드 단위 LWW)
 
     func savePrivate(_ scenario: SharedScenario) async throws {
         try await ensureZone()
-        let record = scenario.toRecord(inZone: zoneID)
-        _ = try await privateDB.save(record)
+        let recordID = CKRecord.ID(recordName: scenario.id.uuidString, zoneID: zoneID)
+        let record = (try? await privateDB.record(for: recordID))
+            ?? CKRecord(recordType: SharedScenario.recordType, recordID: recordID)
+        scenario.applyTo(record: record)
+        try await modifyChanged([record], in: privateDB)
     }
 
     /// 친구가 공유한 (shared DB 에 들어온) 시나리오 업데이트. zone 은 record 의 zone 을 그대로 사용.
     func saveShared(_ scenario: SharedScenario) async throws {
         guard let originalZone = scenario.zoneID else { return }
-        let record = scenario.toRecord(inZone: originalZone)
-        _ = try await sharedDB.save(record)
+        let recordID = CKRecord.ID(recordName: scenario.id.uuidString, zoneID: originalZone)
+        let record = (try? await sharedDB.record(for: recordID))
+            ?? CKRecord(recordType: SharedScenario.recordType, recordID: recordID)
+        scenario.applyTo(record: record)
+        try await modifyChanged([record], in: sharedDB)
+    }
+
+    private func modifyChanged(_ records: [CKRecord], in db: CKDatabase) async throws {
+        let (results, _) = try await db.modifyRecords(saving: records, deleting: [], savePolicy: .changedKeys)
+        for (_, result) in results {
+            if case .failure(let err) = result { throw err }
+        }
     }
 
     // MARK: - Fetch
@@ -137,6 +150,77 @@ final class CloudKitService {
             if case .failure(let err) = result { throw err }
         }
         return (share, container)
+    }
+
+    // MARK: - Shared Replies
+
+    func saveReply(_ reply: SharedUserReply, parentScenario: SharedScenario) async throws {
+        let zone = parentScenario.ownedByMe ? zoneID : (parentScenario.zoneID ?? zoneID)
+        let db = parentScenario.ownedByMe ? privateDB : sharedDB
+        let scenarioRecordID = CKRecord.ID(recordName: parentScenario.id.uuidString, zoneID: zone)
+        let scenarioRecord = try await db.record(for: scenarioRecordID)
+        let record = reply.toRecord(parentScenarioRecord: scenarioRecord, inZone: zone)
+        try await modifyChanged([record], in: db)
+    }
+
+    func deleteReply(id: UUID, parentScenario: SharedScenario) async throws {
+        let zone = parentScenario.ownedByMe ? zoneID : (parentScenario.zoneID ?? zoneID)
+        let db = parentScenario.ownedByMe ? privateDB : sharedDB
+        let recordID = CKRecord.ID(recordName: id.uuidString, zoneID: zone)
+        _ = try await db.deleteRecord(withID: recordID)
+    }
+
+    func fetchReplies(for scenario: SharedScenario) async throws -> [SharedUserReply] {
+        let zone = scenario.ownedByMe ? zoneID : (scenario.zoneID ?? zoneID)
+        let db = scenario.ownedByMe ? privateDB : sharedDB
+        let predicate = NSPredicate(format: "scenarioID == %@", scenario.id.uuidString)
+        let query = CKQuery(recordType: SharedUserReply.recordType, predicate: predicate)
+        var results: [SharedUserReply] = []
+        var cursor: CKQueryOperation.Cursor? = nil
+        repeat {
+            let part: ([(CKRecord.ID, Result<CKRecord, Error>)], CKQueryOperation.Cursor?)
+            if let cursor {
+                let r = try await db.records(continuingMatchFrom: cursor)
+                part = (r.matchResults, r.queryCursor)
+            } else {
+                let r = try await db.records(matching: query, inZoneWith: zone)
+                part = (r.matchResults, r.queryCursor)
+            }
+            for (_, recordResult) in part.0 {
+                if let rec = try? recordResult.get(),
+                   let reply = SharedUserReply(record: rec, ownedByMe: scenario.ownedByMe) {
+                    results.append(reply)
+                }
+            }
+            cursor = part.1
+        } while cursor != nil
+        return results
+    }
+
+    // MARK: - Subscriptions (사일런트 푸시로 변경 알림)
+
+    private static let privateSubID = "private-db-changes"
+    private static let sharedSubID = "shared-db-changes"
+
+    func ensureSubscriptions() async throws {
+        async let priv = ensureSub(id: Self.privateSubID, in: privateDB)
+        async let shr = ensureSub(id: Self.sharedSubID, in: sharedDB)
+        _ = try await (priv, shr)
+    }
+
+    private func ensureSub(id: String, in db: CKDatabase) async throws {
+        // 이미 있으면 통과
+        if (try? await db.subscription(for: id)) != nil { return }
+        let sub = CKDatabaseSubscription(subscriptionID: id)
+        let info = CKSubscription.NotificationInfo()
+        info.shouldSendContentAvailable = true   // 사일런트 푸시 (UI 없음)
+        sub.notificationInfo = info
+        do {
+            _ = try await db.save(sub)
+            print("[CloudKitService] subscription saved: \(id)")
+        } catch let error as CKError where error.code == .serverRejectedRequest {
+            print("[CloudKitService] subscription \(id) 이미 있음")
+        }
     }
 
     // MARK: - Accept

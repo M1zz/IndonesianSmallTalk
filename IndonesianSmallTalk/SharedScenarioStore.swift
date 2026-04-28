@@ -19,22 +19,34 @@ final class SharedScenarioStore: ObservableObject {
         iCloudAvailable = (status == .available)
         guard iCloudAvailable else {
             lastError = "iCloud 로그인이 필요합니다"
+            print("[SharedScenarioStore] iCloud 미로그인 (status=\(status.rawValue))")
             return
         }
 
         isLoading = true
         defer { isLoading = false }
 
+        // 두 fetch 를 별도로 try — 하나가 실패해도 다른 쪽은 보여줌
         do {
-            async let mineTask = service.fetchPrivateScenarios()
-            async let theirsTask = service.fetchSharedScenarios()
-            let mine = try await mineTask
-            let theirs = try await theirsTask
-            myScenarios = mine.sorted { $0.createdAt > $1.createdAt }
-            friendScenarios = theirs.sorted { $0.createdAt > $1.createdAt }
-            lastError = nil
+            myScenarios = try await service.fetchPrivateScenarios()
+                .sorted { $0.createdAt > $1.createdAt }
+            print("[SharedScenarioStore] private fetch OK: \(myScenarios.count)")
         } catch {
-            lastError = error.localizedDescription
+            print("[SharedScenarioStore] private fetch 실패: \(error)")
+            lastError = "내 시나리오 불러오기 실패: \(error.localizedDescription)"
+        }
+
+        do {
+            friendScenarios = try await service.fetchSharedScenarios()
+                .sorted { $0.createdAt > $1.createdAt }
+            print("[SharedScenarioStore] shared fetch OK: \(friendScenarios.count)")
+        } catch {
+            print("[SharedScenarioStore] shared fetch 실패: \(error)")
+            lastError = "친구 시나리오 불러오기 실패: \(error.localizedDescription)"
+        }
+
+        if myScenarios.isEmpty && friendScenarios.isEmpty && lastError == nil {
+            print("[SharedScenarioStore] 양쪽 모두 비어있음 (에러는 아님)")
         }
     }
 

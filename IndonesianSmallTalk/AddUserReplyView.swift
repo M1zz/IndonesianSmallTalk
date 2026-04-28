@@ -2,10 +2,15 @@ import SwiftUI
 
 struct AddUserReplyView: View {
     let parentNodeId: String
+    var sharedScenario: SharedScenario? = nil
+
     @EnvironmentObject var store: UserReplyStore
+    @EnvironmentObject var sharedReplyStore: SharedReplyStore
     @EnvironmentObject var phraseStore: PhraseStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var speech = SpeechManager()
+    @State private var saving = false
+    @State private var saveError: String?
 
     @State private var indonesian = ""
     @State private var korean = ""
@@ -93,8 +98,12 @@ struct AddUserReplyView: View {
                     Button("취소") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("저장") { save() }
-                        .disabled(trimmed(indonesian).isEmpty || trimmed(korean).isEmpty)
+                    if saving {
+                        ProgressView()
+                    } else {
+                        Button("저장") { save() }
+                            .disabled(trimmed(indonesian).isEmpty || trimmed(korean).isEmpty)
+                    }
                 }
             }
             .task {
@@ -131,15 +140,47 @@ struct AddUserReplyView: View {
     }
 
     private func save() {
-        let reply = UserReply(
+        if let sharedScenario {
+            saveShared(scenario: sharedScenario)
+        } else {
+            let reply = UserReply(
+                parentNodeId: parentNodeId,
+                indonesian: trimmed(indonesian),
+                korean: trimmed(korean),
+                romanization: trimmed(romanization),
+                polarity: polarity
+            )
+            store.add(reply)
+            dismiss()
+        }
+    }
+
+    private func saveShared(scenario: SharedScenario) {
+        saving = true
+        saveError = nil
+        let reply = SharedUserReply(
+            id: UUID(),
             parentNodeId: parentNodeId,
+            scenarioID: scenario.id,
             indonesian: trimmed(indonesian),
             korean: trimmed(korean),
             romanization: trimmed(romanization),
-            polarity: polarity
+            polarity: polarity,
+            createdAt: Date(),
+            ownedByMe: scenario.ownedByMe,
+            zoneID: nil
         )
-        store.add(reply)
-        dismiss()
+        Task {
+            let ok = await sharedReplyStore.add(reply: reply, parentScenario: scenario)
+            await MainActor.run {
+                saving = false
+                if ok {
+                    dismiss()
+                } else {
+                    saveError = sharedReplyStore.lastError ?? "저장에 실패했어요."
+                }
+            }
+        }
     }
 
     private func trimmed(_ s: String) -> String {

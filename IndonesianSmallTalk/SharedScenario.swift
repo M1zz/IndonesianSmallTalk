@@ -64,6 +64,12 @@ extension SharedScenario {
     func toRecord(inZone zoneID: CKRecordZone.ID) -> CKRecord {
         let recordID = CKRecord.ID(recordName: id.uuidString, zoneID: zoneID)
         let record = CKRecord(recordType: Self.recordType, recordID: recordID)
+        applyTo(record: record)
+        return record
+    }
+
+    /// 기존 record 에 필드만 갱신 — .changedKeys 정책과 함께 쓰면 필드 단위 LWW.
+    func applyTo(record: CKRecord) {
         record["title"] = title as CKRecordValue
         record["titleKo"] = titleKo as CKRecordValue
         record["desc"] = description as CKRecordValue
@@ -73,7 +79,6 @@ extension SharedScenario {
         record["openingIndonesian"] = openingIndonesian as CKRecordValue
         record["openingKorean"] = openingKorean as CKRecordValue
         record["openingRomanization"] = openingRomanization as CKRecordValue
-        return record
     }
 }
 

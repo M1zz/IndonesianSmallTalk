@@ -32,6 +32,9 @@
 		B023 /* SharedScenarioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A023 /* SharedScenarioStore.swift */; };
 		B024 /* CloudKitShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A024 /* CloudKitShareSheet.swift */; };
 		B025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A025 /* AppDelegate.swift */; };
+		B026 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026 /* SceneDelegate.swift */; };
+		B027 /* SharedUserReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027 /* SharedUserReply.swift */; };
+		B028 /* SharedReplyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028 /* SharedReplyStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		A023 /* SharedScenarioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedScenarioStore.swift; sourceTree = "<group>"; };
 		A024 /* CloudKitShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitShareSheet.swift; sourceTree = "<group>"; };
 		A025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A026 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A027 /* SharedUserReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserReply.swift; sourceTree = "<group>"; };
+		A028 /* SharedReplyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedReplyStore.swift; sourceTree = "<group>"; };
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		PROD /* IndonesianSmallTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndonesianSmallTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +114,9 @@
 				A023 /* SharedScenarioStore.swift */,
 				A024 /* CloudKitShareSheet.swift */,
 				A025 /* AppDelegate.swift */,
+				A026 /* SceneDelegate.swift */,
+				A027 /* SharedUserReply.swift */,
+				A028 /* SharedReplyStore.swift */,
 				AENT /* IndonesianSmallTalk.entitlements */,
 				A010 /* Assets.xcassets */,
 			);
@@ -206,6 +215,9 @@
 				B023 /* SharedScenarioStore.swift in Sources */,
 				B024 /* CloudKitShareSheet.swift in Sources */,
 				B025 /* AppDelegate.swift in Sources */,
+				B026 /* SceneDelegate.swift in Sources */,
+				B027 /* SharedUserReply.swift in Sources */,
+				B028 /* SharedReplyStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
