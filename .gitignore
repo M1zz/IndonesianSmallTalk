@@ -1,0 +1,47 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.swp
+*.lock
+*.moved-aside
+
+# Xcode user-specific
+xcuserdata/
+**/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Swift / SPM
+.swiftpm/
+Package.resolved
+.build/
+Packages/
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+# CocoaPods (이 프로젝트는 미사용이지만 만일을 대비)
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# 사용자 런타임 데이터 (Documents/ 에만 저장되지만 행여 들어와도 무시)
+*.json.local
+
+# Editors
+.vscode/
+.idea/
+*.iml
+
+# 시뮬레이터 빌드 결과물
+*.app
+*.dSYM.zip
+*.ipa
