@@ -11,6 +11,7 @@ struct AddPhraseView: View {
     @State private var korean: String
     @State private var context: String
     @State private var polarity: Polarity
+    @State private var inKeyboard: Bool
     @State private var permissionAsked = false
 
     init(editing: MyPhrase? = nil) {
@@ -19,6 +20,7 @@ struct AddPhraseView: View {
         _korean = State(initialValue: editing?.korean ?? "")
         _context = State(initialValue: editing?.context ?? "")
         _polarity = State(initialValue: editing?.polarity ?? .neutral)
+        _inKeyboard = State(initialValue: editing?.inKeyboard ?? true)
     }
 
     var body: some View {
@@ -77,6 +79,19 @@ struct AddPhraseView: View {
                     Text("긍정/부정 표현은 연습 시 점수와 코칭에 반영돼요.")
                         .font(.caption2)
                 }
+
+                Section {
+                    Toggle(isOn: $inKeyboard) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "keyboard").foregroundColor(.blue)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("키보드에 표시").font(.system(size: 14, weight: .medium))
+                                Text("사노라면 표현 키보드에서 한 번 탭으로 입력 가능")
+                                    .font(.system(size: 11)).foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                }
             }
             .navigationTitle(editing == nil ? "표현 추가" : "표현 수정")
             .navigationBarTitleDisplayMode(.inline)
@@ -123,13 +138,15 @@ struct AddPhraseView: View {
             existing.korean = trimmed(korean)
             existing.context = trimmed(context)
             existing.polarity = polarity
+            existing.inKeyboard = inKeyboard
             store.update(existing)
         } else {
             let phrase = MyPhrase(
                 indonesian: trimmed(indonesian),
                 korean: trimmed(korean),
                 context: trimmed(context),
-                polarity: polarity
+                polarity: polarity,
+                inKeyboard: inKeyboard
             )
             store.add(phrase)
         }

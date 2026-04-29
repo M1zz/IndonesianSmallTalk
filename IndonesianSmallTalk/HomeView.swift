@@ -11,6 +11,7 @@ struct HomeView: View {
     @State private var showAddPhrase = false
     @State private var showMyPhrases = false
     @State private var showAddScenario = false
+    @State private var showKeyboardManage = false
     @State private var sharePayload: SharePayload?
 
     struct SharePayload: Identifiable {
@@ -150,9 +151,21 @@ struct HomeView: View {
         .navigationDestination(isPresented: $showMyPhrases) {
             MyPhrasesView()
         }
+        .navigationDestination(isPresented: $showKeyboardManage) {
+            KeyboardManageView()
+        }
 
             // 플로팅 액션 버튼
             VStack(spacing: 12) {
+                Button(action: { showKeyboardManage = true }) {
+                    Image(systemName: "keyboard")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(width: 46, height: 46)
+                        .background(Color(red: 0.45, green: 0.55, blue: 0.70))
+                        .clipShape(Circle())
+                        .shadow(color: .black.opacity(0.18), radius: 5, y: 3)
+                }
                 Button(action: { showMyPhrases = true }) {
                     Image(systemName: "books.vertical.fill")
                         .font(.system(size: 20, weight: .semibold))

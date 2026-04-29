@@ -1,24 +1,6 @@
 import Foundation
 
-// MARK: - Polarity
-
-enum Polarity: String, Codable, CaseIterable {
-    case positive, negative, neutral
-    var label: String {
-        switch self {
-        case .positive: return "Positif +"
-        case .negative: return "Negatif −"
-        case .neutral:  return ""
-        }
-    }
-    var emoji: String {
-        switch self {
-        case .positive: return "😊"
-        case .negative: return "😟"
-        case .neutral:  return "💬"
-        }
-    }
-}
+// Polarity 는 Polarity.swift 로 분리됨 (키보드 익스텐션과 공유)
 
 // MARK: - Coach Tip
 

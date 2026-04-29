@@ -158,10 +158,12 @@ struct PolarityChip: View {
 
 struct PhrasePracticeView: View {
     let phrase: MyPhrase
+    @EnvironmentObject var store: PhraseStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var speech = SpeechManager()
     @State private var score: Double?
     @State private var permissionAsked = false
+    @State private var didCount = false
 
     var body: some View {
         NavigationStack {
@@ -262,10 +264,16 @@ struct PhrasePracticeView: View {
 
     private func evaluate() {
         guard !speech.recognizedText.isEmpty else { return }
-        score = SpeechManager.similarityScore(
+        let s = SpeechManager.similarityScore(
             spoken: speech.recognizedText,
             target: phrase.indonesian
         )
+        score = s
+        // 충분히 잘 따라말한 경우만 카운트, 한 세션당 1회만
+        if !didCount && s >= 0.5 {
+            didCount = true
+            store.incrementStudyCount(id: phrase.id)
+        }
     }
 
     private func scoreBadge(score: Double) -> some View {
