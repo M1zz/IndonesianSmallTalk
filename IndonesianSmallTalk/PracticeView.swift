@@ -13,6 +13,7 @@ struct PracticeView: View {
     @State private var animateChoice = false
     @State private var showTranslation: Set<String> = []
     @State private var showAddReply = false
+    @State private var showTreeView = false
     @State private var autoSpeak = true
     @State private var lastSpokenId: String?
 
@@ -115,6 +116,9 @@ struct PracticeView: View {
             }
         }
         .navigationBarHidden(true)
+        .sheet(isPresented: $showTreeView) {
+            TreeSheetView(scenario: session.scenario)
+        }
         .sheet(item: $selectedForTip) { node in
             CoachTipView(node: node)
         }
@@ -153,6 +157,16 @@ struct PracticeView: View {
             }
 
             Spacer()
+
+            // 트리 보기 버튼
+            Button(action: { showTreeView = true }) {
+                Image(systemName: "arrow.triangle.branch")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(Color(.tertiaryLabel))
+                    .frame(width: 32, height: 32)
+                    .background(Color(.systemFill))
+                    .clipShape(Circle())
+            }
 
             // 자동읽기 토글
             Button(action: {

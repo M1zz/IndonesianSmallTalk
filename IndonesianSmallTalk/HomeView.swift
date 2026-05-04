@@ -5,13 +5,14 @@ struct HomeView: View {
     let builtinScenarios = ConversationData.allScenarios
     @EnvironmentObject var userScenarioStore: UserScenarioStore
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
+    @EnvironmentObject var aiScenarioStore: AIScenarioStore
     @State private var selectedScenario: ConversationScenario?
+    @State private var selectedAIScenario: AIScenario?
     @State private var showPractice = false
     @State private var showVoicePractice = false
-    @State private var showAddPhrase = false
-    @State private var showMyPhrases = false
     @State private var showAddScenario = false
-    @State private var showKeyboardManage = false
+    @State private var showGenerateScenario = false
+    @State private var showAIDetail = false
     @State private var sharePayload: SharePayload?
 
     struct SharePayload: Identifiable {
@@ -21,7 +22,6 @@ struct HomeView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
         ScrollView {
             VStack(spacing: 0) {
                 // ── 헤더 배너
@@ -109,6 +109,44 @@ struct HomeView: View {
                     .padding(.top, 8)
                 }
 
+                // ── AI 시나리오 (있을 때만)
+                if !aiScenarioStore.scenarios.isEmpty {
+                    HStack(spacing: 6) {
+                        Image(systemName: "sparkles")
+                            .font(.system(size: 12))
+                            .foregroundColor(.purple)
+                        Text("AI 생성 시나리오")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundColor(.secondary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.top, 22)
+
+                    VStack(spacing: 14) {
+                        ForEach(aiScenarioStore.scenarios) { ai in
+                            AIScenarioCard(
+                                ai: ai,
+                                onStudyTap: {
+                                    selectedAIScenario = ai
+                                    showAIDetail = true
+                                },
+                                onPracticeTap: {
+                                    selectedScenario = ai.toScenario()
+                                    showPractice = true
+                                },
+                                onVoiceTap: {
+                                    selectedScenario = ai.toScenario()
+                                    showVoicePractice = true
+                                },
+                                onDelete: { aiScenarioStore.delete(id: ai.id) }
+                            )
+                        }
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.top, 8)
+                }
+
                 // ── 기본 시나리오
                 HStack {
                     Text("기본 시나리오")
@@ -132,12 +170,27 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 18)
                 .padding(.top, 8)
-                .padding(.bottom, 160) // FAB 가 마지막 카드를 가리지 않도록
+                .padding(.bottom, 32)
             }
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle("")
-        .navigationBarHidden(true)
+        .navigationTitle("사노라면")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    Button(action: { showGenerateScenario = true }) {
+                        Label("AI로 시나리오 생성", systemImage: "sparkles")
+                    }
+                    Button(action: { showAddScenario = true }) {
+                        Label("직접 만들기", systemImage: "bubble.left.and.bubble.right.fill")
+                    }
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+            }
+        }
         .navigationDestination(isPresented: $showPractice) {
             if let scenario = selectedScenario {
                 PracticeView(session: PracticeSession(scenario: scenario))
@@ -148,64 +201,18 @@ struct HomeView: View {
                 VoicePracticeView(session: PracticeSession(scenario: scenario))
             }
         }
-        .navigationDestination(isPresented: $showMyPhrases) {
-            MyPhrasesView()
-        }
-        .navigationDestination(isPresented: $showKeyboardManage) {
-            KeyboardManageView()
+        .navigationDestination(isPresented: $showAIDetail) {
+            if let ai = selectedAIScenario {
+                AIScenarioDetailView(aiScenario: ai)
+            }
         }
 
-            // 플로팅 액션 버튼
-            VStack(spacing: 12) {
-                Button(action: { showKeyboardManage = true }) {
-                    Image(systemName: "keyboard")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(width: 46, height: 46)
-                        .background(Color(red: 0.45, green: 0.55, blue: 0.70))
-                        .clipShape(Circle())
-                        .shadow(color: .black.opacity(0.18), radius: 5, y: 3)
-                }
-                Button(action: { showMyPhrases = true }) {
-                    Image(systemName: "books.vertical.fill")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(width: 52, height: 52)
-                        .background(Color.gray.opacity(0.85))
-                        .clipShape(Circle())
-                        .shadow(color: .black.opacity(0.2), radius: 6, y: 3)
-                }
-                Menu {
-                    Button(action: { showAddScenario = true }) {
-                        Label("새 스몰토크", systemImage: "bubble.left.and.bubble.right.fill")
-                    }
-                    Button(action: { showAddPhrase = true }) {
-                        Label("새 표현", systemImage: "text.bubble.fill")
-                    }
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 26, weight: .bold))
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 60)
-                        .background(
-                            LinearGradient(
-                                colors: [Color(red: 0.18, green: 0.50, blue: 0.95),
-                                         Color(red: 0.10, green: 0.35, blue: 0.75)],
-                                startPoint: .topLeading, endPoint: .bottomTrailing
-                            )
-                        )
-                        .clipShape(Circle())
-                        .shadow(color: .black.opacity(0.25), radius: 8, y: 4)
-                }
-            }
-            .padding(.trailing, 20)
-            .padding(.bottom, 24)
-        }
-        .sheet(isPresented: $showAddPhrase) {
-            AddPhraseView()
-        }
         .sheet(isPresented: $showAddScenario) {
             AddScenarioView()
+        }
+        .sheet(isPresented: $showGenerateScenario) {
+            GenerateScenarioView()
+                .environmentObject(aiScenarioStore)
         }
         .sheet(item: $sharePayload) { payload in
             CloudKitShareSheet(share: payload.share, container: payload.container) {
@@ -449,6 +456,109 @@ struct ScenarioCard: View {
         .background(color.opacity(0.12))
         .cornerRadius(5)
         .fixedSize()
+    }
+}
+
+// MARK: - AI Scenario Card
+
+struct AIScenarioCard: View {
+    let ai: AIScenario
+    let onStudyTap: () -> Void
+    let onPracticeTap: () -> Void
+    let onVoiceTap: () -> Void
+    let onDelete: () -> Void
+
+    private var diffColor: Color {
+        switch ConversationScenario.Difficulty(rawValue: ai.difficultyRaw) ?? .beginner {
+        case .beginner: return .green
+        case .intermediate: return .orange
+        case .advanced: return .red
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            // 메인 영역
+            Button(action: onStudyTap) {
+                HStack(spacing: 14) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 14)
+                            .fill(Color.purple.opacity(0.10))
+                            .frame(width: 58, height: 58)
+                        Text(ai.emoji)
+                            .font(.system(size: 30))
+                    }
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack(spacing: 6) {
+                            Text(ai.titleKo)
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundColor(.primary)
+                                .lineLimit(1)
+                            Image(systemName: "sparkles")
+                                .font(.system(size: 10))
+                                .foregroundColor(.purple)
+                        }
+                        Text(ai.title)
+                            .font(.system(size: 12))
+                            .foregroundColor(.secondary)
+                        HStack(spacing: 8) {
+                            Label("\(ai.vocabulary.count) 단어", systemImage: "textbook")
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundColor(.blue)
+                            Label("\(ai.grammarPoints.count) 문법", systemImage: "book.pages")
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundColor(.green)
+                        }
+                        .padding(.top, 1)
+                    }
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color(.tertiaryLabel))
+                }
+                .padding(14)
+            }
+            .buttonStyle(PressableButtonStyle())
+
+            // 하단 액션 바
+            Divider().padding(.horizontal, 14)
+            HStack(spacing: 0) {
+                Button(action: onPracticeTap) {
+                    Label("대화 연습", systemImage: "bubble.left.and.right.fill")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(.blue)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                }
+                .buttonStyle(.plain)
+
+                Divider().frame(height: 20)
+
+                Button(action: onVoiceTap) {
+                    Label("음성", systemImage: "mic.fill")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(.blue)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                }
+                .buttonStyle(.plain)
+            }
+            .background(Color.blue.opacity(0.04))
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.secondarySystemGroupedBackground))
+                .shadow(color: .black.opacity(0.06), radius: 8, x: 0, y: 3)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contextMenu {
+            Button(role: .destructive, action: onDelete) {
+                Label("삭제", systemImage: "trash")
+            }
+        }
     }
 }
 

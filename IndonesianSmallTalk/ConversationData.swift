@@ -7,7 +7,8 @@ struct ConversationData {
         scenarioMorning,
         scenarioWeather,
         scenarioCafe,
-        scenarioWork
+        scenarioWork,
+        scenarioRestoran
     ]
 }
 
@@ -1731,5 +1732,334 @@ extension ConversationData {
             ]
         ),
         difficulty: .advanced
+    )
+}
+
+// ─────────────────────────────────────────────────
+// MARK: Scenario 5: Di Restoran (식당에서)
+// ─────────────────────────────────────────────────
+extension ConversationData {
+    static let scenarioRestoran = ConversationScenario(
+        title: "Di Restoran",
+        titleKo: "식당에서",
+        description: "식당에서 주문부터 계산까지 — 방문객 입장의 전체 대화",
+        emoji: "🍜",
+        root: ConversationNode(
+            id: "rst_root",
+            speaker: .me,
+            indonesian: "Selamat siang! Meja untuk dua orang, tolong.",
+            korean: "안녕하세요! 두 명 자리 부탁해요.",
+            romanization: "슬라맛 시앙! 메자 운툭 두아 오랑, 똘롱",
+            polarity: .neutral,
+            coachTip: CoachTip(
+                label: "Pembuka Restoran",
+                tip: "Langsung sebutkan jumlah orang setelah salam — itulah yang pertama kali ditanya pelayan.",
+                why: "Informasi yang relevan lebih efisien dari basa-basi panjang."
+            ),
+            children: [
+                // ── A: Langsung diajak duduk
+                ConversationNode(
+                    id: "rst_a",
+                    speaker: .other,
+                    indonesian: "Silakan! Ikut saya ya. Ini menunya.",
+                    korean: "어서오세요! 이쪽으로 오세요. 메뉴 여기 있습니다.",
+                    romanization: "실라깐! 이꿋 사야 야. 이니 메누냐",
+                    polarity: .positive,
+                    coachTip: CoachTip(
+                        label: "Respon Pelayan Ideal",
+                        tip: "Pelayan langsung mengajak duduk berarti meja tersedia. Ucapan terima kasih singkat sudah cukup.",
+                        why: "Efisiensi di awal percakapan membuat interaksi lebih lancar."
+                    ),
+                    children: [
+                        // A1: Tanya rekomendasi
+                        ConversationNode(
+                            id: "rst_a1",
+                            speaker: .me,
+                            indonesian: "Apa rekomendasinya di sini?",
+                            korean: "뭐 추천해주실래요?",
+                            romanization: "아빠 레꼬멘다시냐 디 시니?",
+                            polarity: .positive,
+                            coachTip: CoachTip(
+                                label: "Strategi Tanya Rekomendasi",
+                                tip: "Bertanya rekomendasi adalah cara paling alami membuka percakapan dengan pelayan sekaligus menunjukkan minat.",
+                                why: "Orang suka merekomendasikan — ini membuat pelayan lebih ramah."
+                            ),
+                            children: [
+                                ConversationNode(
+                                    id: "rst_a1a",
+                                    speaker: .other,
+                                    indonesian: "Nasi goreng kami paling laris, Pak/Bu. Enak sekali!",
+                                    korean: "저희 나시고렝이 제일 잘 나가요. 정말 맛있어요!",
+                                    romanization: "나시 고렝 까미 빨링 라리스, 빡/부. 에낙 스깔리!",
+                                    polarity: .positive,
+                                    coachTip: nil,
+                                    children: [
+                                        ConversationNode(
+                                            id: "rst_a1a1",
+                                            speaker: .me,
+                                            indonesian: "Baik, satu nasi goreng. Apakah pedas?",
+                                            korean: "그럼 나시고렝 하나요. 매워요?",
+                                            romanization: "바익, 사뚜 나시 고렝. 아빠까 쁘다스?",
+                                            polarity: .positive,
+                                            coachTip: CoachTip(
+                                                label: "Pesan + Konfirmasi Sekaligus",
+                                                tip: "Langsung pesan sambil bertanya soal rasa adalah cara efisien. Pelayan menghargai pelanggan yang tahu apa yang diinginkan.",
+                                                why: "Percakapan yang terarah menghemat waktu keduanya."
+                                            ),
+                                            children: [
+                                                ConversationNode(
+                                                    id: "rst_a1a1a",
+                                                    speaker: .other,
+                                                    indonesian: "Sedikit pedas. Mau dikurangi?",
+                                                    korean: "조금 매워요. 줄여드릴까요?",
+                                                    romanization: "스디낏 쁘다스. 마우 디꾸랑이?",
+                                                    polarity: .positive,
+                                                    coachTip: nil,
+                                                    children: [
+                                                        ConversationNode(
+                                                            id: "rst_a1a1a1",
+                                                            speaker: .me,
+                                                            indonesian: "Tolong tidak pedas, ya. Terima kasih!",
+                                                            korean: "안 맵게 해주세요. 감사합니다!",
+                                                            romanization: "똘롱 띠닥 쁘다스, 야. 뜨리마 까시!",
+                                                            polarity: .positive,
+                                                            coachTip: CoachTip(
+                                                                label: "Tolong + Ya = Permintaan Sopan",
+                                                                tip: "'Tolong ~ ya' adalah kombinasi paling sopan untuk meminta sesuatu di restoran.",
+                                                                why: "Akhiran 'ya' melembutkan permintaan sehingga tidak terdengar seperti perintah."
+                                                            ),
+                                                            children: []
+                                                        ),
+                                                        ConversationNode(
+                                                            id: "rst_a1a1a2",
+                                                            speaker: .me,
+                                                            indonesian: "Tidak apa-apa, pedas saja.",
+                                                            korean: "괜찮아요, 그냥 매운 걸로요.",
+                                                            romanization: "띠닥 아빠아빠, 쁘다스 사자",
+                                                            polarity: .negative,
+                                                            coachTip: CoachTip(
+                                                                label: "Menerima Kondisi Apa Adanya",
+                                                                tip: "'Tidak apa-apa' adalah respons netral yang sering digunakan untuk menerima kondisi tanpa keluhan.",
+                                                                why: "Fleksibilitas dalam situasi kecil menciptakan kesan menyenangkan."
+                                                            ),
+                                                            children: []
+                                                        )
+                                                    ]
+                                                )
+                                            ]
+                                        ),
+                                        ConversationNode(
+                                            id: "rst_a1a2",
+                                            speaker: .me,
+                                            indonesian: "Ada menu vegetarian? Saya tidak makan daging.",
+                                            korean: "채식 메뉴 있어요? 저 고기 안 먹어요.",
+                                            romanization: "아다 메누 베게따리안? 사야 띠닥 마깐 다깅",
+                                            polarity: .positive,
+                                            coachTip: CoachTip(
+                                                label: "Informasi Penting Dulu",
+                                                tip: "Sampaikan pantangan makan sebelum pesan agar tidak repot menukar pesanan nanti.",
+                                                why: "Mencegah masalah di awal jauh lebih efisien dari komplain setelah makanan datang."
+                                            ),
+                                            children: [
+                                                ConversationNode(
+                                                    id: "rst_a1a2a",
+                                                    speaker: .other,
+                                                    indonesian: "Ada gado-gado dan tahu tempe, Bu/Pak.",
+                                                    korean: "가도가도랑 두부 템페 있어요.",
+                                                    romanization: "아다 가도가도 단 따후 뗌뻬, 부/빡",
+                                                    polarity: .positive,
+                                                    coachTip: nil,
+                                                    children: [
+                                                        ConversationNode(
+                                                            id: "rst_a1a2a1",
+                                                            speaker: .me,
+                                                            indonesian: "Gado-gado satu, terima kasih! Enak sekali sepertinya.",
+                                                            korean: "가도가도 하나요, 감사합니다! 맛있겠어요.",
+                                                            romanization: "가도가도 사뚜, 뜨리마 까시! 에낙 스깔리 스뻐르띠냐",
+                                                            polarity: .positive,
+                                                            coachTip: CoachTip(
+                                                                label: "Antisipasi Positif",
+                                                                tip: "Mengungkapkan antusiasme saat memesan membuat pelayan senang dan percakapan terasa hangat.",
+                                                                why: "Pujian awal menciptakan ekspektasi positif untuk pengalaman makan."
+                                                            ),
+                                                            children: []
+                                                        ),
+                                                        ConversationNode(
+                                                            id: "rst_a1a2a2",
+                                                            speaker: .me,
+                                                            indonesian: "Hmm, saya pikir dulu sebentar, ya.",
+                                                            korean: "음, 잠깐 생각해볼게요.",
+                                                            romanization: "흠, 사야 삐끼르 둘루 스븐따르, 야",
+                                                            polarity: .negative,
+                                                            coachTip: CoachTip(
+                                                                label: "Minta Waktu dengan Sopan",
+                                                                tip: "Mengatakan 'sebentar' menunjukkan bahwa kamu menghargai waktu pelayan meski masih ragu.",
+                                                                why: "Ragu-ragu yang sopan lebih baik dari keputusan terburu-buru yang disesali."
+                                                            ),
+                                                            children: []
+                                                        )
+                                                    ]
+                                                )
+                                            ]
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        // A2: Langsung pesan
+                        ConversationNode(
+                            id: "rst_a2",
+                            speaker: .me,
+                            indonesian: "Saya mau nasi goreng dan es teh manis, ya.",
+                            korean: "나시고렝이랑 아이스 밀크티 주세요.",
+                            romanization: "사야 마우 나시 고렝 단 에스 떼 마니스, 야",
+                            polarity: .positive,
+                            coachTip: CoachTip(
+                                label: "Pesan Langsung dan Jelas",
+                                tip: "'Saya mau + makanan + ya' adalah pola paling efisien untuk memesan di restoran.",
+                                why: "Kejelasan dalam memesan mengurangi kemungkinan salah pesanan."
+                            ),
+                            children: [
+                                ConversationNode(
+                                    id: "rst_a2a",
+                                    speaker: .other,
+                                    indonesian: "Baik. Ada lagi?",
+                                    korean: "알겠습니다. 더 필요한 거 있으세요?",
+                                    romanization: "바익. 아다 라기?",
+                                    polarity: .positive,
+                                    coachTip: nil,
+                                    children: [
+                                        ConversationNode(
+                                            id: "rst_a2a1",
+                                            speaker: .me,
+                                            indonesian: "Sudah, terima kasih!",
+                                            korean: "다 됐어요, 감사합니다!",
+                                            romanization: "수다, 뜨리마 까시!",
+                                            polarity: .positive,
+                                            coachTip: CoachTip(
+                                                label: "Sudah — Kata Ajaib Penutup",
+                                                tip: "'Sudah' berarti selesai/cukup — kata paling serbaguna di restoran untuk menutup pemesanan.",
+                                                why: "Satu kata yang singkat dan sopan mencegah pelayan terus menunggu."
+                                            ),
+                                            children: []
+                                        ),
+                                        ConversationNode(
+                                            id: "rst_a2a2",
+                                            speaker: .me,
+                                            indonesian: "Tambah air putih, tolong.",
+                                            korean: "생수도 주세요.",
+                                            romanization: "땀바 아이르 뿌띠, 똘롱",
+                                            polarity: .negative,
+                                            coachTip: CoachTip(
+                                                label: "Tambah = Minta Tambahan",
+                                                tip: "'Tambah + benda' adalah cara paling singkat meminta tambahan. Tidak perlu kalimat panjang.",
+                                                why: "Efisiensi komunikasi membuat pelayan lebih mudah melayani."
+                                            ),
+                                            children: [
+                                                ConversationNode(
+                                                    id: "rst_a2a2a",
+                                                    speaker: .other,
+                                                    indonesian: "Tentu. Sebentar ya.",
+                                                    korean: "물론이죠. 잠깐만요.",
+                                                    romanization: "뜬뚜. 스븐따르 야",
+                                                    polarity: .positive,
+                                                    coachTip: nil,
+                                                    children: []
+                                                )
+                                            ]
+                                        )
+                                    ]
+                                )
+                            ]
+                        )
+                    ]
+                ),
+                // ── B: Sedang penuh
+                ConversationNode(
+                    id: "rst_b",
+                    speaker: .other,
+                    indonesian: "Maaf, sedang penuh. Mau menunggu?",
+                    korean: "죄송해요, 지금 만석이에요. 기다리실래요?",
+                    romanization: "마아프, 스당 쁘누. 마우 므눙구?",
+                    polarity: .negative,
+                    coachTip: CoachTip(
+                        label: "Menerima Kabar Tidak Menyenangkan",
+                        tip: "Saat diberi tahu penuh, respons positif (mau tunggu) vs negatif (pergi) mempengaruhi kesan yang ditinggalkan.",
+                        why: "Reaksi terhadap situasi tidak ideal menunjukkan karakter seseorang."
+                    ),
+                    children: [
+                        ConversationNode(
+                            id: "rst_b1",
+                            speaker: .me,
+                            indonesian: "Iya, kami tunggu. Sekitar berapa menit?",
+                            korean: "네, 기다릴게요. 얼마나 걸려요?",
+                            romanization: "이야, 까미 뚱구. 스끼따르 브라빠 므닛?",
+                            polarity: .positive,
+                            coachTip: CoachTip(
+                                label: "Konfirmasi + Tanya Detail",
+                                tip: "Saat setuju menunggu, langsung tanya estimasi waktu — ini menunjukkan kamu menghargai waktu sendiri dengan bijak.",
+                                why: "Informasi waktu membantu kamu memutuskan apakah tetap menunggu atau tidak."
+                            ),
+                            children: [
+                                ConversationNode(
+                                    id: "rst_b1a",
+                                    speaker: .other,
+                                    indonesian: "Sekitar 10 menit, ya. Silakan menunggu di sana.",
+                                    korean: "10분 정도요. 저기서 기다려주세요.",
+                                    romanization: "스끼따르 스뿔루 므닛, 야. 실라깐 므눙구 디 사나",
+                                    polarity: .positive,
+                                    coachTip: nil,
+                                    children: [
+                                        ConversationNode(
+                                            id: "rst_b1a1",
+                                            speaker: .me,
+                                            indonesian: "Tidak apa-apa. Terima kasih, ya!",
+                                            korean: "괜찮아요. 감사합니다!",
+                                            romanization: "띠닥 아빠아빠. 뜨리마 까시, 야!",
+                                            polarity: .positive,
+                                            coachTip: CoachTip(
+                                                label: "Tidak Apa-apa = Fleksibilitas",
+                                                tip: "'Tidak apa-apa' setelah mendengar detail menunjukkan kamu bisa menerima situasi dengan lapang.",
+                                                why: "Menerima informasi dengan tenang menciptakan kesan pelanggan yang menyenangkan."
+                                            ),
+                                            children: []
+                                        ),
+                                        ConversationNode(
+                                            id: "rst_b1a2",
+                                            speaker: .me,
+                                            indonesian: "Lama juga ya... oke, kami tunggu.",
+                                            korean: "좀 오래 걸리네요… 알겠어요, 기다릴게요.",
+                                            romanization: "라마 주가 야... 오케, 까미 뚱구",
+                                            polarity: .negative,
+                                            coachTip: CoachTip(
+                                                label: "Jujur Tapi Sopan",
+                                                tip: "Mengungkapkan perasaan (lama) sambil tetap memutuskan menunggu menunjukkan kejujuran yang tidak menyakiti.",
+                                                why: "Ekspresi perasaan yang diikuti keputusan positif terasa autentik."
+                                            ),
+                                            children: []
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        ConversationNode(
+                            id: "rst_b2",
+                            speaker: .me,
+                            indonesian: "Tidak apa-apa, terima kasih. Kami pergi dulu.",
+                            korean: "괜찮아요, 감사합니다. 다음에 올게요.",
+                            romanization: "띠닥 아빠아빠, 뜨리마 까시. 까미 쁘르기 둘루",
+                            polarity: .negative,
+                            coachTip: CoachTip(
+                                label: "Pergi dengan Elegan",
+                                tip: "Mengatakan 'tidak apa-apa' dan berterima kasih saat menolak menunggu menunjukkan tata krama yang baik.",
+                                why: "Meninggalkan kesan baik meski tidak jadi makan di sana adalah investasi sosial."
+                            ),
+                            children: []
+                        )
+                    ]
+                )
+            ]
+        ),
+        difficulty: .beginner
     )
 }

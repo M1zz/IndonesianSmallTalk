@@ -37,6 +37,11 @@
 		B028 /* SharedReplyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028 /* SharedReplyStore.swift */; };
 		B029 /* Polarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A029 /* Polarity.swift */; };
 		B030 /* KeyboardManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A030 /* KeyboardManageView.swift */; };
+		B031 /* AIScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031 /* AIScenario.swift */; };
+		B032 /* AIScenarioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032 /* AIScenarioStore.swift */; };
+		B033 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033 /* ClaudeService.swift */; };
+		B034 /* GenerateScenarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A034 /* GenerateScenarioView.swift */; };
+		B035 /* AIScenarioDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035 /* AIScenarioDetailView.swift */; };
 		BK001 /* MyPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A013 /* MyPhrase.swift */; };
 		BK002 /* Polarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A029 /* Polarity.swift */; };
 		BK003 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK001 /* KeyboardViewController.swift */; };
@@ -100,6 +105,11 @@
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		A029 /* Polarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polarity.swift; sourceTree = "<group>"; };
 		A030 /* KeyboardManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManageView.swift; sourceTree = "<group>"; };
+		A031 /* AIScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIScenario.swift; sourceTree = "<group>"; };
+		A032 /* AIScenarioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIScenarioStore.swift; sourceTree = "<group>"; };
+		A033 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeService.swift; sourceTree = "<group>"; };
+		A034 /* GenerateScenarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateScenarioView.swift; sourceTree = "<group>"; };
+		A035 /* AIScenarioDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIScenarioDetailView.swift; sourceTree = "<group>"; };
 		AK001 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		AK002 /* SharedPhraseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPhraseReader.swift; sourceTree = "<group>"; };
 		AK003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +180,11 @@
 				A028 /* SharedReplyStore.swift */,
 				A029 /* Polarity.swift */,
 				A030 /* KeyboardManageView.swift */,
+				A031 /* AIScenario.swift */,
+				A032 /* AIScenarioStore.swift */,
+				A033 /* ClaudeService.swift */,
+				A034 /* GenerateScenarioView.swift */,
+				A035 /* AIScenarioDetailView.swift */,
 				AENT /* IndonesianSmallTalk.entitlements */,
 				A010 /* Assets.xcassets */,
 			);
@@ -295,6 +310,11 @@
 				B028 /* SharedReplyStore.swift in Sources */,
 				B029 /* Polarity.swift in Sources */,
 				B030 /* KeyboardManageView.swift in Sources */,
+				B031 /* AIScenario.swift in Sources */,
+				B032 /* AIScenarioStore.swift in Sources */,
+				B033 /* ClaudeService.swift in Sources */,
+				B034 /* GenerateScenarioView.swift in Sources */,
+				B035 /* AIScenarioDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
