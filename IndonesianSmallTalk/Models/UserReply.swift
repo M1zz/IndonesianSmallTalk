@@ -7,6 +7,7 @@ struct UserReply: Identifiable, Codable, Equatable {
     var korean: String
     var romanization: String
     var polarity: Polarity = .neutral
+    var speakerRaw: String = "me"
     var createdAt: Date = Date()
 
     init(
@@ -16,6 +17,7 @@ struct UserReply: Identifiable, Codable, Equatable {
         korean: String,
         romanization: String = "",
         polarity: Polarity = .neutral,
+        speakerRaw: String = "me",
         createdAt: Date = Date()
     ) {
         self.id = id
@@ -24,11 +26,12 @@ struct UserReply: Identifiable, Codable, Equatable {
         self.korean = korean
         self.romanization = romanization
         self.polarity = polarity
+        self.speakerRaw = speakerRaw
         self.createdAt = createdAt
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, parentNodeId, indonesian, korean, romanization, polarity, createdAt
+        case id, parentNodeId, indonesian, korean, romanization, polarity, speakerRaw, createdAt
     }
 
     init(from decoder: Decoder) throws {
@@ -39,6 +42,7 @@ struct UserReply: Identifiable, Codable, Equatable {
         korean = try c.decode(String.self, forKey: .korean)
         romanization = try c.decode(String.self, forKey: .romanization)
         polarity = (try? c.decode(Polarity.self, forKey: .polarity)) ?? .neutral
+        speakerRaw = (try? c.decode(String.self, forKey: .speakerRaw)) ?? "me"
         createdAt = try c.decode(Date.self, forKey: .createdAt)
     }
 
@@ -47,7 +51,7 @@ struct UserReply: Identifiable, Codable, Equatable {
     func toNode() -> ConversationNode {
         ConversationNode(
             id: "user-\(id.uuidString)",
-            speaker: .me,
+            speaker: speakerRaw == "other" ? .other : .me,
             indonesian: indonesian,
             korean: korean,
             romanization: romanization,
@@ -87,6 +91,13 @@ final class UserReplyStore: ObservableObject {
     func delete(id: UUID) {
         replies.removeAll { $0.id == id }
         save()
+    }
+
+    func update(_ reply: UserReply) {
+        if let idx = replies.firstIndex(where: { $0.id == reply.id }) {
+            replies[idx] = reply
+            save()
+        }
     }
 
     func replies(for parentNodeId: String) -> [UserReply] {

@@ -143,6 +143,25 @@ class PracticeSession: ObservableObject {
         showResult = false
     }
 
+    func setOpener(_ node: ConversationNode) {
+        currentPath = [node]
+        selectedNode = nil
+        score = 0
+        totalChoices = 0
+        positiveChoices = 0
+        showResult = false
+    }
+
+    /// pre-opener만 path에 넣음. 이후 allOpeners가 응답 선택지로 제공됨
+    func setPreOpener(_ preNode: ConversationNode) {
+        currentPath = [preNode]
+        selectedNode = nil
+        score = 0
+        totalChoices = 0
+        positiveChoices = 0
+        showResult = false
+    }
+
     var progressRatio: Double {
         guard !scenario.root.children.isEmpty else { return 0 }
         return Double(currentPath.count - 1) / Double(maxDepth(scenario.root))

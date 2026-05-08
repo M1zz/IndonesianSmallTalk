@@ -135,7 +135,7 @@ final class CloudKitService {
         let recordID = CKRecord.ID(recordName: scenarioID.uuidString, zoneID: zoneID)
         let record = try await privateDB.record(for: recordID)
 
-        // 이미 share 가 있으면 재사용
+        // 이미 share 가 있으면 재사용 (URL 포함된 서버 레코드 그대로 반환)
         if let existingRef = record.share,
            let existing = try? await privateDB.record(for: existingRef.recordID) as? CKShare {
             return (existing, container)
@@ -146,10 +146,38 @@ final class CloudKitService {
         share.publicPermission = .none
 
         let (results, _) = try await privateDB.modifyRecords(saving: [record, share], deleting: [])
-        for (_, result) in results {
-            if case .failure(let err) = result { throw err }
+
+        // 저장 후 서버가 채운 URL이 포함된 share 를 results 에서 꺼냄
+        var savedShare = share
+        for (savedID, result) in results {
+            switch result {
+            case .failure(let err):
+                throw err
+            case .success(let savedRecord):
+                if savedID == share.recordID, let updated = savedRecord as? CKShare {
+                    savedShare = updated
+                }
+            }
         }
-        return (share, container)
+
+        return (savedShare, container)
+    }
+
+    // MARK: - Stop Sharing
+
+    /// CKShare 삭제(친구 접근 차단) + CloudKit 레코드 삭제. 로컬 UserScenario는 건드리지 않음.
+    func stopSharing(for scenarioID: UUID) async throws {
+        try await ensureZone()
+        let recordID = CKRecord.ID(recordName: scenarioID.uuidString, zoneID: zoneID)
+
+        // share 레코드 먼저 삭제
+        if let record = try? await privateDB.record(for: recordID),
+           let shareRef = record.share {
+            _ = try? await privateDB.deleteRecord(withID: shareRef.recordID)
+        }
+
+        // 시나리오 레코드 삭제
+        _ = try await privateDB.deleteRecord(withID: recordID)
     }
 
     // MARK: - Shared Replies

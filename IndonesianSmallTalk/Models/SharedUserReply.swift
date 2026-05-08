@@ -13,6 +13,7 @@ struct SharedUserReply: Identifiable, Equatable {
     var korean: String
     var romanization: String
     var polarity: Polarity
+    var speakerRaw: String = "me"
     var createdAt: Date
 
     var ownedByMe: Bool
@@ -22,7 +23,7 @@ struct SharedUserReply: Identifiable, Equatable {
     func toNode() -> ConversationNode {
         ConversationNode(
             id: "user-\(id.uuidString)",
-            speaker: .me,
+            speaker: speakerRaw == "other" ? .other : .me,
             indonesian: indonesian,
             korean: korean,
             romanization: romanization,
@@ -50,6 +51,7 @@ extension SharedUserReply {
         self.korean = korean
         self.romanization = (record["romanization"] as? String) ?? ""
         self.polarity = Polarity(rawValue: (record["polarity"] as? String) ?? "neutral") ?? .neutral
+        self.speakerRaw = (record["speakerRaw"] as? String) ?? "me"
         self.createdAt = record.creationDate ?? Date()
         self.ownedByMe = ownedByMe
         self.zoneID = record.recordID.zoneID
@@ -65,6 +67,7 @@ extension SharedUserReply {
         record["korean"] = korean as CKRecordValue
         record["romanization"] = romanization as CKRecordValue
         record["polarity"] = polarity.rawValue as CKRecordValue
+        record["speakerRaw"] = speakerRaw as CKRecordValue
         // parent 레퍼런스 → 같은 share hierarchy 로 묶임
         record.parent = CKRecord.Reference(record: parentScenarioRecord, action: .none)
         return record

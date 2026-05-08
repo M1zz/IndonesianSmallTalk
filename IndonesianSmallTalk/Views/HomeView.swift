@@ -5,20 +5,29 @@ struct HomeView: View {
     let builtinScenarios = ConversationData.allScenarios
     @EnvironmentObject var userScenarioStore: UserScenarioStore
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
+    @EnvironmentObject var sharedReplyStore: SharedReplyStore
     @EnvironmentObject var aiScenarioStore: AIScenarioStore
     @State private var selectedScenario: ConversationScenario?
     @State private var selectedAIScenario: AIScenario?
     @State private var showPractice = false
     @State private var showVoicePractice = false
-    @State private var showAddScenario = false
-    @State private var showGenerateScenario = false
     @State private var showAIDetail = false
     @State private var sharePayload: SharePayload?
+    @State private var shareError: String?
+    @State private var isSharingUserScenario = false
+    @State private var isStoppingShare = false
+    @State private var addReplyScenario: ConversationScenario?
 
     struct SharePayload: Identifiable {
         let id = UUID()
         let share: CKShare
         let container: CKContainer
+    }
+
+    private var unsharedUserScenarios: [UserScenario] {
+        userScenarioStore.scenarios.filter {
+            !sharedScenarioStore.myScenarioIDs.contains($0.id)
+        }
     }
 
     var body: some View {
@@ -46,151 +55,17 @@ struct HomeView: View {
                 }
                 .padding(.top, 18)
 
-                // ── 함께 보는 스몰토크 (CloudKit)
-                if !sharedScenarioStore.allScenarios.isEmpty || sharedScenarioStore.lastError != nil {
-                    sharedSectionHeader
-
-                    VStack(spacing: 14) {
-                        ForEach(sharedScenarioStore.allScenarios) { shared in
-                            ScenarioCard(
-                                scenario: shared.toScenario(),
-                                isUserAdded: false,
-                                badge: shared.ownedByMe ? .sharedByMe : .sharedByFriend,
-                                onTap: {
-                                    selectedScenario = shared.toScenario()
-                                    showPractice = true
-                                },
-                                onVoiceTap: {
-                                    selectedScenario = shared.toScenario()
-                                    showVoicePractice = true
-                                },
-                                onShare: shared.ownedByMe ? { shareScenario(id: shared.id) } : nil,
-                                onDelete: shared.ownedByMe ? { Task { await sharedScenarioStore.delete(id: shared.id) } } : nil
-                            )
-                        }
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 8)
-
-                    if let err = sharedScenarioStore.lastError {
-                        Text(err)
-                            .font(.caption2)
-                            .foregroundColor(.orange)
-                            .padding(.horizontal, 18)
-                            .padding(.top, 4)
-                    }
-                }
-
-                // ── 내 시나리오 (있을 때만)
-                if !userScenarioStore.scenarios.isEmpty {
-                    HStack {
-                        Text("내 스몰토크")
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundColor(.secondary)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 22)
-
-                    VStack(spacing: 14) {
-                        ForEach(userScenarioStore.asScenarios) { scenario in
-                            ScenarioCard(scenario: scenario, isUserAdded: true, onTap: {
-                                selectedScenario = scenario
-                                showPractice = true
-                            }, onVoiceTap: {
-                                selectedScenario = scenario
-                                showVoicePractice = true
-                            }, onDelete: {
-                                userScenarioStore.delete(id: scenario.id)
-                            })
-                        }
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 8)
-                }
-
-                // ── AI 시나리오 (있을 때만)
-                if !aiScenarioStore.scenarios.isEmpty {
-                    HStack(spacing: 6) {
-                        Image(systemName: "sparkles")
-                            .font(.system(size: 12))
-                            .foregroundColor(.purple)
-                        Text("AI 생성 시나리오")
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundColor(.secondary)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 22)
-
-                    VStack(spacing: 14) {
-                        ForEach(aiScenarioStore.scenarios) { ai in
-                            AIScenarioCard(
-                                ai: ai,
-                                onStudyTap: {
-                                    selectedAIScenario = ai
-                                    showAIDetail = true
-                                },
-                                onPracticeTap: {
-                                    selectedScenario = ai.toScenario()
-                                    showPractice = true
-                                },
-                                onVoiceTap: {
-                                    selectedScenario = ai.toScenario()
-                                    showVoicePractice = true
-                                },
-                                onDelete: { aiScenarioStore.delete(id: ai.id) }
-                            )
-                        }
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 8)
-                }
-
-                // ── 기본 시나리오
-                HStack {
-                    Text("기본 시나리오")
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(.secondary)
-                    Spacer()
-                }
-                .padding(.horizontal, 18)
-                .padding(.top, 22)
-
-                VStack(spacing: 14) {
-                    ForEach(builtinScenarios) { scenario in
-                        ScenarioCard(scenario: scenario, onTap: {
-                            selectedScenario = scenario
-                            showPractice = true
-                        }, onVoiceTap: {
-                            selectedScenario = scenario
-                            showVoicePractice = true
-                        })
-                    }
-                }
-                .padding(.horizontal, 18)
-                .padding(.top, 8)
-                .padding(.bottom, 32)
+                sharedSection
+                myScenarioSection
+                aiScenarioSection
+                builtinSection
             }
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle("사노라면")
+        .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Menu {
-                    Button(action: { showGenerateScenario = true }) {
-                        Label("AI로 시나리오 생성", systemImage: "sparkles")
-                    }
-                    Button(action: { showAddScenario = true }) {
-                        Label("직접 만들기", systemImage: "bubble.left.and.bubble.right.fill")
-                    }
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 16, weight: .semibold))
-                }
-            }
-        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         .navigationDestination(isPresented: $showPractice) {
             if let scenario = selectedScenario {
                 PracticeView(session: PracticeSession(scenario: scenario))
@@ -207,12 +82,12 @@ struct HomeView: View {
             }
         }
 
-        .sheet(isPresented: $showAddScenario) {
-            AddScenarioView()
-        }
-        .sheet(isPresented: $showGenerateScenario) {
-            GenerateScenarioView()
-                .environmentObject(aiScenarioStore)
+        .sheet(item: $addReplyScenario) { scenario in
+            AddUserReplyView(
+                parentNodeId: scenario.root.id,
+                nextSpeaker: scenario.root.speaker == .me ? .other : .me,
+                sharedScenario: sharedScenarioStore.allScenarios.first { $0.id == scenario.id }
+            )
         }
         .sheet(item: $sharePayload) { payload in
             CloudKitShareSheet(share: payload.share, container: payload.container) {
@@ -220,8 +95,157 @@ struct HomeView: View {
             }
             .ignoresSafeArea()
         }
+        .alert("공유 실패", isPresented: Binding(
+            get: { shareError != nil },
+            set: { if !$0 { shareError = nil } }
+        )) {
+            Button("확인", role: .cancel) { shareError = nil }
+        } message: {
+            Text(shareError ?? "")
+        }
+        .overlay {
+            if isSharingUserScenario || isStoppingShare {
+                ZStack {
+                    Color.black.opacity(0.25).ignoresSafeArea()
+                    VStack(spacing: 12) {
+                        ProgressView()
+                            .scaleEffect(1.4)
+                            .tint(.white)
+                        Text(isSharingUserScenario ? "iCloud에 업로드 중…" : "공유를 해제하는 중…")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                    .padding(28)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                }
+            }
+        }
         .refreshable {
             await sharedScenarioStore.refresh()
+            await sharedReplyStore.refresh(forScenarios: sharedScenarioStore.allScenarios)
+        }
+    }
+
+    @ViewBuilder
+    private var sharedSection: some View {
+        if !sharedScenarioStore.allScenarios.isEmpty || sharedScenarioStore.lastError != nil {
+            sharedSectionHeader
+            VStack(spacing: 14) {
+                ForEach(sharedScenarioStore.allScenarios) { shared in
+                    ScenarioCard(
+                        scenario: shared.toScenario(),
+                        isUserAdded: false,
+                        badge: shared.ownedByMe ? .sharedByMe : .sharedByFriend,
+                        onTap: {
+                            selectedScenario = shared.toScenario()
+                            showPractice = true
+                        },
+                        onVoiceTap: {
+                            selectedScenario = shared.toScenario()
+                            showVoicePractice = true
+                        },
+                        onAddReply: { addReplyScenario = shared.toScenario() },
+                        onShare: shared.ownedByMe ? { shareScenario(id: shared.id) } : nil,
+                        onStopShare: shared.ownedByMe ? { stopSharedScenario(shared) } : nil,
+                        onDelete: shared.ownedByMe ? { deleteSharedScenario(shared) } : nil
+                    )
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 8)
+            if let err = sharedScenarioStore.lastError {
+                Text(err)
+                    .font(.caption2)
+                    .foregroundColor(.orange)
+                    .padding(.horizontal, 18)
+                    .padding(.top, 4)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var aiScenarioSection: some View {
+        if !aiScenarioStore.scenarios.isEmpty {
+            HStack(spacing: 6) {
+                Image(systemName: "sparkles").font(.system(size: 12)).foregroundColor(.purple)
+                Text("AI 생성 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Spacer()
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+            VStack(spacing: 14) {
+                ForEach(aiScenarioStore.scenarios) { ai in
+                    AIScenarioCard(
+                        ai: ai,
+                        onStudyTap: { selectedAIScenario = ai; showAIDetail = true },
+                        onPracticeTap: { selectedScenario = ai.toScenario(); showPractice = true },
+                        onVoiceTap: { selectedScenario = ai.toScenario(); showVoicePractice = true },
+                        onDelete: { aiScenarioStore.delete(id: ai.id) }
+                    )
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 8)
+        }
+    }
+
+    @ViewBuilder
+    private var builtinSection: some View {
+        HStack {
+            Text("기본 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+            Spacer()
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 22)
+        VStack(spacing: 14) {
+            ForEach(builtinScenarios) { scenario in
+                ScenarioCard(
+                    scenario: scenario,
+                    onTap: { selectedScenario = scenario; showPractice = true },
+                    onVoiceTap: { selectedScenario = scenario; showVoicePractice = true },
+                    onAddReply: { addReplyScenario = scenario }
+                )
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 8)
+        .padding(.bottom, 32)
+    }
+
+    @ViewBuilder
+    private var myScenarioSection: some View {
+        if !unsharedUserScenarios.isEmpty {
+            HStack {
+                Text("내 스몰토크")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+
+            VStack(spacing: 14) {
+                ForEach(unsharedUserScenarios) { userScenario in
+                    ScenarioCard(
+                        scenario: userScenario.toScenario(),
+                        isUserAdded: true,
+                        onTap: {
+                            selectedScenario = userScenario.toScenario()
+                            showPractice = true
+                        },
+                        onVoiceTap: {
+                            selectedScenario = userScenario.toScenario()
+                            showVoicePractice = true
+                        },
+                        onAddReply: { addReplyScenario = userScenario.toScenario() },
+                        onShare: { shareUserScenario(userScenario) },
+                        onDelete: { userScenarioStore.delete(id: userScenario.id) }
+                    )
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 8)
         }
     }
 
@@ -237,7 +261,12 @@ struct HomeView: View {
             if sharedScenarioStore.isLoading {
                 ProgressView().scaleEffect(0.7)
             } else {
-                Button(action: { Task { await sharedScenarioStore.refresh() } }) {
+                Button(action: {
+                    Task {
+                        await sharedScenarioStore.refresh()
+                        await sharedReplyStore.refresh(forScenarios: sharedScenarioStore.allScenarios)
+                    }
+                }) {
                     Image(systemName: "arrow.clockwise")
                         .font(.system(size: 12))
                         .foregroundColor(.secondary)
@@ -248,53 +277,115 @@ struct HomeView: View {
         .padding(.top, 22)
     }
 
+    // 이미 CloudKit에 올라간 SharedScenario 공유 (내가 공유한 항목 재공유)
     private func shareScenario(id: UUID) {
         Task {
             do {
                 let (share, container) = try await CloudKitService.shared.createShare(for: id)
-                await MainActor.run {
-                    sharePayload = SharePayload(share: share, container: container)
-                }
+                sharePayload = SharePayload(share: share, container: container)
             } catch {
-                print("CKShare 생성 실패: \(error)")
+                shareError = error.localizedDescription
+            }
+        }
+    }
+
+    private func deleteSharedScenario(_ shared: SharedScenario) {
+        Task { await sharedScenarioStore.delete(id: shared.id) }
+    }
+
+    // 이미 SharedScenario로 올라간 것의 공유 해제 (sharedSection에서 호출)
+    private func stopSharedScenario(_ shared: SharedScenario) {
+        Task {
+            isStoppingShare = true
+            defer { isStoppingShare = false }
+            let ok = await sharedScenarioStore.stopSharing(id: shared.id)
+            if !ok { shareError = sharedScenarioStore.lastError }
+        }
+    }
+
+    // 공유 해제 — CKShare 삭제 + CloudKit 레코드 삭제
+    private func stopSharingUserScenario(_ userScenario: UserScenario) {
+        Task {
+            isStoppingShare = true
+            defer { isStoppingShare = false }
+            let ok = await sharedScenarioStore.stopSharing(id: userScenario.id)
+            if !ok { shareError = sharedScenarioStore.lastError ?? "공유 해제에 실패했어요." }
+        }
+    }
+
+    // 로컬 UserScenario → CloudKit 업로드 후 공유
+    private func shareUserScenario(_ userScenario: UserScenario) {
+        Task {
+            isSharingUserScenario = true
+            defer { isSharingUserScenario = false }
+
+            // 1. SharedScenario로 변환해서 CloudKit에 저장
+            let shared = SharedScenario(
+                id: userScenario.id,
+                title: userScenario.title,
+                titleKo: userScenario.titleKo,
+                description: userScenario.description,
+                emoji: userScenario.emoji,
+                difficultyRaw: userScenario.difficultyRaw,
+                openerSpeakerIsOther: userScenario.openerSpeakerIsOther,
+                openingIndonesian: userScenario.openingIndonesian,
+                openingKorean: userScenario.openingKorean,
+                openingRomanization: userScenario.openingRomanization,
+                createdAt: userScenario.createdAt,
+                ownedByMe: true
+            )
+
+            let ok = await sharedScenarioStore.add(shared)
+            guard ok else {
+                shareError = sharedScenarioStore.lastError ?? "iCloud 저장에 실패했어요."
+                return
+            }
+
+            // 2. CKShare 생성 후 공유 시트 표시
+            do {
+                let (share, container) = try await CloudKitService.shared.createShare(for: userScenario.id)
+                sharePayload = SharePayload(share: share, container: container)
+            } catch {
+                shareError = error.localizedDescription
             }
         }
     }
 
     // MARK: Header
     private var headerBanner: some View {
-        ZStack(alignment: .bottomLeading) {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 8) {
+                Text("🇮🇩")
+                    .font(.system(size: 36))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Belajar Bahasa Indonesia")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                    Text("인도네시아어 스몰토크 연습")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundColor(.white.opacity(0.8))
+                        .lineLimit(1)
+                }
+            }
+            HStack(spacing: 8) {
+                StatPill(icon: "🎯", value: "\(builtinScenarios.count + userScenarioStore.scenarios.count + sharedScenarioStore.allScenarios.count)", label: "시나리오")
+                StatPill(icon: "💬", label: "균형 대화")
+                StatPill(icon: "💡", label: "코치 팁")
+                Spacer(minLength: 0)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 22)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background {
             LinearGradient(
                 colors: [Color(red: 0.18, green: 0.50, blue: 0.95), Color(red: 0.10, green: 0.35, blue: 0.75)],
                 startPoint: .topLeading, endPoint: .bottomTrailing
             )
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
-                    Text("🇮🇩")
-                        .font(.system(size: 36))
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Belajar Bahasa Indonesia")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                        Text("인도네시아어 스몰토크 연습")
-                            .font(.system(size: 13, weight: .medium))
-                            .foregroundColor(.white.opacity(0.8))
-                            .lineLimit(1)
-                    }
-                }
-                HStack(spacing: 8) {
-                    StatPill(icon: "🎯", value: "\(builtinScenarios.count + userScenarioStore.scenarios.count + sharedScenarioStore.allScenarios.count)", label: "시나리오")
-                    StatPill(icon: "💬", label: "균형 대화")
-                    StatPill(icon: "💡", label: "코치 팁")
-                    Spacer(minLength: 0)
-                }
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 22)
+            .ignoresSafeArea(edges: .top)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
@@ -335,7 +426,9 @@ struct ScenarioCard: View {
     var badge: ScenarioCardBadge = .none
     let onTap: () -> Void
     let onVoiceTap: () -> Void
+    var onAddReply: (() -> Void)? = nil
     var onShare: (() -> Void)? = nil
+    var onStopShare: (() -> Void)? = nil
     var onDelete: (() -> Void)? = nil
 
     private var effectiveBadge: ScenarioCardBadge {
@@ -430,9 +523,22 @@ struct ScenarioCard: View {
         )
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .contextMenu {
+            if let onAddReply {
+                Button(action: onAddReply) {
+                    Label(
+                        scenario.root.speaker == .me ? "상대방 대답 추가하기" : "내 대답 추가하기",
+                        systemImage: "plus.bubble"
+                    )
+                }
+            }
             if let onShare {
                 Button(action: onShare) {
                     Label("친구에게 공유하기", systemImage: "person.2.fill")
+                }
+            }
+            if let onStopShare {
+                Button(role: .destructive, action: onStopShare) {
+                    Label("공유 끊기", systemImage: "person.2.slash.fill")
                 }
             }
             if let onDelete {

@@ -42,6 +42,7 @@ struct ResultView: View {
                 actionButtons
             }
             .padding(18)
+            .padding(.bottom, 90)
         }
         .background(Color(.systemGroupedBackground))
         .navigationBarHidden(true)

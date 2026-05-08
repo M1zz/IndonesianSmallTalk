@@ -100,8 +100,8 @@ actor ClaudeService {
       "difficulty": "Pemula",
       "rootNode": {
         "id": "xx_root",
-        "speakerIsMe": true,
-        "indonesian": "opening sentence",
+        "speakerIsMe": false,
+        "indonesian": "opening sentence (other speaker starts)",
         "korean": "한국어 번역",
         "romanization": "한글 발음",
         "polarity": "neutral",
@@ -111,15 +111,130 @@ actor ClaudeService {
         "children": [
           {
             "id": "xx_a",
-            "speakerIsMe": false,
-            "indonesian": "...",
+            "speakerIsMe": true,
+            "indonesian": "my positive reply",
             "korean": "...",
             "romanization": "한글 발음",
             "polarity": "positive",
+            "coachTipLabel": "Teknik",
+            "coachTipText": "...",
+            "coachTipWhy": "...",
+            "children": [
+              {
+                "id": "xx_a1",
+                "speakerIsMe": false,
+                "indonesian": "their follow-up",
+                "korean": "...",
+                "romanization": "...",
+                "polarity": "positive",
+                "coachTipLabel": null,
+                "coachTipText": null,
+                "coachTipWhy": null,
+                "children": [
+                  {
+                    "id": "xx_a1a",
+                    "speakerIsMe": true,
+                    "indonesian": "my reply option A",
+                    "korean": "...",
+                    "romanization": "...",
+                    "polarity": "positive",
+                    "coachTipLabel": null,
+                    "coachTipText": null,
+                    "coachTipWhy": null,
+                    "children": [
+                      {
+                        "id": "xx_a1a1",
+                        "speakerIsMe": false,
+                        "indonesian": "closing response",
+                        "korean": "...",
+                        "romanization": "...",
+                        "polarity": "positive",
+                        "coachTipLabel": null,
+                        "coachTipText": null,
+                        "coachTipWhy": null,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "xx_a1b",
+                    "speakerIsMe": true,
+                    "indonesian": "my reply option B",
+                    "korean": "...",
+                    "romanization": "...",
+                    "polarity": "neutral",
+                    "coachTipLabel": null,
+                    "coachTipText": null,
+                    "coachTipWhy": null,
+                    "children": [
+                      {
+                        "id": "xx_a1b1",
+                        "speakerIsMe": false,
+                        "indonesian": "their closing",
+                        "korean": "...",
+                        "romanization": "...",
+                        "polarity": "neutral",
+                        "coachTipLabel": null,
+                        "coachTipText": null,
+                        "coachTipWhy": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "xx_b",
+            "speakerIsMe": true,
+            "indonesian": "my neutral/negative reply",
+            "korean": "...",
+            "romanization": "...",
+            "polarity": "negative",
             "coachTipLabel": null,
             "coachTipText": null,
             "coachTipWhy": null,
-            "children": [...]
+            "children": [
+              {
+                "id": "xx_b1",
+                "speakerIsMe": false,
+                "indonesian": "their follow-up (different path)",
+                "korean": "...",
+                "romanization": "...",
+                "polarity": "neutral",
+                "coachTipLabel": null,
+                "coachTipText": null,
+                "coachTipWhy": null,
+                "children": [
+                  {
+                    "id": "xx_b1a",
+                    "speakerIsMe": true,
+                    "indonesian": "my reply",
+                    "korean": "...",
+                    "romanization": "...",
+                    "polarity": "positive",
+                    "coachTipLabel": null,
+                    "coachTipText": null,
+                    "coachTipWhy": null,
+                    "children": [
+                      {
+                        "id": "xx_b1a1",
+                        "speakerIsMe": false,
+                        "indonesian": "closing",
+                        "korean": "...",
+                        "romanization": "...",
+                        "polarity": "positive",
+                        "coachTipLabel": null,
+                        "coachTipText": null,
+                        "coachTipWhy": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -137,17 +252,23 @@ actor ClaudeService {
       ]
     }
 
-    Rules:
+    TREE DEPTH RULES — follow exactly:
+    - Root node is always the OTHER speaker (speakerIsMe: false) opening the conversation
+    - Root must have 2–3 children (speakerIsMe: true) representing different ways I can respond
+    - Each path must be EXACTLY 5 nodes deep from root (root=depth0, leaf=depth4):
+        depth 0: root (other) → depth 1: my reply (me) → depth 2: their follow-up (other) → depth 3: my response (me) → depth 4: their closing (other, children:[])
+    - At depth 1: 2–3 branches (positive / neutral / negative replies)
+    - At depth 3: 2 branches under at least one depth-2 node (showing choice at that point)
+    - Total nodes: 20–35
+    - Strictly alternate speakers every level: speakerIsMe flips at every depth
     - difficulty: "Pemula", "Menengah", or "Mahir"
-    - Node IDs: short + letter/number (e.g. "mk_root", "mk_a", "mk_a1", "mk_b")
-    - Strictly alternate speakers: speakerIsMe:true → children all false, and vice versa
-    - 2–3 top-level branches from root; each branch 3–4 levels deep
-    - polarity: "positive" = good move, "negative" = realistic but less ideal, "neutral" = opener
-    - coachTip: provide for key nodes (strategy nodes), null for simple response nodes
-    - romanization: Korean phonetics ONLY (한글), e.g. "아빠까 이니 쁘다스?" NOT Latin
-    - vocabulary: 15–25 items covering ALL non-trivial words in the tree
-    - grammarPoints: 3–5 points covering key patterns from the conversation
-    - Output ONLY valid JSON. Nothing else.
+    - Node IDs: short prefix + letter/number (e.g. "rs_root", "rs_a", "rs_a1", "rs_a1a", "rs_a1a1")
+    - polarity: "positive" = good/ideal, "negative" = awkward/less ideal, "neutral" = opener/factual
+    - coachTip: provide for depth-1 nodes (my first replies) and 1–2 key strategy nodes; null elsewhere
+    - romanization: Korean phonetics ONLY (한글), e.g. "시아빠 까바르?" NOT Latin romanization
+    - vocabulary: 15–20 items covering key words in the tree
+    - grammarPoints: 3–4 key grammar patterns
+    - Output ONLY valid JSON. No markdown, no explanation, no extra text.
     """
 
     // Used when converting pasted HTML from a learning website
@@ -166,8 +287,8 @@ actor ClaudeService {
       "difficulty": "Pemula",
       "rootNode": {
         "id": "xx_root",
-        "speakerIsMe": true,
-        "indonesian": "opening sentence extracted from content",
+        "speakerIsMe": false,
+        "indonesian": "opening sentence from content",
         "korean": "한국어 번역",
         "romanization": "한글 발음",
         "polarity": "neutral",
@@ -177,7 +298,7 @@ actor ClaudeService {
         "children": [
           {
             "id": "xx_a",
-            "speakerIsMe": false,
+            "speakerIsMe": true,
             "indonesian": "...",
             "korean": "...",
             "romanization": "한글 발음",
@@ -203,18 +324,23 @@ actor ClaudeService {
       ]
     }
 
-    Rules:
-    - Extract REAL dialogue lines from the source content — do not invent new sentences
-    - Organize extracted dialogues into a branching tree (2–3 branches showing different situations)
+    TREE DEPTH RULES — follow exactly:
+    - Root node is the OTHER speaker (speakerIsMe: false) — use real opening line from source
+    - Root must have 2–3 children (speakerIsMe: true) representing different response approaches
+    - Each path must be EXACTLY 5 nodes deep (root=depth0 to leaf=depth4):
+        depth 0: root (other) → depth 1: my reply (me) → depth 2: their follow-up (other) → depth 3: my response (me) → depth 4: their closing (other, children:[])
+    - At depth 1: 2–3 branches; at depth 3: 2 branches under at least one depth-2 node
+    - Total nodes: 20–35
+    - Strictly alternate speakers: speakerIsMe flips at every depth
+    - Extract REAL dialogue lines from source — do not invent sentences not found in the content
     - difficulty: "Pemula", "Menengah", or "Mahir" based on content complexity
-    - Node IDs: short + letter/number (e.g. "mk_root", "mk_a", "mk_a1")
-    - Strictly alternate speakers: speakerIsMe:true → children all false, and vice versa
-    - polarity: "positive" = good move, "negative" = realistic but less ideal, "neutral" = opener
-    - coachTip: provide for key strategy nodes, null for simple response nodes
-    - romanization: Korean phonetics ONLY (한글), e.g. "아빠까 이니 쁘다스?" NOT Latin
-    - vocabulary: extract ALL non-trivial words that appear in the source content
-    - grammarPoints: 3–5 key grammar patterns found in the source content
-    - Output ONLY valid JSON. Nothing else.
+    - Node IDs: short prefix + letter/number (e.g. "mk_root", "mk_a", "mk_a1", "mk_a1a", "mk_a1a1")
+    - polarity: "positive" = good/ideal, "negative" = awkward/less ideal, "neutral" = opener/factual
+    - coachTip: provide for depth-1 nodes and 1–2 key strategy nodes; null elsewhere
+    - romanization: Korean phonetics ONLY (한글), NOT Latin romanization
+    - vocabulary: 15–20 items from source content
+    - grammarPoints: 3–4 key grammar patterns
+    - Output ONLY valid JSON. No markdown, no explanation.
     """
 
     // MARK: - Public API
@@ -222,7 +348,7 @@ actor ClaudeService {
     func generate(prompt: String, apiKey: String) async throws -> AIScenario {
         let body: [String: Any] = [
             "model": "claude-opus-4-7",
-            "max_tokens": 8000,
+            "max_tokens": 16000,
             "system": topicSystemPrompt,
             "messages": [["role": "user", "content": "Generate a scenario for: \(prompt)"]]
         ]
@@ -234,7 +360,7 @@ actor ClaudeService {
         let truncated = String(stripped.prefix(12000))
         let body: [String: Any] = [
             "model": "claude-opus-4-7",
-            "max_tokens": 8000,
+            "max_tokens": 16000,
             "system": htmlSystemPrompt,
             "messages": [["role": "user", "content": "Convert this Indonesian learning content:\n\n\(truncated)"]]
         ]
@@ -280,8 +406,24 @@ actor ClaudeService {
         do {
             let raw = try JSONDecoder().decode(RawScenario.self, from: jsonData)
             return raw.toAIScenario(userPrompt: userPrompt)
+        } catch let decodeError as DecodingError {
+            // Surface the exact field that failed so we can debug prompt issues
+            let context: String
+            switch decodeError {
+            case .keyNotFound(let key, _):
+                context = "필드 누락: '\(key.stringValue)'"
+            case .typeMismatch(_, let ctx):
+                context = "타입 불일치: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))"
+            case .valueNotFound(_, let ctx):
+                context = "값 없음: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))"
+            case .dataCorrupted(let ctx):
+                context = "데이터 손상: \(ctx.debugDescription)"
+            @unknown default:
+                context = decodeError.localizedDescription
+            }
+            throw ClaudeError.invalidJSON(context)
         } catch {
-            throw ClaudeError.invalidJSON("\(error): \(jsonText.prefix(300))")
+            throw ClaudeError.invalidJSON(error.localizedDescription)
         }
     }
 

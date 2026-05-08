@@ -151,44 +151,84 @@
 		SRCGRP /* IndonesianSmallTalk */ = {
 			isa = PBXGroup;
 			children = (
-				A001 /* IndonesianSmallTalkApp.swift */,
-				A002 /* ContentView.swift */,
-				A003 /* ConversationTree.swift */,
-				A004 /* ConversationData.swift */,
-				A005 /* HomeView.swift */,
-				A006 /* TreeMapView.swift */,
-				A007 /* PracticeView.swift */,
-				A008 /* CoachTipView.swift */,
-				A009 /* ResultView.swift */,
-				A011 /* SpeechManager.swift */,
-				A012 /* VoicePracticeView.swift */,
-				A013 /* MyPhrase.swift */,
-				A014 /* AddPhraseView.swift */,
-				A015 /* MyPhrasesView.swift */,
-				A016 /* UserReply.swift */,
-				A017 /* AddUserReplyView.swift */,
-				A018 /* UserScenario.swift */,
-				A019 /* AddScenarioView.swift */,
-				A020 /* PhrasePickerView.swift */,
-				A021 /* CloudKitService.swift */,
-				A022 /* SharedScenario.swift */,
-				A023 /* SharedScenarioStore.swift */,
-				A024 /* CloudKitShareSheet.swift */,
-				A025 /* AppDelegate.swift */,
-				A026 /* SceneDelegate.swift */,
-				A027 /* SharedUserReply.swift */,
-				A028 /* SharedReplyStore.swift */,
-				A029 /* Polarity.swift */,
-				A030 /* KeyboardManageView.swift */,
-				A031 /* AIScenario.swift */,
-				A032 /* AIScenarioStore.swift */,
-				A033 /* ClaudeService.swift */,
-				A034 /* GenerateScenarioView.swift */,
-				A035 /* AIScenarioDetailView.swift */,
+				GRP_APP /* App */,
+				GRP_MODELS /* Models */,
+				GRP_STORES /* Stores */,
+				GRP_SERVICES /* Services */,
+				GRP_VIEWS /* Views */,
 				AENT /* IndonesianSmallTalk.entitlements */,
 				A010 /* Assets.xcassets */,
 			);
 			path = IndonesianSmallTalk;
+			sourceTree = "<group>";
+		};
+		GRP_APP /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A001 /* IndonesianSmallTalkApp.swift */,
+				A025 /* AppDelegate.swift */,
+				A026 /* SceneDelegate.swift */,
+				A002 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GRP_MODELS /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A003 /* ConversationTree.swift */,
+				A004 /* ConversationData.swift */,
+				A029 /* Polarity.swift */,
+				A013 /* MyPhrase.swift */,
+				A018 /* UserScenario.swift */,
+				A016 /* UserReply.swift */,
+				A031 /* AIScenario.swift */,
+				A022 /* SharedScenario.swift */,
+				A027 /* SharedUserReply.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP_STORES /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A032 /* AIScenarioStore.swift */,
+				A023 /* SharedScenarioStore.swift */,
+				A028 /* SharedReplyStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		GRP_SERVICES /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A021 /* CloudKitService.swift */,
+				A033 /* ClaudeService.swift */,
+				A011 /* SpeechManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GRP_VIEWS /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A005 /* HomeView.swift */,
+				A007 /* PracticeView.swift */,
+				A009 /* ResultView.swift */,
+				A019 /* AddScenarioView.swift */,
+				A017 /* AddUserReplyView.swift */,
+				A014 /* AddPhraseView.swift */,
+				A008 /* CoachTipView.swift */,
+				A006 /* TreeMapView.swift */,
+				A015 /* MyPhrasesView.swift */,
+				A020 /* PhrasePickerView.swift */,
+				A030 /* KeyboardManageView.swift */,
+				A024 /* CloudKitShareSheet.swift */,
+				A012 /* VoicePracticeView.swift */,
+				A034 /* GenerateScenarioView.swift */,
+				A035 /* AIScenarioDetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,7 +531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -525,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -549,7 +589,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devkoan.IndonesianSmallTalk.KeyboardExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -574,7 +614,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devkoan.IndonesianSmallTalk.KeyboardExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -70,4 +70,18 @@ final class SharedScenarioStore: ObservableObject {
             lastError = error.localizedDescription
         }
     }
+
+    func stopSharing(id: UUID) async -> Bool {
+        do {
+            try await service.stopSharing(for: id)
+            myScenarios.removeAll { $0.id == id }
+            lastError = nil
+            return true
+        } catch {
+            lastError = error.localizedDescription
+            return false
+        }
+    }
+
+    var myScenarioIDs: Set<UUID> { Set(myScenarios.map { $0.id }) }
 }

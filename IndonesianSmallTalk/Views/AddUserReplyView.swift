@@ -2,7 +2,9 @@ import SwiftUI
 
 struct AddUserReplyView: View {
     let parentNodeId: String
+    var nextSpeaker: ConversationNode.Speaker = .me
     var sharedScenario: SharedScenario? = nil
+    var editingReply: UserReply? = nil
 
     @EnvironmentObject var store: UserReplyStore
     @EnvironmentObject var sharedReplyStore: SharedReplyStore
@@ -12,12 +14,26 @@ struct AddUserReplyView: View {
     @State private var saving = false
     @State private var saveError: String?
 
-    @State private var indonesian = ""
-    @State private var korean = ""
-    @State private var romanization = ""
-    @State private var polarity: Polarity = .neutral
+    @State private var indonesian: String
+    @State private var korean: String
+    @State private var romanization: String
+    @State private var polarity: Polarity
     @State private var permissionAsked = false
     @State private var showPhrasePicker = false
+
+    init(parentNodeId: String,
+         nextSpeaker: ConversationNode.Speaker = .me,
+         sharedScenario: SharedScenario? = nil,
+         editingReply: UserReply? = nil) {
+        self.parentNodeId = parentNodeId
+        self.nextSpeaker = nextSpeaker
+        self.sharedScenario = sharedScenario
+        self.editingReply = editingReply
+        _indonesian = State(initialValue: editingReply?.indonesian ?? "")
+        _korean = State(initialValue: editingReply?.korean ?? "")
+        _romanization = State(initialValue: editingReply?.romanization ?? "")
+        _polarity = State(initialValue: editingReply?.polarity ?? .neutral)
+    }
 
     var body: some View {
         NavigationStack {
@@ -91,7 +107,9 @@ struct AddUserReplyView: View {
                         .font(.caption2)
                 }
             }
-            .navigationTitle("내 대답 추가")
+            .navigationTitle(editingReply != nil
+                ? (nextSpeaker == .other ? "상대방 응답 수정" : "내 대답 수정")
+                : (nextSpeaker == .other ? "상대방 응답 추가" : "내 대답 추가"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -140,7 +158,14 @@ struct AddUserReplyView: View {
     }
 
     private func save() {
-        if let sharedScenario {
+        if var existing = editingReply {
+            existing.indonesian = trimmed(indonesian)
+            existing.korean = trimmed(korean)
+            existing.romanization = trimmed(romanization)
+            existing.polarity = polarity
+            store.update(existing)
+            dismiss()
+        } else if let sharedScenario {
             saveShared(scenario: sharedScenario)
         } else {
             let reply = UserReply(
@@ -148,7 +173,8 @@ struct AddUserReplyView: View {
                 indonesian: trimmed(indonesian),
                 korean: trimmed(korean),
                 romanization: trimmed(romanization),
-                polarity: polarity
+                polarity: polarity,
+                speakerRaw: nextSpeaker == .other ? "other" : "me"
             )
             store.add(reply)
             dismiss()
@@ -166,6 +192,7 @@ struct AddUserReplyView: View {
             korean: trimmed(korean),
             romanization: trimmed(romanization),
             polarity: polarity,
+            speakerRaw: nextSpeaker == .other ? "other" : "me",
             createdAt: Date(),
             ownedByMe: scenario.ownedByMe,
             zoneID: nil
