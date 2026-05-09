@@ -2,11 +2,77 @@ import SwiftUI
 
 struct MyPhrasesView: View {
     @EnvironmentObject var store: PhraseStore
+    @EnvironmentObject var vocabStore: VocabularyStore
     @StateObject private var speech = SpeechManager()
     @State private var practicing: MyPhrase?
     @State private var editing: MyPhrase?
+    @State private var selectedTab = 0
+    @State private var showAddVocab = false
+    @State private var editingVocab: VocabWord?
+    @State private var showFlashcard = false
 
     var body: some View {
+        Group {
+            if selectedTab == 0 {
+                phrasesContent
+            } else {
+                VocabularyView(
+                    onAdd: { showAddVocab = true },
+                    onEdit: { editingVocab = $0 }
+                )
+            }
+        }
+        .navigationTitle("내 표현")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Picker("", selection: $selectedTab) {
+                    Text("숙어").tag(0)
+                    Text("단어장").tag(1)
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 160)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                if selectedTab == 1 {
+                    HStack(spacing: 4) {
+                        Button {
+                            let words = vocabStore.unlearnedWords.isEmpty ? vocabStore.words : vocabStore.unlearnedWords
+                            if !words.isEmpty { showFlashcard = true }
+                        } label: {
+                            Image(systemName: "rectangle.on.rectangle")
+                        }
+                        Button { showAddVocab = true } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+            }
+        }
+        .sheet(item: $practicing) { phrase in
+            PhrasePracticeView(phrase: phrase)
+        }
+        .sheet(item: $editing) { phrase in
+            AddPhraseView(editing: phrase)
+        }
+        .sheet(isPresented: $showAddVocab) {
+            AddVocabularyView()
+                .environmentObject(vocabStore)
+        }
+        .sheet(item: $editingVocab) { word in
+            AddVocabularyView(editing: word)
+                .environmentObject(vocabStore)
+        }
+        .sheet(isPresented: $showFlashcard) {
+            let words = vocabStore.unlearnedWords.isEmpty ? vocabStore.words : vocabStore.unlearnedWords
+            FlashcardView(words: words)
+                .environmentObject(vocabStore)
+        }
+    }
+
+    // MARK: Phrases tab content
+
+    private var phrasesContent: some View {
         Group {
             if store.phrases.isEmpty {
                 emptyState
@@ -37,14 +103,6 @@ struct MyPhrasesView: View {
                 }
                 .listStyle(.insetGrouped)
             }
-        }
-        .navigationTitle("내 표현")
-        .navigationBarTitleDisplayMode(.inline)
-        .sheet(item: $practicing) { phrase in
-            PhrasePracticeView(phrase: phrase)
-        }
-        .sheet(item: $editing) { phrase in
-            AddPhraseView(editing: phrase)
         }
     }
 
@@ -269,7 +327,6 @@ struct PhrasePracticeView: View {
             target: phrase.indonesian
         )
         score = s
-        // 충분히 잘 따라말한 경우만 카운트, 한 세션당 1회만
         if !didCount && s >= 0.5 {
             didCount = true
             store.incrementStudyCount(id: phrase.id)

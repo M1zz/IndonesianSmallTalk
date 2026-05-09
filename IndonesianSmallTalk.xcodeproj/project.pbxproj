@@ -47,6 +47,9 @@
 		B038 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
 		B039 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
 		B040 /* SlangManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040 /* SlangManageView.swift */; };
+		B041 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041 /* Vocabulary.swift */; };
+		B042 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042 /* VocabularyView.swift */; };
+		B043 /* AddVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043 /* AddVocabularyView.swift */; };
 		BK005 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
 		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
 		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
@@ -122,6 +125,9 @@
 		A038 /* SlangPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlangPair.swift; sourceTree = "<group>"; };
 		A039 /* KeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 		A040 /* SlangManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlangManageView.swift; sourceTree = "<group>"; };
+		A041 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		A042 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
+		A043 /* AddVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyView.swift; sourceTree = "<group>"; };
 		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		AK001 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 				A022 /* SharedScenario.swift */,
 				A027 /* SharedUserReply.swift */,
 				A038 /* SlangPair.swift */,
+				A041 /* Vocabulary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +264,8 @@
 				A036 /* OnboardingView.swift */,
 				A037 /* EncouragementBanner.swift */,
 				A040 /* SlangManageView.swift */,
+				A042 /* VocabularyView.swift */,
+				A043 /* AddVocabularyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +413,9 @@
 				B038 /* SlangPair.swift in Sources */,
 				B039 /* KeyboardSettings.swift in Sources */,
 				B040 /* SlangManageView.swift in Sources */,
+				B041 /* Vocabulary.swift in Sources */,
+				B042 /* VocabularyView.swift in Sources */,
+				B043 /* AddVocabularyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

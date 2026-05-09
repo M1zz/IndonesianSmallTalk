@@ -11,6 +11,7 @@ struct IndonesianSmallTalkApp: App {
     @StateObject private var sharedReplyStore = SharedReplyStore()
     @StateObject private var aiScenarioStore = AIScenarioStore()
     @StateObject private var slangStore = SlangStore()
+    @StateObject private var vocabularyStore = VocabularyStore()
 
     var body: some Scene {
         WindowGroup {
@@ -22,6 +23,7 @@ struct IndonesianSmallTalkApp: App {
                 .environmentObject(sharedReplyStore)
                 .environmentObject(aiScenarioStore)
                 .environmentObject(slangStore)
+                .environmentObject(vocabularyStore)
                 .task {
                     AppDelegate.onShareAccepted = {
                         Task { await refreshAll() }
