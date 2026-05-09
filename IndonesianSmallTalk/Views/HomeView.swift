@@ -17,6 +17,7 @@ struct HomeView: View {
     @State private var isSharingUserScenario = false
     @State private var isStoppingShare = false
     @State private var addReplyScenario: ConversationScenario?
+    @State private var showOnboarding = false
 
     struct SharePayload: Identifiable {
         let id = UUID()
@@ -124,6 +125,9 @@ struct HomeView: View {
         .refreshable {
             await sharedScenarioStore.refresh()
             await sharedReplyStore.refresh(forScenarios: sharedScenarioStore.allScenarios)
+        }
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView()
         }
     }
 
@@ -353,32 +357,45 @@ struct HomeView: View {
 
     // MARK: Header
     private var headerBanner: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 8) {
-                Text("🇮🇩")
-                    .font(.system(size: 36))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Belajar Bahasa Indonesia")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
-                    Text("인도네시아어 스몰토크 연습")
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundColor(.white.opacity(0.8))
-                        .lineLimit(1)
+        ZStack(alignment: .topTrailing) {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 8) {
+                    Text("🇮🇩")
+                        .font(.system(size: 36))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Belajar Bahasa Indonesia")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                        Text("인도네시아어 스몰토크 연습")
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundColor(.white.opacity(0.8))
+                            .lineLimit(1)
+                    }
+                }
+                HStack(spacing: 8) {
+                    StatPill(icon: "🎯", value: "\(builtinScenarios.count + userScenarioStore.scenarios.count + sharedScenarioStore.allScenarios.count)", label: "시나리오")
+                    StatPill(icon: "💬", label: "균형 대화")
+                    StatPill(icon: "💡", label: "코치 팁")
+                    Spacer(minLength: 0)
                 }
             }
-            HStack(spacing: 8) {
-                StatPill(icon: "🎯", value: "\(builtinScenarios.count + userScenarioStore.scenarios.count + sharedScenarioStore.allScenarios.count)", label: "시나리오")
-                StatPill(icon: "💬", label: "균형 대화")
-                StatPill(icon: "💡", label: "코치 팁")
-                Spacer(minLength: 0)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 22)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            Button(action: { showOnboarding = true }) {
+                Image(systemName: "questionmark.circle.fill")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.white)
+                    .frame(width: 36, height: 36)
+                    .background(Circle().fill(.white.opacity(0.18)))
+                    .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 0.5))
             }
+            .padding(.top, 14)
+            .padding(.trailing, 16)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 22)
-        .frame(maxWidth: .infinity, alignment: .leading)
         .background {
             LinearGradient(
                 colors: [Color(red: 0.18, green: 0.50, blue: 0.95), Color(red: 0.10, green: 0.35, blue: 0.75)],

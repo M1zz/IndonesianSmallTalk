@@ -2,10 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var aiScenarioStore: AIScenarioStore
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @State private var selectedTab = 0
     @State private var showAddMenu = false
     @State private var showAddScenario = false
     @State private var showGenerateScenario = false
+    @State private var showOnboarding = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -43,6 +45,14 @@ struct ContentView: View {
         .sheet(isPresented: $showGenerateScenario) {
             GenerateScenarioView()
                 .environmentObject(aiScenarioStore)
+        }
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView()
+        }
+        .task {
+            if !hasSeenOnboarding {
+                showOnboarding = true
+            }
         }
     }
 

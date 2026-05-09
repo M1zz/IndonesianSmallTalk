@@ -10,6 +10,7 @@ struct IndonesianSmallTalkApp: App {
     @StateObject private var sharedScenarioStore = SharedScenarioStore()
     @StateObject private var sharedReplyStore = SharedReplyStore()
     @StateObject private var aiScenarioStore = AIScenarioStore()
+    @StateObject private var slangStore = SlangStore()
 
     var body: some Scene {
         WindowGroup {
@@ -20,6 +21,7 @@ struct IndonesianSmallTalkApp: App {
                 .environmentObject(sharedScenarioStore)
                 .environmentObject(sharedReplyStore)
                 .environmentObject(aiScenarioStore)
+                .environmentObject(slangStore)
                 .task {
                     AppDelegate.onShareAccepted = {
                         Task { await refreshAll() }

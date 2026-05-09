@@ -27,6 +27,12 @@ struct AddPhraseView: View {
         NavigationStack {
             Form {
                 Section {
+                    EncouragementBanner(tone: .phrase)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+
+                Section {
                     HStack(alignment: .top, spacing: 8) {
                         TextField("예: Apa kabar?", text: $indonesian, axis: .vertical)
                             .lineLimit(1...3)

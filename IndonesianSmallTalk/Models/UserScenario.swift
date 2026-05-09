@@ -57,6 +57,12 @@ final class UserScenarioStore: ObservableObject {
         save()
     }
 
+    func update(_ s: UserScenario) {
+        guard let idx = scenarios.firstIndex(where: { $0.id == s.id }) else { return }
+        scenarios[idx] = s
+        save()
+    }
+
     func delete(id: UUID) {
         scenarios.removeAll { $0.id == id }
         save()

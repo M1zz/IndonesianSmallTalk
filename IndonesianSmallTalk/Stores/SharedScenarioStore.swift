@@ -62,6 +62,22 @@ final class SharedScenarioStore: ObservableObject {
         }
     }
 
+    /// 내가 만든 공유 시나리오 메타데이터 업데이트 (필드 단위 LWW)
+    func update(_ scenario: SharedScenario) async -> Bool {
+        guard scenario.ownedByMe else { return false }
+        do {
+            try await service.savePrivate(scenario)
+            if let idx = myScenarios.firstIndex(where: { $0.id == scenario.id }) {
+                myScenarios[idx] = scenario
+            }
+            lastError = nil
+            return true
+        } catch {
+            lastError = error.localizedDescription
+            return false
+        }
+    }
+
     func delete(id: UUID) async {
         do {
             try await service.deletePrivate(id: id)

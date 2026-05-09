@@ -1,30 +1,82 @@
 import SwiftUI
 
+enum ScenarioEditTarget {
+    case local(UserScenario)
+    case shared(SharedScenario)
+}
+
 struct AddScenarioView: View {
+    var editing: ScenarioEditTarget? = nil
+
     @EnvironmentObject var store: UserScenarioStore
     @EnvironmentObject var sharedStore: SharedScenarioStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var speech = SpeechManager()
 
-    @State private var title = ""
-    @State private var titleKo = ""
-    @State private var description = ""
-    @State private var emoji = "💬"
-    @State private var difficulty: ConversationScenario.Difficulty = .beginner
-    @State private var openerSpeakerIsOther = true
-    @State private var openingIndonesian = ""
-    @State private var openingKorean = ""
-    @State private var openingRomanization = ""
-    @State private var shareWithFriends = false
+    @State private var title: String
+    @State private var titleKo: String
+    @State private var description: String
+    @State private var emoji: String
+    @State private var difficulty: ConversationScenario.Difficulty
+    @State private var openerSpeakerIsOther: Bool
+    @State private var openingIndonesian: String
+    @State private var openingKorean: String
+    @State private var openingRomanization: String
+    @State private var shareWithFriends: Bool
     @State private var permissionAsked = false
     @State private var saving = false
     @State private var saveError: String?
+
+    init(editing: ScenarioEditTarget? = nil) {
+        self.editing = editing
+        switch editing {
+        case .local(let s):
+            _title = State(initialValue: s.title)
+            _titleKo = State(initialValue: s.titleKo)
+            _description = State(initialValue: s.description)
+            _emoji = State(initialValue: s.emoji)
+            _difficulty = State(initialValue: ConversationScenario.Difficulty(rawValue: s.difficultyRaw) ?? .beginner)
+            _openerSpeakerIsOther = State(initialValue: s.openerSpeakerIsOther)
+            _openingIndonesian = State(initialValue: s.openingIndonesian)
+            _openingKorean = State(initialValue: s.openingKorean)
+            _openingRomanization = State(initialValue: s.openingRomanization)
+            _shareWithFriends = State(initialValue: false)  // 로컬 → 공유 전환은 v2 (지금은 수정만)
+        case .shared(let s):
+            _title = State(initialValue: s.title)
+            _titleKo = State(initialValue: s.titleKo)
+            _description = State(initialValue: s.description)
+            _emoji = State(initialValue: s.emoji)
+            _difficulty = State(initialValue: ConversationScenario.Difficulty(rawValue: s.difficultyRaw) ?? .beginner)
+            _openerSpeakerIsOther = State(initialValue: s.openerSpeakerIsOther)
+            _openingIndonesian = State(initialValue: s.openingIndonesian)
+            _openingKorean = State(initialValue: s.openingKorean)
+            _openingRomanization = State(initialValue: s.openingRomanization)
+            _shareWithFriends = State(initialValue: true)  // 이미 공유됨, 토글 잠금
+        case .none:
+            _title = State(initialValue: "")
+            _titleKo = State(initialValue: "")
+            _description = State(initialValue: "")
+            _emoji = State(initialValue: "💬")
+            _difficulty = State(initialValue: .beginner)
+            _openerSpeakerIsOther = State(initialValue: true)
+            _openingIndonesian = State(initialValue: "")
+            _openingKorean = State(initialValue: "")
+            _openingRomanization = State(initialValue: "")
+            _shareWithFriends = State(initialValue: false)
+        }
+    }
 
     private let emojiChoices = ["💬", "🌅", "☀️", "☕️", "💼", "🍜", "🚌", "🛒", "🎬", "🏖️", "🌧️", "🎉", "🤝", "📱"]
 
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    EncouragementBanner(tone: .scenario)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+
                 Section("스몰토크 정보") {
                     HStack {
                         Text("이모지").font(.subheadline).foregroundColor(.secondary)
@@ -81,14 +133,24 @@ struct AddScenarioView: View {
                 }
 
                 Section {
-                    Toggle(isOn: $shareWithFriends) {
-                        HStack(spacing: 6) {
-                            Image(systemName: "person.2.fill").foregroundColor(.purple)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("친구와 함께 보기").font(.system(size: 14, weight: .medium))
-                                Text("iCloud 로 공유 — 만든 후 카드에서 공유 링크 보내기")
-                                    .font(.system(size: 11)).foregroundColor(.secondary)
+                    if editing == nil {
+                        Toggle(isOn: $shareWithFriends) {
+                            HStack(spacing: 6) {
+                                Image(systemName: "person.2.fill").foregroundColor(.purple)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("친구와 함께 보기").font(.system(size: 14, weight: .medium))
+                                    Text("iCloud 로 공유 — 만든 후 카드에서 공유 링크 보내기")
+                                        .font(.system(size: 11)).foregroundColor(.secondary)
+                                }
                             }
+                        }
+                    } else {
+                        HStack(spacing: 6) {
+                            Image(systemName: shareWithFriends ? "person.2.fill" : "lock.fill")
+                                .foregroundColor(shareWithFriends ? .purple : .secondary)
+                            Text(shareWithFriends ? "친구와 함께 보는 시나리오" : "내 기기에만 저장")
+                                .font(.system(size: 13))
+                                .foregroundColor(.secondary)
                         }
                     }
                     if let saveError {
@@ -97,12 +159,14 @@ struct AddScenarioView: View {
                 }
 
                 Section {
-                    Text("저장 후 연습 화면에서 '+ 내 대답 추가하기'로 답변을 하나씩 늘릴 수 있어요.")
+                    Text(editing == nil
+                        ? "저장 후 연습 화면에서 '+ 내 대답 추가하기'로 답변을 하나씩 늘릴 수 있어요."
+                        : "이 시나리오의 첫 마디·메타데이터를 수정합니다. 추가된 응답은 그대로 유지돼요.")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle("새 스몰토크")
+            .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -150,11 +214,51 @@ struct AddScenarioView: View {
         }
     }
 
+    private var navTitle: String {
+        switch editing {
+        case .none: return "새 스몰토크"
+        case .some: return "스몰토크 수정"
+        }
+    }
+
     private func save() {
-        if shareWithFriends {
-            saveShared()
-        } else {
-            saveLocal()
+        switch editing {
+        case .local(var existing):
+            existing.title = trimmed(title)
+            existing.titleKo = trimmed(titleKo)
+            existing.description = trimmed(description)
+            existing.emoji = emoji
+            existing.difficultyRaw = difficulty.rawValue
+            existing.openerSpeakerIsOther = openerSpeakerIsOther
+            existing.openingIndonesian = trimmed(openingIndonesian)
+            existing.openingKorean = trimmed(openingKorean)
+            existing.openingRomanization = trimmed(openingRomanization)
+            store.update(existing)
+            dismiss()
+
+        case .shared(var existing):
+            existing.title = trimmed(title)
+            existing.titleKo = trimmed(titleKo)
+            existing.description = trimmed(description)
+            existing.emoji = emoji
+            existing.difficultyRaw = difficulty.rawValue
+            existing.openerSpeakerIsOther = openerSpeakerIsOther
+            existing.openingIndonesian = trimmed(openingIndonesian)
+            existing.openingKorean = trimmed(openingKorean)
+            existing.openingRomanization = trimmed(openingRomanization)
+            saving = true
+            saveError = nil
+            Task {
+                let ok = await sharedStore.update(existing)
+                await MainActor.run {
+                    saving = false
+                    if ok { dismiss() }
+                    else { saveError = sharedStore.lastError ?? "저장 실패" }
+                }
+            }
+
+        case .none:
+            if shareWithFriends { saveShared() } else { saveLocal() }
         }
     }
 

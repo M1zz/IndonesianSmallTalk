@@ -39,6 +39,12 @@ struct AddUserReplyView: View {
         NavigationStack {
             Form {
                 Section {
+                    EncouragementBanner(tone: .reply)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+
+                Section {
                     Button(action: { showPhrasePicker = true }) {
                         HStack(spacing: 8) {
                             Image(systemName: "books.vertical.fill")
