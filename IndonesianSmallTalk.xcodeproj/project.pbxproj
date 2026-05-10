@@ -50,6 +50,7 @@
 		B041 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041 /* Vocabulary.swift */; };
 		B042 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042 /* VocabularyView.swift */; };
 		B043 /* AddVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043 /* AddVocabularyView.swift */; };
+		B044 /* BuiltInVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044 /* BuiltInVocabulary.swift */; };
 		BK005 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
 		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
 		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
@@ -128,6 +129,7 @@
 		A041 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		A042 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		A043 /* AddVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyView.swift; sourceTree = "<group>"; };
+		A044 /* BuiltInVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInVocabulary.swift; sourceTree = "<group>"; };
 		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		AK001 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				A027 /* SharedUserReply.swift */,
 				A038 /* SlangPair.swift */,
 				A041 /* Vocabulary.swift */,
+				A044 /* BuiltInVocabulary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				B041 /* Vocabulary.swift in Sources */,
 				B042 /* VocabularyView.swift in Sources */,
 				B043 /* AddVocabularyView.swift in Sources */,
+				B044 /* BuiltInVocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

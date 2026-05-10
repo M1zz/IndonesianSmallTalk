@@ -127,6 +127,8 @@ struct WordRow: View {
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundColor(word.isLearned ? .secondary : .primary)
                         .strikethrough(word.isLearned)
+                        .lineLimit(1)
+                    TierBadge(tier: word.tier)
                     CategoryBadge(category: word.category)
                 }
                 if !word.romanization.isEmpty {
@@ -134,15 +136,23 @@ struct WordRow: View {
                         .font(.system(size: 11, design: .serif))
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
+                        .lineLimit(1)
                 }
                 Text(word.korean)
                     .font(.system(size: 13))
                     .foregroundColor(.secondary)
-                if !word.notes.isEmpty {
-                    Text(word.notes)
-                        .font(.system(size: 11))
-                        .foregroundColor(Color(.tertiaryLabel))
-                        .lineLimit(1)
+                    .lineLimit(1)
+                HStack(spacing: 8) {
+                    if !word.examples.isEmpty {
+                        Label("\(word.examples.count)", systemImage: "text.bubble")
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(Color(.tertiaryLabel))
+                    }
+                    if !word.notes.isEmpty {
+                        Image(systemName: "note.text")
+                            .font(.system(size: 10))
+                            .foregroundColor(Color(.tertiaryLabel))
+                    }
                 }
             }
 
@@ -163,19 +173,61 @@ struct WordRow: View {
 struct CategoryBadge: View {
     let category: String
 
-    private var color: Color {
+    static func color(for category: String) -> Color {
         switch category {
-        case "명사":   return .blue
-        case "동사":   return .orange
-        case "형용사": return .green
-        case "부사":   return .purple
-        case "숙어":   return .pink
-        default:       return .gray
+        case "인사·호칭":         return .pink
+        case "긍정·부정·확인":    return .green
+        case "부탁·사과·감사":    return .orange
+        case "의문사":            return .purple
+        case "동사·조동사":       return .blue
+        case "숫자·가격":         return Color(red: 0.78, green: 0.56, blue: 0.0) // amber
+        case "식당·음식":         return .red
+        case "교통":              return .teal
+        case "장소·방향":         return .indigo
+        case "시간":              return Color(red: 0.55, green: 0.40, blue: 0.30) // brown
+        case "호텔·비즈니스":     return .gray
+        case "정도·상태":         return .cyan
+        case "추임새·접속사":     return .mint
+        default:                  return .gray
         }
     }
 
     var body: some View {
+        let c = Self.color(for: category)
         Text(category)
+            .font(.system(size: 9, weight: .bold))
+            .foregroundColor(c)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 2)
+            .background(c.opacity(0.12), in: RoundedRectangle(cornerRadius: 4))
+    }
+}
+
+// MARK: - Tier Badge
+
+struct TierBadge: View {
+    let tier: Int
+
+    private var label: String {
+        switch tier {
+        case 1: return "필수"
+        case 2: return "편의"
+        case 3: return "심화"
+        default: return "—"
+        }
+    }
+
+    private var color: Color {
+        switch tier {
+        case 1: return .red
+        case 2: return .blue
+        case 3: return .gray
+        default: return .secondary
+        }
+    }
+
+    var body: some View {
+        Text(label)
             .font(.system(size: 9, weight: .bold))
             .foregroundColor(color)
             .padding(.horizontal, 5)
@@ -333,29 +385,66 @@ struct FlashcardView: View {
     }
 
     private func cardBack(word: VocabWord) -> some View {
-        VStack(spacing: 14) {
-            Image(systemName: "checkmark.seal.fill")
-                .font(.system(size: 22))
-                .foregroundColor(.blue.opacity(0.4))
-            Text(word.korean)
-                .font(.system(size: 26, weight: .bold))
-                .multilineTextAlignment(.center)
-            if !word.notes.isEmpty {
-                Text(word.notes)
-                    .font(.system(size: 13))
+        ScrollView {
+            VStack(spacing: 14) {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 22))
+                    .foregroundColor(.blue.opacity(0.4))
+                Text(word.korean)
+                    .font(.system(size: 26, weight: .bold))
+                    .multilineTextAlignment(.center)
+                Text(word.indonesian)
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
+                if !word.notes.isEmpty {
+                    Text(word.notes)
+                        .font(.system(size: 12))
+                        .foregroundColor(Color(.tertiaryLabel))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 4)
+                }
+
+                if !word.examples.isEmpty {
+                    Divider().padding(.vertical, 2)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("예문")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(.blue)
+                        ForEach(Array(word.examples.enumerated()), id: \.offset) { idx, ex in
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack(alignment: .top, spacing: 6) {
+                                    Text("\(idx + 1).")
+                                        .font(.system(size: 12, weight: .semibold))
+                                        .foregroundColor(.blue.opacity(0.6))
+                                    Text(ex.indonesian)
+                                        .font(.system(size: 14, weight: .semibold))
+                                        .foregroundColor(.primary)
+                                        .multilineTextAlignment(.leading)
+                                }
+                                Text(ex.korean)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.secondary)
+                                    .padding(.leading, 18)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                    .padding(.horizontal, 2)
+                }
+
+                if word.studyCount > 0 {
+                    Text("학습 \(word.studyCount)회")
+                        .font(.system(size: 11))
+                        .foregroundColor(Color(.tertiaryLabel))
+                        .padding(.top, 4)
+                }
             }
-            if word.studyCount > 0 {
-                Text("학습 \(word.studyCount)회")
-                    .font(.system(size: 11))
-                    .foregroundColor(Color(.tertiaryLabel))
-                    .padding(.top, 4)
-            }
+            .frame(maxWidth: .infinity)
+            .padding(24)
         }
-        .frame(maxWidth: .infinity)
-        .frame(minHeight: 220)
-        .padding(28)
+        .frame(minHeight: 220, maxHeight: 380)
         .background(
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(Color.blue.opacity(0.05))

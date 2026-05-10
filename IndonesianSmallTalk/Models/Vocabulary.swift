@@ -1,5 +1,15 @@
 import Foundation
 
+struct VocabExample: Codable, Hashable {
+    var indonesian: String
+    var korean: String
+
+    init(_ indonesian: String, _ korean: String) {
+        self.indonesian = indonesian
+        self.korean = korean
+    }
+}
+
 struct VocabWord: Identifiable, Codable {
     var id: UUID = UUID()
     var indonesian: String
@@ -7,11 +17,29 @@ struct VocabWord: Identifiable, Codable {
     var romanization: String = ""
     var category: String = "기타"
     var notes: String = ""
+    var examples: [VocabExample] = []
+    var tier: Int = 2
     var studyCount: Int = 0
     var isLearned: Bool = false
     var createdAt: Date = Date()
 
-    static let categories = ["명사", "동사", "형용사", "부사", "숙어", "기타"]
+    /// 출장 100단어 토픽 카테고리. 사용자 추가 단어용 "기타" 포함.
+    static let categories = [
+        "인사·호칭",
+        "긍정·부정·확인",
+        "부탁·사과·감사",
+        "의문사",
+        "동사·조동사",
+        "숫자·가격",
+        "식당·음식",
+        "교통",
+        "장소·방향",
+        "시간",
+        "호텔·비즈니스",
+        "정도·상태",
+        "추임새·접속사",
+        "기타"
+    ]
 
     init(
         id: UUID = UUID(),
@@ -20,6 +48,8 @@ struct VocabWord: Identifiable, Codable {
         romanization: String = "",
         category: String = "기타",
         notes: String = "",
+        examples: [VocabExample] = [],
+        tier: Int = 2,
         studyCount: Int = 0,
         isLearned: Bool = false,
         createdAt: Date = Date()
@@ -30,13 +60,15 @@ struct VocabWord: Identifiable, Codable {
         self.romanization = romanization
         self.category = category
         self.notes = notes
+        self.examples = examples
+        self.tier = tier
         self.studyCount = studyCount
         self.isLearned = isLearned
         self.createdAt = createdAt
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, indonesian, korean, romanization, category, notes, studyCount, isLearned, createdAt
+        case id, indonesian, korean, romanization, category, notes, examples, tier, studyCount, isLearned, createdAt
     }
 
     init(from decoder: Decoder) throws {
@@ -47,6 +79,8 @@ struct VocabWord: Identifiable, Codable {
         romanization  = (try? c.decode(String.self, forKey: .romanization)) ?? ""
         category      = (try? c.decode(String.self, forKey: .category)) ?? "기타"
         notes         = (try? c.decode(String.self, forKey: .notes)) ?? ""
+        examples      = (try? c.decode([VocabExample].self, forKey: .examples)) ?? []
+        tier          = (try? c.decode(Int.self, forKey: .tier)) ?? 2
         studyCount    = (try? c.decode(Int.self, forKey: .studyCount)) ?? 0
         isLearned     = (try? c.decode(Bool.self, forKey: .isLearned)) ?? false
         createdAt     = (try? c.decode(Date.self, forKey: .createdAt)) ?? Date()
@@ -62,7 +96,29 @@ final class VocabularyStore: ObservableObject {
         return docs.appendingPathComponent("vocabulary.json")
     }()
 
-    init() { load() }
+    init() {
+        let exists = FileManager.default.fileExists(atPath: fileURL.path)
+        load()
+        if !exists {
+            // 첫 실행 — 출장 100단어 시드
+            words = BuiltInVocabulary.seedItems
+            save()
+        }
+    }
+
+    /// 내장 100단어를 다시 채워넣음. 사용자가 추가/수정/삭제한 단어는 모두 사라짐.
+    func resetToBuiltIn() {
+        words = BuiltInVocabulary.seedItems
+        save()
+    }
+
+    func words(in category: String) -> [VocabWord] {
+        words.filter { $0.category == category }
+    }
+
+    func words(tier: Int) -> [VocabWord] {
+        words.filter { $0.tier == tier }
+    }
 
     func add(_ word: VocabWord) {
         words.insert(word, at: 0)
