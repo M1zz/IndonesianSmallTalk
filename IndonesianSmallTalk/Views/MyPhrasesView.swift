@@ -10,6 +10,7 @@ struct MyPhrasesView: View {
     @State private var showAddVocab = false
     @State private var editingVocab: VocabWord?
     @State private var showFlashcard = false
+    @State private var showDialog = false
 
     var body: some View {
         Group {
@@ -36,6 +37,11 @@ struct MyPhrasesView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 if selectedTab == 1 {
                     HStack(spacing: 4) {
+                        Button {
+                            if !vocabStore.words.isEmpty { showDialog = true }
+                        } label: {
+                            Image(systemName: "text.bubble")
+                        }
                         Button {
                             let words = vocabStore.unlearnedWords.isEmpty ? vocabStore.words : vocabStore.unlearnedWords
                             if !words.isEmpty { showFlashcard = true }
@@ -66,6 +72,11 @@ struct MyPhrasesView: View {
         .sheet(isPresented: $showFlashcard) {
             let words = vocabStore.unlearnedWords.isEmpty ? vocabStore.words : vocabStore.unlearnedWords
             FlashcardView(words: words)
+                .environmentObject(vocabStore)
+        }
+        .sheet(isPresented: $showDialog) {
+            let words = vocabStore.words.filter { !$0.examples.isEmpty }
+            VocabDialogView(words: words)
                 .environmentObject(vocabStore)
         }
     }

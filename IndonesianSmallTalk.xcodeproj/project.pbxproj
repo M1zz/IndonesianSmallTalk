@@ -51,13 +51,14 @@
 		B042 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042 /* VocabularyView.swift */; };
 		B043 /* AddVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043 /* AddVocabularyView.swift */; };
 		B044 /* BuiltInVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044 /* BuiltInVocabulary.swift */; };
-		BK005 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
-		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
-		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
+		B045 /* VocabDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045 /* VocabDialogView.swift */; };
 		BK001 /* MyPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A013 /* MyPhrase.swift */; };
 		BK002 /* Polarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A029 /* Polarity.swift */; };
 		BK003 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK001 /* KeyboardViewController.swift */; };
 		BK004 /* SharedPhraseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK002 /* SharedPhraseReader.swift */; };
+		BK005 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
+		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
+		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
 		KEMBED /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = KEXT_PROD /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -130,12 +131,13 @@
 		A042 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		A043 /* AddVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyView.swift; sourceTree = "<group>"; };
 		A044 /* BuiltInVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInVocabulary.swift; sourceTree = "<group>"; };
-		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
+		A045 /* VocabDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDialogView.swift; sourceTree = "<group>"; };
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		AK001 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		AK002 /* SharedPhraseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPhraseReader.swift; sourceTree = "<group>"; };
 		AK003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AK004 /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
+		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
 		KEXT_PROD /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		PROD /* IndonesianSmallTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndonesianSmallTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -151,6 +153,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		GRP_APP /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A001 /* IndonesianSmallTalkApp.swift */,
+				A025 /* AppDelegate.swift */,
+				A026 /* SceneDelegate.swift */,
+				A002 /* ContentView.swift */,
+				A039 /* KeyboardSettings.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GRP_MODELS /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A003 /* ConversationTree.swift */,
+				A004 /* ConversationData.swift */,
+				A029 /* Polarity.swift */,
+				A013 /* MyPhrase.swift */,
+				A018 /* UserScenario.swift */,
+				A016 /* UserReply.swift */,
+				A031 /* AIScenario.swift */,
+				A022 /* SharedScenario.swift */,
+				A027 /* SharedUserReply.swift */,
+				A038 /* SlangPair.swift */,
+				A041 /* Vocabulary.swift */,
+				A044 /* BuiltInVocabulary.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP_SERVICES /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A021 /* CloudKitService.swift */,
+				A033 /* ClaudeService.swift */,
+				A011 /* SpeechManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GRP_STORES /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A032 /* AIScenarioStore.swift */,
+				A023 /* SharedScenarioStore.swift */,
+				A028 /* SharedReplyStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		GRP_VIEWS /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A005 /* HomeView.swift */,
+				A007 /* PracticeView.swift */,
+				A009 /* ResultView.swift */,
+				A019 /* AddScenarioView.swift */,
+				A017 /* AddUserReplyView.swift */,
+				A014 /* AddPhraseView.swift */,
+				A008 /* CoachTipView.swift */,
+				A006 /* TreeMapView.swift */,
+				A015 /* MyPhrasesView.swift */,
+				A020 /* PhrasePickerView.swift */,
+				A030 /* KeyboardManageView.swift */,
+				A024 /* CloudKitShareSheet.swift */,
+				A012 /* VoicePracticeView.swift */,
+				A034 /* GenerateScenarioView.swift */,
+				A035 /* AIScenarioDetailView.swift */,
+				A036 /* OnboardingView.swift */,
+				A037 /* EncouragementBanner.swift */,
+				A040 /* SlangManageView.swift */,
+				A042 /* VocabularyView.swift */,
+				A043 /* AddVocabularyView.swift */,
+				A045 /* VocabDialogView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		KEXT_GRP /* KeyboardExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,84 +274,6 @@
 				A010 /* Assets.xcassets */,
 			);
 			path = IndonesianSmallTalk;
-			sourceTree = "<group>";
-		};
-		GRP_APP /* App */ = {
-			isa = PBXGroup;
-			children = (
-				A001 /* IndonesianSmallTalkApp.swift */,
-				A025 /* AppDelegate.swift */,
-				A026 /* SceneDelegate.swift */,
-				A002 /* ContentView.swift */,
-				A039 /* KeyboardSettings.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		GRP_MODELS /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A003 /* ConversationTree.swift */,
-				A004 /* ConversationData.swift */,
-				A029 /* Polarity.swift */,
-				A013 /* MyPhrase.swift */,
-				A018 /* UserScenario.swift */,
-				A016 /* UserReply.swift */,
-				A031 /* AIScenario.swift */,
-				A022 /* SharedScenario.swift */,
-				A027 /* SharedUserReply.swift */,
-				A038 /* SlangPair.swift */,
-				A041 /* Vocabulary.swift */,
-				A044 /* BuiltInVocabulary.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		GRP_STORES /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-				A032 /* AIScenarioStore.swift */,
-				A023 /* SharedScenarioStore.swift */,
-				A028 /* SharedReplyStore.swift */,
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
-		GRP_SERVICES /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A021 /* CloudKitService.swift */,
-				A033 /* ClaudeService.swift */,
-				A011 /* SpeechManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		GRP_VIEWS /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A005 /* HomeView.swift */,
-				A007 /* PracticeView.swift */,
-				A009 /* ResultView.swift */,
-				A019 /* AddScenarioView.swift */,
-				A017 /* AddUserReplyView.swift */,
-				A014 /* AddPhraseView.swift */,
-				A008 /* CoachTipView.swift */,
-				A006 /* TreeMapView.swift */,
-				A015 /* MyPhrasesView.swift */,
-				A020 /* PhrasePickerView.swift */,
-				A030 /* KeyboardManageView.swift */,
-				A024 /* CloudKitShareSheet.swift */,
-				A012 /* VoicePracticeView.swift */,
-				A034 /* GenerateScenarioView.swift */,
-				A035 /* AIScenarioDetailView.swift */,
-				A036 /* OnboardingView.swift */,
-				A037 /* EncouragementBanner.swift */,
-				A040 /* SlangManageView.swift */,
-				A042 /* VocabularyView.swift */,
-				A043 /* AddVocabularyView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +423,7 @@
 				B042 /* VocabularyView.swift in Sources */,
 				B043 /* AddVocabularyView.swift in Sources */,
 				B044 /* BuiltInVocabulary.swift in Sources */,
+				B045 /* VocabDialogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IndonesianSmallTalk/IndonesianSmallTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
@@ -644,7 +648,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IndonesianSmallTalk/IndonesianSmallTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;

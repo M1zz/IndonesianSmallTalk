@@ -1064,10 +1064,281 @@ enum BuiltInVocabulary {
             category: "추임새·접속사",
             notes: "의미는 약하지만 빼면 외국인 말투 — 듣기로 익혀두기",
             examples: [
-                VocabExample("Mahal banget dong!", "너무 비싸잖아요!"),
-                VocabExample("Kok mahal sih?", "왜 비싸지?")
+                VocabExample("Mahal banget dong!", "너무 비싸잖아요!", level: .casual),
+                VocabExample("Kok mahal sih?", "왜 비싸지?", level: .casual)
             ],
             tier: 3
+        ),
+
+        // MARK: - v2 회화 뼈대 보강 (인칭 · 시제 · 비교 · 담화 표지)
+
+        // 1인칭/2인칭/3인칭 — HTML 회화 뼈대 01 인칭 대명사
+        VocabWord(
+            indonesian: "saya / aku", korean: "나",
+            romanization: "사야 / 아꾸",
+            category: "인사·호칭",
+            notes: "saya=격식 기본값(출장 안전), aku=친구·또래·연인. 친해진 후 전환",
+            examples: [
+                VocabExample("Saya senang bertemu Bapak.", "만나서 반갑습니다, 사장님.", level: .formal),
+                VocabExample("Aku capek banget hari ini.", "오늘 진짜 피곤해.", level: .casual)
+            ],
+            tier: 1
+        ),
+        VocabWord(
+            indonesian: "Anda / kamu", korean: "당신 / 너",
+            romanization: "안다 / 까무",
+            category: "인사·호칭",
+            notes: "Anda=거리감 있는 격식(광고·문서), kamu=친구. 보통은 Bapak/Ibu로 대체",
+            examples: [
+                VocabExample("Anda tinggal di mana?", "어디에 사세요?", level: .formal),
+                VocabExample("Kamu sudah makan?", "너 밥 먹었어?", level: .casual)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "dia / beliau", korean: "그/그녀 / 그분",
+            romanization: "디아 / 블리아우",
+            category: "인사·호칭",
+            notes: "dia=성별 구분 없음(무난), beliau=존경하는 사람(상사·어른)",
+            examples: [
+                VocabExample("Dia kolega saya dari Jakarta.", "그분 자카르타에서 온 동료예요.", level: .neutral),
+                VocabExample("Beliau direktur kami.", "그분이 저희 디렉터십니다.", level: .formal)
+            ],
+            tier: 3
+        ),
+        VocabWord(
+            indonesian: "kita / kami", korean: "우리 (포함 / 제외)",
+            romanization: "끼따 / 까미",
+            category: "인사·호칭",
+            notes: "한국어에 없는 구분 — kita=듣는 사람 포함, kami=듣는 사람 제외",
+            examples: [
+                VocabExample("Kita berangkat bersama, Pak.", "우리 같이 출발해요. (상대 포함)", level: .formal),
+                VocabExample("Kami sudah pesan kamar dari Korea.", "저희끼리 한국에서 미리 예약했어요. (상대 제외)", level: .neutral)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "mereka", korean: "그들",
+            romanization: "므레까",
+            category: "인사·호칭",
+            examples: [
+                VocabExample("Mereka sedang rapat.", "그들 회의 중이에요.", level: .neutral),
+                VocabExample("Mereka semua dari kantor pusat.", "다들 본사에서 왔어요.", level: .neutral)
+            ],
+            tier: 3
+        ),
+
+        // 시제 표지어 — HTML 04
+        VocabWord(
+            indonesian: "sedang / lagi", korean: "~하는 중",
+            romanization: "스당 / 라기",
+            category: "동사·조동사",
+            notes: "sedang=격식, lagi=구어(훨씬 흔함). 동사 앞에 붙임",
+            examples: [
+                VocabExample("Saya sedang bekerja, Pak.", "저 일하는 중입니다, 사장님.", level: .formal),
+                VocabExample("Lagi makan, nanti telpon balik ya.", "지금 먹는 중, 이따 다시 걸어줘.", level: .casual)
+            ],
+            tier: 1
+        ),
+        VocabWord(
+            indonesian: "akan / bakal", korean: "~할 것이다",
+            romanization: "아깐 / 바깔",
+            category: "동사·조동사",
+            notes: "akan=격식 미래, bakal=구어 미래(예상). mau도 같은 역할",
+            examples: [
+                VocabExample("Akan berangkat besok pagi.", "내일 아침에 출발합니다.", level: .formal),
+                VocabExample("Bakal hujan kayaknya.", "비 올 것 같아.", level: .casual)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "pernah", korean: "~한 적 있다",
+            romanization: "쁘르나",
+            category: "동사·조동사",
+            notes: "경험 — 'belum pernah'(아직 안 해봤어요)도 자주 씀",
+            examples: [
+                VocabExample("Pernah ke Bali?", "발리 가본 적 있어요?", level: .neutral),
+                VocabExample("Belum pernah coba.", "아직 안 해봤어요.", level: .neutral)
+            ],
+            tier: 2
+        ),
+
+        // 비교 표현 — HTML 09
+        VocabWord(
+            indonesian: "lebih", korean: "더",
+            romanization: "르비",
+            category: "정도·상태",
+            notes: "lebih + 형용사 = 더 ~한",
+            examples: [
+                VocabExample("Yang lebih murah, ada?", "더 싼 거 있어요?", level: .neutral),
+                VocabExample("Lebih baik daripada kemarin.", "어제보다 좋아요.", level: .neutral)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "paling / ter-", korean: "가장 / 제일",
+            romanization: "빨링 / 떠르-",
+            category: "정도·상태",
+            notes: "paling=일상, ter-=접두사 격식 (paling enak = terenak)",
+            examples: [
+                VocabExample("Paling enak di sini.", "여기가 제일 맛있어요.", level: .neutral),
+                VocabExample("Restoran terenak di Jakarta.", "자카르타에서 가장 맛있는 식당.", level: .formal)
+            ],
+            tier: 3
+        ),
+        VocabWord(
+            indonesian: "daripada / sama saja", korean: "~보다 / 똑같다",
+            romanization: "다리빠다 / 사마 사자",
+            category: "정도·상태",
+            notes: "daripada=비교 기준(~보다), sama saja=똑같다",
+            examples: [
+                VocabExample("Lebih murah daripada yang lain.", "다른 거보다 싸요.", level: .neutral),
+                VocabExample("Sama saja, Pak.", "똑같아요, 사장님.", level: .neutral)
+            ],
+            tier: 3
+        ),
+
+        // 캐주얼 전치사 — HTML 10
+        VocabWord(
+            indonesian: "buat / sama / kayak", korean: "캐주얼 전치사 3종",
+            romanization: "부앗 / 사마 / 까약",
+            category: "추임새·접속사",
+            notes: "buat=untuk(~위해), sama=dengan(~와), kayak=seperti(~처럼). 격식 자리에선 원래 형태 사용",
+            examples: [
+                VocabExample("Ini buat kamu.", "이거 너 줄게.", level: .casual),
+                VocabExample("Sama teman aja.", "친구랑 같이 (갈게).", level: .casual),
+                VocabExample("Kayak ini, ya?", "이거처럼 하는 거지?", level: .casual)
+            ],
+            tier: 3
+        ),
+
+        // 담화 표지 — HTML 14
+        VocabWord(
+            indonesian: "sebenarnya / sebenernya", korean: "사실은",
+            romanization: "스브나르냐 / 스브너르냐",
+            category: "추임새·접속사",
+            notes: "본론·반대 의견 꺼낼 때 — 격식/구어 형태",
+            examples: [
+                VocabExample("Sebenarnya saya sudah ada janji.", "사실 저 약속이 있어서요.", level: .formal),
+                VocabExample("Sebenernya tuh, aku lagi capek.", "사실 나 지금 피곤해.", level: .casual)
+            ],
+            tier: 3
+        ),
+        VocabWord(
+            indonesian: "kayaknya / sepertinya", korean: "~인 것 같다",
+            romanization: "까약냐 / 스쁘르띠냐",
+            category: "추임새·접속사",
+            notes: "추측·완곡 — 직접적 단정 피할 때(인니 문화 코어)",
+            examples: [
+                VocabExample("Sepertinya akan hujan.", "비가 올 것 같습니다.", level: .formal),
+                VocabExample("Kayaknya bakal macet.", "막힐 것 같아.", level: .casual)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "kan / iya kan / beneran", korean: "확인·강조 추임새",
+            romanization: "깐 / 이야 깐 / 브너란",
+            category: "추임새·접속사",
+            notes: "kan=그렇지?, iya kan=맞지?, beneran=진짜로. 캐주얼 회화 양념",
+            examples: [
+                VocabExample("Mahal banget kan?", "엄청 비싸지 않아?", level: .casual),
+                VocabExample("Beneran enak banget!", "진짜 너무 맛있어!", level: .casual),
+                VocabExample("Iya kan, lagi macet parah.", "그치, 지금 엄청 막혀.", level: .casual)
+            ],
+            tier: 3
+        ),
+
+        // 캐주얼 조동사 — HTML 07
+        VocabWord(
+            indonesian: "pengen / kudu", korean: "~하고 싶다 / 해야 한다 (캐주얼)",
+            romanization: "쁭언 / 꾸두",
+            category: "동사·조동사",
+            notes: "pengen=mau의 캐주얼, kudu=harus의 캐주얼. 친구 사이 회식·잡담",
+            examples: [
+                VocabExample("Pengen tidur banget.", "진짜 자고 싶다.", level: .casual),
+                VocabExample("Kudu cepet, udah telat.", "빨리 해야 해, 이미 늦었어.", level: .casual)
+            ],
+            tier: 3
+        ),
+
+        // 시간 보강 — HTML 11
+        VocabWord(
+            indonesian: "lusa", korean: "모레",
+            romanization: "루사",
+            category: "시간",
+            examples: [
+                VocabExample("Lusa saya berangkat.", "모레 저 출발해요.", level: .neutral),
+                VocabExample("Rapatnya lusa pagi.", "회의는 모레 아침이에요.", level: .neutral)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "barusan", korean: "방금",
+            romanization: "바루산",
+            category: "시간",
+            examples: [
+                VocabExample("Barusan datang.", "방금 도착했어요.", level: .neutral),
+                VocabExample("Barusan dia telpon.", "방금 그 사람이 전화했어요.", level: .neutral)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "sebentar / bentar", korean: "잠깐",
+            romanization: "스븐따르 / 븐따르",
+            category: "시간",
+            notes: "sebentar=격식, bentar=구어 축약",
+            examples: [
+                VocabExample("Tunggu sebentar, Pak.", "잠깐만 기다려주세요, 사장님.", level: .formal),
+                VocabExample("Bentar ya.", "잠깐만.", level: .casual)
+            ],
+            tier: 2
+        ),
+
+        // 장소 보강 — HTML 12 ('거기' 빠져있었음)
+        VocabWord(
+            indonesian: "di situ", korean: "거기",
+            romanization: "디 시뚜",
+            category: "장소·방향",
+            notes: "여기(di sini)와 저기(di sana) 사이 — 한국어 '거기'와 1:1",
+            examples: [
+                VocabExample("Ada di situ, Pak.", "거기 있어요, 사장님.", level: .neutral),
+                VocabExample("Tunggu di situ saja.", "거기서 기다리세요.", level: .neutral)
+            ],
+            tier: 3
+        ),
+
+        // 감정·의견 + 의문사 보강 — HTML 13, 05
+        VocabWord(
+            indonesian: "suka / tidak suka", korean: "좋아하다 / 싫어하다",
+            romanization: "수까 / 띠닥 수까",
+            category: "정도·상태",
+            notes: "한국인 카드 — 'tidak suka pedas'(매운 거 싫어요)는 식당 필수",
+            examples: [
+                VocabExample("Saya suka makanan ini.", "이 음식 좋아해요.", level: .neutral),
+                VocabExample("Gak suka pedas.", "매운 거 싫어해.", level: .casual)
+            ],
+            tier: 2
+        ),
+        VocabWord(
+            indonesian: "misalnya", korean: "예를 들어",
+            romanization: "미살냐",
+            category: "추임새·접속사",
+            examples: [
+                VocabExample("Misalnya nasi goreng atau sate.", "예를 들어 나시고렝이나 사테요.", level: .neutral),
+                VocabExample("Misalnya kalau hujan, gimana?", "예를 들어 비 오면 어떡해요?", level: .neutral)
+            ],
+            tier: 3
+        ),
+        VocabWord(
+            indonesian: "gimana", korean: "어떻게 (구어)",
+            romanization: "기마나",
+            category: "의문사",
+            notes: "bagaimana의 구어 축약 — 일상에서 압도적으로 자주 쓰임",
+            examples: [
+                VocabExample("Gimana kabarnya?", "어떻게 지내?", level: .casual),
+                VocabExample("Gimana kalau besok aja?", "내일 가는 건 어때?", level: .casual)
+            ],
+            tier: 2
         ),
     ]
 }

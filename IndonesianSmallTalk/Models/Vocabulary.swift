@@ -1,12 +1,43 @@
 import Foundation
 
+/// 회화 뼈대 레퍼런스 기반 격식 층위.
+/// F=Formal(격식), N=Neutral(중립, 안전한 기본값), C=Casual(캐주얼), S=Slang(슬랭, 듣기만)
+enum FormalityLevel: String, Codable, CaseIterable {
+    case formal  = "F"
+    case neutral = "N"
+    case casual  = "C"
+    case slang   = "S"
+
+    var label: String {
+        switch self {
+        case .formal:  return "격식"
+        case .neutral: return "중립"
+        case .casual:  return "캐주얼"
+        case .slang:   return "슬랭"
+        }
+    }
+}
+
 struct VocabExample: Codable, Hashable {
     var indonesian: String
     var korean: String
+    var level: FormalityLevel? = nil
 
-    init(_ indonesian: String, _ korean: String) {
+    init(_ indonesian: String, _ korean: String, level: FormalityLevel? = nil) {
         self.indonesian = indonesian
         self.korean = korean
+        self.level = level
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case indonesian, korean, level
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        indonesian = try c.decode(String.self, forKey: .indonesian)
+        korean     = try c.decode(String.self, forKey: .korean)
+        level      = try? c.decode(FormalityLevel.self, forKey: .level)
     }
 }
 
@@ -91,6 +122,10 @@ struct VocabWord: Identifiable, Codable {
 final class VocabularyStore: ObservableObject {
     @Published private(set) var words: [VocabWord] = []
 
+    /// 내장 단어 시드 버전. 이 숫자가 올라가면 다음 실행 때 새 단어를 머지함.
+    private static let currentBuiltInVersion = 2
+    private static let builtInVersionKey = "vocabularyBuiltInVersion"
+
     private let fileURL: URL = {
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return docs.appendingPathComponent("vocabulary.json")
@@ -100,16 +135,33 @@ final class VocabularyStore: ObservableObject {
         let exists = FileManager.default.fileExists(atPath: fileURL.path)
         load()
         if !exists {
-            // 첫 실행 — 출장 100단어 시드
+            // 첫 실행 — 시드 채우기
             words = BuiltInVocabulary.seedItems
             save()
+        } else {
+            // 기존 유저 — 새 내장 단어가 있으면 머지 (덮어쓰지 않음)
+            let storedVersion = UserDefaults.standard.integer(forKey: Self.builtInVersionKey)
+            if storedVersion < Self.currentBuiltInVersion {
+                mergeNewBuiltIns()
+            }
         }
+        UserDefaults.standard.set(Self.currentBuiltInVersion, forKey: Self.builtInVersionKey)
     }
 
-    /// 내장 100단어를 다시 채워넣음. 사용자가 추가/수정/삭제한 단어는 모두 사라짐.
+    /// 내장 시드 중 사용자 데이터에 없는 단어만 추가. 기존 단어는 그대로 유지.
+    private func mergeNewBuiltIns() {
+        let existing = Set(words.map { $0.indonesian })
+        let toAdd = BuiltInVocabulary.seedItems.filter { !existing.contains($0.indonesian) }
+        guard !toAdd.isEmpty else { return }
+        words.append(contentsOf: toAdd)
+        save()
+    }
+
+    /// 내장 단어를 강제로 다시 채워넣음. 사용자가 추가/수정/삭제한 단어는 모두 사라짐.
     func resetToBuiltIn() {
         words = BuiltInVocabulary.seedItems
         save()
+        UserDefaults.standard.set(Self.currentBuiltInVersion, forKey: Self.builtInVersionKey)
     }
 
     func words(in category: String) -> [VocabWord] {

@@ -238,6 +238,30 @@ struct CategoryBadge: View {
     }
 }
 
+// MARK: - Formality Badge (F/N/C/S)
+
+struct FormalityBadge: View {
+    let level: FormalityLevel
+
+    static func color(for level: FormalityLevel) -> Color {
+        switch level {
+        case .formal:  return Color(red: 0.12, green: 0.23, blue: 0.37) // 깊은 남색
+        case .neutral: return Color(red: 0.36, green: 0.42, blue: 0.24) // 올리브
+        case .casual:  return Color(red: 0.72, green: 0.36, blue: 0.18) // 테라코타
+        case .slang:   return Color(red: 0.55, green: 0.16, blue: 0.09) // 적토
+        }
+    }
+
+    var body: some View {
+        let c = Self.color(for: level)
+        Text(level.rawValue)
+            .font(.system(size: 9, weight: .bold, design: .monospaced))
+            .foregroundColor(.white)
+            .frame(width: 16, height: 16)
+            .background(Circle().fill(c))
+    }
+}
+
 // MARK: - Tier Badge
 
 struct TierBadge: View {
@@ -500,6 +524,9 @@ struct FlashcardView: View {
                                         .font(.system(size: 14, weight: .semibold))
                                         .foregroundColor(.primary)
                                         .multilineTextAlignment(.leading)
+                                    if let level = ex.level {
+                                        FormalityBadge(level: level)
+                                    }
                                     Spacer(minLength: 4)
                                     Button {
                                         speakExample(ex)
