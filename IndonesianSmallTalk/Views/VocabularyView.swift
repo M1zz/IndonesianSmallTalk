@@ -4,10 +4,12 @@ import SwiftUI
 
 struct VocabularyView: View {
     @EnvironmentObject var store: VocabularyStore
+    @StateObject private var speech = SpeechManager()
     let onAdd: () -> Void
     let onEdit: (VocabWord) -> Void
 
     @State private var unlearnedOnly = false
+    @State private var speakingId: UUID?
 
     private var displayed: [VocabWord] {
         unlearnedOnly ? store.unlearnedWords : store.words
@@ -35,11 +37,16 @@ struct VocabularyView: View {
                             .padding(.vertical, 8)
                     } else {
                         ForEach(displayed) { word in
-                            WordRow(word: word) {
-                                withAnimation(.spring(response: 0.3)) {
-                                    store.toggleLearned(id: word.id)
-                                }
-                            }
+                            WordRow(
+                                word: word,
+                                isSpeakingThis: speakingId == word.id && speech.isSpeaking,
+                                onToggle: {
+                                    withAnimation(.spring(response: 0.3)) {
+                                        store.toggleLearned(id: word.id)
+                                    }
+                                },
+                                onSpeak: { speakWord(word) }
+                            )
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(role: .destructive) {
                                     store.delete(id: word.id)
@@ -75,7 +82,18 @@ struct VocabularyView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .onDisappear { speech.stopSpeaking() }
         }
+    }
+
+    private func speakWord(_ word: VocabWord) {
+        speakingId = word.id
+        speech.speak(word.indonesian) {
+            Task { @MainActor in
+                if speakingId == word.id { speakingId = nil }
+            }
+        }
+        store.incrementStudy(id: word.id)
     }
 
     private var emptyState: some View {
@@ -109,7 +127,9 @@ struct VocabularyView: View {
 
 struct WordRow: View {
     let word: VocabWord
+    var isSpeakingThis: Bool = false
     let onToggle: () -> Void
+    var onSpeak: (() -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -158,10 +178,25 @@ struct WordRow: View {
 
             Spacer()
 
-            if word.studyCount > 0 {
-                Text("\(word.studyCount)회")
-                    .font(.system(size: 10))
-                    .foregroundColor(Color(.tertiaryLabel))
+            VStack(alignment: .trailing, spacing: 4) {
+                if let onSpeak {
+                    Button(action: onSpeak) {
+                        Image(systemName: isSpeakingThis ? "speaker.wave.2.fill" : "speaker.wave.2")
+                            .font(.system(size: 18))
+                            .foregroundColor(isSpeakingThis ? .blue : .blue.opacity(0.7))
+                            .symbolEffect(.bounce, value: isSpeakingThis)
+                            .frame(width: 32, height: 32)
+                            .background(
+                                Circle().fill(Color.blue.opacity(isSpeakingThis ? 0.18 : 0.10))
+                            )
+                    }
+                    .buttonStyle(.plain)
+                }
+                if word.studyCount > 0 {
+                    Text("\(word.studyCount)회")
+                        .font(.system(size: 10))
+                        .foregroundColor(Color(.tertiaryLabel))
+                }
             }
         }
         .padding(.vertical, 2)
@@ -241,6 +276,7 @@ struct TierBadge: View {
 struct FlashcardView: View {
     let words: [VocabWord]
     @EnvironmentObject var store: VocabularyStore
+    @StateObject private var speech = SpeechManager()
     @Environment(\.dismiss) private var dismiss
 
     @State private var currentIndex = 0
@@ -248,6 +284,7 @@ struct FlashcardView: View {
     @State private var knownCount = 0
     @State private var retryCount = 0
     @State private var showCompletion = false
+    @AppStorage("flashcardAutoSpeak") private var autoSpeak = true
 
     private var current: VocabWord? {
         guard currentIndex < words.count else { return nil }
@@ -319,8 +356,31 @@ struct FlashcardView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("닫기") { dismiss() }
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        autoSpeak.toggle()
+                        if !autoSpeak { speech.stopSpeaking() }
+                    } label: {
+                        Image(systemName: autoSpeak ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                            .foregroundColor(autoSpeak ? .blue : Color(.tertiaryLabel))
+                    }
+                }
             }
+            .onAppear {
+                if autoSpeak, let first = current {
+                    speakWord(first)
+                }
+            }
+            .onDisappear { speech.stopSpeaking() }
         }
+    }
+
+    private func speakWord(_ word: VocabWord) {
+        speech.speak(word.indonesian)
+    }
+
+    private func speakExample(_ ex: VocabExample) {
+        speech.speak(ex.indonesian)
     }
 
     // MARK: Progress
@@ -369,10 +429,29 @@ struct FlashcardView: View {
                     .italic()
                     .foregroundColor(.secondary)
             }
+
+            // 발음 듣기 버튼 — 카드 탭(뒤집기)와 충돌 안 나게 별도 버튼
+            Button {
+                speakWord(word)
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: speech.isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2.fill")
+                        .symbolEffect(.bounce, value: speech.isSpeaking)
+                    Text("듣기")
+                        .font(.system(size: 13, weight: .semibold))
+                }
+                .foregroundColor(.white)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .background(Color.blue, in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .padding(.top, 4)
+
             Text("탭해서 뒤집기")
                 .font(.system(size: 11))
                 .foregroundColor(Color(.tertiaryLabel))
-                .padding(.top, 8)
+                .padding(.top, 4)
         }
         .frame(maxWidth: .infinity)
         .frame(minHeight: 220)
@@ -421,6 +500,17 @@ struct FlashcardView: View {
                                         .font(.system(size: 14, weight: .semibold))
                                         .foregroundColor(.primary)
                                         .multilineTextAlignment(.leading)
+                                    Spacer(minLength: 4)
+                                    Button {
+                                        speakExample(ex)
+                                    } label: {
+                                        Image(systemName: "speaker.wave.2.fill")
+                                            .font(.system(size: 13))
+                                            .foregroundColor(.blue)
+                                            .frame(width: 26, height: 26)
+                                            .background(Circle().fill(Color.blue.opacity(0.12)))
+                                    }
+                                    .buttonStyle(.plain)
                                 }
                                 Text(ex.korean)
                                     .font(.system(size: 12))
@@ -511,12 +601,19 @@ struct FlashcardView: View {
         if known && !word.isLearned {
             store.toggleLearned(id: word.id)
         }
+        speech.stopSpeaking()
         withAnimation(.spring(response: 0.38, dampingFraction: 0.82)) {
             isFlipped = false
             if currentIndex + 1 >= words.count {
                 showCompletion = true
             } else {
                 currentIndex += 1
+            }
+        }
+        // 다음 카드로 넘어갔으면 그 단어를 자동 발음
+        if autoSpeak, !showCompletion, currentIndex < words.count {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                if let next = current { speakWord(next) }
             }
         }
     }
