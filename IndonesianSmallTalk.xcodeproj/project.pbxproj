@@ -52,6 +52,10 @@
 		B043 /* AddVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043 /* AddVocabularyView.swift */; };
 		B044 /* BuiltInVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044 /* BuiltInVocabulary.swift */; };
 		B045 /* VocabDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045 /* VocabDialogView.swift */; };
+		B046 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046 /* Journey.swift */; };
+		B047 /* JourneyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047 /* JourneyData.swift */; };
+		B048 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048 /* JourneyView.swift */; };
+		B049 /* JourneyTimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049 /* JourneyTimetableView.swift */; };
 		BK001 /* MyPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A013 /* MyPhrase.swift */; };
 		BK002 /* Polarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A029 /* Polarity.swift */; };
 		BK003 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK001 /* KeyboardViewController.swift */; };
@@ -132,6 +136,10 @@
 		A043 /* AddVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyView.swift; sourceTree = "<group>"; };
 		A044 /* BuiltInVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInVocabulary.swift; sourceTree = "<group>"; };
 		A045 /* VocabDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDialogView.swift; sourceTree = "<group>"; };
+		A046 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		A047 /* JourneyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyData.swift; sourceTree = "<group>"; };
+		A048 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
+		A049 /* JourneyTimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTimetableView.swift; sourceTree = "<group>"; };
 		AENT /* IndonesianSmallTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndonesianSmallTalk.entitlements; sourceTree = "<group>"; };
 		AK001 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		AK002 /* SharedPhraseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPhraseReader.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 				A038 /* SlangPair.swift */,
 				A041 /* Vocabulary.swift */,
 				A044 /* BuiltInVocabulary.swift */,
+				A046 /* Journey.swift */,
+				A047 /* JourneyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +238,8 @@
 				A042 /* VocabularyView.swift */,
 				A043 /* AddVocabularyView.swift */,
 				A045 /* VocabDialogView.swift */,
+				A048 /* JourneyView.swift */,
+				A049 /* JourneyTimetableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +436,10 @@
 				B043 /* AddVocabularyView.swift in Sources */,
 				B044 /* BuiltInVocabulary.swift in Sources */,
 				B045 /* VocabDialogView.swift in Sources */,
+				B046 /* Journey.swift in Sources */,
+				B047 /* JourneyData.swift in Sources */,
+				B048 /* JourneyView.swift in Sources */,
+				B049 /* JourneyTimetableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

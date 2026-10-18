@@ -7,7 +7,11 @@ struct HomeView: View {
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
     @EnvironmentObject var sharedReplyStore: SharedReplyStore
     @EnvironmentObject var aiScenarioStore: AIScenarioStore
+    @EnvironmentObject var journeyProgress: JourneyProgressStore
     @State private var selectedScenario: ConversationScenario?
+    @State private var selectedCourse: JourneyCourse?
+    @State private var showTimetable = false
+    @StateObject private var journeyLauncher = JourneyLauncher()
     @State private var selectedAIScenario: AIScenario?
     @State private var showPractice = false
     @State private var showVoicePractice = false
@@ -56,6 +60,7 @@ struct HomeView: View {
                 }
                 .padding(.top, 18)
 
+                journeySection
                 sharedSection
                 myScenarioSection
                 aiScenarioSection
@@ -77,6 +82,13 @@ struct HomeView: View {
                 VoicePracticeView(session: PracticeSession(scenario: scenario))
             }
         }
+        .navigationDestination(item: $selectedCourse) { course in
+            JourneyDetailView(course: course)
+        }
+        .navigationDestination(isPresented: $showTimetable) {
+            JourneyTimetableView()
+        }
+        .journeyPractice(journeyLauncher, progress: journeyProgress)
         .navigationDestination(isPresented: $showAIDetail) {
             if let ai = selectedAIScenario {
                 AIScenarioDetailView(aiScenario: ai)
@@ -165,6 +177,43 @@ struct HomeView: View {
                     .padding(.horizontal, 18)
                     .padding(.top, 4)
             }
+        }
+    }
+
+    private var journeySection: some View {
+        VStack(spacing: 0) {
+            JourneyNowBanner { stop in journeyLauncher.start(stop) }
+                .padding(.horizontal, 18)
+                .padding(.top, 20)
+
+            HStack(spacing: 6) {
+                Image(systemName: "calendar.day.timeline.left")
+                    .font(.system(size: 12))
+                    .foregroundColor(.accentColor)
+                Text("하루 코스")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.secondary)
+                Spacer()
+                Button { showTimetable = true } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "square.grid.3x3")
+                            .font(.system(size: 10, weight: .semibold))
+                        Text("주간 시간표")
+                            .font(.system(size: 11, weight: .semibold))
+                    }
+                    .foregroundColor(.accentColor)
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+
+            VStack(spacing: 14) {
+                ForEach(JourneyData.allCourses) { course in
+                    JourneyCourseCard(course: course) { selectedCourse = course }
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 8)
         }
     }
 
