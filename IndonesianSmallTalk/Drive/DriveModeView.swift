@@ -8,6 +8,8 @@ struct DriveModeView: View {
     @AppStorage(DriveSettings.gapKey) private var gap = 1.0
     @AppStorage(DriveSettings.repeatKey) private var repeatTwice = true
     @State private var showGuide = false
+    /// 소스별 장면 수 (화면이 뜰 때 한 번 센다 — 그릴 때마다 세면 무겁다)
+    @State private var counts: [DriveSource: Int] = [:]
 
     private var source: DriveSource { DriveSource(rawValue: sourceRaw) ?? .mix }
 
@@ -30,6 +32,9 @@ struct DriveModeView: View {
         .navigationTitle("퇴근길 모드")
         .navigationBarTitleDisplayMode(.large)
         .sheet(isPresented: $showGuide) { DriveGuideSheet() }
+        .onAppear {
+            counts = Dictionary(uniqueKeysWithValues: DriveSource.allCases.map { ($0, DriveContent.lessons(for: $0).count) })
+        }
     }
 
     // MARK: Now playing
@@ -186,7 +191,7 @@ struct DriveModeView: View {
                 .foregroundColor(.secondary)
             VStack(spacing: 0) {
                 ForEach(DriveSource.allCases) { src in
-                    let count = DriveContent.lessons(for: src).count
+                    let count = counts[src] ?? 0
                     Button {
                         sourceRaw = src.rawValue
                         if session.isActive { session.start(src) }

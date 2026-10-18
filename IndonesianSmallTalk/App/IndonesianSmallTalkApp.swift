@@ -27,6 +27,9 @@ struct IndonesianSmallTalkApp: App {
                 .environmentObject(vocabularyStore)
                 .environmentObject(journeyProgressStore)
                 .task {
+                    // 퇴근길 모드가 화면과 같은 저장소를 읽도록
+                    DriveContent.phrases = { [phraseStore] in phraseStore.phrases }
+                    DriveContent.words = { [vocabularyStore] in vocabularyStore.words }
                     AppDelegate.onShareAccepted = {
                         Task { await refreshAll() }
                     }

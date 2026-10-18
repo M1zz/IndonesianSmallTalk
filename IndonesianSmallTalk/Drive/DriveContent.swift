@@ -59,6 +59,13 @@ enum DriveContent {
     static let phraseChunk = 6
     static let wordChunk = 6
 
+    /// 내 표현·단어장 읽는 곳. 앱이 뜨면 화면이 쓰는 저장소로 바꿔 끼운다(IndonesianSmallTalkApp).
+    /// 화면 없이(Siri·CarPlay) 시작하면 파일에서 한 번 읽은 저장소를 쓴다.
+    static var phrases: () -> [MyPhrase] = { fallbackPhrases.phrases }
+    static var words: () -> [VocabWord] = { fallbackWords.words }
+    private static let fallbackPhrases = PhraseStore()
+    private static let fallbackWords = VocabularyStore()
+
     static func lessons(for source: DriveSource, language: AppLanguage = .learning) -> [DriveLesson] {
         switch source {
         case .conversations:
@@ -88,7 +95,7 @@ enum DriveContent {
     }
 
     private static func phraseLessons() -> [DriveLesson] {
-        let phrases = PhraseStore().phrases
+        let phrases = phrases()
         return stride(from: 0, to: phrases.count, by: phraseChunk).map { start in
             let chunk = phrases[start..<min(start + phraseChunk, phrases.count)]
             return DriveLesson(
@@ -101,7 +108,7 @@ enum DriveContent {
 
     private static func wordLessons() -> [DriveLesson] {
         // 아직 못 외운 단어부터
-        let words = VocabularyStore().words.sorted { !$0.isLearned && $1.isLearned }
+        let words = words().sorted { !$0.isLearned && $1.isLearned }
         return stride(from: 0, to: words.count, by: wordChunk).map { start in
             let chunk = words[start..<min(start + wordChunk, words.count)]
             let lines = chunk.flatMap { w -> [DriveLine] in
