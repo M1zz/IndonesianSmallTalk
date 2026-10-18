@@ -49,7 +49,7 @@ struct TreeMapView: View {
         .background(Color(.secondarySystemGroupedBackground))
     }
 
-    private func modeTab(label: String, icon: String, selected: Bool, action: @escaping () -> Void) -> some View {
+    private func modeTab(label: LocalizedStringKey, icon: String, selected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack(spacing: 6) {
                 Image(systemName: icon)
@@ -110,7 +110,7 @@ private struct ExplorerView: View {
     private var breadcrumb: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
-                crumbButton(label: scenario.emoji + " 루트", index: -1)
+                crumbButton(label: scenario.emoji + " " + String(localized: "루트"), index: -1)
 
                 ForEach(Array(path.enumerated()), id: \.element.id) { idx, node in
                     Image(systemName: "chevron.right")
@@ -118,7 +118,7 @@ private struct ExplorerView: View {
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(.horizontal, 4)
                     crumbButton(
-                        label: node.speaker == .me ? "나" : "상대",
+                        label: node.speaker == .me ? String(localized: "나") : String(localized: "상대"),
                         index: idx
                     )
                 }
@@ -167,13 +167,13 @@ private struct ExplorerView: View {
                     .fill(accentColor.opacity(0.15))
                     .frame(width: 32, height: 32)
                     .overlay(
-                        Text(isMe ? "나" : "상대")
+                        (isMe ? Text("나") : Text("상대"))
                             .font(.system(size: 11, weight: .bold))
                             .foregroundColor(accentColor)
                     )
 
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(isMe ? "Kamu (나)" : "Orang lain (상대방)")
+                    Text(currentNode.speaker.labelKo)
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(accentColor)
                     if currentNode.polarity != .neutral {
@@ -193,7 +193,7 @@ private struct ExplorerView: View {
             .padding(.top, 20)
             .padding(.bottom, 14)
 
-            // Indonesian text — large
+            // 배우는 언어 문장 — 크게
             Text(currentNode.text)
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.primary)
@@ -210,7 +210,7 @@ private struct ExplorerView: View {
                     .padding(.top, 6)
             }
 
-            // Korean
+            // 뜻 (화면 언어)
             Text(currentNode.meaning)
                 .font(.system(size: 14))
                 .foregroundColor(.secondary)
@@ -323,8 +323,8 @@ private struct ExplorerView: View {
 
     private func polarityPill(_ polarity: Polarity) -> some View {
         let (label, color): (String, Color) = polarity == .positive
-            ? ("긍정 ✓", .green)
-            : ("부정 ✕", .red)
+            ? (String(localized: "긍정 ✓"), .green)
+            : (String(localized: "부정 ✕"), .red)
         return Text(label)
             .font(.system(size: 9, weight: .bold))
             .foregroundColor(color)
@@ -362,11 +362,11 @@ private struct BranchCard: View {
                 // Content
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
-                        Text(isMe ? "나" : "상대방")
+                        Text(node.speaker.labelKo)
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(accentColor)
                         if node.polarity != .neutral {
-                            Text(node.polarity == .positive ? "긍정" : "부정")
+                            (node.polarity == .positive ? Text("긍정") : Text("부정"))
                                 .font(.system(size: 9, weight: .semibold))
                                 .foregroundColor(node.polarity == .positive ? .green : .red)
                                 .padding(.horizontal, 5)
@@ -446,7 +446,7 @@ private struct OutlineNodeRow: View {
 
     private var isMe: Bool { node.speaker == .me }
     private var isSelected: Bool { selected == node.id }
-    private let accentBlue = Color(red: 0.18, green: 0.50, blue: 0.95)
+    private let accentBlue = Brand.blue
     private var accentColor: Color { isMe ? accentBlue : Color(red: 0.55, green: 0.40, blue: 0.20) }
     private let indentWidth: CGFloat = 20
 
@@ -473,6 +473,7 @@ private struct OutlineNodeRow: View {
                                 .frame(width: 20)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(expanded ? Text("접기") : Text("펼치기"))
                     } else {
                         Spacer().frame(width: 20)
                     }

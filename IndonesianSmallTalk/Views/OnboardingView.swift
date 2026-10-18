@@ -220,7 +220,7 @@ struct OnboardingView: View {
         }
     }
 
-    private func whyBlock(icon: String, title: String, body: String) -> some View {
+    private func whyBlock(icon: String, title: LocalizedStringKey, body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 14) {
             Text(icon).font(.system(size: 28))
             VStack(alignment: .leading, spacing: 4) {
@@ -320,7 +320,7 @@ struct OnboardingView: View {
 
     // MARK: - Cards
 
-    private func stepCard(emoji: String, title: String, desc: String) -> some View {
+    private func stepCard(emoji: String, title: LocalizedStringKey, desc: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 14) {
             Text(emoji).font(.system(size: 32))
             VStack(alignment: .leading, spacing: 3) {
@@ -338,7 +338,7 @@ struct OnboardingView: View {
         )
     }
 
-    private func flowStep(num: Int, title: String, desc: String) -> some View {
+    private func flowStep(num: Int, title: LocalizedStringKey, desc: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 14) {
             Text("\(num)")
                 .font(.system(size: 16, weight: .bold))
@@ -353,7 +353,7 @@ struct OnboardingView: View {
         }
     }
 
-    private func extraRow(icon: String, title: String, desc: String) -> some View {
+    private func extraRow(icon: String, title: LocalizedStringKey, desc: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 12) {
             Text(icon).font(.system(size: 24))
             VStack(alignment: .leading, spacing: 3) {

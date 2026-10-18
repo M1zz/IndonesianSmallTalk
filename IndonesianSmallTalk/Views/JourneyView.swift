@@ -1,5 +1,16 @@
 import SwiftUI
 
+// MARK: - 요일 이름
+
+extension JourneyData {
+    /// 화면 언어의 온전한 요일 이름 (월요일 / Monday …). weekday 는 Calendar 기준 1 = 일요일
+    static func weekdayName(_ weekday: Int) -> String {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: AppLanguage.native.rawValue)
+        return f.standaloneWeekdaySymbols[weekday - 1]
+    }
+}
+
 // MARK: - Practice Launcher (연습 화면 띄우기 + 완료 기록)
 
 /// 코스 어디서든(홈 배너 / 타임라인 / 주간 시간표) 같은 방식으로 연습을 시작하고,
@@ -74,7 +85,7 @@ struct JourneyNowBanner: View {
 
     private var clock: String {
         let f = DateFormatter()
-        f.locale = Locale(identifier: "ko_KR")
+        f.locale = Locale(identifier: AppLanguage.native.rawValue)
         f.dateFormat = "H:mm"
         return f.string(from: now)
     }
@@ -84,7 +95,7 @@ struct JourneyNowBanner: View {
             HStack(spacing: 10) {
                 Text(slot.emoji).font(.system(size: 26))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("지금 \(JourneyData.weekdayLabel(weekday))요일 \(clock) · \(slot.labelKo)")
+                    Text("지금 \(JourneyData.weekdayName(weekday)) \(clock) · \(slot.labelKo)")
                         .font(.system(size: 14, weight: .bold))
                         .foregroundColor(.primary)
                     Text(slot.moodKo)
@@ -275,6 +286,14 @@ struct JourneyDetailView: View {
         case now = "지금부터"
         case todo = "안 배운 것"
         var id: String { rawValue }
+
+        var label: String {
+            switch self {
+            case .time: return String(localized: "시간 순")
+            case .now: return String(localized: "지금부터")
+            case .todo: return String(localized: "안 배운 것")
+            }
+        }
     }
 
     private var doneCount: Int { progress.doneCount(in: course) }
@@ -343,8 +362,8 @@ struct JourneyDetailView: View {
 
             HStack(spacing: 8) {
                 chip(icon: "clock", text: course.timeRange)
-                chip(icon: "list.bullet", text: "\(course.stopCount)개 장면")
-                chip(icon: "checkmark.circle", text: "\(doneCount)개 배움")
+                chip(icon: "list.bullet", text: String(localized: "\(course.stopCount)개 장면"))
+                chip(icon: "checkmark.circle", text: String(localized: "\(doneCount)개 배움"))
             }
         }
         .padding(20)
@@ -374,7 +393,7 @@ struct JourneyDetailView: View {
     private var orderPicker: some View {
         VStack(alignment: .leading, spacing: 6) {
             Picker("보기", selection: $order) {
-                ForEach(StopOrder.allCases) { Text($0.rawValue).tag($0) }
+                ForEach(StopOrder.allCases) { Text($0.label).tag($0) }
             }
             .pickerStyle(.segmented)
 
@@ -389,12 +408,12 @@ struct JourneyDetailView: View {
 
     private var orderHint: String {
         switch order {
-        case .time: return "하루가 흘러가는 순서예요. 빨간 선이 지금 시각입니다."
-        case .now:  return "지금 시각에 가까운 장면을 맨 위로 올렸어요. 어디서 시작해도 됩니다."
+        case .time: return String(localized: "하루가 흘러가는 순서예요. 빨간 선이 지금 시각입니다.")
+        case .now:  return String(localized: "지금 시각에 가까운 장면을 맨 위로 올렸어요. 어디서 시작해도 됩니다.")
         case .todo:
             let left = course.stops.count - doneCount
-            return left == 0 ? "이 코스는 다 배웠어요. 다른 코스도 골라 보세요."
-                             : "아직 안 배운 \(left)개만 보여주고 있어요."
+            return left == 0 ? String(localized: "이 코스는 다 배웠어요. 다른 코스도 골라 보세요.")
+                             : String(localized: "아직 안 배운 \(left)개만 보여주고 있어요.")
         }
     }
 
@@ -406,7 +425,7 @@ struct JourneyDetailView: View {
                 Image(systemName: "calendar.day.timeline.left")
                     .font(.system(size: 12))
                     .foregroundColor(.secondary)
-                Text(order == .time ? "오늘의 타임테이블" : "골라서 연습하기")
+                (order == .time ? Text("오늘의 타임테이블") : Text("골라서 연습하기"))
                     .font(.system(size: 13, weight: .bold))
                     .foregroundColor(.secondary)
                 Spacer()
@@ -438,7 +457,7 @@ struct JourneyDetailView: View {
     private var emptyTodo: some View {
         VStack(spacing: 8) {
             Text("🎉").font(.system(size: 34))
-            Text("이 코스의 6개 장면을 모두 배웠어요")
+            Text("이 코스의 \(course.stopCount)개 장면을 모두 배웠어요")
                 .font(.system(size: 14, weight: .bold))
             Text("다른 코스에서 아직 안 배운 장면을 골라 보세요.")
                 .font(.system(size: 11.5))
@@ -587,6 +606,7 @@ struct JourneyDetailView: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(Text("음성으로 연습"))
         }
         .background(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -657,9 +677,9 @@ struct JourneyWhyCard: View {
         )
     }
 
-    private func reason(_ title: String, _ body: String) -> some View {
+    private func reason(_ title: LocalizedStringKey, _ body: LocalizedStringKey) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text("· " + title)
+            (Text(verbatim: "· ") + Text(title))
                 .font(.system(size: 12, weight: .semibold))
                 .foregroundColor(.primary)
             Text(body)

@@ -89,8 +89,8 @@ struct AddScenarioView: View {
                             Text(emoji).font(.system(size: 28))
                         }
                     }
-                    TextField("제목 (인도네시아어) — 예: Di Pasar", text: $title)
-                    TextField("제목 (한국어) — 예: 시장에서", text: $titleKo)
+                    TextField(String(localized: "제목 (\(AppLanguage.learning.localizedName)) — 예: \(AppLanguage.learning.sampleTitle)"), text: $title)
+                    TextField("제목 뜻 — 예: 시장에서", text: $titleKo)
                     TextField("간단한 설명", text: $description, axis: .vertical)
                         .lineLimit(1...3)
                     Picker("난이도", selection: $difficulty) {
@@ -113,7 +113,7 @@ struct AddScenarioView: View {
 
                 Section("첫 마디") {
                     HStack(alignment: .top, spacing: 8) {
-                        TextField("인도네시아어 — 예: Selamat siang!", text: $openingIndonesian, axis: .vertical)
+                        TextField(String(localized: "\(AppLanguage.learning.localizedName) — 예: \(AppLanguage.learning.sampleOpener)"), text: $openingIndonesian, axis: .vertical)
                             .lineLimit(1...3)
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
@@ -122,14 +122,18 @@ struct AddScenarioView: View {
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(speech.isListening ? Text("받아쓰기 멈추기") : Text("받아쓰기"))
                         .disabled(!speech.permissionGranted && permissionAsked)
                     }
                     if speech.isListening {
                         Text("듣는 중… 말이 끝나면 자동 종료").font(.caption).foregroundColor(.secondary)
                     }
-                    TextField("한국어 뜻 — 예: 안녕하세요!", text: $openingKorean, axis: .vertical)
+                    TextField("뜻 — 예: 안녕하세요!", text: $openingKorean, axis: .vertical)
                         .lineLimit(1...3)
-                    TextField("발음 (선택) — 예: 슬라맛 시앙", text: $openingRomanization)
+                    // 한글 발음은 한국어 화면에서만 받는다
+                    if AppLanguage.showsHangulRomanization {
+                        TextField(String(localized: "발음 (선택) — 예: \(AppLanguage.learning.sampleOpenerHangul)"), text: $openingRomanization)
+                    }
                 }
 
                 Section {
@@ -148,7 +152,7 @@ struct AddScenarioView: View {
                         HStack(spacing: 6) {
                             Image(systemName: shareWithFriends ? "person.2.fill" : "lock.fill")
                                 .foregroundColor(shareWithFriends ? .purple : .secondary)
-                            Text(shareWithFriends ? "친구와 함께 보는 시나리오" : "내 기기에만 저장")
+                            (shareWithFriends ? Text("친구와 함께 보는 시나리오") : Text("내 기기에만 저장"))
                                 .font(.system(size: 13))
                                 .foregroundColor(.secondary)
                         }
@@ -159,9 +163,9 @@ struct AddScenarioView: View {
                 }
 
                 Section {
-                    Text(editing == nil
-                        ? "저장 후 연습 화면에서 '+ 내 대답 추가하기'로 답변을 하나씩 늘릴 수 있어요."
-                        : "이 시나리오의 첫 마디·메타데이터를 수정합니다. 추가된 응답은 그대로 유지돼요.")
+                    (editing == nil
+                        ? Text("저장 후 연습 화면에서 '+ 내 대답 추가하기'로 답변을 하나씩 늘릴 수 있어요.")
+                        : Text("이 시나리오의 첫 마디·메타데이터를 수정합니다. 추가된 응답은 그대로 유지돼요."))
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -216,8 +220,8 @@ struct AddScenarioView: View {
 
     private var navTitle: String {
         switch editing {
-        case .none: return "새 스몰토크"
-        case .some: return "스몰토크 수정"
+        case .none: return String(localized: "새 스몰토크")
+        case .some: return String(localized: "스몰토크 수정")
         }
     }
 
@@ -253,7 +257,7 @@ struct AddScenarioView: View {
                 await MainActor.run {
                     saving = false
                     if ok { dismiss() }
-                    else { saveError = sharedStore.lastError ?? "저장 실패" }
+                    else { saveError = sharedStore.lastError ?? String(localized: "저장 실패") }
                 }
             }
 
@@ -304,7 +308,7 @@ struct AddScenarioView: View {
                 if success {
                     dismiss()
                 } else {
-                    saveError = sharedStore.lastError ?? "저장에 실패했어요. iCloud 로그인을 확인해주세요."
+                    saveError = sharedStore.lastError ?? String(localized: "저장에 실패했어요. iCloud 로그인을 확인해주세요.")
                 }
             }
         }

@@ -50,10 +50,10 @@ struct CoachTipView: View {
                             }
                         }
 
-                        // ── 한국어 번역
+                        // ── 뜻 (화면 언어)
                         InfoCard(
-                            icon: "🇰🇷",
-                            title: "한국어 번역",
+                            icon: AppLanguage.native.flag,
+                            title: "뜻",
                             content: node.meaning
                         )
 
@@ -111,10 +111,10 @@ struct PolarityDetailBadge: View {
     var body: some View {
         HStack(spacing: 6) {
             Text(polarity == .positive ? "😊" : "😟")
-            Text(polarity.label)
+            (polarity == .positive ? Text("긍정 +") : Text("부정 −"))
                 .font(.system(size: 13, weight: .bold))
                 .foregroundColor(polarity == .positive ? Color(red: 0.15, green: 0.5, blue: 0.1) : Color(red: 0.6, green: 0.1, blue: 0.1))
-            Text(polarity == .positive ? "긍정적인 반응" : "부정적인 반응")
+            (polarity == .positive ? Text("긍정적인 반응") : Text("부정적인 반응"))
                 .font(.system(size: 12))
                 .foregroundColor(.secondary)
         }
@@ -136,7 +136,7 @@ enum ContentStyle { case normal, serif }
 
 struct InfoCard: View {
     let icon: String
-    let title: String
+    let title: LocalizedStringKey
     let content: String
     var contentStyle: ContentStyle = .normal
 
@@ -166,7 +166,7 @@ struct InfoCard: View {
 // MARK: - Tip Card
 struct TipCard: View {
     let icon: String
-    let title: String
+    let title: LocalizedStringKey
     let content: String
     let accentColor: Color
 

@@ -261,13 +261,13 @@ class PracticeSession: ObservableObject {
 
     var feedbackMessage: String {
         let ratio = totalChoices == 0 ? 0.0 : Double(positiveChoices) / Double(totalChoices)
-        if ratio >= 0.7 { return "Luar biasa! 🎉 Percakapan yang sangat baik!" }
-        if ratio >= 0.4 { return "Bagus! 👍 Terus berlatih ya!" }
-        return "Coba lagi! 💪 Pilih respons yang lebih positif." }
+        if ratio >= 0.7 { return String(localized: "🎉 이 흐름 그대로 실제 대화에서도 써 보세요.") }
+        if ratio >= 0.4 { return String(localized: "👍 긍정적인 답을 조금 더 고르면 대화가 더 부드러워져요.") }
+        return String(localized: "💪 상대가 기분 좋게 받을 응답을 골라 보세요.") }
 
     var feedbackKo: String {
         let ratio = totalChoices == 0 ? 0.0 : Double(positiveChoices) / Double(totalChoices)
-        if ratio >= 0.7 { return "훌륭해요! 매우 자연스러운 대화예요!" }
-        if ratio >= 0.4 { return "좋아요! 계속 연습해봐요!" }
-        return "다시 해봐요! 좀 더 긍정적인 응답을 골라보세요." }
+        if ratio >= 0.7 { return String(localized: "훌륭해요! 매우 자연스러운 대화예요!") }
+        if ratio >= 0.4 { return String(localized: "좋아요! 계속 연습해봐요!") }
+        return String(localized: "다시 해봐요! 좀 더 긍정적인 응답을 골라보세요.") }
 }

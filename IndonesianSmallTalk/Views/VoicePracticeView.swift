@@ -53,14 +53,26 @@ struct VoicePracticeView: View {
         }
         .task {
             await speech.requestPermissions()
-            // 시작 인사 후 첫 대사 재생
-            speech.speak("Hai!") {
+            // 시작 인사(배우는 언어) 후 첫 대사 재생
+            speech.speak(greeting, language: session.scenario.language) {
                 speakCurrentNode()
             }
         }
         .onDisappear {
             speech.stopSpeaking()
             speech.stopListening()
+        }
+    }
+
+    /// 배우는 언어로 된 짧은 시작 인사
+    private var greeting: String {
+        switch session.scenario.language {
+        case .indonesian: return "Hai!"
+        case .english: return "Hi!"
+        case .japanese: return "こんにちは！"
+        case .chinese: return "你好！"
+        case .spanish: return "¡Hola!"
+        case .korean: return "안녕하세요!"
         }
     }
 
@@ -107,6 +119,7 @@ struct VoicePracticeView: View {
                     .background(.white.opacity(0.1))
                     .clipShape(Circle())
             }
+            .accessibilityLabel(Text("닫기"))
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(session.scenario.title)
@@ -316,6 +329,7 @@ struct VoicePracticeView: View {
             }
         }
         .disabled(!speech.permissionGranted)
+        .accessibilityLabel(Text("말하기 시작"))
     }
 
     private var stopButton: some View {
@@ -332,6 +346,7 @@ struct VoicePracticeView: View {
                     .foregroundColor(.white)
             }
         }
+        .accessibilityLabel(Text("말하기 멈추기"))
     }
 
     private var choiceHints: some View {
@@ -380,6 +395,7 @@ struct VoicePracticeView: View {
                             .symbolEffect(.bounce, value: previewChoiceId == choice.id)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel(Text("듣기"))
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 10)
@@ -409,7 +425,7 @@ struct VoicePracticeView: View {
         previewChoiceId = choice.id
         let cleaned = SpeechManager.normalizeForMatch(choice.text)
         let textToSpeak = cleaned.isEmpty ? choice.text : cleaned
-        speech.speak(textToSpeak) {
+        speech.speak(textToSpeak, language: session.scenario.language) {
             previewChoiceId = nil
         }
     }
@@ -424,7 +440,7 @@ struct VoicePracticeView: View {
 
         if node.speaker == .other {
             phase = .partnerSpeaking
-            speech.speak(node.text) {
+            speech.speak(node.text, language: session.scenario.language) {
                 if session.isFinished {
                     phase = .finished
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

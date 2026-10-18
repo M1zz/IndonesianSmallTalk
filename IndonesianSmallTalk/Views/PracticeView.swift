@@ -52,15 +52,15 @@ struct PracticeView: View {
     }
 
     private var preOpenerSectionLabel: String {
-        preOpenerSpeaker == .me ? "내가 먼저 말할 때" : "상대방이 먼저 말할 때"
+        preOpenerSpeaker == .me ? String(localized: "내가 먼저 말할 때") : String(localized: "상대방이 먼저 말할 때")
     }
 
     private var preOpenerAddLabel: String {
-        preOpenerSpeaker == .me ? "내가 먼저 말하는 대화 추가하기" : "상대방이 먼저 말하는 대화 추가하기"
+        preOpenerSpeaker == .me ? String(localized: "내가 먼저 말하는 대화 추가하기") : String(localized: "상대방이 먼저 말하는 대화 추가하기")
     }
 
     private var defaultOpenerSectionLabel: String {
-        session.scenario.root.speaker == .other ? "상대방이 먼저 말할 때" : "내가 먼저 말할 때"
+        session.scenario.root.speaker == .other ? String(localized: "상대방이 먼저 말할 때") : String(localized: "내가 먼저 말할 때")
     }
 
     private var shouldShowOpenerPicker: Bool {
@@ -240,11 +240,12 @@ struct PracticeView: View {
                     .background(Color(.secondarySystemGroupedBackground))
                     .clipShape(Circle())
             }
+            .accessibilityLabel(Text("뒤로"))
 
             VStack(alignment: .leading, spacing: 1) {
                 Text(session.scenario.title)
                     .font(.system(size: 16, weight: .bold))
-                Text(session.scenario.titleKo + " · " + session.scenario.difficulty.labelKo)
+                Text(verbatim: "\(session.scenario.titleKo) · \(session.scenario.difficulty.labelKo)")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
             }
@@ -260,6 +261,7 @@ struct PracticeView: View {
                     .background(Color(.systemFill))
                     .clipShape(Circle())
             }
+            .accessibilityLabel(Text("대화 트리 보기"))
 
             // 자동읽기 토글
             Button(action: {
@@ -273,6 +275,7 @@ struct PracticeView: View {
                     .background(autoSpeak ? Color.blue.opacity(0.12) : Color(.systemFill))
                     .clipShape(Circle())
             }
+            .accessibilityLabel(autoSpeak ? Text("자동 읽기 끄기") : Text("자동 읽기 켜기"))
 
             // 점수
             HStack(spacing: 4) {
@@ -310,7 +313,7 @@ struct PracticeView: View {
                     Capsule().fill(Color(.systemFill)).frame(height: 5)
                     Capsule()
                         .fill(LinearGradient(
-                            colors: [.blue, Color(red: 0.18, green: 0.50, blue: 0.95)],
+                            colors: [Brand.deep, Brand.blue],
                             startPoint: .leading, endPoint: .trailing))
                         .frame(width: geo.size.width * session.progressRatio, height: 5)
                         .animation(.spring(response: 0.4), value: session.progressRatio)
@@ -327,9 +330,7 @@ struct PracticeView: View {
     private var choiceSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text(selectedPreOpener != nil
-                     ? (nextSpeaker == .me ? "어떻게 대답할까요?" : "상대방이 뭐라고 할까요?")
-                     : (nextSpeaker == .me ? "어떻게 대답할까요?" : "상대방이 뭐라고 할까요?"))
+                (nextSpeaker == .me ? Text("어떻게 대답할까요?") : Text("상대방이 뭐라고 할까요?"))
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.secondary)
                 Spacer()
@@ -346,6 +347,7 @@ struct PracticeView: View {
                         .foregroundColor(.blue.opacity(0.6))
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(Text("직접 추가하기"))
             }
             .padding(.top, 16)
 
@@ -391,7 +393,7 @@ struct PracticeView: View {
                                 }
                             }
                         } label: {
-                            Label(choice.speaker == .me ? "내 대답 삭제" : "상대방 응답 삭제", systemImage: "trash")
+                            choice.speaker == .me ? Label("내 대답 삭제", systemImage: "trash") : Label("상대방 응답 삭제", systemImage: "trash")
                         }
                     }
                 }
@@ -504,9 +506,6 @@ struct PracticeView: View {
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.secondary)
                 Spacer()
-                Text("Bagaimana mulainya?")
-                    .font(.system(size: 11))
-                    .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(.top, 16)
 
@@ -662,7 +661,7 @@ struct PracticeView: View {
     private var rootReplyPreviewSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text(nextSpeaker == .me ? "추가된 내 대답" : "추가된 상대방 응답")
+                (nextSpeaker == .me ? Text("추가된 내 대답") : Text("추가된 상대방 응답"))
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.secondary)
                 Spacer()
@@ -711,7 +710,7 @@ struct PracticeView: View {
                                     }
                                 }
                             } label: {
-                                Label(choice.speaker == .me ? "내 대답 삭제" : "상대방 응답 삭제", systemImage: "trash")
+                                choice.speaker == .me ? Label("내 대답 삭제", systemImage: "trash") : Label("상대방 응답 삭제", systemImage: "trash")
                             }
                         }
                     }
@@ -733,7 +732,7 @@ struct PracticeView: View {
         // 비교용 정규화로 이모지/특수기호를 거른 후 읽어줌
         let cleaned = SpeechManager.normalizeForMatch(node.text)
         let textToSpeak = cleaned.isEmpty ? node.text : cleaned
-        speech.speak(textToSpeak)
+        speech.speak(textToSpeak, language: session.scenario.language)
     }
 
     // MARK: Finish / Extend
@@ -747,7 +746,7 @@ struct PracticeView: View {
                     .foregroundColor(.green)
                 Text("대화 완료!")
                     .font(.system(size: 17, weight: .bold))
-                Text("Percakapan selesai! 🎉")
+                Text("끝까지 이어 갔어요 🎉")
                     .font(.system(size: 13))
                     .foregroundColor(.secondary)
             }
@@ -813,9 +812,9 @@ struct PracticeView: View {
                         Image(systemName: nextSpeaker == .other
                               ? "bubble.right.fill" : "bubble.left.fill")
                             .font(.system(size: 13))
-                        Text(nextSpeaker == .other
-                             ? "상대방 다음 대화 추가"
-                             : "내 다음 대화 추가")
+                        (nextSpeaker == .other
+                             ? Text("상대방 다음 대화 추가")
+                             : Text("내 다음 대화 추가"))
                             .font(.system(size: 13, weight: .semibold))
                     }
                     .foregroundColor(.blue)
@@ -911,12 +910,13 @@ struct ChatBubbleView: View {
                                 .symbolEffect(.bounce, value: isSpeakingThis)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(Text("듣기"))
                     }
                 }
 
                 // 말풍선
                 VStack(alignment: .leading, spacing: 6) {
-                    // 인도네시아어 (메인)
+                    // 배우는 언어 (메인)
                     Text(node.text)
                         .font(.system(size: 15, weight: isLatest ? .semibold : .regular))
                         .foregroundColor(.primary)
@@ -955,7 +955,7 @@ struct ChatBubbleView: View {
                     }
                 }
 
-                Text("탭하면 한국어 번역")
+                Text("탭하면 뜻 보기")
                     .font(.system(size: 9))
                     .foregroundColor(Color(.quaternaryLabel))
             }
@@ -966,13 +966,13 @@ struct ChatBubbleView: View {
     }
 
     private var speakerLabel: some View {
-        Text(isMe ? "나" : "상대방")
+        Text(node.speaker.labelKo)
             .font(.system(size: 9.5, weight: .semibold))
             .foregroundColor(isMe ? .blue : Color(.tertiaryLabel))
     }
 
     private var polarityBadge: some View {
-        Text(node.polarity.label)
+        (node.polarity == .positive ? Text("긍정 +") : Text("부정 −"))
             .font(.system(size: 9, weight: .bold))
             .foregroundColor(node.polarity == .positive ? Color(red: 0.2, green: 0.55, blue: 0.1) : Color(red: 0.65, green: 0.1, blue: 0.1))
             .padding(.horizontal, 6)
@@ -1068,6 +1068,7 @@ struct ChoiceButton: View {
                                 .background(Circle().fill(Color.yellow.opacity(0.15)))
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(Text("코치 팁"))
                     }
                 }
             }
