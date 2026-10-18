@@ -27,8 +27,8 @@ struct ConversationNodeData: Codable, Identifiable {
         return ConversationNode(
             id: id,
             speaker: speakerIsMe ? .me : .other,
-            indonesian: indonesian,
-            korean: korean,
+            userText: indonesian,
+            userMeaning: korean,
             romanization: romanization,
             polarity: pol,
             coachTip: tip,
@@ -102,6 +102,10 @@ struct AIScenario: Identifiable, Codable {
     let grammarPoints: [GrammarPoint]
     let createdAt: Date
     let userPrompt: String        // what the user typed
+    /// 만든 언어 (AppLanguage.rawValue). 예전 저장분은 nil = 인도네시아어
+    var languageCode: String? = AppLanguage.learning.rawValue
+
+    var language: AppLanguage { languageCode.flatMap(AppLanguage.init(rawValue:)) ?? .indonesian }
 
     init(
         id: UUID = UUID(),
@@ -132,8 +136,9 @@ struct AIScenario: Identifiable, Codable {
     func toScenario() -> ConversationScenario {
         ConversationScenario(
             id: id,
+            language: language,
             title: title,
-            titleKo: titleKo,
+            userTitleMeaning: titleKo,
             description: description,
             emoji: emoji,
             root: rootNode.toConversationNode(),

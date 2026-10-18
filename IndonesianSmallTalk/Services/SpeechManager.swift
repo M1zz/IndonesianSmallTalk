@@ -7,7 +7,8 @@ class SpeechManager: ObservableObject {
     private let synthesizer = AVSpeechSynthesizer()
 
     // MARK: - STT
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "id-ID"))
+    /// 배우는 언어가 바뀔 수 있어서 들을 때마다 그 언어로 만든다.
+    private var speechRecognizer: SFSpeechRecognizer?
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
@@ -71,7 +72,8 @@ class SpeechManager: ObservableObject {
 
     // MARK: - TTS
 
-    func speak(_ text: String, completion: (() -> Void)? = nil) {
+    /// language 를 비우면 배우는 언어로 읽는다. 뜻을 읽을 때는 AppLanguage.native 를 넘긴다.
+    func speak(_ text: String, language: AppLanguage? = nil, completion: (() -> Void)? = nil) {
         synthesizer.stopSpeaking(at: .immediate)
 
         // TTS 전에 오디오 세션을 스피커 출력으로 재설정
@@ -80,7 +82,7 @@ class SpeechManager: ObservableObject {
         isSpeaking = true
 
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
+        utterance.voice = SpeechVoice.best(for: language ?? AppLanguage.learning)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.85
         utterance.pitchMultiplier = 1.05
         utterance.postUtteranceDelay = 0.3
@@ -109,6 +111,7 @@ class SpeechManager: ObservableObject {
 
         configureAudioSession()
 
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: AppLanguage.learning.speechCode))
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionRequest else { return }
         recognitionRequest.shouldReportPartialResults = true
@@ -212,7 +215,7 @@ class SpeechManager: ObservableObject {
         var bestNode: ConversationNode?
 
         for choice in choices {
-            let target = Self.normalizeForMatch(choice.indonesian)
+            let target = Self.normalizeForMatch(choice.text)
             let score = similarity(spoken, target)
             if score > bestScore {
                 bestScore = score
@@ -247,8 +250,10 @@ class SpeechManager: ObservableObject {
         let a = alreadyNormalized ? spoken : normalizeForMatch(spoken)
         let b = alreadyNormalized ? target : normalizeForMatch(target)
 
-        let aWords = Set(a.split(separator: " ").map { String($0) })
-        let bWords = Set(b.split(separator: " ").map { String($0) })
+        // 띄어 쓰지 않는 언어(일본어·중국어)는 글자 하나를 낱말 하나로 본다.
+        let byChar = AppLanguage.learning.writesWithoutSpaces
+        let aWords = byChar ? Set(a.filter { $0 != " " }.map { String($0) }) : Set(a.split(separator: " ").map { String($0) })
+        let bWords = byChar ? Set(b.filter { $0 != " " }.map { String($0) }) : Set(b.split(separator: " ").map { String($0) })
 
         guard !bWords.isEmpty else { return 0 }
 
@@ -286,6 +291,18 @@ class SpeechManager: ObservableObject {
             }
         }
         return dp[bArr.count]
+    }
+}
+
+// MARK: - Voice
+
+enum SpeechVoice {
+    /// 그 언어에서 가장 좋은 목소리 (고음질 > 향상 > 기본)
+    static func best(for language: AppLanguage) -> AVSpeechSynthesisVoice? {
+        let code = language.speechCode
+        let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == code }
+        if let v = voices.max(by: { $0.quality.rawValue < $1.quality.rawValue }) { return v }
+        return AVSpeechSynthesisVoice(language: code)
     }
 }
 

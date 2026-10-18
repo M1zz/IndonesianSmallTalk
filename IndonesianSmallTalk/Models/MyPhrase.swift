@@ -1,14 +1,20 @@
 import Foundation
+import SwiftUI
 
 struct MyPhrase: Identifiable, Codable, Equatable {
     var id: UUID = UUID()
-    var indonesian: String
-    var korean: String
+    var indonesian: String      // 배우는 언어 문장 (이름은 예전 저장 파일과 맞추려고 그대로 둔다)
+    var korean: String          // 뜻 (쓴 사람의 화면 언어)
     var context: String
     var polarity: Polarity = .neutral
     var inKeyboard: Bool = true
     var studyCount: Int = 0
     var createdAt: Date = Date()
+    /// 이 표현의 언어 (AppLanguage.rawValue). 예전 저장분은 인도네시아어.
+    var language: String = AppLanguage.indonesian.rawValue
+
+    var text: String { indonesian }
+    var meaning: String { korean }
 
     init(
         id: UUID = UUID(),
@@ -18,7 +24,8 @@ struct MyPhrase: Identifiable, Codable, Equatable {
         polarity: Polarity = .neutral,
         inKeyboard: Bool = true,
         studyCount: Int = 0,
-        createdAt: Date = Date()
+        createdAt: Date = Date(),
+        language: AppLanguage = AppLanguage.learning
     ) {
         self.id = id
         self.indonesian = indonesian
@@ -28,10 +35,11 @@ struct MyPhrase: Identifiable, Codable, Equatable {
         self.inKeyboard = inKeyboard
         self.studyCount = studyCount
         self.createdAt = createdAt
+        self.language = language.rawValue
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, indonesian, korean, context, polarity, inKeyboard, studyCount, createdAt
+        case id, indonesian, korean, context, polarity, inKeyboard, studyCount, createdAt, language
     }
 
     init(from decoder: Decoder) throws {
@@ -44,12 +52,17 @@ struct MyPhrase: Identifiable, Codable, Equatable {
         inKeyboard = (try? c.decode(Bool.self, forKey: .inKeyboard)) ?? true
         studyCount = (try? c.decode(Int.self, forKey: .studyCount)) ?? 0
         createdAt = try c.decode(Date.self, forKey: .createdAt)
+        language = (try? c.decode(String.self, forKey: .language)) ?? AppLanguage.indonesian.rawValue
     }
 }
 
 @MainActor
 final class PhraseStore: ObservableObject {
-    @Published private(set) var phrases: [MyPhrase] = []
+    /// 모든 언어의 표현 (파일에 저장되는 전부)
+    @Published private(set) var allPhrases: [MyPhrase] = []
+
+    /// 지금 배우는 언어의 표현만
+    var phrases: [MyPhrase] { allPhrases.filter { $0.language == AppLanguage.learning.rawValue } }
 
     static let appGroupID = "group.com.devkoan.IndonesianSmallTalk"
 
@@ -85,68 +98,71 @@ final class PhraseStore: ObservableObject {
     }
 
     func add(_ phrase: MyPhrase) {
-        phrases.insert(phrase, at: 0)
+        allPhrases.insert(phrase, at: 0)
         save()
     }
 
     func update(_ phrase: MyPhrase) {
-        guard let idx = phrases.firstIndex(where: { $0.id == phrase.id }) else { return }
-        phrases[idx] = phrase
+        guard let idx = allPhrases.firstIndex(where: { $0.id == phrase.id }) else { return }
+        allPhrases[idx] = phrase
         save()
     }
 
     func toggleInKeyboard(id: UUID) {
-        guard let idx = phrases.firstIndex(where: { $0.id == id }) else { return }
-        phrases[idx].inKeyboard.toggle()
+        guard let idx = allPhrases.firstIndex(where: { $0.id == id }) else { return }
+        allPhrases[idx].inKeyboard.toggle()
         save()
     }
 
     func setAllInKeyboard(_ value: Bool) {
-        for i in phrases.indices { phrases[i].inKeyboard = value }
+        let lang = AppLanguage.learning.rawValue
+        for i in allPhrases.indices where allPhrases[i].language == lang { allPhrases[i].inKeyboard = value }
         save()
     }
 
+    /// 지금 언어 목록(phrases) 기준의 위치로 옮긴다. 다른 언어 표현은 뒤에 그대로 둔다.
     func move(from source: IndexSet, to destination: Int) {
-        let movingItems = source.sorted().map { phrases[$0] }
-        let adjustedDest = destination - source.filter { $0 < destination }.count
-        for idx in source.sorted(by: >) {
-            phrases.remove(at: idx)
-        }
-        phrases.insert(contentsOf: movingItems, at: max(0, min(adjustedDest, phrases.count)))
-        save()
+        var current = phrases
+        current.move(fromOffsets: source, toOffset: destination)
+        replaceCurrent(with: current)
     }
 
     func sortByStudyCount() {
-        phrases.sort {
+        replaceCurrent(with: phrases.sorted {
             if $0.studyCount != $1.studyCount { return $0.studyCount > $1.studyCount }
             return $0.createdAt > $1.createdAt
-        }
-        save()
+        })
     }
 
     func sortByRecent() {
-        phrases.sort { $0.createdAt > $1.createdAt }
-        save()
+        replaceCurrent(with: phrases.sorted { $0.createdAt > $1.createdAt })
     }
 
     func incrementStudyCount(id: UUID) {
-        guard let idx = phrases.firstIndex(where: { $0.id == id }) else { return }
-        phrases[idx].studyCount += 1
+        guard let idx = allPhrases.firstIndex(where: { $0.id == id }) else { return }
+        allPhrases[idx].studyCount += 1
         save()
     }
 
     var keyboardCount: Int { phrases.filter { $0.inKeyboard }.count }
     var totalStudyCount: Int { phrases.reduce(0) { $0 + $1.studyCount } }
 
+    /// 지금 언어 목록(phrases) 기준의 위치
     func delete(at offsets: IndexSet) {
-        for index in offsets.sorted(by: >) where index < phrases.count {
-            phrases.remove(at: index)
-        }
+        let current = phrases
+        let ids = Set(offsets.compactMap { $0 < current.count ? current[$0].id : nil })
+        allPhrases.removeAll { ids.contains($0.id) }
         save()
     }
 
     func delete(id: UUID) {
-        phrases.removeAll { $0.id == id }
+        allPhrases.removeAll { $0.id == id }
+        save()
+    }
+
+    private func replaceCurrent(with current: [MyPhrase]) {
+        let lang = AppLanguage.learning.rawValue
+        allPhrases = current + allPhrases.filter { $0.language != lang }
         save()
     }
 
@@ -155,7 +171,7 @@ final class PhraseStore: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         if let decoded = try? decoder.decode([MyPhrase].self, from: data) {
-            phrases = decoded
+            allPhrases = decoded
         }
     }
 
@@ -163,7 +179,7 @@ final class PhraseStore: ObservableObject {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [.prettyPrinted]
-        guard let data = try? encoder.encode(phrases) else { return }
+        guard let data = try? encoder.encode(allPhrases) else { return }
         try? data.write(to: fileURL, options: [.atomic])
     }
 }

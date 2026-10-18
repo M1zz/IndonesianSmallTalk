@@ -31,7 +31,7 @@ struct CoachTipView: View {
                                 }
                             }
                             // 해당 대화
-                            Text("\"\(node.indonesian)\"")
+                            Text("\"\(node.text)\"")
                                 .font(.system(size: 14, weight: .medium, design: .serif))
                                 .italic()
                                 .foregroundColor(.white.opacity(0.9))
@@ -54,15 +54,15 @@ struct CoachTipView: View {
                         InfoCard(
                             icon: "🇰🇷",
                             title: "한국어 번역",
-                            content: node.korean
+                            content: node.meaning
                         )
 
                         // ── 발음 가이드
-                        if !node.romanization.isEmpty {
+                        if !node.displayRomanization.isEmpty {
                             InfoCard(
                                 icon: "🔊",
                                 title: "발음 가이드",
-                                content: node.romanization,
+                                content: node.displayRomanization,
                                 contentStyle: .serif
                             )
                         }
@@ -87,7 +87,7 @@ struct CoachTipView: View {
                         InfoCard(
                             icon: node.speaker == .me ? "🧑" : "👤",
                             title: "화자",
-                            content: node.speaker.label + " (" + node.speaker.labelKo + ")"
+                            content: node.speaker.labelKo
                         )
                     }
                     .padding(18)

@@ -15,20 +15,46 @@ struct CoachTip {
 class ConversationNode: Identifiable, ObservableObject {
     let id: String
     let speaker: Speaker
-    let indonesian: String   // Bahasa Indonesia
-    let korean: String       // Korean translation
-    let romanization: String // pronunciation guide
+    let text: String                  // 배우는 언어 문장
+    let meanings: [String: String]    // 언어 코드 → 뜻
+    let romanization: String          // 한글 발음 (한국어 화면에서만 보여 준다)
     let polarity: Polarity
     let coachTip: CoachTip?
     let children: [ConversationNode]
 
+    /// 화면 언어로 된 뜻
+    var meaning: String { meanings.localized }
+
+    /// 한국어 화면일 때만 한글 발음
+    var displayRomanization: String { AppLanguage.showsHangulRomanization ? romanization : "" }
+
     enum Speaker {
         case me, other
-        var label: String { self == .me ? "Kamu" : "Orang lain" }
-        var labelKo: String { self == .me ? "나" : "상대방" }
+        var labelKo: String { self == .me ? String(localized: "나") : String(localized: "상대방") }
     }
 
     init(
+        id: String,
+        speaker: Speaker,
+        text: String,
+        meanings: [String: String],
+        romanization: String = "",
+        polarity: Polarity = .neutral,
+        coachTip: CoachTip? = nil,
+        children: [ConversationNode] = []
+    ) {
+        self.id = id
+        self.speaker = speaker
+        self.text = text
+        self.meanings = meanings
+        self.romanization = romanization
+        self.polarity = polarity
+        self.coachTip = coachTip
+        self.children = children
+    }
+
+    /// 인도네시아어 기본 콘텐츠용: 한국어 뜻 + 다른 화면 언어 번역표(ContentTranslations)
+    convenience init(
         id: String,
         speaker: Speaker,
         indonesian: String,
@@ -38,14 +64,27 @@ class ConversationNode: Identifiable, ObservableObject {
         coachTip: CoachTip? = nil,
         children: [ConversationNode] = []
     ) {
-        self.id = id
-        self.speaker = speaker
-        self.indonesian = indonesian
-        self.korean = korean
-        self.romanization = romanization
-        self.polarity = polarity
-        self.coachTip = coachTip
-        self.children = children
+        var meanings = [AppLanguage.korean.rawValue: korean]
+        let translated = ContentTranslations.text(ContentKey.node(id), korean: korean)
+        if AppLanguage.native != .korean, translated != korean { meanings[AppLanguage.native.rawValue] = translated }
+        self.init(id: id, speaker: speaker, text: indonesian, meanings: meanings,
+                  romanization: romanization, polarity: polarity, coachTip: coachTip, children: children)
+    }
+
+    /// 사용자가 직접 쓴 문장: 뜻은 쓴 사람의 화면 언어로 저장된 것 하나
+    convenience init(
+        id: String,
+        speaker: Speaker,
+        userText: String,
+        userMeaning: String,
+        romanization: String = "",
+        polarity: Polarity = .neutral,
+        coachTip: CoachTip? = nil,
+        children: [ConversationNode] = []
+    ) {
+        self.init(id: id, speaker: speaker, text: userText,
+                  meanings: [AppLanguage.native.rawValue: userMeaning],
+                  romanization: romanization, polarity: polarity, coachTip: coachTip, children: children)
     }
 }
 
@@ -53,15 +92,49 @@ class ConversationNode: Identifiable, ObservableObject {
 
 struct ConversationScenario: Identifiable {
     let id: UUID
-    let title: String
-    let titleKo: String
+    /// 기록·진행률에 쓰는 고정 키
+    let key: String
+    let language: AppLanguage
+    let title: String                    // 배우는 언어 제목
+    let titleMeanings: [String: String]  // 언어 코드 → 제목 뜻
     let description: String
     let emoji: String
     let root: ConversationNode
     let difficulty: Difficulty
+    /// 상황별 회화의 분류 (SituationLibrary.categories). 스몰토크·사용자 시나리오는 nil
+    let category: String?
+
+    /// 화면 언어로 된 제목
+    var titleKo: String { titleMeanings.localized }
 
     init(
         id: UUID = UUID(),
+        key: String? = nil,
+        language: AppLanguage = .indonesian,
+        title: String,
+        titleMeanings: [String: String],
+        description: String,
+        emoji: String,
+        root: ConversationNode,
+        difficulty: Difficulty,
+        category: String? = nil
+    ) {
+        self.id = id
+        self.key = key ?? id.uuidString
+        self.language = language
+        self.title = title
+        self.titleMeanings = titleMeanings
+        self.description = description
+        self.emoji = emoji
+        self.root = root
+        self.difficulty = difficulty
+        self.category = category
+    }
+
+    /// 인도네시아어 기본 콘텐츠용 (한국어 제목 + 번역표)
+    init(
+        id: UUID = UUID(),
+        key: String? = nil,
         title: String,
         titleKo: String,
         description: String,
@@ -69,13 +142,27 @@ struct ConversationScenario: Identifiable {
         root: ConversationNode,
         difficulty: Difficulty
     ) {
-        self.id = id
-        self.title = title
-        self.titleKo = titleKo
-        self.description = description
-        self.emoji = emoji
-        self.root = root
-        self.difficulty = difficulty
+        var meanings = [AppLanguage.korean.rawValue: titleKo]
+        let translated = ContentTranslations.text(ContentKey.scenarioTitle(title), korean: titleKo)
+        if AppLanguage.native != .korean, translated != titleKo { meanings[AppLanguage.native.rawValue] = translated }
+        self.init(id: id, key: key, language: .indonesian, title: title, titleMeanings: meanings,
+                  description: description, emoji: emoji, root: root, difficulty: difficulty)
+    }
+
+    /// 사용자가 만든 시나리오 (제목 뜻은 쓴 사람의 화면 언어)
+    init(
+        id: UUID,
+        language: AppLanguage,
+        title: String,
+        userTitleMeaning: String,
+        description: String,
+        emoji: String,
+        root: ConversationNode,
+        difficulty: Difficulty
+    ) {
+        self.init(id: id, language: language, title: title,
+                  titleMeanings: [AppLanguage.native.rawValue: userTitleMeaning],
+                  description: description, emoji: emoji, root: root, difficulty: difficulty)
     }
 
     enum Difficulty: String {
@@ -91,9 +178,9 @@ struct ConversationScenario: Identifiable {
         }
         var labelKo: String {
             switch self {
-            case .beginner: return "초급"
-            case .intermediate: return "중급"
-            case .advanced: return "고급"
+            case .beginner: return String(localized: "초급")
+            case .intermediate: return String(localized: "중급")
+            case .advanced: return String(localized: "고급")
             }
         }
     }

@@ -53,6 +53,17 @@ struct VocabWord: Identifiable, Codable {
     var studyCount: Int = 0
     var isLearned: Bool = false
     var createdAt: Date = Date()
+    /// 이 단어의 언어 (AppLanguage.rawValue). 예전 저장분은 인도네시아어.
+    var language: String = AppLanguage.learning.rawValue
+
+    var text: String { indonesian }
+    var meaning: String { korean }
+    /// 분류 이름 (저장은 한국어 키, 화면에는 화면 언어로)
+    var categoryName: String { VocabWord.categoryName(category) }
+
+    static func categoryName(_ key: String) -> String {
+        ContentTranslations.text(ContentKey.vocabCategory(key), korean: key)
+    }
 
     /// 출장 100단어 토픽 카테고리. 사용자 추가 단어용 "기타" 포함.
     static let categories = [
@@ -83,7 +94,8 @@ struct VocabWord: Identifiable, Codable {
         tier: Int = 2,
         studyCount: Int = 0,
         isLearned: Bool = false,
-        createdAt: Date = Date()
+        createdAt: Date = Date(),
+        language: AppLanguage = AppLanguage.learning
     ) {
         self.id = id
         self.indonesian = indonesian
@@ -96,10 +108,11 @@ struct VocabWord: Identifiable, Codable {
         self.studyCount = studyCount
         self.isLearned = isLearned
         self.createdAt = createdAt
+        self.language = language.rawValue
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, indonesian, korean, romanization, category, notes, examples, tier, studyCount, isLearned, createdAt
+        case id, indonesian, korean, romanization, category, notes, examples, tier, studyCount, isLearned, createdAt, language
     }
 
     init(from decoder: Decoder) throws {
@@ -115,12 +128,38 @@ struct VocabWord: Identifiable, Codable {
         studyCount    = (try? c.decode(Int.self, forKey: .studyCount)) ?? 0
         isLearned     = (try? c.decode(Bool.self, forKey: .isLearned)) ?? false
         createdAt     = (try? c.decode(Date.self, forKey: .createdAt)) ?? Date()
+        language      = (try? c.decode(String.self, forKey: .language)) ?? AppLanguage.indonesian.rawValue
+    }
+
+    /// 한국어로 쓰인 기본 단어를 화면 언어로 옮긴 사본 (처음 채울 때 한 번)
+    func translatedForNative() -> VocabWord {
+        guard AppLanguage.native != .korean else { return self }
+        var w = self
+        w.korean = ContentTranslations.text(ContentKey.vocab(indonesian, "meaning"), korean: korean)
+        w.notes = ContentTranslations.text(ContentKey.vocab(indonesian, "notes"), korean: notes)
+        w.examples = examples.map {
+            VocabExample($0.indonesian, ContentTranslations.text(ContentKey.example($0.indonesian), korean: $0.korean), level: $0.level)
+        }
+        return w
     }
 }
 
 @MainActor
 final class VocabularyStore: ObservableObject {
-    @Published private(set) var words: [VocabWord] = []
+    /// 모든 언어의 단어 (파일에 저장되는 전부)
+    @Published private(set) var allWords: [VocabWord] = []
+
+    /// 지금 배우는 언어의 단어만
+    var words: [VocabWord] { allWords.filter { $0.language == AppLanguage.learning.rawValue } }
+
+    /// 기본 단어 (인도네시아어만 있음)
+    private static var seedItems: [VocabWord] {
+        BuiltInVocabulary.seedItems.map { w -> VocabWord in
+            var x = w.translatedForNative()
+            x.language = AppLanguage.indonesian.rawValue
+            return x
+        }
+    }
 
     /// 내장 단어 시드 버전. 이 숫자가 올라가면 다음 실행 때 새 단어를 머지함.
     private static let currentBuiltInVersion = 2
@@ -136,7 +175,7 @@ final class VocabularyStore: ObservableObject {
         load()
         if !exists {
             // 첫 실행 — 시드 채우기
-            words = BuiltInVocabulary.seedItems
+            allWords = Self.seedItems
             save()
         } else {
             // 기존 유저 — 새 내장 단어가 있으면 머지 (덮어쓰지 않음)
@@ -150,16 +189,18 @@ final class VocabularyStore: ObservableObject {
 
     /// 내장 시드 중 사용자 데이터에 없는 단어만 추가. 기존 단어는 그대로 유지.
     private func mergeNewBuiltIns() {
-        let existing = Set(words.map { $0.indonesian })
-        let toAdd = BuiltInVocabulary.seedItems.filter { !existing.contains($0.indonesian) }
+        let existing = Set(allWords.filter { $0.language == AppLanguage.indonesian.rawValue }.map { $0.indonesian })
+        let toAdd = Self.seedItems.filter { !existing.contains($0.indonesian) }
         guard !toAdd.isEmpty else { return }
-        words.append(contentsOf: toAdd)
+        allWords.append(contentsOf: toAdd)
         save()
     }
 
     /// 내장 단어를 강제로 다시 채워넣음. 사용자가 추가/수정/삭제한 단어는 모두 사라짐.
     func resetToBuiltIn() {
-        words = BuiltInVocabulary.seedItems
+        let lang = AppLanguage.learning.rawValue
+        allWords.removeAll { $0.language == lang }
+        if AppLanguage.learning == .indonesian { allWords.append(contentsOf: Self.seedItems) }
         save()
         UserDefaults.standard.set(Self.currentBuiltInVersion, forKey: Self.builtInVersionKey)
     }
@@ -173,30 +214,30 @@ final class VocabularyStore: ObservableObject {
     }
 
     func add(_ word: VocabWord) {
-        words.insert(word, at: 0)
+        allWords.insert(word, at: 0)
         save()
     }
 
     func update(_ word: VocabWord) {
-        guard let idx = words.firstIndex(where: { $0.id == word.id }) else { return }
-        words[idx] = word
+        guard let idx = allWords.firstIndex(where: { $0.id == word.id }) else { return }
+        allWords[idx] = word
         save()
     }
 
     func delete(id: UUID) {
-        words.removeAll { $0.id == id }
+        allWords.removeAll { $0.id == id }
         save()
     }
 
     func toggleLearned(id: UUID) {
-        guard let idx = words.firstIndex(where: { $0.id == id }) else { return }
-        words[idx].isLearned.toggle()
+        guard let idx = allWords.firstIndex(where: { $0.id == id }) else { return }
+        allWords[idx].isLearned.toggle()
         save()
     }
 
     func incrementStudy(id: UUID) {
-        guard let idx = words.firstIndex(where: { $0.id == id }) else { return }
-        words[idx].studyCount += 1
+        guard let idx = allWords.firstIndex(where: { $0.id == id }) else { return }
+        allWords[idx].studyCount += 1
         save()
     }
 
@@ -208,7 +249,7 @@ final class VocabularyStore: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         if let decoded = try? decoder.decode([VocabWord].self, from: data) {
-            words = decoded
+            allWords = decoded
         }
     }
 
@@ -216,7 +257,7 @@ final class VocabularyStore: ObservableObject {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [.prettyPrinted]
-        guard let data = try? encoder.encode(words) else { return }
+        guard let data = try? encoder.encode(allWords) else { return }
         try? data.write(to: fileURL, options: [.atomic])
     }
 }

@@ -52,8 +52,8 @@ struct UserReply: Identifiable, Codable, Equatable {
         ConversationNode(
             id: "user-\(id.uuidString)",
             speaker: speakerRaw == "other" ? .other : .me,
-            indonesian: indonesian,
-            korean: korean,
+            userText: indonesian,
+            userMeaning: korean,
             romanization: romanization,
             polarity: polarity,
             coachTip: nil,

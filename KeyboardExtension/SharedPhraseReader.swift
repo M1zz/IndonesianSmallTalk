@@ -17,6 +17,7 @@ enum SharedPhraseReader {
         decoder.dateDecodingStrategy = .iso8601
         let all = (try? decoder.decode([MyPhrase].self, from: data)) ?? []
         // 키보드에 표시 토글이 켜진 것만
-        return all.filter { $0.inKeyboard }
+        let lang = AppLanguage.learning.rawValue
+        return all.filter { $0.inKeyboard && $0.language == lang }
     }
 }

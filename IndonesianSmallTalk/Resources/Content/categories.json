@@ -1,0 +1,101 @@
+{
+  "airport" : {
+    "icon" : "✈️",
+    "name" : {
+      "en" : "Airport",
+      "es" : "Aeropuerto",
+      "id" : "Bandara",
+      "ja" : "空港",
+      "ko" : "공항",
+      "zh-Hans" : "机场"
+    }
+  },
+  "basic" : {
+    "icon" : "📚",
+    "name" : {
+      "en" : "Basic",
+      "es" : "Básico",
+      "id" : "Dasar",
+      "ja" : "基本",
+      "ko" : "기본",
+      "zh-Hans" : "基础"
+    }
+  },
+  "casual" : {
+    "icon" : "💬",
+    "name" : {
+      "en" : "Casual",
+      "es" : "Casual",
+      "id" : "Percakapan Santai",
+      "ja" : "日常会話",
+      "ko" : "일상대화",
+      "zh-Hans" : "日常对话"
+    }
+  },
+  "emergency" : {
+    "icon" : "🚨",
+    "name" : {
+      "en" : "Emergency",
+      "es" : "Emergencia",
+      "id" : "Darurat",
+      "ja" : "緊急",
+      "ko" : "긴급상황",
+      "zh-Hans" : "紧急情况"
+    }
+  },
+  "hotel" : {
+    "icon" : "🏨",
+    "name" : {
+      "en" : "Accommodation",
+      "es" : "Alojamiento",
+      "id" : "Akomodasi",
+      "ja" : "宿泊",
+      "ko" : "숙소",
+      "zh-Hans" : "住宿"
+    }
+  },
+  "restaurant" : {
+    "icon" : "🍽️",
+    "name" : {
+      "en" : "Restaurant",
+      "es" : "Restaurante",
+      "id" : "Restoran",
+      "ja" : "レストラン",
+      "ko" : "식당",
+      "zh-Hans" : "餐厅"
+    }
+  },
+  "shopping" : {
+    "icon" : "🛍️",
+    "name" : {
+      "en" : "Shopping",
+      "es" : "Compras",
+      "id" : "Belanja",
+      "ja" : "ショッピング",
+      "ko" : "쇼핑",
+      "zh-Hans" : "购物"
+    }
+  },
+  "tourism" : {
+    "icon" : "🗺️",
+    "name" : {
+      "en" : "Tourism",
+      "es" : "Turismo",
+      "id" : "Wisata",
+      "ja" : "観光",
+      "ko" : "관광",
+      "zh-Hans" : "旅游"
+    }
+  },
+  "transportation" : {
+    "icon" : "🚗",
+    "name" : {
+      "en" : "Transportation",
+      "es" : "Transporte",
+      "id" : "Transportasi",
+      "ja" : "交通",
+      "ko" : "교통",
+      "zh-Hans" : "交通"
+    }
+  }
+}

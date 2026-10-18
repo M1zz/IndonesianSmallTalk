@@ -194,15 +194,15 @@ private struct ExplorerView: View {
             .padding(.bottom, 14)
 
             // Indonesian text — large
-            Text(currentNode.indonesian)
+            Text(currentNode.text)
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.primary)
                 .lineSpacing(4)
                 .padding(.horizontal, 20)
 
             // Romanization
-            if !currentNode.romanization.isEmpty {
-                Text(currentNode.romanization)
+            if !currentNode.displayRomanization.isEmpty {
+                Text(currentNode.displayRomanization)
                     .font(.system(size: 13, design: .serif))
                     .italic()
                     .foregroundColor(Color(.tertiaryLabel))
@@ -211,7 +211,7 @@ private struct ExplorerView: View {
             }
 
             // Korean
-            Text(currentNode.korean)
+            Text(currentNode.meaning)
                 .font(.system(size: 14))
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 20)
@@ -389,13 +389,13 @@ private struct BranchCard: View {
                         }
                     }
 
-                    Text(node.indonesian)
+                    Text(node.text)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.primary)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
-                    Text(node.korean)
+                    Text(node.meaning)
                         .font(.system(size: 12))
                         .foregroundColor(.secondary)
                         .lineLimit(1)
@@ -485,19 +485,19 @@ private struct OutlineNodeRow: View {
 
                     // Text
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(node.indonesian)
+                        Text(node.text)
                             .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
                             .foregroundColor(.primary)
                             .lineLimit(isSelected ? 4 : 2)
                             .multilineTextAlignment(.leading)
 
                         if isSelected {
-                            Text(node.korean)
+                            Text(node.meaning)
                                 .font(.system(size: 11))
                                 .foregroundColor(.secondary)
                                 .transition(.opacity.combined(with: .move(edge: .top)))
-                            if !node.romanization.isEmpty {
-                                Text(node.romanization)
+                            if !node.displayRomanization.isEmpty {
+                                Text(node.displayRomanization)
                                     .font(.system(size: 10, design: .serif))
                                     .italic()
                                     .foregroundColor(Color(.tertiaryLabel))

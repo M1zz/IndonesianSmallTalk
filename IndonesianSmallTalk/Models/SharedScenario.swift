@@ -15,6 +15,10 @@ struct SharedScenario: Identifiable, Equatable {
     var openingKorean: String
     var openingRomanization: String
     var createdAt: Date
+    /// 만든 언어 (AppLanguage.rawValue). 예전 레코드는 인도네시아어
+    var languageCode: String = AppLanguage.learning.rawValue
+
+    var language: AppLanguage { AppLanguage(rawValue: languageCode) ?? .indonesian }
 
     /// 내가 만든 (private DB) — true / 친구가 공유 (shared DB) — false
     var ownedByMe: Bool
@@ -56,6 +60,7 @@ extension SharedScenario {
         self.openingKorean = openingKorean
         self.openingRomanization = (record["openingRomanization"] as? String) ?? ""
         self.createdAt = record.creationDate ?? Date()
+        self.languageCode = (record["language"] as? String) ?? AppLanguage.indonesian.rawValue
         self.ownedByMe = ownedByMe
         self.zoneID = record.recordID.zoneID
         self.ownerDisplay = nil
@@ -79,6 +84,7 @@ extension SharedScenario {
         record["openingIndonesian"] = openingIndonesian as CKRecordValue
         record["openingKorean"] = openingKorean as CKRecordValue
         record["openingRomanization"] = openingRomanization as CKRecordValue
+        record["language"] = languageCode as CKRecordValue
     }
 }
 
@@ -89,8 +95,8 @@ extension SharedScenario {
         let root = ConversationNode(
             id: rootNodeId,
             speaker: openerSpeakerIsOther ? .other : .me,
-            indonesian: openingIndonesian,
-            korean: openingKorean,
+            userText: openingIndonesian,
+            userMeaning: openingKorean,
             romanization: openingRomanization,
             polarity: .neutral,
             coachTip: nil,
@@ -99,8 +105,9 @@ extension SharedScenario {
         let difficulty = ConversationScenario.Difficulty(rawValue: difficultyRaw) ?? .beginner
         return ConversationScenario(
             id: id,
+            language: language,
             title: title,
-            titleKo: titleKo,
+            userTitleMeaning: titleKo,
             description: description,
             emoji: emoji,
             root: root,

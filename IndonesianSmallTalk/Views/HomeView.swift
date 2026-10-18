@@ -2,7 +2,12 @@ import CloudKit
 import SwiftUI
 
 struct HomeView: View {
-    let builtinScenarios = ConversationData.allScenarios
+    private let language = AppLanguage.learning
+    private var smallTalkScenarios: [ConversationScenario] { ScenarioLibrary.smallTalk(for: language) }
+    private var situationScenarios: [ConversationScenario] { ScenarioLibrary.situations(for: language) }
+    private var courses: [JourneyCourse] { ScenarioLibrary.courses(for: language) }
+    @State private var situationCategory: String? = nil
+    @State private var showLanguagePicker = false
     @EnvironmentObject var userScenarioStore: UserScenarioStore
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
     @EnvironmentObject var sharedReplyStore: SharedReplyStore
@@ -27,6 +32,19 @@ struct HomeView: View {
         let id = UUID()
         let share: CKShare
         let container: CKContainer
+    }
+
+    private var sharedScenarios: [SharedScenario] {
+        sharedScenarioStore.allScenarios.filter { $0.language == language }
+    }
+
+    private var aiScenarios: [AIScenario] {
+        aiScenarioStore.scenarios.filter { $0.language == language }
+    }
+
+    private var visibleSituations: [ConversationScenario] {
+        guard let situationCategory else { return situationScenarios }
+        return situationScenarios.filter { $0.category == situationCategory }
     }
 
     private var unsharedUserScenarios: [UserScenario] {
@@ -60,11 +78,12 @@ struct HomeView: View {
                 }
                 .padding(.top, 18)
 
-                journeySection
+                if !courses.isEmpty { journeySection }
                 sharedSection
                 myScenarioSection
                 aiScenarioSection
                 builtinSection
+                situationSection
             }
         }
         .background(Color(.systemGroupedBackground))
@@ -141,14 +160,17 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView()
         }
+        .sheet(isPresented: $showLanguagePicker) {
+            LanguagePickerSheet()
+        }
     }
 
     @ViewBuilder
     private var sharedSection: some View {
-        if !sharedScenarioStore.allScenarios.isEmpty || sharedScenarioStore.lastError != nil {
+        if !sharedScenarios.isEmpty || sharedScenarioStore.lastError != nil {
             sharedSectionHeader
             VStack(spacing: 14) {
-                ForEach(sharedScenarioStore.allScenarios) { shared in
+                ForEach(sharedScenarios) { shared in
                     ScenarioCard(
                         scenario: shared.toScenario(),
                         isUserAdded: false,
@@ -208,7 +230,7 @@ struct HomeView: View {
             .padding(.top, 22)
 
             VStack(spacing: 14) {
-                ForEach(JourneyData.allCourses) { course in
+                ForEach(courses) { course in
                     JourneyCourseCard(course: course) { selectedCourse = course }
                 }
             }
@@ -219,7 +241,7 @@ struct HomeView: View {
 
     @ViewBuilder
     private var aiScenarioSection: some View {
-        if !aiScenarioStore.scenarios.isEmpty {
+        if !aiScenarios.isEmpty {
             HStack(spacing: 6) {
                 Image(systemName: "sparkles").font(.system(size: 12)).foregroundColor(.purple)
                 Text("AI 생성 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
@@ -228,7 +250,7 @@ struct HomeView: View {
             .padding(.horizontal, 18)
             .padding(.top, 22)
             VStack(spacing: 14) {
-                ForEach(aiScenarioStore.scenarios) { ai in
+                ForEach(aiScenarios) { ai in
                     AIScenarioCard(
                         ai: ai,
                         onStudyTap: { selectedAIScenario = ai; showAIDetail = true },
@@ -245,25 +267,87 @@ struct HomeView: View {
 
     @ViewBuilder
     private var builtinSection: some View {
-        HStack {
-            Text("기본 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
-            Spacer()
-        }
-        .padding(.horizontal, 18)
-        .padding(.top, 22)
-        VStack(spacing: 14) {
-            ForEach(builtinScenarios) { scenario in
-                ScenarioCard(
-                    scenario: scenario,
-                    onTap: { selectedScenario = scenario; showPractice = true },
-                    onVoiceTap: { selectedScenario = scenario; showVoicePractice = true },
-                    onAddReply: { addReplyScenario = scenario }
-                )
+        if !smallTalkScenarios.isEmpty {
+            HStack {
+                Text("기본 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Spacer()
             }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+            VStack(spacing: 14) {
+                ForEach(smallTalkScenarios) { scenario in
+                    ScenarioCard(
+                        scenario: scenario,
+                        onTap: { selectedScenario = scenario; showPractice = true },
+                        onVoiceTap: { selectedScenario = scenario; showVoicePractice = true },
+                        onAddReply: { addReplyScenario = scenario }
+                    )
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 8)
         }
-        .padding(.horizontal, 18)
-        .padding(.top, 8)
-        .padding(.bottom, 32)
+    }
+
+    @ViewBuilder
+    private var situationSection: some View {
+        if !situationScenarios.isEmpty {
+            HStack(spacing: 6) {
+                Image(systemName: "map")
+                    .font(.system(size: 12))
+                    .foregroundColor(.accentColor)
+                Text("상황별 회화").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Spacer()
+                Text("\(visibleSituations.count)")
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    categoryChip(title: String(localized: "전체"), icon: nil, id: nil)
+                    ForEach(SituationLibrary.categories) { cat in
+                        categoryChip(title: cat.name, icon: cat.icon, id: cat.id)
+                    }
+                }
+                .padding(.horizontal, 18)
+            }
+            .padding(.top, 8)
+
+            LazyVStack(spacing: 14) {
+                ForEach(visibleSituations) { scenario in
+                    ScenarioCard(
+                        scenario: scenario,
+                        onTap: { selectedScenario = scenario; showPractice = true },
+                        onVoiceTap: { selectedScenario = scenario; showVoicePractice = true },
+                        onAddReply: { addReplyScenario = scenario }
+                    )
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 10)
+        }
+        Color.clear.frame(height: 32)
+    }
+
+    private func categoryChip(title: String, icon: String?, id: String?) -> some View {
+        let selected = situationCategory == id
+        return Button {
+            withAnimation(.easeInOut(duration: 0.2)) { situationCategory = id }
+        } label: {
+            HStack(spacing: 4) {
+                if let icon { Text(icon).font(.system(size: 12)) }
+                Text(title).font(.system(size: 12, weight: .semibold))
+            }
+            .foregroundColor(selected ? .white : .primary)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 7)
+            .background(Capsule().fill(selected ? Brand.blue : Color(.secondarySystemGroupedBackground)))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
 
     @ViewBuilder
@@ -385,6 +469,7 @@ struct HomeView: View {
                 openingKorean: userScenario.openingKorean,
                 openingRomanization: userScenario.openingRomanization,
                 createdAt: userScenario.createdAt,
+                languageCode: userScenario.language.rawValue,
                 ownedByMe: true
             )
 
@@ -408,25 +493,34 @@ struct HomeView: View {
     private var headerBanner: some View {
         ZStack(alignment: .topTrailing) {
             VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
-                    Text("🇮🇩")
-                        .font(.system(size: 36))
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Belajar Bahasa Indonesia")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                        Text("인도네시아어 스몰토크 연습")
-                            .font(.system(size: 13, weight: .medium))
-                            .foregroundColor(.white.opacity(0.8))
-                            .lineLimit(1)
+                Button { showLanguagePicker = true } label: {
+                    HStack(spacing: 8) {
+                        Text(language.flag)
+                            .font(.system(size: 36))
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack(spacing: 4) {
+                                Text("말문")
+                                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                Image(systemName: "chevron.down.circle.fill")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.white.opacity(0.7))
+                            }
+                            Text("\(language.localizedName) 회화 연습")
+                                .font(.system(size: 13, weight: .medium))
+                                .foregroundColor(.white.opacity(0.8))
+                                .lineLimit(1)
+                        }
                     }
                 }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("배우는 언어 바꾸기, 지금 \(language.localizedName)"))
                 HStack(spacing: 8) {
-                    StatPill(icon: "🎯", value: "\(builtinScenarios.count + userScenarioStore.scenarios.count + sharedScenarioStore.allScenarios.count)", label: "시나리오")
-                    StatPill(icon: "💬", label: "균형 대화")
-                    StatPill(icon: "💡", label: "코치 팁")
+                    StatPill(icon: "🎯", value: "\(smallTalkScenarios.count + situationScenarios.count + userScenarioStore.scenarios.count + sharedScenarios.count)", label: String(localized: "시나리오"))
+                    StatPill(icon: "💬", label: String(localized: "균형 대화"))
+                    if !smallTalkScenarios.isEmpty {
+                        StatPill(icon: "💡", label: String(localized: "코치 팁"))
+                    }
                     Spacer(minLength: 0)
                 }
             }
@@ -446,11 +540,8 @@ struct HomeView: View {
             .padding(.trailing, 16)
         }
         .background {
-            LinearGradient(
-                colors: [Color(red: 0.18, green: 0.50, blue: 0.95), Color(red: 0.10, green: 0.35, blue: 0.75)],
-                startPoint: .topLeading, endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea(edges: .top)
+            Brand.gradient
+                .ignoresSafeArea(edges: .top)
         }
     }
 }

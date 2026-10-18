@@ -1,0 +1,5292 @@
+{
+  "language" : "es",
+  "scenarios" : [
+    {
+      "category" : "basic",
+      "description" : {
+        "en" : "Practice asking for bathroom location",
+        "es" : "Practica preguntar por el baño",
+        "ja" : "トイレの場所を尋ねる練習",
+        "ko" : "화장실 위치를 물어보는 연습",
+        "zh-Hans" : "练习询问厕所位置"
+      },
+      "emoji" : "🚻",
+      "id" : "es-bathroom",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-end1-1",
+                            "meaning" : {
+                              "en" : "Yes, it's next to the regular toilet.",
+                              "ja" : "はい、普通のトイレの隣にあります。",
+                              "ko" : "네, 일반 화장실 옆에 있어요.",
+                              "zh-Hans" : "是的，在普通厕所旁边。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, está al lado del baño normal."
+                          }
+                        ],
+                        "id" : "es-followup1-1-2",
+                        "meaning" : {
+                          "en" : "Is there a disabled toilet?",
+                          "ja" : "障害者用トイレはありますか？",
+                          "ko" : "장애인 화장실도 있나요?",
+                          "zh-Hans" : "有残疾人厕所吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Hay baño para discapacitados?"
+                      }
+                    ],
+                    "id" : "es-continue1-1",
+                    "meaning" : {
+                      "en" : "You're welcome!",
+                      "ja" : "どういたしまして！",
+                      "ko" : "천만에요!",
+                      "zh-Hans" : "不客气！"
+                    },
+                    "speaker" : "other",
+                    "text" : "¡De nada!"
+                  }
+                ],
+                "id" : "es-followup1-1",
+                "meaning" : {
+                  "en" : "Thank you!",
+                  "ja" : "ありがとうございます！",
+                  "ko" : "감사합니다!",
+                  "zh-Hans" : "谢谢！"
+                },
+                "speaker" : "me",
+                "text" : "¡Gracias!"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-end1-2",
+                            "meaning" : {
+                              "en" : "You're welcome, be careful!",
+                              "ja" : "どういたしまして、気をつけてね！",
+                              "ko" : "천만에요, 조심히 가세요!",
+                              "zh-Hans" : "不客气，小心点！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada, ¡ten cuidado!"
+                          }
+                        ],
+                        "id" : "es-continue1-2",
+                        "meaning" : {
+                          "en" : "Okay, thank you!",
+                          "ja" : "わかりました、ありがとう！",
+                          "ko" : "네, 감사합니다!",
+                          "zh-Hans" : "好的，谢谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Vale, ¡gracias!"
+                      }
+                    ],
+                    "id" : "es-clarify1-2",
+                    "meaning" : {
+                      "en" : "No, just one minute walk.",
+                      "ja" : "いいえ、歩いて1分です。",
+                      "ko" : "아니요, 걸어서 1분이에요.",
+                      "zh-Hans" : "不远，走路只要一分钟。"
+                    },
+                    "speaker" : "other",
+                    "text" : "No, solo un minuto caminando."
+                  }
+                ],
+                "id" : "es-followup1-2",
+                "meaning" : {
+                  "en" : "Is it far from here?",
+                  "ja" : "ここから遠いですか？",
+                  "ko" : "여기서 멀어요?",
+                  "zh-Hans" : "离这里远吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Está lejos de aquí?"
+              }
+            ],
+            "id" : "es-response1",
+            "meaning" : {
+              "en" : "Over there, turn left and go straight.",
+              "ja" : "あそこです、左に曲がってまっすぐ行ってください。",
+              "ko" : "저기요, 왼쪽으로 돌아서 직진하세요.",
+              "zh-Hans" : "在那边，左转然后直走。"
+            },
+            "speaker" : "other",
+            "text" : "Por allí, gira a la izquierda y sigue recto."
+          }
+        ],
+        "id" : "es-bathroom-root",
+        "meaning" : {
+          "en" : "Where is the bathroom?",
+          "ja" : "トイレはどこですか？",
+          "ko" : "화장실이 어디에요?",
+          "zh-Hans" : "厕所在哪里？"
+        },
+        "speaker" : "me",
+        "text" : "¿Dónde está el baño?"
+      },
+      "title" : {
+        "en" : "Finding the Bathroom",
+        "es" : "Buscar el baño",
+        "ja" : "トイレを探す",
+        "ko" : "화장실 찾기",
+        "zh-Hans" : "找厕所"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice ordering food at a restaurant",
+        "es" : "Practica pedir comida en un restaurante",
+        "ja" : "レストランで料理を注文する練習",
+        "ko" : "식당에서 음식을 주문하는 연습",
+        "zh-Hans" : "练习在餐厅点餐"
+      },
+      "emoji" : "🍜",
+      "id" : "es-ordering",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-order-end1-1a",
+                            "meaning" : {
+                              "en" : "Okay, fried rice not spicy. Please wait a moment.",
+                              "ja" : "わかりました、辛くないナシゴレンですね。少々お待ちください。",
+                              "ko" : "알겠습니다, 안 매운 나시고랭이요. 잠시만 기다려주세요.",
+                              "zh-Hans" : "好的，不辣的炒饭。请稍等。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Bien, arroz frito no picante. Espere un momento."
+                          }
+                        ],
+                        "id" : "es-order-continue1-1a",
+                        "meaning" : {
+                          "en" : "Not spicy, thank you.",
+                          "ja" : "辛くないのでお願いします。",
+                          "ko" : "안 매운 걸로요, 감사합니다.",
+                          "zh-Hans" : "不要辣的，谢谢。"
+                        },
+                        "speaker" : "me",
+                        "text" : "No picante, gracias."
+                      },
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-order-end1-1b",
+                            "meaning" : {
+                              "en" : "Okay, I'll make it a little spicy. Just a moment.",
+                              "ja" : "わかりました、少し辛くしますね。少々お待ちください。",
+                              "ko" : "알겠습니다, 조금만 맵게 만들어드릴게요. 잠시만요.",
+                              "zh-Hans" : "好的，我会做得稍微辣一点。请稍等。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Bien, lo haré un poco picante. Un momento."
+                          }
+                        ],
+                        "id" : "es-order-continue1-1b",
+                        "meaning" : {
+                          "en" : "Just a little spicy.",
+                          "ja" : "少しだけ辛くしてください。",
+                          "ko" : "조금만 맵게 해주세요.",
+                          "zh-Hans" : "稍微辣一点就好。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Solo un poco picante."
+                      }
+                    ],
+                    "id" : "es-order-clarify1-1",
+                    "meaning" : {
+                      "en" : "Spicy or not?",
+                      "ja" : "辛いのは大丈夫ですか？",
+                      "ko" : "매운 거 괜찮으세요?",
+                      "zh-Hans" : "要辣的还是不辣的？"
+                    },
+                    "speaker" : "other",
+                    "text" : "¿Picante o no?"
+                  }
+                ],
+                "id" : "es-order-followup1-1",
+                "meaning" : {
+                  "en" : "One fried rice please.",
+                  "ja" : "ナシゴレン一つください。",
+                  "ko" : "나시고랭 하나요.",
+                  "zh-Hans" : "一份炒饭。"
+                },
+                "speaker" : "me",
+                "text" : "Un arroz frito."
+              }
+            ],
+            "id" : "es-order-response1",
+            "meaning" : {
+              "en" : "Yes, what would you like to order?",
+              "ja" : "はい、何を注文しますか？",
+              "ko" : "네, 뭘 주문하시겠어요?",
+              "zh-Hans" : "好的，您想点什么？"
+            },
+            "speaker" : "other",
+            "text" : "Sí, ¿qué quiere pedir?"
+          }
+        ],
+        "id" : "es-ordering-root",
+        "meaning" : {
+          "en" : "I'd like to order.",
+          "ja" : "注文したいです。",
+          "ko" : "주문하고 싶어요.",
+          "zh-Hans" : "我想点餐。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero pedir."
+      },
+      "title" : {
+        "en" : "Ordering Food",
+        "es" : "Pedir comida",
+        "ja" : "料理を注文する",
+        "ko" : "음식 주문하기",
+        "zh-Hans" : "点餐"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice checking in at the airport",
+        "es" : "Practica el check-in en el aeropuerto",
+        "ja" : "空港でチェックインする練習",
+        "ko" : "공항에서 체크인하는 연습",
+        "zh-Hans" : "练习在机场办理值机"
+      },
+      "emoji" : "✈️",
+      "id" : "es-airport-checkin",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-checkin-end1",
+                            "meaning" : {
+                              "en" : "Boarding starts at 10:30. Please come 30 minutes early.",
+                              "ja" : "搭乗は10時30分に始まります。30分前にお越しください。",
+                              "ko" : "탑승은 10시 30분에 시작합니다. 30분 전에 오세요.",
+                              "zh-Hans" : "登机从10:30开始。请提前30分钟到达。"
+                            },
+                            "speaker" : "other",
+                            "text" : "El embarque comienza a las 10:30. Llegue 30 minutos antes."
+                          }
+                        ],
+                        "id" : "es-checkin-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. What time is boarding?",
+                          "ja" : "ありがとうございます。搭乗時間はいつですか？",
+                          "ko" : "감사합니다. 탑승 시간이 언제인가요?",
+                          "zh-Hans" : "谢谢。什么时候登机？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. ¿A qué hora es el embarque?"
+                      }
+                    ],
+                    "id" : "es-checkin-continue1",
+                    "meaning" : {
+                      "en" : "Okay, here's your boarding pass. Gate C5.",
+                      "ja" : "はい、搭乗券です。ゲートC5です。",
+                      "ko" : "네, 여기 탑승권이에요. C5 게이트입니다.",
+                      "zh-Hans" : "好的，这是您的登机牌。C5登机口。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, aquí está su pase de abordar. Puerta C5."
+                  }
+                ],
+                "id" : "es-checkin-followup1",
+                "meaning" : {
+                  "en" : "Yes, here you go.",
+                  "ja" : "はい、どうぞ。",
+                  "ko" : "네, 여기요.",
+                  "zh-Hans" : "好的，这是。"
+                },
+                "speaker" : "me",
+                "text" : "Sí, aquí está."
+              }
+            ],
+            "id" : "es-checkin-response1",
+            "meaning" : {
+              "en" : "May I see your passport and ticket?",
+              "ja" : "パスポートとチケットを見せていただけますか？",
+              "ko" : "여권과 티켓 좀 보여주시겠어요?",
+              "zh-Hans" : "可以看一下您的护照和机票吗？"
+            },
+            "speaker" : "other",
+            "text" : "¿Puedo ver su pasaporte y boleto?"
+          }
+        ],
+        "id" : "es-airport-checkin-root",
+        "meaning" : {
+          "en" : "I'd like to check in.",
+          "ja" : "チェックインしたいです。",
+          "ko" : "체크인하고 싶어요.",
+          "zh-Hans" : "我想办理值机。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero hacer el check-in."
+      },
+      "title" : {
+        "en" : "Airport Check-in",
+        "es" : "Check-in en aeropuerto",
+        "ja" : "空港チェックイン",
+        "ko" : "공항 체크인",
+        "zh-Hans" : "机场值机"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice asking for gate location",
+        "es" : "Practica preguntar por la puerta",
+        "ja" : "ゲートの場所を尋ねる練習",
+        "ko" : "탑승구 위치를 물어보는 연습",
+        "zh-Hans" : "练习询问登机口位置"
+      },
+      "emoji" : "🚪",
+      "id" : "es-find-gate",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-gate-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Have a good trip!",
+                              "ja" : "どういたしまして。良い旅を！",
+                              "ko" : "천만에요. 잘 가세요!",
+                              "zh-Hans" : "不客气。一路平安！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Buen viaje!"
+                          }
+                        ],
+                        "id" : "es-gate-followup2",
+                        "meaning" : {
+                          "en" : "Okay, thank you very much!",
+                          "ja" : "わかりました、どうもありがとうございます！",
+                          "ko" : "알겠습니다, 정말 감사합니다!",
+                          "zh-Hans" : "好的，非常感谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bien, ¡muchas gracias!"
+                      }
+                    ],
+                    "id" : "es-gate-continue1",
+                    "meaning" : {
+                      "en" : "Just five minutes. Not far.",
+                      "ja" : "5分だけです。遠くないですよ。",
+                      "ko" : "5분이면 돼요. 멀지 않아요.",
+                      "zh-Hans" : "只要五分钟。不远。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Solo cinco minutos. No está lejos."
+                  }
+                ],
+                "id" : "es-gate-followup1",
+                "meaning" : {
+                  "en" : "About how many minutes walking?",
+                  "ja" : "歩いて何分くらいですか？",
+                  "ko" : "걸어서 몇 분 정도 걸려요?",
+                  "zh-Hans" : "走路大概几分钟？"
+                },
+                "speaker" : "me",
+                "text" : "¿Cuántos minutos caminando?"
+              }
+            ],
+            "id" : "es-gate-response1",
+            "meaning" : {
+              "en" : "Go straight, then turn right.",
+              "ja" : "まっすぐ行って、右に曲がってください。",
+              "ko" : "쭉 가다가 오른쪽으로 도세요.",
+              "zh-Hans" : "一直走，然后右转。"
+            },
+            "speaker" : "other",
+            "text" : "Sigue recto, luego gira a la derecha."
+          }
+        ],
+        "id" : "es-find-gate-root",
+        "meaning" : {
+          "en" : "Where is gate C5?",
+          "ja" : "C5ゲートはどこですか？",
+          "ko" : "C5 게이트가 어디에요?",
+          "zh-Hans" : "C5登机口在哪里？"
+        },
+        "speaker" : "me",
+        "text" : "¿Dónde está la puerta C5?"
+      },
+      "title" : {
+        "en" : "Finding the Gate",
+        "es" : "Buscar la puerta de embarque",
+        "ja" : "搭乗ゲートを探す",
+        "ko" : "탑승구 찾기",
+        "zh-Hans" : "找登机口"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice ordering drinks on a flight",
+        "es" : "Practica pedir bebidas en el vuelo",
+        "ja" : "機内で飲み物を注文する練習",
+        "ko" : "비행기 안에서 음료를 주문하는 연습",
+        "zh-Hans" : "练习在飞机上点饮料"
+      },
+      "emoji" : "🥤",
+      "id" : "es-flight-drink",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-drink-end1",
+                            "meaning" : {
+                              "en" : "Yes, we have it. I'll get it for you.",
+                              "ja" : "はい、ございます。すぐにお持ちします。",
+                              "ko" : "네 있어요. 잠깐만 가져올게요.",
+                              "zh-Hans" : "有的。我给您拿一下。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, hay. Se lo traigo enseguida."
+                          }
+                        ],
+                        "id" : "es-drink-followup2",
+                        "meaning" : {
+                          "en" : "Do you have orange juice?",
+                          "ja" : "オレンジジュースはありますか？",
+                          "ko" : "오렌지 주스도 있나요?",
+                          "zh-Hans" : "有橙汁吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Tiene jugo de naranja?"
+                      }
+                    ],
+                    "id" : "es-drink-continue1",
+                    "meaning" : {
+                      "en" : "Here you go.",
+                      "ja" : "どうぞ。",
+                      "ko" : "여기요.",
+                      "zh-Hans" : "请。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Aquí tiene."
+                  }
+                ],
+                "id" : "es-drink-followup1",
+                "meaning" : {
+                  "en" : "Cold please, thank you.",
+                  "ja" : "冷たいのでお願いします。",
+                  "ko" : "차가운 걸로요, 감사합니다.",
+                  "zh-Hans" : "冷的，谢谢。"
+                },
+                "speaker" : "me",
+                "text" : "Fría por favor, gracias."
+              }
+            ],
+            "id" : "es-drink-response1",
+            "meaning" : {
+              "en" : "Sure. Cold or room temperature?",
+              "ja" : "もちろん。冷たいのと常温、どちらがいいですか？",
+              "ko" : "물론이죠. 차가운 거요, 상온이요?",
+              "zh-Hans" : "当然。要冷的还是常温的？"
+            },
+            "speaker" : "other",
+            "text" : "Claro. ¿Fría o al tiempo?"
+          }
+        ],
+        "id" : "es-flight-drink-root",
+        "meaning" : {
+          "en" : "Can I have some water?",
+          "ja" : "お水をいただけますか？",
+          "ko" : "물 좀 주시겠어요?",
+          "zh-Hans" : "可以给我水吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo tener agua?"
+      },
+      "title" : {
+        "en" : "In-flight Drink Order",
+        "es" : "Pedir bebida en el vuelo",
+        "ja" : "機内飲み物注文",
+        "ko" : "기내 음료 주문",
+        "zh-Hans" : "机上饮料点单"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice asking for baggage claim",
+        "es" : "Practica preguntar por la recogida de equipaje",
+        "ja" : "荷物受取所を尋ねる練習",
+        "ko" : "수하물 찾는 곳을 물어보는 연습",
+        "zh-Hans" : "练习询问行李提取处"
+      },
+      "emoji" : "🧳",
+      "id" : "es-baggage-claim",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-baggage-end1",
+                            "meaning" : {
+                              "en" : "Usually around 15-20 minutes. Check the screen for your carousel number.",
+                              "ja" : "通常15-20分くらいです。カルーセル番号を画面で確認してください。",
+                              "ko" : "보통 15-20분 정도 걸려요. 스크린에서 캐러셀 번호를 확인하세요.",
+                              "zh-Hans" : "通常15-20分钟左右。请查看屏幕上您的行李转盘号。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Generalmente unos 15-20 minutos. Revise la pantalla para su número de carrusel."
+                          }
+                        ],
+                        "id" : "es-baggage-followup2",
+                        "meaning" : {
+                          "en" : "About how long to wait for baggage to come out?",
+                          "ja" : "荷物が出てくるまでどのくらいかかりますか？",
+                          "ko" : "짐이 나오는데 얼마나 걸리나요?",
+                          "zh-Hans" : "等行李出来要多久？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Cuánto tiempo tarda en salir el equipaje?"
+                      }
+                    ],
+                    "id" : "es-baggage-continue1",
+                    "meaning" : {
+                      "en" : "You're welcome, welcome!",
+                      "ja" : "どういたしまして、ようこそ！",
+                      "ko" : "천만에요, 환영합니다!",
+                      "zh-Hans" : "不客气，欢迎！"
+                    },
+                    "speaker" : "other",
+                    "text" : "¡De nada, bienvenido!"
+                  }
+                ],
+                "id" : "es-baggage-followup1",
+                "meaning" : {
+                  "en" : "Thank you very much!",
+                  "ja" : "どうもありがとうございます！",
+                  "ko" : "정말 감사합니다!",
+                  "zh-Hans" : "非常感谢！"
+                },
+                "speaker" : "me",
+                "text" : "¡Muchas gracias!"
+              }
+            ],
+            "id" : "es-baggage-response1",
+            "meaning" : {
+              "en" : "Follow the arrows down, it's on the first floor.",
+              "ja" : "矢印を下に従ってください、1階にあります。",
+              "ko" : "아래 화살표 따라가시면 1층에 있어요.",
+              "zh-Hans" : "跟着箭头往下走，在一楼。"
+            },
+            "speaker" : "other",
+            "text" : "Sigue las flechas hacia abajo, está en el primer piso."
+          }
+        ],
+        "id" : "es-baggage-claim-root",
+        "meaning" : {
+          "en" : "Excuse me, where is baggage claim?",
+          "ja" : "すみません、手荷物受取所はどこですか？",
+          "ko" : "실례합니다, 수하물 찾는 곳이 어디에요?",
+          "zh-Hans" : "请问，行李提取处在哪里？"
+        },
+        "speaker" : "me",
+        "text" : "Disculpe, ¿dónde está la recogida de equipaje?"
+      },
+      "title" : {
+        "en" : "Baggage Claim",
+        "es" : "Recogida de equipaje",
+        "ja" : "荷物受取",
+        "ko" : "수하물 찾기",
+        "zh-Hans" : "取行李"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice answering customs questions",
+        "es" : "Practica responder preguntas de aduana",
+        "ja" : "税関で質問に答える練習",
+        "ko" : "세관에서 질문에 답하는 연습",
+        "zh-Hans" : "练习回答海关问题"
+      },
+      "emoji" : "🛃",
+      "id" : "es-customs",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-customs-end1",
+                            "meaning" : {
+                              "en" : "Okay, enjoy your vacation.",
+                              "ja" : "わかりました、良い休暇を。",
+                              "ko" : "네, 휴가 잘 보내세요.",
+                              "zh-Hans" : "好的，祝您假期愉快。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Bien, disfrute sus vacaciones."
+                          }
+                        ],
+                        "id" : "es-customs-followup2",
+                        "meaning" : {
+                          "en" : "One week.",
+                          "ja" : "一週間です。",
+                          "ko" : "일주일이요.",
+                          "zh-Hans" : "一周。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Una semana."
+                      }
+                    ],
+                    "id" : "es-customs-continue1",
+                    "meaning" : {
+                      "en" : "How long will you be staying?",
+                      "ja" : "どのくらい滞在する予定ですか？",
+                      "ko" : "얼마나 머무실 예정인가요?",
+                      "zh-Hans" : "您将停留多久？"
+                    },
+                    "speaker" : "other",
+                    "text" : "¿Cuánto tiempo se quedará?"
+                  }
+                ],
+                "id" : "es-customs-followup1",
+                "meaning" : {
+                  "en" : "Vacation, just tourism.",
+                  "ja" : "休暇です、観光だけです。",
+                  "ko" : "휴가요, 관광이요.",
+                  "zh-Hans" : "度假，只是旅游。"
+                },
+                "speaker" : "me",
+                "text" : "Vacaciones, solo turismo."
+              }
+            ],
+            "id" : "es-customs-response1",
+            "meaning" : {
+              "en" : "What is the purpose of your visit?",
+              "ja" : "訪問の目的は何ですか？",
+              "ko" : "방문 목적이 무엇인가요?",
+              "zh-Hans" : "您访问的目的是什么？"
+            },
+            "speaker" : "other",
+            "text" : "¿Cuál es el propósito de su visita?"
+          }
+        ],
+        "id" : "es-customs-root",
+        "meaning" : {
+          "en" : "Nothing to declare.",
+          "ja" : "申告するものはありません。",
+          "ko" : "신고할 물건이 없어요.",
+          "zh-Hans" : "没有需要申报的。"
+        },
+        "speaker" : "me",
+        "text" : "Nada que declarar."
+      },
+      "title" : {
+        "en" : "Going Through Customs",
+        "es" : "Pasar por la aduana",
+        "ja" : "税関通過",
+        "ko" : "세관 통과",
+        "zh-Hans" : "过海关"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice exchanging money",
+        "es" : "Practica cambiar dinero",
+        "ja" : "両替する練習",
+        "ko" : "돈을 환전하는 연습",
+        "zh-Hans" : "练习换钱"
+      },
+      "emoji" : "💱",
+      "id" : "es-money-exchange",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+                              {
+                                "children" : [
+
+                                ],
+                                "id" : "es-exchange-end1",
+                                "meaning" : {
+                                  "en" : "Thank you very much.",
+                                  "ja" : "どうもありがとうございます。",
+                                  "ko" : "정말 감사합니다.",
+                                  "zh-Hans" : "非常感谢。"
+                                },
+                                "speaker" : "me",
+                                "text" : "Muchas gracias."
+                              }
+                            ],
+                            "id" : "es-exchange-followup2",
+                            "meaning" : {
+                              "en" : "Okay. Today's rate is 15,000 rupiah per dollar. Here's your money.",
+                              "ja" : "わかりました。今日のレートは1ドル15,000ルピアです。こちらがお金です。",
+                              "ko" : "알겠습니다. 오늘 환율은 달러당 15,000루피아입니다. 여기 돈이에요.",
+                              "zh-Hans" : "好的。今天的汇率是每美元15,000印尼盾。这是您的钱。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Bien. El tipo de cambio hoy es 15,000 rupias por dólar. Aquí está su dinero."
+                          }
+                        ],
+                        "id" : "es-exchange-continue1",
+                        "meaning" : {
+                          "en" : "One hundred dollars.",
+                          "ja" : "100ドルです。",
+                          "ko" : "100달러요.",
+                          "zh-Hans" : "一百美元。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Cien dólares."
+                      }
+                    ],
+                    "id" : "es-exchange-clarify1",
+                    "meaning" : {
+                      "en" : "How much would you like to exchange?",
+                      "ja" : "いくら両替しますか？",
+                      "ko" : "얼마나 바꾸시겠어요?",
+                      "zh-Hans" : "您想换多少？"
+                    },
+                    "speaker" : "other",
+                    "text" : "¿Cuánto quiere cambiar?"
+                  }
+                ],
+                "id" : "es-exchange-followup1",
+                "meaning" : {
+                  "en" : "Dollars to rupiah.",
+                  "ja" : "ドルをルピアに。",
+                  "ko" : "달러를 루피아로요.",
+                  "zh-Hans" : "美元换印尼盾。"
+                },
+                "speaker" : "me",
+                "text" : "Dólares a rupias."
+              }
+            ],
+            "id" : "es-exchange-response1",
+            "meaning" : {
+              "en" : "What currency would you like to exchange?",
+              "ja" : "何の通貨に両替しますか？",
+              "ko" : "어떤 통화로 바꾸시겠어요?",
+              "zh-Hans" : "您想换什么货币？"
+            },
+            "speaker" : "other",
+            "text" : "¿Qué moneda quiere cambiar?"
+          }
+        ],
+        "id" : "es-money-exchange-root",
+        "meaning" : {
+          "en" : "I'd like to exchange money.",
+          "ja" : "両替したいです。",
+          "ko" : "환전하고 싶어요.",
+          "zh-Hans" : "我想换钱。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero cambiar dinero."
+      },
+      "title" : {
+        "en" : "Currency Exchange",
+        "es" : "Cambio de moneda",
+        "ja" : "両替",
+        "ko" : "환전하기",
+        "zh-Hans" : "换钱"
+      }
+    },
+    {
+      "category" : "airport",
+      "description" : {
+        "en" : "Practice changing airplane seats",
+        "es" : "Practica cambiar de asiento en el avión",
+        "ja" : "飛行機の座席を変える練習",
+        "ko" : "비행기 좌석을 바꾸는 연습",
+        "zh-Hans" : "练习换飞机座位"
+      },
+      "emoji" : "💺",
+      "id" : "es-seat-change",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-seat-end1",
+                            "meaning" : {
+                              "en" : "Yes of course, please move after the seatbelt sign is off.",
+                              "ja" : "はいもちろん、シートベルトサインが消えた後に移動してください。",
+                              "ko" : "네 물론이죠, 안전벨트 사인이 꺼진 후에 옮기세요.",
+                              "zh-Hans" : "当然可以，请在安全带指示灯熄灭后移动。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí claro, muévase después de que se apague la señal del cinturón."
+                          }
+                        ],
+                        "id" : "es-seat-followup2",
+                        "meaning" : {
+                          "en" : "Can I move now?",
+                          "ja" : "今移動してもいいですか？",
+                          "ko" : "지금 옮겨도 될까요?",
+                          "zh-Hans" : "我现在可以换吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Puedo moverme ahora?"
+                      }
+                    ],
+                    "id" : "es-seat-continue1",
+                    "meaning" : {
+                      "en" : "Okay, there's an empty seat in row 12.",
+                      "ja" : "わかりました、12列に空席があります。",
+                      "ko" : "네, 12번 줄에 빈 자리가 있어요.",
+                      "zh-Hans" : "好的，第12排有空位。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, hay un asiento vacío en la fila 12."
+                  }
+                ],
+                "id" : "es-seat-followup1",
+                "meaning" : {
+                  "en" : "I'd like to sit by the window.",
+                  "ja" : "窓側に座りたいです。",
+                  "ko" : "창문 쪽에 앉고 싶어요.",
+                  "zh-Hans" : "我想坐在靠窗的位置。"
+                },
+                "speaker" : "me",
+                "text" : "Me gustaría sentarme junto a la ventana."
+              }
+            ],
+            "id" : "es-seat-response1",
+            "meaning" : {
+              "en" : "Is there a problem with your seat?",
+              "ja" : "座席に問題がありますか？",
+              "ko" : "좌석에 문제가 있나요?",
+              "zh-Hans" : "您的座位有问题吗？"
+            },
+            "speaker" : "other",
+            "text" : "¿Hay algún problema con su asiento?"
+          }
+        ],
+        "id" : "es-seat-change-root",
+        "meaning" : {
+          "en" : "Excuse me, can I change seats?",
+          "ja" : "すみません、席を変えてもいいですか？",
+          "ko" : "실례합니다, 좌석을 바꿔도 될까요?",
+          "zh-Hans" : "请问，可以换座位吗？"
+        },
+        "speaker" : "me",
+        "text" : "Disculpe, ¿puedo cambiar de asiento?"
+      },
+      "title" : {
+        "en" : "Seat Change",
+        "es" : "Cambio de asiento",
+        "ja" : "座席変更",
+        "ko" : "좌석 변경",
+        "zh-Hans" : "换座位"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice checking in at a hotel",
+        "es" : "Practica el check-in en un hotel",
+        "ja" : "ホテルでチェックインする練習",
+        "ko" : "호텔에서 체크인하는 연습",
+        "zh-Hans" : "练习在酒店办理入住"
+      },
+      "emoji" : "🏨",
+      "id" : "es-hotel-checkin",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-hotelcheckin-end1",
+                            "meaning" : {
+                              "en" : "On the first floor, next to the lobby. Enjoy your stay.",
+                              "ja" : "1階、ロビーの隣です。ごゆっくり。",
+                              "ko" : "1층 로비 옆에 있습니다. 편히 쉬세요.",
+                              "zh-Hans" : "在一楼，大厅旁边。祝您住得愉快。"
+                            },
+                            "speaker" : "other",
+                            "text" : "En el primer piso, al lado del vestíbulo. Que disfrute su estancia."
+                          }
+                        ],
+                        "id" : "es-hotelcheckin-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. Where is the breakfast room?",
+                          "ja" : "ありがとうございます。朝食ルームはどこですか？",
+                          "ko" : "감사합니다. 조식당이 어디에 있나요?",
+                          "zh-Hans" : "谢谢。早餐室在哪里？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. ¿Dónde está el comedor del desayuno?"
+                      }
+                    ],
+                    "id" : "es-hotelcheckin-continue1",
+                    "meaning" : {
+                      "en" : "Thank you. Here's the key to room 305. Breakfast from 7 AM.",
+                      "ja" : "ありがとうございます。305号室の鍵です。朝食は朝7時からです。",
+                      "ko" : "감사합니다. 여기 305호 키입니다. 조식은 아침 7시부터예요.",
+                      "zh-Hans" : "谢谢。这是305号房间的钥匙。早餐从早上7点开始。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Gracias. Aquí está la llave de la habitación 305. Desayuno desde las 7 AM."
+                  }
+                ],
+                "id" : "es-hotelcheckin-followup1",
+                "meaning" : {
+                  "en" : "Yes, here it is.",
+                  "ja" : "はい、どうぞ。",
+                  "ko" : "네, 여기요.",
+                  "zh-Hans" : "好的，在这里。"
+                },
+                "speaker" : "me",
+                "text" : "Sí, aquí está."
+              }
+            ],
+            "id" : "es-hotelcheckin-response1",
+            "meaning" : {
+              "en" : "Okay, may I see your passport?",
+              "ja" : "はい、パスポートを見せていただけますか？",
+              "ko" : "네, 여권을 좀 보여주시겠어요?",
+              "zh-Hans" : "好的，可以看一下您的护照吗？"
+            },
+            "speaker" : "other",
+            "text" : "Bien, ¿puedo ver su pasaporte?"
+          }
+        ],
+        "id" : "es-hotel-checkin-root",
+        "meaning" : {
+          "en" : "I booked a room under the name Kim.",
+          "ja" : "キムという名前で部屋を予約しました。",
+          "ko" : "김 이름으로 방을 예약했어요.",
+          "zh-Hans" : "我用Kim的名字预订了房间。"
+        },
+        "speaker" : "me",
+        "text" : "Reservé una habitación a nombre de Kim."
+      },
+      "title" : {
+        "en" : "Hotel Check-in",
+        "es" : "Check-in en hotel",
+        "ja" : "ホテルチェックイン",
+        "ko" : "호텔 체크인",
+        "zh-Hans" : "酒店入住"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice checking in at a guesthouse",
+        "es" : "Practica el check-in en un hostal",
+        "ja" : "ゲストハウスでチェックインする練習",
+        "ko" : "게스트하우스에서 체크인하는 연습",
+        "zh-Hans" : "练习在民宿办理入住"
+      },
+      "emoji" : "🏠",
+      "id" : "es-guesthouse-checkin",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-guestcheckin-end1",
+                            "meaning" : {
+                              "en" : "Yes, there is. The password is in the room. Enjoy your stay!",
+                              "ja" : "はい、あります。パスワードは部屋にあります。ごゆっくり！",
+                              "ko" : "네 있어요. 비밀번호는 방에 있어요. 편히 쉬세요!",
+                              "zh-Hans" : "有的。密码在房间里。祝您住得愉快！"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, hay. La contraseña está en la habitación. ¡Que descanses!"
+                          }
+                        ],
+                        "id" : "es-guestcheckin-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. Is there free WiFi?",
+                          "ja" : "ありがとうございます。無料WiFiはありますか？",
+                          "ko" : "감사합니다. 무료 와이파이 있나요?",
+                          "zh-Hans" : "谢谢。有免费WiFi吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. ¿Hay WiFi gratis?"
+                      }
+                    ],
+                    "id" : "es-guestcheckin-continue1",
+                    "meaning" : {
+                      "en" : "Okay, got it. Room number 7, second floor. Here's the key.",
+                      "ja" : "オッケー、ありますよ。7号室、2階です。鍵です。",
+                      "ko" : "네, 있어요. 7호실, 2층이에요. 여기 키요.",
+                      "zh-Hans" : "好的，有的。7号房间，二楼。这是钥匙。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Ok, aquí está. Habitación número 7, segundo piso. Aquí está la llave."
+                  }
+                ],
+                "id" : "es-guestcheckin-followup1",
+                "meaning" : {
+                  "en" : "Kim. A room for two people.",
+                  "ja" : "キムです。2人部屋です。",
+                  "ko" : "김이요. 2인실이요.",
+                  "zh-Hans" : "Kim。双人间。"
+                },
+                "speaker" : "me",
+                "text" : "Kim. Una habitación para dos personas."
+              }
+            ],
+            "id" : "es-guestcheckin-response1",
+            "meaning" : {
+              "en" : "Oh yeah? Under what name?",
+              "ja" : "あ、そう？誰の名前で？",
+              "ko" : "아, 그래요? 누구 이름으로요?",
+              "zh-Hans" : "哦，是吗？用谁的名字？"
+            },
+            "speaker" : "other",
+            "text" : "¿Ah sí? ¿A nombre de quién?"
+          }
+        ],
+        "id" : "es-guesthouse-checkin-root",
+        "meaning" : {
+          "en" : "Hi, I booked a room last night.",
+          "ja" : "こんにちは、昨夜部屋を予約しました。",
+          "ko" : "안녕하세요, 어젯밤에 방 예약했어요.",
+          "zh-Hans" : "你好，我昨晚预订了房间。"
+        },
+        "speaker" : "me",
+        "text" : "Hola, reservé una habitación anoche."
+      },
+      "title" : {
+        "en" : "Guesthouse Check-in",
+        "es" : "Check-in en hostal",
+        "ja" : "ゲストハウスチェックイン",
+        "ko" : "게스트하우스 체크인",
+        "zh-Hans" : "民宿入住"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice ordering room service",
+        "es" : "Practica pedir servicio de habitación",
+        "ja" : "ルームサービスを注文する練習",
+        "ko" : "룸서비스를 주문하는 연습",
+        "zh-Hans" : "练习订客房服务"
+      },
+      "emoji" : "🍽️",
+      "id" : "es-room-service",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-roomservice-end1",
+                            "meaning" : {
+                              "en" : "75 thousand rupiah. You can pay later at check out.",
+                              "ja" : "75,000ルピアです。チェックアウト時に支払えます。",
+                              "ko" : "75,000루피아입니다. 체크아웃 때 내셔도 돼요.",
+                              "zh-Hans" : "75,000印尼盾。可以在退房时支付。"
+                            },
+                            "speaker" : "other",
+                            "text" : "75 mil rupias. Puede pagar después al hacer el check out."
+                          }
+                        ],
+                        "id" : "es-roomservice-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. What's the total?",
+                          "ja" : "ありがとうございます。合計はいくらですか？",
+                          "ko" : "감사합니다. 총 얼마예요?",
+                          "zh-Hans" : "谢谢。总共多少钱？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. ¿Cuál es el total?"
+                      }
+                    ],
+                    "id" : "es-roomservice-continue1",
+                    "meaning" : {
+                      "en" : "Okay, it will be delivered in 20 minutes.",
+                      "ja" : "わかりました、20分以内にお届けします。",
+                      "ko" : "네, 20분 안에 가져다 드리겠습니다.",
+                      "zh-Hans" : "好的，20分钟内送到。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, se entregará en 20 minutos."
+                  }
+                ],
+                "id" : "es-roomservice-followup1",
+                "meaning" : {
+                  "en" : "305. I'd like fried rice and orange juice.",
+                  "ja" : "305号です。チャーハンとオレンジジュースをお願いします。",
+                  "ko" : "305호요. 볶음밥이랑 오렌지 주스 주세요.",
+                  "zh-Hans" : "305号。我要炒饭和橙汁。"
+                },
+                "speaker" : "me",
+                "text" : "305. Quiero arroz frito y jugo de naranja."
+              }
+            ],
+            "id" : "es-roomservice-response1",
+            "meaning" : {
+              "en" : "Of course, what's your room number?",
+              "ja" : "もちろんです、お部屋番号は？",
+              "ko" : "물론이죠, 객실 번호가 어떻게 되시나요?",
+              "zh-Hans" : "当然，您的房间号是多少？"
+            },
+            "speaker" : "other",
+            "text" : "Por supuesto, ¿cuál es su número de habitación?"
+          }
+        ],
+        "id" : "es-room-service-root",
+        "meaning" : {
+          "en" : "I'd like to order food to my room.",
+          "ja" : "部屋に食事を注文したいです。",
+          "ko" : "객실로 음식을 주문하고 싶어요.",
+          "zh-Hans" : "我想订餐到房间。"
+        },
+        "speaker" : "me",
+        "text" : "Me gustaría pedir comida a mi habitación."
+      },
+      "title" : {
+        "en" : "Room Service",
+        "es" : "Servicio de habitación",
+        "ja" : "ルームサービス",
+        "ko" : "룸서비스",
+        "zh-Hans" : "客房服务"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice asking about breakfast time",
+        "es" : "Practica preguntar por el horario del desayuno",
+        "ja" : "朝食の時間を尋ねる練習",
+        "ko" : "조식 시간을 물어보는 연습",
+        "zh-Hans" : "练习询问早餐时间"
+      },
+      "emoji" : "🍳",
+      "id" : "es-breakfast-time",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-breakfast-end1",
+                            "meaning" : {
+                              "en" : "No need, just come directly.",
+                              "ja" : "必要ありません、直接来てください。",
+                              "ko" : "필요없어요, 그냥 오시면 됩니다.",
+                              "zh-Hans" : "不需要，直接来就可以。"
+                            },
+                            "speaker" : "other",
+                            "text" : "No es necesario, venga directamente."
+                          }
+                        ],
+                        "id" : "es-breakfast-followup2",
+                        "meaning" : {
+                          "en" : "Do I need a reservation?",
+                          "ja" : "予約が必要ですか？",
+                          "ko" : "예약이 필요한가요?",
+                          "zh-Hans" : "需要预约吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Necesito reservar?"
+                      }
+                    ],
+                    "id" : "es-breakfast-continue1",
+                    "meaning" : {
+                      "en" : "On the first floor, next to the lobby.",
+                      "ja" : "1階です、ロビーの隣です。",
+                      "ko" : "1층이요, 로비 옆이에요.",
+                      "zh-Hans" : "在一楼，大厅旁边。"
+                    },
+                    "speaker" : "other",
+                    "text" : "En el primer piso, al lado del lobby."
+                  }
+                ],
+                "id" : "es-breakfast-followup1",
+                "meaning" : {
+                  "en" : "Where is it?",
+                  "ja" : "どこですか？",
+                  "ko" : "어디서 먹어요?",
+                  "zh-Hans" : "在哪里？"
+                },
+                "speaker" : "me",
+                "text" : "¿Dónde es?"
+              }
+            ],
+            "id" : "es-breakfast-response1",
+            "meaning" : {
+              "en" : "From 6 AM to 10 AM.",
+              "ja" : "朝6時から10時までです。",
+              "ko" : "아침 6시부터 10시까지예요.",
+              "zh-Hans" : "早上6点到10点。"
+            },
+            "speaker" : "other",
+            "text" : "De 6 a 10 de la mañana."
+          }
+        ],
+        "id" : "es-breakfast-time-root",
+        "meaning" : {
+          "en" : "What time is breakfast?",
+          "ja" : "朝食は何時ですか？",
+          "ko" : "아침식사가 몇 시에요?",
+          "zh-Hans" : "早餐几点？"
+        },
+        "speaker" : "me",
+        "text" : "¿A qué hora es el desayuno?"
+      },
+      "title" : {
+        "en" : "Asking About Breakfast",
+        "es" : "Preguntar por el desayuno",
+        "ja" : "朝食時間を尋ねる",
+        "ko" : "조식 시간 문의",
+        "zh-Hans" : "询问早餐时间"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice checking out of a hotel",
+        "es" : "Practica el check-out del hotel",
+        "ja" : "ホテルでチェックアウトする練習",
+        "ko" : "호텔에서 체크아웃하는 연습",
+        "zh-Hans" : "练习在酒店退房"
+      },
+      "emoji" : "🚪",
+      "id" : "es-hotel-checkout",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-checkout-end1",
+                            "meaning" : {
+                              "en" : "Yes, of course. Thank you for staying.",
+                              "ja" : "はいもちろんできます。ご宿泊ありがとうございました。",
+                              "ko" : "네 물론 가능합니다. 투숙해주셔서 감사합니다.",
+                              "zh-Hans" : "当然可以。感谢您的入住。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, claro que sí. Gracias por hospedarse."
+                          }
+                        ],
+                        "id" : "es-checkout-followup2",
+                        "meaning" : {
+                          "en" : "Can I pay with credit card?",
+                          "ja" : "クレジットカードで支払えますか？",
+                          "ko" : "신용카드로 결제할 수 있나요?",
+                          "zh-Hans" : "可以用信用卡支付吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Puedo pagar con tarjeta de crédito?"
+                      }
+                    ],
+                    "id" : "es-checkout-continue1",
+                    "meaning" : {
+                      "en" : "No. Total matches your reservation.",
+                      "ja" : "ありません。予約通りです。",
+                      "ko" : "없어요. 예약한 금액과 동일합니다.",
+                      "zh-Hans" : "没有。总额与预订一致。"
+                    },
+                    "speaker" : "other",
+                    "text" : "No. El total coincide con su reserva."
+                  }
+                ],
+                "id" : "es-checkout-followup1",
+                "meaning" : {
+                  "en" : "305. Are there any additional charges?",
+                  "ja" : "305号です。追加料金はありますか？",
+                  "ko" : "305호요. 추가 요금이 있나요?",
+                  "zh-Hans" : "305号。有额外费用吗？"
+                },
+                "speaker" : "me",
+                "text" : "305. ¿Hay cargos adicionales?"
+              }
+            ],
+            "id" : "es-checkout-response1",
+            "meaning" : {
+              "en" : "Okay, what room number?",
+              "ja" : "はい、お部屋番号は？",
+              "ko" : "네, 객실 번호가 어떻게 되시나요?",
+              "zh-Hans" : "好的，房间号是多少？"
+            },
+            "speaker" : "other",
+            "text" : "Bien, ¿qué número de habitación?"
+          }
+        ],
+        "id" : "es-hotel-checkout-root",
+        "meaning" : {
+          "en" : "I'd like to check out.",
+          "ja" : "チェックアウトしたいです。",
+          "ko" : "체크아웃하고 싶어요.",
+          "zh-Hans" : "我想退房。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero hacer el check-out."
+      },
+      "title" : {
+        "en" : "Hotel Checkout",
+        "es" : "Check-out del hotel",
+        "ja" : "ホテルチェックアウト",
+        "ko" : "호텔 체크아웃",
+        "zh-Hans" : "酒店退房"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice storing luggage",
+        "es" : "Practica guardar equipaje",
+        "ja" : "荷物を預ける練習",
+        "ko" : "짐을 맡기는 연습",
+        "zh-Hans" : "练习寄存行李"
+      },
+      "emoji" : "🎒",
+      "id" : "es-luggage-storage",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-storage-end1",
+                            "meaning" : {
+                              "en" : "Free for hotel guests. Keep this number safe.",
+                              "ja" : "ホテルのお客様は無料です。この番号を大切に保管してください。",
+                              "ko" : "호텔 투숙객은 무료예요. 이 번호 잘 보관하세요.",
+                              "zh-Hans" : "酒店客人免费。请妥善保管这个号码。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Gratis para huéspedes del hotel. Guarde bien este número."
+                          }
+                        ],
+                        "id" : "es-storage-followup2",
+                        "meaning" : {
+                          "en" : "Is there a storage fee?",
+                          "ja" : "保管料金はかかりますか？",
+                          "ko" : "보관비가 있나요?",
+                          "zh-Hans" : "有寄存费吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Hay tarifa de almacenamiento?"
+                      }
+                    ],
+                    "id" : "es-storage-continue1",
+                    "meaning" : {
+                      "en" : "No problem. Here's your claim ticket.",
+                      "ja" : "問題ありません。預かり証です。",
+                      "ko" : "문제없어요. 여기 보관증이에요.",
+                      "zh-Hans" : "没问题。这是您的寄存单。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sin problema. Aquí está su comprobante."
+                  }
+                ],
+                "id" : "es-storage-followup1",
+                "meaning" : {
+                  "en" : "5 PM. Is that okay?",
+                  "ja" : "午後5時です。いいですか？",
+                  "ko" : "오후 5시요. 괜찮죠?",
+                  "zh-Hans" : "下午5点。可以吗？"
+                },
+                "speaker" : "me",
+                "text" : "5 de la tarde. ¿Está bien?"
+              }
+            ],
+            "id" : "es-storage-response1",
+            "meaning" : {
+              "en" : "Sure. Until what time?",
+              "ja" : "もちろんです。何時までですか？",
+              "ko" : "물론이죠. 몇 시까지요?",
+              "zh-Hans" : "当然可以。到几点？"
+            },
+            "speaker" : "other",
+            "text" : "Claro. ¿Hasta qué hora?"
+          }
+        ],
+        "id" : "es-luggage-storage-root",
+        "meaning" : {
+          "en" : "Can I store my suitcase here?",
+          "ja" : "ここにスーツケースを預けられますか？",
+          "ko" : "여기 캐리어 맡겨도 돼요?",
+          "zh-Hans" : "可以把行李箱存在这里吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo guardar mi maleta aquí?"
+      },
+      "title" : {
+        "en" : "Luggage Storage Request",
+        "es" : "Solicitud de guardaequipaje",
+        "ja" : "荷物預かり依頼",
+        "ko" : "짐 보관 요청",
+        "zh-Hans" : "寄存行李"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice requesting towels",
+        "es" : "Practica pedir toallas",
+        "ja" : "タオルをお願いする練習",
+        "ko" : "타월을 요청하는 연습",
+        "zh-Hans" : "练习要毛巾"
+      },
+      "emoji" : "🛁",
+      "id" : "es-towel-request",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-towel-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. I'll send them in 10 minutes.",
+                              "ja" : "どういたしまして。10分以内にお送りします。",
+                              "ko" : "천만에요. 10분 안에 보내드리겠습니다.",
+                              "zh-Hans" : "不客气。我10分钟内送到。"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. Las enviaré en 10 minutos."
+                          }
+                        ],
+                        "id" : "es-towel-followup2",
+                        "meaning" : {
+                          "en" : "My room number is 305. Thank you very much.",
+                          "ja" : "私の部屋番号は305です。どうもありがとうございます。",
+                          "ko" : "제 방은 305호예요. 정말 감사합니다.",
+                          "zh-Hans" : "我的房间号是305。非常感谢。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Mi habitación es la 305. Muchas gracias."
+                      }
+                    ],
+                    "id" : "es-towel-continue1",
+                    "meaning" : {
+                      "en" : "Okay, I'll bring them to your room shortly.",
+                      "ja" : "はい、すぐにお部屋にお持ちします。",
+                      "ko" : "네, 곧 객실로 가져다 드리겠습니다.",
+                      "zh-Hans" : "好的，我马上送到您房间。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, las llevaré a su habitación enseguida."
+                  }
+                ],
+                "id" : "es-towel-followup1",
+                "meaning" : {
+                  "en" : "Just two towels. Thank you.",
+                  "ja" : "2枚だけです。ありがとう。",
+                  "ko" : "두 개만요. 감사합니다.",
+                  "zh-Hans" : "只要两条。谢谢。"
+                },
+                "speaker" : "me",
+                "text" : "Solo dos toallas. Gracias."
+              }
+            ],
+            "id" : "es-towel-response1",
+            "meaning" : {
+              "en" : "Sure. How many do you need?",
+              "ja" : "もちろん。何枚必要ですか？",
+              "ko" : "물론이죠. 몇 개 필요하세요?",
+              "zh-Hans" : "当然。您需要几条？"
+            },
+            "speaker" : "other",
+            "text" : "Claro. ¿Cuántas necesita?"
+          }
+        ],
+        "id" : "es-towel-request-root",
+        "meaning" : {
+          "en" : "Can I get extra towels?",
+          "ja" : "タオルを追加でもらえますか？",
+          "ko" : "타월 추가로 주실 수 있어요?",
+          "zh-Hans" : "可以再要一些毛巾吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo tener toallas extra?"
+      },
+      "title" : {
+        "en" : "Towel Request",
+        "es" : "Solicitud de toalla",
+        "ja" : "タオル依頼",
+        "ko" : "타월 요청",
+        "zh-Hans" : "要毛巾"
+      }
+    },
+    {
+      "category" : "hotel",
+      "description" : {
+        "en" : "Practice asking for WiFi password",
+        "es" : "Practica preguntar por la contraseña WiFi",
+        "ja" : "WiFiパスワードを尋ねる練習",
+        "ko" : "와이파이 비밀번호를 묻는 연습",
+        "zh-Hans" : "练习询问WiFi密码"
+      },
+      "emoji" : "📶",
+      "id" : "es-wifi-password",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-wifi-end1",
+                            "meaning" : {
+                              "en" : "Yes, quite fast. You can stream too.",
+                              "ja" : "はい、かなり速いです。ストリーミングもできます。",
+                              "ko" : "네, 꽤 빨라요. 스트리밍도 할 수 있어요.",
+                              "zh-Hans" : "是的，相当快。也可以流媒体。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, bastante rápido. También puedes ver streaming."
+                          }
+                        ],
+                        "id" : "es-wifi-followup2",
+                        "meaning" : {
+                          "en" : "Is the WiFi fast?",
+                          "ja" : "WiFiは速いですか？",
+                          "ko" : "와이파이 빠른가요?",
+                          "zh-Hans" : "WiFi快吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿El WiFi es rápido?"
+                      }
+                    ],
+                    "id" : "es-wifi-continue1",
+                    "meaning" : {
+                      "en" : "You're welcome. If there's any problem, just let me know.",
+                      "ja" : "どういたしまして。問題があれば言ってくださいね。",
+                      "ko" : "천만에요. 문제 있으면 말씀하세요.",
+                      "zh-Hans" : "不客气。有问题就说。"
+                    },
+                    "speaker" : "other",
+                    "text" : "De nada. Si hay algún problema, avísame."
+                  }
+                ],
+                "id" : "es-wifi-followup1",
+                "meaning" : {
+                  "en" : "Thanks!",
+                  "ja" : "ありがとう！",
+                  "ko" : "고마워요!",
+                  "zh-Hans" : "谢谢！"
+                },
+                "speaker" : "me",
+                "text" : "¡Gracias!"
+              }
+            ],
+            "id" : "es-wifi-response1",
+            "meaning" : {
+              "en" : "One moment, I'll write it down. Here it is.",
+              "ja" : "ちょっと待って、書きますね。これです。",
+              "ko" : "잠깐만요, 써드릴게요. 여기요.",
+              "zh-Hans" : "稍等，我写下来。这是。"
+            },
+            "speaker" : "other",
+            "text" : "Un momento, lo anoto. Aquí está."
+          }
+        ],
+        "id" : "es-wifi-password-root",
+        "meaning" : {
+          "en" : "What's the WiFi password?",
+          "ja" : "WiFiのパスワードは何ですか？",
+          "ko" : "와이파이 비밀번호가 뭐예요?",
+          "zh-Hans" : "WiFi密码是什么？"
+        },
+        "speaker" : "me",
+        "text" : "¿Cuál es la contraseña del WiFi?"
+      },
+      "title" : {
+        "en" : "WiFi Password",
+        "es" : "Contraseña WiFi",
+        "ja" : "WiFiパスワード",
+        "ko" : "와이파이 비밀번호",
+        "zh-Hans" : "WiFi密码"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice reserving a table",
+        "es" : "Practica reservar una mesa",
+        "ja" : "レストランの予約をする練習",
+        "ko" : "식당 테이블을 예약하는 연습",
+        "zh-Hans" : "练习预订餐桌"
+      },
+      "emoji" : "📅",
+      "id" : "es-table-reservation",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-reservation-end1",
+                            "meaning" : {
+                              "en" : "Yes, please provide your phone number. Reservation under Kim at 7 PM.",
+                              "ja" : "はい、電話番号をお願いします。キム様で午後7時のご予約ですね。",
+                              "ko" : "네, 전화번호 알려주세요. 김님 이름으로 저녁 7시 예약이네요.",
+                              "zh-Hans" : "是的，请提供您的电话号码。Kim的名字晚上7点预订。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, proporcione su número de teléfono. Reserva a nombre de Kim a las 7 PM."
+                          }
+                        ],
+                        "id" : "es-reservation-followup2",
+                        "meaning" : {
+                          "en" : "Kim. Do you need a phone number too?",
+                          "ja" : "キムです。電話番号も必要ですか？",
+                          "ko" : "김이요. 전화번호도 필요한가요?",
+                          "zh-Hans" : "Kim。还需要电话号码吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Kim. ¿Necesita número de teléfono también?"
+                      }
+                    ],
+                    "id" : "es-reservation-continue1",
+                    "meaning" : {
+                      "en" : "Okay, may I have your name?",
+                      "ja" : "はい、お名前をお伺いできますか？",
+                      "ko" : "네, 성함이 어떻게 되세요?",
+                      "zh-Hans" : "好的，请问您贵姓？"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, ¿puedo saber su nombre?"
+                  }
+                ],
+                "id" : "es-reservation-followup1",
+                "meaning" : {
+                  "en" : "Four people. 7 PM.",
+                  "ja" : "4名です。午後7時です。",
+                  "ko" : "4명이요. 저녁 7시요.",
+                  "zh-Hans" : "四位。晚上7点。"
+                },
+                "speaker" : "me",
+                "text" : "Cuatro personas. 7 PM."
+              }
+            ],
+            "id" : "es-reservation-response1",
+            "meaning" : {
+              "en" : "For how many people?",
+              "ja" : "何名様ですか？",
+              "ko" : "몇 분이세요?",
+              "zh-Hans" : "几位？"
+            },
+            "speaker" : "other",
+            "text" : "¿Para cuántas personas?"
+          }
+        ],
+        "id" : "es-table-reservation-root",
+        "meaning" : {
+          "en" : "I'd like to book a table for tonight.",
+          "ja" : "今夜のテーブルを予約したいです。",
+          "ko" : "오늘 저녁 테이블 예약하고 싶어요.",
+          "zh-Hans" : "我想预订今晚的桌位。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero reservar una mesa para esta noche."
+      },
+      "title" : {
+        "en" : "Table Reservation",
+        "es" : "Reserva de mesa",
+        "ja" : "テーブル予約",
+        "ko" : "테이블 예약",
+        "zh-Hans" : "预订桌位"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice asking for menu recommendations",
+        "es" : "Practica pedir recomendaciones del menú",
+        "ja" : "メニューのおすすめを聞く練習",
+        "ko" : "메뉴 추천을 요청하는 연습",
+        "zh-Hans" : "练习询问菜单推荐"
+      },
+      "emoji" : "⭐",
+      "id" : "es-menu-recommendation",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-recommend-end1",
+                            "meaning" : {
+                              "en" : "Got it! Please wait, about 15 minutes.",
+                              "ja" : "承知しました！約15分お待ちください。",
+                              "ko" : "알겠습니다! 15분 정도 기다려주세요.",
+                              "zh-Hans" : "好的！请稍等，大约15分钟。"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡Entendido! Espere, unos 15 minutos."
+                          }
+                        ],
+                        "id" : "es-recommend-followup2",
+                        "meaning" : {
+                          "en" : "Okay, I'll order one rendang. With white rice.",
+                          "ja" : "わかりました、レンダンを一つお願いします。白ご飯で。",
+                          "ko" : "좋아요, 렌당 하나 주세요. 흰 쌀밥이요.",
+                          "zh-Hans" : "好的，我点一份仁当。配白饭。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bien, pediré un rendang. Con arroz blanco."
+                      }
+                    ],
+                    "id" : "es-recommend-continue1",
+                    "meaning" : {
+                      "en" : "A little spicy, but really delicious!",
+                      "ja" : "少し辛いですが、とてもおいしいですよ！",
+                      "ko" : "조금 매운데, 정말 맛있어요!",
+                      "zh-Hans" : "有点辣，但是很好吃！"
+                    },
+                    "speaker" : "other",
+                    "text" : "Un poco picante, ¡pero muy rico!"
+                  }
+                ],
+                "id" : "es-recommend-followup1",
+                "meaning" : {
+                  "en" : "Sure! Is it spicy?",
+                  "ja" : "いいですね！辛いですか？",
+                  "ko" : "좋아요! 그거 매워요?",
+                  "zh-Hans" : "好啊！辣吗？"
+                },
+                "speaker" : "me",
+                "text" : "¡Claro! ¿Es picante?"
+              }
+            ],
+            "id" : "es-recommend-response1",
+            "meaning" : {
+              "en" : "Our rendang is famous. Want to try?",
+              "ja" : "うちのレンダンは有名ですよ。試してみますか？",
+              "ko" : "저희 렌당이 유명해요. 드셔보시겠어요?",
+              "zh-Hans" : "我们的仁当很有名。要试试吗？"
+            },
+            "speaker" : "other",
+            "text" : "Nuestro rendang es famoso. ¿Quiere probarlo?"
+          }
+        ],
+        "id" : "es-menu-recommendation-root",
+        "meaning" : {
+          "en" : "Any good food recommendations?",
+          "ja" : "おいしい料理のおすすめはありますか？",
+          "ko" : "맛있는 음식 추천해주실 수 있어요?",
+          "zh-Hans" : "有什么好吃的推荐吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Alguna recomendación de comida buena?"
+      },
+      "title" : {
+        "en" : "Menu Recommendation",
+        "es" : "Recomendación de menú",
+        "ja" : "メニュー推薦",
+        "ko" : "메뉴 추천",
+        "zh-Hans" : "菜单推荐"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice asking about food allergies",
+        "es" : "Practica preguntar sobre alergias alimentarias",
+        "ja" : "食物アレルギーについて尋ねる練習",
+        "ko" : "음식 알레르기에 대해 문의하는 연습",
+        "zh-Hans" : "练习咨询食物过敏"
+      },
+      "emoji" : "🚫",
+      "id" : "es-allergy-inquiry",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-allergy-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. We have several peanut-free menus. Here's the list.",
+                              "ja" : "どういたしまして。ピーナッツ不使用のメニューがいくつかあります。こちらがリストです。",
+                              "ko" : "천만에요. 땅콩이 없는 메뉴가 몇 가지 있어요. 여기 목록이에요.",
+                              "zh-Hans" : "不客气。我们有几道不含花生的菜。这是清单。"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. Tenemos varios menús sin cacahuetes. Aquí está la lista."
+                          }
+                        ],
+                        "id" : "es-allergy-followup2",
+                        "meaning" : {
+                          "en" : "Thank you very much. Very helpful.",
+                          "ja" : "どうもありがとうございます。とても助かります。",
+                          "ko" : "정말 감사합니다. 큰 도움이 돼요.",
+                          "zh-Hans" : "非常感谢。很有帮助。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Muchas gracias. Muy útil."
+                      }
+                    ],
+                    "id" : "es-allergy-continue1",
+                    "meaning" : {
+                      "en" : "Okay, I'll find a safe menu for you.",
+                      "ja" : "わかりました、安全なメニューを探しますね。",
+                      "ko" : "네, 안전한 메뉴를 찾아드릴게요.",
+                      "zh-Hans" : "好的，我给您找安全的菜单。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, le buscaré un menú seguro."
+                  }
+                ],
+                "id" : "es-allergy-followup1",
+                "meaning" : {
+                  "en" : "Yes, severe allergy.",
+                  "ja" : "はい、重度のアレルギーです。",
+                  "ko" : "네, 심한 알레르기예요.",
+                  "zh-Hans" : "是的，严重过敏。"
+                },
+                "speaker" : "me",
+                "text" : "Sí, alergia severa."
+              }
+            ],
+            "id" : "es-allergy-response1",
+            "meaning" : {
+              "en" : "Let me check. Are you allergic to peanuts?",
+              "ja" : "確認しますね。ピーナッツアレルギーですか？",
+              "ko" : "확인해볼게요. 땅콩 알레르기가 있으세요?",
+              "zh-Hans" : "我查一下。您对花生过敏吗？"
+            },
+            "speaker" : "other",
+            "text" : "Déjame revisar. ¿Es alérgico a los cacahuetes?"
+          }
+        ],
+        "id" : "es-allergy-inquiry-root",
+        "meaning" : {
+          "en" : "Does this contain peanuts?",
+          "ja" : "これにピーナッツは入っていますか？",
+          "ko" : "이거 땅콩 들어가요?",
+          "zh-Hans" : "这个含花生吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Esto contiene cacahuetes?"
+      },
+      "title" : {
+        "en" : "Allergy Inquiry",
+        "es" : "Consulta de alergia",
+        "ja" : "アレルギー問い合わせ",
+        "ko" : "알레르기 문의",
+        "zh-Hans" : "过敏咨询"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice asking for the bill",
+        "es" : "Practica pedir la cuenta",
+        "ja" : "会計をお願いする練習",
+        "ko" : "계산서를 요청하는 연습",
+        "zh-Hans" : "练习要账单"
+      },
+      "emoji" : "🧾",
+      "id" : "es-ask-bill",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-bill-end1",
+                            "meaning" : {
+                              "en" : "150 thousand rupiah. Thank you for dining here.",
+                              "ja" : "15万ルピアです。お食事ありがとうございました。",
+                              "ko" : "15만 루피아입니다. 와주셔서 감사합니다.",
+                              "zh-Hans" : "15万印尼盾。感谢您的光临。"
+                            },
+                            "speaker" : "other",
+                            "text" : "150 mil rupias. Gracias por comer aquí."
+                          }
+                        ],
+                        "id" : "es-bill-followup2",
+                        "meaning" : {
+                          "en" : "What's the total?",
+                          "ja" : "合計はいくらですか？",
+                          "ko" : "총 얼마예요?",
+                          "zh-Hans" : "总共多少钱？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Cuál es el total?"
+                      }
+                    ],
+                    "id" : "es-bill-continue1",
+                    "meaning" : {
+                      "en" : "Yes. Here's the card machine.",
+                      "ja" : "大丈夫です。こちらがカード決済機です。",
+                      "ko" : "물론이죠. 여기 카드 단말기요.",
+                      "zh-Hans" : "可以。这是刷卡机。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí. Aquí está el datáfono."
+                  }
+                ],
+                "id" : "es-bill-followup1",
+                "meaning" : {
+                  "en" : "Can I pay with credit card?",
+                  "ja" : "クレジットカードで払えますか？",
+                  "ko" : "신용카드 돼요?",
+                  "zh-Hans" : "可以用信用卡吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Puedo pagar con tarjeta de crédito?"
+              }
+            ],
+            "id" : "es-bill-response1",
+            "meaning" : {
+              "en" : "Okay, just a moment.",
+              "ja" : "はい、少々お待ちください。",
+              "ko" : "네, 잠시만요.",
+              "zh-Hans" : "好的，稍等。"
+            },
+            "speaker" : "other",
+            "text" : "Bien, un momento."
+          }
+        ],
+        "id" : "es-ask-bill-root",
+        "meaning" : {
+          "en" : "Can I have the bill please?",
+          "ja" : "お会計お願いします。",
+          "ko" : "계산서 주세요.",
+          "zh-Hans" : "请给我账单。"
+        },
+        "speaker" : "me",
+        "text" : "La cuenta por favor."
+      },
+      "title" : {
+        "en" : "Asking for the Bill",
+        "es" : "Pedir la cuenta",
+        "ja" : "会計依頼",
+        "ko" : "계산서 요청",
+        "zh-Hans" : "要账单"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice ordering takeout",
+        "es" : "Practica pedir comida para llevar",
+        "ja" : "テイクアウトを注文する練習",
+        "ko" : "테이크아웃을 주문하는 연습",
+        "zh-Hans" : "练习订外卖"
+      },
+      "emoji" : "🥡",
+      "id" : "es-takeout-order",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-takeout-end1",
+                            "meaning" : {
+                              "en" : "40 thousand rupiah. Thank you!",
+                              "ja" : "4万ルピアです。ありがとうございます！",
+                              "ko" : "4만 루피아입니다. 감사합니다!",
+                              "zh-Hans" : "4万印尼盾。谢谢！"
+                            },
+                            "speaker" : "other",
+                            "text" : "40 mil rupias. ¡Gracias!"
+                          }
+                        ],
+                        "id" : "es-takeout-followup2",
+                        "meaning" : {
+                          "en" : "Okay, what's the total?",
+                          "ja" : "わかりました、合計はいくらですか？",
+                          "ko" : "알겠습니다, 총 얼마예요?",
+                          "zh-Hans" : "好的，总共多少钱？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Vale, ¿cuál es el total?"
+                      }
+                    ],
+                    "id" : "es-takeout-continue1",
+                    "meaning" : {
+                      "en" : "Got it! Wait about 15 minutes.",
+                      "ja" : "了解！15分ほどお待ちください。",
+                      "ko" : "알겠습니다! 15분 정도 기다려주세요.",
+                      "zh-Hans" : "好的！等大约15分钟。"
+                    },
+                    "speaker" : "other",
+                    "text" : "¡Listo! Espere unos 15 minutos."
+                  }
+                ],
+                "id" : "es-takeout-followup1",
+                "meaning" : {
+                  "en" : "One fried rice and an iced sweet tea.",
+                  "ja" : "チャーハン一つと甘いアイスティーです。",
+                  "ko" : "볶음밥 하나랑 아이스티요.",
+                  "zh-Hans" : "一份炒饭和冰甜茶。"
+                },
+                "speaker" : "me",
+                "text" : "Un arroz frito y un té helado dulce."
+              }
+            ],
+            "id" : "es-takeout-response1",
+            "meaning" : {
+              "en" : "Of course. What would you like to order?",
+              "ja" : "もちろんです。何を注文しますか？",
+              "ko" : "물론이죠. 뭐 주문하시겠어요?",
+              "zh-Hans" : "当然可以。您想点什么？"
+            },
+            "speaker" : "other",
+            "text" : "Claro que sí. ¿Qué quiere pedir?"
+          }
+        ],
+        "id" : "es-takeout-order-root",
+        "meaning" : {
+          "en" : "Can I get it to go?",
+          "ja" : "持ち帰りできますか？",
+          "ko" : "포장 되나요?",
+          "zh-Hans" : "可以打包吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo pedir para llevar?"
+      },
+      "title" : {
+        "en" : "Takeout Order",
+        "es" : "Pedido para llevar",
+        "ja" : "テイクアウト注文",
+        "ko" : "테이크아웃 주문",
+        "zh-Hans" : "外卖订单"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice ordering coffee",
+        "es" : "Practica pedir café",
+        "ja" : "カフェでコーヒーを注文する練習",
+        "ko" : "카페에서 커피를 주문하는 연습",
+        "zh-Hans" : "练习在咖啡馆点咖啡"
+      },
+      "emoji" : "☕",
+      "id" : "es-coffee-order",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-coffee-end1",
+                            "meaning" : {
+                              "en" : "Yes. Thank you. Your coffee will be ready soon.",
+                              "ja" : "はい、できます。ありがとうございます。コーヒーすぐ準備できます。",
+                              "ko" : "네 가능합니다. 감사합니다. 커피 곧 준비됩니다.",
+                              "zh-Hans" : "可以。谢谢。咖啡马上就好。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí. Gracias. Su café estará listo pronto."
+                          }
+                        ],
+                        "id" : "es-coffee-followup2",
+                        "meaning" : {
+                          "en" : "Can I pay cash? Here's the money.",
+                          "ja" : "現金で払えますか？こちらがお金です。",
+                          "ko" : "현금 돼요? 여기요.",
+                          "zh-Hans" : "可以付现金吗？这是钱。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Puedo pagar en efectivo? Aquí está el dinero."
+                      }
+                    ],
+                    "id" : "es-coffee-continue1",
+                    "meaning" : {
+                      "en" : "Okay, that's 25 thousand total.",
+                      "ja" : "わかりました、合計25,000ルピアです。",
+                      "ko" : "알겠습니다, 총 25,000루피아예요.",
+                      "zh-Hans" : "好的，总共2万5千。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Ok, son 25 mil en total."
+                  }
+                ],
+                "id" : "es-coffee-followup1",
+                "meaning" : {
+                  "en" : "Medium. Just a little sugar.",
+                  "ja" : "ミディアムで。砂糖は少しだけ。",
+                  "ko" : "미디엄이요. 설탕 조금만요.",
+                  "zh-Hans" : "中杯就好。糖少一点。"
+                },
+                "speaker" : "me",
+                "text" : "Mediano. Solo un poco de azúcar."
+              }
+            ],
+            "id" : "es-coffee-response1",
+            "meaning" : {
+              "en" : "What size? Medium or large?",
+              "ja" : "サイズは？ミディアムかラージ？",
+              "ko" : "사이즈 어떻게 하시겠어요? 미디엄? 라지?",
+              "zh-Hans" : "什么尺寸？中杯还是大杯？"
+            },
+            "speaker" : "other",
+            "text" : "¿Qué tamaño? ¿Mediano o grande?"
+          }
+        ],
+        "id" : "es-coffee-order-root",
+        "meaning" : {
+          "en" : "One hot coffee with milk.",
+          "ja" : "ホットカフェラテ一つです。",
+          "ko" : "따뜻한 카페라떼 하나요.",
+          "zh-Hans" : "一杯热牛奶咖啡。"
+        },
+        "speaker" : "me",
+        "text" : "Un café con leche caliente."
+      },
+      "title" : {
+        "en" : "Coffee Order",
+        "es" : "Pedir café",
+        "ja" : "コーヒー注文",
+        "ko" : "커피 주문",
+        "zh-Hans" : "点咖啡"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice requesting water at a restaurant",
+        "es" : "Practica pedir agua en un restaurante",
+        "ja" : "レストランで水をお願いする練習",
+        "ko" : "식당에서 물을 요청하는 연습",
+        "zh-Hans" : "练习在餐厅要水"
+      },
+      "emoji" : "💧",
+      "id" : "es-water-request",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-water-end1",
+                            "meaning" : {
+                              "en" : "Yes. I'll get it for you.",
+                              "ja" : "あります。お持ちしますね。",
+                              "ko" : "네 있어요. 가져다 드릴게요.",
+                              "zh-Hans" : "有的。我给您拿。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí. Se lo traigo."
+                          }
+                        ],
+                        "id" : "es-water-followup2",
+                        "meaning" : {
+                          "en" : "Do you have ice?",
+                          "ja" : "氷はありますか？",
+                          "ko" : "얼음 있나요?",
+                          "zh-Hans" : "有冰块吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Tiene hielo?"
+                      }
+                    ],
+                    "id" : "es-water-continue1",
+                    "meaning" : {
+                      "en" : "You're welcome. Here you go.",
+                      "ja" : "どういたしまして。どうぞ。",
+                      "ko" : "천만에요. 여기요.",
+                      "zh-Hans" : "不客气。请。"
+                    },
+                    "speaker" : "other",
+                    "text" : "De nada. Aquí tiene."
+                  }
+                ],
+                "id" : "es-water-followup1",
+                "meaning" : {
+                  "en" : "Thank you so much!",
+                  "ja" : "どうもありがとう！",
+                  "ko" : "정말 감사합니다!",
+                  "zh-Hans" : "非常感谢！"
+                },
+                "speaker" : "me",
+                "text" : "¡Muchas gracias!"
+              }
+            ],
+            "id" : "es-water-response1",
+            "meaning" : {
+              "en" : "Sure, one moment.",
+              "ja" : "もちろん、少々お待ちください。",
+              "ko" : "물론이죠, 잠시만요.",
+              "zh-Hans" : "当然，稍等。"
+            },
+            "speaker" : "other",
+            "text" : "Claro, un momento."
+          }
+        ],
+        "id" : "es-water-request-root",
+        "meaning" : {
+          "en" : "Can I have some water?",
+          "ja" : "お水をいただけますか？",
+          "ko" : "물 좀 주시겠어요?",
+          "zh-Hans" : "可以给我水吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo tener agua?"
+      },
+      "title" : {
+        "en" : "Water Request",
+        "es" : "Solicitud de agua",
+        "ja" : "水依頼",
+        "ko" : "물 요청",
+        "zh-Hans" : "要水"
+      }
+    },
+    {
+      "category" : "restaurant",
+      "description" : {
+        "en" : "Practice asking about vegetarian menu",
+        "es" : "Practica preguntar por el menú vegetariano",
+        "ja" : "ベジタリアンメニューを尋ねる練習",
+        "ko" : "채식 메뉴를 문의하는 연습",
+        "zh-Hans" : "练习询问素食菜单"
+      },
+      "emoji" : "🥗",
+      "id" : "es-vegetarian-menu",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-vegetarian-end1",
+                            "meaning" : {
+                              "en" : "Great choice! I'll make it now.",
+                              "ja" : "良い選択です！今作りますね。",
+                              "ko" : "좋은 선택이에요! 지금 만들어 드릴게요.",
+                              "zh-Hans" : "很好的选择！我现在就做。"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡Buena elección! Lo haré ahora."
+                          }
+                        ],
+                        "id" : "es-vegetarian-followup2",
+                        "meaning" : {
+                          "en" : "Gado-gado sounds good. I'll order that.",
+                          "ja" : "ガドガドが美味しそうです。それを注文します。",
+                          "ko" : "가도가도 맛있어 보여요. 그걸로 주세요.",
+                          "zh-Hans" : "加多加多听起来不错。我点那个。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gado-gado suena bien. Pediré eso."
+                      }
+                    ],
+                    "id" : "es-vegetarian-continue1",
+                    "meaning" : {
+                      "en" : "Okay, I recommend gado-gado or cap cay.",
+                      "ja" : "わかりました、ガドガドかチャプチャイをおすすめします。",
+                      "ko" : "네, 가도가도나 잡채 추천드려요.",
+                      "zh-Hans" : "好的，我推荐加多加多或炒杂菜。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, recomiendo gado-gado o cap cay."
+                  }
+                ],
+                "id" : "es-vegetarian-followup1",
+                "meaning" : {
+                  "en" : "Yes, I'm vegetarian.",
+                  "ja" : "はい、ベジタリアンです。",
+                  "ko" : "네, 저 채식주의자예요.",
+                  "zh-Hans" : "是的，我吃素。"
+                },
+                "speaker" : "me",
+                "text" : "Sí, soy vegetariano."
+              }
+            ],
+            "id" : "es-vegetarian-response1",
+            "meaning" : {
+              "en" : "Yes. Would you like something with no meat at all?",
+              "ja" : "あります。肉が全く入っていないものがいいですか？",
+              "ko" : "있어요. 고기가 전혀 안 들어간 걸로 드릴까요?",
+              "zh-Hans" : "有的。您要完全不含肉的吗？"
+            },
+            "speaker" : "other",
+            "text" : "Sí. ¿Quiere algo sin nada de carne?"
+          }
+        ],
+        "id" : "es-vegetarian-menu-root",
+        "meaning" : {
+          "en" : "Do you have vegetarian menu?",
+          "ja" : "ベジタリアンメニューはありますか？",
+          "ko" : "채식 메뉴 있나요?",
+          "zh-Hans" : "有素食菜单吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Tienen menú vegetariano?"
+      },
+      "title" : {
+        "en" : "Vegetarian Menu Inquiry",
+        "es" : "Consulta de menú vegetariano",
+        "ja" : "ベジタリアンメニュー問い合わせ",
+        "ko" : "채식 메뉴 문의",
+        "zh-Hans" : "素食菜单咨询"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice calling a taxi",
+        "es" : "Practica llamar un taxi",
+        "ja" : "タクシーを呼ぶ練習",
+        "ko" : "택시를 부르는 연습",
+        "zh-Hans" : "练习叫出租车"
+      },
+      "emoji" : "🚕",
+      "id" : "es-taxi-call",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-taxi-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Wait in front.",
+                              "ja" : "どういたしまして。前で待ってください。",
+                              "ko" : "천만에요. 앞에서 기다리세요.",
+                              "zh-Hans" : "不客气。在前面等着。"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. Espere al frente."
+                          }
+                        ],
+                        "id" : "es-taxi-followup2",
+                        "meaning" : {
+                          "en" : "Thank you very much!",
+                          "ja" : "どうもありがとうございます！",
+                          "ko" : "정말 감사합니다!",
+                          "zh-Hans" : "非常感谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Muchas gracias!"
+                      }
+                    ],
+                    "id" : "es-taxi-continue1",
+                    "meaning" : {
+                      "en" : "Okay, the taxi will arrive in 5 minutes.",
+                      "ja" : "わかりました、タクシーは5分で到着します。",
+                      "ko" : "네, 택시가 5분 안에 올 거예요.",
+                      "zh-Hans" : "好的，出租车5分钟内到达。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, el taxi llegará en 5 minutos."
+                  }
+                ],
+                "id" : "es-taxi-followup1",
+                "meaning" : {
+                  "en" : "To the airport.",
+                  "ja" : "空港まで。",
+                  "ko" : "공항이요.",
+                  "zh-Hans" : "去机场。"
+                },
+                "speaker" : "me",
+                "text" : "Al aeropuerto."
+              }
+            ],
+            "id" : "es-taxi-response1",
+            "meaning" : {
+              "en" : "Sure. Where to?",
+              "ja" : "もちろん。どちらまで？",
+              "ko" : "물론이죠. 어디 가세요?",
+              "zh-Hans" : "当然。去哪里？"
+            },
+            "speaker" : "other",
+            "text" : "Claro. ¿A dónde?"
+          }
+        ],
+        "id" : "es-taxi-call-root",
+        "meaning" : {
+          "en" : "Can you call a taxi for me?",
+          "ja" : "タクシーを呼んでいただけますか？",
+          "ko" : "택시 좀 불러주시겠어요?",
+          "zh-Hans" : "可以帮我叫辆出租车吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puede llamar un taxi?"
+      },
+      "title" : {
+        "en" : "Calling a Taxi",
+        "es" : "Llamar un taxi",
+        "ja" : "タクシーを呼ぶ",
+        "ko" : "택시 호출",
+        "zh-Hans" : "叫出租车"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice telling destination to taxi driver",
+        "es" : "Practica decir el destino al taxista",
+        "ja" : "タクシー運転手に目的地を伝える練習",
+        "ko" : "택시 기사에게 목적지를 알려주는 연습",
+        "zh-Hans" : "练习向出租车司机说明目的地"
+      },
+      "emoji" : "📍",
+      "id" : "es-tell-destination",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-destination-end1",
+                            "meaning" : {
+                              "en" : "If traffic is clear, 30 minutes to arrive.",
+                              "ja" : "スムーズなら30分で到着します。",
+                              "ko" : "막히지 않으면 30분이면 도착해요.",
+                              "zh-Hans" : "如果顺利30分钟就到。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Si no hay tráfico, 30 minutos para llegar."
+                          }
+                        ],
+                        "id" : "es-destination-followup2",
+                        "meaning" : {
+                          "en" : "About how long?",
+                          "ja" : "だいたいどのくらいかかりますか？",
+                          "ko" : "대략 얼마나 걸려요?",
+                          "zh-Hans" : "大概要多久？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Cuánto tiempo aproximadamente?"
+                      }
+                    ],
+                    "id" : "es-destination-continue1",
+                    "meaning" : {
+                      "en" : "Got it, we'll take the toll road.",
+                      "ja" : "了解、高速道路で行きます。",
+                      "ko" : "알겠습니다, 고속도로로 가겠습니다.",
+                      "zh-Hans" : "明白了，走高速。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Entendido, tomaremos la autopista."
+                  }
+                ],
+                "id" : "es-destination-followup1",
+                "meaning" : {
+                  "en" : "Whichever is faster.",
+                  "ja" : "早い方でお願いします。",
+                  "ko" : "더 빠른 걸로 가주세요.",
+                  "zh-Hans" : "走快一点的就好。"
+                },
+                "speaker" : "me",
+                "text" : "El que sea más rápido."
+              }
+            ],
+            "id" : "es-destination-response1",
+            "meaning" : {
+              "en" : "Okay. Via toll road or regular road?",
+              "ja" : "わかりました。高速道路か一般道路、どちらがいいですか？",
+              "ko" : "네. 고속도로로 갈까요, 일반 도로로 갈까요?",
+              "zh-Hans" : "好的。走高速还是普通路？"
+            },
+            "speaker" : "other",
+            "text" : "Bien. ¿Por autopista de peaje o carretera normal?"
+          }
+        ],
+        "id" : "es-tell-destination-root",
+        "meaning" : {
+          "en" : "Please take me to Grand Indonesia hotel.",
+          "ja" : "グランドインドネシアホテルまでお願いします。",
+          "ko" : "그랜드 인도네시아 호텔로 데려다 주세요.",
+          "zh-Hans" : "请送我到大印度尼西亚酒店。"
+        },
+        "speaker" : "me",
+        "text" : "Por favor lléveme al hotel Grand Indonesia."
+      },
+      "title" : {
+        "en" : "Telling the Destination",
+        "es" : "Decir el destino",
+        "ja" : "目的地を伝える",
+        "ko" : "목적지 알려주기",
+        "zh-Hans" : "告知目的地"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice asking about taxi fare",
+        "es" : "Practica preguntar por la tarifa del taxi",
+        "ja" : "タクシー料金を尋ねる練習",
+        "ko" : "택시 요금을 묻는 연습",
+        "zh-Hans" : "练习询问出租车费"
+      },
+      "emoji" : "💰",
+      "id" : "es-ask-fare",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-fare-end1",
+                            "meaning" : {
+                              "en" : "Sure, don't forget to wear your seatbelt.",
+                              "ja" : "了解です、シートベルトをお忘れなく。",
+                              "ko" : "알겠습니다, 안전벨트 메세요.",
+                              "zh-Hans" : "好的，别忘了系安全带。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Claro, no olvide ponerse el cinturón."
+                          }
+                        ],
+                        "id" : "es-fare-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. Let's go.",
+                          "ja" : "ありがとうございます。出発しましょう。",
+                          "ko" : "감사합니다. 출발하죠.",
+                          "zh-Hans" : "谢谢。我们走吧。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. Vamos."
+                      }
+                    ],
+                    "id" : "es-fare-continue1",
+                    "meaning" : {
+                      "en" : "Yes, I already turned it on.",
+                      "ja" : "はい、もう付けました。",
+                      "ko" : "네, 이미 켰어요.",
+                      "zh-Hans" : "是的，已经打开了。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí, ya lo encendí."
+                  }
+                ],
+                "id" : "es-fare-followup1",
+                "meaning" : {
+                  "en" : "Okay, use the meter please?",
+                  "ja" : "わかりました、メーターでお願いします。",
+                  "ko" : "네, 미터기 켜주세요.",
+                  "zh-Hans" : "好的，用计价器吧？"
+                },
+                "speaker" : "me",
+                "text" : "Ok, ¿usa el taxímetro?"
+              }
+            ],
+            "id" : "es-fare-response1",
+            "meaning" : {
+              "en" : "About 80 thousand, depends on traffic.",
+              "ja" : "約8万ルピアですが、渋滞次第です。",
+              "ko" : "대략 8만 루피아인데, 막히느냐에 따라 다릅니다.",
+              "zh-Hans" : "大约8万，要看堵不堵车。"
+            },
+            "speaker" : "other",
+            "text" : "Unos 80 mil, depende del tráfico."
+          }
+        ],
+        "id" : "es-ask-fare-root",
+        "meaning" : {
+          "en" : "How much to get there?",
+          "ja" : "そこまでいくらですか？",
+          "ko" : "거기까지 얼마예요?",
+          "zh-Hans" : "到那里多少钱？"
+        },
+        "speaker" : "me",
+        "text" : "¿Cuánto cuesta llegar allí?"
+      },
+      "title" : {
+        "en" : "Asking About Fare",
+        "es" : "Preguntar por la tarifa",
+        "ja" : "運賃を尋ねる",
+        "ko" : "요금 문의",
+        "zh-Hans" : "询问车费"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice asking about metro route",
+        "es" : "Practica preguntar por la ruta del metro",
+        "ja" : "地下鉄路線を尋ねる練習",
+        "ko" : "지하철 노선을 묻는 연습",
+        "zh-Hans" : "练习询问地铁线路"
+      },
+      "emoji" : "🚇",
+      "id" : "es-metro-route",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-metro-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Have a nice trip!",
+                              "ja" : "どういたしまして。良い旅を！",
+                              "ko" : "천만에요. 즐거운 여행 되세요!",
+                              "zh-Hans" : "不客气。祝您玩得开心！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Que tenga un buen viaje!"
+                          }
+                        ],
+                        "id" : "es-metro-followup2",
+                        "meaning" : {
+                          "en" : "Okay, thanks for the info!",
+                          "ja" : "わかりました、情報ありがとうございます！",
+                          "ko" : "알겠어요, 정보 감사합니다!",
+                          "zh-Hans" : "好的，谢谢你的信息！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Vale, ¡gracias por la información!"
+                      }
+                    ],
+                    "id" : "es-metro-continue1",
+                    "meaning" : {
+                      "en" : "No, only a 10-minute walk.",
+                      "ja" : "いいえ、歩いて10分だけです。",
+                      "ko" : "아니요, 걸어서 10분밖에 안 걸려요.",
+                      "zh-Hans" : "不远，走路只要10分钟。"
+                    },
+                    "speaker" : "other",
+                    "text" : "No, solo 10 minutos caminando."
+                  }
+                ],
+                "id" : "es-metro-followup1",
+                "meaning" : {
+                  "en" : "Is it far to walk from the station?",
+                  "ja" : "駅から歩いて遠いですか？",
+                  "ko" : "역에서 걸어서 멀어요?",
+                  "zh-Hans" : "从车站走路远吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Está lejos caminando desde la estación?"
+              }
+            ],
+            "id" : "es-metro-response1",
+            "meaning" : {
+              "en" : "Take the red line, get off at Gambir station.",
+              "ja" : "赤いラインに乗って、ガンビル駅で降りてください。",
+              "ko" : "빨간 노선 타고 감비르역에서 내리세요.",
+              "zh-Hans" : "坐红线，在甘比尔站下车。"
+            },
+            "speaker" : "other",
+            "text" : "Toma la línea roja, baja en la estación Gambir."
+          }
+        ],
+        "id" : "es-metro-route-root",
+        "meaning" : {
+          "en" : "Which train to take to Monas?",
+          "ja" : "モナスまでどの電車に乗ればいいですか？",
+          "ko" : "모나스까지 어떤 전철 타야 해요?",
+          "zh-Hans" : "去莫纳斯坐哪趟地铁？"
+        },
+        "speaker" : "me",
+        "text" : "¿Qué tren tomar para Monas?"
+      },
+      "title" : {
+        "en" : "Asking About Metro Route",
+        "es" : "Preguntar por la ruta del metro",
+        "ja" : "地下鉄路線を尋ねる",
+        "ko" : "지하철 노선 문의",
+        "zh-Hans" : "询问地铁线路"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice finding a bus stop",
+        "es" : "Practica buscar parada de autobús",
+        "ja" : "バス停を探す練習",
+        "ko" : "버스 정류장을 찾는 연습",
+        "zh-Hans" : "练习找公交站"
+      },
+      "emoji" : "🚌",
+      "id" : "es-bus-stop",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-bus-end1",
+                            "meaning" : {
+                              "en" : "About 20 minutes if there's no traffic.",
+                              "ja" : "渋滞がなければ20分くらいです。",
+                              "ko" : "막히지 않으면 20분 정도요.",
+                              "zh-Hans" : "如果不堵车大概20分钟。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Unos 20 minutos si no hay tráfico."
+                          }
+                        ],
+                        "id" : "es-bus-followup2",
+                        "meaning" : {
+                          "en" : "About how long is the journey?",
+                          "ja" : "だいたいどのくらいかかりますか？",
+                          "ko" : "대략 얼마나 걸려요?",
+                          "zh-Hans" : "路程大概要多久？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Cuánto tiempo dura el viaje aproximadamente?"
+                      }
+                    ],
+                    "id" : "es-bus-continue1",
+                    "meaning" : {
+                      "en" : "You're welcome, be careful!",
+                      "ja" : "どういたしまして、気をつけて！",
+                      "ko" : "천만에요, 조심하세요!",
+                      "zh-Hans" : "不客气，小心点！"
+                    },
+                    "speaker" : "other",
+                    "text" : "De nada, ¡ten cuidado!"
+                  }
+                ],
+                "id" : "es-bus-followup1",
+                "meaning" : {
+                  "en" : "Thanks!",
+                  "ja" : "ありがとう！",
+                  "ko" : "감사합니다!",
+                  "zh-Hans" : "谢谢！"
+                },
+                "speaker" : "me",
+                "text" : "¡Gracias!"
+              }
+            ],
+            "id" : "es-bus-response1",
+            "meaning" : {
+              "en" : "Across the street, take bus number 12.",
+              "ja" : "道の向かい側です、12番バスに乗ってください。",
+              "ko" : "길 건너편이요, 12번 버스 타세요.",
+              "zh-Hans" : "在马路对面，坐12路公交。"
+            },
+            "speaker" : "other",
+            "text" : "Al otro lado de la calle, toma el autobús número 12."
+          }
+        ],
+        "id" : "es-bus-stop-root",
+        "meaning" : {
+          "en" : "Where's the bus stop to the mall?",
+          "ja" : "モールに行くバス停はどこですか？",
+          "ko" : "쇼핑몰 가는 버스 정류장이 어디예요?",
+          "zh-Hans" : "去商场的公交站在哪？"
+        },
+        "speaker" : "me",
+        "text" : "¿Dónde está la parada del autobús al centro comercial?"
+      },
+      "title" : {
+        "en" : "Finding Bus Stop",
+        "es" : "Buscar parada de autobús",
+        "ja" : "バス停を探す",
+        "ko" : "버스 정류장 찾기",
+        "zh-Hans" : "找公交站"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice buying transportation ticket",
+        "es" : "Practica comprar boleto de transporte",
+        "ja" : "交通チケットを買う練習",
+        "ko" : "교통 티켓을 구매하는 연습",
+        "zh-Hans" : "练习买交通票"
+      },
+      "emoji" : "🎫",
+      "id" : "es-buy-ticket",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-ticket-end1",
+                            "meaning" : {
+                              "en" : "Yes. Here's your ticket, departure from platform 3.",
+                              "ja" : "できます。こちらがチケットです、3番ホームから出発します。",
+                              "ko" : "됩니다. 여기 표예요, 3번 플랫폼에서 출발해요.",
+                              "zh-Hans" : "可以。这是您的票，从3号站台发车。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí. Aquí está su boleto, sale del andén 3."
+                          }
+                        ],
+                        "id" : "es-ticket-followup2",
+                        "meaning" : {
+                          "en" : "Okay, I'll take that one. Can I pay cash?",
+                          "ja" : "わかりました、それにします。現金で払えますか？",
+                          "ko" : "알겠습니다, 그걸로 할게요. 현금 되나요?",
+                          "zh-Hans" : "好的，我要那个。可以付现金吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bien, tomaré ese. ¿Puedo pagar en efectivo?"
+                      }
+                    ],
+                    "id" : "es-ticket-continue1",
+                    "meaning" : {
+                      "en" : "There's a train at 9:15. Total 150 thousand.",
+                      "ja" : "9時15分の列車があります。合計15万ルピアです。",
+                      "ko" : "9시 15분 기차 있어요. 총 15만 루피아예요.",
+                      "zh-Hans" : "有9点15分的火车。总共15万。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Hay un tren a las 9:15. Total 150 mil."
+                  }
+                ],
+                "id" : "es-ticket-followup1",
+                "meaning" : {
+                  "en" : "Morning, around 9 o'clock.",
+                  "ja" : "朝です、9時頃です。",
+                  "ko" : "아침이요, 9시쯤이요.",
+                  "zh-Hans" : "早上的，9点左右。"
+                },
+                "speaker" : "me",
+                "text" : "De mañana, alrededor de las 9."
+              }
+            ],
+            "id" : "es-ticket-response1",
+            "meaning" : {
+              "en" : "What time departure?",
+              "ja" : "出発時刻は何時ですか？",
+              "ko" : "몇 시 출발이세요?",
+              "zh-Hans" : "几点出发？"
+            },
+            "speaker" : "other",
+            "text" : "¿A qué hora sale?"
+          }
+        ],
+        "id" : "es-buy-ticket-root",
+        "meaning" : {
+          "en" : "I'd like to buy a ticket to Bandung.",
+          "ja" : "バンドンまでのチケットを買いたいです。",
+          "ko" : "반둥까지 가는 표를 사고 싶어요.",
+          "zh-Hans" : "我想买到万隆的票。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero comprar un boleto a Bandung."
+      },
+      "title" : {
+        "en" : "Buying Ticket",
+        "es" : "Comprar boleto",
+        "ja" : "チケット購入",
+        "ko" : "티켓 구매",
+        "zh-Hans" : "买票"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice asking about transfers",
+        "es" : "Practica preguntar por transbordos",
+        "ja" : "乗り換えについて尋ねる練習",
+        "ko" : "환승에 대해 묻는 연습",
+        "zh-Hans" : "练习询问换乘"
+      },
+      "emoji" : "🔄",
+      "id" : "es-ask-transfer",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-transfer-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Safe travels!",
+                              "ja" : "どういたしまして。良い旅を！",
+                              "ko" : "천만에요. 무사히 도착하세요!",
+                              "zh-Hans" : "不客气。一路平安！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Buen viaje!"
+                          }
+                        ],
+                        "id" : "es-transfer-followup2",
+                        "meaning" : {
+                          "en" : "Okay, thank you!",
+                          "ja" : "わかりました、ありがとうございます！",
+                          "ko" : "알겠습니다, 감사합니다!",
+                          "zh-Hans" : "好的，谢谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Vale, ¡gracias!"
+                      }
+                    ],
+                    "id" : "es-transfer-continue1",
+                    "meaning" : {
+                      "en" : "No, just follow the signs. It's easy.",
+                      "ja" : "いいえ、標識に従うだけです。簡単ですよ。",
+                      "ko" : "아니요, 표지판만 따라가면 돼요. 쉬워요.",
+                      "zh-Hans" : "不难，跟着指示牌就行。很简单。"
+                    },
+                    "speaker" : "other",
+                    "text" : "No, solo sigue las señales. Es fácil."
+                  }
+                ],
+                "id" : "es-transfer-followup1",
+                "meaning" : {
+                  "en" : "Is it hard to find?",
+                  "ja" : "見つけるのは難しいですか？",
+                  "ko" : "찾기 어려워요?",
+                  "zh-Hans" : "难找吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Es difícil de encontrar?"
+              }
+            ],
+            "id" : "es-transfer-response1",
+            "meaning" : {
+              "en" : "Yes, transfer at Dukuh Atas station.",
+              "ja" : "はい、ドゥクアタス駅で乗り換えてください。",
+              "ko" : "네, 두쿠 아타스역에서 환승하세요.",
+              "zh-Hans" : "是的，在杜库阿塔斯站换乘。"
+            },
+            "speaker" : "other",
+            "text" : "Sí, transborda en la estación Dukuh Atas."
+          }
+        ],
+        "id" : "es-ask-transfer-root",
+        "meaning" : {
+          "en" : "Do I need to change trains?",
+          "ja" : "乗り換えは必要ですか？",
+          "ko" : "환승해야 하나요?",
+          "zh-Hans" : "需要换车吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Necesito cambiar de tren?"
+      },
+      "title" : {
+        "en" : "Asking About Transfer",
+        "es" : "Preguntar por transbordo",
+        "ja" : "乗り換えを尋ねる",
+        "ko" : "환승 문의",
+        "zh-Hans" : "询问换乘"
+      }
+    },
+    {
+      "category" : "transportation",
+      "description" : {
+        "en" : "Practice using motorcycle taxi",
+        "es" : "Practica usar taxi moto",
+        "ja" : "バイクタクシーを利用する練習",
+        "ko" : "오토바이 택시를 이용하는 연습",
+        "zh-Hans" : "练习使用摩托出租车"
+      },
+      "emoji" : "🏍️",
+      "id" : "es-ojek",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-ojek-end1",
+                            "meaning" : {
+                              "en" : "Yes, here. Wear it to be safe.",
+                              "ja" : "ありますよ、これです。安全のためかぶってください。",
+                              "ko" : "있어요, 여기요. 안전을 위해 쓰세요.",
+                              "zh-Hans" : "有的，这个。戴上更安全。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí, aquí. Úsalo para estar seguro."
+                          }
+                        ],
+                        "id" : "es-ojek-followup2",
+                        "meaning" : {
+                          "en" : "Do you have a spare helmet?",
+                          "ja" : "予備のヘルメットはありますか？",
+                          "ko" : "여분 헬멧 있나요?",
+                          "zh-Hans" : "有备用头盔吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Tienes casco de repuesto?"
+                      }
+                    ],
+                    "id" : "es-ojek-continue1",
+                    "meaning" : {
+                      "en" : "Got it, sit comfortably.",
+                      "ja" : "了解、楽に座ってください。",
+                      "ko" : "알겠습니다, 편하게 앉으세요.",
+                      "zh-Hans" : "好的，坐稳了。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Listo, siéntate cómodo."
+                  }
+                ],
+                "id" : "es-ojek-followup1",
+                "meaning" : {
+                  "en" : "Okay, let's go!",
+                  "ja" : "オッケー、行こう！",
+                  "ko" : "좋아요, 가요!",
+                  "zh-Hans" : "好的，走吧！"
+                },
+                "speaker" : "me",
+                "text" : "¡Ok, vamos!"
+              }
+            ],
+            "id" : "es-ojek-response1",
+            "meaning" : {
+              "en" : "Just 15 thousand, it's close.",
+              "ja" : "1万5千だけ、近いですよ。",
+              "ko" : "1만 5천만 주세요, 가까워요.",
+              "zh-Hans" : "只要1万5千，很近的。"
+            },
+            "speaker" : "other",
+            "text" : "Solo 15 mil, está cerca."
+          }
+        ],
+        "id" : "es-ojek-root",
+        "meaning" : {
+          "en" : "Bro, how much to the station?",
+          "ja" : "兄ちゃん、駅までいくら？",
+          "ko" : "형, 역까지 얼마예요?",
+          "zh-Hans" : "大哥，到车站多少钱？"
+        },
+        "speaker" : "me",
+        "text" : "Hermano, ¿cuánto a la estación?"
+      },
+      "title" : {
+        "en" : "Motorcycle Taxi",
+        "es" : "Taxi moto",
+        "ja" : "バイクタクシー",
+        "ko" : "오토바이 택시",
+        "zh-Hans" : "摩托出租车"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice asking about price",
+        "es" : "Practica preguntar precio",
+        "ja" : "価格を尋ねる練習",
+        "ko" : "가격을 묻는 연습",
+        "zh-Hans" : "练习询问价格"
+      },
+      "emoji" : "💵",
+      "id" : "es-ask-price",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-price-end1",
+                            "meaning" : {
+                              "en" : "Thank you. Let me wrap them for you.",
+                              "ja" : "ありがとうございます。包装しますね。",
+                              "ko" : "감사합니다. 포장해드릴게요.",
+                              "zh-Hans" : "谢谢。我先给您包起来。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Gracias. Déjeme empacarlos."
+                          }
+                        ],
+                        "id" : "es-price-followup2",
+                        "meaning" : {
+                          "en" : "Okay, deal! I'll take two.",
+                          "ja" : "オッケー、決まり！2つください。",
+                          "ko" : "좋아요, 그럼요! 2개 살게요.",
+                          "zh-Hans" : "好的，成交！我要两个。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Vale, trato hecho! Tomo dos."
+                      }
+                    ],
+                    "id" : "es-price-continue1",
+                    "meaning" : {
+                      "en" : "Buy two, I'll give you 450 thousand total.",
+                      "ja" : "2つ買えば、合計45万ルピアにします。",
+                      "ko" : "2개 사시면 총 45만 루피아에 드릴게요.",
+                      "zh-Hans" : "买两个，我给你总共45万。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Compre dos, le doy 450 mil en total."
+                  }
+                ],
+                "id" : "es-price-followup1",
+                "meaning" : {
+                  "en" : "Can you give a discount?",
+                  "ja" : "値引きできますか？",
+                  "ko" : "깎아주실 수 있어요?",
+                  "zh-Hans" : "可以便宜点吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Puede hacer descuento?"
+              }
+            ],
+            "id" : "es-price-response1",
+            "meaning" : {
+              "en" : "250 thousand. Want to buy?",
+              "ja" : "25万ルピアです。買いますか？",
+              "ko" : "25만 루피아예요. 사실 거예요?",
+              "zh-Hans" : "25万。要买吗？"
+            },
+            "speaker" : "other",
+            "text" : "250 mil. ¿Quiere comprar?"
+          }
+        ],
+        "id" : "es-ask-price-root",
+        "meaning" : {
+          "en" : "How much is this?",
+          "ja" : "これはいくらですか？",
+          "ko" : "이거 얼마예요?",
+          "zh-Hans" : "这个多少钱？"
+        },
+        "speaker" : "me",
+        "text" : "¿Cuánto cuesta esto?"
+      },
+      "title" : {
+        "en" : "Asking Price",
+        "es" : "Preguntar precio",
+        "ja" : "価格を尋ねる",
+        "ko" : "가격 문의",
+        "zh-Hans" : "询问价格"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice asking for discount",
+        "es" : "Practica pedir descuento",
+        "ja" : "割引をお願いする練習",
+        "ko" : "할인을 요청하는 연습",
+        "zh-Hans" : "练习询问折扣"
+      },
+      "emoji" : "🏷️",
+      "id" : "es-ask-discount",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-discount-end1",
+                            "meaning" : {
+                              "en" : "Yes. Here's the machine, please tap.",
+                              "ja" : "使えます。こちらが機械です、タップしてください。",
+                              "ko" : "됩니다. 여기 기계예요, 터치하세요.",
+                              "zh-Hans" : "可以。这是机器，请刷卡。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí. Aquí está la máquina, toque por favor."
+                          }
+                        ],
+                        "id" : "es-discount-followup2",
+                        "meaning" : {
+                          "en" : "By card. Do you accept Visa?",
+                          "ja" : "カードで。Visaは使えますか？",
+                          "ko" : "카드로요. 비자 되나요?",
+                          "zh-Hans" : "用卡。可以用Visa吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Con tarjeta. ¿Aceptan Visa?"
+                      }
+                    ],
+                    "id" : "es-discount-continue1",
+                    "meaning" : {
+                      "en" : "Thank you. Cash or card?",
+                      "ja" : "ありがとうございます。現金かカードですか？",
+                      "ko" : "감사합니다. 현금으로 하시겠어요, 카드로 하시겠어요?",
+                      "zh-Hans" : "谢谢。现金还是卡？"
+                    },
+                    "speaker" : "other",
+                    "text" : "Gracias. ¿Efectivo o tarjeta?"
+                  }
+                ],
+                "id" : "es-discount-followup1",
+                "meaning" : {
+                  "en" : "Wow, great! I'll buy it.",
+                  "ja" : "わあ、いいですね！買います。",
+                  "ko" : "와, 좋아요! 살게요.",
+                  "zh-Hans" : "哇，太好了！我买了。"
+                },
+                "speaker" : "me",
+                "text" : "¡Wow, genial! Lo compro."
+              }
+            ],
+            "id" : "es-discount-response1",
+            "meaning" : {
+              "en" : "There's a 20% promotion now.",
+              "ja" : "今20%プロモーション中です。",
+              "ko" : "지금 20% 프로모션 중이에요.",
+              "zh-Hans" : "现在有20%的促销。"
+            },
+            "speaker" : "other",
+            "text" : "Ahora hay una promoción del 20%."
+          }
+        ],
+        "id" : "es-ask-discount-root",
+        "meaning" : {
+          "en" : "Is there a discount?",
+          "ja" : "割引はありますか？",
+          "ko" : "할인 있어요?",
+          "zh-Hans" : "有折扣吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Hay descuento?"
+      },
+      "title" : {
+        "en" : "Asking for Discount",
+        "es" : "Preguntar por descuento",
+        "ja" : "割引を尋ねる",
+        "ko" : "할인 문의",
+        "zh-Hans" : "询问折扣"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice asking about clothing size",
+        "es" : "Practica preguntar por talla de ropa",
+        "ja" : "服のサイズを尋ねる練習",
+        "ko" : "옷 사이즈를 묻는 연습",
+        "zh-Hans" : "练习询问服装尺码"
+      },
+      "emoji" : "👕",
+      "id" : "es-ask-size",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-size-end1",
+                            "meaning" : {
+                              "en" : "Of course, fitting room is over there.",
+                              "ja" : "もちろん、試着室はあちらです。",
+                              "ko" : "물론이죠, 탈의실은 저쪽이에요.",
+                              "zh-Hans" : "当然，试衣间在那边。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Claro, el probador está por allá."
+                          }
+                        ],
+                        "id" : "es-size-followup2",
+                        "meaning" : {
+                          "en" : "Can I try it on first?",
+                          "ja" : "試着してもいいですか？",
+                          "ko" : "입어봐도 될까요?",
+                          "zh-Hans" : "可以先试穿吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Puedo probármelo primero?"
+                      }
+                    ],
+                    "id" : "es-size-continue1",
+                    "meaning" : {
+                      "en" : "Yes, here you go.",
+                      "ja" : "あります、これです。",
+                      "ko" : "있어요, 여기요.",
+                      "zh-Hans" : "有，这是。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí, aquí está."
+                  }
+                ],
+                "id" : "es-size-followup1",
+                "meaning" : {
+                  "en" : "Do you have black?",
+                  "ja" : "黒はありますか？",
+                  "ko" : "검은색 있어요?",
+                  "zh-Hans" : "有黑色的吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Tienen negro?"
+              }
+            ],
+            "id" : "es-size-response1",
+            "meaning" : {
+              "en" : "Yes. What color?",
+              "ja" : "あります。何色がいいですか？",
+              "ko" : "있어요. 무슨 색으로 할래요?",
+              "zh-Hans" : "有的。要什么颜色？"
+            },
+            "speaker" : "other",
+            "text" : "Sí. ¿Qué color?"
+          }
+        ],
+        "id" : "es-ask-size-root",
+        "meaning" : {
+          "en" : "Do you have size M?",
+          "ja" : "Mサイズはありますか？",
+          "ko" : "M 사이즈 있어요?",
+          "zh-Hans" : "有M码吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Tienen talla M?"
+      },
+      "title" : {
+        "en" : "Asking About Size",
+        "es" : "Preguntar por talla",
+        "ja" : "サイズを尋ねる",
+        "ko" : "사이즈 문의",
+        "zh-Hans" : "询问尺码"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice asking to try on clothes",
+        "es" : "Practica preguntar si puede probarse ropa",
+        "ja" : "服を試着してもいいか尋ねる練習",
+        "ko" : "옷을 입어봐도 되는지 묻는 연습",
+        "zh-Hans" : "练习询问试穿衣服"
+      },
+      "emoji" : "🛍️",
+      "id" : "es-try-on",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-tryon-end1",
+                            "meaning" : {
+                              "en" : "Thank you. I'll prepare it at the counter.",
+                              "ja" : "ありがとうございます。レジで準備しますね。",
+                              "ko" : "감사합니다. 계산대에 준비해둘게요.",
+                              "zh-Hans" : "谢谢。我在收银台准备好。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Gracias. Lo preparo en la caja."
+                          }
+                        ],
+                        "id" : "es-tryon-followup2",
+                        "meaning" : {
+                          "en" : "Perfect fit! I'll buy this.",
+                          "ja" : "ぴったりです！これを買います。",
+                          "ko" : "딱 맞아요! 이거 살게요.",
+                          "zh-Hans" : "正合适！我买这个。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Perfecto! Compro esto."
+                      }
+                    ],
+                    "id" : "es-tryon-continue1",
+                    "meaning" : {
+                      "en" : "You're welcome, let me know if you need help.",
+                      "ja" : "どういたしまして、助けが必要なら言ってくださいね.",
+                      "ko" : "천만에요, 도움 필요하시면 말씀하세요.",
+                      "zh-Hans" : "不客气，需要帮助就说。"
+                    },
+                    "speaker" : "other",
+                    "text" : "De nada, avísame si necesitas ayuda."
+                  }
+                ],
+                "id" : "es-tryon-followup1",
+                "meaning" : {
+                  "en" : "Thank you.",
+                  "ja" : "ありがとうございます。",
+                  "ko" : "감사합니다.",
+                  "zh-Hans" : "谢谢。"
+                },
+                "speaker" : "me",
+                "text" : "Gracias."
+              }
+            ],
+            "id" : "es-tryon-response1",
+            "meaning" : {
+              "en" : "Of course, the fitting room is over there.",
+              "ja" : "もちろんです、試着室はあちらです。",
+              "ko" : "물론이죠, 탈의실은 저기예요.",
+              "zh-Hans" : "当然，试衣间在那边。"
+            },
+            "speaker" : "other",
+            "text" : "Por supuesto, el probador está allí."
+          }
+        ],
+        "id" : "es-try-on-root",
+        "meaning" : {
+          "en" : "Can I try it on?",
+          "ja" : "試着してもいいですか？",
+          "ko" : "입어봐도 돼요?",
+          "zh-Hans" : "可以试穿吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Puedo probármelo?"
+      },
+      "title" : {
+        "en" : "Asking to Try On",
+        "es" : "Preguntar si puede probarse",
+        "ja" : "試着してもいいか尋ねる",
+        "ko" : "입어봐도 되는지",
+        "zh-Hans" : "询问试穿"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice asking for a refund",
+        "es" : "Practica solicitar reembolso",
+        "ja" : "返金をお願いする練習",
+        "ko" : "환불을 요청하는 연습",
+        "zh-Hans" : "练习要求退款"
+      },
+      "emoji" : "↩️",
+      "id" : "es-ask-refund",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-refund-end1",
+                            "meaning" : {
+                              "en" : "Yes. Let me get size L for you.",
+                              "ja" : "あります。Lサイズを取ってきますね。",
+                              "ko" : "있어요. L 사이즈 가져올게요.",
+                              "zh-Hans" : "有的。我给您拿L码的。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Sí. Le traigo la talla L."
+                          }
+                        ],
+                        "id" : "es-refund-followup2",
+                        "meaning" : {
+                          "en" : "Here's the receipt. Do you have size L?",
+                          "ja" : "これがレシートです。Lサイズはありますか？",
+                          "ko" : "여기 영수증이요. L 사이즈 있나요?",
+                          "zh-Hans" : "这是收据。有L码吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Aquí está el recibo. ¿Tienen talla L?"
+                      }
+                    ],
+                    "id" : "es-refund-continue1",
+                    "meaning" : {
+                      "en" : "Okay, do you have the receipt? We can exchange for a larger size.",
+                      "ja" : "わかりました、レシートはありますか？大きいサイズに交換できます。",
+                      "ko" : "네, 영수증 있으세요? 더 큰 사이즈로 교환 가능해요.",
+                      "zh-Hans" : "好的，有收据吗？可以换大一号的。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, ¿tiene el recibo? Podemos cambiar por una talla más grande."
+                  }
+                ],
+                "id" : "es-refund-followup1",
+                "meaning" : {
+                  "en" : "The size is too small.",
+                  "ja" : "サイズが小さすぎます。",
+                  "ko" : "사이즈가 작아요.",
+                  "zh-Hans" : "尺码太小了。"
+                },
+                "speaker" : "me",
+                "text" : "La talla es muy pequeña."
+              }
+            ],
+            "id" : "es-refund-response1",
+            "meaning" : {
+              "en" : "May I know why you want to return it?",
+              "ja" : "返品理由をお聞きしてもよろしいですか？",
+              "ko" : "왜 반품하시는지 여쭤봐도 될까요?",
+              "zh-Hans" : "可以问一下为什么要退货吗？"
+            },
+            "speaker" : "other",
+            "text" : "¿Puedo saber por qué quiere devolverlo?"
+          }
+        ],
+        "id" : "es-ask-refund-root",
+        "meaning" : {
+          "en" : "I'd like to return this item.",
+          "ja" : "この商品を返品したいです。",
+          "ko" : "이거 반품하고 싶어요.",
+          "zh-Hans" : "我想退货。"
+        },
+        "speaker" : "me",
+        "text" : "Quiero devolver este artículo."
+      },
+      "title" : {
+        "en" : "Asking for Refund",
+        "es" : "Solicitar reembolso",
+        "ja" : "返金依頼",
+        "ko" : "환불 요청",
+        "zh-Hans" : "要求退款"
+      }
+    },
+    {
+      "category" : "shopping",
+      "description" : {
+        "en" : "Practice requesting gift wrapping",
+        "es" : "Practica solicitar envolver regalo",
+        "ja" : "ギフトラッピングをお願いする練習",
+        "ko" : "선물 포장을 요청하는 연습",
+        "zh-Hans" : "练习要求礼品包装"
+      },
+      "emoji" : "🎁",
+      "id" : "es-gift-wrap",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-giftwrap-end1",
+                            "meaning" : {
+                              "en" : "It's free, already included.",
+                              "ja" : "無料ですよ、含まれています。",
+                              "ko" : "무료예요, 포함되어 있어요.",
+                              "zh-Hans" : "免费的，已经包括了。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Es gratis, ya está incluido."
+                          }
+                        ],
+                        "id" : "es-giftwrap-followup2",
+                        "meaning" : {
+                          "en" : "How much is the wrapping fee?",
+                          "ja" : "包装料金はいくらですか？",
+                          "ko" : "포장 비용은 얼마예요?",
+                          "zh-Hans" : "包装费多少钱？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¿Cuánto cuesta envolver?"
+                      }
+                    ],
+                    "id" : "es-giftwrap-continue1",
+                    "meaning" : {
+                      "en" : "Okay, one moment, I'll wrap it for you.",
+                      "ja" : "わかりました、少々お待ちください、包装しますね。",
+                      "ko" : "네, 잠시만요, 포장해드릴게요.",
+                      "zh-Hans" : "好的，稍等，我帮您包装。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Bien, un momento, lo envuelvo."
+                  }
+                ],
+                "id" : "es-giftwrap-followup1",
+                "meaning" : {
+                  "en" : "That blue one is nice.",
+                  "ja" : "あの青いのがいいですね。",
+                  "ko" : "저 파란색 예쁘네요.",
+                  "zh-Hans" : "那个蓝色的不错。"
+                },
+                "speaker" : "me",
+                "text" : "Ese azul está bonito."
+              }
+            ],
+            "id" : "es-giftwrap-response1",
+            "meaning" : {
+              "en" : "Yes. Which wrapping paper would you like?",
+              "ja" : "できます。どの包装紙にしますか？",
+              "ko" : "가능해요. 어떤 포장지로 할까요?",
+              "zh-Hans" : "可以。您想选哪种包装纸？"
+            },
+            "speaker" : "other",
+            "text" : "Sí. ¿Qué papel de regalo prefiere?"
+          }
+        ],
+        "id" : "es-gift-wrap-root",
+        "meaning" : {
+          "en" : "Can this be gift wrapped?",
+          "ja" : "ギフトラッピングできますか？",
+          "ko" : "선물 포장 가능해요?",
+          "zh-Hans" : "可以包装成礼物吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Pueden envolverlo para regalo?"
+      },
+      "title" : {
+        "en" : "Gift Wrapping",
+        "es" : "Envolver regalo",
+        "ja" : "ギフトラッピング",
+        "ko" : "선물 포장",
+        "zh-Hans" : "礼品包装"
+      }
+    },
+    {
+      "category" : "tourism",
+      "description" : {
+        "en" : "Practice buying entrance ticket",
+        "es" : "Practica comprar entrada",
+        "ja" : "観光地の入場券を買う練習",
+        "ko" : "관광지 입장권을 사는 연습",
+        "zh-Hans" : "练习买景点门票"
+      },
+      "emoji" : "🎟️",
+      "id" : "es-buy-entrance-ticket",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-entrance-end1",
+                            "meaning" : {
+                              "en" : "6 PM. Enjoy!",
+                              "ja" : "午後6時です。お楽しみください！",
+                              "ko" : "오후 6시요. 즐기세요!",
+                              "zh-Hans" : "下午6点。请享受！"
+                            },
+                            "speaker" : "other",
+                            "text" : "A las 6 PM. ¡Disfruten!"
+                          }
+                        ],
+                        "id" : "es-entrance-followup2",
+                        "meaning" : {
+                          "en" : "Thank you. What time does it close?",
+                          "ja" : "ありがとうございます。閉館は何時ですか？",
+                          "ko" : "감사합니다. 몇 시에 닫아요?",
+                          "zh-Hans" : "谢谢。几点关门？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Gracias. ¿A qué hora cierra?"
+                      }
+                    ],
+                    "id" : "es-entrance-continue1",
+                    "meaning" : {
+                      "en" : "Total 100 thousand. Here are your tickets.",
+                      "ja" : "合計10万ルピアです。チケットです。",
+                      "ko" : "총 10만 루피아예요. 여기 티켓이요.",
+                      "zh-Hans" : "总共10万。这是您的票。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Total 100 mil. Aquí están sus entradas."
+                  }
+                ],
+                "id" : "es-entrance-followup1",
+                "meaning" : {
+                  "en" : "Two people.",
+                  "ja" : "2名です。",
+                  "ko" : "2명이요.",
+                  "zh-Hans" : "两个人。"
+                },
+                "speaker" : "me",
+                "text" : "Dos personas."
+              }
+            ],
+            "id" : "es-entrance-response1",
+            "meaning" : {
+              "en" : "50 thousand per person.",
+              "ja" : "一人5万ルピアです。",
+              "ko" : "1인당 5만 루피아예요.",
+              "zh-Hans" : "每人5万。"
+            },
+            "speaker" : "other",
+            "text" : "50 mil por persona."
+          }
+        ],
+        "id" : "es-buy-entrance-ticket-root",
+        "meaning" : {
+          "en" : "How much is the entrance fee?",
+          "ja" : "入場料はいくらですか？",
+          "ko" : "입장료 얼마예요?",
+          "zh-Hans" : "门票多少钱？"
+        },
+        "speaker" : "me",
+        "text" : "¿Cuánto cuesta la entrada?"
+      },
+      "title" : {
+        "en" : "Buying Entrance Ticket",
+        "es" : "Comprar entrada",
+        "ja" : "入場券購入",
+        "ko" : "입장권 구매",
+        "zh-Hans" : "买门票"
+      }
+    },
+    {
+      "category" : "tourism",
+      "description" : {
+        "en" : "Practice asking someone to take a photo",
+        "es" : "Practica pedir que tomen foto",
+        "ja" : "写真を撮ってもらう練習",
+        "ko" : "사진 찍어달라고 부탁하는 연습",
+        "zh-Hans" : "练习请求拍照"
+      },
+      "emoji" : "📸",
+      "id" : "es-ask-photo",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-photo-end1",
+                            "meaning" : {
+                              "en" : "You're welcome! The photos came out nice.",
+                              "ja" : "どういたしまして！写真いいですよ。",
+                              "ko" : "천만에요! 사진 잘 나왔어요.",
+                              "zh-Hans" : "不客气！照片很好看。"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡De nada! Las fotos salieron bien."
+                          }
+                        ],
+                        "id" : "es-photo-followup2",
+                        "meaning" : {
+                          "en" : "Thank you so much!",
+                          "ja" : "どうもありがとうございます！",
+                          "ko" : "정말 감사합니다!",
+                          "zh-Hans" : "非常感谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Muchas gracias!"
+                      }
+                    ],
+                    "id" : "es-photo-continue1",
+                    "meaning" : {
+                      "en" : "Sure. Come on, smile!",
+                      "ja" : "もちろんです。さあ、笑って！",
+                      "ko" : "물론이죠. 자, 웃으세요!",
+                      "zh-Hans" : "当然可以。来，笑一笑！"
+                    },
+                    "speaker" : "other",
+                    "text" : "Claro. ¡Vamos, sonrían!"
+                  }
+                ],
+                "id" : "es-photo-followup1",
+                "meaning" : {
+                  "en" : "Can we take one more?",
+                  "ja" : "もう一枚いいですか？",
+                  "ko" : "한 장 더 찍어도 될까요?",
+                  "zh-Hans" : "可以再拍一张吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Podemos tomar una más?"
+              }
+            ],
+            "id" : "es-photo-response1",
+            "meaning" : {
+              "en" : "Okay, get ready. One, two, three!",
+              "ja" : "オッケー、準備して。いち、に、さん！",
+              "ko" : "네, 준비하세요. 하나, 둘, 셋!",
+              "zh-Hans" : "好的，准备好。一、二、三！"
+            },
+            "speaker" : "other",
+            "text" : "Ok, prepárense. ¡Uno, dos, tres!"
+          }
+        ],
+        "id" : "es-ask-photo-root",
+        "meaning" : {
+          "en" : "Please take a photo for me!",
+          "ja" : "写真を撮ってください！",
+          "ko" : "사진 좀 찍어주세요!",
+          "zh-Hans" : "请帮我拍照！"
+        },
+        "speaker" : "me",
+        "text" : "¡Por favor tómeme una foto!"
+      },
+      "title" : {
+        "en" : "Asking for Photo",
+        "es" : "Pedir foto",
+        "ja" : "写真撮影依頼",
+        "ko" : "사진 촬영 부탁",
+        "zh-Hans" : "请求拍照"
+      }
+    },
+    {
+      "category" : "tourism",
+      "description" : {
+        "en" : "Practice asking for place recommendations",
+        "es" : "Practica preguntar por lugares recomendados",
+        "ja" : "おすすめの観光地を尋ねる練習",
+        "ko" : "추천 관광지를 묻는 연습",
+        "zh-Hans" : "练习询问推荐景点"
+      },
+      "emoji" : "🗺️",
+      "id" : "es-ask-recommendation-place",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-placerec-end1",
+                            "meaning" : {
+                              "en" : "You're welcome! Enjoy your trip.",
+                              "ja" : "どういたしまして！良い旅を。",
+                              "ko" : "천만에요! 즐거운 여행 되세요.",
+                              "zh-Hans" : "不客气！祝您旅途愉快。"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡De nada! Que disfrute su viaje."
+                          }
+                        ],
+                        "id" : "es-placerec-followup2",
+                        "meaning" : {
+                          "en" : "Okay, I'll go there tomorrow. Thank you!",
+                          "ja" : "わかりました、明日行きます。ありがとうございます！",
+                          "ko" : "알겠어요, 내일 가볼게요. 감사합니다!",
+                          "zh-Hans" : "好的，我明天去那里。谢谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bueno, iré mañana. ¡Gracias!"
+                      }
+                    ],
+                    "id" : "es-placerec-continue1",
+                    "meaning" : {
+                      "en" : "About 1 hour by car. Totally worth it!",
+                      "ja" : "車で1時間くらいです。本当に行く価値ありますよ！",
+                      "ko" : "차로 1시간 정도요. 정말 가볼 만해요!",
+                      "zh-Hans" : "开车大约1小时。绝对值得！"
+                    },
+                    "speaker" : "other",
+                    "text" : "Como 1 hora en auto. ¡Totalmente vale la pena!"
+                  }
+                ],
+                "id" : "es-placerec-followup1",
+                "meaning" : {
+                  "en" : "Is it far from here?",
+                  "ja" : "ここから遠いですか？",
+                  "ko" : "여기서 멀어요?",
+                  "zh-Hans" : "从这里远吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Está lejos de aquí?"
+              }
+            ],
+            "id" : "es-placerec-response1",
+            "meaning" : {
+              "en" : "Borobudur Temple is really great! You must go there.",
+              "ja" : "ボロブドゥール寺院は本当にいいですよ！絶対に行ってください。",
+              "ko" : "보로부두르 사원 정말 좋아요! 꼭 가보세요.",
+              "zh-Hans" : "婆罗浮屠非常好！一定要去。"
+            },
+            "speaker" : "other",
+            "text" : "¡El Templo de Borobudur es genial! Debe ir allí."
+          }
+        ],
+        "id" : "es-ask-recommendation-place-root",
+        "meaning" : {
+          "en" : "Are there any good tourist spots here?",
+          "ja" : "ここにいい観光地はありますか？",
+          "ko" : "여기 좋은 관광지 있어요?",
+          "zh-Hans" : "这里有什么好的旅游景点吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Hay buenos lugares turísticos aquí?"
+      },
+      "title" : {
+        "en" : "Asking for Place Recommendations",
+        "es" : "Preguntar por lugares recomendados",
+        "ja" : "おすすめの場所を尋ねる",
+        "ko" : "추천 장소 문의",
+        "zh-Hans" : "询问推荐地点"
+      }
+    },
+    {
+      "category" : "tourism",
+      "description" : {
+        "en" : "Practice asking about opening hours",
+        "es" : "Practica preguntar por el horario",
+        "ja" : "営業時間を尋ねる練習",
+        "ko" : "운영 시간을 묻는 연습",
+        "zh-Hans" : "练习询问营业时间"
+      },
+      "emoji" : "🕐",
+      "id" : "es-opening-hours",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-hours-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Enjoy your visit!",
+                              "ja" : "どういたしまして。良い見学を！",
+                              "ko" : "천만에요. 즐거운 관람 되세요!",
+                              "zh-Hans" : "不客气。祝您参观愉快！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Que disfrute su visita!"
+                          }
+                        ],
+                        "id" : "es-hours-followup2",
+                        "meaning" : {
+                          "en" : "Great! Thank you for the information.",
+                          "ja" : "良かった！情報ありがとうございます。",
+                          "ko" : "좋아요! 정보 감사합니다.",
+                          "zh-Hans" : "太好了！谢谢信息。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Genial! Gracias por la información."
+                      }
+                    ],
+                    "id" : "es-hours-continue1",
+                    "meaning" : {
+                      "en" : "Yes, open every day except national holidays.",
+                      "ja" : "はい、祝日以外は毎日開いています。",
+                      "ko" : "네, 국경일 빼고 매일 열어요.",
+                      "zh-Hans" : "是的，除了国定假日每天都开。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí, abre todos los días excepto feriados nacionales."
+                  }
+                ],
+                "id" : "es-hours-followup1",
+                "meaning" : {
+                  "en" : "Open on Sundays too?",
+                  "ja" : "日曜日も開いていますか？",
+                  "ko" : "일요일에도 열어요?",
+                  "zh-Hans" : "星期天也开吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿También abre los domingos?"
+              }
+            ],
+            "id" : "es-hours-response1",
+            "meaning" : {
+              "en" : "Until 5 PM every day.",
+              "ja" : "毎日午後5時までです。",
+              "ko" : "매일 오후 5시까지예요.",
+              "zh-Hans" : "每天到下午5点。"
+            },
+            "speaker" : "other",
+            "text" : "Hasta las 5 PM todos los días."
+          }
+        ],
+        "id" : "es-opening-hours-root",
+        "meaning" : {
+          "en" : "What time is it open until?",
+          "ja" : "何時まで開いていますか？",
+          "ko" : "몇 시까지 열어요?",
+          "zh-Hans" : "开到几点？"
+        },
+        "speaker" : "me",
+        "text" : "¿Hasta qué hora abre?"
+      },
+      "title" : {
+        "en" : "Asking About Opening Hours",
+        "es" : "Preguntar por horario",
+        "ja" : "営業時間を尋ねる",
+        "ko" : "운영 시간 문의",
+        "zh-Hans" : "询问营业时间"
+      }
+    },
+    {
+      "category" : "tourism",
+      "description" : {
+        "en" : "Practice requesting a guided tour",
+        "es" : "Practica solicitar un tour guiado",
+        "ja" : "ガイドツアーを申し込む練習",
+        "ko" : "가이드 투어를 신청하는 연습",
+        "zh-Hans" : "练习申请导游服务"
+      },
+      "emoji" : "👨‍🏫",
+      "id" : "es-guided-tour",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-guide-end1",
+                            "meaning" : {
+                              "en" : "At the information counter, next to the entrance.",
+                              "ja" : "案内カウンターで、入口の隣です。",
+                              "ko" : "안내 창구에서요, 입구 옆에 있어요.",
+                              "zh-Hans" : "在咨询台，入口旁边。"
+                            },
+                            "speaker" : "other",
+                            "text" : "En el mostrador de información, al lado de la entrada."
+                          }
+                        ],
+                        "id" : "es-guide-followup2",
+                        "meaning" : {
+                          "en" : "Okay, I want to join the 10 o'clock tour. Where do I register?",
+                          "ja" : "わかりました、10時のツアーに参加したいです。どこで申し込みますか？",
+                          "ko" : "알겠어요, 10시 투어 참가하고 싶어요. 어디서 신청하나요?",
+                          "zh-Hans" : "好的，我想参加10点的导览。在哪里报名？"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bueno, quiero unirme al tour de las 10. ¿Dónde me registro?"
+                      }
+                    ],
+                    "id" : "es-guide-continue1",
+                    "meaning" : {
+                      "en" : "200 thousand per person for a 2-hour tour.",
+                      "ja" : "2時間ツアーで一人20万ルピアです。",
+                      "ko" : "2시간 투어에 1인당 20만 루피아예요.",
+                      "zh-Hans" : "2小时导览每人20万。"
+                    },
+                    "speaker" : "other",
+                    "text" : "200 mil por persona para un tour de 2 horas."
+                  }
+                ],
+                "id" : "es-guide-followup1",
+                "meaning" : {
+                  "en" : "How much does it cost?",
+                  "ja" : "費用はいくらですか？",
+                  "ko" : "비용이 얼마예요?",
+                  "zh-Hans" : "费用是多少？"
+                },
+                "speaker" : "me",
+                "text" : "¿Cuánto cuesta?"
+              }
+            ],
+            "id" : "es-guide-response1",
+            "meaning" : {
+              "en" : "Yes. Tours start at 10 AM.",
+              "ja" : "います。ツアーは午前10時に始まります。",
+              "ko" : "있어요. 투어는 오전 10시에 시작해요.",
+              "zh-Hans" : "有的。导览从早上10点开始。"
+            },
+            "speaker" : "other",
+            "text" : "Sí. Los tours comienzan a las 10 AM."
+          }
+        ],
+        "id" : "es-guided-tour-root",
+        "meaning" : {
+          "en" : "Is there an English-speaking tour guide?",
+          "ja" : "英語を話すガイドはいますか？",
+          "ko" : "영어 가이드 있나요?",
+          "zh-Hans" : "有说英语的导游吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Hay guía turístico que hable inglés?"
+      },
+      "title" : {
+        "en" : "Guided Tour",
+        "es" : "Tour guiado",
+        "ja" : "ガイドツアー",
+        "ko" : "가이드 투어",
+        "zh-Hans" : "导游服务"
+      }
+    },
+    {
+      "category" : "emergency",
+      "description" : {
+        "en" : "Practice finding a pharmacy",
+        "es" : "Practica buscar farmacia",
+        "ja" : "薬局を探す練習",
+        "ko" : "약국을 찾는 연습",
+        "zh-Hans" : "练习找药店"
+      },
+      "emoji" : "💊",
+      "id" : "es-find-pharmacy",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-pharmacy-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Get well soon!",
+                              "ja" : "どういたしまして。お大事に！",
+                              "ko" : "천만에요. 빨리 나으세요!",
+                              "zh-Hans" : "不客气。早日康复！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Que se mejore pronto!"
+                          }
+                        ],
+                        "id" : "es-pharmacy-followup2",
+                        "meaning" : {
+                          "en" : "Thank you so much!",
+                          "ja" : "どうもありがとうございます！",
+                          "ko" : "정말 감사합니다!",
+                          "zh-Hans" : "非常感谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Muchas gracias!"
+                      }
+                    ],
+                    "id" : "es-pharmacy-continue1",
+                    "meaning" : {
+                      "en" : "Yes, open until 10 PM.",
+                      "ja" : "はい、夜10時まで開いています。",
+                      "ko" : "네, 밤 10시까지 열어요.",
+                      "zh-Hans" : "是的，开到晚上10点。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí, abre hasta las 10 PM."
+                  }
+                ],
+                "id" : "es-pharmacy-followup1",
+                "meaning" : {
+                  "en" : "Is it open now?",
+                  "ja" : "今開いていますか？",
+                  "ko" : "지금 열었어요?",
+                  "zh-Hans" : "现在还开着吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Está abierto ahora?"
+              }
+            ],
+            "id" : "es-pharmacy-response1",
+            "meaning" : {
+              "en" : "Yes, go straight 100 meters, on the right side.",
+              "ja" : "あります、まっすぐ100メートル、右側にあります。",
+              "ko" : "있어요, 직진 100미터, 오른편에 있어요.",
+              "zh-Hans" : "有，直走100米，在右边。"
+            },
+            "speaker" : "other",
+            "text" : "Sí, vaya recto 100 metros, al lado derecho."
+          }
+        ],
+        "id" : "es-find-pharmacy-root",
+        "meaning" : {
+          "en" : "Excuse me, is there a nearby pharmacy?",
+          "ja" : "すみません、近くに薬局はありますか？",
+          "ko" : "실례합니다, 가까운 약국 있나요?",
+          "zh-Hans" : "请问，附近有药店吗？"
+        },
+        "speaker" : "me",
+        "text" : "Disculpe, ¿hay una farmacia cerca?"
+      },
+      "title" : {
+        "en" : "Finding Pharmacy",
+        "es" : "Buscar farmacia",
+        "ja" : "薬局を探す",
+        "ko" : "약국 찾기",
+        "zh-Hans" : "找药店"
+      }
+    },
+    {
+      "category" : "emergency",
+      "description" : {
+        "en" : "Practice reporting a lost item",
+        "es" : "Practica reportar objeto perdido",
+        "ja" : "紛失物を報告する練習",
+        "ko" : "물건을 잃어버렸을 때 말하는 연습",
+        "zh-Hans" : "练习报失物品"
+      },
+      "emoji" : "📱",
+      "id" : "es-lost-item",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-lost-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Good news, your wallet is at the restaurant!",
+                              "ja" : "どういたしまして。良いニュースです、お財布はレストランにあります！",
+                              "ko" : "천만에요. 좋은 소식이에요, 지갑이 식당에 있대요!",
+                              "zh-Hans" : "不客气。好消息，您的钱包在餐厅！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Buenas noticias, su billetera está en el restaurante!"
+                          }
+                        ],
+                        "id" : "es-lost-followup2",
+                        "meaning" : {
+                          "en" : "Thank you so much for your help.",
+                          "ja" : "助けていただきありがとうございます。",
+                          "ko" : "도와주셔서 정말 감사합니다.",
+                          "zh-Hans" : "非常感谢您的帮助。"
+                        },
+                        "speaker" : "me",
+                        "text" : "Muchas gracias por su ayuda."
+                      }
+                    ],
+                    "id" : "es-lost-continue1",
+                    "meaning" : {
+                      "en" : "Sure, I'll call them now.",
+                      "ja" : "もちろん、今電話します。",
+                      "ko" : "물론이죠, 지금 전화할게요.",
+                      "zh-Hans" : "当然，我现在就打电话。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Claro, los llamo ahora."
+                  }
+                ],
+                "id" : "es-lost-followup1",
+                "meaning" : {
+                  "en" : "At the restaurant earlier. Can you help call them?",
+                  "ja" : "さっきのレストランです。電話していただけますか？",
+                  "ko" : "아까 식당이요. 거기 전화 좀 해주시겠어요?",
+                  "zh-Hans" : "刚才在餐厅。能帮我打电话给他们吗？"
+                },
+                "speaker" : "me",
+                "text" : "En el restaurante hace rato. ¿Puede ayudarme a llamarlos?"
+              }
+            ],
+            "id" : "es-lost-response1",
+            "meaning" : {
+              "en" : "Oh no! Where did you last see it?",
+              "ja" : "ああ、大変！最後にどこで見ましたか？",
+              "ko" : "오, 안됐네요! 마지막으로 어디서 봤어요?",
+              "zh-Hans" : "哦不！最后在哪里看到的？"
+            },
+            "speaker" : "other",
+            "text" : "¡Oh no! ¿Dónde lo vio por última vez?"
+          }
+        ],
+        "id" : "es-lost-item-root",
+        "meaning" : {
+          "en" : "I lost my wallet.",
+          "ja" : "財布をなくしました。",
+          "ko" : "지갑을 잃어버렸어요.",
+          "zh-Hans" : "我丢了钱包。"
+        },
+        "speaker" : "me",
+        "text" : "Perdí mi billetera."
+      },
+      "title" : {
+        "en" : "Lost Item",
+        "es" : "Objeto perdido",
+        "ja" : "紛失物",
+        "ko" : "물건 분실",
+        "zh-Hans" : "丢失物品"
+      }
+    },
+    {
+      "category" : "emergency",
+      "description" : {
+        "en" : "Practice asking for help",
+        "es" : "Practica pedir ayuda",
+        "ja" : "助けを求める練習",
+        "ko" : "도움을 요청하는 연습",
+        "zh-Hans" : "练习寻求帮助"
+      },
+      "emoji" : "🆘",
+      "id" : "es-ask-help",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-help-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Let's hurry, the car is here.",
+                              "ja" : "どういたしまして。急ぎましょう、車はここです。",
+                              "ko" : "천만에요. 빨리 가요, 차가 여기 있어요.",
+                              "zh-Hans" : "不客气。快走吧，车在这里。"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. Apurémonos, el auto está aquí."
+                          }
+                        ],
+                        "id" : "es-help-followup2",
+                        "meaning" : {
+                          "en" : "Wow, thank you so much! You're so kind.",
+                          "ja" : "わあ、どうもありがとうございます！とても親切ですね。",
+                          "ko" : "와, 정말 감사합니다! 너무 친절하시네요.",
+                          "zh-Hans" : "哇，非常感谢！您真善良。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Guau, muchas gracias! Es muy amable."
+                      }
+                    ],
+                    "id" : "es-help-continue1",
+                    "meaning" : {
+                      "en" : "I'll take you in my car. Let's go!",
+                      "ja" : "私の車で連れて行きます。一緒に行きましょう！",
+                      "ko" : "제 차로 데려다 드릴게요. 같이 가요!",
+                      "zh-Hans" : "我用我的车送你们去。走吧！"
+                    },
+                    "speaker" : "other",
+                    "text" : "Los llevo en mi auto. ¡Vamos!"
+                  }
+                ],
+                "id" : "es-help-followup1",
+                "meaning" : {
+                  "en" : "My friend is sick. Where's the hospital?",
+                  "ja" : "友達が病気です。病院はどこですか？",
+                  "ko" : "제 친구가 아파요. 병원이 어디예요?",
+                  "zh-Hans" : "我朋友病了。医院在哪里？"
+                },
+                "speaker" : "me",
+                "text" : "Mi amigo está enfermo. ¿Dónde está el hospital?"
+              }
+            ],
+            "id" : "es-help-response1",
+            "meaning" : {
+              "en" : "What's wrong? I can help.",
+              "ja" : "どうしたんですか？手伝いますよ。",
+              "ko" : "무슨 일이에요? 도와드릴게요.",
+              "zh-Hans" : "怎么了？我可以帮忙。"
+            },
+            "speaker" : "other",
+            "text" : "¿Qué pasa? Puedo ayudar."
+          }
+        ],
+        "id" : "es-ask-help-root",
+        "meaning" : {
+          "en" : "Help, I need assistance!",
+          "ja" : "助けて、助けが必要です！",
+          "ko" : "도와주세요, 도움이 필요해요!",
+          "zh-Hans" : "救命，我需要帮助！"
+        },
+        "speaker" : "me",
+        "text" : "¡Ayuda, necesito asistencia!"
+      },
+      "title" : {
+        "en" : "Asking for Help",
+        "es" : "Pedir ayuda",
+        "ja" : "助けを求める",
+        "ko" : "도움 요청",
+        "zh-Hans" : "寻求帮助"
+      }
+    },
+    {
+      "category" : "emergency",
+      "description" : {
+        "en" : "Practice finding a hospital",
+        "es" : "Practica buscar hospital",
+        "ja" : "病院を探す練習",
+        "ko" : "병원을 찾는 연습",
+        "zh-Hans" : "练习找医院"
+      },
+      "emoji" : "🏥",
+      "id" : "es-find-hospital",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-hospital-end1",
+                            "meaning" : {
+                              "en" : "No problem. Turn right at the traffic light ahead.",
+                              "ja" : "大丈夫です。前の信号で右に曲がってください。",
+                              "ko" : "괜찮아요. 앞 신호등에서 오른쪽으로 도세요.",
+                              "zh-Hans" : "没关系。前面红绿灯右转。"
+                            },
+                            "speaker" : "other",
+                            "text" : "No hay problema. Gire a la derecha en el semáforo."
+                          }
+                        ],
+                        "id" : "es-hospital-followup2",
+                        "meaning" : {
+                          "en" : "Thank you so much! This really helps.",
+                          "ja" : "本当にありがとうございます！とても助かります。",
+                          "ko" : "정말 감사합니다! 큰 도움이 됩니다.",
+                          "zh-Hans" : "非常感谢！真的帮了大忙。"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Muchas gracias! Esto ayuda mucho."
+                      }
+                    ],
+                    "id" : "es-hospital-continue1",
+                    "meaning" : {
+                      "en" : "Yes, 24 hours. Let me show you the way.",
+                      "ja" : "あります、24時間です。道を教えますね。",
+                      "ko" : "있어요, 24시간이에요. 제가 길 알려드릴게요.",
+                      "zh-Hans" : "有，24小时。我给你指路。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Sí, 24 horas. Le muestro el camino."
+                  }
+                ],
+                "id" : "es-hospital-followup1",
+                "meaning" : {
+                  "en" : "Does it have an ER?",
+                  "ja" : "救急があります か？",
+                  "ko" : "응급실 있어요?",
+                  "zh-Hans" : "有急诊吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Tiene emergencias?"
+              }
+            ],
+            "id" : "es-hospital-response1",
+            "meaning" : {
+              "en" : "Husada Hospital, about 5 minutes from here.",
+              "ja" : "フサダ病院です、ここから5分ほどです。",
+              "ko" : "후사다 병원이요, 여기서 5분 정도 걸려요.",
+              "zh-Hans" : "胡萨达医院，离这里大约5分钟。"
+            },
+            "speaker" : "other",
+            "text" : "Hospital Husada, como 5 minutos de aquí."
+          }
+        ],
+        "id" : "es-find-hospital-root",
+        "meaning" : {
+          "en" : "Where's the nearest hospital?",
+          "ja" : "一番近い病院はどこですか？",
+          "ko" : "가장 가까운 병원이 어디예요?",
+          "zh-Hans" : "最近的医院在哪里？"
+        },
+        "speaker" : "me",
+        "text" : "¿Dónde está el hospital más cercano?"
+      },
+      "title" : {
+        "en" : "Finding Hospital",
+        "es" : "Buscar hospital",
+        "ja" : "病院を探す",
+        "ko" : "병원 찾기",
+        "zh-Hans" : "找医院"
+      }
+    },
+    {
+      "category" : "casual",
+      "description" : {
+        "en" : "Practice talking about weather",
+        "es" : "Practica hablar del clima",
+        "ja" : "天気について話す練習",
+        "ko" : "날씨에 대해 이야기하는 연습",
+        "zh-Hans" : "练习聊天气"
+      },
+      "emoji" : "🌤️",
+      "id" : "es-weather-chat",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-weather-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Be careful on the road!",
+                              "ja" : "どういたしまして。道中気をつけて！",
+                              "ko" : "천만에요. 조심히 가세요!",
+                              "zh-Hans" : "不客气。路上小心！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Ten cuidado en el camino!"
+                          }
+                        ],
+                        "id" : "es-weather-followup2",
+                        "meaning" : {
+                          "en" : "Okay, thank you for the advice!",
+                          "ja" : "わかりました、アドバイスありがとうございます！",
+                          "ko" : "알겠어요, 조언 감사합니다!",
+                          "zh-Hans" : "好的，谢谢建议！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bien, ¡gracias por el consejo!"
+                      }
+                    ],
+                    "id" : "es-weather-continue1",
+                    "meaning" : {
+                      "en" : "Probably yes. Bring an umbrella just in case.",
+                      "ja" : "たぶんそうですね。念のため傘を持っていってください。",
+                      "ko" : "올 것 같아요. 혹시 몰라 우산 가져가세요.",
+                      "zh-Hans" : "可能会。带把伞以防万一。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Probablemente sí. Traiga paraguas por si acaso."
+                  }
+                ],
+                "id" : "es-weather-followup1",
+                "meaning" : {
+                  "en" : "Will it rain this afternoon?",
+                  "ja" : "午後に雨が降りますかね？",
+                  "ko" : "오후에 비 올까요?",
+                  "zh-Hans" : "下午会下雨吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Lloverá esta tarde?"
+              }
+            ],
+            "id" : "es-weather-response1",
+            "meaning" : {
+              "en" : "Yeah, it's usually like this. Normal here.",
+              "ja" : "ええ、いつもこんな感じです。ここは普通ですよ。",
+              "ko" : "네, 원래 이래요. 여기는 원래 그래요.",
+              "zh-Hans" : "是啊，一般都这样。这里习以为常。"
+            },
+            "speaker" : "other",
+            "text" : "Sí, usualmente es así. Normal aquí."
+          }
+        ],
+        "id" : "es-weather-chat-root",
+        "meaning" : {
+          "en" : "The weather is really hot today!",
+          "ja" : "今日は本当に暑いですね！",
+          "ko" : "오늘 날씨 정말 덥네요!",
+          "zh-Hans" : "今天天气真热啊！"
+        },
+        "speaker" : "me",
+        "text" : "¡El clima está muy caluroso hoy!"
+      },
+      "title" : {
+        "en" : "Weather Chat",
+        "es" : "Hablar del clima",
+        "ja" : "天気の話",
+        "ko" : "날씨 대화",
+        "zh-Hans" : "聊天气"
+      }
+    },
+    {
+      "category" : "casual",
+      "description" : {
+        "en" : "Practice talking about where you're from",
+        "es" : "Practica hablar de dónde eres",
+        "ja" : "出身について話す練習",
+        "ko" : "어디서 왔는지 이야기하는 연습",
+        "zh-Hans" : "练习聊来自哪里"
+      },
+      "emoji" : "🌍",
+      "id" : "es-where-from",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-from-end1",
+                            "meaning" : {
+                              "en" : "Not yet, but I really want to! Hopefully can watch someday.",
+                              "ja" : "まだですが、本当に見たいです！いつか見られるといいな。",
+                              "ko" : "아직이요, 하지만 정말 보고 싶어요! 언젠가 볼 수 있길 바래요.",
+                              "zh-Hans" : "还没有，但是很想看！希望有一天能看。"
+                            },
+                            "speaker" : "other",
+                            "text" : "Todavía no, ¡pero quiero mucho! Espero poder ver algún día."
+                          }
+                        ],
+                        "id" : "es-from-followup2",
+                        "meaning" : {
+                          "en" : "Wow, you like them too! Have you seen their concert?",
+                          "ja" : "わあ、あなたも好きなんですね！コンサート見ましたか？",
+                          "ko" : "와, 너도 좋아해! 콘서트 봤어요?",
+                          "zh-Hans" : "哇，你也喜欢！看过演唱会吗？"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Guau, a ti también te gustan! ¿Has visto su concierto?"
+                      }
+                    ],
+                    "id" : "es-from-continue1",
+                    "meaning" : {
+                      "en" : "BTS and Blackpink! They're so cool!",
+                      "ja" : "BTSとBlackpink！すごいですよね！",
+                      "ko" : "BTS랑 블랙핑크요! 정말 멋져요!",
+                      "zh-Hans" : "BTS和Blackpink！超酷的！"
+                    },
+                    "speaker" : "other",
+                    "text" : "¡BTS y Blackpink! ¡Son geniales!"
+                  }
+                ],
+                "id" : "es-from-followup1",
+                "meaning" : {
+                  "en" : "I like it quite a bit. Do you know Korean artists?",
+                  "ja" : "まあまあ好きです。韓国のアーティスト知ってますか？",
+                  "ko" : "꽤 좋아해요. 한국 가수 알아요?",
+                  "zh-Hans" : "还挺喜欢的。你知道韩国艺人吗？"
+                },
+                "speaker" : "me",
+                "text" : "Me gusta bastante. ¿Conoces artistas coreanos?"
+              }
+            ],
+            "id" : "es-from-response1",
+            "meaning" : {
+              "en" : "Wow, Korea! Do you like K-pop?",
+              "ja" : "わあ、韓国！K-popは好きですか？",
+              "ko" : "와, 한국이요! K-pop 좋아하세요?",
+              "zh-Hans" : "哇，韩国！喜欢K-pop吗？"
+            },
+            "speaker" : "other",
+            "text" : "¡Wow, Corea! ¿Te gusta el K-pop?"
+          }
+        ],
+        "id" : "es-where-from-root",
+        "meaning" : {
+          "en" : "I'm from Korea.",
+          "ja" : "私は韓国から来ました。",
+          "ko" : "저는 한국에서 왔어요.",
+          "zh-Hans" : "我来自韩国。"
+        },
+        "speaker" : "me",
+        "text" : "Soy de Corea."
+      },
+      "title" : {
+        "en" : "Where You're From",
+        "es" : "De dónde eres",
+        "ja" : "出身地の話",
+        "ko" : "어디서 왔는지",
+        "zh-Hans" : "聊来自哪里"
+      }
+    },
+    {
+      "category" : "casual",
+      "description" : {
+        "en" : "Practice getting food recommendations",
+        "es" : "Practica recibir recomendaciones de comida",
+        "ja" : "おすすめの店を聞く練習",
+        "ko" : "맛집을 추천받는 연습",
+        "zh-Hans" : "练习获得美食推荐"
+      },
+      "emoji" : "🍲",
+      "id" : "es-recommend-food",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-foodrec-end1",
+                            "meaning" : {
+                              "en" : "You're welcome! Enjoy your meal!",
+                              "ja" : "どういたしまして！いただきます！",
+                              "ko" : "천만에요! 맛있게 드세요!",
+                              "zh-Hans" : "不客气！用餐愉快！"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡De nada! ¡Que aproveche!"
+                          }
+                        ],
+                        "id" : "es-foodrec-followup2",
+                        "meaning" : {
+                          "en" : "Great, I'll try it later. Thank you for the recommendation!",
+                          "ja" : "いいですね、後で試します。おすすめありがとうございます！",
+                          "ko" : "좋아요, 나중에 가볼게요. 추천 감사합니다!",
+                          "zh-Hans" : "好的，我待会去试试。谢谢推荐！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Genial, lo probaré luego. ¡Gracias por la recomendación!"
+                      }
+                    ],
+                    "id" : "es-foodrec-continue1",
+                    "meaning" : {
+                      "en" : "Close, 5-minute walk. You must try it!",
+                      "ja" : "近いですよ、歩いて5分です。絶対に試してください！",
+                      "ko" : "가까워요, 걸어서 5분이에요. 꼭 먹어봐야 해요!",
+                      "zh-Hans" : "很近，走路5分钟。一定要试试！"
+                    },
+                    "speaker" : "other",
+                    "text" : "Cerca, 5 minutos caminando. ¡Debes probarlo!"
+                  }
+                ],
+                "id" : "es-foodrec-followup1",
+                "meaning" : {
+                  "en" : "Is it far from here?",
+                  "ja" : "ここから遠いですか？",
+                  "ko" : "여기서 멀어요?",
+                  "zh-Hans" : "离这里远吗？"
+                },
+                "speaker" : "me",
+                "text" : "¿Está lejos de aquí?"
+              }
+            ],
+            "id" : "es-foodrec-response1",
+            "meaning" : {
+              "en" : "Yes! Pak Budi's eatery, their chicken soto is the best!",
+              "ja" : "あります！パックブディの食堂、チキンソトが最高です！",
+              "ko" : "있어요! 빠 부디 식당, 소토 아얌이 최고예요!",
+              "zh-Hans" : "有！布迪大叔的餐馆，鸡肉汤是最棒的！"
+            },
+            "speaker" : "other",
+            "text" : "¡Sí! El puesto de Pak Budi, ¡su soto de pollo es el mejor!"
+          }
+        ],
+        "id" : "es-recommend-food-root",
+        "meaning" : {
+          "en" : "Are there any good eateries around here?",
+          "ja" : "この辺においしい食堂はありますか？",
+          "ko" : "이 근처에 맛있는 식당 있어요?",
+          "zh-Hans" : "这附近有好吃的餐馆吗？"
+        },
+        "speaker" : "me",
+        "text" : "¿Hay buenos restaurantes por aquí?"
+      },
+      "title" : {
+        "en" : "Recommending Food",
+        "es" : "Recomendar comida",
+        "ja" : "おすすめの食べ物",
+        "ko" : "추천 맛집",
+        "zh-Hans" : "推荐美食"
+      }
+    },
+    {
+      "category" : "casual",
+      "description" : {
+        "en" : "Practice asking for directions",
+        "es" : "Practica preguntar direcciones",
+        "ja" : "道を尋ねる練習",
+        "ko" : "길을 묻는 연습",
+        "zh-Hans" : "练习问路"
+      },
+      "emoji" : "🧭",
+      "id" : "es-ask-directions",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-directions-end1",
+                            "meaning" : {
+                              "en" : "You're welcome. Safe travels!",
+                              "ja" : "どういたしまして。気をつけて！",
+                              "ko" : "천만에요. 잘 가세요!",
+                              "zh-Hans" : "不客气。一路平安！"
+                            },
+                            "speaker" : "other",
+                            "text" : "De nada. ¡Buen viaje!"
+                          }
+                        ],
+                        "id" : "es-directions-followup2",
+                        "meaning" : {
+                          "en" : "Okay got it. Thank you again!",
+                          "ja" : "わかりました。改めてありがとうございます！",
+                          "ko" : "알겠습니다. 다시 한 번 감사합니다!",
+                          "zh-Hans" : "好的明白了。再次感谢！"
+                        },
+                        "speaker" : "me",
+                        "text" : "Bien entendido. ¡Gracias de nuevo!"
+                      }
+                    ],
+                    "id" : "es-directions-continue1",
+                    "meaning" : {
+                      "en" : "About 10 minutes. Take it easy.",
+                      "ja" : "10分くらいです。ゆっくりどうぞ。",
+                      "ko" : "10분 정도요. 천천히 가세요.",
+                      "zh-Hans" : "大约10分钟。慢慢走。"
+                    },
+                    "speaker" : "other",
+                    "text" : "Como 10 minutos. Tranquilo."
+                  }
+                ],
+                "id" : "es-directions-followup1",
+                "meaning" : {
+                  "en" : "Thank you! About how many minutes walking?",
+                  "ja" : "ありがとう！歩いて何分くらいですか？",
+                  "ko" : "감사합니다! 걸어서 몇 분 정도요?",
+                  "zh-Hans" : "谢谢！走路大概几分钟？"
+                },
+                "speaker" : "me",
+                "text" : "¡Gracias! ¿Cuántos minutos caminando?"
+              }
+            ],
+            "id" : "es-directions-response1",
+            "meaning" : {
+              "en" : "Just go straight to the intersection, then turn left.",
+              "ja" : "交差点までまっすぐ行って、左に曲がってください。",
+              "ko" : "쭉 가다가 사거리에서 왼쪽으로 도세요.",
+              "zh-Hans" : "一直走到十字路口，然后左转。"
+            },
+            "speaker" : "other",
+            "text" : "Sigue recto hasta el cruce, luego gira a la izquierda."
+          }
+        ],
+        "id" : "es-ask-directions-root",
+        "meaning" : {
+          "en" : "Excuse me, how do I get to the station?",
+          "ja" : "すみません、駅までどう行きますか？",
+          "ko" : "죄송한데요, 역까지 어떻게 가요?",
+          "zh-Hans" : "不好意思，怎么去车站？"
+        },
+        "speaker" : "me",
+        "text" : "Disculpe, ¿cómo llego a la estación?"
+      },
+      "title" : {
+        "en" : "Asking for Directions",
+        "es" : "Preguntar direcciones",
+        "ja" : "道を尋ねる",
+        "ko" : "길 물어보기",
+        "zh-Hans" : "问路"
+      }
+    },
+    {
+      "category" : "casual",
+      "description" : {
+        "en" : "Practice greeting locals",
+        "es" : "Practica saludar a locales",
+        "ja" : "現地の人と挨拶する練習",
+        "ko" : "현지인과 인사를 나누는 연습",
+        "zh-Hans" : "练习和当地人打招呼"
+      },
+      "emoji" : "👋",
+      "id" : "es-greeting-chat",
+      "root" : {
+        "children" : [
+          {
+            "children" : [
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "children" : [
+                          {
+                            "children" : [
+
+                            ],
+                            "id" : "es-greeting-end1",
+                            "meaning" : {
+                              "en" : "You're welcome! Enjoy your vacation in Indonesia!",
+                              "ja" : "どういたしまして！インドネシアでの休暇を楽しんでください！",
+                              "ko" : "천만에요! 인도네시아에서 즐거운 휴가 보내세요!",
+                              "zh-Hans" : "不客气！祝您在印度尼西亚度假愉快！"
+                            },
+                            "speaker" : "other",
+                            "text" : "¡De nada! ¡Disfruta tus vacaciones en Indonesia!"
+                          }
+                        ],
+                        "id" : "es-greeting-followup2",
+                        "meaning" : {
+                          "en" : "Thank you! Indonesian people are so friendly!",
+                          "ja" : "ありがとうございます！インドネシアの人々は親切ですね！",
+                          "ko" : "감사합니다! 인도네시아 사람들 정말 친절하네요!",
+                          "zh-Hans" : "谢谢！印度尼西亚人真友好！"
+                        },
+                        "speaker" : "me",
+                        "text" : "¡Gracias! ¡La gente indonesia es muy amable!"
+                      }
+                    ],
+                    "id" : "es-greeting-continue1",
+                    "meaning" : {
+                      "en" : "Welcome! If you need help, just let me know!",
+                      "ja" : "ようこそ！助けが必要なら言ってくださいね！",
+                      "ko" : "환영합니다! 도움 필요하면 말씀하세요!",
+                      "zh-Hans" : "欢迎！需要帮助就说！"
+                    },
+                    "speaker" : "other",
+                    "text" : "¡Bienvenido! ¡Si necesitas ayuda, avísame!"
+                  }
+                ],
+                "id" : "es-greeting-followup1",
+                "meaning" : {
+                  "en" : "Yes, just arrived yesterday. Happy to be here!",
+                  "ja" : "はい、昨日着いたばかりです。ここに来られて嬉しいです！",
+                  "ko" : "네, 어제 막 도착했어요. 여기 와서 기뻐요!",
+                  "zh-Hans" : "是的，昨天刚到。很高兴来这里！"
+                },
+                "speaker" : "me",
+                "text" : "Sí, llegué ayer. ¡Feliz de estar aquí!"
+              }
+            ],
+            "id" : "es-greeting-response1",
+            "meaning" : {
+              "en" : "Good! Did you just arrive in Indonesia?",
+              "ja" : "元気です！インドネシアに来たばかりですか？",
+              "ko" : "잘 지내요! 인도네시아에 막 오셨어요?",
+              "zh-Hans" : "很好！你刚到印度尼西亚吗？"
+            },
+            "speaker" : "other",
+            "text" : "¡Bien! ¿Acabas de llegar a Indonesia?"
+          }
+        ],
+        "id" : "es-greeting-chat-root",
+        "meaning" : {
+          "en" : "Hello! How are you?",
+          "ja" : "こんにちは！お元気ですか？",
+          "ko" : "안녕하세요! 어떻게 지내세요?",
+          "zh-Hans" : "你好！你好吗？"
+        },
+        "speaker" : "me",
+        "text" : "¡Hola! ¿Cómo estás?"
+      },
+      "title" : {
+        "en" : "Greeting Chat",
+        "es" : "Charla de saludo",
+        "ja" : "挨拶の会話",
+        "ko" : "인사 나누기",
+        "zh-Hans" : "打招呼聊天"
+      }
+    }
+  ]
+}

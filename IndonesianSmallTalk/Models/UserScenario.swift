@@ -12,6 +12,10 @@ struct UserScenario: Identifiable, Codable, Equatable {
     var openingKorean: String
     var openingRomanization: String
     var createdAt: Date = Date()
+    /// 만든 언어 (AppLanguage.rawValue). 예전 저장분은 nil = 인도네시아어
+    var languageCode: String? = AppLanguage.learning.rawValue
+
+    var language: AppLanguage { languageCode.flatMap(AppLanguage.init(rawValue:)) ?? .indonesian }
 
     var rootNodeId: String { "scenario-\(id.uuidString)-root" }
 
@@ -19,8 +23,8 @@ struct UserScenario: Identifiable, Codable, Equatable {
         let root = ConversationNode(
             id: rootNodeId,
             speaker: openerSpeakerIsOther ? .other : .me,
-            indonesian: openingIndonesian,
-            korean: openingKorean,
+            userText: openingIndonesian,
+            userMeaning: openingKorean,
             romanization: openingRomanization,
             polarity: .neutral,
             coachTip: nil,
@@ -29,8 +33,9 @@ struct UserScenario: Identifiable, Codable, Equatable {
         let difficulty = ConversationScenario.Difficulty(rawValue: difficultyRaw) ?? .beginner
         return ConversationScenario(
             id: id,
+            language: language,
             title: title,
-            titleKo: titleKo,
+            userTitleMeaning: titleKo,
             description: description,
             emoji: emoji,
             root: root,
@@ -41,7 +46,10 @@ struct UserScenario: Identifiable, Codable, Equatable {
 
 @MainActor
 final class UserScenarioStore: ObservableObject {
-    @Published private(set) var scenarios: [UserScenario] = []
+    @Published private(set) var allScenarios: [UserScenario] = []
+
+    /// 지금 배우는 언어로 만든 것만
+    var scenarios: [UserScenario] { allScenarios.filter { $0.language == AppLanguage.learning } }
 
     private let fileURL: URL = {
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -53,18 +61,18 @@ final class UserScenarioStore: ObservableObject {
     }
 
     func add(_ s: UserScenario) {
-        scenarios.insert(s, at: 0)
+        allScenarios.insert(s, at: 0)
         save()
     }
 
     func update(_ s: UserScenario) {
-        guard let idx = scenarios.firstIndex(where: { $0.id == s.id }) else { return }
-        scenarios[idx] = s
+        guard let idx = allScenarios.firstIndex(where: { $0.id == s.id }) else { return }
+        allScenarios[idx] = s
         save()
     }
 
     func delete(id: UUID) {
-        scenarios.removeAll { $0.id == id }
+        allScenarios.removeAll { $0.id == id }
         save()
     }
 
@@ -77,7 +85,7 @@ final class UserScenarioStore: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         if let decoded = try? decoder.decode([UserScenario].self, from: data) {
-            scenarios = decoded
+            allScenarios = decoded
         }
     }
 
@@ -85,7 +93,7 @@ final class UserScenarioStore: ObservableObject {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [.prettyPrinted]
-        guard let data = try? encoder.encode(scenarios) else { return }
+        guard let data = try? encoder.encode(allScenarios) else { return }
         try? data.write(to: fileURL, options: [.atomic])
     }
 }

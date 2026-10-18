@@ -213,11 +213,11 @@ struct ReviewRow: View {
                             .foregroundColor(node.polarity == .positive ? .green : .red)
                     }
                 }
-                Text(node.indonesian)
+                Text(node.text)
                     .font(.system(size: 12.5))
                     .foregroundColor(.primary)
                 if showTranslation {
-                    Text(node.korean)
+                    Text(node.meaning)
                         .font(.system(size: 11))
                         .foregroundColor(.secondary)
                         .transition(.opacity)

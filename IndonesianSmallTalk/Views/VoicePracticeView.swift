@@ -147,20 +147,20 @@ struct VoicePracticeView: View {
             // 현재 대사
             if let node = session.currentNode {
                 VStack(spacing: 12) {
-                    Text(node.indonesian)
+                    Text(node.text)
                         .font(.system(size: 22, weight: .semibold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
 
-                    if !node.romanization.isEmpty {
-                        Text(node.romanization)
+                    if !node.displayRomanization.isEmpty {
+                        Text(node.displayRomanization)
                             .font(.system(size: 14, design: .serif))
                             .italic()
                             .foregroundColor(.white.opacity(0.5))
                     }
 
-                    Text(node.korean)
+                    Text(node.meaning)
                         .font(.system(size: 14))
                         .foregroundColor(.white.opacity(0.4))
                 }
@@ -191,7 +191,7 @@ struct VoicePracticeView: View {
                             .font(.system(size: 12, weight: .bold))
                             .foregroundColor(.green)
                     }
-                    Text(matched.indonesian)
+                    Text(matched.text)
                         .font(.system(size: 15, weight: .medium))
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
@@ -346,7 +346,7 @@ struct VoicePracticeView: View {
 
                     VStack(alignment: .leading, spacing: 3) {
                         HStack(spacing: 4) {
-                            Text(choice.indonesian)
+                            Text(choice.text)
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
@@ -360,13 +360,13 @@ struct VoicePracticeView: View {
                                     .foregroundColor(.orange)
                             }
                         }
-                        if !choice.romanization.isEmpty {
-                            Text(choice.romanization)
+                        if !choice.displayRomanization.isEmpty {
+                            Text(choice.displayRomanization)
                                 .font(.system(size: 11, design: .serif))
                                 .italic()
                                 .foregroundColor(.white.opacity(0.55))
                         }
-                        Text(choice.korean)
+                        Text(choice.meaning)
                             .font(.system(size: 11))
                             .foregroundColor(.white.opacity(0.65))
                     }
@@ -407,8 +407,8 @@ struct VoicePracticeView: View {
     private func previewChoice(_ choice: ConversationNode) {
         speech.stopListening()
         previewChoiceId = choice.id
-        let cleaned = SpeechManager.normalizeForMatch(choice.indonesian)
-        let textToSpeak = cleaned.isEmpty ? choice.indonesian : cleaned
+        let cleaned = SpeechManager.normalizeForMatch(choice.text)
+        let textToSpeak = cleaned.isEmpty ? choice.text : cleaned
         speech.speak(textToSpeak) {
             previewChoiceId = nil
         }
@@ -424,7 +424,7 @@ struct VoicePracticeView: View {
 
         if node.speaker == .other {
             phase = .partnerSpeaking
-            speech.speak(node.indonesian) {
+            speech.speak(node.text) {
                 if session.isFinished {
                     phase = .finished
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

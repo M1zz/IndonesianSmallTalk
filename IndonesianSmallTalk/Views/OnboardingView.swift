@@ -4,9 +4,11 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+    @AppStorage(LanguagePrefs.learningKey, store: LanguagePrefs.defaults) private var learningRaw = ""
     @State private var page = 0
+    @State private var language = AppLanguage.learning
 
-    private let pageCount = 5
+    private let pageCount = 7
 
     var body: some View {
         ZStack {
@@ -20,10 +22,12 @@ struct OnboardingView: View {
                 // 페이지
                 TabView(selection: $page) {
                     welcomePage.tag(0)
-                    methodPage.tag(1)
-                    whyManualPage.tag(2)
-                    flowPage.tag(3)
-                    extrasPage.tag(4)
+                    languagePage.tag(1)
+                    methodPage.tag(2)
+                    whyManualPage.tag(3)
+                    flowPage.tag(4)
+                    drivePage.tag(5)
+                    extrasPage.tag(6)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -55,16 +59,21 @@ struct OnboardingView: View {
     private var welcomePage: some View {
         VStack(spacing: 18) {
             Spacer()
-            Text("🇮🇩").font(.system(size: 80))
-            Text("사노라면")
+            Image("BrandMark")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 112, height: 112)
+                .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                .shadow(color: Brand.deep.opacity(0.25), radius: 14, y: 6)
+            Text("말문")
                 .font(.system(size: 34, weight: .bold, design: .rounded))
-            Text("Belajar Bahasa Indonesia")
+            Text("한 줄씩 트이는 외국어 회화")
                 .font(.system(size: 14, weight: .medium))
                 .foregroundColor(.secondary)
             VStack(spacing: 6) {
-                Text("실제 듣고 본 인도네시아어를")
+                Text("실제로 듣고 본 외국어 한 줄을")
                     .font(.system(size: 16))
-                Text("내가 직접 적어 익히는 스몰토크 앱")
+                Text("내 입에 붙을 때까지 연습하는 앱")
                     .font(.system(size: 16, weight: .semibold))
             }
             .multilineTextAlignment(.center)
@@ -73,6 +82,61 @@ struct OnboardingView: View {
             Spacer()
         }
         .padding(.horizontal, 28)
+    }
+
+    private var languagePage: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("배울 언어")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(.blue)
+                    Text("무슨 언어를 연습할까요?")
+                        .font(.system(size: 26, weight: .bold))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.top, 24)
+                LanguageGrid(selection: $language)
+                Text("홈 화면 위쪽 국기를 눌러 언제든 바꿀 수 있어요.")
+                    .font(.system(size: 12))
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, 24)
+        }
+    }
+
+    private var drivePage: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("퇴근길 모드")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(.orange)
+                Text("운전하면서 귀로 연습")
+                    .font(.system(size: 26, weight: .bold))
+            }
+            .padding(.top, 24)
+
+            stepCard(
+                emoji: "🚗",
+                title: "차에 연결하고 재생",
+                desc: "CarPlay나 블루투스로 연결한 뒤 퇴근길 모드를 켜면 화면을 보지 않아도 대화가 차례로 흘러나와요"
+            )
+            stepCard(
+                emoji: "🗣️",
+                title: "뜻 듣고 → 먼저 말해 보고 → 정답 듣기",
+                desc: "뜻을 들려준 뒤 잠깐 기다려 줘요. 소리 내어 말해 본 다음 원어민 발음으로 확인하세요"
+            )
+            stepCard(
+                emoji: "🎛️",
+                title: "운전대 버튼으로 조작",
+                desc: "다음 버튼은 다음 문장, 이전 버튼은 한 번 더. Siri에게 \"말문 퇴근길 연습 시작\"이라고 말해도 돼요"
+            )
+
+            Spacer()
+        }
+        .padding(.horizontal, 24)
+        .padding(.bottom, 12)
     }
 
     private var methodPage: some View {
@@ -192,7 +256,7 @@ struct OnboardingView: View {
             flowStep(
                 num: 1,
                 title: "+ 새 스몰토크",
-                desc: "홈 우하단 + 버튼 → \"새 스몰토크\". 상황 제목과 첫 마디(인도네시아어 + 한국어) 입력"
+                desc: "홈 우하단 + 버튼 → \"새 스몰토크\". 상황 제목과 첫 마디(배우는 언어 + 뜻) 입력"
             )
             flowStep(
                 num: 2,
@@ -232,7 +296,7 @@ struct OnboardingView: View {
             extraRow(icon: "📚", title: "내 표현",
                      desc: "한 줄짜리 표현 라이브러리. 따라말하기로 발음 연습, 긍·부정 분류")
             extraRow(icon: "⌨️", title: "표현 키보드",
-                     desc: "다른 앱에서도 사노라면 키보드 → 한국어 보고 탭하면 인도네시아어 입력")
+                     desc: "다른 앱에서도 말문 키보드 → 뜻을 보고 탭하면 배우는 언어로 입력")
             extraRow(icon: "🤝", title: "친구와 함께",
                      desc: "iCloud 로 시나리오 양방향 공유 — 둘이 같이 트리를 키울 수 있음")
 
@@ -313,8 +377,7 @@ struct OnboardingView: View {
                     .frame(height: 52)
                     .background(
                         LinearGradient(
-                            colors: [Color(red: 0.18, green: 0.50, blue: 0.95),
-                                     Color(red: 0.10, green: 0.35, blue: 0.75)],
+                            colors: [Brand.blue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                     )
@@ -330,8 +393,7 @@ struct OnboardingView: View {
                     .frame(height: 52)
                     .background(
                         LinearGradient(
-                            colors: [Color(red: 0.18, green: 0.50, blue: 0.95),
-                                     Color(red: 0.10, green: 0.35, blue: 0.75)],
+                            colors: [Brand.blue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                     )
@@ -342,6 +404,7 @@ struct OnboardingView: View {
     }
 
     private func finish() {
+        learningRaw = language.rawValue
         hasSeenOnboarding = true
         dismiss()
     }

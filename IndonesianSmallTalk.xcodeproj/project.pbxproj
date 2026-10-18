@@ -64,6 +64,17 @@
 		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
 		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
 		KEMBED /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = KEXT_PROD /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
+		FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */; };
+		F416B6EB06EFC86EA3AC2EF6 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FBA3F3DC75BDB7E426B585F1 /* categories.json */; };
+		FF1FD45D988C55692649A84B /* situations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F9FBBEF064FB3742A7E62528 /* situations.en.json */; };
+		FE491C6A2BBAE6E1F7112E7C /* situations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = F1FFF706935143F59992EA9B /* situations.es.json */; };
+		FC8A745CE2DC5C5732EED62D /* situations.id.json in Resources */ = {isa = PBXBuildFile; fileRef = F87ADB3A2F1FBDF2828886B9 /* situations.id.json */; };
+		F5D0D52AC0D5F69098BEBA32 /* situations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F214F63CCB77E386A3EEE066 /* situations.ja.json */; };
+		F47B615E00D79A9DFED9549C /* situations.ko.json in Resources */ = {isa = PBXBuildFile; fileRef = FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */; };
+		F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1EB32035078539A59182F4 /* situations.zh-Hans.json */; };
+		F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
+		FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB81844C92327399855D38B /* LanguagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +159,16 @@
 		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
 		KEXT_PROD /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		PROD /* IndonesianSmallTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndonesianSmallTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8D83286092105437F1826CA /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppLanguage.swift"; sourceTree = "<group>"; };
+		F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentLibrary.swift"; sourceTree = "<group>"; };
+		FBA3F3DC75BDB7E426B585F1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/categories.json"; sourceTree = "<group>"; };
+		F9FBBEF064FB3742A7E62528 /* situations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.en.json"; sourceTree = "<group>"; };
+		F1FFF706935143F59992EA9B /* situations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.es.json"; sourceTree = "<group>"; };
+		F87ADB3A2F1FBDF2828886B9 /* situations.id.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.id.json"; sourceTree = "<group>"; };
+		F214F63CCB77E386A3EEE066 /* situations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ja.json"; sourceTree = "<group>"; };
+		FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ko.json"; sourceTree = "<group>"; };
+		FB1EB32035078539A59182F4 /* situations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.zh-Hans.json"; sourceTree = "<group>"; };
+		FEB81844C92327399855D38B /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagePickerView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +211,8 @@
 				A044 /* BuiltInVocabulary.swift */,
 				A046 /* Journey.swift */,
 				A047 /* JourneyData.swift */,
+				F8D83286092105437F1826CA /* AppLanguage.swift */,
+				F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +263,7 @@
 				A045 /* VocabDialogView.swift */,
 				A048 /* JourneyView.swift */,
 				A049 /* JourneyTimetableView.swift */,
+				FEB81844C92327399855D38B /* LanguagePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,8 +308,23 @@
 				GRP_VIEWS /* Views */,
 				AENT /* IndonesianSmallTalk.entitlements */,
 				A010 /* Assets.xcassets */,
+				GRP_RESOURCES /* Resources */,
 			);
 			path = IndonesianSmallTalk;
+			sourceTree = "<group>";
+		};
+		GRP_RESOURCES /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3F3DC75BDB7E426B585F1 /* categories.json */,
+				F9FBBEF064FB3742A7E62528 /* situations.en.json */,
+				F1FFF706935143F59992EA9B /* situations.es.json */,
+				F87ADB3A2F1FBDF2828886B9 /* situations.id.json */,
+				F214F63CCB77E386A3EEE066 /* situations.ja.json */,
+				FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */,
+				FB1EB32035078539A59182F4 /* situations.zh-Hans.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B010 /* Assets.xcassets in Resources */,
+				F416B6EB06EFC86EA3AC2EF6 /* categories.json in Resources */,
+				FF1FD45D988C55692649A84B /* situations.en.json in Resources */,
+				FE491C6A2BBAE6E1F7112E7C /* situations.es.json in Resources */,
+				FC8A745CE2DC5C5732EED62D /* situations.id.json in Resources */,
+				F5D0D52AC0D5F69098BEBA32 /* situations.ja.json in Resources */,
+				F47B615E00D79A9DFED9549C /* situations.ko.json in Resources */,
+				F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +431,7 @@
 				BK005 /* SlangPair.swift in Sources */,
 				BK006 /* KeyboardSettings.swift in Sources */,
 				BK007 /* SharedSlangReader.swift in Sources */,
+				F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +487,9 @@
 				B047 /* JourneyData.swift in Sources */,
 				B048 /* JourneyView.swift in Sources */,
 				B049 /* JourneyTimetableView.swift in Sources */,
+				F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */,
+				FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */,
+				FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

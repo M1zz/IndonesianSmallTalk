@@ -570,7 +570,7 @@ struct PracticeView: View {
             }
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text(opener.indonesian)
+                    Text(opener.text)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
@@ -583,13 +583,13 @@ struct PracticeView: View {
                             .background(RoundedRectangle(cornerRadius: 4).fill(Color.purple.opacity(0.12)))
                     }
                 }
-                if !opener.romanization.isEmpty {
-                    Text(opener.romanization)
+                if !opener.displayRomanization.isEmpty {
+                    Text(opener.displayRomanization)
                         .font(.system(size: 10.5, design: .serif))
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
                 }
-                Text(opener.korean)
+                Text(opener.meaning)
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
             }
@@ -731,8 +731,8 @@ struct PracticeView: View {
         speech.stopSpeaking()
         lastSpokenId = node.id
         // 비교용 정규화로 이모지/특수기호를 거른 후 읽어줌
-        let cleaned = SpeechManager.normalizeForMatch(node.indonesian)
-        let textToSpeak = cleaned.isEmpty ? node.indonesian : cleaned
+        let cleaned = SpeechManager.normalizeForMatch(node.text)
+        let textToSpeak = cleaned.isEmpty ? node.text : cleaned
         speech.speak(textToSpeak)
     }
 
@@ -917,14 +917,14 @@ struct ChatBubbleView: View {
                 // 말풍선
                 VStack(alignment: .leading, spacing: 6) {
                     // 인도네시아어 (메인)
-                    Text(node.indonesian)
+                    Text(node.text)
                         .font(.system(size: 15, weight: isLatest ? .semibold : .regular))
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
 
                     // 발음
-                    if !node.romanization.isEmpty {
-                        Text(node.romanization)
+                    if !node.displayRomanization.isEmpty {
+                        Text(node.displayRomanization)
                             .font(.system(size: 11, design: .serif))
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
@@ -933,7 +933,7 @@ struct ChatBubbleView: View {
                     // 번역 (탭 토글)
                     if showTranslation {
                         Divider()
-                        Text(node.korean)
+                        Text(node.meaning)
                             .font(.system(size: 12))
                             .foregroundColor(.secondary)
                             .transition(.opacity.combined(with: .move(edge: .top)))
@@ -1018,7 +1018,7 @@ struct ChoiceButton: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
-                        Text(node.indonesian)
+                        Text(node.text)
                             .font(.system(size: 14, weight: .medium))
                             .foregroundColor(.primary)
                             .multilineTextAlignment(.leading)
@@ -1034,13 +1034,13 @@ struct ChoiceButton: View {
                                 )
                         }
                     }
-                    if !node.romanization.isEmpty {
-                        Text(node.romanization)
+                    if !node.displayRomanization.isEmpty {
+                        Text(node.displayRomanization)
                             .font(.system(size: 10.5, design: .serif))
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
                     }
-                    Text(node.korean)
+                    Text(node.meaning)
                         .font(.system(size: 11))
                         .foregroundColor(.secondary)
                 }

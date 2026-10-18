@@ -3,6 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var aiScenarioStore: AIScenarioStore
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+    /// 배우는 언어가 바뀌면 화면 전체를 새로 그린다 (모든 목록이 언어별이라서).
+    @AppStorage(LanguagePrefs.learningKey, store: LanguagePrefs.defaults) private var learningRaw = ""
     @State private var selectedTab = 0
     @State private var showAddMenu = false
     @State private var showAddScenario = false
@@ -23,6 +25,7 @@ struct ContentView: View {
                     .tag(2)
             }
             .safeAreaInset(edge: .bottom) { floatingBar }
+            .id(learningRaw)
 
             if showAddMenu {
                 Color.black.opacity(0.28)
@@ -52,6 +55,9 @@ struct ContentView: View {
         .task {
             if !hasSeenOnboarding {
                 showOnboarding = true
+            } else if !LanguagePrefs.hasChosenLearning {
+                // 다국어 이전부터 쓰던 사용자: 하던 언어(인도네시아어)를 그대로 고른 것으로 둔다.
+                learningRaw = AppLanguage.learning.rawValue
             }
         }
     }
