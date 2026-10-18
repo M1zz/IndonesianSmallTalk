@@ -19,6 +19,9 @@ class SpeechManager: ObservableObject {
     @Published var permissionGranted = false
 
     private var ttsDelegate: TTSDelegate?
+    /// 세션을 맞추는 동안 멈춤·새 요청이 들어오면 앞선 요청은 버린다.
+    private var speakGeneration = 0
+    private var listenGeneration = 0
 
     // 정적 감지
     private var silenceTimer: Timer?
@@ -32,18 +35,33 @@ class SpeechManager: ObservableObject {
             self?.isSpeaking = false
         }
         synthesizer.delegate = ttsDelegate
-        configureAudioSession()
+        Task { await prepareSession() }
     }
 
     // MARK: - Audio Session
 
-    private func configureAudioSession() {
+    /// 연습용 세션(스피커 출력 + 녹음)이 이미 맞춰져 있는지. 퇴근길 모드가 바꿨으면 다시 맞춘다.
+    private var sessionReady: Bool { AudioSessionQueue.owner == .speech }
+
+    /// 세션 변경은 메인 스레드를 막지 않도록 전용 줄에서 한다.
+    private func prepareSession() async {
         do {
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
-            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            try await AudioSessionQueue.run { session in
+                try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
+                try session.setActive(true, options: .notifyOthersOnDeactivation)
+            }
+            AudioSessionQueue.owner = .speech
         } catch {
             print("Audio session setup failed: \(error)")
+        }
+    }
+
+    /// 세션이 맞으면 바로, 아니면 맞춘 다음에 실행
+    private func withSession(_ action: @escaping () -> Void) {
+        if sessionReady { action(); return }
+        Task {
+            await prepareSession()
+            action()
         }
     }
 
@@ -75,9 +93,8 @@ class SpeechManager: ObservableObject {
     /// language 를 비우면 배우는 언어로 읽는다. 뜻을 읽을 때는 AppLanguage.native 를 넘긴다.
     func speak(_ text: String, language: AppLanguage? = nil, completion: (() -> Void)? = nil) {
         synthesizer.stopSpeaking(at: .immediate)
-
-        // TTS 전에 오디오 세션을 스피커 출력으로 재설정
-        configureAudioSession()
+        speakGeneration += 1
+        let generation = speakGeneration
 
         isSpeaking = true
 
@@ -92,10 +109,15 @@ class SpeechManager: ObservableObject {
             completion?()
         }
 
-        synthesizer.speak(utterance)
+        // 세션을 맞추는 사이 멈춤이나 다른 말 요청이 오면 이 말은 건너뛴다.
+        withSession { [weak self] in
+            guard let self, generation == self.speakGeneration else { return }
+            self.synthesizer.speak(utterance)
+        }
     }
 
     func stopSpeaking() {
+        speakGeneration += 1
         synthesizer.stopSpeaking(at: .immediate)
         isSpeaking = false
     }
@@ -109,8 +131,26 @@ class SpeechManager: ObservableObject {
         hasSpeechBegun = false
         self.onSilenceDetected = onSilence
 
-        configureAudioSession()
+        if sessionReady {
+            try beginRecognition()
+            return
+        }
+        // 세션을 맞추는 동안에도 화면은 바로 '듣는 중' 으로 보인다.
+        let generation = listenGeneration
+        isListening = true
+        Task {
+            await prepareSession()
+            guard generation == listenGeneration else { return }
+            do {
+                try beginRecognition()
+            } catch {
+                print("Speech recognition start failed: \(error)")
+                isListening = false
+            }
+        }
+    }
 
+    private func beginRecognition() throws {
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: AppLanguage.learning.speechCode))
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionRequest else { return }
@@ -147,6 +187,7 @@ class SpeechManager: ObservableObject {
     }
 
     func stopListening() {
+        listenGeneration += 1
         silenceTimer?.invalidate()
         silenceTimer = nil
         onSilenceDetected = nil

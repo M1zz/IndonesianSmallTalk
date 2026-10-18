@@ -105,9 +105,13 @@ final class DriveSession: NSObject, ObservableObject {
     func play() {
         guard isActive else { start(); return }
         guard !isPlaying else { return }
-        activateAudio()
         isPlaying = true
-        runFromCurrentLine()
+        // 세션을 맞추는 건 메인 스레드 밖에서. 다 맞춘 뒤 재생을 시작한다 (그 사이 멈추면 시작하지 않음).
+        Task {
+            await activateAudio()
+            guard isActive, isPlaying else { return }
+            runFromCurrentLine()
+        }
     }
 
     func pause() {
@@ -151,7 +155,10 @@ final class DriveSession: NSObject, ObservableObject {
         line = nil
         voiceActive = false
         stopEngine()
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        Task {
+            try? await AudioSessionQueue.run { try $0.setActive(false, options: .notifyOthersOnDeactivation) }
+            AudioSessionQueue.owner = .none
+        }
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         MPNowPlayingInfoCenter.default().playbackState = .stopped
     }
@@ -359,27 +366,29 @@ final class DriveSession: NSObject, ObservableObject {
 
     // MARK: - Audio
 
-    private func activateAudio() {
-        let session = AVAudioSession.sharedInstance()
+    private func activateAudio() async {
         let wantsMic = DriveSettings.voice && DriveVoiceListener.isAuthorized
         do {
-            if wantsMic {
-                // 소리는 차(A2DP)·스피커로, 듣기는 폰 마이크로. 블루투스 통화 모드(HFP)는 쓰지 않는다.
-                let options: AVAudioSession.CategoryOptions = [.allowBluetoothA2DP, .defaultToSpeaker, .allowAirPlay]
-                do {
-                    try session.setCategory(.playAndRecord, mode: .spokenAudio, options: options)
-                } catch {
-                    try session.setCategory(.playAndRecord, mode: .default, options: options)
+            try await AudioSessionQueue.run { session in
+                if wantsMic {
+                    // 소리는 차(A2DP)·스피커로, 듣기는 폰 마이크로. 블루투스 통화 모드(HFP)는 쓰지 않는다.
+                    let options: AVAudioSession.CategoryOptions = [.allowBluetoothA2DP, .defaultToSpeaker, .allowAirPlay]
+                    do {
+                        try session.setCategory(.playAndRecord, mode: .spokenAudio, options: options)
+                    } catch {
+                        try session.setCategory(.playAndRecord, mode: .default, options: options)
+                    }
+                    try session.setActive(true)
+                    if let builtIn = session.availableInputs?.first(where: { $0.portType == .builtInMic }) {
+                        try? session.setPreferredInput(builtIn)
+                    }
+                } else {
+                    // spokenAudio: 내비 안내가 나오면 시스템이 잠깐 멈췄다가 이어 준다.
+                    try session.setCategory(.playback, mode: .spokenAudio, options: [])
+                    try session.setActive(true)
                 }
-                try session.setActive(true)
-                if let builtIn = session.availableInputs?.first(where: { $0.portType == .builtInMic }) {
-                    try? session.setPreferredInput(builtIn)
-                }
-            } else {
-                // spokenAudio: 내비 안내가 나오면 시스템이 잠깐 멈췄다가 이어 준다.
-                try session.setCategory(.playback, mode: .spokenAudio, options: [])
-                try session.setActive(true)
             }
+            AudioSessionQueue.owner = .drive
         } catch {
             print("[Drive] 오디오 세션 실패: \(error)")
         }
@@ -434,8 +443,10 @@ final class DriveSession: NSObject, ObservableObject {
             if micTapInstalled {
                 stopEngine()
                 voiceActive = false
-                try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: [])
-                startEngine(withMic: false)
+                Task {
+                    try? await AudioSessionQueue.run { try $0.setCategory(.playback, mode: .spokenAudio, options: []) }
+                    startEngine(withMic: false)
+                }
             }
         }
     }
