@@ -25,12 +25,6 @@ enum TimeSlot: Int, CaseIterable, Identifiable {
         ["🌅", "☀️", "🍽️", "🌤️", "🌆", "🌙"][rawValue]
     }
 
-    /// 이 시간대를 한 문장으로 설명 (설득 문구에 사용)
-    var moodKo: String {
-        [String(localized: "막 하루가 시작되는 시간"), String(localized: "일이 돌아가기 시작하는 시간"),
-         String(localized: "밥 먹으러 나가는 시간"), String(localized: "잠깐 숨 돌리는 시간"),
-         String(localized: "하루를 정리하고 만나는 시간"), String(localized: "돌아가기 전 마지막 대화")][rawValue]
-    }
 
     static func containing(hour: Int) -> TimeSlot {
         switch hour {
@@ -43,9 +37,6 @@ enum TimeSlot: Int, CaseIterable, Identifiable {
         }
     }
 
-    static func now(_ date: Date = Date()) -> TimeSlot {
-        containing(hour: Calendar.current.component(.hour, from: date))
-    }
 }
 
 // MARK: - Journey Stop (타임테이블의 한 칸)

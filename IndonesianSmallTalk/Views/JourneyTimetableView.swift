@@ -6,12 +6,7 @@ struct JourneyTimetableView: View {
     @EnvironmentObject var progress: JourneyProgressStore
 
     @StateObject private var launcher = JourneyLauncher()
-    @State private var now = Date()
     @State private var selectedCell: TimetableCell?
-    private let ticker = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-
-    private var todayWeekday: Int { Calendar.current.component(.weekday, from: now) }
-    private var nowSlot: TimeSlot { TimeSlot.now(now) }
 
     private var doneTotal: Int { progress.doneCount(in: JourneyData.allCourses) }
     private var total: Int { progress.totalCount(in: JourneyData.allCourses) }
@@ -39,7 +34,6 @@ struct JourneyTimetableView: View {
         .navigationTitle("주간 시간표")
         .navigationBarTitleDisplayMode(.inline)
         .journeyPractice(launcher, progress: progress)
-        .onReceive(ticker) { now = $0 }
         .sheet(item: $selectedCell) { cell in
             cellSheet(cell)
                 .presentationDetents([.height(280), .medium])
@@ -70,7 +64,7 @@ struct JourneyTimetableView: View {
             }
             .frame(height: 6)
 
-            Text("초록 = 배운 장면, 회색 = 아직. \(JourneyData.weekdayName(todayWeekday)) \(nowSlot.labelKo) 칸이 지금이에요.")
+            Text("초록 = 배운 장면, 회색 = 아직. 칸을 누르면 그 시간의 장면을 연습해요.")
                 .font(.system(size: 11))
                 .foregroundColor(Color(.tertiaryLabel))
         }
@@ -91,8 +85,8 @@ struct JourneyTimetableView: View {
                         .frame(width: 34)
                     ForEach(JourneyData.weekdayOrder, id: \.self) { wd in
                         Text(JourneyData.weekdayLabel(wd))
-                            .font(.system(size: 11, weight: wd == todayWeekday ? .heavy : .medium))
-                            .foregroundColor(wd == todayWeekday ? .accentColor : .secondary)
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                     }
                 }
@@ -101,8 +95,8 @@ struct JourneyTimetableView: View {
                     HStack(spacing: 4) {
                         VStack(spacing: 0) {
                             Text(slot.labelKo)
-                                .font(.system(size: 10, weight: slot == nowSlot ? .heavy : .semibold))
-                                .foregroundColor(slot == nowSlot ? .accentColor : .primary)
+                                .font(.system(size: 10, weight: .semibold))
+                                .foregroundColor(.primary)
                             Text(slot.rangeLabel)
                                 .font(.system(size: 7.5))
                                 .foregroundColor(.secondary)
@@ -128,7 +122,6 @@ struct JourneyTimetableView: View {
     private func cellView(weekday: Int, slot: TimeSlot) -> some View {
         let items = JourneyData.stops(weekday: weekday, slot: slot)
         let doneAll = !items.isEmpty && items.allSatisfy { progress.isDone($0.stop.id) }
-        let isNow = weekday == todayWeekday && slot == nowSlot
 
         return Button {
             guard !items.isEmpty else { return }
@@ -144,14 +137,13 @@ struct JourneyTimetableView: View {
                           ? Color(.systemGroupedBackground)
                           : (doneAll ? Color.green.opacity(0.20) : Color(.tertiarySystemFill)))
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .strokeBorder(isNow ? Color.red : (doneAll ? Color.green.opacity(0.45) : Color.clear),
+                    .strokeBorder(doneAll ? Color.green.opacity(0.45) : Color.clear,
                                   lineWidth: 1.5)
 
                 if items.isEmpty {
-                    // 지금 시간대인데 정규 일정이 없는 칸 — 아래 '요일이 없는 코스'로 유도
-                    (isNow ? Text("지금") : Text(verbatim: "–"))
-                        .font(.system(size: isNow ? 9 : 10, weight: isNow ? .heavy : .regular))
-                        .foregroundColor(isNow ? .red : Color(.quaternaryLabel))
+                    Text(verbatim: "–")
+                        .font(.system(size: 10))
+                        .foregroundColor(Color(.quaternaryLabel))
                 } else {
                     VStack(spacing: 2) {
                         HStack(spacing: 1) {
@@ -212,8 +204,6 @@ struct JourneyTimetableView: View {
                                                 .fill(progress.isDone(stop.id)
                                                       ? Color.green.opacity(0.18)
                                                       : Color(.tertiarySystemFill))
-                                            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                                .strokeBorder(stop.slot == nowSlot ? Color.red : Color.clear, lineWidth: 1.5)
                                             Text(stop.emoji)
                                                 .font(.system(size: 15))
                                                 .opacity(progress.isDone(stop.id) ? 1 : 0.45)

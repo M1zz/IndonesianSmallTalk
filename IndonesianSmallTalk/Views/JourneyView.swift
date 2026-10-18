@@ -67,98 +67,6 @@ extension View {
     }
 }
 
-// MARK: - 지금 이 시간 배너 (홈)
-
-struct JourneyNowBanner: View {
-    @EnvironmentObject var progress: JourneyProgressStore
-    let onStart: (JourneyStop) -> Void
-
-    @State private var now = Date()
-    private let ticker = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-
-    private var slot: TimeSlot { TimeSlot.now(now) }
-    private var weekday: Int { Calendar.current.component(.weekday, from: now) }
-
-    private var suggestions: [(course: JourneyCourse, stop: JourneyStop)] {
-        Array(JourneyData.suggestionsNow(now).prefix(2))
-    }
-
-    private var clock: String {
-        let f = DateFormatter()
-        f.locale = Locale(identifier: AppLanguage.native.rawValue)
-        f.dateFormat = "H:mm"
-        return f.string(from: now)
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 10) {
-                Text(slot.emoji).font(.system(size: 26))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("지금 \(JourneyData.weekdayName(weekday)) \(clock) · \(slot.labelKo)")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(.primary)
-                    Text(slot.moodKo)
-                        .font(.system(size: 11))
-                        .foregroundColor(.secondary)
-                }
-                Spacer(minLength: 0)
-            }
-
-            ForEach(suggestions, id: \.stop.id) { item in
-                Button {
-                    onStart(item.stop)
-                } label: {
-                    HStack(spacing: 10) {
-                        Text(item.stop.emoji).font(.system(size: 18))
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(item.stop.placeKo)
-                                .font(.system(size: 13.5, weight: .semibold))
-                                .foregroundColor(.primary)
-                            Text("\(item.course.emoji) \(item.course.titleKo) · \(item.stop.time)")
-                                .font(.system(size: 10))
-                                .foregroundColor(.secondary)
-                        }
-                        Spacer(minLength: 0)
-                        if progress.isDone(item.stop.id) {
-                            Label("배움", systemImage: "checkmark.circle.fill")
-                                .font(.system(size: 10, weight: .bold))
-                                .foregroundColor(.green)
-                        } else {
-                            Text("바로 연습")
-                                .font(.system(size: 10, weight: .bold))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 4)
-                                .background(Capsule().fill(Color.accentColor))
-                        }
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color(.tertiarySystemFill))
-                    )
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-            }
-
-            Text("이 시간에 실제로 쓰는 말이에요. 코스 첫 장면부터 할 필요 없이 여기서 시작해도 돼요.")
-                .font(.system(size: 10.5))
-                .foregroundColor(Color(.tertiaryLabel))
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .padding(14)
-        .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(Color(.secondarySystemGroupedBackground))
-                .shadow(color: .black.opacity(0.05), radius: 6, x: 0, y: 2)
-        )
-        .onReceive(ticker) { now = $0 }
-    }
-}
-
 // MARK: - Course Card (홈 화면)
 
 struct JourneyCourseCard: View {
@@ -278,19 +186,15 @@ struct JourneyDetailView: View {
 
     @StateObject private var launcher = JourneyLauncher()
     @State private var order: StopOrder = .time
-    @State private var now = Date()
-    private let ticker = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 
     enum StopOrder: String, CaseIterable, Identifiable {
         case time = "시간 순"
-        case now = "지금부터"
         case todo = "안 배운 것"
         var id: String { rawValue }
 
         var label: String {
             switch self {
             case .time: return String(localized: "시간 순")
-            case .now: return String(localized: "지금부터")
             case .todo: return String(localized: "안 배운 것")
             }
         }
@@ -298,24 +202,10 @@ struct JourneyDetailView: View {
 
     private var doneCount: Int { progress.doneCount(in: course) }
 
-    private var nowMinutes: Int {
-        let cal = Calendar.current
-        return cal.component(.hour, from: now) * 60 + cal.component(.minute, from: now)
-    }
-
-    /// 지금 시각과 가장 가까운 장면
-    private var closestStop: JourneyStop? {
-        course.stops.min { abs($0.minutesOfDay - nowMinutes) < abs($1.minutesOfDay - nowMinutes) }
-    }
-
     private var displayedStops: [JourneyStop] {
         switch order {
         case .time:
             return course.stops
-        case .now:
-            guard let closest = closestStop,
-                  let idx = course.stops.firstIndex(where: { $0.id == closest.id }) else { return course.stops }
-            return Array(course.stops[idx...]) + Array(course.stops[..<idx])
         case .todo:
             return course.stops.filter { !progress.isDone($0.id) }
         }
@@ -335,7 +225,6 @@ struct JourneyDetailView: View {
         .navigationTitle(course.titleKo)
         .navigationBarTitleDisplayMode(.inline)
         .journeyPractice(launcher, progress: progress)
-        .onReceive(ticker) { now = $0 }
     }
 
     // MARK: Header
@@ -408,8 +297,7 @@ struct JourneyDetailView: View {
 
     private var orderHint: String {
         switch order {
-        case .time: return String(localized: "하루가 흘러가는 순서예요. 빨간 선이 지금 시각입니다.")
-        case .now:  return String(localized: "지금 시각에 가까운 장면을 맨 위로 올렸어요. 어디서 시작해도 됩니다.")
+        case .time: return String(localized: "하루가 흘러가는 순서예요. 어디서 시작해도 됩니다.")
         case .todo:
             let left = course.stops.count - doneCount
             return left == 0 ? String(localized: "이 코스는 다 배웠어요. 다른 코스도 골라 보세요.")
@@ -425,7 +313,7 @@ struct JourneyDetailView: View {
                 Image(systemName: "calendar.day.timeline.left")
                     .font(.system(size: 12))
                     .foregroundColor(.secondary)
-                (order == .time ? Text("오늘의 타임테이블") : Text("골라서 연습하기"))
+                (order == .time ? Text("하루 타임테이블") : Text("골라서 연습하기"))
                     .font(.system(size: 13, weight: .bold))
                     .foregroundColor(.secondary)
                 Spacer()
@@ -439,18 +327,12 @@ struct JourneyDetailView: View {
             }
 
             ForEach(Array(displayedStops.enumerated()), id: \.element.id) { idx, stop in
-                if order == .time, shouldShowNowMarker(before: stop) {
-                    nowMarker
-                }
                 stopRow(stop, isLast: idx == displayedStops.count - 1)
                 if order == .time, let transit = stop.transitNote {
                     transitRow(transit)
                 }
             }
 
-            if order == .time, let last = course.stops.last, nowMinutes >= last.minutesOfDay {
-                nowMarker
-            }
         }
     }
 
@@ -467,43 +349,8 @@ struct JourneyDetailView: View {
         .padding(.vertical, 30)
     }
 
-    private func shouldShowNowMarker(before stop: JourneyStop) -> Bool {
-        guard let idx = course.stops.firstIndex(where: { $0.id == stop.id }) else { return false }
-        let prevEnd = idx == 0 ? -1 : course.stops[idx - 1].minutesOfDay
-        return nowMinutes > prevEnd && nowMinutes < stop.minutesOfDay
-    }
 
-    private var nowMarker: some View {
-        HStack(alignment: .center, spacing: 10) {
-            Text(nowLabel)
-                .font(.system(size: 11, weight: .heavy, design: .rounded))
-                .foregroundColor(.red)
-                .frame(width: 42, alignment: .trailing)
-            ZStack {
-                Circle().fill(Color.red).frame(width: 9, height: 9)
-            }
-            .frame(width: 34)
-            HStack(spacing: 6) {
-                Text("지금")
-                    .font(.system(size: 9, weight: .heavy))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 3)
-                    .background(Capsule().fill(Color.red))
-                Rectangle()
-                    .fill(Color.red.opacity(0.35))
-                    .frame(height: 1)
-            }
-            .padding(.trailing, 18)
-        }
-        .padding(.bottom, 10)
-    }
 
-    private var nowLabel: String {
-        let f = DateFormatter()
-        f.dateFormat = "H:mm"
-        return f.string(from: now)
-    }
 
     private func stopRow(_ stop: JourneyStop, isLast: Bool) -> some View {
         let done = progress.isDone(stop.id)
@@ -565,14 +412,6 @@ struct JourneyDetailView: View {
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
                                 .background(Color.green.opacity(0.12))
-                                .cornerRadius(4)
-                        } else if closestStop?.id == stop.id {
-                            Text("지금 이 시간")
-                                .font(.system(size: 9, weight: .bold))
-                                .foregroundColor(.red)
-                                .padding(.horizontal, 5)
-                                .padding(.vertical, 2)
-                                .background(Color.red.opacity(0.1))
                                 .cornerRadius(4)
                         }
                         Spacer(minLength: 0)
@@ -666,8 +505,8 @@ struct JourneyWhyCard: View {
                    "오늘은 식당만 가고, 내일은 이발소만 갑니다. 공항 장면을 몰라도 저녁 식당에서 아무 문제 없어요.")
             reason("장면 하나하나가 독립된 대화예요.",
                    "앞 장면에서 배운 표현을 알아야 풀리는 구조가 아닙니다. 어디를 열어도 첫 마디부터 시작해요.")
-            reason("오늘 쓸 말이 제일 잘 외워져요.",
-                   "지금 시각에 맞는 장면을 먼저 하면 그날 안에 써먹게 되고, 써먹은 말은 잘 안 잊힙니다.")
+            reason("끌리는 장면부터 하면 오래 남아요.",
+                   "곧 가 볼 곳, 궁금한 상황부터 고르세요. 관심 있는 대화일수록 잘 안 잊힙니다.")
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)

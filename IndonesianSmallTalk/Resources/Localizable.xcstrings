@@ -3570,6 +3570,40 @@
         }
       }
     },
+    "곧 가 볼 곳, 궁금한 상황부터 고르세요. 관심 있는 대화일수록 잘 안 잊힙니다.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick a place you'll visit soon or a situation you're curious about. Conversations you care about stick."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige un lugar al que irás pronto o una situación que te dé curiosidad. Lo que te interesa se queda."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih tempat yang akan segera kamu datangi atau situasi yang bikin penasaran. Percakapan yang menarik lebih awet diingat."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もうすぐ行く場所や気になる場面から選びましょう。興味のある会話ほど忘れにくいです。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先挑最近要去的地方或感兴趣的场景。越感兴趣的对话越不容易忘。"
+          }
+        }
+      }
+    },
     "골고루 섞어서": {
       "localizations": {
         "en": {
@@ -4484,6 +4518,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "深度 %lld"
+          }
+        }
+      }
+    },
+    "끌리는 장면부터 하면 오래 남아요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start with the scenes that grab you."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza por las escenas que te atraen."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai dari adegan yang menarik buatmu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "気になるシーンから始めると長く残ります。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从感兴趣的场景开始，记得更久。"
           }
         }
       }
@@ -7664,40 +7732,6 @@
         }
       }
     },
-    "돌아가기 전 마지막 대화": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "One last conversation before heading back"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Última conversación antes de volver"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Percakapan terakhir sebelum kembali"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "戻る前の最後の会話"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "返回前的最后一段对话"
-          }
-        }
-      }
-    },
     "두 마디 이상이어야 저장할 수 있어요.": {
       "localizations": {
         "en": {
@@ -8782,40 +8816,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "在超市购物"
-          }
-        }
-      }
-    },
-    "막 하루가 시작되는 시간": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The day is just getting started"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La hora en que empieza el día"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waktu hari baru dimulai"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一日が始まったばかりの時間"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一天刚刚开始的时候"
           }
         }
       }
@@ -10218,40 +10218,6 @@
         }
       }
     },
-    "바로 연습": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Practice now"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Practicar ya"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Langsung latihan"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "すぐに練習"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "立即练习"
-          }
-        }
-      }
-    },
     "받아쓰기": {
       "localizations": {
         "en": {
@@ -10558,40 +10524,6 @@
         }
       }
     },
-    "밥 먹으러 나가는 시간": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Time to head out for a meal"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La hora de salir a comer"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waktu keluar makan"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ごはんを食べに出かける時間"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "出门吃饭的时候"
-          }
-        }
-      }
-    },
     "방법": {
       "localizations": {
         "en": {
@@ -10758,40 +10690,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "要学的语言"
-          }
-        }
-      }
-    },
-    "배움": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Learned"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aprendidas"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dipelajari"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "習得"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已学"
           }
         }
       }
@@ -15202,40 +15100,6 @@
         }
       }
     },
-    "오늘 쓸 말이 제일 잘 외워져요.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "What you'll use today sticks best."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lo que vas a decir hoy es lo que mejor se memoriza."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kata yang dipakai hari ini paling mudah diingat."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今日使う言葉がいちばん覚えやすいです。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今天要用的话最容易记住。"
-          }
-        }
-      }
-    },
     "오늘 한 줄, 내일 또 한 줄. 트리가 자라는 만큼 그 상황에서의 본인 대화 능력도 자랍니다. 누가 대신 채워준 트리는 본인 트리가 아니에요.": {
       "localizations": {
         "en": {
@@ -15300,40 +15164,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "今天只去餐厅，明天只去理发店。不了解机场场景，晚上在餐厅也毫无问题。"
-          }
-        }
-      }
-    },
-    "오늘의 타임테이블": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today's timetable"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Horario de hoy"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jadwal hari ini"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今日のタイムテーブル"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今日时间表"
           }
         }
       }
@@ -16270,40 +16100,6 @@
         }
       }
     },
-    "이 시간에 실제로 쓰는 말이에요. 코스 첫 장면부터 할 필요 없이 여기서 시작해도 돼요.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This is what people actually say at this time of day. No need to start from the course's first scene—you can start here."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Son frases que se usan de verdad a esta hora. No hace falta empezar por la primera escena del curso: puedes empezar aquí."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ini kata-kata yang benar-benar dipakai di jam ini. Tidak perlu mulai dari adegan pertama kursus, mulai saja dari sini."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "この時間に実際に使う言葉です。コースの最初のシーンからでなくても、ここから始めて大丈夫です。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "这是这个时间真正会用到的话。不必从课程的第一个场景开始，从这里开始也可以。"
-          }
-        }
-      }
-    },
     "이 시나리오의 첫 마디·메타데이터를 수정합니다. 추가된 응답은 그대로 유지돼요.": {
       "localizations": {
         "en": {
@@ -16902,40 +16698,6 @@
         }
       }
     },
-    "일이 돌아가기 시작하는 시간": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "When work gets going"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La hora en que arranca el trabajo"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waktu kerja mulai berjalan"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "仕事が回り始める時間"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "工作开始忙起来的时候"
-          }
-        }
-      }
-    },
     "읽을 수 있는 대화가 아직 없어요.": {
       "localizations": {
         "en": {
@@ -17272,40 +17034,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "做得好！"
-          }
-        }
-      }
-    },
-    "잠깐 숨 돌리는 시간": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Time to catch your breath"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La hora de tomar un respiro"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waktu rehat sejenak"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ひと息つく時間"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "稍作休息的时候"
           }
         }
       }
@@ -18724,216 +18452,6 @@
         }
       }
     },
-    "지금": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Now"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ahora"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sekarang"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "现在"
-          }
-        }
-      }
-    },
-    "지금 %@ %@ · %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Now %@ %@ · %@"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ahora %@ %@ · %@"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sekarang %@ %@ · %@"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "現在 %@ %@ · %@"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "new",
-            "value": "지금 %1$@ %2$@ · %3$@"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "现在 %@ %@ · %@"
-          }
-        }
-      }
-    },
-    "지금 시각에 가까운 장면을 맨 위로 올렸어요. 어디서 시작해도 됩니다.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scenes closest to the current time are at the top. Start anywhere."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Las escenas más cercanas a la hora actual están arriba. Puedes empezar por cualquiera."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adegan yang paling dekat dengan jam sekarang ada di paling atas. Mulai dari mana saja."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今の時刻に近いシーンをいちばん上に表示しました。どこから始めても大丈夫です。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已将最接近当前时间的场景置顶。从哪里开始都可以。"
-          }
-        }
-      }
-    },
-    "지금 시각에 맞는 장면을 먼저 하면 그날 안에 써먹게 되고, 써먹은 말은 잘 안 잊힙니다.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Do the scene that fits the current time and you'll use it that same day—and words you use don't get forgotten."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Si haces primero la escena de esta hora, la usarás hoy mismo, y lo que usas no se olvida."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kalau mulai dari adegan yang cocok dengan jam sekarang, langsung terpakai hari itu, dan kata yang terpakai tidak mudah lupa."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今の時刻に合うシーンを先にやるとその日のうちに使えて、使った言葉は忘れにくくなります。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "先练与当前时间相符的场景，当天就能用上，用过的话就不容易忘。"
-          }
-        }
-      }
-    },
-    "지금 이 시간": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Right now"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A esta hora"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jam sekarang"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今この時間"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此时此刻"
-          }
-        }
-      }
-    },
-    "지금부터": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "From now"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desde ahora"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mulai sekarang"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ここから"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "从现在开始"
-          }
-        }
-      }
-    },
     "지우기": {
       "localizations": {
         "en": {
@@ -19614,42 +19132,36 @@
         }
       }
     },
-    "초록 = 배운 장면, 회색 = 아직. %@ %@ 칸이 지금이에요.": {
+    "초록 = 배운 장면, 회색 = 아직. 칸을 누르면 그 시간의 장면을 연습해요.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Green = learned scenes, gray = not yet. The %@ %@ cell is now."
+            "value": "Green = learned, gray = not yet. Tap a cell to practice its scenes."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Verde = escenas aprendidas, gris = pendientes. La casilla %@ %@ es ahora."
+            "value": "Verde = aprendida, gris = pendiente. Toca una casilla para practicar sus escenas."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hijau = adegan dipelajari, abu-abu = belum. Kotak %@ %@ adalah sekarang."
+            "value": "Hijau = sudah dipelajari, abu-abu = belum. Ketuk kotak untuk berlatih adegannya."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "緑 = 学んだシーン、グレー = まだ。%@ %@ のマスが今です。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "new",
-            "value": "초록 = 배운 장면, 회색 = 아직. %1$@ %2$@ 칸이 지금이에요."
+            "value": "緑 = 学んだシーン、灰色 = まだ。マスをタップするとその時間のシーンを練習できます。"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "绿色 = 已学场景，灰色 = 未学。%@ %@ 这一格是现在。"
+            "value": "绿色 = 已学，灰色 = 未学。点一下格子就能练习那个时段的场景。"
           }
         }
       }
@@ -21530,70 +21042,70 @@
         }
       }
     },
-    "하루가 흘러가는 순서예요. 빨간 선이 지금 시각입니다.": {
+    "하루 타임테이블": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This is how the day flows. The red line is the current time."
+            "value": "Day timetable"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Es el orden en que transcurre el día. La línea roja es la hora actual."
+            "value": "Horario del día"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Urutan hari berjalan. Garis merah adalah jam sekarang."
+            "value": "Jadwal sehari"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "一日が流れる順番です。赤い線が今の時刻です。"
+            "value": "1日のタイムテーブル"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "这是一天的时间顺序。红线代表当前时间。"
+            "value": "一日时间表"
           }
         }
       }
     },
-    "하루를 정리하고 만나는 시간": {
+    "하루가 흘러가는 순서예요. 어디서 시작해도 됩니다.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Time to wrap up the day and meet up"
+            "value": "Scenes in the order of the day. Start anywhere."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La hora de cerrar el día y verse"
+            "value": "En el orden del día. Puedes empezar por cualquiera."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Waktu bertemu setelah selesai beraktivitas"
+            "value": "Urut sesuai alur sehari. Mulai dari mana saja boleh."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "一日を締めくくって人と会う時間"
+            "value": "1日の流れの順です。どこから始めても大丈夫です。"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "结束一天后见面的时候"
+            "value": "按一天的顺序排列。从哪里开始都可以。"
           }
         }
       }

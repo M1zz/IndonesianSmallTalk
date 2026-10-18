@@ -74,34 +74,6 @@ struct JourneyData {
             .filter { $0.weekdays.contains(weekday) }
             .flatMap { course in course.stops(in: slot).map { (course, $0) } }
     }
-
-    /// 지금 이 시각에 실제로 벌어질 법한 장면들 (오늘 요일 + 현재 시간대, 그리고 요일 없는 코스)
-    static func stopsNow(_ date: Date = Date()) -> [(course: JourneyCourse, stop: JourneyStop)] {
-        let weekday = Calendar.current.component(.weekday, from: date)
-        let slot = TimeSlot.now(date)
-        let routine = stops(weekday: weekday, slot: slot)
-        let anyDay = anyDayCourses.flatMap { course in course.stops(in: slot).map { (course, $0) } }
-        return routine + anyDay
-    }
-
-    /// 홈 배너에 띄울 '지금 이 시간' 추천. 현재 시간대에 아무것도 없으면 시각이 가장 가까운 장면으로 대체한다.
-    static func suggestionsNow(_ date: Date = Date(), limit: Int = 3) -> [(course: JourneyCourse, stop: JourneyStop)] {
-        let exact = sortedByCloseness(stopsNow(date), to: date)
-        if !exact.isEmpty { return Array(exact.prefix(limit)) }
-
-        let weekday = Calendar.current.component(.weekday, from: date)
-        let pool = (weeklyCourses.filter { $0.weekdays.contains(weekday) } + anyDayCourses)
-            .flatMap { course in course.stops.map { (course, $0) } }
-        return Array(sortedByCloseness(pool, to: date).prefix(limit))
-    }
-
-    /// 시간대 안에서도 지금 시각에 가장 가까운 것부터
-    static func sortedByCloseness(_ items: [(course: JourneyCourse, stop: JourneyStop)],
-                                  to date: Date = Date()) -> [(course: JourneyCourse, stop: JourneyStop)] {
-        let cal = Calendar.current
-        let nowMinutes = cal.component(.hour, from: date) * 60 + cal.component(.minute, from: date)
-        return items.sorted { abs($0.stop.minutesOfDay - nowMinutes) < abs($1.stop.minutesOfDay - nowMinutes) }
-    }
 }
 
 // ─────────────────────────────────────────────────

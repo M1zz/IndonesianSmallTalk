@@ -209,10 +209,6 @@ struct HomeView: View {
 
     private var journeySection: some View {
         VStack(spacing: 0) {
-            JourneyNowBanner { stop in journeyLauncher.start(stop) }
-                .padding(.horizontal, 18)
-                .padding(.top, 20)
-
             HStack(spacing: 6) {
                 Image(systemName: "calendar.day.timeline.left")
                     .font(.system(size: 12))
