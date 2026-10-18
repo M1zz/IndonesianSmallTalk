@@ -23,6 +23,9 @@ struct ContentView: View {
                 NavigationStack { KeyboardManageView() }
                     .toolbar(.hidden, for: .tabBar)
                     .tag(2)
+                NavigationStack { DriveModeView() }
+                    .toolbar(.hidden, for: .tabBar)
+                    .tag(3)
             }
             .safeAreaInset(edge: .bottom) { floatingBar }
             .id(learningRaw)
@@ -67,9 +70,10 @@ struct ContentView: View {
     private var floatingBar: some View {
         HStack {
             HStack(spacing: 0) {
-                tabButton(tag: 0, icon: "bubble.left.and.bubble.right")
-                tabButton(tag: 1, icon: "text.book.closed")
-                tabButton(tag: 2, icon: "keyboard")
+                tabButton(tag: 0, icon: "bubble.left.and.bubble.right", label: "대화")
+                tabButton(tag: 1, icon: "text.book.closed", label: "내 표현")
+                tabButton(tag: 2, icon: "keyboard", label: "키보드")
+                tabButton(tag: 3, icon: "car", label: "퇴근길 모드")
             }
             .padding(6)
             .glassOrMaterial(in: Capsule())
@@ -177,7 +181,7 @@ struct ContentView: View {
     // MARK: Tab Button
 
     @ViewBuilder
-    private func tabButton(tag: Int, icon: String) -> some View {
+    private func tabButton(tag: Int, icon: String, label: LocalizedStringKey) -> some View {
         Button { selectedTab = tag } label: {
             Image(systemName: icon)
                 .font(.system(size: 17, weight: selectedTab == tag ? .semibold : .regular))
@@ -187,6 +191,8 @@ struct ContentView: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(Text(label))
+        .accessibilityAddTraits(selectedTab == tag ? .isSelected : [])
     }
 }
 

@@ -1,3 +1,4 @@
+import CarPlay
 import CloudKit
 import UIKit
 
@@ -53,6 +54,13 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         configurationForConnecting connectingSceneSession: UISceneSession,
         options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
+        if connectingSceneSession.role == .carTemplateApplication {
+            // CarPlay 화면 (퇴근길 모드)
+            let config = UISceneConfiguration(name: "CarPlay", sessionRole: connectingSceneSession.role)
+            config.sceneClass = CPTemplateApplicationScene.self
+            config.delegateClass = CarPlaySceneDelegate.self
+            return config
+        }
         let config = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
         config.delegateClass = SceneDelegate.self
         return config

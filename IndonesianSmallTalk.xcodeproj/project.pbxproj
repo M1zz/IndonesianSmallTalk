@@ -75,6 +75,15 @@
 		F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1EB32035078539A59182F4 /* situations.zh-Hans.json */; };
 		F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
 		FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB81844C92327399855D38B /* LanguagePickerView.swift */; };
+		FA3933CBF3FACA19C81C2003 /* translations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */; };
+		FCA2A64F8180986C4F776673 /* translations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */; };
+		F8CA5AB1BCCA38989DACDA12 /* DriveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */; };
+		F02FDE584811EACDA56A1F35 /* DriveSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2262340000C8DD247B56658 /* DriveSession.swift */; };
+		F0415D5FE36423E831F9A75E /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5FC6D81E37A1F5AE37A28 /* CarPlaySceneDelegate.swift */; };
+		F8E78B032C19FE70D526F1AC /* DriveIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574193272ACD644BB2BD07E /* DriveIntents.swift */; };
+		FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */; };
+		F9B376843D0AD3E933313A57 /* translations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC758A670B7CE2F1F8ABC48 /* translations.es.json */; };
+		F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +178,15 @@
 		FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ko.json"; sourceTree = "<group>"; };
 		FB1EB32035078539A59182F4 /* situations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.zh-Hans.json"; sourceTree = "<group>"; };
 		FEB81844C92327399855D38B /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagePickerView.swift"; sourceTree = "<group>"; };
+		F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.ja.json"; sourceTree = "<group>"; };
+		F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.zh-Hans.json"; sourceTree = "<group>"; };
+		F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveContent.swift"; sourceTree = "<group>"; };
+		F2262340000C8DD247B56658 /* DriveSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession.swift"; sourceTree = "<group>"; };
+		F4E5FC6D81E37A1F5AE37A28 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarPlaySceneDelegate.swift"; sourceTree = "<group>"; };
+		F574193272ACD644BB2BD07E /* DriveIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveIntents.swift"; sourceTree = "<group>"; };
+		F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.en.json"; sourceTree = "<group>"; };
+		FDC758A670B7CE2F1F8ABC48 /* translations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.es.json"; sourceTree = "<group>"; };
+		F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveModeView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +327,7 @@
 				AENT /* IndonesianSmallTalk.entitlements */,
 				A010 /* Assets.xcassets */,
 				GRP_RESOURCES /* Resources */,
+				GRP_DRIVE /* Drive */,
 			);
 			path = IndonesianSmallTalk;
 			sourceTree = "<group>";
@@ -323,8 +342,24 @@
 				F214F63CCB77E386A3EEE066 /* situations.ja.json */,
 				FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */,
 				FB1EB32035078539A59182F4 /* situations.zh-Hans.json */,
+				F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */,
+				F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */,
+				F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */,
+				FDC758A670B7CE2F1F8ABC48 /* translations.es.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		GRP_DRIVE /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */,
+				F2262340000C8DD247B56658 /* DriveSession.swift */,
+				F4E5FC6D81E37A1F5AE37A28 /* CarPlaySceneDelegate.swift */,
+				F574193272ACD644BB2BD07E /* DriveIntents.swift */,
+				F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */,
+			);
+			path = Drive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +449,10 @@
 				F5D0D52AC0D5F69098BEBA32 /* situations.ja.json in Resources */,
 				F47B615E00D79A9DFED9549C /* situations.ko.json in Resources */,
 				F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */,
+				FA3933CBF3FACA19C81C2003 /* translations.ja.json in Resources */,
+				FCA2A64F8180986C4F776673 /* translations.zh-Hans.json in Resources */,
+				FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */,
+				F9B376843D0AD3E933313A57 /* translations.es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +529,11 @@
 				F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */,
 				FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */,
 				FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */,
+				F8CA5AB1BCCA38989DACDA12 /* DriveContent.swift in Sources */,
+				F02FDE584811EACDA56A1F35 /* DriveSession.swift in Sources */,
+				F0415D5FE36423E831F9A75E /* CarPlaySceneDelegate.swift in Sources */,
+				F8E78B032C19FE70D526F1AC /* DriveIntents.swift in Sources */,
+				F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,10 +728,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IndonesianSmallTalk/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "사노라면";
+				INFOPLIST_KEY_CFBundleDisplayName = "말문";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "음성 대화 연습을 위해 마이크 접근이 필요합니다.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "인도네시아어 음성 인식을 위해 음성 인식 권한이 필요합니다.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -720,10 +764,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IndonesianSmallTalk/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "사노라면";
+				INFOPLIST_KEY_CFBundleDisplayName = "말문";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "음성 대화 연습을 위해 마이크 접근이 필요합니다.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "인도네시아어 음성 인식을 위해 음성 인식 권한이 필요합니다.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
