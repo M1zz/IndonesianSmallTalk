@@ -307,7 +307,7 @@ struct PronunciationPracticeView: View {
                           systemImage: "arrow.right")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
-                        .background(RoundedRectangle(cornerRadius: 14).fill(Brand.blue))
+                        .background(RoundedRectangle(cornerRadius: 14).fill(Brand.solidBlue))
                         .foregroundColor(.white)
                 }
             } else {

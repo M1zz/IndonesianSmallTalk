@@ -184,7 +184,7 @@ struct ScriptView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
-                .background(RoundedRectangle(cornerRadius: 14).fill(isPlayingAll ? Color.red : Brand.blue))
+                .background(RoundedRectangle(cornerRadius: 14).fill(isPlayingAll ? Color.red : Brand.solidBlue))
                 .foregroundColor(.white)
         }
         .padding(.horizontal, 18)

@@ -377,7 +377,7 @@ struct OnboardingView: View {
                     .frame(height: 52)
                     .background(
                         LinearGradient(
-                            colors: [Brand.blue, Brand.deep],
+                            colors: [Brand.solidBlue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                     )
@@ -393,7 +393,7 @@ struct OnboardingView: View {
                     .frame(height: 52)
                     .background(
                         LinearGradient(
-                            colors: [Brand.blue, Brand.deep],
+                            colors: [Brand.solidBlue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                     )

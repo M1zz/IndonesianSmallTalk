@@ -349,7 +349,7 @@ struct HomeView: View {
             .foregroundColor(selected ? .white : .primary)
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
-            .background(Capsule().fill(selected ? Brand.blue : Color(.secondarySystemGroupedBackground)))
+            .background(Capsule().fill(selected ? Brand.solidBlue : Color(.secondarySystemGroupedBackground)))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(selected ? .isSelected : [])

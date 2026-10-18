@@ -122,7 +122,7 @@ struct VocabDialogView: View {
                 ZStack(alignment: .leading) {
                     Capsule().fill(Color(.systemFill)).frame(height: 5)
                     Capsule()
-                        .fill(LinearGradient(colors: [Brand.blue, Brand.deep], startPoint: .leading, endPoint: .trailing))
+                        .fill(LinearGradient(colors: [Brand.solidBlue, Brand.deep], startPoint: .leading, endPoint: .trailing))
                         .frame(width: geo.size.width * CGFloat(currentWordIndex) / CGFloat(max(words.count, 1)), height: 5)
                         .animation(.spring(response: 0.4), value: currentWordIndex)
                 }

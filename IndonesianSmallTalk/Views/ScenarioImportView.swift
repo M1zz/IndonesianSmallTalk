@@ -156,7 +156,7 @@ struct ScenarioImportView: View {
                 .font(.system(size: 10, weight: .bold))
                 .foregroundColor(isMe ? .white : Brand.blue)
                 .frame(width: 34, height: 20)
-                .background(Capsule().fill(isMe ? Brand.blue : Brand.blue.opacity(0.12)))
+                .background(Capsule().fill(isMe ? Brand.solidBlue : Brand.blue.opacity(0.12)))
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: line.text)
                     .font(.system(size: 14, weight: .medium))

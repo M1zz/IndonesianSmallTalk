@@ -162,7 +162,7 @@ struct ResultView: View {
                     .padding(.vertical, 14)
                     .background(
                         LinearGradient(
-                            colors: [Brand.blue, Brand.deep],
+                            colors: [Brand.solidBlue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                         .clipShape(RoundedRectangle(cornerRadius: 14))

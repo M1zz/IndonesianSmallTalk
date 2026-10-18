@@ -5,11 +5,18 @@ import SwiftUI
 /// 말문 브랜드 색. 아이콘(scripts/make_app_icon.py)과 같은 남색 → 파랑, 문틈 빛은 주황.
 enum Brand {
     static let deep = Color(red: 0.12, green: 0.16, blue: 0.47)
-    static let blue = Color(red: 0.23, green: 0.30, blue: 0.79)
+    /// 글자·아이콘에 쓰는 파랑. 어두운 화면에서는 밝게 바꿔 잘 보이게 한다.
+    static let blue = Color(UIColor { trait in
+        trait.userInterfaceStyle == .dark
+            ? UIColor(red: 0.49, green: 0.58, blue: 1.00, alpha: 1)
+            : UIColor(red: 0.23, green: 0.30, blue: 0.79, alpha: 1)
+    })
+    /// 바탕용 파랑 (화면 모드와 상관없이 같음)
+    static let solidBlue = Color(red: 0.23, green: 0.30, blue: 0.79)
     static let glow = Color(red: 1.00, green: 0.71, blue: 0.28)
 
     static var gradient: LinearGradient {
-        LinearGradient(colors: [blue, deep], startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(colors: [solidBlue, deep], startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }
 
