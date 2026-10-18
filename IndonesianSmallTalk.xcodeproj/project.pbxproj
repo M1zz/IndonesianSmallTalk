@@ -75,6 +75,13 @@
 		F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1EB32035078539A59182F4 /* situations.zh-Hans.json */; };
 		F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
 		FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB81844C92327399855D38B /* LanguagePickerView.swift */; };
+		FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDC313F8F4410256B94754 /* PracticeHistory.swift */; };
+		FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */; };
+		F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */; };
+		F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */; };
+		FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */; };
+		F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */; };
+		F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +176,13 @@
 		FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ko.json"; sourceTree = "<group>"; };
 		FB1EB32035078539A59182F4 /* situations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.zh-Hans.json"; sourceTree = "<group>"; };
 		FEB81844C92327399855D38B /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagePickerView.swift"; sourceTree = "<group>"; };
+		FDBDC313F8F4410256B94754 /* PracticeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory.swift"; sourceTree = "<group>"; };
+		F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImporter.swift"; sourceTree = "<group>"; };
+		F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistoryView.swift"; sourceTree = "<group>"; };
+		F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PronunciationPracticeView.swift"; sourceTree = "<group>"; };
+		F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScriptView.swift"; sourceTree = "<group>"; };
+		F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImportView.swift"; sourceTree = "<group>"; };
+		F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeToolsSection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +227,8 @@
 				A047 /* JourneyData.swift */,
 				F8D83286092105437F1826CA /* AppLanguage.swift */,
 				F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */,
+				FDBDC313F8F4410256B94754 /* PracticeHistory.swift */,
+				F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +280,11 @@
 				A048 /* JourneyView.swift */,
 				A049 /* JourneyTimetableView.swift */,
 				FEB81844C92327399855D38B /* LanguagePickerView.swift */,
+				F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */,
+				F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */,
+				F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */,
+				F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */,
+				F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -490,6 +511,13 @@
 				F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */,
 				FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */,
 				FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */,
+				FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */,
+				FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */,
+				F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */,
+				F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */,
+				FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */,
+				F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */,
+				F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
