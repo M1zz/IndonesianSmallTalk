@@ -13,7 +13,8 @@ enum TimeSlot: Int, CaseIterable, Identifiable {
     var id: Int { rawValue }
 
     var labelKo: String {
-        ["아침", "오전", "점심", "오후", "저녁", "밤"][rawValue]
+        [String(localized: "아침"), String(localized: "오전"), String(localized: "점심"),
+         String(localized: "오후"), String(localized: "저녁"), String(localized: "밤")][rawValue]
     }
 
     var rangeLabel: String {
@@ -26,9 +27,9 @@ enum TimeSlot: Int, CaseIterable, Identifiable {
 
     /// 이 시간대를 한 문장으로 설명 (설득 문구에 사용)
     var moodKo: String {
-        ["막 하루가 시작되는 시간", "일이 돌아가기 시작하는 시간",
-         "밥 먹으러 나가는 시간", "잠깐 숨 돌리는 시간",
-         "하루를 정리하고 만나는 시간", "돌아가기 전 마지막 대화"][rawValue]
+        [String(localized: "막 하루가 시작되는 시간"), String(localized: "일이 돌아가기 시작하는 시간"),
+         String(localized: "밥 먹으러 나가는 시간"), String(localized: "잠깐 숨 돌리는 시간"),
+         String(localized: "하루를 정리하고 만나는 시간"), String(localized: "돌아가기 전 마지막 대화")][rawValue]
     }
 
     static func containing(hour: Int) -> TimeSlot {
@@ -60,6 +61,19 @@ struct JourneyStop: Identifiable {
     let transitNote: String?    // 다음 장소까지 이동 메모 (마지막 칸은 nil)
     let scenario: ConversationScenario
 
+    /// 한국어 원문을 받아 화면 언어 번역(ContentTranslations)으로 채운다.
+    init(id: String, time: String, emoji: String, place: String, placeKo: String,
+         situation: String, transitNote: String?, scenario: ConversationScenario) {
+        self.id = id
+        self.time = time
+        self.emoji = emoji
+        self.place = place
+        self.placeKo = ContentTranslations.text(ContentKey.stop(id, "place"), korean: placeKo)
+        self.situation = ContentTranslations.text(ContentKey.stop(id, "situation"), korean: situation)
+        self.transitNote = transitNote.map { ContentTranslations.text(ContentKey.stop(id, "transit"), korean: $0) }
+        self.scenario = scenario
+    }
+
     /// "09:00" → 9
     var hour: Int { Int(time.prefix(2)) ?? 0 }
     /// "09:30" → 30
@@ -84,6 +98,20 @@ struct JourneyCourse: Identifiable, Hashable {
     /// "평일 · 월–금" 처럼 화면에 보여줄 요일 설명
     let dayLabelKo: String
     let stops: [JourneyStop]
+
+    /// 한국어 원문을 받아 화면 언어 번역(ContentTranslations)으로 채운다.
+    init(id: String, title: String, titleKo: String, description: String, emoji: String,
+         difficulty: ConversationScenario.Difficulty, weekdays: [Int], dayLabelKo: String, stops: [JourneyStop]) {
+        self.id = id
+        self.title = title
+        self.titleKo = ContentTranslations.text(ContentKey.course(id, "title"), korean: titleKo)
+        self.description = ContentTranslations.text(ContentKey.course(id, "description"), korean: description)
+        self.emoji = emoji
+        self.difficulty = difficulty
+        self.weekdays = weekdays
+        self.dayLabelKo = ContentTranslations.text(ContentKey.course(id, "dayLabel"), korean: dayLabelKo)
+        self.stops = stops
+    }
 
     var isAnyDay: Bool { weekdays.isEmpty }
 

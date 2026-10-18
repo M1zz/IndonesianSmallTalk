@@ -62,7 +62,10 @@ struct JourneyData {
     static let weekdayOrder: [Int] = [2, 3, 4, 5, 6, 7, 1]
 
     static func weekdayLabel(_ weekday: Int) -> String {
-        ["일", "월", "화", "수", "목", "금", "토"][weekday - 1]
+        // 화면 언어의 짧은 요일 이름 (일·월… / Sun·Mon…)
+        let f = DateFormatter()
+        f.locale = Locale(identifier: AppLanguage.native.rawValue)
+        return f.shortStandaloneWeekdaySymbols[weekday - 1]
     }
 
     /// 특정 요일 + 시간대에 벌어지는 장면들
