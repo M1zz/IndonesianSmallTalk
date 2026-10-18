@@ -20,10 +20,10 @@ struct ResultView: View {
     }
 
     private var gradeLabel: String {
-        if positiveRatio >= 0.8 { return "Luar Biasa!" }
-        if positiveRatio >= 0.6 { return "Bagus!" }
-        if positiveRatio >= 0.4 { return "Cukup Baik" }
-        return "Perlu Latihan"
+        if positiveRatio >= 0.8 { return String(localized: "훌륭해요!") }
+        if positiveRatio >= 0.6 { return String(localized: "잘했어요!") }
+        if positiveRatio >= 0.4 { return String(localized: "괜찮아요") }
+        return String(localized: "연습이 더 필요해요")
     }
 
     var body: some View {
@@ -85,7 +85,7 @@ struct ResultView: View {
     private var statsGrid: some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
             StatCard(icon: "⭐", value: "\(session.score)", label: "점수", color: .yellow)
-            StatCard(icon: "💬", value: "\(session.totalChoices)턴", label: "대화 턴", color: .blue)
+            StatCard(icon: "💬", value: String(localized: "\(session.totalChoices)턴"), label: "대화 턴", color: .blue)
             StatCard(icon: "😊", value: "\(session.positiveChoices)", label: "긍정 선택", color: .green)
             StatCard(
                 icon: "📊",
@@ -103,9 +103,6 @@ struct ResultView: View {
                 Text("🔁 대화 복습")
                     .font(.system(size: 14, weight: .bold))
                 Spacer()
-                Text("Rekap percakapan")
-                    .font(.system(size: 11))
-                    .foregroundColor(.secondary)
             }
 
             ForEach(Array(session.currentPath.enumerated()), id: \.element.id) { idx, node in
@@ -148,7 +145,7 @@ struct ResultView: View {
                     .padding(.vertical, 14)
                     .background(
                         LinearGradient(
-                            colors: [Color(red: 0.18, green: 0.50, blue: 0.95), Color(red: 0.10, green: 0.35, blue: 0.75)],
+                            colors: [Brand.blue, Brand.deep],
                             startPoint: .leading, endPoint: .trailing
                         )
                         .clipShape(RoundedRectangle(cornerRadius: 14))
@@ -168,7 +165,7 @@ struct ResultView: View {
 struct StatCard: View {
     let icon: String
     let value: String
-    let label: String
+    let label: LocalizedStringKey
     let color: Color
 
     var body: some View {
@@ -229,6 +226,7 @@ struct ReviewRow: View {
                     .font(.system(size: 11))
                     .foregroundColor(Color(.tertiaryLabel))
             }
+            .accessibilityLabel(showTranslation ? Text("뜻 숨기기") : Text("뜻 보기"))
         }
         .padding(.vertical, 6)
         .padding(.horizontal, 10)
@@ -247,7 +245,7 @@ struct TreeSheetView: View {
     var body: some View {
         NavigationStack {
             TreeMapView(scenario: scenario)
-                .navigationTitle("대화 트리 · " + scenario.titleKo)
+                .navigationTitle(Text("대화 트리 · \(scenario.titleKo)"))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {

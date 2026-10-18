@@ -34,7 +34,7 @@ struct AddPhraseView: View {
 
                 Section {
                     HStack(alignment: .top, spacing: 8) {
-                        TextField("예: Apa kabar?", text: $indonesian, axis: .vertical)
+                        TextField(String(localized: "예: \(AppLanguage.learning.sampleGreeting)"), text: $indonesian, axis: .vertical)
                             .lineLimit(1...3)
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
@@ -43,6 +43,7 @@ struct AddPhraseView: View {
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(speech.isListening ? Text("받아쓰기 멈추기") : Text("받아쓰기"))
                         .disabled(!speech.permissionGranted && permissionAsked)
                     }
                     if speech.isListening {
@@ -51,13 +52,13 @@ struct AddPhraseView: View {
                             .foregroundColor(.secondary)
                     }
                 } header: {
-                    Text("인도네시아어")
+                    Text(AppLanguage.learning.localizedName)
                 } footer: {
                     Text("🎤 버튼으로 직접 받아쓰기 가능")
                         .font(.caption2)
                 }
 
-                Section("한국어 뜻") {
+                Section("뜻") {
                     TextField("예: 잘 지내?", text: $korean, axis: .vertical)
                         .lineLimit(1...3)
                 }
@@ -92,14 +93,14 @@ struct AddPhraseView: View {
                             Image(systemName: "keyboard").foregroundColor(.blue)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("키보드에 표시").font(.system(size: 14, weight: .medium))
-                                Text("사노라면 표현 키보드에서 한 번 탭으로 입력 가능")
+                                Text("말문 표현 키보드에서 한 번 탭으로 입력 가능")
                                     .font(.system(size: 11)).foregroundColor(.secondary)
                             }
                         }
                     }
                 }
             }
-            .navigationTitle(editing == nil ? "표현 추가" : "표현 수정")
+            .navigationTitle(editing == nil ? Text("표현 추가") : Text("표현 수정"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -161,5 +162,82 @@ struct AddPhraseView: View {
 
     private func trimmed(_ s: String) -> String {
         s.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+// MARK: - 입력칸 예시
+
+/// 표현·응답·시나리오 입력칸에 보여 줄 예시 문장 (배우는 언어로 쓴 것)
+extension AppLanguage {
+    /// 안부 인사 — "잘 지내?"
+    var sampleGreeting: String {
+        switch self {
+        case .indonesian: return "Apa kabar?"
+        case .english: return "How are you?"
+        case .japanese: return "お元気ですか？"
+        case .chinese: return "你好吗？"
+        case .spanish: return "¿Cómo estás?"
+        case .korean: return "잘 지내?"
+        }
+    }
+
+    /// 짧은 대답 — "응, 좋아!"
+    var sampleReply: String {
+        switch self {
+        case .indonesian: return "Iya, boleh!"
+        case .english: return "Yes, sure!"
+        case .japanese: return "はい、いいですよ！"
+        case .chinese: return "好的，可以！"
+        case .spanish: return "¡Sí, claro!"
+        case .korean: return "응, 좋아!"
+        }
+    }
+
+    /// sampleReply 의 한글 발음 (한국어 화면에서만 쓴다)
+    var sampleReplyHangul: String {
+        switch self {
+        case .indonesian: return "이야, 볼레!"
+        case .english: return "예스, 슈어!"
+        case .japanese: return "하이, 이이데스요!"
+        case .chinese: return "하오더, 커이!"
+        case .spanish: return "시, 끌라로!"
+        case .korean: return "응, 좋아!"
+        }
+    }
+
+    /// 시나리오 제목 — "시장에서"
+    var sampleTitle: String {
+        switch self {
+        case .indonesian: return "Di Pasar"
+        case .english: return "At the Market"
+        case .japanese: return "市場で"
+        case .chinese: return "在市场"
+        case .spanish: return "En el mercado"
+        case .korean: return "시장에서"
+        }
+    }
+
+    /// 첫 마디 — "안녕하세요!" (낮 인사)
+    var sampleOpener: String {
+        switch self {
+        case .indonesian: return "Selamat siang!"
+        case .english: return "Good afternoon!"
+        case .japanese: return "こんにちは！"
+        case .chinese: return "下午好！"
+        case .spanish: return "¡Buenas tardes!"
+        case .korean: return "안녕하세요!"
+        }
+    }
+
+    /// sampleOpener 의 한글 발음 (한국어 화면에서만 쓴다)
+    var sampleOpenerHangul: String {
+        switch self {
+        case .indonesian: return "슬라맛 시앙"
+        case .english: return "굿 애프터눈"
+        case .japanese: return "곤니치와"
+        case .chinese: return "시아우 하오"
+        case .spanish: return "부에나스 따르데스"
+        case .korean: return "안녕하세요"
+        }
     }
 }

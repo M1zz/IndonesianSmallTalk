@@ -31,12 +31,12 @@ struct PhrasePickerView: View {
                             }) {
                                 VStack(alignment: .leading, spacing: 4) {
                                     HStack(spacing: 6) {
-                                        Text(phrase.indonesian)
+                                        Text(phrase.text)
                                             .font(.system(size: 15, weight: .semibold))
                                             .foregroundColor(.primary)
                                         PolarityChip(polarity: phrase.polarity)
                                     }
-                                    Text(phrase.korean)
+                                    Text(phrase.meaning)
                                         .font(.system(size: 12))
                                         .foregroundColor(.secondary)
                                     if !phrase.context.isEmpty {

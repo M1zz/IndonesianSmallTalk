@@ -65,7 +65,7 @@ struct AddUserReplyView: View {
 
                 Section {
                     HStack(alignment: .top, spacing: 8) {
-                        TextField("예: Iya, boleh!", text: $indonesian, axis: .vertical)
+                        TextField(String(localized: "예: \(AppLanguage.learning.sampleReply)"), text: $indonesian, axis: .vertical)
                             .lineLimit(1...3)
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
@@ -74,6 +74,7 @@ struct AddUserReplyView: View {
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(speech.isListening ? Text("받아쓰기 멈추기") : Text("받아쓰기"))
                         .disabled(!speech.permissionGranted && permissionAsked)
                     }
                     if speech.isListening {
@@ -82,21 +83,24 @@ struct AddUserReplyView: View {
                             .foregroundColor(.secondary)
                     }
                 } header: {
-                    Text("인도네시아어")
+                    Text(AppLanguage.learning.localizedName)
                 }
 
-                Section("한국어 뜻") {
+                Section("뜻") {
                     TextField("예: 응, 좋아!", text: $korean, axis: .vertical)
                         .lineLimit(1...3)
                 }
 
-                Section {
-                    TextField("예: 이야 볼레", text: $romanization)
-                } header: {
-                    Text("발음 (선택)")
-                } footer: {
-                    Text("선택 사항이지만 적어두면 학습에 도움이 돼요.")
-                        .font(.caption2)
+                // 한글 발음은 한국어 화면에서만 받는다
+                if AppLanguage.showsHangulRomanization {
+                    Section {
+                        TextField(String(localized: "예: \(AppLanguage.learning.sampleReplyHangul)"), text: $romanization)
+                    } header: {
+                        Text("발음 (선택)")
+                    } footer: {
+                        Text("선택 사항이지만 적어두면 학습에 도움이 돼요.")
+                            .font(.caption2)
+                    }
                 }
 
                 Section {
@@ -114,8 +118,8 @@ struct AddUserReplyView: View {
                 }
             }
             .navigationTitle(editingReply != nil
-                ? (nextSpeaker == .other ? "상대방 응답 수정" : "내 대답 수정")
-                : (nextSpeaker == .other ? "상대방 응답 추가" : "내 대답 추가"))
+                ? (nextSpeaker == .other ? Text("상대방 응답 수정") : Text("내 대답 수정"))
+                : (nextSpeaker == .other ? Text("상대방 응답 추가") : Text("내 대답 추가")))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -143,8 +147,8 @@ struct AddUserReplyView: View {
             }
             .sheet(isPresented: $showPhrasePicker) {
                 PhrasePickerView { phrase in
-                    indonesian = phrase.indonesian
-                    korean = phrase.korean
+                    indonesian = phrase.text
+                    korean = phrase.meaning
                     polarity = phrase.polarity
                 }
             }
@@ -210,7 +214,7 @@ struct AddUserReplyView: View {
                 if ok {
                     dismiss()
                 } else {
-                    saveError = sharedReplyStore.lastError ?? "저장에 실패했어요."
+                    saveError = sharedReplyStore.lastError ?? String(localized: "저장에 실패했어요.")
                 }
             }
         }

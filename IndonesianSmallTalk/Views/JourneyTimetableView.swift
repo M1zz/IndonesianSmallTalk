@@ -70,7 +70,7 @@ struct JourneyTimetableView: View {
             }
             .frame(height: 6)
 
-            Text("초록 = 배운 장면, 회색 = 아직. \(JourneyData.weekdayLabel(todayWeekday))요일 \(nowSlot.labelKo) 칸이 지금이에요.")
+            Text("초록 = 배운 장면, 회색 = 아직. \(JourneyData.weekdayName(todayWeekday)) \(nowSlot.labelKo) 칸이 지금이에요.")
                 .font(.system(size: 11))
                 .foregroundColor(Color(.tertiaryLabel))
         }
@@ -134,7 +134,7 @@ struct JourneyTimetableView: View {
             guard !items.isEmpty else { return }
             selectedCell = TimetableCell(
                 id: "\(weekday)-\(slot.rawValue)",
-                titleKo: "\(JourneyData.weekdayLabel(weekday))요일 \(slot.labelKo) (\(slot.rangeLabel))",
+                titleKo: String(localized: "\(JourneyData.weekdayName(weekday)) \(slot.labelKo) (\(slot.rangeLabel))"),
                 items: items
             )
         } label: {
@@ -149,7 +149,7 @@ struct JourneyTimetableView: View {
 
                 if items.isEmpty {
                     // 지금 시간대인데 정규 일정이 없는 칸 — 아래 '요일이 없는 코스'로 유도
-                    Text(isNow ? "지금" : "–")
+                    (isNow ? Text("지금") : Text(verbatim: "–"))
                         .font(.system(size: isNow ? 9 : 10, weight: isNow ? .heavy : .regular))
                         .foregroundColor(isNow ? .red : Color(.quaternaryLabel))
                 } else {
@@ -176,6 +176,7 @@ struct JourneyTimetableView: View {
         }
         .buttonStyle(.plain)
         .disabled(items.isEmpty)
+        .accessibilityLabel(Text(verbatim: "\(JourneyData.weekdayName(weekday)) \(slot.labelKo)"))
     }
 
     // MARK: 요일이 없는 코스
@@ -224,6 +225,7 @@ struct JourneyTimetableView: View {
                                     }
                                 }
                                 .buttonStyle(.plain)
+                                .accessibilityLabel(Text(verbatim: "\(stop.time) \(stop.placeKo)"))
                             }
                         }
                     }
@@ -238,7 +240,7 @@ struct JourneyTimetableView: View {
         }
     }
 
-    private func sectionHeader(_ icon: String, _ title: String) -> some View {
+    private func sectionHeader(_ icon: String, _ title: LocalizedStringKey) -> some View {
         HStack(spacing: 6) {
             Image(systemName: icon)
                 .font(.system(size: 11))
@@ -288,7 +290,7 @@ struct JourneyTimetableView: View {
                                         launcher.start(stop)
                                     }
                                 } label: {
-                                    Text(progress.isDone(item.stop.id) ? "다시" : "연습")
+                                    (progress.isDone(item.stop.id) ? Text("다시") : Text("연습"))
                                         .font(.system(size: 11, weight: .bold))
                                         .foregroundColor(.white)
                                         .padding(.horizontal, 12)

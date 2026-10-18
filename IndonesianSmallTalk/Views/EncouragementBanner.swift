@@ -21,20 +21,20 @@ struct EncouragementBanner: View {
 
     private var title: String {
         switch tone {
-        case .phrase: return "직접 적는 이 시간이 학습이에요"
-        case .scenario: return "첫 마디 한 줄로 트리가 시작돼요"
-        case .reply: return "어떤 답이 나올 수 있을까 떠올려보세요"
+        case .phrase: return String(localized: "직접 적는 이 시간이 학습이에요")
+        case .scenario: return String(localized: "첫 마디 한 줄로 트리가 시작돼요")
+        case .reply: return String(localized: "어떤 답이 나올 수 있을까 떠올려보세요")
         }
     }
 
     private var body_text: String {
         switch tone {
         case .phrase:
-            return "한 글자씩 입력하면서 뇌가 그 표현을 '내 것'으로 만들어요. 천천히 적으셔도 괜찮습니다."
+            return String(localized: "한 글자씩 입력하면서 뇌가 그 표현을 '내 것'으로 만들어요. 천천히 적으셔도 괜찮습니다.")
         case .scenario:
-            return "직접 입력한 만큼 본인 머리에 남아요. 짧아도, 어색해도 일단 적고 시작하세요."
+            return String(localized: "직접 입력한 만큼 본인 머리에 남아요. 짧아도, 어색해도 일단 적고 시작하세요.")
         case .reply:
-            return "정답은 없어요. 가능한 답변을 떠올려 적는 그 과정 자체가 그 상황 학습이에요."
+            return String(localized: "정답은 없어요. 가능한 답변을 떠올려 적는 그 과정 자체가 그 상황 학습이에요.")
         }
     }
 
