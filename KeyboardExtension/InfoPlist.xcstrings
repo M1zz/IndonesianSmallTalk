@@ -1,90 +1,88 @@
 {
-  "sourceLanguage": "ko",
-  "strings": {
-    "CFBundleDisplayName": {
-      "comment": "Bundle display name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun Keyboard"
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Keyboard"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Teclado Malmun"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teclado Malmun"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keyboard Malmun"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Malmun"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun キーボード"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun キーボード"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "말문 키보드"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "말문 키보드"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun 键盘"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun 键盘"
           }
         }
       }
     },
-    "CFBundleName": {
-      "comment": "Bundle name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun Keyboard"
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Keyboard"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Teclado Malmun"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teclado Malmun"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keyboard Malmun"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Malmun"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun キーボード"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun キーボード"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "말문 키보드"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "말문 키보드"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun 键盘"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun 键盘"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

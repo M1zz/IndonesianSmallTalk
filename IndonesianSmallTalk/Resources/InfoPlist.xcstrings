@@ -1,174 +1,170 @@
 {
-  "sourceLanguage": "ko",
-  "strings": {
-    "CFBundleDisplayName": {
-      "comment": "Bundle display name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "말문"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "말문"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         }
       }
     },
-    "CFBundleName": {
-      "comment": "Bundle name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "말문"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "말문"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription": {
-      "comment": "Privacy - Microphone Usage Description",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun needs microphone access for voice conversation practice."
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Privacy - Microphone Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun needs microphone access for voice conversation practice."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun necesita acceso al micrófono para practicar conversaciones por voz."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun necesita acceso al micrófono para practicar conversaciones por voz."
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun memerlukan akses mikrofon untuk latihan percakapan dengan suara."
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun memerlukan akses mikrofon untuk latihan percakapan dengan suara."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "音声で会話を練習するために、マイクへのアクセスが必要です。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音声で会話を練習するために、マイクへのアクセスが必要です。"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "음성 대화 연습을 위해 마이크 접근이 필요합니다."
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음성 대화 연습을 위해 마이크 접근이 필요합니다."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "需要访问麦克风以进行语音对话练习。"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要访问麦克风以进行语音对话练习。"
           }
         }
       }
     },
-    "NSSpeechRecognitionUsageDescription": {
-      "comment": "Privacy - Speech Recognition Usage Description",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun needs speech recognition to understand what you say and check your pronunciation."
+    "NSSpeechRecognitionUsageDescription" : {
+      "comment" : "Privacy - Speech Recognition Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun needs speech recognition to understand what you say and check your pronunciation."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malmun necesita el reconocimiento de voz para entender lo que dices y revisar tu pronunciación."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun necesita el reconocimiento de voz para entender lo que dices y revisar tu pronunciación."
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Izin pengenalan ucapan diperlukan untuk mengenali kalimat yang diucapkan dan memeriksa pelafalan."
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izin pengenalan ucapan diperlukan untuk mengenali kalimat yang diucapkan dan memeriksa pelafalan."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "話した文を聞き取って発音を確認するために、音声認識の許可が必要です。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "話した文を聞き取って発音を確認するために、音声認識の許可が必要です。"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다."
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "需要语音识别权限，以识别你说的句子并检查发音。"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要语音识别权限，以识别你说的句子并检查发音。"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
