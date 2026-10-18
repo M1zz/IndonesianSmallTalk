@@ -1,40 +1,45 @@
-# 사노라면 — Indonesian Small Talk
+# 말문 — Malmun
 
-🇮🇩 인도네시아어 일상 스몰토크를 트리형 대화로 연습하는 iOS 앱.
+한 줄씩 트이는 외국어 회화. 갈래 있는 대화로 연습하고, 차에서는 귀로 연습하는 iOS 앱.
+(예전 이름: 사노라면 — 인도네시아어 전용 스몰토크 앱. 번들 ID 는 그대로라 기존 사용자는 업데이트로 이어진다.
+같은 구조였던 스픽플로우 앱의 상황별 회화·발음 연습·대본 보기·대화 가져오기·연습 기록을 여기로 옮겼다.)
 
 ## 지원 페이지
 
 **👉 https://m1zz.github.io/IndonesianSmallTalk/**
 
-문의·개인정보 처리방침·자주 묻는 질문은 위 지원 페이지를 참고해주세요.
+## 언어
+
+- **배우는 언어 6개**: 인도네시아어 · 영어 · 일본어 · 중국어 · 스페인어 · 한국어 (홈 맨 위 국기로 바꾼다)
+- **화면 언어 6개**: ko(원문) · en · ja · zh-Hans · es · id — `Resources/Localizable.xcstrings`, `InfoPlist.xcstrings`, `AppShortcuts.xcstrings`
+- 화면 언어와 같은 언어는 배울 언어 목록에서 빠진다. 내 표현·내 시나리오·단어장·공유 시나리오는 언어별로 따로 보인다.
 
 ## 주요 기능
 
-- **시나리오 트리 연습** — 분기형 대화, 긍/부정 폴라리티에 따른 점수와 코칭 팁
-- **텍스트·음성 두 가지 모드** — 텍스트 모드는 자동 TTS, 음성 모드는 STT 매칭
-- **내 표현 라이브러리** — 새로 배운 표현 저장·수정·따라말하기
-- **친구와 함께 보기** — CloudKit (`CKShare`) 기반 양방향 동기화 + 사일런트 푸시
-- **표현 키보드 익스텐션** — 한국어 보고 탭하면 인도네시아어 입력
-- **사용자 시나리오/응답 직접 추가** — 트리에 내 답변·새 스몰토크 추가
-- **스터디 트래킹** — 자주 연습한 표현 자동 정렬
+- **시나리오 트리 연습**: 분기형 대화, 긍/부정 폴라리티 점수, 코치 팁. 텍스트·음성 모드
+- **콘텐츠**: 인도네시아어는 스몰토크 5개 + 하루 코스 3개(18장면) + 출장 100단어. 6개 언어 모두 상황별 회화 53개
+- **퇴근길 모드** (`Drive/`): 화면 없이 소리로 진행. 뜻 → 딩 → 말해 볼 시간 → 정답(천천히·보통)
+  - 차량 버튼: 다음 곡 = 다음 문장, 이전 곡 = 한 번 더, 재생/멈춤
+  - CarPlay '지금 재생', Siri("말문 퇴근길 연습 시작"), 단축어 자동화(CarPlay 연결 시)
+  - CarPlay 화면의 앱 아이콘은 Apple 승인 후 → [docs/CARPLAY.md](docs/CARPLAY.md)
+- **연습 도구**: 발음 연습(점수·낱말 표시), 대본 보기(메신저 모양), 대화 가져오기(붙여넣기), 연습 기록(연속 일수)
+- **내 표현 · 단어장 · 표현 키보드 · 친구와 함께 보기(CloudKit) · AI 시나리오 생성**
+
+## 콘텐츠 파일
+
+- `Resources/Content/situations.<언어>.json`: 상황별 회화 (모든 화면 언어의 뜻 포함)
+- `Resources/Content/translations.<언어>.json`: 한국어로만 쓰인 인도네시아어 기본 콘텐츠의 다른 화면 언어 번역.
+  키 규칙은 `ContentKey`, 원문 뽑기는 `scripts/export_content_strings.swift`
 
 ## 빌드
 
 - Xcode 15+, iOS 17.0+ 타겟
-- 시뮬레이터에서 빌드만 하려면 추가 설정 불필요
-- 실기기 / CloudKit / 키보드 동작에는 다음 Capabilities 가 필요:
-  - **iCloud** (CloudKit)
-  - **App Groups** (`group.com.devkoan.IndonesianSmallTalk`)
-  - **Push Notifications**
-  - **Background Modes** → Remote notifications
+- 새 파일은 `python3 scripts/pbx_add.py <경로>` 로 프로젝트에 등록
+- 아이콘: `python3 scripts/make_app_icon.py` (AppIcon + 앱 안 로고 BrandMark)
+- 실기기 / CloudKit / 키보드 동작에 필요한 Capabilities: iCloud(CloudKit), App Groups(`group.com.devkoan.IndonesianSmallTalk`), Push Notifications, Background Modes(Remote notifications, Audio)
 
 ## 구조
 
-- `IndonesianSmallTalk/` — 메인 앱 (SwiftUI)
-- `KeyboardExtension/` — 표현 키보드 익스텐션 (UIKit)
-- `scripts/make_app_icon.py` — 아이콘 빌드 스크립트 (Pillow)
-- `docs/` — GitHub Pages 지원 페이지
-
-## 라이선스
-
-개인 학습 프로젝트.
+- `IndonesianSmallTalk/` 메인 앱 (SwiftUI): `App/` `Models/` `Stores/` `Services/` `Views/` `Drive/` `Resources/`
+- `KeyboardExtension/` 표현 키보드 (UIKit)
+- `docs/` GitHub Pages 지원 페이지
