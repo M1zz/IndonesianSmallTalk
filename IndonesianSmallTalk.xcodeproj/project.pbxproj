@@ -84,6 +84,13 @@
 		FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */; };
 		F9B376843D0AD3E933313A57 /* translations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC758A670B7CE2F1F8ABC48 /* translations.es.json */; };
 		F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */; };
+		FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDC313F8F4410256B94754 /* PracticeHistory.swift */; };
+		FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */; };
+		F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */; };
+		F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */; };
+		F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */; };
+		F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */; };
+		FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +194,13 @@
 		F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.en.json"; sourceTree = "<group>"; };
 		FDC758A670B7CE2F1F8ABC48 /* translations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.es.json"; sourceTree = "<group>"; };
 		F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveModeView.swift"; sourceTree = "<group>"; };
+		FDBDC313F8F4410256B94754 /* PracticeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory.swift"; sourceTree = "<group>"; };
+		F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImporter.swift"; sourceTree = "<group>"; };
+		F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistoryView.swift"; sourceTree = "<group>"; };
+		F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeToolsSection.swift"; sourceTree = "<group>"; };
+		F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PronunciationPracticeView.swift"; sourceTree = "<group>"; };
+		F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImportView.swift"; sourceTree = "<group>"; };
+		F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScriptView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +245,8 @@
 				A047 /* JourneyData.swift */,
 				F8D83286092105437F1826CA /* AppLanguage.swift */,
 				F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */,
+				FDBDC313F8F4410256B94754 /* PracticeHistory.swift */,
+				F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +298,11 @@
 				A048 /* JourneyView.swift */,
 				A049 /* JourneyTimetableView.swift */,
 				FEB81844C92327399855D38B /* LanguagePickerView.swift */,
+				F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */,
+				F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */,
+				F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */,
+				F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */,
+				F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -534,6 +555,13 @@
 				F0415D5FE36423E831F9A75E /* CarPlaySceneDelegate.swift in Sources */,
 				F8E78B032C19FE70D526F1AC /* DriveIntents.swift in Sources */,
 				F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */,
+				FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */,
+				FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */,
+				F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */,
+				F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */,
+				F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */,
+				F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */,
+				FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
