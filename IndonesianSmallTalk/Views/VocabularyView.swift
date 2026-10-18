@@ -64,7 +64,7 @@ struct VocabularyView: View {
                                         store.toggleLearned(id: word.id)
                                     }
                                 } label: {
-                                    Label(word.isLearned ? "미학습" : "완료",
+                                    Label(word.isLearned ? LocalizedStringKey("미학습") : LocalizedStringKey("완료"),
                                           systemImage: word.isLearned ? "minus.circle" : "checkmark.circle")
                                 }
                                 .tint(word.isLearned ? .orange : .green)
@@ -101,9 +101,9 @@ struct VocabularyView: View {
             Image(systemName: "character.book.closed.fill")
                 .font(.system(size: 48))
                 .foregroundColor(Color(.tertiaryLabel))
-            Text("단어장이 비어있어요")
+            Text("아직 단어가 없어요")
                 .font(.headline)
-            Text("모르는 단어를 추가해서\n플래시카드로 학습해보세요")
+            Text("\(AppLanguage.learning.localizedName) 단어를 + 로 직접 추가해서\n플래시카드로 학습해 보세요")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -140,6 +140,7 @@ struct WordRow: View {
                     .animation(.spring(response: 0.3), value: word.isLearned)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(word.isLearned ? LocalizedStringKey("미학습으로 표시") : LocalizedStringKey("학습 완료로 표시"))
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
@@ -191,6 +192,7 @@ struct WordRow: View {
                             )
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel("듣기")
                 }
                 if word.studyCount > 0 {
                     Text("\(word.studyCount)회")
@@ -229,7 +231,8 @@ struct CategoryBadge: View {
 
     var body: some View {
         let c = Self.color(for: category)
-        Text(category)
+        // 저장은 한국어 키, 화면에는 화면 언어 이름으로
+        Text(VocabWord.categoryName(category))
             .font(.system(size: 9, weight: .bold))
             .foregroundColor(c)
             .padding(.horizontal, 5)
@@ -269,9 +272,9 @@ struct TierBadge: View {
 
     private var label: String {
         switch tier {
-        case 1: return "필수"
-        case 2: return "편의"
-        case 3: return "심화"
+        case 1: return String(localized: "필수")
+        case 2: return String(localized: "편의")
+        case 3: return String(localized: "심화")
         default: return "—"
         }
     }
@@ -358,7 +361,7 @@ struct FlashcardView: View {
                             withAnimation { isFlipped.toggle() }
                         }
 
-                        Text(isFlipped ? "알고 있나요?" : "탭하면 뜻이 나와요")
+                        Text(isFlipped ? LocalizedStringKey("알고 있나요?") : LocalizedStringKey("탭하면 뜻이 나와요"))
                             .font(.system(size: 13))
                             .foregroundColor(Color(.tertiaryLabel))
                             .padding(.top, 16)
@@ -388,6 +391,7 @@ struct FlashcardView: View {
                         Image(systemName: autoSpeak ? "speaker.wave.2.fill" : "speaker.slash.fill")
                             .foregroundColor(autoSpeak ? .blue : Color(.tertiaryLabel))
                     }
+                    .accessibilityLabel(autoSpeak ? LocalizedStringKey("자동 발음 끄기") : LocalizedStringKey("자동 발음 켜기"))
                 }
             }
             .onAppear {
@@ -429,7 +433,7 @@ struct FlashcardView: View {
                 ZStack(alignment: .leading) {
                     Capsule().fill(Color(.systemFill)).frame(height: 5)
                     Capsule()
-                        .fill(LinearGradient(colors: [.blue, .cyan], startPoint: .leading, endPoint: .trailing))
+                        .fill(LinearGradient(colors: [Brand.blue, Brand.deep], startPoint: .leading, endPoint: .trailing))
                         .frame(width: geo.size.width * CGFloat(currentIndex) / CGFloat(max(words.count, 1)), height: 5)
                         .animation(.spring(response: 0.4), value: currentIndex)
                 }
@@ -538,6 +542,7 @@ struct FlashcardView: View {
                                             .background(Circle().fill(Color.blue.opacity(0.12)))
                                     }
                                     .buttonStyle(.plain)
+                                    .accessibilityLabel("예문 듣기")
                                 }
                                 Text(ex.korean)
                                     .font(.system(size: 12))
@@ -652,9 +657,9 @@ struct FlashcardView: View {
             Spacer()
 
             VStack(spacing: 10) {
-                Text(knownCount == words.count ? "🎉" : knownCount > words.count / 2 ? "⭐" : "💪")
+                Text(verbatim: knownCount == words.count ? "🎉" : knownCount > words.count / 2 ? "⭐" : "💪")
                     .font(.system(size: 64))
-                Text(knownCount == words.count ? "완벽해요!" : "잘했어요!")
+                Text(knownCount == words.count ? LocalizedStringKey("완벽해요!") : LocalizedStringKey("잘했어요!"))
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                 Text("총 \(words.count)개 중 \(knownCount)개를 알았어요")
                     .font(.system(size: 15))
@@ -689,8 +694,9 @@ struct FlashcardView: View {
 
 private struct FlashcardResultCard: View {
     let icon: String
-    let value: String
-    let label: String
+    let value: LocalizedStringKey
+    let label: LocalizedStringKey
+
     let color: Color
 
     var body: some View {

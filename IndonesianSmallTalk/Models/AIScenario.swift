@@ -42,9 +42,9 @@ struct ConversationNodeData: Codable, Identifiable {
 struct VocabItem: Codable, Identifiable {
     var id: UUID = UUID()
     let indonesian: String
-    let romanization: String      // 한글 발음
-    let korean: String
-    let category: String          // 동사 / 명사 / 형용사 / 부사 / 숙어
+    let romanization: String      // 발음 (한국어 화면은 한글, 일본어·중국어는 로마자, 그 밖은 빈 값)
+    let korean: String            // 뜻 (화면 언어)
+    let category: String          // 품사 (화면 언어, AI 가 붙임)
 
     enum CodingKeys: String, CodingKey {
         case id, indonesian, romanization, korean, category
@@ -69,8 +69,8 @@ struct GrammarExample: Codable {
 struct GrammarPoint: Codable, Identifiable {
     var id: UUID = UUID()
     let number: Int
-    let titleId: String           // Indonesian pattern title
-    let titleKo: String           // Korean explanation title
+    let titleId: String           // 배우는 언어로 쓴 패턴 이름
+    let titleKo: String           // 화면 언어로 쓴 패턴 이름
     let explanation: String
     let examples: [GrammarExample]
 
@@ -92,8 +92,9 @@ struct GrammarPoint: Codable, Identifiable {
 
 struct AIScenario: Identifiable, Codable {
     let id: UUID
-    let title: String             // Bahasa Indonesia
-    let titleKo: String           // 한국어
+    let title: String             // 배우는 언어
+    let titleKo: String           // 화면 언어 (뜻)
+
     let description: String
     let emoji: String
     let difficultyRaw: String

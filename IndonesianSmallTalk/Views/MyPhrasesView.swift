@@ -42,15 +42,18 @@ struct MyPhrasesView: View {
                         } label: {
                             Image(systemName: "text.bubble")
                         }
+                        .accessibilityLabel("예문 대화")
                         Button {
                             let words = vocabStore.unlearnedWords.isEmpty ? vocabStore.words : vocabStore.unlearnedWords
                             if !words.isEmpty { showFlashcard = true }
                         } label: {
                             Image(systemName: "rectangle.on.rectangle")
                         }
+                        .accessibilityLabel("플래시카드")
                         Button { showAddVocab = true } label: {
                             Image(systemName: "plus")
                         }
+                        .accessibilityLabel("단어 추가")
                     }
                 }
             }
@@ -162,6 +165,7 @@ private struct PhraseRow: View {
                         .foregroundColor(.blue)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("듣기")
             }
             if !phrase.context.isEmpty {
                 Text(phrase.context)
@@ -209,9 +213,9 @@ struct PolarityChip: View {
     var body: some View {
         if polarity != .neutral {
             HStack(spacing: 2) {
-                Text(polarity == .positive ? "+" : "−")
+                Text(verbatim: polarity == .positive ? "+" : "−")
                     .font(.system(size: 11, weight: .black))
-                Text(polarity == .positive ? "긍정" : "부정")
+                Text(polarity == .positive ? LocalizedStringKey("긍정") : LocalizedStringKey("부정"))
                     .font(.system(size: 9, weight: .bold))
             }
             .foregroundColor(polarity == .positive ? Color(red: 0.2, green: 0.55, blue: 0.1) : Color(red: 0.85, green: 0.4, blue: 0.0))
@@ -289,8 +293,9 @@ struct PhrasePracticeView: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(!speech.permissionGranted && permissionAsked)
+                .accessibilityLabel(speech.isListening ? LocalizedStringKey("멈추기") : LocalizedStringKey("따라 말하기"))
 
-                Text(speech.isListening ? "듣는 중…" : "버튼을 눌러 따라 말해보세요")
+                Text(speech.isListening ? LocalizedStringKey("듣는 중…") : LocalizedStringKey("버튼을 눌러 따라 말해보세요"))
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .padding(.bottom, 24)
@@ -346,7 +351,8 @@ struct PhrasePracticeView: View {
 
     private func scoreBadge(score: Double) -> some View {
         let percent = Int((score * 100).rounded())
-        let (label, color): (String, Color) = {
+        let (label, color): (LocalizedStringKey, Color) = {
+
             switch percent {
             case 80...: return ("아주 좋아요!", .green)
             case 50..<80: return ("좋아요", .blue)

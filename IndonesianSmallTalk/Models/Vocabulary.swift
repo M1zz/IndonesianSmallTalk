@@ -10,10 +10,10 @@ enum FormalityLevel: String, Codable, CaseIterable {
 
     var label: String {
         switch self {
-        case .formal:  return "격식"
-        case .neutral: return "중립"
-        case .casual:  return "캐주얼"
-        case .slang:   return "슬랭"
+        case .formal:  return String(localized: "격식")
+        case .neutral: return String(localized: "중립")
+        case .casual:  return String(localized: "캐주얼")
+        case .slang:   return String(localized: "슬랭")
         }
     }
 }

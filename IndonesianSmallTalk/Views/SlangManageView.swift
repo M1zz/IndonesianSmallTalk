@@ -51,6 +51,7 @@ struct SlangManageView: View {
                 Button(action: { showAdd = true }) {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("슬랭 추가")
             }
         }
         .sheet(isPresented: $showAdd) {
@@ -126,7 +127,7 @@ private struct EditSlangView: View {
                         .font(.caption2)
                 }
             }
-            .navigationTitle(editing == nil ? "슬랭 추가" : "슬랭 수정")
+            .navigationTitle(editing == nil ? LocalizedStringKey("슬랭 추가") : LocalizedStringKey("슬랭 수정"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
