@@ -24,6 +24,20 @@ struct AddVocabularyView: View {
         _examples     = State(initialValue: editing?.examples ?? [])
     }
 
+    private var learningName: String { AppLanguage.learning.localizedName }
+
+    /// 입력 칸 예시 — 배우는 언어 낱말 (배우는 언어 원문이라 번역하지 않는다)
+    private var sampleWord: String {
+        switch AppLanguage.learning {
+        case .indonesian: return "sibuk"
+        case .english: return "busy"
+        case .japanese: return "忙しい"
+        case .chinese: return "忙"
+        case .spanish: return "ocupado"
+        case .korean: return "바쁘다"
+        }
+    }
+
     private var canSave: Bool {
         !indonesian.trimmingCharacters(in: .whitespaces).isEmpty &&
         !korean.trimmingCharacters(in: .whitespaces).isEmpty
@@ -32,28 +46,31 @@ struct AddVocabularyView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("인도네시아어 *") {
-                    TextField("예: sibuk", text: $indonesian)
+                Section("\(learningName) *") {
+                    TextField("예: \(sampleWord)", text: $indonesian)
                         .autocorrectionDisabled()
                 }
 
-                Section("한국어 뜻 *") {
+                Section("뜻 *") {
                     TextField("예: 바쁘다", text: $korean)
                 }
 
                 Section {
-                    TextField("예: 시북", text: $romanization)
+                    TextField(AppLanguage.showsHangulRomanization ? LocalizedStringKey("예: 시북") : LocalizedStringKey("발음 표기"),
+                              text: $romanization)
                 } header: {
                     Text("발음 (선택)")
                 } footer: {
-                    Text("한글로 발음을 적어두면 학습에 도움이 돼요.")
+                    Text(AppLanguage.showsHangulRomanization
+                         ? LocalizedStringKey("한글로 발음을 적어두면 학습에 도움이 돼요.")
+                         : LocalizedStringKey("로마자 등으로 발음을 적어두면 학습에 도움이 돼요."))
                         .font(.caption2)
                 }
 
                 Section("카테고리") {
                     Picker("카테고리", selection: $category) {
                         ForEach(VocabWord.categories, id: \.self) { cat in
-                            Text(cat).tag(cat)
+                            Text(VocabWord.categoryName(cat)).tag(cat)
                         }
                     }
                     .pickerStyle(.menu)
@@ -76,14 +93,14 @@ struct AddVocabularyView: View {
                 Section {
                     ForEach(examples.indices, id: \.self) { idx in
                         VStack(alignment: .leading, spacing: 6) {
-                            TextField("인도네시아어 예문",
+                            TextField("\(learningName) 예문",
                                       text: Binding(
                                         get: { examples[idx].indonesian },
                                         set: { examples[idx].indonesian = $0 }
                                       ))
                                 .autocorrectionDisabled()
                                 .font(.system(size: 14, weight: .medium))
-                            TextField("한국어 뜻",
+                            TextField("뜻",
                                       text: Binding(
                                         get: { examples[idx].korean },
                                         set: { examples[idx].korean = $0 }
@@ -110,13 +127,14 @@ struct AddVocabularyView: View {
                 }
 
                 Section {
-                    TextField("예: 주로 'lagi sibuk'으로 사용해요", text: $notes, axis: .vertical)
+                    TextField("예: 자주 쓰는 표현, 비슷한 말", text: $notes, axis: .vertical)
                         .lineLimit(1...4)
                 } header: {
                     Text("메모 (선택)")
                 }
             }
-            .navigationTitle(editing != nil ? "단어 수정" : "단어 추가")
+            .navigationTitle(editing != nil ? LocalizedStringKey("단어 수정") : LocalizedStringKey("단어 추가"))
+
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

@@ -96,6 +96,7 @@ struct VocabDialogView: View {
                         Image(systemName: autoSpeak ? "speaker.wave.2.fill" : "speaker.slash.fill")
                             .foregroundColor(autoSpeak ? .blue : Color(.tertiaryLabel))
                     }
+                    .accessibilityLabel(autoSpeak ? LocalizedStringKey("자동 발음 끄기") : LocalizedStringKey("자동 발음 켜기"))
                 }
             }
             .onDisappear { speech.stopSpeaking() }
@@ -121,7 +122,7 @@ struct VocabDialogView: View {
                 ZStack(alignment: .leading) {
                     Capsule().fill(Color(.systemFill)).frame(height: 5)
                     Capsule()
-                        .fill(LinearGradient(colors: [.blue, .cyan], startPoint: .leading, endPoint: .trailing))
+                        .fill(LinearGradient(colors: [Brand.blue, Brand.deep], startPoint: .leading, endPoint: .trailing))
                         .frame(width: geo.size.width * CGFloat(currentWordIndex) / CGFloat(max(words.count, 1)), height: 5)
                         .animation(.spring(response: 0.4), value: currentWordIndex)
                 }
@@ -168,6 +169,7 @@ struct VocabDialogView: View {
                     .background(Circle().fill(Color.blue.opacity(0.12)))
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("듣기")
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -185,7 +187,7 @@ struct VocabDialogView: View {
         let bubbleColor = FormalityBadge.color(for: level)
         let isCasual = (level == .casual || level == .slang)
         // 격식·중립 → 왼쪽 (상대방/공식), 캐주얼·슬랭 → 오른쪽 (나/친구)
-        let speakerLabel = isCasual ? "나" : (level == .formal ? "상대방·격식" : "예시")
+        let speakerLabel = isCasual ? String(localized: "나") : (level == .formal ? String(localized: "상대방·격식") : String(localized: "예시"))
 
         return HStack(alignment: .top, spacing: 8) {
             if isCasual { Spacer(minLength: 40) }
@@ -246,8 +248,9 @@ struct VocabDialogView: View {
                             .symbolEffect(.bounce, value: isSpeaking)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel("예문 듣기")
 
-                    Text(revealedTranslations.contains(index) ? "탭하면 번역 숨김" : "탭하면 한국어 번역")
+                    Text(revealedTranslations.contains(index) ? LocalizedStringKey("탭하면 번역 숨김") : LocalizedStringKey("탭하면 뜻 보기"))
                         .font(.system(size: 9))
                         .foregroundColor(Color(.tertiaryLabel))
                 }
@@ -294,7 +297,7 @@ struct VocabDialogView: View {
                 Button(action: revealNextExample) {
                     HStack {
                         Image(systemName: "text.bubble.fill")
-                        Text(visibleExampleCount == 0 ? "첫 예문 보기" : "다음 예문")
+                        Text(visibleExampleCount == 0 ? LocalizedStringKey("첫 예문 보기") : LocalizedStringKey("다음 예문"))
                             .fontWeight(.semibold)
                     }
                     .foregroundColor(.white)
@@ -306,7 +309,8 @@ struct VocabDialogView: View {
             } else {
                 Button(action: advanceToNextWord) {
                     HStack {
-                        Text(atLastWord ? "학습 완료" : "다음 단어")
+                        Text(atLastWord ? LocalizedStringKey("학습 완료") : LocalizedStringKey("다음 단어"))
+
                             .fontWeight(.semibold)
                         Image(systemName: atLastWord ? "checkmark" : "arrow.right")
                     }

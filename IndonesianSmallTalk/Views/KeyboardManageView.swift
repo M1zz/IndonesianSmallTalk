@@ -8,6 +8,7 @@ struct KeyboardManageView: View {
     @State private var direction: InputDirection = KeyboardSettings.inputDirection
     @State private var showSlangManage = false
 
+    private var learningName: String { AppLanguage.learning.localizedName }
     private var visibleCount: Int { store.phrases.filter { $0.inKeyboard }.count }
     private var hiddenCount: Int { store.phrases.count - visibleCount }
 
@@ -34,28 +35,30 @@ struct KeyboardManageView: View {
                     .font(.caption2)
             }
 
-            Section {
-                slangToggleRow
-                if slangEnabled {
-                    Button(action: { showSlangManage = true }) {
-                        HStack(spacing: 6) {
-                            Image(systemName: "pencil.circle.fill")
-                                .foregroundColor(.pink)
-                            Text("슬랭 관리 (\(slangStore.pairs.count))")
-                                .font(.system(size: 13, weight: .medium))
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+            if SlangPair.isAvailable {
+                Section {
+                    slangToggleRow
+                    if slangEnabled {
+                        Button(action: { showSlangManage = true }) {
+                            HStack(spacing: 6) {
+                                Image(systemName: "pencil.circle.fill")
+                                    .foregroundColor(.pink)
+                                Text("슬랭 관리 (\(slangStore.pairs.count))")
+                                    .font(.system(size: 13, weight: .medium))
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
+                } header: {
+                    Text("슬랭")
+                } footer: {
+                    Text("한국어 젠지어와 비슷한 의미·톤의 인도네시아어 슬랭. 추가/수정/삭제하면 키보드에 즉시 반영돼요.")
+                        .font(.caption2)
                 }
-            } header: {
-                Text("슬랭")
-            } footer: {
-                Text("한국어 젠지어와 비슷한 의미·톤의 인도네시아어 슬랭. 추가/수정/삭제하면 키보드에 즉시 반영돼요.")
-                    .font(.caption2)
             }
 
             if store.phrases.isEmpty {
@@ -92,7 +95,7 @@ struct KeyboardManageView: View {
             DeveloperContactSection()
         }
         .listStyle(.insetGrouped)
-        .searchable(text: $search, prompt: "한국어 / 인도네시아어 검색")
+        .searchable(text: $search, prompt: Text("\(learningName) / 뜻 검색"))
         .navigationTitle("키보드 관리")
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $showSlangManage) {
@@ -102,8 +105,8 @@ struct KeyboardManageView: View {
 
     private var directionPicker: some View {
         Picker("입력 방향", selection: $direction) {
-            Text("한 → 인 (한국어 보고 인도네시아어 입력)").tag(InputDirection.kor2ind)
-            Text("인 → 한 (인도네시아어 보고 한국어 입력)").tag(InputDirection.ind2kor)
+            Text("뜻 보고 \(learningName) 입력").tag(InputDirection.kor2ind)
+            Text("\(learningName) 보고 뜻 입력").tag(InputDirection.ind2kor)
         }
         .pickerStyle(.inline)
         .labelsHidden()

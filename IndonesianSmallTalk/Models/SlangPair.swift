@@ -14,6 +14,12 @@ struct SlangPair: Identifiable, Codable, Equatable, Hashable {
         self.indonesian = indonesian
         self.note = note
     }
+
+    /// 한국어 젠지어 → 인도네시아어 슬랭이라, 한국어 화면에서 인도네시아어를 배울 때만 쓴다.
+    /// 그 밖의 조합에서는 슬랭 화면·키보드 슬랭을 모두 숨긴다.
+    static var isAvailable: Bool {
+        AppLanguage.native == .korean && AppLanguage.learning == .indonesian
+    }
 }
 
 enum BuiltInSlang {

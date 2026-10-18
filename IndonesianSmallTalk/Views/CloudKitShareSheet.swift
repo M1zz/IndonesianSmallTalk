@@ -28,7 +28,7 @@ struct CloudKitShareSheet: UIViewControllerRepresentable {
         }
 
         func itemTitle(for csc: UICloudSharingController) -> String? {
-            csc.share?[CKShare.SystemFieldKey.title] as? String ?? "스몰토크 공유"
+            csc.share?[CKShare.SystemFieldKey.title] as? String ?? String(localized: "스몰토크 공유")
         }
 
         func cloudSharingControllerDidSaveShare(_ csc: UICloudSharingController) {

@@ -1,6 +1,6 @@
 import UIKit
 
-/// "사노라면" 표현 키보드 — 한국어 뜻을 보고 탭하면 인도네시아어가 입력된다.
+/// "말문" 표현 키보드 — 뜻을 보고 탭하면 배우는 언어 문장이 입력된다.
 class KeyboardViewController: UIInputViewController {
 
     enum Filter: Int { case all, positive, negative, slang }
@@ -98,10 +98,13 @@ class KeyboardViewController: UIInputViewController {
         filterStack.spacing = 6
         filterStack.distribution = .fill
         filterStack.alignment = .center
-        filterStack.addArrangedSubview(makeFilterButton(title: "전체", filter: .all))
-        filterStack.addArrangedSubview(makeFilterButton(title: "긍정", filter: .positive))
-        filterStack.addArrangedSubview(makeFilterButton(title: "부정", filter: .negative))
-        filterStack.addArrangedSubview(makeFilterButton(title: "슬랭", filter: .slang))
+        filterStack.addArrangedSubview(makeFilterButton(title: String(localized: "전체"), filter: .all))
+        filterStack.addArrangedSubview(makeFilterButton(title: String(localized: "긍정"), filter: .positive))
+        filterStack.addArrangedSubview(makeFilterButton(title: String(localized: "부정"), filter: .negative))
+        // 슬랭은 한국어 화면 + 인도네시아어 학습일 때만
+        if SlangPair.isAvailable {
+            filterStack.addArrangedSubview(makeFilterButton(title: String(localized: "슬랭"), filter: .slang))
+        }
 
         topBar.addArrangedSubview(directionButton)
         topBar.addArrangedSubview(UIView())
@@ -126,7 +129,7 @@ class KeyboardViewController: UIInputViewController {
         view.addSubview(collectionView)
 
         // 빈 상태 라벨
-        emptyLabel.text = "메인 앱에서 표현을 먼저 저장해주세요"
+        emptyLabel.text = String(localized: "메인 앱에서 표현을 먼저 저장해주세요")
         emptyLabel.font = .systemFont(ofSize: 12)
         emptyLabel.textColor = .secondaryLabel
         emptyLabel.textAlignment = .center
@@ -144,9 +147,11 @@ class KeyboardViewController: UIInputViewController {
         bottomBar.isLayoutMarginsRelativeArrangement = true
 
         nextKeyboardButton = makeBarButton(systemName: "globe")
+        nextKeyboardButton.accessibilityLabel = String(localized: "다음 키보드")
         nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
 
         backspaceButton = makeBarButton(systemName: "delete.left")
+        backspaceButton.accessibilityLabel = String(localized: "지우기")
         backspaceButton.addTarget(self, action: #selector(didTapBackspace), for: .touchUpInside)
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressBackspace(_:)))
         longPress.minimumPressDuration = 0.4
@@ -243,7 +248,17 @@ class KeyboardViewController: UIInputViewController {
 
     private func styleDirectionButton(_ b: UIButton) {
         guard var config = b.configuration else { return }
-        config.title = direction.symbol
+        // 화면 언어 ↔ 배우는 언어를 국기로 (예: 🇰🇷 → 🇮🇩)
+        let native = AppLanguage.native.flag
+        let learning = AppLanguage.learning.flag
+        switch direction {
+        case .kor2ind:
+            config.title = "\(native) → \(learning)"
+            b.accessibilityLabel = String(localized: "뜻 보고 \(AppLanguage.learning.localizedName) 입력")
+        case .ind2kor:
+            config.title = "\(learning) → \(native)"
+            b.accessibilityLabel = String(localized: "\(AppLanguage.learning.localizedName) 보고 뜻 입력")
+        }
         config.baseBackgroundColor = UIColor(white: 1, alpha: 0.85)
         config.baseForegroundColor = .label
         config.background.strokeColor = .separator
@@ -282,7 +297,7 @@ class KeyboardViewController: UIInputViewController {
     private func loadPhrases() {
         let phrases = SharedPhraseReader.loadPhrases()
         let phraseItems: [Item] = phrases.map { .phrase($0) }
-        let slangItems: [Item] = KeyboardSettings.slangEnabled
+        let slangItems: [Item] = (KeyboardSettings.slangEnabled && SlangPair.isAvailable)
             ? SharedSlangReader.loadAll().map { .slang($0) }
             : []
         items = phraseItems + slangItems
@@ -303,8 +318,8 @@ class KeyboardViewController: UIInputViewController {
         }
         emptyLabel.isHidden = !filtered.isEmpty
         emptyLabel.text = items.isEmpty
-            ? "메인 앱에서 표현을 먼저 저장해주세요"
-            : "이 분류에 해당하는 항목이 없어요"
+            ? String(localized: "메인 앱에서 표현을 먼저 저장해주세요")
+            : String(localized: "이 분류에 해당하는 항목이 없어요")
         collectionView.reloadData()
     }
 
@@ -472,11 +487,12 @@ final class ChipCell: UICollectionViewCell {
         let secondary: String
         switch direction {
         case .kor2ind:
-            primary = item.korean.isEmpty ? "(번역 없음)" : item.korean
+            primary = item.korean.isEmpty ? String(localized: "(뜻 없음)") : item.korean
             secondary = item.indonesian
         case .ind2kor:
             primary = item.indonesian
-            secondary = item.korean.isEmpty ? "(번역 없음)" : item.korean
+            secondary = item.korean.isEmpty ? String(localized: "(뜻 없음)") : item.korean
+
         }
         primaryLabel.text = primary
         if let sub = item.sub, !sub.isEmpty {

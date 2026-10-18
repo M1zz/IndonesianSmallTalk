@@ -5,8 +5,8 @@ enum Polarity: String, Codable, CaseIterable {
 
     var label: String {
         switch self {
-        case .positive: return "Positif +"
-        case .negative: return "Negatif −"
+        case .positive: return String(localized: "긍정 +")
+        case .negative: return String(localized: "부정 −")
         case .neutral:  return ""
         }
     }

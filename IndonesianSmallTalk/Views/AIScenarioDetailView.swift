@@ -40,6 +40,7 @@ struct AIScenarioDetailView: View {
                     Image(systemName: "arrow.triangle.branch")
                         .font(.system(size: 14))
                 }
+                .accessibilityLabel("대화 트리 보기")
             }
         }
         .sheet(isPresented: $showTreeView) {
@@ -64,6 +65,7 @@ struct AIScenarioDetailView: View {
                     .clipShape(Circle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("음성으로 연습")
 
             Button(action: { showPractice = true }) {
                 Label("대화 연습 시작", systemImage: "bubble.left.and.right.fill")
@@ -87,11 +89,17 @@ struct AIScenarioDetailView: View {
 struct VocabularyStudyView: View {
     let items: [VocabItem]
 
-    private let categories = ["전체", "동사", "명사", "형용사", "부사", "숙어"]
-    @State private var filter = "전체"
+    /// 분류는 AI 가 화면 언어로 붙여 주므로, 고정 목록 대신 실제 단어들의 분류를 나온 순서대로 쓴다.
+    private var categories: [String] {
+        var seen = Set<String>()
+        return items.map(\.category).filter { !$0.isEmpty && seen.insert($0).inserted }
+    }
+    /// nil = 전체
+    @State private var filter: String?
 
     private var filtered: [VocabItem] {
-        filter == "전체" ? items : items.filter { $0.category == filter }
+        guard let filter else { return items }
+        return items.filter { $0.category == filter }
     }
 
     var body: some View {
@@ -100,20 +108,9 @@ struct VocabularyStudyView: View {
                 // 카테고리 필터
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
+                        categoryChip(Text("전체"), active: filter == nil) { filter = nil }
                         ForEach(categories, id: \.self) { cat in
-                            let active = filter == cat
-                            Button(action: { filter = cat }) {
-                                Text(cat)
-                                    .font(.system(size: 13, weight: active ? .semibold : .regular))
-                                    .padding(.horizontal, 14)
-                                    .padding(.vertical, 7)
-                                    .background(active ? Color.blue : Color(.systemBackground))
-                                    .foregroundColor(active ? .white : .primary)
-                                    .clipShape(Capsule())
-                                    .overlay(Capsule().stroke(
-                                        active ? Color.blue : Color(.separator), lineWidth: 1))
-                            }
-                            .buttonStyle(.plain)
+                            categoryChip(Text(cat), active: filter == cat) { filter = cat }
                         }
                     }
                     .padding(.horizontal, 16)
@@ -132,6 +129,21 @@ struct VocabularyStudyView: View {
             .padding(.top, 14)
         }
     }
+
+    private func categoryChip(_ label: Text, active: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            label
+                .font(.system(size: 13, weight: active ? .semibold : .regular))
+                .padding(.horizontal, 14)
+                .padding(.vertical, 7)
+                .background(active ? Color.blue : Color(.systemBackground))
+                .foregroundColor(active ? .white : .primary)
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(
+                    active ? Color.blue : Color(.separator), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
 }
 
 struct VocabCard: View {
@@ -140,7 +152,7 @@ struct VocabCard: View {
 
     var body: some View {
         ZStack {
-            // 앞면 — 인도네시아어
+            // 앞면 — 배우는 언어
             cardFace(
                 main: item.indonesian,
                 sub: item.romanization,
@@ -150,7 +162,7 @@ struct VocabCard: View {
             .opacity(flipped ? 0 : 1)
             .rotation3DEffect(.degrees(flipped ? -90 : 0), axis: (x: 0, y: 1, z: 0))
 
-            // 뒷면 — 한국어
+            // 뒷면 — 뜻
             cardFace(
                 main: item.korean,
                 sub: item.indonesian,

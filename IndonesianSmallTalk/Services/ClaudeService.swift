@@ -11,11 +11,11 @@ enum ClaudeError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .missingAPIKey:          return "API 키를 입력해주세요."
-        case .networkError(let e):    return "네트워크 오류: \(e.localizedDescription)"
-        case .apiError(let c, _):     return "API 오류 (\(c)). API 키를 확인해주세요."
-        case .emptyResponse:          return "빈 응답을 받았어요. 다시 시도해주세요."
-        case .invalidJSON(let s):     return "응답 파싱 실패: \(s.prefix(120))…"
+        case .missingAPIKey:          return String(localized: "API 키를 입력해주세요.")
+        case .networkError(let e):    return String(localized: "네트워크 오류: \(e.localizedDescription)")
+        case .apiError(let c, _):     return String(localized: "API 오류 (\(c)). API 키를 확인해주세요.")
+        case .emptyResponse:          return String(localized: "빈 응답을 받았어요. 다시 시도해주세요.")
+        case .invalidJSON(let s):     return String(localized: "응답 파싱 실패: \(String(s.prefix(120)))…")
         }
     }
 }
@@ -86,37 +86,104 @@ actor ClaudeService {
 
     private let apiURL = URL(string: "https://api.anthropic.com/v1/messages")!
 
+    // MARK: - Prompt language
+
+    /// 프롬프트에 넣을 언어 설정 — 배우는 언어로 대화를 만들고, 뜻·설명은 화면 언어로.
+    private struct PromptLanguages {
+        let learning: AppLanguage
+        let native: AppLanguage
+
+        static var current: PromptLanguages { PromptLanguages(learning: AppLanguage.learning, native: AppLanguage.native) }
+
+        /// 프롬프트용 영어 언어 이름
+        static func englishName(_ lang: AppLanguage) -> String {
+            switch lang {
+            case .korean: return "Korean"
+            case .english: return "English"
+            case .japanese: return "Japanese"
+            case .chinese: return "Simplified Chinese (Mandarin)"
+            case .spanish: return "Spanish"
+            case .indonesian: return "Indonesian (Bahasa Indonesia)"
+            }
+        }
+
+        var learningName: String { Self.englishName(learning) }
+        var nativeName: String { Self.englishName(native) }
+
+        /// romanization 필드에 무엇을 넣을지 — 한국어 화면이면 한글 발음, 아니면 언어에 맞는 로마자(라틴 문자 언어는 빈 문자열)
+        var romanizationSample: String {
+            if native == .korean { return "Hangul pronunciation" }
+            switch learning {
+            case .japanese: return "romaji"
+            case .chinese: return "pinyin"
+            case .korean: return "romanization"
+            default: return ""
+            }
+        }
+
+        var romanizationRule: String {
+            if native == .korean {
+                return "romanization: Korean phonetics ONLY (Hangul) of the \(learningName) sentence, e.g. Indonesian \"Siapa kabar?\" → \"시아빠 까바르?\". NOT Latin romanization"
+            }
+            switch learning {
+            case .japanese: return "romanization: Hepburn romaji of the Japanese sentence (e.g. \"Ogenki desu ka?\")"
+            case .chinese: return "romanization: Hanyu Pinyin with tone marks (e.g. \"Nǐ hǎo ma?\")"
+            case .korean: return "romanization: Revised Romanization of Korean (e.g. \"Annyeonghaseyo?\")"
+            default: return "romanization: always an empty string \"\" (\(learningName) is written in Latin script)"
+            }
+        }
+
+        /// 프롬프트 맨 앞의 역할 설명과 필드 의미
+        var roleAndFields: String {
+            """
+            The user is a native \(nativeName) speaker learning \(learningName).
+            Field meanings (keep these exact JSON key names even though they mention Indonesian/Korean):
+            - "indonesian": the sentence/word in \(learningName) (the language being learned)
+            - "korean": its meaning written in \(nativeName)
+            - "title": the topic in \(learningName); "titleKo": the topic in \(nativeName)
+            - "description", "category", "titleKo", "explanation": written in \(nativeName)
+            - "titleId": the grammar pattern name in \(learningName)
+            - "coachTipLabel", "coachTipText", "coachTipWhy": short coaching notes written in \(nativeName)
+            - "difficulty": a fixed code, not translated
+            """
+        }
+    }
+
     // Used when generating from a text topic description
-    private let topicSystemPrompt = """
-    You are an Indonesian language learning content creator for Korean speakers. \
+    private func topicSystemPrompt(_ lang: PromptLanguages) -> String {
+        let r = lang.romanizationSample
+        return """
+    You are a \(lang.learningName) language learning content creator for \(lang.nativeName) speakers. \
     Given a topic/request, generate a complete learning package as a SINGLE JSON object.
+
+    \(lang.roleAndFields)
 
     Output this exact JSON structure (no markdown, no extra text, ONLY JSON):
     {
-      "title": "Topic in Bahasa Indonesia",
-      "titleKo": "주제 (한국어)",
-      "description": "한 줄 설명",
+      "title": "Topic in \(lang.learningName)",
+      "titleKo": "Topic in \(lang.nativeName)",
+      "description": "one-line description in \(lang.nativeName)",
       "emoji": "single emoji",
       "difficulty": "Pemula",
       "rootNode": {
         "id": "xx_root",
         "speakerIsMe": false,
-        "indonesian": "opening sentence (other speaker starts)",
-        "korean": "한국어 번역",
-        "romanization": "한글 발음",
+        "indonesian": "opening sentence in \(lang.learningName) (other speaker starts)",
+        "korean": "meaning in \(lang.nativeName)",
+        "romanization": "\(r)",
         "polarity": "neutral",
-        "coachTipLabel": "Strategi Pembuka",
-        "coachTipText": "explanation in Indonesian",
-        "coachTipWhy": "reason in Indonesian",
+        "coachTipLabel": "technique name in \(lang.nativeName)",
+        "coachTipText": "explanation in \(lang.nativeName)",
+        "coachTipWhy": "reason in \(lang.nativeName)",
         "children": [
           {
             "id": "xx_a",
             "speakerIsMe": true,
             "indonesian": "my positive reply",
             "korean": "...",
-            "romanization": "한글 발음",
+            "romanization": "\(r)",
             "polarity": "positive",
-            "coachTipLabel": "Teknik",
+            "coachTipLabel": "...",
             "coachTipText": "...",
             "coachTipWhy": "...",
             "children": [
@@ -239,15 +306,15 @@ actor ClaudeService {
         ]
       },
       "vocabulary": [
-        { "indonesian": "word", "romanization": "한글 발음", "korean": "뜻", "category": "동사" }
+        { "indonesian": "word in \(lang.learningName)", "romanization": "\(r)", "korean": "meaning in \(lang.nativeName)", "category": "part of speech in \(lang.nativeName)" }
       ],
       "grammarPoints": [
         {
           "number": 1,
-          "titleId": "Pattern name",
-          "titleKo": "패턴 이름",
-          "explanation": "한국어로 설명",
-          "examples": [{ "indonesian": "example", "korean": "한국어" }]
+          "titleId": "Pattern name in \(lang.learningName)",
+          "titleKo": "Pattern name in \(lang.nativeName)",
+          "explanation": "explanation in \(lang.nativeName)",
+          "examples": [{ "indonesian": "example in \(lang.learningName)", "korean": "meaning in \(lang.nativeName)" }]
         }
       ]
     }
@@ -261,47 +328,53 @@ actor ClaudeService {
     - At depth 3: 2 branches under at least one depth-2 node (showing choice at that point)
     - Total nodes: 20–35
     - Strictly alternate speakers every level: speakerIsMe flips at every depth
-    - difficulty: "Pemula", "Menengah", or "Mahir"
+    - All dialogue lines ("indonesian" fields) must be natural, everyday \(lang.learningName)
+    - difficulty: "Pemula" (beginner), "Menengah" (intermediate), or "Mahir" (advanced) — use these exact codes
     - Node IDs: short prefix + letter/number (e.g. "rs_root", "rs_a", "rs_a1", "rs_a1a", "rs_a1a1")
     - polarity: "positive" = good/ideal, "negative" = awkward/less ideal, "neutral" = opener/factual
     - coachTip: provide for depth-1 nodes (my first replies) and 1–2 key strategy nodes; null elsewhere
-    - romanization: Korean phonetics ONLY (한글), e.g. "시아빠 까바르?" NOT Latin romanization
+    - \(lang.romanizationRule)
     - vocabulary: 15–20 items covering key words in the tree
-    - grammarPoints: 3–4 key grammar patterns
+    - grammarPoints: 3–4 key grammar patterns, explained in \(lang.nativeName)
     - Output ONLY valid JSON. No markdown, no explanation, no extra text.
     """
+    }
 
     // Used when converting pasted HTML from a learning website
-    private let htmlSystemPrompt = """
-    You are an Indonesian language learning content creator for Korean speakers. \
-    The user will paste text extracted from an Indonesian language learning website. \
+    private func htmlSystemPrompt(_ lang: PromptLanguages) -> String {
+        let r = lang.romanizationSample
+        return """
+    You are a \(lang.learningName) language learning content creator for \(lang.nativeName) speakers. \
+    The user will paste text extracted from a \(lang.learningName) language learning website. \
     Extract the actual conversation dialogues, vocabulary, and grammar patterns from the content \
     and convert them into a structured learning package as a SINGLE JSON object.
 
+    \(lang.roleAndFields)
+
     Output this exact JSON structure (no markdown, no extra text, ONLY JSON):
     {
-      "title": "Topic in Bahasa Indonesia",
-      "titleKo": "주제 (한국어)",
-      "description": "한 줄 설명",
+      "title": "Topic in \(lang.learningName)",
+      "titleKo": "Topic in \(lang.nativeName)",
+      "description": "one-line description in \(lang.nativeName)",
       "emoji": "single emoji",
       "difficulty": "Pemula",
       "rootNode": {
         "id": "xx_root",
         "speakerIsMe": false,
         "indonesian": "opening sentence from content",
-        "korean": "한국어 번역",
-        "romanization": "한글 발음",
+        "korean": "meaning in \(lang.nativeName)",
+        "romanization": "\(r)",
         "polarity": "neutral",
-        "coachTipLabel": "Strategi Pembuka",
-        "coachTipText": "explanation in Indonesian",
-        "coachTipWhy": "reason in Indonesian",
+        "coachTipLabel": "technique name in \(lang.nativeName)",
+        "coachTipText": "explanation in \(lang.nativeName)",
+        "coachTipWhy": "reason in \(lang.nativeName)",
         "children": [
           {
             "id": "xx_a",
             "speakerIsMe": true,
             "indonesian": "...",
             "korean": "...",
-            "romanization": "한글 발음",
+            "romanization": "\(r)",
             "polarity": "positive",
             "coachTipLabel": null,
             "coachTipText": null,
@@ -311,15 +384,15 @@ actor ClaudeService {
         ]
       },
       "vocabulary": [
-        { "indonesian": "word", "romanization": "한글 발음", "korean": "뜻", "category": "동사" }
+        { "indonesian": "word in \(lang.learningName)", "romanization": "\(r)", "korean": "meaning in \(lang.nativeName)", "category": "part of speech in \(lang.nativeName)" }
       ],
       "grammarPoints": [
         {
           "number": 1,
-          "titleId": "Pattern name",
-          "titleKo": "패턴 이름",
-          "explanation": "한국어로 설명",
-          "examples": [{ "indonesian": "example", "korean": "한국어" }]
+          "titleId": "Pattern name in \(lang.learningName)",
+          "titleKo": "Pattern name in \(lang.nativeName)",
+          "explanation": "explanation in \(lang.nativeName)",
+          "examples": [{ "indonesian": "example in \(lang.learningName)", "korean": "meaning in \(lang.nativeName)" }]
         }
       ]
     }
@@ -333,43 +406,46 @@ actor ClaudeService {
     - Total nodes: 20–35
     - Strictly alternate speakers: speakerIsMe flips at every depth
     - Extract REAL dialogue lines from source — do not invent sentences not found in the content
-    - difficulty: "Pemula", "Menengah", or "Mahir" based on content complexity
+    - difficulty: "Pemula" (beginner), "Menengah" (intermediate), or "Mahir" (advanced) — use these exact codes, based on content complexity
     - Node IDs: short prefix + letter/number (e.g. "mk_root", "mk_a", "mk_a1", "mk_a1a", "mk_a1a1")
     - polarity: "positive" = good/ideal, "negative" = awkward/less ideal, "neutral" = opener/factual
     - coachTip: provide for depth-1 nodes and 1–2 key strategy nodes; null elsewhere
-    - romanization: Korean phonetics ONLY (한글), NOT Latin romanization
+    - \(lang.romanizationRule)
     - vocabulary: 15–20 items from source content
-    - grammarPoints: 3–4 key grammar patterns
+    - grammarPoints: 3–4 key grammar patterns, explained in \(lang.nativeName)
     - Output ONLY valid JSON. No markdown, no explanation.
     """
+    }
 
     // MARK: - Public API
 
     func generate(prompt: String, apiKey: String) async throws -> AIScenario {
+        let lang = PromptLanguages.current
         let body: [String: Any] = [
             "model": "claude-opus-4-7",
             "max_tokens": 16000,
-            "system": topicSystemPrompt,
-            "messages": [["role": "user", "content": "Generate a scenario for: \(prompt)"]]
+            "system": topicSystemPrompt(lang),
+            "messages": [["role": "user", "content": "Generate a \(lang.learningName) scenario for: \(prompt)"]]
         ]
-        return try await sendRequest(body: body, apiKey: apiKey, userPrompt: prompt)
+        return try await sendRequest(body: body, apiKey: apiKey, userPrompt: prompt, language: lang.learning)
     }
 
     func generateFromHTML(html: String, apiKey: String) async throws -> AIScenario {
+        let lang = PromptLanguages.current
         let stripped = stripHTML(html)
         let truncated = String(stripped.prefix(12000))
         let body: [String: Any] = [
             "model": "claude-opus-4-7",
             "max_tokens": 16000,
-            "system": htmlSystemPrompt,
-            "messages": [["role": "user", "content": "Convert this Indonesian learning content:\n\n\(truncated)"]]
+            "system": htmlSystemPrompt(lang),
+            "messages": [["role": "user", "content": "Convert this \(lang.learningName) learning content:\n\n\(truncated)"]]
         ]
-        return try await sendRequest(body: body, apiKey: apiKey, userPrompt: "HTML 콘텐츠")
+        return try await sendRequest(body: body, apiKey: apiKey, userPrompt: String(localized: "HTML 콘텐츠"), language: lang.learning)
     }
 
     // MARK: - Private
 
-    private func sendRequest(body: [String: Any], apiKey: String, userPrompt: String) async throws -> AIScenario {
+    private func sendRequest(body: [String: Any], apiKey: String, userPrompt: String, language: AppLanguage) async throws -> AIScenario {
         guard !apiKey.trimmingCharacters(in: .whitespaces).isEmpty else {
             throw ClaudeError.missingAPIKey
         }
@@ -405,19 +481,21 @@ actor ClaudeService {
 
         do {
             let raw = try JSONDecoder().decode(RawScenario.self, from: jsonData)
-            return raw.toAIScenario(userPrompt: userPrompt)
+            var scenario = raw.toAIScenario(userPrompt: userPrompt)
+            scenario.languageCode = language.rawValue
+            return scenario
         } catch let decodeError as DecodingError {
             // Surface the exact field that failed so we can debug prompt issues
             let context: String
             switch decodeError {
             case .keyNotFound(let key, _):
-                context = "필드 누락: '\(key.stringValue)'"
+                context = String(localized: "필드 누락: '\(key.stringValue)'")
             case .typeMismatch(_, let ctx):
-                context = "타입 불일치: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))"
+                context = String(localized: "타입 불일치: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))")
             case .valueNotFound(_, let ctx):
-                context = "값 없음: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))"
+                context = String(localized: "값 없음: \(ctx.codingPath.map(\.stringValue).joined(separator: "."))")
             case .dataCorrupted(let ctx):
-                context = "데이터 손상: \(ctx.debugDescription)"
+                context = String(localized: "데이터 손상: \(ctx.debugDescription)")
             @unknown default:
                 context = decodeError.localizedDescription
             }

@@ -142,7 +142,7 @@ final class CloudKitService {
         }
 
         let share = CKShare(rootRecord: record)
-        share[CKShare.SystemFieldKey.title] = "스몰토크 공유: \(record["title"] as? String ?? "")" as CKRecordValue
+        share[CKShare.SystemFieldKey.title] = String(localized: "스몰토크 공유: \(record["title"] as? String ?? "")") as CKRecordValue
         share.publicPermission = .none
 
         let (results, _) = try await privateDB.modifyRecords(saving: [record, share], deleting: [])

@@ -16,10 +16,11 @@ struct GenerateScenarioView: View {
     enum InputMode { case topic, html }
     enum GenState { case idle, loading, success, error }
 
+    // 누르면 입력칸에 그대로 들어가므로 화면 언어로 옮긴 문장을 쓴다
     private let suggestions = [
-        "병원에서 진료 받기", "마트에서 장 보기", "택시 타고 목적지 말하기",
-        "은행에서 환전하기", "호텔 체크인하기", "친구와 주말 계획 짜기",
-        "미용실에서 머리 자르기", "약국에서 약 사기", "길 물어보기"
+        String(localized: "병원에서 진료 받기"), String(localized: "마트에서 장 보기"), String(localized: "택시 타고 목적지 말하기"),
+        String(localized: "은행에서 환전하기"), String(localized: "호텔 체크인하기"), String(localized: "친구와 주말 계획 짜기"),
+        String(localized: "미용실에서 머리 자르기"), String(localized: "약국에서 약 사기"), String(localized: "길 물어보기")
     ]
 
     var body: some View {
@@ -83,7 +84,7 @@ struct GenerateScenarioView: View {
         VStack(alignment: .leading, spacing: 8) {
             Label("배우고 싶은 상황을 입력하세요", systemImage: "sparkles")
                 .font(.system(size: 15, weight: .semibold))
-            Text("Claude AI가 대화 트리 + 단어장 + 문법 노트를 한 번에 만들어줍니다.")
+            Text("Claude AI가 \(AppLanguage.learning.localizedName) 대화 트리 + 단어장 + 문법 노트를 한 번에 만들어줍니다.")
                 .font(.system(size: 13))
                 .foregroundColor(.secondary)
 
@@ -208,7 +209,7 @@ struct GenerateScenarioView: View {
                     Image(systemName: "key.fill")
                         .font(.system(size: 11))
                         .foregroundColor(apiKey.isEmpty ? .orange : .green)
-                    Text(apiKey.isEmpty ? "Anthropic API 키 설정 필요" : "API 키 설정됨")
+                    Text(apiKey.isEmpty ? LocalizedStringKey("Anthropic API 키 설정 필요") : LocalizedStringKey("API 키 설정됨"))
                         .font(.system(size: 13, weight: .medium))
                         .foregroundColor(apiKey.isEmpty ? .orange : .green)
                     Spacer()
@@ -248,7 +249,7 @@ struct GenerateScenarioView: View {
             case .idle, .error:
                 Button(action: generate) {
                     Label(
-                        mode == .topic ? "AI로 시나리오 생성" : "HTML에서 시나리오 추출",
+                        mode == .topic ? LocalizedStringKey("AI로 시나리오 생성") : LocalizedStringKey("HTML에서 시나리오 추출"),
                         systemImage: mode == .topic ? "sparkles" : "doc.text.magnifyingglass"
                     )
                     .font(.system(size: 16, weight: .semibold))
@@ -272,8 +273,8 @@ struct GenerateScenarioView: View {
                 VStack(spacing: 10) {
                     ProgressView().scaleEffect(1.3)
                     Text(mode == .topic
-                         ? "Claude가 시나리오를 만들고 있어요…"
-                         : "HTML에서 대화를 추출하고 있어요…")
+                         ? LocalizedStringKey("Claude가 시나리오를 만들고 있어요…")
+                         : LocalizedStringKey("HTML에서 대화를 추출하고 있어요…"))
                         .font(.system(size: 14))
                         .foregroundColor(.secondary)
                     Text("대화 트리 + 단어장 + 문법 노트 생성 중")
@@ -389,8 +390,9 @@ struct GenerateScenarioView: View {
 
 private struct StatBadge: View {
     let icon: String
-    let value: String
-    let label: String
+    let value: LocalizedStringKey
+    let label: LocalizedStringKey
+
 
     var body: some View {
         HStack(spacing: 3) {

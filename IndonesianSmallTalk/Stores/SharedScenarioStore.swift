@@ -18,7 +18,7 @@ final class SharedScenarioStore: ObservableObject {
         let status = await service.accountStatus()
         iCloudAvailable = (status == .available)
         guard iCloudAvailable else {
-            lastError = "iCloud 로그인이 필요합니다"
+            lastError = String(localized: "iCloud 로그인이 필요합니다")
             print("[SharedScenarioStore] iCloud 미로그인 (status=\(status.rawValue))")
             return
         }
@@ -33,7 +33,7 @@ final class SharedScenarioStore: ObservableObject {
             print("[SharedScenarioStore] private fetch OK: \(myScenarios.count)")
         } catch {
             print("[SharedScenarioStore] private fetch 실패: \(error)")
-            lastError = "내 시나리오 불러오기 실패: \(error.localizedDescription)"
+            lastError = String(localized: "내 시나리오 불러오기 실패: \(error.localizedDescription)")
         }
 
         do {
@@ -42,7 +42,7 @@ final class SharedScenarioStore: ObservableObject {
             print("[SharedScenarioStore] shared fetch OK: \(friendScenarios.count)")
         } catch {
             print("[SharedScenarioStore] shared fetch 실패: \(error)")
-            lastError = "친구 시나리오 불러오기 실패: \(error.localizedDescription)"
+            lastError = String(localized: "친구 시나리오 불러오기 실패: \(error.localizedDescription)")
         }
 
         if myScenarios.isEmpty && friendScenarios.isEmpty && lastError == nil {
