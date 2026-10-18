@@ -146,7 +146,7 @@ struct ContentView: View {
     }
 
     private func addMenuRow(
-        icon: String, title: String, subtitle: String,
+        icon: String, title: LocalizedStringKey, subtitle: LocalizedStringKey,
         color: Color, action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {

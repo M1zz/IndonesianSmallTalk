@@ -32,9 +32,6 @@ final class DriveSession: NSObject, ObservableObject {
     @Published private(set) var linesDone = 0
     @Published private(set) var startedAt: Date?
 
-    /// 한 장면을 다 들었을 때 (연습 기록용)
-    var onLessonFinished: ((DriveLesson, _ lines: Int) -> Void)?
-
     private var lessons: [DriveLesson] = []
     private var lessonIndex = 0
     private var lineIndex = 0
@@ -229,7 +226,10 @@ final class DriveSession: NSObject, ObservableObject {
 
     private func finishLesson(completed: Bool) {
         if completed, let current = lessons[safe: lessonIndex] {
-            onLessonFinished?(current, current.lines.count)
+            PracticeHistoryStore.shared.record(
+                language: language, scenarioKey: current.id, title: current.title,
+                mode: .drive, lines: current.lines.count
+            )
         }
         lessonIndex = (lessonIndex + 1) % max(lessons.count, 1)
         lineIndex = 0

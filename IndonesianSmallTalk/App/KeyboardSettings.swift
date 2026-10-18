@@ -2,16 +2,16 @@ import Foundation
 
 /// App Group UserDefaults 로 메인 앱과 키보드 익스텐션이 공유하는 설정.
 /// 키보드가 어느 방향으로 입력하는지.
-/// - kor2ind: 사용자가 한국어를 보고 탭 → 인도네시아어 입력 (한→인)
-/// - ind2kor: 사용자가 인도네시아어를 보고 탭 → 한국어 입력 (인→한)
+/// - kor2ind: 뜻(화면 언어)을 보고 탭 → 배우는 언어 입력 (이름은 예전 저장값과 맞추려고 그대로 둔다)
+/// - ind2kor: 배우는 언어를 보고 탭 → 뜻 입력
 enum InputDirection: String, Codable {
     case kor2ind
     case ind2kor
 
     var symbol: String {
         switch self {
-        case .kor2ind: return "한 → 인"
-        case .ind2kor: return "인 → 한"
+        case .kor2ind: return "\(AppLanguage.native.flag) → \(AppLanguage.learning.flag)"
+        case .ind2kor: return "\(AppLanguage.learning.flag) → \(AppLanguage.native.flag)"
         }
     }
 

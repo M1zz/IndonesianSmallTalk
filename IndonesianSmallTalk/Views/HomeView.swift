@@ -86,6 +86,7 @@ struct HomeView: View {
                 sharedSection
                 myScenarioSection
                 aiScenarioSection
+                PracticeToolsSection()
                 builtinSection
                 situationSection
             }
@@ -147,7 +148,7 @@ struct HomeView: View {
                         ProgressView()
                             .scaleEffect(1.4)
                             .tint(.white)
-                        Text(isSharingUserScenario ? "iCloud에 업로드 중…" : "공유를 해제하는 중…")
+                        (isSharingUserScenario ? Text("iCloud에 업로드 중…") : Text("공유를 해제하는 중…"))
                             .font(.system(size: 14, weight: .medium))
                             .foregroundColor(.white)
                     }
@@ -450,7 +451,7 @@ struct HomeView: View {
             isStoppingShare = true
             defer { isStoppingShare = false }
             let ok = await sharedScenarioStore.stopSharing(id: userScenario.id)
-            if !ok { shareError = sharedScenarioStore.lastError ?? "공유 해제에 실패했어요." }
+            if !ok { shareError = sharedScenarioStore.lastError ?? String(localized: "공유 해제에 실패했어요.") }
         }
     }
 
@@ -479,7 +480,7 @@ struct HomeView: View {
 
             let ok = await sharedScenarioStore.add(shared)
             guard ok else {
-                shareError = sharedScenarioStore.lastError ?? "iCloud 저장에 실패했어요."
+                shareError = sharedScenarioStore.lastError ?? String(localized: "iCloud 저장에 실패했어요.")
                 return
             }
 
@@ -643,11 +644,11 @@ struct ScenarioCard: View {
                                 .fixedSize()
                             switch effectiveBadge {
                             case .userAdded:
-                                badgeChip(text: "내가 만든", color: .purple)
+                                badgeChip(text: String(localized: "내가 만든"), color: .purple)
                             case .sharedByMe:
-                                badgeChip(text: "내가 공유", color: .blue, icon: "person.2.fill")
+                                badgeChip(text: String(localized: "내가 공유"), color: .blue, icon: "person.2.fill")
                             case .sharedByFriend:
-                                badgeChip(text: "친구가 공유", color: Color(red: 0.55, green: 0.35, blue: 0.85), icon: "person.2.fill")
+                                badgeChip(text: String(localized: "친구가 공유"), color: Color(red: 0.55, green: 0.35, blue: 0.85), icon: "person.2.fill")
                             case .none:
                                 EmptyView()
                             }
@@ -687,7 +688,7 @@ struct ScenarioCard: View {
             if let onAddReply {
                 Button(action: onAddReply) {
                     Label(
-                        scenario.root.speaker == .me ? "상대방 대답 추가하기" : "내 대답 추가하기",
+                        scenario.root.speaker == .me ? String(localized: "상대방 대답 추가하기") : String(localized: "내 대답 추가하기"),
                         systemImage: "plus.bubble"
                     )
                 }

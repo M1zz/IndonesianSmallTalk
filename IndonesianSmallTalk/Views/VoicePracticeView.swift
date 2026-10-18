@@ -44,7 +44,7 @@ struct VoicePracticeView: View {
         }
         .navigationBarHidden(true)
         .navigationDestination(isPresented: $showResult) {
-            ResultView(session: session, onRestart: {
+            ResultView(session: session, mode: .voice, onRestart: {
                 session.reset()
                 showResult = false
                 phase = .partnerSpeaking

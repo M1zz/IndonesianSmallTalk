@@ -2,8 +2,11 @@ import SwiftUI
 
 struct ResultView: View {
     @ObservedObject var session: PracticeSession
+    /// 연습 기록에 남길 방식 (텍스트/음성)
+    var mode: PracticeRecord.Mode = .text
     let onRestart: () -> Void
     @Environment(\.dismiss) private var dismiss
+    @State private var recorded = false
     @State private var showTree = false
     @State private var animateScore = false
 
@@ -27,6 +30,20 @@ struct ResultView: View {
     }
 
     var body: some View {
+        content
+            .onAppear {
+                // 결과 화면이 처음 뜰 때 한 번만 기록
+                guard !recorded else { return }
+                recorded = true
+                PracticeHistoryStore.shared.record(
+                    scenario: session.scenario, mode: mode,
+                    score: Int((positiveRatio * 100).rounded()),
+                    lines: session.currentPath.count
+                )
+            }
+    }
+
+    private var content: some View {
         ScrollView {
             VStack(spacing: 20) {
                 // ── 결과 헤더

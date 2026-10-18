@@ -229,7 +229,7 @@ struct DriveModeView: View {
                     HStack {
                         Text("말 빠르기")
                         Spacer()
-                        Text(rate < 0.8 ? "천천히" : rate > 1.0 ? "빠르게" : "보통")
+                        (rate < 0.8 ? Text("천천히") : rate > 1.0 ? Text("빠르게") : Text("보통"))
                             .foregroundColor(.secondary)
                     }
                     Slider(value: $rate, in: 0.6...1.2, step: 0.05)
@@ -238,7 +238,7 @@ struct DriveModeView: View {
                     HStack {
                         Text("말해 볼 시간")
                         Spacer()
-                        Text(gap < 0.9 ? "짧게" : gap > 1.3 ? "넉넉히" : "보통")
+                        (gap < 0.9 ? Text("짧게") : gap > 1.3 ? Text("넉넉히") : Text("보통"))
                             .foregroundColor(.secondary)
                     }
                     Slider(value: $gap, in: 0.6...2.0, step: 0.1)
@@ -351,7 +351,7 @@ struct DriveEntryCard: View {
                     .frame(width: 48, height: 48)
                     .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Brand.glow))
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(session.isPlaying ? "퇴근길 모드 듣는 중" : "퇴근길 모드")
+                    (session.isPlaying ? Text("퇴근길 모드 듣는 중") : Text("퇴근길 모드"))
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.primary)
                     Text(session.isPlaying ? (session.lesson?.title ?? "") : String(localized: "차에 연결하고 귀로만 연습해요"))
