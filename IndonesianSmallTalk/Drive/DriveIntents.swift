@@ -26,6 +26,40 @@ struct PauseDriveIntent: AudioPlaybackIntent {
     }
 }
 
+/// "말문 계속" — 멈춘 자리에서 이어서
+struct ResumeDriveIntent: AudioPlaybackIntent {
+    static var title: LocalizedStringResource = "퇴근길 연습 계속"
+
+    @MainActor
+    func perform() async throws -> some IntentResult {
+        let session = DriveSession.shared
+        if session.isActive { session.play() } else { session.start() }
+        return .result()
+    }
+}
+
+/// "말문 다음" — 다음 문장
+struct NextLineIntent: AudioPlaybackIntent {
+    static var title: LocalizedStringResource = "다음 문장"
+
+    @MainActor
+    func perform() async throws -> some IntentResult {
+        DriveSession.shared.next()
+        return .result()
+    }
+}
+
+/// "말문 다시" — 지금 문장 한 번 더
+struct RepeatLineIntent: AudioPlaybackIntent {
+    static var title: LocalizedStringResource = "한 번 더 듣기"
+
+    @MainActor
+    func perform() async throws -> some IntentResult {
+        DriveSession.shared.previous()
+        return .result()
+    }
+}
+
 struct MalmunShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
@@ -37,6 +71,24 @@ struct MalmunShortcuts: AppShortcutsProvider {
             ],
             shortTitle: "퇴근길 연습",
             systemImageName: "car.fill"
+        )
+        AppShortcut(
+            intent: ResumeDriveIntent(),
+            phrases: ["\(.applicationName) 계속", "\(.applicationName) 이어서"],
+            shortTitle: "이어서 듣기",
+            systemImageName: "play.fill"
+        )
+        AppShortcut(
+            intent: NextLineIntent(),
+            phrases: ["\(.applicationName) 다음", "\(.applicationName) 다음 문장"],
+            shortTitle: "다음 문장",
+            systemImageName: "forward.end.fill"
+        )
+        AppShortcut(
+            intent: RepeatLineIntent(),
+            phrases: ["\(.applicationName) 다시", "\(.applicationName) 한 번 더"],
+            shortTitle: "한 번 더",
+            systemImageName: "gobackward"
         )
         AppShortcut(
             intent: PauseDriveIntent(),

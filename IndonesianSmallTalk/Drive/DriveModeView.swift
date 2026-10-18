@@ -1,3 +1,4 @@
+import AppIntents
 import SwiftUI
 
 /// 퇴근길 모드 화면. 출발 전에 고르고 누르면, 그다음은 소리와 운전대 버튼으로 진행된다.
@@ -7,7 +8,10 @@ struct DriveModeView: View {
     @AppStorage(DriveSettings.rateKey) private var rate = 0.9
     @AppStorage(DriveSettings.gapKey) private var gap = 1.0
     @AppStorage(DriveSettings.repeatKey) private var repeatTwice = true
+    @AppStorage(DriveSettings.voiceKey) private var voiceOn = true
+    @AppStorage(DriveSettings.guideSeenKey) private var guideSeen = false
     @State private var showGuide = false
+    @State private var voiceDenied = false
     /// 소스별 장면 수 (화면이 뜰 때 한 번 센다 — 그릴 때마다 세면 무겁다)
     @State private var counts: [DriveSource: Int] = [:]
 
@@ -33,6 +37,11 @@ struct DriveModeView: View {
         .navigationBarTitleDisplayMode(.large)
         .sheet(isPresented: $showGuide) { DriveGuideSheet() }
         .onAppear {
+            // 처음 열면 차에서 쓰는 법(자동 시작·목소리 조작)을 한 번 보여 준다.
+            if !guideSeen {
+                guideSeen = true
+                showGuide = true
+            }
             counts = Dictionary(uniqueKeysWithValues: DriveSource.allCases.map { ($0, DriveContent.lessons(for: $0).count) })
         }
     }
@@ -73,10 +82,38 @@ struct DriveModeView: View {
             .frame(maxWidth: .infinity, minHeight: 110, alignment: .topLeading)
             .accessibilityElement(children: .combine)
 
-            if session.isActive {
+            if session.phase == .yourTurn, session.voiceActive {
                 HStack(spacing: 6) {
-                    Image(systemName: "checkmark.circle.fill")
-                    Text("오늘 \(session.linesDone)문장")
+                    Image(systemName: "waveform")
+                        .symbolEffect(.variableColor.iterative)
+                    Text(session.heardText.isEmpty ? String(localized: "듣고 있어요…") : session.heardText)
+                        .lineLimit(2)
+                }
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(Brand.glow)
+            } else if let result = session.lastResult {
+                resultBadge(result)
+            }
+
+            if session.isActive {
+                HStack(spacing: 12) {
+                    Label {
+                        Text("오늘 \(session.linesDone)문장")
+                    } icon: {
+                        Image(systemName: "checkmark.circle.fill")
+                    }
+                    if session.voiceActive {
+                        Label {
+                            Text("맞힌 문장 \(session.correctCount)")
+                        } icon: {
+                            Image(systemName: "star.fill")
+                        }
+                        Label {
+                            Text("목소리 조작 켜짐")
+                        } icon: {
+                            Image(systemName: "mic.fill")
+                        }
+                    }
                 }
                 .font(.system(size: 12, weight: .medium))
                 .foregroundColor(Brand.glow)
@@ -110,6 +147,26 @@ struct DriveModeView: View {
     }
 
     @ViewBuilder
+    private func resultBadge(_ result: DriveSession.AttemptResult) -> some View {
+        let (label, icon, color): (LocalizedStringKey, String, Color) = {
+            switch result {
+            case .good: return ("좋아요!", "hand.thumbsup.fill", .green)
+            case .close: return ("거의 맞았어요", "checkmark.circle", Brand.glow)
+            case .missed: return ("정답을 듣고 따라 해 보세요", "ear", .white.opacity(0.8))
+            }
+        }()
+        HStack(spacing: 6) {
+            Image(systemName: icon)
+            Text(label)
+            if !session.heardText.isEmpty, result != .good {
+                Text("· \(session.heardText)").lineLimit(1).opacity(0.7)
+            }
+        }
+        .font(.system(size: 13, weight: .semibold))
+        .foregroundColor(color)
+    }
+
+    @ViewBuilder
     private var phaseBadge: some View {
         let (label, icon, color): (LocalizedStringKey, String, Color) = {
             switch session.phase {
@@ -138,7 +195,7 @@ struct DriveModeView: View {
             controlButton(icon: "gobackward", label: "한 번 더", size: 64) { session.previous() }
                 .disabled(!session.isActive)
             Button {
-                if session.isActive { session.toggle() } else { session.start(source) }
+                if session.isActive { session.toggle() } else { Task { await startWithPermission() } }
             } label: {
                 Image(systemName: session.isPlaying ? "pause.fill" : "play.fill")
                     .font(.system(size: 38, weight: .bold))
@@ -166,6 +223,15 @@ struct DriveModeView: View {
                 .accessibilityLabel(Text("끝내기"))
             }
         }
+    }
+
+    /// 목소리 조작이 켜져 있으면 처음 한 번 마이크·음성 인식 허락을 받고 시작한다.
+    private func startWithPermission() async {
+        if voiceOn, DriveVoiceListener.needsPermission {
+            let ok = await DriveVoiceListener.requestPermission()
+            if !ok { voiceDenied = true }
+        }
+        session.start(source)
     }
 
     private func controlButton(icon: String, label: LocalizedStringKey, size: CGFloat, action: @escaping () -> Void) -> some View {
@@ -249,6 +315,22 @@ struct DriveModeView: View {
                     Slider(value: $gap, in: 0.6...2.0, step: 0.1)
                 }
                 Toggle("정답을 한 번 더 듣기", isOn: $repeatTwice)
+                VStack(alignment: .leading, spacing: 4) {
+                    Toggle("목소리로 조작", isOn: $voiceOn)
+                        .onChange(of: voiceOn) { _, on in
+                            guard on, DriveVoiceListener.needsPermission else { return }
+                            Task { voiceDenied = !(await DriveVoiceListener.requestPermission()) }
+                        }
+                    Text("말해 볼 차례에만 폰 마이크로 들어요. 맞게 말하면 알려 주고, \"다음\" \"다시\" \"천천히\" \"그만\" 을 알아들어요. 들은 말은 기기 밖으로 보내지 않아요.")
+                        .font(.system(size: 12))
+                        .foregroundColor(.secondary)
+                    if voiceOn, voiceDenied || (!DriveVoiceListener.isAuthorized && !DriveVoiceListener.needsPermission) {
+                        Button("마이크·음성 인식 허락하러 가기") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                        }
+                        .font(.system(size: 12, weight: .semibold))
+                    }
+                }
             }
             .font(.system(size: 15))
             .padding(16)
@@ -265,10 +347,10 @@ struct DriveModeView: View {
                     .frame(width: 44, height: 44)
                     .background(RoundedRectangle(cornerRadius: 12).fill(Brand.glow.opacity(0.15)))
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("차에 타면 저절로 시작하게")
+                    Text("차에서 쓰는 법")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundColor(.primary)
-                    Text("CarPlay·블루투스 연결 · Siri · 단축어 자동화")
+                    Text("연결하면 저절로 시작 · 목소리 조작 · Siri")
                         .font(.system(size: 12))
                         .foregroundColor(.secondary)
                 }
@@ -286,34 +368,73 @@ struct DriveModeView: View {
 
 // MARK: - Guide
 
+/// 차에서 쓰는 법. 퇴근길 모드를 처음 열 때 한 번 저절로 뜬다.
 struct DriveGuideSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
+
+    private var commandExamples: [(DriveCommand, LocalizedStringKey)] {
+        [(.next, "다음 문장"), (.again, "같은 문장 한 번 더"), (.slower, "말을 느리게"),
+         (.faster, "말을 빠르게"), (.nextScene, "다음 장면으로"), (.stop, "멈추기")]
+    }
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    guideRow(icon: "cable.connector", title: "폰을 차에 연결",
-                             detail: "CarPlay나 블루투스로 연결하고, 출발 전에 퇴근길 모드에서 재생을 눌러 두세요. 차 화면의 '지금 재생'에 지금 문장이 보여요.")
-                    guideRow(icon: "steeringwheel", title: "운전대 버튼으로",
-                             detail: "다음 곡 버튼은 다음 문장, 이전 곡 버튼은 같은 문장 한 번 더, 재생 버튼은 잠깐 멈춤이에요.")
-                } header: { Text("기본") }
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("손대지 않고, 목소리로")
+                        .font(.system(size: 24, weight: .bold))
+                    Text("한 번만 설정해 두면 차에 타서 폰을 연결하는 것만으로 시작되고, 그다음은 말로 조작해요.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.secondary)
 
-                Section {
-                    guideRow(icon: "mic.circle.fill", title: "Siri에게 말하기",
-                             detail: "\"말문 퇴근길 연습 시작\" 이라고 말하면 앱을 열지 않고 바로 시작해요. \"말문 연습 멈춰\" 로 멈춰요.")
-                    guideRow(icon: "bolt.car.fill", title: "타자마자 자동으로",
-                             detail: "단축어 앱 ▸ 자동화 ▸ + ▸ 'CarPlay' (또는 '블루투스'에서 내 차) ▸ '연결될 때' ▸ 즉시 실행 ▸ 동작에서 '말문 · 퇴근길 연습 시작' 을 고르세요.")
-                } header: { Text("손 안 대고") }
+                    step(1, icon: "cable.connector", title: "폰을 차에 연결",
+                         detail: "블루투스나 CarPlay로 연결하면 소리가 차 스피커로 나와요. 차 화면의 '지금 재생'에 지금 문장이 보여요.")
 
-                Section {
-                    Label("운전 중에는 화면을 만지지 마세요. 모든 조작은 소리와 운전대 버튼으로 할 수 있어요.", systemImage: "exclamationmark.triangle.fill")
-                        .font(.system(size: 13))
-                        .foregroundColor(.orange)
-                    Label("내비게이션 안내가 나오면 잠깐 멈췄다가 이어서 들려줘요.", systemImage: "location.fill")
-                        .font(.system(size: 13))
+                    step(2, icon: "bolt.car.fill", title: "연결하면 저절로 시작 (한 번만 설정)",
+                         detail: "단축어 앱 ▸ 자동화 ▸ + ▸ 'CarPlay' (또는 '블루투스' ▸ 내 차) ▸ '연결될 때' ▸ '즉시 실행' ▸ 동작에서 '말문 · 퇴근길 연습 시작' 을 고르세요.") {
+                        Button {
+                            if let url = URL(string: "shortcuts://") { openURL(url) }
+                        } label: {
+                            Label("단축어 앱 열기", systemImage: "arrow.up.forward.app")
+                                .font(.system(size: 14, weight: .semibold))
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(Brand.solidBlue)
+                    }
+
+                    step(3, icon: "waveform", title: "말해 볼 차례에 말로 조작",
+                         detail: "딩 소리가 나면 문장을 말해 보세요. 맞으면 \"좋아요\" 라고 알려 줘요. 그때 이렇게 말해도 돼요.") {
+                        VStack(alignment: .leading, spacing: 6) {
+                            ForEach(commandExamples, id: \.0) { cmd, meaning in
+                                HStack(spacing: 8) {
+                                    Text("\"\(cmd.words(AppLanguage.native).first ?? "")\"")
+                                        .font(.system(size: 14, weight: .bold))
+                                    Text(meaning)
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                        }
+                    }
+
+                    step(4, icon: "mic.circle.fill", title: "언제든 Siri 로",
+                         detail: "멈춰 있거나 다른 소리가 날 때는 Siri 에게 말하세요. \"말문 계속\" \"말문 다음\" \"말문 다시\" \"말문 연습 멈춰\"") {
+                        SiriTipView(intent: StartDriveIntent())
+                    }
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("운전 중에는 화면을 만지지 마세요. 운전대의 다음·이전·재생 버튼도 쓸 수 있어요.", systemImage: "exclamationmark.triangle.fill")
+                            .foregroundColor(.orange)
+                        Label("내비게이션 안내가 나오면 잠깐 멈췄다가 이어서 들려줘요.", systemImage: "location.fill")
+                            .foregroundColor(.secondary)
+                    }
+                    .font(.system(size: 13))
+                    .padding(.top, 4)
                 }
+                .padding(20)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationTitle("차에서 쓰는 법")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -322,19 +443,28 @@ struct DriveGuideSheet: View {
         }
     }
 
-    private func guideRow(icon: String, title: LocalizedStringKey, detail: LocalizedStringKey) -> some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 20))
-                .foregroundColor(Brand.blue)
-                .frame(width: 28)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title).font(.system(size: 15, weight: .semibold))
-                Text(detail).font(.system(size: 13)).foregroundColor(.secondary)
+    private func step<Extra: View>(_ n: Int, icon: String, title: LocalizedStringKey, detail: LocalizedStringKey,
+                                   @ViewBuilder extra: () -> Extra = { EmptyView() }) -> some View {
+        HStack(alignment: .top, spacing: 14) {
+            ZStack {
+                Circle().fill(Brand.solidBlue).frame(width: 32, height: 32)
+                Text("\(n)").font(.system(size: 15, weight: .bold)).foregroundColor(.white)
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(spacing: 6) {
+                    Image(systemName: icon).foregroundColor(Brand.blue)
+                    Text(title).font(.system(size: 16, weight: .bold))
+                }
+                Text(detail)
+                    .font(.system(size: 13))
+                    .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+                extra()
             }
         }
-        .padding(.vertical, 4)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(16)
+        .background(RoundedRectangle(cornerRadius: 16).fill(Color(.secondarySystemGroupedBackground)))
     }
 }
 

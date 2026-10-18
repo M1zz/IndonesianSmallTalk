@@ -145,6 +145,8 @@ enum DriveSettings {
     static let gapKey = "drive.gap"
     static let repeatKey = "drive.repeatTwice"
     static let sourceKey = "drive.source"
+    static let voiceKey = "drive.voice"
+    static let guideSeenKey = "drive.guideSeen"
 
     /// 말하기 속도 (기본 속도의 배수)
     static var rate: Double { UserDefaults.standard.object(forKey: rateKey) as? Double ?? 0.9 }
@@ -152,6 +154,8 @@ enum DriveSettings {
     static var gap: Double { UserDefaults.standard.object(forKey: gapKey) as? Double ?? 1.0 }
     /// 정답을 한 번 더 들려줄지
     static var repeatTwice: Bool { UserDefaults.standard.object(forKey: repeatKey) as? Bool ?? true }
+    /// 목소리로 조작 (말해 볼 차례에 마이크로 듣기)
+    static var voice: Bool { UserDefaults.standard.object(forKey: voiceKey) as? Bool ?? true }
     static var source: DriveSource {
         DriveSource(rawValue: UserDefaults.standard.string(forKey: sourceKey) ?? "") ?? .mix
     }

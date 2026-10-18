@@ -36,40 +36,6 @@
         }
       }
     },
-    "\"말문 퇴근길 연습 시작\" 이라고 말하면 앱을 열지 않고 바로 시작해요. \"말문 연습 멈춰\" 로 멈춰요.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Say \"Start commute practice in Malmun\" to start right away without opening the app. Say \"Stop practice in Malmun\" to stop."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Di «Empieza la práctica del trayecto en Malmun» y empezará sin abrir la app. Para detenerla, di «Detén la práctica en Malmun»."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Katakan \"Mulai latihan perjalanan di Malmun\" untuk langsung mulai tanpa membuka app. Katakan \"Hentikan latihan Malmun\" untuk berhenti."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「Malmunで通勤練習を始めて」と話しかけると、アプリを開かずにすぐ始まります。「Malmunの練習を止めて」で停止します。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "说“开始Malmun通勤练习”，不用打开 App 就能直接开始。说“停止Malmun练习”即可停止。"
-          }
-        }
-      }
-    },
     "%@ %@ (%@)": {
       "localizations": {
         "en": {
@@ -2264,74 +2230,6 @@
         }
       }
     },
-    "CarPlay·블루투스 연결 · Siri · 단축어 자동화": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlay & Bluetooth · Siri · Shortcuts automation"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlay · Bluetooth · Siri · Automatizaciones de Atajos"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlay·Bluetooth · Siri · Otomatisasi Pintasan"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlay・Bluetooth接続 · Siri · ショートカットのオートメーション"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlay·蓝牙连接 · Siri · 快捷指令自动化"
-          }
-        }
-      }
-    },
-    "CarPlay나 블루투스로 연결하고, 출발 전에 퇴근길 모드에서 재생을 눌러 두세요. 차 화면의 '지금 재생'에 지금 문장이 보여요.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Connect via CarPlay or Bluetooth, then tap Play in Commute Mode before you leave. The current sentence shows in Now Playing on your car's screen."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Conéctate por CarPlay o Bluetooth y, antes de salir, toca Reproducir en el modo trayecto. La frase actual aparece en «Ahora suena» en la pantalla del auto."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hubungkan lewat CarPlay atau Bluetooth, lalu ketuk putar di Mode Perjalanan sebelum berangkat. Kalimat yang sedang diputar tampil di \"Sedang Diputar\" di layar mobil."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CarPlayまたはBluetoothで接続し、出発前に通勤モードで再生を押しておきましょう。車の画面の「再生中」に今の文が表示されます。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "连接 CarPlay 或蓝牙，出发前在通勤模式中点按播放。车载屏幕的“正在播放”会显示当前句子。"
-          }
-        }
-      }
-    },
     "CarPlay나 블루투스로 연결한 뒤 퇴근길 모드를 켜면 화면을 보지 않아도 대화가 차례로 흘러나와요": {
       "localizations": {
         "en": {
@@ -2638,40 +2536,6 @@
         }
       }
     },
-    "Siri에게 말하기": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ask Siri"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Decirle a Siri"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Katakan ke Siri"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Siriに話しかける"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "对 Siri 说"
-          }
-        }
-      }
-    },
     "iCloud 로 공유 — 만든 후 카드에서 공유 링크 보내기": {
       "localizations": {
         "en": {
@@ -2906,6 +2770,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "·"
+          }
+        }
+      }
+    },
+    "· %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %@"
           }
         }
       }
@@ -3240,6 +3138,40 @@
         }
       }
     },
+    "같은 문장 한 번 더": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Same sentence again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La misma frase otra vez"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalimat yang sama sekali lagi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同じ文をもう一度"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同一句再来一次"
+          }
+        }
+      }
+    },
     "같은 사람이 연달아 말한 %lld줄은 앞 마디에 합쳤어요.": {
       "localizations": {
         "en": {
@@ -3430,6 +3362,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "就差一点了，再来一次！"
+          }
+        }
+      }
+    },
+    "거의 맞았어요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Almost there"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Casi"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hampir benar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おしい！"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "差一点就对了"
           }
         }
       }
@@ -4348,40 +4314,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "积极的回应"
-          }
-        }
-      }
-    },
-    "기본": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Básico"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dasar"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "基本"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "基本"
           }
         }
       }
@@ -6406,40 +6338,6 @@
         }
       }
     },
-    "다음 곡 버튼은 다음 문장, 이전 곡 버튼은 같은 문장 한 번 더, 재생 버튼은 잠깐 멈춤이에요.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Next Track goes to the next sentence, Previous Track repeats the same sentence, and Play pauses."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Siguiente canción: frase siguiente. Canción anterior: repite la frase. Reproducir: pausa breve."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tombol lagu berikutnya untuk kalimat berikutnya, tombol lagu sebelumnya untuk mengulang kalimat, tombol putar untuk jeda sebentar."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "次の曲ボタンで次の文、前の曲ボタンで同じ文をもう一度、再生ボタンで一時停止します。"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "“下一曲”按钮播放下一句，“上一曲”按钮重播当前句子，“播放”按钮暂停。"
-          }
-        }
-      }
-    },
     "다음 단어": {
       "localizations": {
         "en": {
@@ -6712,6 +6610,40 @@
         }
       }
     },
+    "다음 장면으로": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To the next scene"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A la siguiente escena"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ke adegan berikutnya"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のシーンへ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进入下一个场景"
+          }
+        }
+      }
+    },
     "다음 키보드": {
       "localizations": {
         "en": {
@@ -6950,36 +6882,70 @@
         }
       }
     },
-    "단축어 앱 ▸ 자동화 ▸ + ▸ 'CarPlay' (또는 '블루투스'에서 내 차) ▸ '연결될 때' ▸ 즉시 실행 ▸ 동작에서 '말문 · 퇴근길 연습 시작' 을 고르세요.": {
+    "단축어 앱 ▸ 자동화 ▸ + ▸ 'CarPlay' (또는 '블루투스' ▸ 내 차) ▸ '연결될 때' ▸ '즉시 실행' ▸ 동작에서 '말문 · 퇴근길 연습 시작' 을 고르세요.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "In the Shortcuts app ▸ Automation ▸ + ▸ 'CarPlay' (or your car under 'Bluetooth') ▸ 'Is Connected' ▸ Run Immediately ▸ choose 'Malmun · Start commute practice' as the action."
+            "value": "Shortcuts ▸ Automation ▸ + ▸ 'CarPlay' (or 'Bluetooth' ▸ your car) ▸ 'Is Connected' ▸ 'Run Immediately' ▸ then choose the action 'Malmun · Start commute practice'."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "App Atajos ▸ Automatización ▸ + ▸ «CarPlay» (o tu auto en «Bluetooth») ▸ «Al conectarse» ▸ Ejecutar inmediatamente ▸ en Acciones, elige «Malmun · Iniciar práctica del trayecto»."
+            "value": "Atajos ▸ Automatización ▸ + ▸ «CarPlay» (o «Bluetooth» ▸ tu auto) ▸ «Se conecta» ▸ «Ejecutar de inmediato» ▸ y elige la acción «Malmun · Iniciar práctica del trayecto»."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "App Pintasan ▸ Otomatisasi ▸ + ▸ \"CarPlay\" (atau mobil Anda di \"Bluetooth\") ▸ \"Saat Terhubung\" ▸ Jalankan Segera ▸ pilih \"Malmun · Mulai latihan perjalanan\" di tindakan."
+            "value": "Pintasan ▸ Otomatisasi ▸ + ▸ 'CarPlay' (atau 'Bluetooth' ▸ mobil kamu) ▸ 'Tersambung' ▸ 'Jalankan Segera' ▸ lalu pilih tindakan 'Malmun · Mulai latihan perjalanan'."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ショートカットApp ▸ オートメーション ▸ + ▸「CarPlay」(または「Bluetooth」で自分の車)▸「接続したとき」▸ すぐに実行 ▸ アクションで「Malmun・通勤練習を開始」を選びます。"
+            "value": "ショートカット ▸ オートメーション ▸ + ▸ 「CarPlay」（または「Bluetooth」▸ 自分の車）▸ 「接続したとき」▸ 「すぐに実行」▸ アクションで「Malmun・通勤練習を開始」を選びます。"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "快捷指令 App ▸ 自动化 ▸ + ▸“CarPlay”（或在“蓝牙”中选择你的车）▸“连接时”▸ 立即运行 ▸ 在操作中选择“Malmun · 开始通勤练习”。"
+            "value": "快捷指令 ▸ 自动化 ▸ + ▸ “CarPlay”（或“蓝牙” ▸ 你的车）▸ “连接时” ▸ “立即运行” ▸ 在操作中选择“Malmun · 开始通勤练习”。"
+          }
+        }
+      }
+    },
+    "단축어 앱 열기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Shortcuts"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Atajos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka Pintasan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ショートカットを開く"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开快捷指令"
           }
         }
       }
@@ -8140,6 +8106,40 @@
         }
       }
     },
+    "딩 소리가 나면 문장을 말해 보세요. 맞으면 \"좋아요\" 라고 알려 줘요. 그때 이렇게 말해도 돼요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When you hear the chime, say the sentence. If you get it right, you'll hear \"Nice!\" You can also say:"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando suene el aviso, di la frase. Si aciertas, oirás «¡Muy bien!». También puedes decir:"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saat terdengar bunyi, ucapkan kalimatnya. Kalau benar, kamu akan mendengar \"Bagus!\" Kamu juga bisa bilang:"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "チャイムが鳴ったら文を言ってみましょう。合っていれば「いいね！」と教えてくれます。そのとき、こう言うこともできます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "听到提示音后说出句子。说对了会听到“很好！”。这时也可以说："
+          }
+        }
+      }
+    },
     "따라 말하기": {
       "localizations": {
         "en": {
@@ -8684,6 +8684,40 @@
         }
       }
     },
+    "마이크·음성 인식 허락하러 가기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow microphone & speech recognition"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permitir micrófono y reconocimiento de voz"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Izinkan mikrofon & pengenalan suara"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マイクと音声認識を許可する"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "去允许麦克风和语音识别"
+          }
+        }
+      }
+    },
     "마이크를 쓸 수 없어요": {
       "localizations": {
         "en": {
@@ -8922,6 +8956,74 @@
         }
       }
     },
+    "말을 느리게": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speak slower"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hablar más despacio"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bicara lebih pelan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゆっくり話す"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "说慢一点"
+          }
+        }
+      }
+    },
+    "말을 빠르게": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speak faster"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hablar más rápido"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bicara lebih cepat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "速く話す"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "说快一点"
+          }
+        }
+      }
+    },
     "말이 끝나면 자동으로 채점해요": {
       "localizations": {
         "en": {
@@ -9092,6 +9194,74 @@
         }
       }
     },
+    "말해 볼 차례에 말로 조작": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Control it by voice on your turn"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contrólalo con la voz en tu turno"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendalikan dengan suara saat giliranmu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分の番に声で操作"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "轮到你时用声音操作"
+          }
+        }
+      }
+    },
+    "말해 볼 차례에만 폰 마이크로 들어요. 맞게 말하면 알려 주고, \"다음\" \"다시\" \"천천히\" \"그만\" 을 알아들어요. 들은 말은 기기 밖으로 보내지 않아요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listens through your phone's mic only on your turn. It tells you when you get it right and understands \"next\", \"again\", \"slower\" and \"stop\". What it hears never leaves your device."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha por el micrófono del teléfono solo en tu turno. Te avisa cuando aciertas y entiende «siguiente», «otra vez», «más despacio» y «para». Lo que oye nunca sale de tu dispositivo."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mendengar lewat mikrofon ponsel hanya saat giliranmu. Memberi tahu kalau ucapanmu benar dan mengerti \"lanjut\", \"ulang\", \"pelan\", dan \"berhenti\". Yang didengar tidak pernah keluar dari perangkatmu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分の番のときだけiPhoneのマイクで聞きます。正しく言えたら教えてくれて、「次」「もう一回」「ゆっくり」「止めて」がわかります。聞いた内容は端末の外に送りません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只在轮到你时用手机麦克风听。说对了会告诉你，也能听懂“下一个”“再来”“慢一点”“暂停”。听到的内容不会离开设备。"
+          }
+        }
+      }
+    },
     "맞게 들림": {
       "localizations": {
         "en": {
@@ -9122,6 +9292,64 @@
           "stringUnit": {
             "state": "translated",
             "value": "识别正确"
+          }
+        }
+      }
+    },
+    "맞힌 문장 %lld": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld correct"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld correct"
+                }
+              }
+            }
+          }
+        },
+        "es": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld acierto"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld aciertos"
+                }
+              }
+            }
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld benar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正解 %lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "答对 %lld 句"
           }
         }
       }
@@ -9296,6 +9524,40 @@
         }
       }
     },
+    "멈춰 있거나 다른 소리가 날 때는 Siri 에게 말하세요. \"말문 계속\" \"말문 다음\" \"말문 다시\" \"말문 연습 멈춰\"": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When it's paused or something else is playing, ask Siri: \"Continue in Malmun\", \"Next in Malmun\", \"Again in Malmun\", \"Stop practice in Malmun\""
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si está en pausa o suena otra cosa, dile a Siri: «Continúa en Malmun», «Siguiente en Malmun», «Otra vez en Malmun», «Detén la práctica en Malmun»"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saat dijeda atau ada suara lain, bilang ke Siri: \"Lanjutkan Malmun\", \"Malmun berikutnya\", \"Ulangi di Malmun\", \"Hentikan latihan Malmun\""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一時停止中やほかの音が鳴っているときはSiriに話しかけましょう。「Malmunを続けて」「Malmunで次へ」「Malmunでもう一回」「Malmunの練習を止めて」"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停时或有其他声音时，对 Siri 说：“继续Malmun”“Malmun下一句”“Malmun再来一遍”“停止Malmun练习”"
+          }
+        }
+      }
+    },
     "메모 (선택)": {
       "localizations": {
         "en": {
@@ -9394,6 +9656,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "所有单词都学完了 🎉"
+          }
+        }
+      }
+    },
+    "목소리 조작 켜짐": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voice control on"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Control por voz activado"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontrol suara aktif"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声操作オン"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音操作已开启"
+          }
+        }
+      }
+    },
+    "목소리로 조작": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voice control"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Control por voz"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontrol suara"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "声で操作"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音操作"
           }
         }
       }
@@ -10976,6 +11306,40 @@
         }
       }
     },
+    "블루투스나 CarPlay로 연결하면 소리가 차 스피커로 나와요. 차 화면의 '지금 재생'에 지금 문장이 보여요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect via Bluetooth or CarPlay and the sound plays through your car speakers. The current sentence shows in Now Playing on the car screen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conéctalo por Bluetooth o CarPlay y el sonido saldrá por los altavoces del auto. La frase actual aparece en «Ahora suena» en la pantalla del auto."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sambungkan lewat Bluetooth atau CarPlay, dan suara keluar dari speaker mobil. Kalimat saat ini muncul di Sedang Diputar di layar mobil."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BluetoothかCarPlayでつなぐと、音が車のスピーカーから流れます。車の画面の「再生中」に今の文が表示されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通过蓝牙或 CarPlay 连接后，声音会从车载扬声器播放。车机屏幕的“正在播放”会显示当前句子。"
+          }
+        }
+      }
+    },
     "빈 응답을 받았어요. 다시 시도해주세요.": {
       "localizations": {
         "en": {
@@ -11040,6 +11404,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "快速"
+          }
+        }
+      }
+    },
+    "빠르게 할게요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speeding up"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más rápido"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oke, lebih cepat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "速くしますね"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好的，说快一点"
           }
         }
       }
@@ -11724,36 +12122,36 @@
         }
       }
     },
-    "손 안 대고": {
+    "손대지 않고, 목소리로": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hands-free"
+            "value": "Hands-free, by voice"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Manos libres"
+            "value": "Sin manos, con la voz"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tanpa tangan"
+            "value": "Tanpa tangan, pakai suara"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ハンズフリー"
+            "value": "手を使わず、声で"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "解放双手"
+            "value": "不用动手，用声音"
           }
         }
       }
@@ -13584,6 +13982,108 @@
         }
       }
     },
+    "언제든 Siri 로": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anytime with Siri"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando quieras, con Siri"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapan saja dengan Siri"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いつでもSiriで"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "随时用 Siri"
+          }
+        }
+      }
+    },
+    "연결하면 저절로 시작 (한 번만 설정)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start automatically when connected (set up once)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza solo al conectar (se configura una vez)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai otomatis saat tersambung (atur sekali saja)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "つないだら自動でスタート（設定は一度だけ）"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "连接后自动开始（只需设置一次）"
+          }
+        }
+      }
+    },
+    "연결하면 저절로 시작 · 목소리 조작 · Siri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto-start on connect · Voice control · Siri"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicio al conectar · Control por voz · Siri"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai otomatis saat tersambung · Kontrol suara · Siri"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続で自動スタート・声で操作・Siri"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "连接即自动开始 · 语音操作 · Siri"
+          }
+        }
+      }
+    },
     "연속 일수": {
       "localizations": {
         "en": {
@@ -15304,70 +15804,36 @@
         }
       }
     },
-    "운전 중에는 화면을 만지지 마세요. 모든 조작은 소리와 운전대 버튼으로 할 수 있어요.": {
+    "운전 중에는 화면을 만지지 마세요. 운전대의 다음·이전·재생 버튼도 쓸 수 있어요.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Don't touch the screen while driving. You can control everything with sound and steering-wheel buttons."
+            "value": "Don't touch the screen while driving. You can also use the next, previous and play buttons on your steering wheel."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "No toques la pantalla mientras conduces. Todo se controla con la voz y los botones del volante."
+            "value": "No toques la pantalla mientras manejas. También puedes usar los botones de siguiente, anterior y reproducir del volante."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jangan sentuh layar saat mengemudi. Semua kontrol bisa lewat suara dan tombol setir."
+            "value": "Jangan sentuh layar saat menyetir. Kamu juga bisa pakai tombol berikutnya, sebelumnya, dan putar di setir."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "運転中は画面に触れないでください。すべての操作は音声とハンドルのボタンでできます。"
+            "value": "運転中は画面に触れないでください。ハンドルの次へ・前へ・再生ボタンも使えます。"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "驾驶时请勿触碰屏幕。所有操作都可通过声音和方向盘按钮完成。"
-          }
-        }
-      }
-    },
-    "운전대 버튼으로": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With steering-wheel buttons"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Con los botones del volante"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dengan tombol setir"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ハンドルのボタンで"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "用方向盘按钮"
+            "value": "驾驶时请不要触摸屏幕。也可以使用方向盘上的下一首、上一首和播放按钮。"
           }
         }
       }
@@ -16194,6 +16660,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "本周 %lld 次 · 共 %lld 次"
+          }
+        }
+      }
+    },
+    "이어서 듣기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume listening"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir escuchando"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lanjut mendengarkan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続きを聞く"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续收听"
           }
         }
       }
@@ -17640,6 +18140,40 @@
         }
       }
     },
+    "정답을 듣고 따라 해 보세요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listen to the answer and repeat it"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha la respuesta y repítela"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengarkan jawabannya lalu tirukan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "答えを聞いてまねしてみましょう"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "听答案并跟着说"
+          }
+        }
+      }
+    },
     "정답을 한 번 더 듣기": {
       "localizations": {
         "en": {
@@ -17914,6 +18448,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "很好"
+          }
+        }
+      }
+    },
+    "좋아요!": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nice!"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Muy bien!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagus!"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いいね！"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "很好！"
           }
         }
       }
@@ -18706,40 +19274,6 @@
         }
       }
     },
-    "차에 타면 저절로 시작하게": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start automatically when you get in the car"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Que empiece solo al subir al auto"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mulai otomatis saat masuk mobil"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "車に乗ったら自動で始める"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一上车就自动开始"
-          }
-        }
-      }
-    },
     "차에서 쓰는 법": {
       "localizations": {
         "en": {
@@ -18872,6 +19406,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "慢慢听一遍，再试一次吧。"
+          }
+        }
+      }
+    },
+    "천천히 할게요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slowing down"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más despacio"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oke, lebih pelan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゆっくりにしますね"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好的，说慢一点"
           }
         }
       }
@@ -20044,40 +20612,6 @@
         }
       }
     },
-    "타자마자 자동으로": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Automatically when you get in"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Automático al subir"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otomatis begitu naik"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "乗ったらすぐ自動で"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一上车就自动"
-          }
-        }
-      }
-    },
     "택시 타고 목적지 말하기": {
       "localizations": {
         "en": {
@@ -20448,6 +20982,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "通勤练习"
+          }
+        }
+      }
+    },
+    "퇴근길 연습 계속": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue commute practice"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar práctica del trayecto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lanjutkan latihan perjalanan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通勤練習を続ける"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续通勤练习"
           }
         }
       }
@@ -21322,6 +21890,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "再来一次"
+          }
+        }
+      }
+    },
+    "한 번 더 듣기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hear it again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchar otra vez"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengar sekali lagi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一度聞く"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再听一次"
+          }
+        }
+      }
+    },
+    "한 번만 설정해 두면 차에 타서 폰을 연결하는 것만으로 시작되고, 그다음은 말로 조작해요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set it up once, and just connecting your phone in the car starts practice. After that, you control it by voice."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configúralo una vez y con solo conectar el teléfono en el auto empezará la práctica. Después, lo controlas con la voz."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atur sekali saja, lalu cukup sambungkan ponsel di mobil untuk mulai. Setelah itu, kendalikan dengan suara."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一度設定しておけば、車でiPhoneをつなぐだけで始まり、あとは声で操作できます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置一次后，上车连接手机就会自动开始，之后用声音操作即可。"
           }
         }
       }

@@ -95,6 +95,7 @@
 		FF2489AF42566AB51051181F /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */; };
 		F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
 		F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */; };
+		F2FADC7CCEBE55F081DF06A3 /* DriveVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6680224751BCA0FCE5272BD /* DriveVoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,7 @@
 		F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "InfoPlist.xcstrings"; sourceTree = "<group>"; };
 		F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "AppShortcuts.xcstrings"; sourceTree = "<group>"; };
 		FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F6680224751BCA0FCE5272BD /* DriveVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveVoice.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +391,7 @@
 				F2262340000C8DD247B56658 /* DriveSession.swift */,
 				F574193272ACD644BB2BD07E /* DriveIntents.swift */,
 				F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */,
+				F6680224751BCA0FCE5272BD /* DriveVoice.swift */,
 			);
 			path = Drive;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */,
 				F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */,
 				FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */,
+				F2FADC7CCEBE55F081DF06A3 /* DriveVoice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

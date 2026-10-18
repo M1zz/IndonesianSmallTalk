@@ -1,6 +1,183 @@
 {
   "sourceLanguage": "ko",
   "strings": {
+    "${applicationName} 계속": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Continue in ${applicationName}",
+              "Resume ${applicationName}"
+            ]
+          }
+        },
+        "es": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Continúa en ${applicationName}",
+              "Reanuda ${applicationName}"
+            ]
+          }
+        },
+        "id": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Lanjutkan ${applicationName}",
+              "${applicationName} lanjut"
+            ]
+          }
+        },
+        "ja": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName}を続けて",
+              "${applicationName}を再開"
+            ]
+          }
+        },
+        "ko": {
+          "stringSet": {
+            "state": "new",
+            "values": [
+              "${applicationName} 계속",
+              "${applicationName} 이어서"
+            ]
+          }
+        },
+        "zh-Hans": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "继续${applicationName}",
+              "${applicationName}继续"
+            ]
+          }
+        }
+      }
+    },
+    "${applicationName} 다시": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Again in ${applicationName}",
+              "${applicationName} one more time"
+            ]
+          }
+        },
+        "es": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Otra vez en ${applicationName}",
+              "${applicationName} repite"
+            ]
+          }
+        },
+        "id": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Ulangi di ${applicationName}",
+              "${applicationName} sekali lagi"
+            ]
+          }
+        },
+        "ja": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName}でもう一回",
+              "${applicationName}をもう一度"
+            ]
+          }
+        },
+        "ko": {
+          "stringSet": {
+            "state": "new",
+            "values": [
+              "${applicationName} 다시",
+              "${applicationName} 한 번 더"
+            ]
+          }
+        },
+        "zh-Hans": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName}再来一遍",
+              "${applicationName}重复"
+            ]
+          }
+        }
+      }
+    },
+    "${applicationName} 다음": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Next in ${applicationName}",
+              "${applicationName} next sentence"
+            ]
+          }
+        },
+        "es": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "Siguiente en ${applicationName}",
+              "${applicationName} siguiente frase"
+            ]
+          }
+        },
+        "id": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName} berikutnya",
+              "Kalimat berikutnya di ${applicationName}"
+            ]
+          }
+        },
+        "ja": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName}で次へ",
+              "${applicationName}の次の文"
+            ]
+          }
+        },
+        "ko": {
+          "stringSet": {
+            "state": "new",
+            "values": [
+              "${applicationName} 다음",
+              "${applicationName} 다음 문장"
+            ]
+          }
+        },
+        "zh-Hans": {
+          "stringSet": {
+            "state": "translated",
+            "values": [
+              "${applicationName}下一句",
+              "${applicationName}下一个"
+            ]
+          }
+        }
+      }
+    },
     "${applicationName} 연습 멈춰": {
       "extractionState": "extracted_with_value",
       "localizations": {

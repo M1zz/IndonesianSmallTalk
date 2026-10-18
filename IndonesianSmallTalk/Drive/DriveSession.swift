@@ -10,6 +10,10 @@ import UIKit
 ///
 /// 블루투스·CarPlay 로 차에 연결하면 소리가 차 스피커로 나오고, 차량 버튼·'지금 재생'·잠금 화면에서 재생/일시정지/다음(다음 줄)/이전(이 줄 다시)이 된다.
 /// 말과 말 사이 쉬는 동안에도 앱이 멈추지 않도록 무음을 계속 흘려 둔다.
+///
+/// 목소리 조작(설정에서 켜고 마이크·음성 인식을 허락했을 때): 말해 볼 차례에만 폰 마이크로 듣는다.
+/// 내가 말한 문장이 맞으면 "좋아요" 라고 해 주고, "다음 / 다시 / 천천히 / 빠르게 / 다음 장면 / 그만" 을 알아듣는다.
+/// 소리는 차 스피커(블루투스 A2DP)로 그대로 나가고 마이크는 폰 것을 쓴다 — 블루투스 마이크를 쓰면 통화 음질로 떨어진다.
 @MainActor
 final class DriveSession: NSObject, ObservableObject {
     static let shared = DriveSession()
@@ -31,6 +35,14 @@ final class DriveSession: NSObject, ObservableObject {
     @Published private(set) var line: DriveLine?
     @Published private(set) var linesDone = 0
     @Published private(set) var startedAt: Date?
+    /// 지금 마이크로 듣고 있는지 (목소리 조작이 켜진 채로 재생 중)
+    @Published private(set) var voiceActive = false
+    /// 방금 말해 본 문장과 그 결과
+    @Published private(set) var heardText = ""
+    @Published private(set) var lastResult: AttemptResult?
+    @Published private(set) var correctCount = 0
+
+    enum AttemptResult { case good, close, missed }
 
     private var lessons: [DriveLesson] = []
     private var lessonIndex = 0
@@ -46,10 +58,15 @@ final class DriveSession: NSObject, ObservableObject {
     private let silencePlayer = AVAudioPlayerNode()
     private let cuePlayer = AVAudioPlayerNode()
     private var engineReady = false
+    private var micTapInstalled = false
+
+    private let voice = DriveVoiceListener()
+    private var pendingAck: String?
 
     private override init() {
         super.init()
         synthesizer.delegate = self
+        voice.onCommand = { [weak self] cmd in self?.handle(cmd) }
         observeSession()
         setupRemoteCommands()
     }
@@ -77,6 +94,9 @@ final class DriveSession: NSObject, ObservableObject {
         lessonIndex = saved < lessons.count ? saved : 0
         lineIndex = 0
         linesDone = 0
+        correctCount = 0
+        lastResult = nil
+        heardText = ""
         startedAt = Date()
         isActive = true
         play()
@@ -95,6 +115,7 @@ final class DriveSession: NSObject, ObservableObject {
         isPlaying = false
         runner?.cancel()
         runner = nil
+        voice.close()
         stopSpeech()
         updateNowPlaying()
     }
@@ -128,8 +149,8 @@ final class DriveSession: NSObject, ObservableObject {
         phase = .idle
         lesson = nil
         line = nil
-        engine.stop()
-        engineReady = false
+        voiceActive = false
+        stopEngine()
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         MPNowPlayingInfoCenter.default().playbackState = .stopped
@@ -143,6 +164,7 @@ final class DriveSession: NSObject, ObservableObject {
     private func restartIfPlaying() {
         runner?.cancel()
         runner = nil
+        voice.close()
         stopSpeech()
         if isPlaying { runFromCurrentLine() } else { refreshCurrent(); updateNowPlaying() }
     }
@@ -180,13 +202,14 @@ final class DriveSession: NSObject, ObservableObject {
 
     private func perform(_ l: DriveLine) async {
         line = l
-        let rate = DriveSettings.rate
-        let gap = DriveSettings.gap
+        heardText = ""
+        lastResult = nil
+        // 속도는 말할 때마다 읽는다 ("천천히" 라고 하면 바로 바뀌도록)
         switch l.role {
         case .listen:
             phase = .listening
             updateNowPlaying()
-            await say(l.text, in: language, rate: rate)
+            await say(l.text, in: language, rate: DriveSettings.rate)
             await rest(0.5)
             await say(l.meaning, in: AppLanguage.native, rate: 1.0)
             await rest(0.9)
@@ -197,15 +220,78 @@ final class DriveSession: NSObject, ObservableObject {
             phase = .yourTurn
             updateNowPlaying()
             playCue()
-            await rest(thinkTime(for: l.text) * gap)
+            let heard = await listenWindow(seconds: thinkTime(for: l.text) * DriveSettings.gap, target: l.text)
+            guard !Task.isCancelled, isPlaying else { return }
+            await react(to: heard, target: l.text)
             phase = .answer
             updateNowPlaying()
-            await say(l.text, in: language, rate: rate * 0.8)
-            await rest(thinkTime(for: l.text) * 0.8 * gap)
+            await say(l.text, in: language, rate: DriveSettings.rate * 0.8)
+            // 따라 해 볼 시간 (명령도 듣는다)
+            _ = await listenWindow(seconds: thinkTime(for: l.text) * 0.8 * DriveSettings.gap, target: l.text)
+            guard !Task.isCancelled, isPlaying else { return }
             if DriveSettings.repeatTwice {
-                await say(l.text, in: language, rate: rate)
+                await say(l.text, in: language, rate: DriveSettings.rate)
                 await rest(0.8)
             }
+        }
+    }
+
+    /// 말해 볼 틈. 목소리 조작이 꺼져 있으면 그냥 기다린다.
+    /// 말을 시작하면 끝날 때까지 조금 더 기다려 주고, 말이 멈추면 바로 다음으로 넘어간다.
+    private func listenWindow(seconds: Double, target: String) async -> String {
+        guard voiceActive else { await rest(seconds); return "" }
+        await rest(0.35)   // 딩 소리가 마이크에 들어가지 않게
+        guard !Task.isCancelled, isPlaying else { return "" }
+        voice.open(learning: language, native: AppLanguage.native)
+        let start = Date()
+        var deadline = start.addingTimeInterval(seconds)
+        let hardLimit = start.addingTimeInterval(seconds + 4)
+        while !Task.isCancelled, isPlaying, pendingAck == nil, Date() < deadline {
+            if let last = voice.lastHeardAt {
+                if Date().timeIntervalSince(last) > 1.1 { break }        // 말이 끝남
+                deadline = min(hardLimit, max(deadline, last.addingTimeInterval(1.5)))
+            }
+            await rest(0.15)
+        }
+        let heard = voice.close()
+        heardText = heard
+        if let ack = pendingAck {
+            pendingAck = nil
+            await say(ack, in: AppLanguage.native, rate: 1.05)
+        }
+        return heard
+    }
+
+    /// 말해 본 문장을 정답과 견줘 짧게 반응한다.
+    private func react(to heard: String, target: String) async {
+        guard voiceActive, !heard.isEmpty else { lastResult = voiceActive ? .missed : nil; return }
+        let score = SpeechManager.similarityScore(spoken: heard, target: target)
+        if score >= 0.75 {
+            lastResult = .good
+            correctCount += 1
+            await say(String(localized: "좋아요!"), in: AppLanguage.native, rate: 1.05)
+        } else if score >= 0.4 {
+            lastResult = .close
+            await say(String(localized: "거의 맞았어요"), in: AppLanguage.native, rate: 1.05)
+        } else {
+            lastResult = .missed
+        }
+    }
+
+    /// 말로 한 명령
+    private func handle(_ cmd: DriveCommand) {
+        guard isActive else { return }
+        switch cmd {
+        case .next: next()
+        case .again: previous()
+        case .nextScene: nextLesson()
+        case .stop: pause()
+        case .slower:
+            UserDefaults.standard.set(max(0.6, DriveSettings.rate - 0.1), forKey: DriveSettings.rateKey)
+            pendingAck = String(localized: "천천히 할게요")
+        case .faster:
+            UserDefaults.standard.set(min(1.2, DriveSettings.rate + 0.1), forKey: DriveSettings.rateKey)
+            pendingAck = String(localized: "빠르게 할게요")
         }
     }
 
@@ -275,18 +361,54 @@ final class DriveSession: NSObject, ObservableObject {
 
     private func activateAudio() {
         let session = AVAudioSession.sharedInstance()
+        let wantsMic = DriveSettings.voice && DriveVoiceListener.isAuthorized
         do {
-            // spokenAudio: 내비 안내가 나오면 시스템이 잠깐 멈췄다가 이어 준다.
-            try session.setCategory(.playback, mode: .spokenAudio, options: [])
-            try session.setActive(true)
+            if wantsMic {
+                // 소리는 차(A2DP)·스피커로, 듣기는 폰 마이크로. 블루투스 통화 모드(HFP)는 쓰지 않는다.
+                let options: AVAudioSession.CategoryOptions = [.allowBluetoothA2DP, .defaultToSpeaker, .allowAirPlay]
+                do {
+                    try session.setCategory(.playAndRecord, mode: .spokenAudio, options: options)
+                } catch {
+                    try session.setCategory(.playAndRecord, mode: .default, options: options)
+                }
+                try session.setActive(true)
+                if let builtIn = session.availableInputs?.first(where: { $0.portType == .builtInMic }) {
+                    try? session.setPreferredInput(builtIn)
+                }
+            } else {
+                // spokenAudio: 내비 안내가 나오면 시스템이 잠깐 멈췄다가 이어 준다.
+                try session.setCategory(.playback, mode: .spokenAudio, options: [])
+                try session.setActive(true)
+            }
         } catch {
             print("[Drive] 오디오 세션 실패: \(error)")
         }
-        startEngine()
+        startEngine(withMic: wantsMic)
         UIApplication.shared.beginReceivingRemoteControlEvents()
     }
 
-    private func startEngine() {
+    private func stopEngine() {
+        engine.stop()
+        if micTapInstalled {
+            engine.inputNode.removeTap(onBus: 0)
+            micTapInstalled = false
+        }
+    }
+
+    private func startEngine(withMic: Bool) {
+        // 마이크 사용 여부가 바뀌었으면 엔진을 다시 꾸린다.
+        if engine.isRunning, withMic != micTapInstalled { stopEngine() }
+        if withMic, !micTapInstalled {
+            let input = engine.inputNode
+            let format = input.outputFormat(forBus: 0)
+            if format.sampleRate > 0 {
+                let listener = voice
+                input.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
+                    listener.append(buffer)
+                }
+                micTapInstalled = true
+            }
+        }
         if !engineReady {
             engine.attach(silencePlayer)
             engine.attach(cuePlayer)
@@ -295,9 +417,10 @@ final class DriveSession: NSObject, ObservableObject {
             engine.connect(cuePlayer, to: engine.mainMixerNode, format: format)
             engineReady = true
         }
-        guard !engine.isRunning else { return }
+        guard !engine.isRunning else { voiceActive = micTapInstalled; return }
         do {
             try engine.start()
+            voiceActive = micTapInstalled
             let format = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 1)!
             if let silence = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: 44_100) {
                 silence.frameLength = 44_100   // 0 으로 채워진 1초
@@ -307,6 +430,13 @@ final class DriveSession: NSObject, ObservableObject {
             cuePlayer.play()
         } catch {
             print("[Drive] 엔진 시작 실패: \(error)")
+            // 화면 없이(Siri) 시작해 마이크를 못 열면 목소리 조작 없이라도 소리는 낸다.
+            if micTapInstalled {
+                stopEngine()
+                voiceActive = false
+                try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: [])
+                startEngine(withMic: false)
+            }
         }
     }
 
