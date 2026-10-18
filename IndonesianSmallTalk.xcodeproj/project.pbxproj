@@ -91,6 +91,11 @@
 		F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */; };
 		F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */; };
 		FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */; };
+		F57DF1C9171646A5B4EA1FDC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
+		FE56983A16717AFB9675252B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */; };
+		FF2489AF42566AB51051181F /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */; };
+		F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
+		F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +206,10 @@
 		F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PronunciationPracticeView.swift"; sourceTree = "<group>"; };
 		F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImportView.swift"; sourceTree = "<group>"; };
 		F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScriptView.swift"; sourceTree = "<group>"; };
+		FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "Localizable.xcstrings"; sourceTree = "<group>"; };
+		F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "InfoPlist.xcstrings"; sourceTree = "<group>"; };
+		F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "AppShortcuts.xcstrings"; sourceTree = "<group>"; };
+		FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +324,7 @@
 				AK005 /* SharedSlangReader.swift */,
 				AK003 /* Info.plist */,
 				AK004 /* KeyboardExtension.entitlements */,
+				FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */,
 			);
 			path = KeyboardExtension;
 			sourceTree = "<group>";
@@ -367,6 +377,9 @@
 				F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */,
 				F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */,
 				FDC758A670B7CE2F1F8ABC48 /* translations.es.json */,
+				FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */,
+				F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */,
+				F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -392,6 +405,7 @@
 			buildPhases = (
 				KEXT_SRCPHASE /* Sources */,
 				KEXT_FWPHASE /* Frameworks */,
+				KEXT_RESPHASE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -440,10 +454,15 @@
 			};
 			buildConfigurationList = PROJCFGLIST /* Build configuration list for PBXProject "IndonesianSmallTalk" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				ko,
 				en,
+				ja,
+				"zh-Hans",
+				es,
+				id,
 				Base,
 			);
 			mainGroup = MAINGRP;
@@ -474,6 +493,18 @@
 				FCA2A64F8180986C4F776673 /* translations.zh-Hans.json in Resources */,
 				FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */,
 				F9B376843D0AD3E933313A57 /* translations.es.json in Resources */,
+				F57DF1C9171646A5B4EA1FDC /* Localizable.xcstrings in Resources */,
+				FE56983A16717AFB9675252B /* InfoPlist.xcstrings in Resources */,
+				FF2489AF42566AB51051181F /* AppShortcuts.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		KEXT_RESPHASE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */,
+				F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -621,6 +653,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -773,6 +806,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -809,6 +843,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
