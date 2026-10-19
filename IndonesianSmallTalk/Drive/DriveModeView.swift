@@ -145,7 +145,8 @@ struct DriveModeView: View {
     private var secondaryText: String {
         guard let line = session.line else { return "" }
         switch session.phase {
-        case .yourTurn, .listening where line.role == .speak: return ""
+        case .yourTurn: return ""
+        case .listening where line.role == .speak: return ""
         default: return line.meaning
         }
     }
