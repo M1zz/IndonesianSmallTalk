@@ -104,6 +104,7 @@
 		FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */; };
 		F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39DE7678ABA728AF7128645 /* SettingsView.swift */; };
 		FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */; };
+		FBE29439A35CB94F9FE54BED /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E496962BA16247EA6164 /* ScreenshotScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,7 @@
 		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
 		F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotPaywallView.swift"; sourceTree = "<group>"; };
 		VERSION_XCCONFIG_REF /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		FF64E496962BA16247EA6164 /* ScreenshotScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScene.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */,
 				F00762B29720746776F158C8 /* MalmunFlags.swift */,
 				F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */,
+				FF64E496962BA16247EA6164 /* ScreenshotScene.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */,
 				F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */,
 				FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */,
+				FBE29439A35CB94F9FE54BED /* ScreenshotScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

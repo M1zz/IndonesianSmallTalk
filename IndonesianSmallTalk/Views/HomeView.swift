@@ -30,6 +30,15 @@ struct HomeView: View {
     @State private var addReplyScenario: ConversationScenario?
     @State private var showOnboarding = false
 
+    /// 스크린샷을 찍을 때는 시뮬레이터의 'iCloud 로그인 필요' 안내를 숨긴다
+    private static var hidesSyncErrors: Bool {
+        #if DEBUG
+        return ScreenshotScene.isActive
+        #else
+        return false
+        #endif
+    }
+
     struct SharePayload: Identifiable {
         let id = UUID()
         let share: CKShare
@@ -177,7 +186,7 @@ struct HomeView: View {
 
     @ViewBuilder
     private var sharedSection: some View {
-        if !sharedScenarios.isEmpty || sharedScenarioStore.lastError != nil {
+        if !sharedScenarios.isEmpty || (sharedScenarioStore.lastError != nil && !Self.hidesSyncErrors) {
             sharedSectionHeader
             VStack(spacing: 14) {
                 ForEach(sharedScenarios) { shared in
@@ -202,7 +211,7 @@ struct HomeView: View {
             }
             .padding(.horizontal, 18)
             .padding(.top, 8)
-            if let err = sharedScenarioStore.lastError {
+            if let err = sharedScenarioStore.lastError, !Self.hidesSyncErrors {
                 Text(err)
                     .font(.caption2)
                     .foregroundColor(.orange)

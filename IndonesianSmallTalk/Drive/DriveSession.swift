@@ -169,6 +169,22 @@ final class DriveSession: NSObject, ObservableObject {
     var lessonPosition: (index: Int, count: Int) { (lessonIndex + 1, lessons.count) }
     var linePosition: (index: Int, count: Int) { (lineIndex + 1, lesson?.lines.count ?? 0) }
 
+    #if DEBUG
+    /// 스크린샷용: 소리 없이 '말해 볼 차례' 화면 상태만 만든다.
+    func debugShowcase() {
+        lessons = DriveContent.lessons(for: .situations, language: .learning)
+        guard let first = lessons.first, let speak = first.lines.first(where: { $0.role == .speak }) else { return }
+        isActive = true
+        isPlaying = true
+        lesson = first
+        line = speak
+        phase = .yourTurn
+        voiceActive = true
+        linesDone = 14
+        correctCount = 11
+    }
+    #endif
+
     // MARK: - Runner
 
     private func restartIfPlaying() {

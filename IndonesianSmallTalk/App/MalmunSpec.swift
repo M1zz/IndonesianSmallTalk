@@ -18,10 +18,15 @@ enum MalmunSpec: LeeoAppSpec {
         appIdentifier: "com.devkoan.IndonesianSmallTalk"
     )
 
-    static let legal = LeeoLegalConfig(
-        privacyURL: URL(string: "https://m1zz.github.io/IndonesianSmallTalk/#privacy")!,
-        supportURL: URL(string: "https://m1zz.github.io/IndonesianSmallTalk/")!
-    )
+    /// 정책·지원 페이지는 앱 화면 언어의 페이지로 연다 (docs/ — 한국어는 맨 위, 나머지는 <언어 코드>/).
+    static let legal: LeeoLegalConfig = {
+        let base = "https://m1zz.github.io/IndonesianSmallTalk/"
+        let folder = AppLanguage.native == .korean ? "" : "\(AppLanguage.native.rawValue)/"
+        return LeeoLegalConfig(
+            privacyURL: URL(string: base + folder + "privacy.html")!,
+            supportURL: URL(string: base + folder + "support.html")!
+        )
+    }()
 
     static let monetization = LeeoMonetization.freemiumSubscription(
         LeeoSubscriptionConfig(

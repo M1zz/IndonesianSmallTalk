@@ -71,6 +71,9 @@ struct ContentView: View {
                 .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
         }
         #if DEBUG
+        .fullScreenCover(isPresented: .constant(ScreenshotScene.current.map { $0 != .home } ?? false)) {
+            if let scene = ScreenshotScene.current { ScreenshotSceneHost(scene: scene) }
+        }
         .sheet(isPresented: $showScreenshotPaywall) {
             if let c = ScreenshotPaywallView.launchConfig {
                 ScreenshotPaywallView(yearlyPrice: c.yearly, lifetimePrice: c.lifetime, selected: c.selected)

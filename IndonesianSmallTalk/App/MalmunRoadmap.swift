@@ -16,17 +16,17 @@ import LeeoKit
 
 extension MalmunSpec {
     static var roadmap: [LeeoRoadmapItem] {[
-        // MARK: 이번에 만든 것 (다음 배포에 나가요)
-        .init(id: "lang.six", status: .building,
+        // MARK: 1.0.3 에 나간 것
+        .init(id: "lang.six", status: .shipped("1.0.3"),
               title: String(localized: "6개 언어 배우기"),
               detail: String(localized: "인도네시아어·영어·일본어·중국어·스페인어·한국어 중에서 골라 배워요. 앱 화면도 6개 언어로 볼 수 있어요.")),
-        .init(id: "drive.mode", status: .building,
+        .init(id: "drive.mode", status: .shipped("1.0.3"),
               title: String(localized: "퇴근길 모드"),
               detail: String(localized: "차에 연결하고 화면 없이 귀로 연습해요. 말로 \"다음\" \"다시\" 하면 알아들어요.")),
-        .init(id: "situations", status: .building,
+        .init(id: "situations", status: .shipped("1.0.3"),
               title: String(localized: "상황별 회화"),
               detail: String(localized: "공항·숙소·식당·교통 같은 상황 대화를 언어마다 53개씩 연습해요.")),
-        .init(id: "tools.pronunciation", status: .building,
+        .init(id: "tools.pronunciation", status: .shipped("1.0.3"),
               title: String(localized: "발음 연습과 대본 보기"),
               detail: String(localized: "따라 말하면 점수를 알려 주고, 대화 전체를 메신저처럼 읽고 들을 수 있어요.")),
 
