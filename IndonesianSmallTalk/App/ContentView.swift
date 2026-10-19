@@ -12,6 +12,10 @@ struct ContentView: View {
     @State private var showGenerateScenario = false
     @State private var showOnboarding = false
     @ObservedObject private var pro = MalmunPro.shared
+    #if DEBUG
+    /// 인앱 구매 심사 스크린샷용 (-ScreenshotPaywall)
+    @State private var showScreenshotPaywall = ScreenshotPaywallView.launchConfig != nil
+    #endif
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -66,6 +70,13 @@ struct ContentView: View {
             LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures)
                 .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
         }
+        #if DEBUG
+        .sheet(isPresented: $showScreenshotPaywall) {
+            if let c = ScreenshotPaywallView.launchConfig {
+                ScreenshotPaywallView(yearlyPrice: c.yearly, lifetimePrice: c.lifetime, selected: c.selected)
+            }
+        }
+        #endif
         .task {
             if !hasSeenOnboarding {
                 showOnboarding = true

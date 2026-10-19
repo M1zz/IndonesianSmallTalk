@@ -103,6 +103,7 @@
 		F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00762B29720746776F158C8 /* MalmunFlags.swift */; };
 		FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */; };
 		F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39DE7678ABA728AF7128645 /* SettingsView.swift */; };
+		FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		F00762B29720746776F158C8 /* MalmunFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunFlags.swift"; sourceTree = "<group>"; };
 		F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunRoadmap.swift"; sourceTree = "<group>"; };
 		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotPaywallView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 				F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */,
 				F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */,
 				F39DE7678ABA728AF7128645 /* SettingsView.swift */,
+				F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */,
 				FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */,
 				F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */,
+				FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
