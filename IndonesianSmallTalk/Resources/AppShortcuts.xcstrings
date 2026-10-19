@@ -5,57 +5,39 @@
       "extractionState": "extracted_with_value",
       "localizations": {
         "en": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Continue in ${applicationName}",
-              "Resume ${applicationName}"
-            ]
+            "value": "Continue in ${applicationName}"
           }
         },
         "es": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Continúa en ${applicationName}",
-              "Reanuda ${applicationName}"
-            ]
+            "value": "Continúa en ${applicationName}"
           }
         },
         "id": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Lanjutkan ${applicationName}",
-              "${applicationName} lanjut"
-            ]
+            "value": "Lanjutkan ${applicationName}"
           }
         },
         "ja": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}を続けて",
-              "${applicationName}を再開"
-            ]
+            "value": "${applicationName}を続けて"
           }
         },
         "ko": {
-          "stringSet": {
-            "state": "new",
-            "values": [
-              "${applicationName} 계속",
-              "${applicationName} 이어서"
-            ]
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} 계속"
           }
         },
         "zh-Hans": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "继续${applicationName}",
-              "${applicationName}继续"
-            ]
+            "value": "继续${applicationName}"
           }
         }
       }
@@ -64,57 +46,39 @@
       "extractionState": "extracted_with_value",
       "localizations": {
         "en": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Again in ${applicationName}",
-              "${applicationName} one more time"
-            ]
+            "value": "Again in ${applicationName}"
           }
         },
         "es": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Otra vez en ${applicationName}",
-              "${applicationName} repite"
-            ]
+            "value": "Otra vez en ${applicationName}"
           }
         },
         "id": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Ulangi di ${applicationName}",
-              "${applicationName} sekali lagi"
-            ]
+            "value": "Ulangi di ${applicationName}"
           }
         },
         "ja": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}でもう一回",
-              "${applicationName}をもう一度"
-            ]
+            "value": "${applicationName}でもう一回"
           }
         },
         "ko": {
-          "stringSet": {
-            "state": "new",
-            "values": [
-              "${applicationName} 다시",
-              "${applicationName} 한 번 더"
-            ]
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} 다시"
           }
         },
         "zh-Hans": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}再来一遍",
-              "${applicationName}重复"
-            ]
+            "value": "${applicationName}再来一遍"
           }
         }
       }
@@ -123,57 +87,39 @@
       "extractionState": "extracted_with_value",
       "localizations": {
         "en": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Next in ${applicationName}",
-              "${applicationName} next sentence"
-            ]
+            "value": "Next in ${applicationName}"
           }
         },
         "es": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Siguiente en ${applicationName}",
-              "${applicationName} siguiente frase"
-            ]
+            "value": "Siguiente en ${applicationName}"
           }
         },
         "id": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName} berikutnya",
-              "Kalimat berikutnya di ${applicationName}"
-            ]
+            "value": "${applicationName} berikutnya"
           }
         },
         "ja": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}で次へ",
-              "${applicationName}の次の文"
-            ]
+            "value": "${applicationName}で次へ"
           }
         },
         "ko": {
-          "stringSet": {
-            "state": "new",
-            "values": [
-              "${applicationName} 다음",
-              "${applicationName} 다음 문장"
-            ]
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} 다음"
           }
         },
         "zh-Hans": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}下一句",
-              "${applicationName}下一个"
-            ]
+            "value": "${applicationName}下一句"
           }
         }
       }
@@ -182,56 +128,39 @@
       "extractionState": "extracted_with_value",
       "localizations": {
         "en": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Stop practice in ${applicationName}",
-              "Stop ${applicationName} practice"
-            ]
+            "value": "Stop practice in ${applicationName}"
           }
         },
         "es": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Detén la práctica en ${applicationName}",
-              "Para la práctica de ${applicationName}"
-            ]
+            "value": "Detén la práctica en ${applicationName}"
           }
         },
         "id": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Hentikan latihan ${applicationName}",
-              "Stop latihan di ${applicationName}"
-            ]
+            "value": "Hentikan latihan ${applicationName}"
           }
         },
         "ja": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}の練習を止めて",
-              "${applicationName}で練習をストップ"
-            ]
+            "value": "${applicationName}の練習を止めて"
           }
         },
         "ko": {
-          "stringSet": {
-            "state": "new",
-            "values": [
-              "${applicationName} 연습 멈춰"
-            ]
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} 연습 멈춰"
           }
         },
         "zh-Hans": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "停止${applicationName}练习",
-              "${applicationName}停止练习"
-            ]
+            "value": "停止${applicationName}练习"
           }
         }
       }
@@ -240,63 +169,39 @@
       "extractionState": "extracted_with_value",
       "localizations": {
         "en": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Start commute practice in ${applicationName}",
-              "${applicationName} commute practice",
-              "Start practice in ${applicationName}"
-            ]
+            "value": "Start commute practice in ${applicationName}"
           }
         },
         "es": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Empieza la práctica del trayecto en ${applicationName}",
-              "Practica el trayecto con ${applicationName}",
-              "Empieza a practicar en ${applicationName}"
-            ]
+            "value": "Empieza la práctica del trayecto en ${applicationName}"
           }
         },
         "id": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "Mulai latihan perjalanan di ${applicationName}",
-              "Latihan perjalanan dengan ${applicationName}",
-              "Mulai latihan ${applicationName}"
-            ]
+            "value": "Mulai latihan perjalanan di ${applicationName}"
           }
         },
         "ja": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "${applicationName}で通勤練習を始めて",
-              "${applicationName}の通勤練習を開始",
-              "${applicationName}で練習を始めて"
-            ]
+            "value": "${applicationName}で通勤練習を始めて"
           }
         },
         "ko": {
-          "stringSet": {
-            "state": "new",
-            "values": [
-              "${applicationName} 퇴근길 연습 시작",
-              "${applicationName}으로 퇴근길 연습",
-              "${applicationName} 연습 시작"
-            ]
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} 퇴근길 연습 시작"
           }
         },
         "zh-Hans": {
-          "stringSet": {
+          "stringUnit": {
             "state": "translated",
-            "values": [
-              "开始${applicationName}通勤练习",
-              "用${applicationName}进行通勤练习",
-              "开始${applicationName}练习"
-            ]
+            "value": "开始${applicationName}通勤练习"
           }
         }
       }

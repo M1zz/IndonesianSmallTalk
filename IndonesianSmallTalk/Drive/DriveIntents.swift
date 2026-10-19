@@ -64,29 +64,25 @@ struct MalmunShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: StartDriveIntent(),
-            phrases: [
-                "\(.applicationName) 퇴근길 연습 시작",
-                "\(.applicationName)으로 퇴근길 연습",
-                "\(.applicationName) 연습 시작"
-            ],
+            phrases: ["\(.applicationName) 퇴근길 연습 시작"],
             shortTitle: "퇴근길 연습",
             systemImageName: "car.fill"
         )
         AppShortcut(
             intent: ResumeDriveIntent(),
-            phrases: ["\(.applicationName) 계속", "\(.applicationName) 이어서"],
+            phrases: ["\(.applicationName) 계속"],
             shortTitle: "이어서 듣기",
             systemImageName: "play.fill"
         )
         AppShortcut(
             intent: NextLineIntent(),
-            phrases: ["\(.applicationName) 다음", "\(.applicationName) 다음 문장"],
+            phrases: ["\(.applicationName) 다음"],
             shortTitle: "다음 문장",
             systemImageName: "forward.end.fill"
         )
         AppShortcut(
             intent: RepeatLineIntent(),
-            phrases: ["\(.applicationName) 다시", "\(.applicationName) 한 번 더"],
+            phrases: ["\(.applicationName) 다시"],
             shortTitle: "한 번 더",
             systemImageName: "gobackward"
         )

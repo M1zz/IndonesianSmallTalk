@@ -226,6 +226,7 @@
 		F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunRoadmap.swift"; sourceTree = "<group>"; };
 		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
 		F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotPaywallView.swift"; sourceTree = "<group>"; };
+		VERSION_XCCONFIG_REF /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +367,7 @@
 				SRCGRP /* IndonesianSmallTalk */,
 				KEXT_GRP /* KeyboardExtension */,
 				PRODGRP /* Products */,
+				VERSION_XCCONFIG_REF /* Version.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -655,10 +657,10 @@
 /* Begin XCBuildConfiguration section */
 		KEXT_DBG /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSION_XCCONFIG_REF /* Version.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
@@ -668,7 +670,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -681,10 +682,10 @@
 		};
 		KEXT_REL /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSION_XCCONFIG_REF /* Version.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
@@ -694,7 +695,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -824,12 +824,12 @@
 		};
 		TGTDBG /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSION_XCCONFIG_REF /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IndonesianSmallTalk/IndonesianSmallTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
@@ -847,7 +847,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -861,12 +860,12 @@
 		};
 		TGTREL /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSION_XCCONFIG_REF /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IndonesianSmallTalk/IndonesianSmallTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
@@ -884,7 +883,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
