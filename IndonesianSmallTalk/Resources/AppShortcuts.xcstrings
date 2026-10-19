@@ -1,211 +1,206 @@
 {
-  "sourceLanguage": "ko",
-  "strings": {
-    "${applicationName} 계속": {
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continue in ${applicationName}"
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "${applicationName} 계속" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue in ${applicationName}"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continúa en ${applicationName}"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continúa en ${applicationName}"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lanjutkan ${applicationName}"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lanjutkan ${applicationName}"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}を続けて"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}を続けて"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} 계속"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} 계속"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "继续${applicationName}"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继续${applicationName}"
           }
         }
       }
     },
-    "${applicationName} 다시": {
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Again in ${applicationName}"
+    "${applicationName} 다시" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Again in ${applicationName}"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otra vez en ${applicationName}"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otra vez en ${applicationName}"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ulangi di ${applicationName}"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulangi di ${applicationName}"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}でもう一回"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}でもう一回"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} 다시"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} 다시"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}再来一遍"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}再来一遍"
           }
         }
       }
     },
-    "${applicationName} 다음": {
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Next in ${applicationName}"
+    "${applicationName} 다음" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next in ${applicationName}"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Siguiente en ${applicationName}"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente en ${applicationName}"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} berikutnya"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} berikutnya"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}で次へ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}で次へ"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} 다음"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} 다음"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}下一句"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}下一句"
           }
         }
       }
     },
-    "${applicationName} 연습 멈춰": {
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop practice in ${applicationName}"
+    "${applicationName} 연습 멈춰" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop practice in ${applicationName}"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Detén la práctica en ${applicationName}"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detén la práctica en ${applicationName}"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hentikan latihan ${applicationName}"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hentikan latihan ${applicationName}"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}の練習を止めて"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}の練習を止めて"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} 연습 멈춰"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} 연습 멈춰"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "停止${applicationName}练习"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止${applicationName}练习"
           }
         }
       }
     },
-    "${applicationName} 퇴근길 연습 시작": {
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start commute practice in ${applicationName}"
+    "${applicationName} 퇴근길 연습 시작" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start commute practice in ${applicationName}"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Empieza la práctica del trayecto en ${applicationName}"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empieza la práctica del trayecto en ${applicationName}"
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mulai latihan perjalanan di ${applicationName}"
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai latihan perjalanan di ${applicationName}"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName}で通勤練習を始めて"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}で通勤練習を始めて"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "${applicationName} 퇴근길 연습 시작"
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} 퇴근길 연습 시작"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "开始${applicationName}通勤练习"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始${applicationName}通勤练习"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
