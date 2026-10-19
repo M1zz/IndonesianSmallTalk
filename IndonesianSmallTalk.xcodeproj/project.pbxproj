@@ -100,6 +100,9 @@
 		LK_BUILDFILE /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = LK_PRODUCT /* LeeoKit */; };
 		F4AD92B70DA05A74C30AB733 /* MalmunSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */; };
 		F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5972DF71DC51861A016E08A /* MalmunPro.swift */; };
+		F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00762B29720746776F158C8 /* MalmunFlags.swift */; };
+		FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */; };
+		F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39DE7678ABA728AF7128645 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +221,9 @@
 		F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunSpec.swift"; sourceTree = "<group>"; };
 		F5972DF71DC51861A016E08A /* MalmunPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunPro.swift"; sourceTree = "<group>"; };
 		FA8D973941C2DD687D13BF6B /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		F00762B29720746776F158C8 /* MalmunFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunFlags.swift"; sourceTree = "<group>"; };
+		F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunRoadmap.swift"; sourceTree = "<group>"; };
+		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +254,8 @@
 				A002 /* ContentView.swift */,
 				A039 /* KeyboardSettings.swift */,
 				F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */,
+				F00762B29720746776F158C8 /* MalmunFlags.swift */,
+				F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 				F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */,
 				F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */,
 				F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */,
+				F39DE7678ABA728AF7128645 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -623,6 +632,9 @@
 				F8863DB6BEBF0BDC19CCD641 /* AudioSessionQueue.swift in Sources */,
 				F4AD92B70DA05A74C30AB733 /* MalmunSpec.swift in Sources */,
 				F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */,
+				F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */,
+				FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */,
+				F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

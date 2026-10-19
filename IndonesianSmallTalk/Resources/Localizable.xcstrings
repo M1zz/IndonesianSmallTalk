@@ -36,6 +36,46 @@
         }
       }
     },
+    "%@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ %2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        }
+      }
+    },
     "%@ %@ (%@)": {
       "localizations": {
         "en": {
@@ -1818,6 +1858,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "四步搞定"
+          }
+        }
+      }
+    },
+    "6개 언어 배우기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Learn 6 languages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprende 6 idiomas"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belajar 6 bahasa"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6言語を学べる"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "学习 6 种语言"
           }
         }
       }
@@ -3876,6 +3950,40 @@
         }
       }
     },
+    "공항·숙소·식당·교통 같은 상황 대화를 언어마다 53개씩 연습해요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice 53 everyday situations per language, like airports, hotels, restaurants and transport."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practica 53 situaciones por idioma: aeropuertos, hoteles, restaurantes, transporte y más."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latih 53 dialog situasi per bahasa, seperti bandara, hotel, restoran, dan transportasi."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空港・宿泊・レストラン・交通などのシーン別会話を、言語ごとに53個練習できます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每种语言 53 个情景对话，如机场、住宿、餐厅、交通。"
+          }
+        }
+      }
+    },
     "공항·숙소·식당·교통·쇼핑·관광·긴급 상황까지, 배우는 모든 언어로 열려요.": {
       "localizations": {
         "en": {
@@ -3974,6 +4082,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "没关系"
+          }
+        }
+      }
+    },
+    "구독 해지·환불은 iPhone 설정 ▸ Apple 계정 ▸ 구독에서 할 수 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel or request a refund in Settings ▸ Apple Account ▸ Subscriptions."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancela o pide un reembolso en Ajustes ▸ Cuenta de Apple ▸ Suscripciones."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batalkan atau minta pengembalian dana di Pengaturan ▸ Akun Apple ▸ Langganan."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "解約や返金は「設定」▸ Appleアカウント ▸ サブスクリプションから行えます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取消订阅或申请退款：设置 ▸ Apple 账户 ▸ 订阅。"
+          }
+        }
+      }
+    },
+    "구매 복원": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchases"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compras"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan Pembelian"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入を復元"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "恢复购买"
           }
         }
       }
@@ -6008,6 +6184,40 @@
         }
       }
     },
+    "다 배운 코스를 지우고 처음부터 다시 연습할 수 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear a finished course and practice it again from the start."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reinicia un curso terminado y vuelve a practicarlo desde el principio."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ulangi kursus yang sudah selesai dari awal."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "学び終えたコースをリセットして最初から練習し直せます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清除已学完的课程，从头再练。"
+          }
+        }
+      }
+    },
     "다른 대답 %lld개": {
       "localizations": {
         "en": {
@@ -6130,6 +6340,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "在其他 App 中也能用 Malmun 键盘 → 看释义点按，即可输入所学语言"
+          }
+        }
+      }
+    },
+    "다른 언어의 기본 단어장": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starter vocabulary in more languages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vocabulario básico en más idiomas"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kosakata dasar untuk bahasa lain"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ほかの言語にも基本単語帳"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "其他语言的基础单词本"
+          }
+        }
+      }
+    },
+    "다른 언어의 하루 코스": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day courses in more languages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cursos del día en más idiomas"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kursus sehari untuk bahasa lain"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ほかの言語にも1日コース"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "其他语言的一日课程"
           }
         }
       }
@@ -7800,6 +8078,40 @@
         }
       }
     },
+    "도움말": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayuda"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bantuan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヘルプ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "帮助"
+          }
+        }
+      }
+    },
     "두 마디 이상이어야 저장할 수 있어요.": {
       "localizations": {
         "en": {
@@ -8272,6 +8584,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "跟读"
+          }
+        }
+      }
+    },
+    "따라 말하면 점수를 알려 주고, 대화 전체를 메신저처럼 읽고 들을 수 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat after the audio to get a score, and read or listen to a whole dialogue like a chat."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repite y recibe una puntuación, y lee o escucha el diálogo completo como un chat."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirukan untuk dapat skor, dan baca atau dengarkan seluruh dialog seperti chat."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まねして話すと点数がわかり、会話全体をメッセンジャーのように読んで聞けます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跟读就能看到分数，还能像聊天一样阅读、收听整段对话。"
           }
         }
       }
@@ -8956,6 +9302,74 @@
         }
       }
     },
+    "말문 %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun %@"
+          }
+        }
+      }
+    },
+    "말문 Pro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro"
+          }
+        }
+      }
+    },
     "말문 Pro 보기": {
       "localizations": {
         "en": {
@@ -8986,6 +9400,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "查看 Malmun Pro"
+          }
+        }
+      }
+    },
+    "말문 Pro 사용 중": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro active"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro activo"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro aktif"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro 利用中"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro 已开通"
           }
         }
       }
@@ -10558,6 +11006,40 @@
         }
       }
     },
+    "발음 연습과 대본 보기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronunciation practice & script view"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronunciación y guion"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latihan pelafalan & naskah"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "発音練習と台本ビュー"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "发音练习和对话剧本"
+          }
+        }
+      }
+    },
     "발음 표기": {
       "localizations": {
         "en": {
@@ -10758,6 +11240,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "适用于全部 6 种学习语言"
+          }
+        }
+      }
+    },
+    "배우는 언어": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Learning language"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma que aprendes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa yang dipelajari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "学習中の言語"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "学习语言"
           }
         }
       }
@@ -11510,6 +12026,40 @@
         }
       }
     },
+    "사용 방법 다시 보기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View the guide again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver la guía otra vez"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat panduan lagi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使い方をもう一度見る"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重新查看使用说明"
+          }
+        }
+      }
+    },
     "사용 흐름": {
       "localizations": {
         "en": {
@@ -12220,6 +12770,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "虽然是可选项，但写下来有助于学习。"
+          }
+        }
+      }
+    },
+    "설정": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pengaturan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
           }
         }
       }
@@ -13846,6 +14430,40 @@
         }
       }
     },
+    "앱 화면 언어는 iPhone 설정 ▸ 말문 ▸ 언어에서 바꿀 수 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change the app's display language in Settings ▸ Malmun ▸ Language."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambia el idioma de la app en Ajustes ▸ Malmun ▸ Idioma."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubah bahasa tampilan aplikasi di Pengaturan ▸ Malmun ▸ Bahasa."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリの表示言語は「設定」▸ Malmun ▸ 言語で変更できます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "应用显示语言可在 设置 ▸ Malmun ▸ 语言 中更改。"
+          }
+        }
+      }
+    },
     "앱에 추가하기": {
       "localizations": {
         "en": {
@@ -14590,6 +15208,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有可练习的句子"
+          }
+        }
+      }
+    },
+    "영어·일본어 등 다른 언어에도 하루를 따라가는 코스가 생겨요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English, Japanese and other languages get courses that follow a whole day."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El inglés, el japonés y otros idiomas tendrán cursos que siguen un día entero."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa Inggris, Jepang, dan lainnya akan punya kursus yang mengikuti satu hari penuh."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "英語や日本語などにも、1日を追うコースができます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "英语、日语等其他语言也会有跟着一天走的课程。"
           }
         }
       }
@@ -17018,6 +17670,74 @@
         }
       }
     },
+    "인도네시아어·영어·일본어·중국어·스페인어·한국어 중에서 골라 배워요. 앱 화면도 6개 언어로 볼 수 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose from Indonesian, English, Japanese, Chinese, Spanish and Korean. The app itself also comes in 6 languages."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige entre indonesio, inglés, japonés, chino, español y coreano. La app también está en 6 idiomas."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih dari bahasa Indonesia, Inggris, Jepang, Mandarin, Spanyol, dan Korea. Aplikasinya juga tersedia dalam 6 bahasa."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インドネシア語・英語・日本語・中国語・スペイン語・韓国語から選んで学べます。アプリの画面も6言語に対応。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可从印尼语、英语、日语、中文、西班牙语、韩语中选择学习。应用界面也支持 6 种语言。"
+          }
+        }
+      }
+    },
+    "인도네시아어처럼 다른 언어에도 처음부터 꼭 필요한 단어가 들어 있어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Like Indonesian, other languages will start with the essential words built in."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como el indonesio, los demás idiomas traerán las palabras esenciales desde el inicio."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seperti bahasa Indonesia, bahasa lain juga akan langsung berisi kata-kata penting."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インドネシア語のように、ほかの言語にも最初から必須単語が入ります。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "像印尼语一样，其他语言也会内置必备单词。"
+          }
+        }
+      }
+    },
     "인스타그램 DM (@lee25_ios)": {
       "localizations": {
         "en": {
@@ -18874,6 +19594,40 @@
         }
       }
     },
+    "지원": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soporte"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dukungan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サポート"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "支持"
+          }
+        }
+      }
+    },
     "직접 만들기": {
       "localizations": {
         "en": {
@@ -19176,6 +19930,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "连接汽车并播放"
+          }
+        }
+      }
+    },
+    "차에 연결하고 화면 없이 귀로 연습해요. 말로 \"다음\" \"다시\" 하면 알아들어요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect to your car and practice by ear, no screen needed. Say \"next\" or \"again\" and it understands."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conéctalo al auto y practica de oído sin mirar la pantalla. Di «siguiente» u «otra vez» y te entiende."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sambungkan ke mobil dan latihan lewat telinga tanpa layar. Bilang \"lanjut\" atau \"ulang\", langsung dimengerti."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "車につないで画面なしで耳で練習。「次」「もう一回」と言えば伝わります。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "连上车，不看屏幕用耳朵练习。说“下一个”“再来”就能听懂。"
           }
         }
       }
@@ -20206,6 +20994,74 @@
         }
       }
     },
+    "코스 완주 배지": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Course completion badges"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insignias por completar cursos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lencana kursus selesai"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コース完走バッジ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "课程完成徽章"
+          }
+        }
+      }
+    },
+    "코스 처음부터 다시": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restart a course"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reiniciar un curso"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ulangi kursus dari awal"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コースを最初から"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重新开始课程"
+          }
+        }
+      }
+    },
     "코치 팁": {
       "localizations": {
         "en": {
@@ -20886,6 +21742,40 @@
         }
       }
     },
+    "퇴근길 모드 무제한 · 상황별 회화 전체": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited Commute Mode · All situational dialogues"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo trayecto sin límites · Todos los diálogos por situación"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode Perjalanan tanpa batas · Semua dialog situasi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通勤モード無制限・すべてのシーン別会話"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无限通勤模式 · 全部情景对话"
+          }
+        }
+      }
+    },
     "퇴근길 모드 무제한 — 하루 장면 수 제한 없음": {
       "localizations": {
         "en": {
@@ -21052,6 +21942,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "开始通勤练习"
+          }
+        }
+      }
+    },
+    "퇴근길에 잘 안 된 문장만 모아서 다음 날 다시 들려줘요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentences you struggled with on your commute come back the next day."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las frases que te costaron en el trayecto vuelven al día siguiente."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalimat yang sulit saat perjalanan dikumpulkan dan diputar lagi besoknya."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通勤中にうまく言えなかった文だけを集めて、次の日にもう一度流します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把通勤时没说好的句子收集起来，第二天再放给你听。"
+          }
+        }
+      }
+    },
+    "틀린 문장 모아 듣기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replay the ones you missed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasa las que fallaste"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengar ulang yang salah"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "間違えた文をまとめて聞く"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "错句合集重听"
           }
         }
       }
@@ -21528,6 +22486,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "一日课程"
+          }
+        }
+      }
+    },
+    "하루 코스를 끝까지 마치면 기념 배지와 결과를 보여 줘요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish a day course to get a badge and see your results."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termina un curso del día para ganar una insignia y ver tus resultados."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selesaikan kursus sehari untuk dapat lencana dan melihat hasilmu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1日コースを最後までやり切ると、記念バッジと結果が表示されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成一日课程后会显示纪念徽章和成绩。"
           }
         }
       }

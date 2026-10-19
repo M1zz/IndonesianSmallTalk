@@ -8,6 +8,7 @@ struct HomeView: View {
     private var courses: [JourneyCourse] { ScenarioLibrary.courses(for: language) }
     @State private var situationCategory: String? = nil
     @State private var showLanguagePicker = false
+    @State private var showSettings = false
     @ObservedObject private var pro = MalmunPro.shared
     @EnvironmentObject var userScenarioStore: UserScenarioStore
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
@@ -168,6 +169,9 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showLanguagePicker) {
             LanguagePickerSheet()
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
     }
 
@@ -551,14 +555,15 @@ struct HomeView: View {
                     }
                     .accessibilityLabel(Text("말문 Pro 보기"))
                 }
-                Button(action: { showOnboarding = true }) {
-                    Image(systemName: "questionmark.circle.fill")
+                Button(action: { showSettings = true }) {
+                    Image(systemName: "gearshape.fill")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(width: 36, height: 36)
                         .background(Circle().fill(.white.opacity(0.18)))
                         .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 0.5))
                 }
+                .accessibilityLabel(Text("설정"))
             }
             .padding(.top, 14)
             .padding(.trailing, 16)

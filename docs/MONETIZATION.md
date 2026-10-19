@@ -22,19 +22,44 @@
 - DEBUG 빌드는 잠금 없이 동작한다. 잠금·구매를 시험하려면 실행 인자 `-paywall`.
 - `IndonesianSmallTalk/Products.storekit` — Xcode 에서 실행하면 이 파일로 가짜 구매를 시험한다 (가격은 시험용 숫자일 뿐).
 
-## 사람이 할 일 (App Store Connect)
+## 가격 (추천)
 
-1. **유료 앱 계약**(Paid Apps Agreement)·세금·은행 정보가 활성인지 확인
-2. 인앱 구매 만들기 — ID 는 코드와 똑같아야 한다
-   - 구독 그룹 `Malmun Pro` ▸ 자동 갱신 구독 `com.devkoan.IndonesianSmallTalk.pro.yearly` (1년)
-     - 도입 혜택: 1주 무료 체험 (선택)
-   - 비소모성 `com.devkoan.IndonesianSmallTalk.pro.lifetime`
-3. **가격** 정하기 (두 상품 모두)
-4. 상품마다 표시 이름·설명을 6개 언어로 (Products.storekit 의 문구를 그대로 써도 된다), 심사용 스크린샷 1장
-5. 앱 버전 심사 제출 때 두 상품을 함께 선택
-6. 앱 개인정보 라벨: 구매 기록은 Apple 이 처리 — 앱이 따로 모으지 않음
+| 상품 | 상품 ID | 유형 | 추천 가격 | 무료 체험 |
+|---|---|---|---|---|
+| 말문 Pro 연간 | `com.devkoan.IndonesianSmallTalk.pro.yearly` | 자동 갱신 구독 · 1년 (그룹 `Malmun Pro`) | **$19.99 / 년** | 1주 |
+| 말문 Pro 평생 | `com.devkoan.IndonesianSmallTalk.pro.lifetime` | 비소모성 (한 번 결제) | **$39.99** | — |
+
+- **근거**: 큰 언어 앱 연간 구독은 대략 $80~$100 (Duolingo Super·Speak·Babbel). 말문 Pro 는 퇴근길 모드·상황별 회화 두 가지만 여는 1인 앱이라 그 4분의 1 수준으로 잡았다.
+- **평생 = 연간의 2배**: 2년 넘게 쓸 사람은 평생을, 대부분은 연간을 고르게 한다.
+- **다른 안**: 낮게 $14.99 / $29.99 (전환을 먼저 보고 싶을 때), 높게 $29.99 / $59.99 (상황별 회화를 더 늘린 뒤).
+- 다른 나라 가격은 App Store Connect 가 미국 가격 기준으로 자동 환산한다. 한국만 따로 정하고 싶으면 그 나라 가격을 직접 고친다.
+- `IndonesianSmallTalk/Products.storekit` 의 시험 가격도 이 숫자로 맞춰 두었다 (Xcode 시험용일 뿐, 실제 가격은 App Store Connect 가 정한다).
+
+## 내가 할 일
+
+| # | 어디서 | 할 일 | 비고 |
+|---|---|---|---|
+| 1 | App Store Connect ▸ 비즈니스 | 유료 앱 계약·세금·은행 정보가 '활성'인지 확인 | 비활성이면 상품이 앱에 안 뜬다 |
+| 2 | 앱 ▸ 구독 | 구독 그룹 `Malmun Pro` 만들기 → 그 안에 `…pro.yearly` (1년) | ID 는 코드와 글자 하나까지 같아야 한다 |
+| 3 | 앱 ▸ 구독 ▸ 연간 | 가격 **$19.99**, 도입 혜택 **1주 무료 체험** | |
+| 4 | 앱 ▸ 인앱 구매 | 비소모성 `…pro.lifetime`, 가격 **$39.99** | |
+| 5 | 두 상품 모두 | 표시 이름·설명 6개 언어 (Products.storekit 의 문구를 그대로 써도 됨), 심사용 스크린샷 1장 (설정 ▸ 말문 Pro 화면) | |
+| 6 | 구독 그룹 | 그룹 표시 이름 현지화 (예: 말문 Pro / Malmun Pro) | |
+| 7 | 앱 ▸ 앱 개인정보 | 아래 표대로 수집 항목 고치기 | 이번에 익명 통계가 새로 생겼다 |
+| 8 | 버전 제출 | 이번 버전 심사에 두 상품을 함께 선택 | 처음 파는 상품은 버전과 같이 심사받는다 |
+| 9 | (기기에서 처음 빌드할 때) | Xcode 자동 서명이 App ID 에 `iCloud.com.Ysoup.FeedbackHub` 컨테이너를 붙이는지 확인. 실패하면 developer.apple.com ▸ Identifiers ▸ `com.devkoan.IndonesianSmallTalk` ▸ iCloud ▸ 컨테이너에 추가 | 다른 앱들과 같은 팀(QGAQ3AY3R3)이라 보통 저절로 된다 |
+
+### 앱 개인정보 라벨 (7번)
+
+| 데이터 | 수집 | 사용자와 연결 | 추적 | 목적 |
+|---|---|---|---|---|
+| 사용 데이터 ▸ 제품 상호 작용 (실행·사용 횟수) | 예 | 아니요 | 아니요 | 분석 |
+| 진단 ▸ 충돌 데이터 · 성능 데이터 | 예 | 아니요 | 아니요 | 앱 기능 |
+| 연락처 정보 ▸ 이메일 (피드백에 적은 경우만) | 예 | 예 | 아니요 | 고객 지원 |
+| 사용자 콘텐츠 ▸ 고객 지원 (피드백 내용) | 예 | 아니요 | 아니요 | 고객 지원 |
+| 구매 내역 | 아니요 (Apple 이 처리) | | | |
 
 ## 나중에
 
-- 피드백·사용 통계 허브(LeeoKit FeedbackHub)를 켜려면 iCloud 권한에 `iCloud.com.Ysoup.FeedbackHub` 를 먼저 넣고 `LeeoKit.bootstrap(MalmunSpec.self)` 를 부른다.
-- 페이월 노출·구매 퍼널을 보려면 Spec 에 `analytics` 싱크를 넣는다.
+- 페이월 노출·구매 퍼널은 허브(FeedbackHubViewer)에서 `paywall_shown → purchase_started → purchase_completed` 로 보인다 (LeeoUsageAnalytics 가 스스로 보낸다).
+- 원격 킬스위치: FeedbackHub ▸ RemoteFlags ▸ `flags_com.devkoan.IndonesianSmallTalk` 에 `driveVoice` 를 0 으로 두면 퇴근길 목소리 조작만 꺼진다.

@@ -1,3 +1,4 @@
+import LeeoKit
 import SwiftUI
 
 @main
@@ -13,6 +14,12 @@ struct IndonesianSmallTalkApp: App {
     @StateObject private var slangStore = SlangStore()
     @StateObject private var vocabularyStore = VocabularyStore()
     @StateObject private var journeyProgressStore = JourneyProgressStore()
+
+    init() {
+        // LeeoKit 계약을 켜는 한 줄 (→ MalmunSpec). 실행 횟수 · 익명 사용 통계 · 크래시 진단 ·
+        // 원격 킬스위치(→ MalmunFlags) · DEBUG 프리플라이트. 모두 FeedbackHub(CloudKit)를 쓴다.
+        LeeoKit.bootstrap(MalmunSpec.self, flags: MalmunFlag.self)
+    }
 
     var body: some Scene {
         WindowGroup {

@@ -1,4 +1,5 @@
 import AVFoundation
+import LeeoKit
 import MediaPlayer
 import UIKit
 
@@ -386,6 +387,7 @@ final class DriveSession: NSObject, ObservableObject {
 
     private func activateAudio() async {
         let wantsMic = DriveSettings.voice && DriveVoiceListener.isAuthorized
+            && LeeoRemoteFlags.isEnabled(MalmunFlag.driveVoice)
         do {
             try await AudioSessionQueue.run { session in
                 if wantsMic {
