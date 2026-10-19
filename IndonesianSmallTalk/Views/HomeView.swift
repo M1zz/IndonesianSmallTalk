@@ -8,6 +8,7 @@ struct HomeView: View {
     private var courses: [JourneyCourse] { ScenarioLibrary.courses(for: language) }
     @State private var situationCategory: String? = nil
     @State private var showLanguagePicker = false
+    @ObservedObject private var pro = MalmunPro.shared
     @EnvironmentObject var userScenarioStore: UserScenarioStore
     @EnvironmentObject var sharedScenarioStore: SharedScenarioStore
     @EnvironmentObject var sharedReplyStore: SharedReplyStore
@@ -310,7 +311,7 @@ struct HomeView: View {
                 HStack(spacing: 8) {
                     categoryChip(title: String(localized: "전체"), icon: nil, id: nil)
                     ForEach(SituationLibrary.categories) { cat in
-                        categoryChip(title: cat.name, icon: cat.icon, id: cat.id)
+                        categoryChip(title: cat.name, icon: cat.icon, id: cat.id, locked: pro.isLocked(category: cat.id))
                     }
                 }
                 .padding(.horizontal, 18)
@@ -321,9 +322,10 @@ struct HomeView: View {
                 ForEach(visibleSituations) { scenario in
                     ScenarioCard(
                         scenario: scenario,
-                        onTap: { selectedScenario = scenario; showPractice = true },
-                        onVoiceTap: { selectedScenario = scenario; showVoicePractice = true },
-                        onAddReply: { addReplyScenario = scenario }
+                        isLocked: pro.isLocked(scenario),
+                        onTap: { if pro.canOpen(scenario) { selectedScenario = scenario; showPractice = true } },
+                        onVoiceTap: { if pro.canOpen(scenario) { selectedScenario = scenario; showVoicePractice = true } },
+                        onAddReply: { if pro.canOpen(scenario) { addReplyScenario = scenario } }
                     )
                 }
             }
@@ -333,7 +335,7 @@ struct HomeView: View {
         Color.clear.frame(height: 32)
     }
 
-    private func categoryChip(title: String, icon: String?, id: String?) -> some View {
+    private func categoryChip(title: String, icon: String?, id: String?, locked: Bool = false) -> some View {
         let selected = situationCategory == id
         return Button {
             withAnimation(.easeInOut(duration: 0.2)) { situationCategory = id }
@@ -341,6 +343,12 @@ struct HomeView: View {
             HStack(spacing: 4) {
                 if let icon { Text(icon).font(.system(size: 12)) }
                 Text(title).font(.system(size: 12, weight: .semibold))
+                if locked {
+                    Image(systemName: "lock.fill")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundColor(selected ? .white.opacity(0.8) : Brand.glow)
+                        .accessibilityLabel(Text("Pro"))
+                }
             }
             .foregroundColor(selected ? .white : .primary)
             .padding(.horizontal, 12)
@@ -529,13 +537,28 @@ struct HomeView: View {
             .padding(.vertical, 22)
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: { showOnboarding = true }) {
-                Image(systemName: "questionmark.circle.fill")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(width: 36, height: 36)
-                    .background(Circle().fill(.white.opacity(0.18)))
-                    .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 0.5))
+            HStack(spacing: 8) {
+                if !pro.hasPro {
+                    Button { pro.showGeneralPaywall = true } label: {
+                        HStack(spacing: 4) {
+                            Image(systemName: "crown.fill").font(.system(size: 11, weight: .bold))
+                            Text("Pro").font(.system(size: 12, weight: .heavy))
+                        }
+                        .foregroundColor(Brand.deep)
+                        .padding(.horizontal, 10)
+                        .frame(height: 30)
+                        .background(Capsule().fill(Brand.glow))
+                    }
+                    .accessibilityLabel(Text("말문 Pro 보기"))
+                }
+                Button(action: { showOnboarding = true }) {
+                    Image(systemName: "questionmark.circle.fill")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(width: 36, height: 36)
+                        .background(Circle().fill(.white.opacity(0.18)))
+                        .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 0.5))
+                }
             }
             .padding(.top, 14)
             .padding(.trailing, 16)
@@ -581,6 +604,8 @@ enum ScenarioCardBadge {
 struct ScenarioCard: View {
     let scenario: ConversationScenario
     var isUserAdded: Bool = false
+    /// 말문 Pro 로 열리는 시나리오 (누르면 페이월)
+    var isLocked: Bool = false
     var badge: ScenarioCardBadge = .none
     let onTap: () -> Void
     let onVoiceTap: () -> Void
@@ -638,6 +663,9 @@ struct ScenarioCard: View {
                                 .background(diffColor.opacity(0.12))
                                 .cornerRadius(5)
                                 .fixedSize()
+                            if isLocked {
+                                badgeChip(text: "Pro", color: Color(red: 0.85, green: 0.55, blue: 0.10), icon: "lock.fill")
+                            }
                             switch effectiveBadge {
                             case .userAdded:
                                 badgeChip(text: String(localized: "내가 만든"), color: .purple)

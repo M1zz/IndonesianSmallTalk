@@ -97,6 +97,9 @@
 		F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */; };
 		F2FADC7CCEBE55F081DF06A3 /* DriveVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6680224751BCA0FCE5272BD /* DriveVoice.swift */; };
 		F8863DB6BEBF0BDC19CCD641 /* AudioSessionQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */; };
+		LK_BUILDFILE /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = LK_PRODUCT /* LeeoKit */; };
+		F4AD92B70DA05A74C30AB733 /* MalmunSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */; };
+		F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5972DF71DC51861A016E08A /* MalmunPro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +215,9 @@
 		FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F6680224751BCA0FCE5272BD /* DriveVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveVoice.swift"; sourceTree = "<group>"; };
 		F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioSessionQueue.swift"; sourceTree = "<group>"; };
+		F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunSpec.swift"; sourceTree = "<group>"; };
+		F5972DF71DC51861A016E08A /* MalmunPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunPro.swift"; sourceTree = "<group>"; };
+		FA8D973941C2DD687D13BF6B /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		APP_FWPHASE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				LK_BUILDFILE /* LeeoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +247,7 @@
 				A026 /* SceneDelegate.swift */,
 				A002 /* ContentView.swift */,
 				A039 /* KeyboardSettings.swift */,
+				F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -258,6 +273,7 @@
 				F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */,
 				FDBDC313F8F4410256B94754 /* PracticeHistory.swift */,
 				F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */,
+				F5972DF71DC51861A016E08A /* MalmunPro.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +378,7 @@
 				A010 /* Assets.xcassets */,
 				GRP_RESOURCES /* Resources */,
 				GRP_DRIVE /* Drive */,
+				FA8D973941C2DD687D13BF6B /* Products.storekit */,
 			);
 			path = IndonesianSmallTalk;
 			sourceTree = "<group>";
@@ -424,6 +441,7 @@
 			buildConfigurationList = TGTCFGLIST /* Build configuration list for PBXNativeTarget "IndonesianSmallTalk" */;
 			buildPhases = (
 				SRCPHASE /* Sources */,
+				APP_FWPHASE /* Frameworks */,
 				RESPHASE /* Resources */,
 				KEXT_EMBEDPHASE /* Embed Foundation Extensions */,
 			);
@@ -433,6 +451,9 @@
 				KEXT_DEP /* PBXTargetDependency */,
 			);
 			name = IndonesianSmallTalk;
+			packageProductDependencies = (
+				LK_PRODUCT /* LeeoKit */,
+			);
 			productName = IndonesianSmallTalk;
 			productReference = PROD /* IndonesianSmallTalk.app */;
 			productType = "com.apple.product-type.application";
@@ -469,6 +490,9 @@
 				Base,
 			);
 			mainGroup = MAINGRP;
+			packageReferences = (
+				LK_PACKAGE /* XCRemoteSwiftPackageReference "LeeoKit" */,
+			);
 			productRefGroup = PRODGRP /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -597,6 +621,8 @@
 				FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */,
 				F2FADC7CCEBE55F081DF06A3 /* DriveVoice.swift in Sources */,
 				F8863DB6BEBF0BDC19CCD641 /* AudioSessionQueue.swift in Sources */,
+				F4AD92B70DA05A74C30AB733 /* MalmunSpec.swift in Sources */,
+				F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,6 +911,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		LK_PACKAGE /* XCRemoteSwiftPackageReference "LeeoKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/M1zz/LeeoKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		LK_PRODUCT /* LeeoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = LK_PACKAGE /* XCRemoteSwiftPackageReference "LeeoKit" */;
+			productName = LeeoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = PROJ /* Project object */;
 }

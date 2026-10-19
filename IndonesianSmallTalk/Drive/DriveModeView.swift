@@ -4,6 +4,7 @@ import SwiftUI
 /// 퇴근길 모드 화면. 출발 전에 고르고 누르면, 그다음은 소리와 운전대 버튼으로 진행된다.
 struct DriveModeView: View {
     @ObservedObject private var session = DriveSession.shared
+    @ObservedObject private var pro = MalmunPro.shared
     @AppStorage(DriveSettings.sourceKey) private var sourceRaw = DriveSource.mix.rawValue
     @AppStorage(DriveSettings.rateKey) private var rate = 0.9
     @AppStorage(DriveSettings.gapKey) private var gap = 1.0
@@ -22,6 +23,9 @@ struct DriveModeView: View {
             VStack(spacing: 18) {
                 nowPlayingCard
                 controls
+                if let left = pro.driveScenesLeft {
+                    freeLimitRow(left: left)
+                }
                 if !session.isActive || !session.isPlaying {
                     sourcePicker
                     settingsCard
@@ -223,6 +227,34 @@ struct DriveModeView: View {
                 .accessibilityLabel(Text("끝내기"))
             }
         }
+    }
+
+    /// 무료 사용자: 오늘 남은 장면 수 + Pro 안내
+    private func freeLimitRow(left: Int) -> some View {
+        Button { pro.showPaywall(.commute) } label: {
+            HStack(spacing: 10) {
+                Image(systemName: left == 0 ? "lock.fill" : "gift.fill")
+                    .foregroundColor(Brand.glow)
+                VStack(alignment: .leading, spacing: 2) {
+                    (left == 0 ? Text("오늘 무료 장면을 다 들었어요") : Text("오늘 무료 장면 \(left)개 남음"))
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.primary)
+                    Text("말문 Pro는 하루 제한 없이 들을 수 있어요")
+                        .font(.system(size: 12))
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Text("Pro")
+                    .font(.system(size: 12, weight: .heavy))
+                    .foregroundColor(Brand.deep)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(Capsule().fill(Brand.glow))
+            }
+            .padding(14)
+            .background(RoundedRectangle(cornerRadius: 16).fill(Color(.secondarySystemGroupedBackground)))
+        }
+        .buttonStyle(.plain)
     }
 
     /// 목소리 조작이 켜져 있으면 처음 한 번 마이크·음성 인식 허락을 받고 시작한다.

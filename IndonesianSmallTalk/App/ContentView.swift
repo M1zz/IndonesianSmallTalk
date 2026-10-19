@@ -1,3 +1,4 @@
+import LeeoKit
 import SwiftUI
 
 struct ContentView: View {
@@ -10,6 +11,7 @@ struct ContentView: View {
     @State private var showAddScenario = false
     @State private var showGenerateScenario = false
     @State private var showOnboarding = false
+    @ObservedObject private var pro = MalmunPro.shared
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -54,6 +56,15 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView()
+        }
+        // 잠긴 기능을 누르면 그 기능을 앞세운 페이월 (구매·복원하면 저절로 닫힌다)
+        .sheet(item: $pro.paywallFeature) { feature in
+            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures, leadFeature: feature)
+                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+        }
+        .sheet(isPresented: $pro.showGeneralPaywall) {
+            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures)
+                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
         }
         .task {
             if !hasSeenOnboarding {

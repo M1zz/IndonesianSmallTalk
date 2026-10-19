@@ -73,7 +73,10 @@ enum DriveContent {
                 + ScenarioLibrary.courses(for: language).flatMap { $0.stops.map(\.scenario) }
             return talk.map(lesson(from:))
         case .situations:
-            return ScenarioLibrary.situations(for: language).map(lesson(from:))
+            // Pro 가 아니면 무료 분류(기본·일상 대화)만
+            return ScenarioLibrary.situations(for: language)
+                .filter { !MalmunPro.shared.isLocked($0) }
+                .map(lesson(from:))
         case .phrases:
             return phraseLessons()
         case .words:

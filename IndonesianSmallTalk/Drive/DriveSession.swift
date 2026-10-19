@@ -61,6 +61,8 @@ final class DriveSession: NSObject, ObservableObject {
     private var micTapInstalled = false
 
     private let voice = DriveVoiceListener()
+    /// 무료 한도에 이미 센 장면
+    private var countedLessonID: String?
     private var pendingAck: String?
 
     private override init() {
@@ -188,6 +190,22 @@ final class DriveSession: NSObject, ObservableObject {
             guard lessonIndex < lessons.count else { lessonIndex = 0; continue }
             let current = lessons[lessonIndex]
             lesson = current
+            // 무료 한도는 장면을 '시작할 때' 센다 (끝나기 직전에 건너뛰어도 한 장면). 같은 장면을 다시 들으면 세지 않는다.
+            if lineIndex == 0, countedLessonID != current.id, !MalmunPro.shared.canStartDriveScene() {
+                // 오늘 무료 장면을 다 들었다 — 알려 주고 멈춘다. (화면이 떠 있으면 페이월이 뜬다)
+                phase = .finished
+                line = nil
+                updateNowPlaying()
+                await say(String(localized: "오늘 무료 장면 \(MalmunPro.freeDriveScenesPerDay)개를 다 들었어요. 말문 Pro로 계속 들을 수 있어요."),
+                          in: AppLanguage.native, rate: 1.0)
+                MalmunPro.shared.showPaywall(.commute)
+                pause()
+                return
+            }
+            if countedLessonID != current.id {
+                countedLessonID = current.id
+                MalmunPro.shared.countDriveScene()
+            }
             if lineIndex == 0 {
                 phase = .intro
                 line = nil

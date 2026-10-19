@@ -348,7 +348,7 @@ struct PronunciationPracticeView: View {
             case .myPhrases:
                 sentences = phraseStore.phrases.map(PracticeSentence.from)
             case .library:
-                let pool = ScenarioLibrary.all(for: language).flatMap(PracticeSentence.lines(of:))
+                let pool = ScenarioLibrary.available(for: language).flatMap(PracticeSentence.lines(of:))
                 var seen = Set<String>()
                 // 너무 긴 문장은 발음 연습에 맞지 않아 뺀다
                 let unique = pool.filter { $0.text.count <= 60 && seen.insert($0.text).inserted }

@@ -116,7 +116,7 @@ struct ScriptScenarioPicker: View {
     @State private var query = ""
 
     private var language: AppLanguage { AppLanguage.learning }
-    private var builtIn: [ConversationScenario] { filter(ScenarioLibrary.all(for: language)) }
+    private var builtIn: [ConversationScenario] { filter(ScenarioLibrary.available(for: language)) }
     private var mine: [ConversationScenario] { filter(userScenarioStore.asScenarios) }
 
     private func filter(_ list: [ConversationScenario]) -> [ConversationScenario] {

@@ -148,6 +148,12 @@ enum ScenarioLibrary {
         SituationLibrary.scenarios(for: language)
     }
 
+    /// 지금 권한으로 열 수 있는 것만 (Pro 가 아니면 잠긴 상황별 회화를 뺀다)
+    @MainActor
+    static func available(for language: AppLanguage) -> [ConversationScenario] {
+        all(for: language).filter { !MalmunPro.shared.isLocked($0) }
+    }
+
     /// 이 언어로 연습할 수 있는 기본 시나리오 전부 (스몰토크 → 하루 코스 → 상황별)
     static func all(for language: AppLanguage) -> [ConversationScenario] {
         smallTalk(for: language)

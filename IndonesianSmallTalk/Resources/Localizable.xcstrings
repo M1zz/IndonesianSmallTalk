@@ -2502,6 +2502,40 @@
         }
       }
     },
+    "Pro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        }
+      }
+    },
     "Safari에서 학습 페이지 열기": {
       "localizations": {
         "en": {
@@ -3838,6 +3872,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在取消共享…"
+          }
+        }
+      }
+    },
+    "공항·숙소·식당·교통·쇼핑·관광·긴급 상황까지, 배우는 모든 언어로 열려요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Airports, hotels, restaurants, transport, shopping, sightseeing and emergencies, unlocked in every language you learn."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aeropuertos, hoteles, restaurantes, transporte, compras, turismo y emergencias, en todos los idiomas que aprendes."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bandara, hotel, restoran, transportasi, belanja, wisata, sampai darurat, terbuka di semua bahasa yang kamu pelajari."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空港・宿泊・レストラン・交通・買い物・観光・緊急時まで、学ぶすべての言語で使えます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "机场、住宿、餐厅、交通、购物、观光、紧急情况，所有学习语言全部开放。"
           }
         }
       }
@@ -8888,6 +8956,74 @@
         }
       }
     },
+    "말문 Pro 보기": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Malmun Pro"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver Malmun Pro"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat Malmun Pro"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Proを見る"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看 Malmun Pro"
+          }
+        }
+      }
+    },
+    "말문 Pro는 하루 제한 없이 들을 수 있어요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With Malmun Pro there's no daily limit"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Malmun Pro no hay límite diario"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengan Malmun Pro tidak ada batas harian"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Proなら1日の制限なく聞けます"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malmun Pro 没有每日限制"
+          }
+        }
+      }
+    },
     "말문 퇴근길 모드": {
       "localizations": {
         "en": {
@@ -10592,6 +10728,40 @@
         }
       }
     },
+    "배우는 6개 언어 모두에 적용": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works for all 6 languages you can learn"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para los 6 idiomas que puedes aprender"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berlaku untuk ke-6 bahasa yang bisa dipelajari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "学べる6言語すべてに適用"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "适用于全部 6 种学习语言"
+          }
+        }
+      }
+    },
     "배우는 언어 바꾸기, 지금 %@": {
       "localizations": {
         "en": {
@@ -11914,6 +12084,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "情景会话"
+          }
+        }
+      }
+    },
+    "상황별 회화 전체": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All situational dialogues"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los diálogos por situación"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua dialog situasi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてのシーン別会話"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部情景对话"
+          }
+        }
+      }
+    },
+    "상황별 회화 전체 — 공항·숙소·식당·교통·쇼핑·관광·긴급": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All situational dialogues: airport, hotel, restaurant, transport, shopping, sightseeing, emergencies"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los diálogos por situación: aeropuerto, hotel, restaurante, transporte, compras, turismo, emergencias"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua dialog situasi: bandara, hotel, restoran, transportasi, belanja, wisata, darurat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてのシーン別会話：空港・宿泊・レストラン・交通・買い物・観光・緊急"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部情景对话：机场、住宿、餐厅、交通、购物、观光、紧急"
           }
         }
       }
@@ -15096,6 +15334,156 @@
           "stringUnit": {
             "state": "translated",
             "value": "今天 %lld 句"
+          }
+        }
+      }
+    },
+    "오늘 무료 장면 %lld개 남음": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld free scene left today"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld free scenes left today"
+                }
+              }
+            }
+          }
+        },
+        "es": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Te queda %lld escena gratis hoy"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Te quedan %lld escenas gratis hoy"
+                }
+              }
+            }
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sisa %lld adegan gratis hari ini"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の無料シーン 残り%lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天还剩 %lld 个免费场景"
+          }
+        }
+      }
+    },
+    "오늘 무료 장면 %lld개를 다 들었어요. 말문 Pro로 계속 들을 수 있어요.": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "You've heard today's %lld free scene. Keep listening with Malmun Pro."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "You've heard today's %lld free scenes. Keep listening with Malmun Pro."
+                }
+              }
+            }
+          }
+        },
+        "es": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Ya escuchaste la %lld escena gratis de hoy. Sigue con Malmun Pro."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Ya escuchaste las %lld escenas gratis de hoy. Sigue con Malmun Pro."
+                }
+              }
+            }
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamu sudah mendengar %lld adegan gratis hari ini. Lanjutkan dengan Malmun Pro."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の無料シーン%lld個をすべて聞きました。Malmun Proで続きを聞けます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天的 %lld 个免费场景已经听完了。用 Malmun Pro 可以继续听。"
+          }
+        }
+      }
+    },
+    "오늘 무료 장면을 다 들었어요": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've used today's free scenes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya usaste las escenas gratis de hoy"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adegan gratis hari ini sudah habis"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の無料シーンを使い切りました"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天的免费场景已用完"
           }
         }
       }
@@ -20464,6 +20852,74 @@
         }
       }
     },
+    "퇴근길 모드 무제한": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited Commute Mode"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo trayecto sin límites"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode Perjalanan tanpa batas"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通勤モード無制限"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无限通勤模式"
+          }
+        }
+      }
+    },
+    "퇴근길 모드 무제한 — 하루 장면 수 제한 없음": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited Commute Mode: no daily scene limit"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo trayecto sin límites: sin tope diario de escenas"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode Perjalanan tanpa batas: tanpa batas adegan harian"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通勤モード無制限：1日のシーン数制限なし"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无限通勤模式：不限每日场景数"
+          }
+        }
+      }
+    },
     "퇴근길 연습": {
       "localizations": {
         "en": {
@@ -21008,6 +21464,40 @@
         }
       }
     },
+    "하루 장면 수 제한 없이, 출퇴근 내내 귀로 연습해요.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No daily scene limit. Practice by ear for your whole commute."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin límite diario de escenas. Practica de oído todo el trayecto."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa batas adegan harian. Latihan lewat telinga sepanjang perjalanan."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1日のシーン数を気にせず、通勤中ずっと耳で練習できます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不限每日场景数，通勤路上一直用耳朵练习。"
+          }
+        }
+      }
+    },
     "하루 코스": {
       "localizations": {
         "en": {
@@ -21436,6 +21926,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "再听一次"
+          }
+        }
+      }
+    },
+    "한 번 사면 iPhone·iPad 어디서나": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buy once, use on your iPhone and iPad"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compra una vez y úsalo en iPhone y iPad"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beli sekali, pakai di iPhone dan iPad"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一度買えばiPhone・iPadのどちらでも"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "买一次，iPhone 和 iPad 都能用"
           }
         }
       }
