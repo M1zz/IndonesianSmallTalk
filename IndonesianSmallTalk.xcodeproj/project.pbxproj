@@ -516,6 +516,12 @@
 				cs,
 				da,
 				el,
+				fi,
+				nb,
+				nl,
+				pl,
+				sv,
+				tr,
 				Base,
 			);
 			mainGroup = MAINGRP;

@@ -46,6 +46,12 @@
             "value" : "Teclado Malmun"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-näppäimistö"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -76,6 +82,24 @@
             "value" : "말문 키보드"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-tastatur"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Toetsenbord"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klawiatura Malmun"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -88,10 +112,22 @@
             "value" : "Клавиатура Malmun"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Tangentbord"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun Keyboard"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Klavye"
           }
         },
         "vi" : {
@@ -159,6 +195,12 @@
             "value" : "Teclado Malmun"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-näppäimistö"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -189,6 +231,24 @@
             "value" : "말문 키보드"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-tastatur"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Toetsenbord"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klawiatura Malmun"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -201,10 +261,22 @@
             "value" : "Клавиатура Malmun"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Tangentbord"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun Keyboard"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Klavye"
           }
         },
         "vi" : {

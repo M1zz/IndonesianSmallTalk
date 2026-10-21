@@ -46,6 +46,12 @@
             "value" : "Malmun"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -76,6 +82,24 @@
             "value" : "말문"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -88,7 +112,19 @@
             "value" : "Malmun"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -159,6 +195,12 @@
             "value" : "Malmun"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -189,6 +231,24 @@
             "value" : "말문"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -201,7 +261,19 @@
             "value" : "Malmun"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -272,6 +344,12 @@
             "value" : "Malmun necesita acceso al micrófono para practicar conversaciones por voz."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun tarvitsee mikrofonin käyttöoikeuden äänikeskusteluharjoitusta varten."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -302,6 +380,24 @@
             "value" : "음성 대화 연습을 위해 마이크 접근이 필요합니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun trenger tilgang til mikrofonen for å kunne øve på samtaler med stemmen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun heeft toegang tot de microfoon nodig om gesprekken met je stem te oefenen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun potrzebuje dostępu do mikrofonu, aby ćwiczyć rozmowy głosowo."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -314,10 +410,22 @@
             "value" : "Malmun использует микрофон для голосовой разговорной практики."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun behöver åtkomst till mikrofonen för att du ska kunna öva samtal med rösten."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun ต้องใช้ไมโครโฟนสำหรับฝึกสนทนาด้วยเสียง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun, sesli konuşma pratiği için mikrofon erişimine ihtiyaç duyar."
           }
         },
         "vi" : {
@@ -385,6 +493,12 @@
             "value" : "Malmun necesita el reconocimiento de voz para entender lo que dices y revisar tu pronunciación."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun tarvitsee puheentunnistuksen, jotta se ymmärtää puheesi ja voi tarkistaa ääntämisesi."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -415,6 +529,24 @@
             "value" : "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun trenger talegjenkjenning for å forstå hva du sier og sjekke uttalen din."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun gebruikt spraakherkenning om te begrijpen wat je zegt en je uitspraak te controleren."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun potrzebuje rozpoznawania mowy, aby rozumieć to, co mówisz, i sprawdzać Twoją wymowę."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -427,10 +559,22 @@
             "value" : "Malmun использует распознавание речи, чтобы понимать, что вы говорите, и проверять ваше произношение."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun behöver taligenkänning för att förstå vad du säger och kontrollera ditt uttal."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun ต้องใช้การรู้จำเสียงพูดเพื่อทำความเข้าใจสิ่งที่คุณพูดและตรวจการออกเสียง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun, ne söylediğini anlamak ve telaffuzunu kontrol etmek için konuşma tanımaya ihtiyaç duyar."
           }
         },
         "vi" : {
