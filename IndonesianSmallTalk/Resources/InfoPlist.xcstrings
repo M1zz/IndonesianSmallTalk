@@ -4,13 +4,31 @@
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -34,7 +52,25 @@
             "value" : "말문"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -45,13 +81,31 @@
     "CFBundleName" : {
       "comment" : "Bundle name",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -75,7 +129,25 @@
             "value" : "말문"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun"
@@ -86,7 +158,19 @@
     "NSMicrophoneUsageDescription" : {
       "comment" : "Privacy - Microphone Usage Description",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun braucht Zugriff auf das Mikrofon, damit du Gespräche laut üben kannst."
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun needs microphone access for voice conversation practice."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun needs microphone access for voice conversation practice."
@@ -96,6 +180,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun necesita acceso al micrófono para practicar conversaciones por voz."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun a besoin d’accéder au micro pour les exercices de conversation à voix haute."
           }
         },
         "id" : {
@@ -116,10 +206,28 @@
             "value" : "음성 대화 연습을 위해 마이크 접근이 필요합니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Malmun precisa acessar o microfone para a prática de conversa por voz."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun использует микрофон для голосовой разговорной практики."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要访问麦克风以进行语音对话练习。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun 需要使用麥克風，才能進行語音會話練習。"
           }
         }
       }
@@ -127,7 +235,19 @@
     "NSSpeechRecognitionUsageDescription" : {
       "comment" : "Privacy - Speech Recognition Usage Description",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun nutzt die Spracherkennung, um zu verstehen, was du sagst, und deine Aussprache zu prüfen."
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun needs speech recognition to understand what you say and check your pronunciation."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun needs speech recognition to understand what you say and check your pronunciation."
@@ -137,6 +257,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun necesita el reconocimiento de voz para entender lo que dices y revisar tu pronunciación."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun utilise la reconnaissance vocale pour comprendre ce que vous dites et évaluer votre prononciation."
           }
         },
         "id" : {
@@ -157,10 +283,28 @@
             "value" : "말한 문장을 알아듣고 발음을 확인하려면 음성 인식 권한이 필요합니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Malmun precisa do reconhecimento de fala para entender o que você diz e avaliar sua pronúncia."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun использует распознавание речи, чтобы понимать, что вы говорите, и проверять ваше произношение."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要语音识别权限，以识别你说的句子并检查发音。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun 需要使用語音辨識，才能聽懂你說的話並檢查你的發音。"
           }
         }
       }

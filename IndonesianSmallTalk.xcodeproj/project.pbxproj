@@ -504,6 +504,12 @@
 				"zh-Hans",
 				es,
 				id,
+				"en-GB",
+				"zh-Hant",
+				ru,
+				de,
+				fr,
+				"pt-BR",
 				Base,
 			);
 			mainGroup = MAINGRP;

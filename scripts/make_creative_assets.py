@@ -40,6 +40,12 @@ SEARCH = {
     "id":      ("Belajar bahasa", "Lancar ngobrol<br>dalam 6 bahasa", "Percakapan nyata, kalimat demi kalimat"),
     "ja":      ("外国語会話", "6か国語で、<br>話せる自分に", "リアルな会話を一文ずつ"),
     "zh-Hans": ("外语学习", "6种语言，<br>开口就说", "真实对话，一句一句练"),
+    "pt-BR": ("Aprender idiomas", "Fale sem travar<br>em 6 idiomas", "Conversas reais, uma frase de cada vez"),
+    "fr": ("Apprendre une langue", "Osez parler<br>6 langues", "Du vrai small talk, phrase après phrase"),
+    "de": ("Sprachen lernen", "Trau dich zu sprechen<br>in 6 Sprachen", "Echter Smalltalk, Zeile für Zeile"),
+    "ru": ("Изучение языков", "Заговорите<br>на 6 языках", "Живой разговор — реплика за репликой"),
+    "zh-Hant": ("外語學習", "6 種語言，<br>開口就能說", "真實對話，一句一句練"),
+    "en-GB": ("Language learning", "Find your voice<br>in 6 languages", "Real small talk, one line at a time"),
 }
 
 # 헤더는 처음 온 사람에게 **한 가지 약속**만 한다(Apple: 단일한 생각, 빽빽하지 않게).
@@ -52,6 +58,12 @@ HEADER = {
     "id":      ("Latihan percakapan", "Lancar bicara,<br>kalimat demi kalimat"),
     "ja":      ("外国語の会話練習", "話せるまで、<br>一文ずつ"),
     "zh-Hans": ("外语口语练习", "一句一句，<br>练到开口"),
+    "pt-BR": ("Prática de conversação", "Fale sem medo,<br>frase a frase"),
+    "fr": ("Entraînement à la conversation", "Osez parler,<br>phrase après phrase"),
+    "de": ("Gesprächstraining", "Sprich dich frei,<br>Zeile für Zeile"),
+    "ru": ("Разговорная практика", "Говорите смелее,<br>реплика за репликой"),
+    "zh-Hant": ("外語口說練習", "一句一句，<br>練到敢開口"),
+    "en-GB": ("Conversation practice", "Speak up,<br>one line at a time"),
 }
 
 # ⚠️ 바탕 · 글자색은 기존 스크린샷(make_marketing_screenshots.py)과 같다. 다르면 페이지에서

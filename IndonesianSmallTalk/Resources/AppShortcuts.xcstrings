@@ -3,7 +3,19 @@
   "strings" : {
     "${applicationName} 계속" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter mit ${applicationName}"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue in ${applicationName}"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continue in ${applicationName}"
@@ -13,6 +25,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continúa en ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer dans ${applicationName}"
           }
         },
         "id" : {
@@ -33,17 +51,47 @@
             "value" : "${applicationName} 계속"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar no ${applicationName}"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}: продолжить"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "继续${applicationName}"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 ${applicationName} 繼續"
           }
         }
       }
     },
     "${applicationName} 다시" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nochmal in ${applicationName}"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Again in ${applicationName}"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Again in ${applicationName}"
@@ -53,6 +101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Otra vez en ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encore dans ${applicationName}"
           }
         },
         "id" : {
@@ -73,17 +127,47 @@
             "value" : "${applicationName} 다시"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De novo no ${applicationName}"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}: ещё раз"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "${applicationName}再来一遍"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 ${applicationName} 再一次"
           }
         }
       }
     },
     "${applicationName} 다음" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nächster Satz in ${applicationName}"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next in ${applicationName}"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next in ${applicationName}"
@@ -93,6 +177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siguiente en ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivant dans ${applicationName}"
           }
         },
         "id" : {
@@ -113,17 +203,47 @@
             "value" : "${applicationName} 다음"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próxima no ${applicationName}"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}: дальше"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "${applicationName}下一句"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 ${applicationName} 下一個"
           }
         }
       }
     },
     "${applicationName} 연습 멈춰" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung in ${applicationName} beenden"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop practice in ${applicationName}"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stop practice in ${applicationName}"
@@ -133,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Detén la práctica en ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrêter l'entraînement dans ${applicationName}"
           }
         },
         "id" : {
@@ -153,17 +279,47 @@
             "value" : "${applicationName} 연습 멈춰"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parar prática no ${applicationName}"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}: остановить тренировку"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "停止${applicationName}练习"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 ${applicationName} 停止練習"
           }
         }
       }
     },
     "${applicationName} 퇴근길 연습 시작" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feierabend-Übung in ${applicationName} starten"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start commute practice in ${applicationName}"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start commute practice in ${applicationName}"
@@ -173,6 +329,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empieza la práctica del trayecto en ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lancer l'entraînement trajet dans ${applicationName}"
           }
         },
         "id" : {
@@ -193,10 +355,28 @@
             "value" : "${applicationName} 퇴근길 연습 시작"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar prática do trajeto no ${applicationName}"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName}: начать тренировку в пути"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "开始${applicationName}通勤练习"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 ${applicationName} 開始通勤練習"
           }
         }
       }

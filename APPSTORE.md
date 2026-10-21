@@ -509,6 +509,510 @@ https://m1zz.github.io/IndonesianSmallTalk/zh-Hans/privacy.html
 
 https://m1zz.github.io/IndonesianSmallTalk/zh-Hans/
 
+## 영어(영국) (en-GB)
+
+### 이름
+
+Malmun: Speak 6 Languages
+
+### 부제
+
+Hands-free chat practice
+
+### 키워드
+
+conversation,phrasebook,travel,pronunciation,flashcards,vocabulary,spanish,japanese,mandarin,korean
+
+### 프로모션 텍스트
+
+Turn your commute into a language class. Hear the meaning, say it yourself, then hear the answer. Your steering-wheel buttons and your voice are all you need.
+
+### 설명
+
+Stop freezing up when someone starts a conversation.
+Choose a reply, hear it, say it out loud, and get real small talk into your mouth in Indonesian, English, Japanese, Chinese, Spanish or Korean.
+
+Malmun began as an Indonesian small-talk app and now teaches six languages. Tap the flag on the Home screen to switch what you are learning. Your phrases, scenarios and vocabulary are kept separately for each language.
+
+CONVERSATIONS THAT BRANCH
+Every reply you pick sends the conversation somewhere different
+See what each reply means, how the other person might react, for better or worse, and your score
+Text mode: tap a reply and hear it read aloud
+Voice mode: say it, and speech recognition finds the closest reply
+Indonesian comes with coach tips on how locals actually talk
+
+COMMUTE MODE
+Practise by ear while you drive, no screen needed
+Plays through your car speakers over Bluetooth or CarPlay, with the current sentence shown in Now Playing
+You hear the meaning, a chime gives you time to say it, then the answer plays slowly and again at normal speed
+Steering-wheel controls: next track for the next sentence, previous for one more go, play and pause as usual
+On your turn it tells you when you got it right, and understands "next", "again", "slower", "faster", "next scene" and "stop" in your own language
+It only listens during your turn, through the phone's microphone, on your device
+Ask Siri to "Start commute practice in Malmun", or set up a Shortcuts automation to start when your car connects
+Navigation prompts? It pauses for them
+
+SITUATIONAL DIALOGUES AND COURSES
+Every language has 53 dialogues for real situations: the basics, casual chat, restaurants, getting around, the airport, hotels, shopping, sightseeing and emergencies
+Indonesian has even more: 5 hand-made small-talk scenarios, 3 Day Courses of 6 scenes each (a travel day in Bandung, your first day at a Jakarta office, a weekend in the neighbourhood) with a weekly timetable, and a 100-word business-trip vocabulary deck
+
+PRACTICE TOOLS
+Pronunciation practice with a score, highlighting the words you nailed and the ones you missed
+Script view: read the whole dialogue as a chat, tap any line to hear it, play it all, or hide the meanings to test yourself
+Import a dialogue just by pasting text
+Practice history with your streak
+
+MAKE IT YOURS
+Save your own phrases and revise vocabulary with flashcards and audio
+Phrase keyboard: tap a meaning and the sentence in your learning language is typed into any app
+Add your own scenarios and replies, and share them with friends through iCloud
+Generate new scenarios with AI using your own Anthropic API key
+
+MALMUN PRO
+Everything is free apart from two things
+Situational dialogues: Basics and Casual chat are free, the rest unlock with Pro
+Commute Mode: 3 scenes a day for free, unlimited with Pro
+Pro is a yearly subscription or a one-off lifetime purchase, and it covers all six languages
+
+PRIVACY
+No account. Your learning data stays on your device and in your own iCloud, and speech is recognised on device. No ads, no tracking. Only anonymous usage statistics and crash diagnostics are sent to the developer's iCloud.
+
+SUBSCRIPTION DETAILS
+The yearly plan renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions. Lifetime is a single one-off charge.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://m1zz.github.io/IndonesianSmallTalk/en-GB/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/en-GB/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/en-GB/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/en-GB/
+
+## 중국어(번체) (zh-Hant)
+
+### 이름
+
+Malmun：6 種語言口說練習
+
+### 부제
+
+開車通勤，用耳朵練外語
+
+### 키워드
+
+英文,日文,韓文,西班牙文,印尼文,發音,聽力,單字,旅遊,出國,出差,自學,初學,跟讀,閒聊,背單字,生活英文,旅遊日文,學韓文,對話,零基礎,日常會話,短句,留學,商務,朗讀,旅行,英語會話
+
+### 프로모션 텍스트
+
+把每天的通勤變成口說課。先聽意思，自己開口說說看，再聽正確答案。只靠方向盤按鍵和你的聲音，就能練習 6 種語言。
+
+### 설명
+
+別人跟你搭話，再也不用愣在原地。
+選一句回答，聽一聽，再大聲說出來。印尼語、英語、日語、中文、西班牙語、韓語的日常閒聊，越練越順口。
+
+Malmun 一開始是一款印尼語閒聊練習 App，現在可以學 6 種語言。點一下首頁的國旗，就能切換要學的語言；你的常用句、情境和單字表，會依語言分開儲存。
+
+會分岔的對話練習
+你選的每一句回答，都會讓對話走向不同的方向
+選完回答，馬上看到它的意思、對方是開心還是尷尬的反應，以及你的得分
+文字模式：點一下回答，就會唸給你聽
+語音模式：直接開口說，語音辨識會幫你找出最接近的回答
+印尼語還附有教練小提醒，告訴你當地人實際上怎麼說
+
+通勤模式
+開車時不用看螢幕，只靠耳朵就能練習
+透過藍牙或 CarPlay，從車上的喇叭播放，目前的句子會顯示在車用螢幕的「正在播放」
+先聽意思，提示音響起後留時間給你開口，接著先用慢速、再用正常速度播出正確答案
+方向盤按鍵也能用：下一首是下一句，上一首是再聽一次，播放與暫停照常操作
+輪到你說時，說對了馬上告訴你，也聽得懂你用自己的語言說「下一個」「再一次」「慢一點」「快一點」「下一個場景」「停止」
+只有輪到你的時候才會收音，使用手機麥克風，並且只在裝置上處理
+對 Siri 說「在 Malmun 開始通勤練習」就能開始；也可以用「捷徑」的自動化，一連上車子就自動開始
+導航語音出現時，會自動暫停
+
+情境會話與課程
+每種語言都有 53 段生活情境會話：基本表達、日常閒聊、餐廳、交通、機場、住宿、購物、觀光，連緊急狀況都涵蓋
+印尼語的內容更豐富：5 個手寫閒聊情境、3 套一日課程（萬隆旅遊的一天、雅加達辦公室的第一天、住家附近的週末，每套 6 個場景）搭配每週課表，另有出差用得上的 100 個單字
+
+練習工具
+發音練習：給你分數，並用顏色標出說對的字和漏掉的字
+腳本檢視：像聊天一樣看完整段對話，點一下就能聽，也能整段連續播放，或遮住意思來自我測驗
+匯入對話：貼上文字，就能變成可以練習的對話
+練習紀錄：記錄你練習的日子和連續天數
+
+打造專屬於你的學習
+儲存自己的常用句，用會發音的單字卡背單字
+常用句鍵盤：點一下意思，就能在任何 App 輸入你正在學的語言
+自己新增情境和回答，還能透過 iCloud 分享給朋友
+填入你自己的 Anthropic API 金鑰，就能讓 AI 幫你生成新情境
+
+Malmun Pro
+除了下面兩項，其他功能全部免費
+情境會話：基本表達與日常閒聊免費，其餘情境用 Pro 解鎖
+通勤模式：每天免費 3 個場景，Pro 不限次數
+Pro 可選擇年訂閱或一次買斷的終身方案，6 種語言通用
+
+隱私
+不用註冊帳號。學習資料只存在你的裝置和你自己的 iCloud，語音辨識在裝置上完成。沒有廣告，也沒有追蹤。只有匿名的使用統計和當機診斷資料，會傳到開發者的 iCloud。
+
+訂閱說明
+年訂閱會自動續訂，除非在目前的訂閱期間結束前至少 24 小時取消。你可以在「設定」▸ Apple 帳號 ▸ 訂閱項目中管理或取消。終身方案只需付費一次。
+使用條款 (EULA)：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隱私權政策：https://m1zz.github.io/IndonesianSmallTalk/zh-Hant/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/zh-Hant/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/zh-Hant/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/zh-Hant/
+
+## 러시아어 (ru)
+
+### 이름
+
+Malmun: говорим на 6 языках
+
+### 부제
+
+Практика на слух в дороге
+
+### 키워드
+
+английский,индонезийский,японский,китайский,испанский,корейский,разговорник,произношение,диалоги
+
+### 프로모션 텍스트
+
+Дорога становится уроком разговорной речи. Услышьте значение, скажите фразу сами, а потом послушайте правильный ответ. Вам понадобятся только кнопки на руле и ваш голос.
+
+### 설명
+
+Хватит теряться, когда с вами заговорили на иностранном языке.
+Выбирайте ответ, слушайте его, повторяйте вслух — и живой small talk на индонезийском, английском, японском, китайском, испанском или корейском перестанет вас пугать.
+
+Malmun начинался как приложение для small talk на индонезийском, а теперь учит шести языкам. Нажмите на флаг на главном экране, чтобы сменить изучаемый язык. Ваши фразы, сценарии и словарь хранятся отдельно для каждого языка.
+
+ДИАЛОГИ С ВЕТВЛЕНИЕМ
+Каждый выбранный ответ уводит разговор в свою сторону
+Вы видите, что значит каждый ответ, как может отреагировать собеседник, хорошо или не очень, и получаете оценку
+Текстовый режим: нажмите на ответ, и приложение прочитает его вслух
+Голосовой режим: скажите фразу, и распознавание речи найдёт самый близкий ответ
+К индонезийскому добавлены советы тренера о том, как на самом деле говорят местные жители
+
+РЕЖИМ «В ПУТИ»
+Тренируйтесь на слух за рулём, не глядя на экран
+Звук идёт через динамики автомобиля по Bluetooth или CarPlay, а текущая фраза отображается в разделе «Исполняется»
+Сначала вы слышите значение, затем сигнал даёт время сказать фразу самому, после чего правильный ответ звучит медленно и ещё раз в обычном темпе
+Кнопки на руле: «следующий трек» — следующая фраза, «предыдущий» — ещё раз, «воспроизведение» — пауза и старт
+В вашу очередь приложение сообщает, верно ли вы сказали, и понимает команды «дальше», «ещё раз», «медленнее», «быстрее», «следующая сцена» и «стоп» на языке интерфейса
+Микрофон телефона слушает только в вашу очередь, и услышанное обрабатывается на устройстве
+Скажите Siri «Malmun: начать тренировку в пути» или настройте автоматизацию в «Командах», чтобы практика начиналась, когда телефон подключается к машине
+Голосовая навигация? Приложение ставит воспроизведение на паузу
+
+ДИАЛОГИ ПО СИТУАЦИЯМ И КУРСЫ
+На каждом языке есть 53 диалога для реальных ситуаций: базовые фразы, обычное общение, ресторан, транспорт, аэропорт, отель, покупки, достопримечательности и экстренные случаи
+У индонезийского есть и больше: 5 сценариев small talk, написанных вручную, 3 курса «Один день» по 6 сцен (день путешествия по Бандунгу, первый день в офисе в Джакарте, выходные в районе) с недельным расписанием и словарь из 100 слов для командировки
+
+ИНСТРУМЕНТЫ ПРАКТИКИ
+Тренировка произношения с оценкой: удачно произнесённые слова и пропущенные выделяются цветом
+Просмотр сценария: читайте весь диалог как переписку, нажимайте на любую реплику, чтобы услышать её, слушайте всё подряд или скрывайте значения, чтобы проверить себя
+Импорт диалога: просто вставьте текст
+История практики с серией занятий подряд
+
+ВСЁ ПОД СЕБЯ
+Сохраняйте собственные фразы и учите слова по карточкам с озвучкой
+Клавиатура фраз: нажмите на значение, и фраза на изучаемом языке напечатается в любом приложении
+Добавляйте свои сценарии и ответы и делитесь ими с друзьями через iCloud
+Создавайте новые сценарии с помощью ИИ, подставив собственный ключ Anthropic API
+
+MALMUN PRO
+Бесплатно всё, кроме двух вещей
+Диалоги по ситуациям: «Базовые фразы» и «Обычное общение» бесплатны, остальные откроются с Pro
+Режим «В пути»: 3 сцены в день бесплатно, с Pro — без ограничений
+Pro — это годовая подписка или единовременная покупка навсегда, и действует она для всех шести языков
+
+КОНФИДЕНЦИАЛЬНОСТЬ
+Регистрация не нужна. Данные для обучения хранятся только на вашем устройстве и в вашем iCloud, а речь распознаётся на устройстве. Без рекламы и слежки. Разработчику в его iCloud отправляется лишь анонимная статистика использования и отчёты о сбоях.
+
+УСЛОВИЯ ПОДПИСКИ
+Годовая подписка продлевается автоматически, если не отменить её минимум за 24 часа до окончания текущего периода. Управлять подпиской и отменять её можно в «Настройки» > учётная запись Apple > «Подписки». Покупка навсегда оплачивается один раз.
+Условия использования (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Политика конфиденциальности: https://m1zz.github.io/IndonesianSmallTalk/ru/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/ru/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/ru/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/ru/
+
+## 독일어 (de)
+
+### 이름
+
+Malmun: 6 Sprachen sprechen
+
+### 부제
+
+Smalltalk üben, freihändig
+
+### 키워드
+
+indonesisch,englisch,japanisch,chinesisch,spanisch,koreanisch,gespräche,aussprache,vokabeln,reisen
+
+### 프로모션 텍스트
+
+Mach aus deiner Autofahrt einen Sprachkurs: Bedeutung hören, selbst sprechen, dann die Lösung hören. Lenkradtasten und deine Stimme genügen, um sechs Sprachen zu üben.
+
+### 설명
+
+Schluss mit dem Verstummen, wenn dich jemand anspricht.
+Wähle eine Antwort, hör sie dir an, sprich sie laut nach: So kommt echter Smalltalk in Indonesisch, Englisch, Japanisch, Chinesisch, Spanisch oder Koreanisch über deine Lippen.
+
+Malmun hat als Smalltalk-App für Indonesisch angefangen und bringt dir heute sechs Sprachen bei. Tippe auf dem Startbildschirm auf die Flagge, um die Lernsprache zu wechseln. Deine Ausdrücke, Szenarien und Vokabeln werden für jede Sprache getrennt gespeichert.
+
+GESPRÄCHE MIT VERZWEIGUNGEN
+Jede Antwort, die du wählst, führt das Gespräch woandershin
+Du siehst, was die Antwort bedeutet, wie dein Gegenüber reagieren könnte und wie viele Punkte du bekommst
+Textmodus: Tippe auf eine Antwort und höre sie vorgelesen
+Sprachmodus: Sprich selbst, und die Spracherkennung findet die passendste Antwort
+Für Indonesisch gibt es Coach-Tipps, wie Einheimische wirklich sprechen
+
+FEIERABEND-MODUS
+Übe beim Fahren nur mit den Ohren, ganz ohne Blick auf den Bildschirm
+Der Ton kommt per Bluetooth oder CarPlay aus den Autolautsprechern, der aktuelle Satz steht unter „Aktuelle Wiedergabe“
+Erst hörst du die Bedeutung, ein Signalton gibt dir Zeit zum Sprechen, dann folgt die Lösung, einmal langsam und einmal in normalem Tempo
+Lenkradtasten: „Nächster Titel“ springt zum nächsten Satz, „Vorheriger Titel“ wiederholt ihn, Wiedergabe und Pause
+Wenn du dran bist, erfährst du sofort, ob es stimmte, und kannst „weiter“, „nochmal“, „langsamer“, „schneller“, „nächste Szene“ und „stopp“ sagen
+Die App hört nur zu, wenn du dran bist, über das Mikrofon deines iPhones und direkt auf dem Gerät
+Sag zu Siri „Feierabend-Übung in Malmun starten“ oder starte per Kurzbefehle-Automation, sobald das Auto verbunden ist
+Kommt eine Navigationsansage, macht die App kurz Pause
+
+SITUATIONSDIALOGE UND KURSE
+In jeder Sprache warten 53 Dialoge für echte Situationen: Grundlagen, lockere Gespräche, Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing und Notfälle
+Für Indonesisch gibt es noch mehr: 5 handgeschriebene Smalltalk-Szenarien, 3 Tageskurse mit je 6 Szenen (ein Reisetag in Bandung, der erste Tag in einem Büro in Jakarta, ein Wochenende im Viertel) samt Wochenplan und 100 Wörter Geschäftsreise-Wortschatz
+
+ÜBUNGSWERKZEUGE
+Ausspracheübung mit Punktzahl, die zeigt, welche Wörter gesessen haben und welche du verpasst hast
+Skriptansicht: Lies den ganzen Dialog wie einen Chat, tippe auf eine Zeile zum Anhören, spiel alles am Stück ab oder blende die Bedeutungen zum Selbsttest aus
+Dialogimport: Text einfügen und daraus einen Übungsdialog machen
+Übungsverlauf mit Lernserie
+
+MACH ES ZU DEINEM
+Eigene Ausdrücke speichern und Vokabeln mit vertonten Karteikarten lernen
+Ausdruckstastatur: Tippe auf eine Bedeutung, und der Satz in deiner Lernsprache wird in jeder App eingegeben
+Eigene Szenarien und Antworten hinzufügen und per iCloud mit Freunden teilen
+Mit deinem eigenen Anthropic-API-Schlüssel erstellt dir eine KI neue Szenarien
+
+MALMUN PRO
+Alles ist kostenlos, bis auf zwei Dinge
+Situationsdialoge: Grundlagen und lockere Gespräche sind kostenlos, die übrigen Situationen schaltest du mit Pro frei
+Feierabend-Modus: 3 Szenen pro Tag gratis, mit Pro unbegrenzt
+Pro gibt es als Jahresabo oder als einmaligen Lifetime-Kauf, und es gilt für alle sechs Sprachen
+
+DATENSCHUTZ
+Kein Konto nötig. Deine Lerndaten bleiben auf deinem Gerät und in deiner eigenen iCloud, und die Spracherkennung läuft auf dem Gerät. Keine Werbung, kein Tracking. Nur anonyme Nutzungsstatistiken und Absturzdiagnosen gehen an die iCloud des Entwicklers.
+
+INFOS ZUM ABO
+Das Jahresabo verlängert sich automatisch, wenn du es nicht mindestens 24 Stunden vor Ablauf der aktuellen Laufzeit kündigst. Verwalten oder kündigen kannst du es unter Einstellungen > Apple-Account > Abonnements. Der Lifetime-Kauf wird nur einmal berechnet.
+Nutzungsbedingungen (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Datenschutzerklärung: https://m1zz.github.io/IndonesianSmallTalk/de/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/de/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/de/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/de/
+
+## 프랑스어 (fr)
+
+### 이름
+
+Malmun : parler 6 langues
+
+### 부제
+
+Le small talk mains libres
+
+### 키워드
+
+indonésien,japonais,chinois,espagnol,coréen,anglais,voyage,prononciation,vocabulaire,voiture,cours
+
+### 프로모션 텍스트
+
+Transformez votre trajet en cours de conversation. Écoutez le sens, dites la phrase, puis écoutez la réponse. Les boutons du volant et votre voix suffisent.
+
+### 설명
+
+Fini les blancs quand quelqu'un vous adresse la parole.
+Choisissez une réponse, écoutez-la, dites-la à voix haute : du vrai small talk, en indonésien, anglais, japonais, chinois, espagnol ou coréen.
+
+Malmun enseigne six langues. Touchez le drapeau de l'écran d'accueil pour changer de langue : expressions, scénarios et vocabulaire sont enregistrés séparément pour chacune.
+
+DES CONVERSATIONS QUI SE RAMIFIENT
+Chaque réponse choisie mène la conversation ailleurs
+Chaque réponse s'accompagne de son sens, de la réaction possible de l'autre personne, bonne ou mauvaise, et de votre score
+Mode texte : touchez une réponse et écoutez-la lue à voix haute
+Mode vocal : dites-la, la reconnaissance vocale trouve la réponse la plus proche
+L'indonésien s'accompagne de conseils de coach sur la façon dont on parle sur place
+
+MODE TRAJET
+Entraînez-vous à l'oreille en conduisant, sans regarder l'écran
+Le son passe par les haut-parleurs de la voiture en Bluetooth ou via CarPlay, la phrase en cours s'affiche dans « En cours de lecture »
+Vous entendez le sens, un signal vous laisse le temps de parler, puis la réponse est lue lentement, puis à vitesse normale
+Au volant : piste suivante pour la phrase suivante, piste précédente pour la réécouter, lecture et pause
+À votre tour, l'appli vous dit si c'était juste et comprend « suivant », « encore », « plus lentement », « plus vite », « scène suivante » et « stop » dans votre langue
+Elle n'écoute qu'à votre tour, avec le micro du téléphone, sur votre appareil
+Dites à Siri « Lancer l'entraînement trajet dans Malmun », ou démarrez automatiquement via Raccourcis dès que la voiture se connecte
+L'appli se met en pause pendant les instructions de navigation
+
+DIALOGUES PAR SITUATION ET PARCOURS
+Chaque langue compte 53 dialogues pour des situations réelles : bases, conversation courante, restaurant, déplacements, aéroport, hôtel, shopping, visites et urgences
+L'indonésien va plus loin : 5 scénarios de small talk écrits à la main, 3 parcours d'une journée de 6 scènes (voyage à Bandung, premier jour dans un bureau de Jakarta, week-end dans le quartier) avec emploi du temps de la semaine, et 100 mots pour les voyages d'affaires
+
+OUTILS D'ENTRAÎNEMENT
+Exercice de prononciation avec un score, qui distingue les mots réussis des mots manqués
+Affichage du script : lisez le dialogue comme dans une messagerie, touchez une ligne pour l'écouter, écoutez tout d'un trait ou masquez les traductions pour vous tester
+Importez un dialogue en collant du texte
+Historique d'entraînement avec votre série de jours
+
+À VOTRE MANIÈRE
+Enregistrez vos propres expressions et révisez votre vocabulaire avec des cartes mémoire sonores
+Clavier d'expressions : touchez un sens et la phrase dans la langue apprise se saisit dans n'importe quelle appli
+Ajoutez vos propres scénarios et réponses, et partagez-les avec vos amis via iCloud
+Générez des scénarios avec l'IA via votre propre clé API Anthropic
+
+MALMUN PRO
+Tout est gratuit, sauf deux choses
+Dialogues par situation : les bases et la conversation courante sont gratuits, le reste se débloque avec Pro
+Mode trajet : 3 scènes par jour gratuitement, sans limite avec Pro
+Pro est un abonnement annuel ou un achat unique à vie, valable pour les six langues
+
+CONFIDENTIALITÉ
+Aucun compte requis. Vos données d'apprentissage restent sur votre appareil et dans votre propre iCloud, et la reconnaissance vocale s'effectue sur l'appareil. Ni publicité ni suivi. Seules des statistiques anonymes et des diagnostics de plantage parviennent à l'iCloud du développeur.
+
+INFORMATIONS SUR L'ABONNEMENT
+L'abonnement annuel se renouvelle automatiquement, sauf résiliation au moins 24 heures avant la fin de la période en cours. Gérez-le ou résiliez-le dans Réglages > Compte Apple > Abonnements. L'achat à vie se règle une seule fois.
+Conditions d'utilisation (EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Politique de confidentialité : https://m1zz.github.io/IndonesianSmallTalk/fr/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/fr/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/fr/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/fr/
+
+## 포르투갈어(브라질) (pt-BR)
+
+### 이름
+
+Malmun: Fale 6 idiomas
+
+### 부제
+
+Treine de ouvido no trajeto
+
+### 키워드
+
+indonésio,inglês,japonês,chinês,espanhol,coreano,aprender,viagem,pronúncia,vocabulário,frases,carro
+
+### 프로모션 텍스트
+
+Transforme o trajeto em aula de conversação. Ouça o significado, fale você mesmo e ouça a resposta. Os botões do volante e a sua voz bastam para praticar 6 idiomas.
+
+### 설명
+
+Chega de travar quando alguém puxa conversa.
+Escolha uma resposta, ouça, diga em voz alta e leve para a boca o small talk de verdade em indonésio, inglês, japonês, chinês, espanhol ou coreano.
+
+O Malmun nasceu como um app de small talk em indonésio e hoje ensina seis idiomas. Toque na bandeira da tela inicial para trocar o idioma que você está aprendendo. Suas frases, cenários e vocabulário ficam guardados separadamente para cada idioma.
+
+CONVERSAS QUE SE RAMIFICAM
+Cada resposta que você escolhe leva a conversa para um lado diferente
+Veja o que cada resposta significa, como a outra pessoa pode reagir, bem ou mal, e a sua nota
+Modo texto: toque numa resposta e ouça a leitura em voz alta
+Modo voz: diga a resposta e o reconhecimento de fala encontra a mais parecida
+O indonésio traz dicas de coach sobre como os locais realmente falam
+
+MODO TRAJETO
+Pratique de ouvido enquanto dirige, sem precisar olhar a tela
+Toca nos alto-falantes do carro por Bluetooth ou CarPlay, e a frase atual aparece em Tocando Agora
+Você ouve o significado, um sinal dá tempo para você falar e depois a resposta toca devagar e de novo em velocidade normal
+Controles do volante: faixa seguinte vai para a próxima frase, faixa anterior repete mais uma vez, e reproduzir e pausar funcionam como sempre
+Na sua vez, ele avisa se você acertou e entende "próxima", "de novo", "mais devagar", "mais rápido", "próxima cena" e "parar" no seu idioma
+Ele só escuta na sua vez, pelo microfone do iPhone e dentro do aparelho
+Peça à Siri: "Iniciar prática do trajeto no Malmun", ou crie uma automação nos Atalhos para começar quando o carro conectar
+Instruções de navegação? Ele faz uma pausa para elas
+
+DIÁLOGOS POR SITUAÇÃO E CURSOS
+Cada idioma tem 53 diálogos para situações reais: o básico, papo informal, restaurantes, deslocamento, aeroporto, hotéis, compras, passeios e emergências
+O indonésio tem ainda mais: 5 cenários de small talk feitos à mão, 3 cursos do dia com 6 cenas cada (um dia de viagem em Bandung, o primeiro dia num escritório em Jacarta, um fim de semana no bairro) com grade semanal, e um baralho de 100 palavras para viagens de trabalho
+
+FERRAMENTAS DE PRÁTICA
+Prática de pronúncia com nota, destacando as palavras que você acertou e as que errou
+Roteiro: leia o diálogo inteiro como num chat, toque em qualquer fala para ouvir, toque tudo em sequência ou esconda os significados para se testar
+Importe um diálogo só colando o texto
+Histórico de prática com a sua sequência de dias
+
+FAÇA DO SEU JEITO
+Salve suas próprias frases e estude vocabulário com flashcards e áudio
+Teclado de frases: toque num significado e a frase no idioma que você aprende é digitada em qualquer app
+Adicione seus próprios cenários e respostas e compartilhe com amigos pelo iCloud
+Gere novos cenários com IA usando a sua própria chave de API da Anthropic
+
+MALMUN PRO
+Tudo é grátis, menos duas coisas
+Diálogos por situação: Básico e Papo informal são grátis, o resto é liberado com o Pro
+Modo Trajeto: 3 cenas por dia grátis, ilimitado com o Pro
+O Pro é uma assinatura anual ou uma compra única vitalícia, e vale para os seis idiomas
+
+PRIVACIDADE
+Sem cadastro. Seus dados de aprendizado ficam no seu aparelho e no seu próprio iCloud, e a fala é reconhecida no aparelho. Sem anúncios, sem rastreamento. Só estatísticas de uso anônimas e diagnósticos de falhas são enviados ao iCloud do desenvolvedor.
+
+DETALHES DA ASSINATURA
+O plano anual é renovado automaticamente, a menos que seja cancelado pelo menos 24 horas antes do fim do período atual. Gerencie ou cancele em Ajustes > Conta Apple > Assinaturas. O plano vitalício é uma cobrança única.
+Termos de Uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Política de Privacidade: https://m1zz.github.io/IndonesianSmallTalk/pt-BR/privacy.html
+
+### 지원 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/pt-BR/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/pt-BR/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/IndonesianSmallTalk/pt-BR/
+
 ## 연령 등급
 
 <!-- 내용 문항이 전부 '해당 없음' 인 앱이면 아래 줄의 주석을 풀어라.
