@@ -4,10 +4,28 @@
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klávesnice Malmun"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-tastatur"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun Tastatur"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πληκτρολόγιο Malmun"
           }
         },
         "en" : {
@@ -40,6 +58,12 @@
             "value" : "Keyboard Malmun"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastiera Malmun"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62,6 +86,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Клавиатура Malmun"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Keyboard"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bàn phím Malmun"
           }
         },
         "zh-Hans" : {
@@ -81,10 +117,28 @@
     "CFBundleName" : {
       "comment" : "Bundle name",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klávesnice Malmun"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun-tastatur"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malmun Tastatur"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πληκτρολόγιο Malmun"
           }
         },
         "en" : {
@@ -117,6 +171,12 @@
             "value" : "Keyboard Malmun"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastiera Malmun"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +199,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Клавиатура Malmun"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malmun Keyboard"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bàn phím Malmun"
           }
         },
         "zh-Hans" : {

@@ -3,10 +3,28 @@
   "strings" : {
     "${applicationName} 계속" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračovat v ${applicationName}"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsæt i ${applicationName}"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Weiter mit ${applicationName}"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συνέχεια στο ${applicationName}"
           }
         },
         "en" : {
@@ -39,6 +57,12 @@
             "value" : "Lanjutkan ${applicationName}"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continua in ${applicationName}"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -63,6 +87,18 @@
             "value" : "${applicationName}: продолжить"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ต่อใน ${applicationName}"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiếp tục trong ${applicationName}"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,10 +115,28 @@
     },
     "${applicationName} 다시" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Znovu v ${applicationName}"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Igen i ${applicationName}"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nochmal in ${applicationName}"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ξανά στο ${applicationName}"
           }
         },
         "en" : {
@@ -115,6 +169,12 @@
             "value" : "Ulangi di ${applicationName}"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di nuovo in ${applicationName}"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +199,18 @@
             "value" : "${applicationName}: ещё раз"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อีกครั้งใน ${applicationName}"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lại trong ${applicationName}"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -155,10 +227,28 @@
     },
     "${applicationName} 다음" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Další v ${applicationName}"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Næste i ${applicationName}"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nächster Satz in ${applicationName}"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επόμενο στο ${applicationName}"
           }
         },
         "en" : {
@@ -191,6 +281,12 @@
             "value" : "${applicationName} berikutnya"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avanti in ${applicationName}"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -215,6 +311,18 @@
             "value" : "${applicationName}: дальше"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถัดไปใน ${applicationName}"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiếp theo trong ${applicationName}"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -231,10 +339,28 @@
     },
     "${applicationName} 연습 멈춰" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastavit trénink v ${applicationName}"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop træning i ${applicationName}"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übung in ${applicationName} beenden"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διακοπή εξάσκησης στο ${applicationName}"
           }
         },
         "en" : {
@@ -267,6 +393,12 @@
             "value" : "Hentikan latihan ${applicationName}"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferma esercizio in ${applicationName}"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -291,6 +423,18 @@
             "value" : "${applicationName}: остановить тренировку"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หยุดฝึกใน ${applicationName}"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dừng luyện tập trong ${applicationName}"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -307,10 +451,28 @@
     },
     "${applicationName} 퇴근길 연습 시작" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spustit trénink dojíždění v ${applicationName}"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start pendlertræning i ${applicationName}"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Feierabend-Übung in ${applicationName} starten"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Έναρξη εξάσκησης διαδρομής στο ${applicationName}"
           }
         },
         "en" : {
@@ -343,6 +505,12 @@
             "value" : "Mulai latihan perjalanan di ${applicationName}"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvia esercizio del tragitto in ${applicationName}"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -365,6 +533,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "${applicationName}: начать тренировку в пути"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เริ่มฝึกระหว่างเดินทางใน ${applicationName}"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bắt đầu luyện đi làm trong ${applicationName}"
           }
         },
         "zh-Hans" : {

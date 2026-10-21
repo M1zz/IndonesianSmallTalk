@@ -510,6 +510,12 @@
 				de,
 				fr,
 				"pt-BR",
+				it,
+				th,
+				vi,
+				cs,
+				da,
+				el,
 				Base,
 			);
 			mainGroup = MAINGRP;
