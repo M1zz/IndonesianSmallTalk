@@ -1,4 +1,4 @@
 // 버전 단일 소스 — 앱과 키보드 익스텐션이 함께 쓴다 (둘이 다르면 App Store Connect 가 거절한다).
 // DeployBar 가 배포할 때 이 파일을 올린다 (deploy.env VERSION_XCCONFIG).
-MARKETING_VERSION = 1.0.3
-CURRENT_PROJECT_VERSION = 6
+MARKETING_VERSION = 1.0.4
+CURRENT_PROJECT_VERSION = 7
