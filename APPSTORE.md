@@ -1601,7 +1601,7 @@ https://m1zz.github.io/IndonesianSmallTalk/fi/privacy.html
 
 https://m1zz.github.io/IndonesianSmallTalk/fi/
 
-## 노르웨이어(보크몰) (nb)
+## 노르웨이어(보크말) (nb)
 
 ### 이름
 

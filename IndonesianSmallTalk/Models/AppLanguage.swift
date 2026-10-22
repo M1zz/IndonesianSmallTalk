@@ -51,7 +51,7 @@ enum AppLanguage: String, CaseIterable, Identifiable, Codable {
 
     /// 화면 언어로 쓴 언어 이름 (예: 영어 화면에서 .japanese → "Japanese")
     var localizedName: String {
-        let locale = Locale(identifier: AppLanguage.native.rawValue)
+        let locale = Locale(identifier: AppLanguage.uiCode)
         let name = locale.localizedString(forLanguageCode: rawValue == "zh-Hans" ? "zh" : rawValue) ?? endonym
         return name.prefix(1).uppercased() + name.dropFirst()
     }
@@ -69,6 +69,10 @@ enum AppLanguage: String, CaseIterable, Identifiable, Codable {
         let code = Bundle.main.preferredLocalizations.first ?? "en"
         return AppLanguage(localeCode: code) ?? .english
     }()
+
+    /// 앱이 실제로 띄운 번역의 언어 코드 (예: "cs", "pt-BR"). 화면 언어(native)는 6개 안에서만 고르므로
+    /// 그 밖의 번역(체코어 등)으로 뜬 화면에서 언어 이름 · 분류 이름을 그 말로 보여 주려면 이것을 쓴다.
+    static let uiCode: String = Bundle.main.preferredLocalizations.first ?? "en"
 
     /// 지금 배우는 언어. 키보드 익스텐션도 읽어야 해서 App Group 기본값에 둔다.
     static var learning: AppLanguage {
@@ -121,7 +125,8 @@ enum LanguagePrefs {
 extension Dictionary where Key == String, Value == String {
     /// 언어 코드 → 문장 사전에서 화면 언어에 맞는 것을 고른다. (없으면 영어 → 한국어 → 아무거나)
     var localized: String {
-        self[AppLanguage.native.rawValue]
+        self[AppLanguage.uiCode]
+            ?? self[AppLanguage.native.rawValue]
             ?? self[AppLanguage.english.rawValue]
             ?? self[AppLanguage.korean.rawValue]
             ?? values.first

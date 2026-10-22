@@ -13,13 +13,15 @@
 
 ⚠️ 가격 · 할인 · 주소(URL) · 수상 · 다른 플랫폼 이름은 넣지 않는다(Apple 가이드).
 """
-import shutil, subprocess, sys, pathlib, tempfile
+import os, shutil, subprocess, sys, pathlib, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAW = ROOT / "docs" / "screenshots" / "raw"
 OUT = ROOT / "docs" / "screenshots" / "creative"
 ICON = ROOT / "docs" / "app-icon.png"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# 다른 Chrome(다른 작업)과 프로필을 같이 쓰면 그리다 죽는다 — 따로 쓴다.
+PROFILE = pathlib.Path(tempfile.gettempdir()) / "malmun-creative-chrome"
 
 # 앱 언어 코드 → App Store Connect 로케일 (make_marketing_screenshots.py 와 같다)
 STORE = {}   # 말문은 스크린샷(marketing/<언어>/)과 같은 언어 폴더 이름을 쓴다
@@ -42,11 +44,11 @@ SEARCH = {
     "zh-Hans": ("外语学习", "6种语言，<br>开口就说", "真实对话，一句一句练"),
     "tr": ("Dil öğrenimi", "6 dilde<br>akıcı konuş", "Gerçek sohbetler, satır satır"),
     "sv": ("Språkinlärning", "Våga prata<br>på 6 språk", "Äkta småprat, en replik i taget"),
-    "pl": ("Nauka języków", "Odezwij się śmiało<br>w 6 językach", "Prawdziwy small talk, kwestia po kwestii"),
+    "pl": ("Nauka języków", "Mów śmiało<br>w 6 językach", "Prawdziwy small talk, kwestia po kwestii"),
     "nl": ("Talen leren", "Durf te praten<br>in 6 talen", "Echte smalltalk, regel voor regel"),
     "nb": ("Språklæring", "Snakk fritt<br>på 6 språk", "Ekte smalltalk, én replik om gangen"),
     "fi": ("Kielten oppiminen", "Löydä äänesi<br>kuudella kielellä", "Oikeaa small talkia, rivi kerrallaan"),
-    "el": ("Εκμάθηση γλωσσών", "Μίλα με αυτοπεποίθηση<br>σε 6 γλώσσες", "Πραγματικό small talk, γραμμή γραμμή"),
+    "el": ("Εκμάθηση γλωσσών", "Μίλα άνετα<br>σε 6 γλώσσες", "Πραγματικό small talk, γραμμή γραμμή"),
     "da": ("Sprogindlæring", "Få mod til at tale<br>på 6 sprog", "Ægte smalltalk, én replik ad gangen"),
     "cs": ("Výuka jazyků", "Rozmluvte se<br>v 6 jazycích", "Skutečný small talk, věta po větě"),
     "vi": ("Học ngoại ngữ", "Mở lời tự tin<br>với 6 ngôn ngữ", "Hội thoại thật, từng câu một"),
@@ -54,7 +56,7 @@ SEARCH = {
     "it": ("Impara le lingue", "Sciogli la lingua<br>in 6 lingue", "Vero small talk, una battuta alla volta"),
     "pt-BR": ("Aprender idiomas", "Fale sem travar<br>em 6 idiomas", "Conversas reais, uma frase de cada vez"),
     "fr": ("Apprendre une langue", "Osez parler<br>6 langues", "Du vrai small talk, phrase après phrase"),
-    "de": ("Sprachen lernen", "Trau dich zu sprechen<br>in 6 Sprachen", "Echter Smalltalk, Zeile für Zeile"),
+    "de": ("Sprachen lernen", "Sprich frei<br>in 6 Sprachen", "Echter Smalltalk, Zeile für Zeile"),
     "ru": ("Изучение языков", "Заговорите<br>на 6 языках", "Живой разговор — реплика за репликой"),
     "zh-Hant": ("外語學習", "6 種語言，<br>開口就能說", "真實對話，一句一句練"),
     "en-GB": ("Language learning", "Find your voice<br>in 6 languages", "Real small talk, one line at a time"),
@@ -202,9 +204,15 @@ def render(lang, kind):
     html_path = pathlib.Path(tempfile.gettempdir()) / f"malmun-creative-{lang}-{kind}.html"
     html_path.write_text(page, encoding="utf-8")
     # 글이 끝까지 안 맞으면 그림을 만들지 않는다(잘린 글이 스토어에 올라가는 것보다 낫다).
-    dom = subprocess.run([CHROME, "--headless=new", "--dump-dom", f"--window-size={W},{H}",
-                          "--force-device-scale-factor=1", "--disable-gpu", "--virtual-time-budget=3000",
-                          html_path.as_uri()], capture_output=True, text=True, timeout=90).stdout
+    # Chrome 이 DOM 을 다 내놓고 닫다가 멈추는 일이 있다 — 그때는 이미 받은 출력을 쓴다.
+    try:
+        dom = subprocess.run([CHROME, "--headless=new", "--dump-dom", f"--window-size={W},{H}",
+                              "--force-device-scale-factor=1", "--disable-gpu", "--virtual-time-budget=3000",
+                              f"--user-data-dir={PROFILE}", html_path.as_uri()],
+                             capture_output=True, text=True, timeout=180).stdout
+    except subprocess.TimeoutExpired as e:
+        dom = e.stdout or ""
+        dom = dom.decode("utf-8", "replace") if isinstance(dom, bytes) else dom
     if 'data-done="1"' not in dom:
         raise SystemExit(f"글 맞추기가 끝나지 않았다: {lang} {kind}")
     if 'data-overflow="1"' in dom:
@@ -212,17 +220,24 @@ def render(lang, kind):
     out_dir = OUT / STORE.get(lang, lang)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_png = out_dir / f"{kind}.png"
+    # ONLY_MISSING=1: 원본보다 새 그림이 이미 있으면 건너뛴다 (중간에 끊겼을 때 이어서)
+    if os.environ.get("ONLY_MISSING") and out_png.exists() and \
+            out_png.stat().st_mtime > (RAW / lang / "01-home.png").stat().st_mtime:
+        print(f"keep {out_png}")
+        return
     # ⚠️ Chrome 은 가끔 아무것도 안 그리고 끝나거나 멈춘다. 세 번까지 한다.
     for _ in range(3):
+        out_png.unlink(missing_ok=True)
         try:
             r = subprocess.run([CHROME, "--headless=new", f"--screenshot={out_png}",
                                 f"--window-size={W},{H}", "--force-device-scale-factor=1",
                                 "--hide-scrollbars", "--disable-gpu", "--virtual-time-budget=3000",
-                                "--allow-file-access-from-files", html_path.as_uri()],
-                               capture_output=True, timeout=90)
+                                "--allow-file-access-from-files", f"--user-data-dir={PROFILE}", html_path.as_uri()],
+                               capture_output=True, timeout=180)
         except subprocess.TimeoutExpired:
-            continue
-        if r.returncode == 0:
+            pass
+        # 그림을 다 쓴 뒤 닫다가 죽어도(Teardown watchdog) 파일이 있으면 된 것이다.
+        if out_png.exists() and out_png.stat().st_size > 0:
             break
     else:
         raise SystemExit(f"Chrome 이 그리지 못했다: {out_png}")

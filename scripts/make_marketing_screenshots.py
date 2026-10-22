@@ -8,12 +8,13 @@
   flat-rotate : 평면 회전(-5°) 폰, 하단 블리드
   dark        : 다크 배경 반전 + 정면 폰
 """
-import subprocess, sys, pathlib
+import os, subprocess, sys, pathlib
 
 # 말문 — 언어마다 원본(raw/<언어>/)에 헤드라인을 얹어 marketing/<언어>/ 로 만든다.
 # 원본 캡처: scripts/capture_store_screenshots.sh   실행: python3 scripts/make_marketing_screenshots.py [언어 ...]
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "docs" / "screenshots"
 WORK = pathlib.Path("/tmp/malmun-marketing")
+PROFILE = WORK / "chrome-profile"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 W, H = 1284, 2778          # 레이아웃이 이 크기에 맞춰져 있다 → 그린 뒤 제출 규격으로 줄인다
 OUT_W, OUT_H = 1242, 2688  # App Store Connect 제출 규격
@@ -212,6 +213,13 @@ def main(langs):
         out = ROOT / "marketing" / lang
         out.mkdir(parents=True, exist_ok=True)
         for fname, layout, (headline, sub) in zip(FILES, LAYOUT_OF, COPY[lang]):
+            if not (src / fname).exists():   # 그 언어에서 찍지 않은 장면은 건너뛴다
+                print(f"skip {lang}/{fname} (원본 없음)")
+                continue
+            # ONLY_MISSING=1: 원본보다 새 제출본이 이미 있으면 건너뛴다 (중간에 끊겼을 때 이어서)
+            if os.environ.get("ONLY_MISSING") and (out / fname).exists() and \
+                    (out / fname).stat().st_mtime > (src / fname).stat().st_mtime:
+                continue
             body_tpl = BODY_PHONE_FIRST if layout == "text-bottom" else BODY_TEXT_FIRST
             body = body_tpl.format(headline=headline, sub=sub, img=(src / fname).as_uri())
             html_path = WORK / f"{lang}-{fname.replace('.png', '.html')}"
@@ -220,10 +228,18 @@ def main(langs):
                 base = base.replace('"Hiragino Sans", "PingFang SC"', '"PingFang SC", "Hiragino Sans"')
             html_path.write_text(HTML.format(lang=lang, base=base, layout=LAYOUTS[layout], body=body), encoding="utf-8")
             tmp = WORK / f"{lang}-{fname}"
-            subprocess.run([CHROME, "--headless=new", f"--screenshot={tmp}",
-                            f"--window-size={W},{H}", "--force-device-scale-factor=1",
-                            "--hide-scrollbars", "--disable-gpu", html_path.as_uri()],
-                           check=True, capture_output=True)
+            # 다른 Chrome 과 프로필을 같이 쓰면 그리다 죽는다 — 따로 쓰고, 세 번까지 한다.
+            # 그림을 다 쓴 뒤 닫다가 죽어도(Teardown watchdog) 파일이 있으면 된 것이다.
+            for _ in range(3):
+                tmp.unlink(missing_ok=True)
+                r = subprocess.run([CHROME, "--headless=new", f"--screenshot={tmp}",
+                                    f"--window-size={W},{H}", "--force-device-scale-factor=1",
+                                    "--hide-scrollbars", "--disable-gpu", f"--user-data-dir={PROFILE}",
+                                    html_path.as_uri()], capture_output=True)
+                if tmp.exists() and tmp.stat().st_size > 0:
+                    break
+            else:
+                raise SystemExit(f"Chrome 이 그리지 못했다: {tmp}")
             Image.open(tmp).convert("RGB").resize((OUT_W, OUT_H), Image.LANCZOS).save(out / fname)
             print(f"rendered {out / fname}")
 
