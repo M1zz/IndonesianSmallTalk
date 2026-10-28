@@ -105226,6 +105226,302 @@
           }
         }
       }
+    },
+    "더 또렷한 목소리로 듣기" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslouchejte zřetelnější hlas"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lyt med en tydeligere stemme"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine klarere Stimme hören"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ακούστε πιο καθαρή φωνή"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hear a clearer voice"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hear a clearer voice"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escucha una voz más clara"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuuntele selkeämmällä äänellä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une voix plus nette"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengarkan suara yang lebih jelas"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascolta una voce più chiara"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もっと聞き取りやすい声で"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더 또렷한 목소리로 듣기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lytt med en tydeligere stemme"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luister naar een duidelijkere stem"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyraźniejszy głos"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouça uma voz mais clara"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Более чёткий голос"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lyssna med en tydligare röst"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฟังเสียงที่ชัดขึ้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha net bir sesle dinleyin"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nghe giọng đọc rõ hơn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "换一个更清晰的声音"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "換一個更清晰的聲音"
+          }
+        }
+      }
+    },
+    "iPhone 설정 ▸ 손쉬운 사용 ▸ 읽기 및 말하기 ▸ 음성 ▸ %@ 에서 '향상된 음질' 목소리를 받아 주세요. 받으면 말문이 그 목소리로 읽어요." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřete na iPhonu Nastavení ▸ Zpřístupnění ▸ Předčítání obsahu ▸ Hlasy ▸ %@ a stáhněte vylepšený hlas. Malmun ho pak bude používat automaticky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gå til Indstillinger ▸ Tilgængelighed ▸ Oplæst indhold ▸ Stemmer ▸ %@ på din iPhone, og hent en forbedret stemme. Malmun bruger den så automatisk."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffne auf dem iPhone Einstellungen ▸ Bedienungshilfen ▸ Gesprochene Inhalte ▸ Stimmen ▸ %@ und lade eine erweiterte Stimme. Malmun verwendet sie dann automatisch."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ανοίξτε στο iPhone Ρυθμίσεις ▸ Προσβασιμότητα ▸ Εκφωνούμενο περιεχόμενο ▸ Φωνές ▸ %@ και κατεβάστε μια βελτιωμένη φωνή. Το Malmun θα τη χρησιμοποιεί αυτόματα."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to iPhone Settings ▸ Accessibility ▸ Spoken Content ▸ Voices ▸ %@ and download an Enhanced voice. Malmun will use it automatically."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to iPhone Settings ▸ Accessibility ▸ Spoken Content ▸ Voices ▸ %@ and download an Enhanced voice. Malmun will use it automatically."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve a Ajustes del iPhone ▸ Accesibilidad ▸ Contenido leído ▸ Voces ▸ %@ y descarga una voz mejorada. Malmun la usará automáticamente."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa iPhonen Asetukset ▸ Käyttöapu ▸ Puhuttu sisältö ▸ Äänet ▸ %@ ja lataa parannettu ääni. Malmun käyttää sitä sen jälkeen automaattisesti."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrez Réglages ▸ Accessibilité ▸ Contenu énoncé ▸ Voix ▸ %@ sur l’iPhone et téléchargez une voix améliorée. Malmun l’utilisera automatiquement."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Pengaturan iPhone ▸ Aksesibilitas ▸ Konten Lisan ▸ Suara ▸ %@ lalu unduh suara yang Disempurnakan. Malmun akan langsung memakainya."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vai su Impostazioni dell’iPhone ▸ Accessibilità ▸ Contenuto letto ▸ Voci ▸ %@ e scarica una voce migliorata. Malmun la userà in automatico."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhoneの設定 ▸ アクセシビリティ ▸ 読み上げコンテンツ ▸ 声 ▸ %@ で「拡張」の声をダウンロードしてください。Malmunが自動でその声を使います。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone 설정 ▸ 손쉬운 사용 ▸ 읽기 및 말하기 ▸ 음성 ▸ %@ 에서 '향상된 음질' 목소리를 받아 주세요. 받으면 말문이 그 목소리로 읽어요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gå til Innstillinger ▸ Tilgjengelighet ▸ Opplest innhold ▸ Stemmer ▸ %@ på iPhone, og last ned en forbedret stemme. Malmun bruker den da automatisk."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ga op je iPhone naar Instellingen ▸ Toegankelijkheid ▸ Gesproken materiaal ▸ Stemmen ▸ %@ en download een verbeterde stem. Malmun gebruikt die dan vanzelf."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz na iPhonie Ustawienia ▸ Dostępność ▸ Odczytywanie zawartości ▸ Głosy ▸ %@ i pobierz głos o rozszerzonej jakości. Malmun sam zacznie go używać."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vá em Ajustes do iPhone ▸ Acessibilidade ▸ Conteúdo Falado ▸ Vozes ▸ %@ e baixe uma voz aprimorada. O Malmun vai usá-la automaticamente."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откройте на iPhone Настройки ▸ Универсальный доступ ▸ Устный контент ▸ Голоса ▸ %@ и загрузите голос улучшенного качества. Malmun сам начнёт его использовать."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna Inställningar ▸ Hjälpmedel ▸ Talat innehåll ▸ Röster ▸ %@ på iPhone och hämta en förbättrad röst. Malmun använder den sedan automatiskt."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไปที่ การตั้งค่า ▸ การช่วยการเข้าถึง ▸ เนื้อหาที่พูด ▸ เสียง ▸ %@ บน iPhone แล้วดาวน์โหลดเสียงคุณภาพที่ปรับปรุงแล้ว Malmun จะใช้เสียงนั้นให้เอง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone’da Ayarlar ▸ Erişilebilirlik ▸ Seslendirilen İçerik ▸ Sesler ▸ %@ bölümüne gidip geliştirilmiş bir ses indirin. Malmun bu sesi kendiliğinden kullanır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vào Cài đặt ▸ Trợ năng ▸ Nội dung được đọc ▸ Giọng nói ▸ %@ trên iPhone và tải giọng Nâng cao. Malmun sẽ tự dùng giọng đó."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请前往 iPhone 设置 ▸ 辅助功能 ▸ 朗读内容 ▸ 声音 ▸ %@，下载“增强”音质的声音。下载后，Malmun 会自动使用它朗读。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請前往 iPhone 設定 ▸ 輔助使用 ▸ 語音內容 ▸ 聲音 ▸ %@，下載「增強」音質的聲音。下載後，Malmun 會自動用它朗讀。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

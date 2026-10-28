@@ -2,6 +2,152 @@
 
 DeployBar 가 배포할 때 이 파일의 스토어용 절을 읽어 '이 버전의 새로운 기능' 칸에 올린다.
 
+## 1.0.5
+
+### 앱스토어 (한국어)
+
+읽어 주는 목소리가 더 또렷하고 자연스러워졌어요
+퇴근길 모드에서도 발음이 더 잘 들려요
+더 좋은 목소리를 받는 방법을 알려 드려요
+
+### App Store (English)
+
+The reading voice sounds clearer
+Commute Mode sounds clearer too
+Learn how to get an even better voice
+
+### App Store (en-GB)
+
+The reading voice sounds clearer
+Commute Mode sounds clearer too
+Learn how to get an even better voice
+
+### App Store (Español)
+
+La voz de lectura suena más clara
+El Modo trayecto también se oye mejor
+Cómo conseguir una voz aún mejor
+
+### App Store (Bahasa Indonesia)
+
+Suara pembaca kini lebih jelas
+Mode Perjalanan juga lebih jelas
+Cara mendapat suara yang lebih bagus
+
+### App Store (日本語)
+
+読み上げの声がよりはっきり自然になりました
+通勤モードでも発音が聞き取りやすくなりました
+もっと良い声を入れる方法をご案内します
+
+### App Store (简体中文)
+
+朗读声音更清晰、更流畅了
+通勤模式下的发音也更清楚
+教你获取更好听的声音
+
+### App Store (繁體中文, zh-Hant)
+
+朗讀聲音更清晰、更流暢了
+通勤模式的發音也更清楚
+教你取得更好聽的聲音
+
+### App Store (Русский)
+
+Голос озвучки стал чётче
+В режиме «В пути» тоже яснее
+Подскажем, как найти голос получше
+
+### App Store (Deutsch)
+
+Die Vorlesestimme klingt klarer
+Auch im Feierabend-Modus klarer
+So bekommst du eine bessere Stimme
+
+### App Store (Français)
+
+La voix de lecture est plus nette
+Le Mode trajet s’entend mieux aussi
+Comment avoir une voix encore meilleure
+
+### App Store (Português, Brasil)
+
+A voz de leitura ficou mais clara
+O Modo Trajeto também soa mais claro
+Veja como ter uma voz ainda melhor
+
+### App Store (Italiano)
+
+La voce di lettura è più chiara
+In Modalità tragitto si sente meglio
+Scopri come avere una voce migliore
+
+### App Store (ไทย)
+
+เสียงอ่านชัดและเป็นธรรมชาติขึ้น
+โหมดเดินทางก็ฟังชัดขึ้น
+แนะนำวิธีใช้เสียงที่ดียิ่งขึ้น
+
+### App Store (Tiếng Việt)
+
+Giọng đọc rõ ràng và tự nhiên hơn
+Chế độ đi làm cũng nghe rõ hơn
+Hướng dẫn cách có giọng đọc hay hơn
+
+### App Store (Čeština)
+
+Předčítání zní zřetelněji
+I v režimu dojíždění je lépe slyšet
+Poradíme, jak získat lepší hlas
+
+### App Store (Dansk)
+
+Oplæsningen lyder tydeligere
+Pendlertilstand lyder også tydeligere
+Sådan får du en endnu bedre stemme
+
+### App Store (Ελληνικά)
+
+Η φωνή ανάγνωσης ακούγεται πιο καθαρά
+Καθαρότερος ήχος και στη διαδρομή
+Δείτε πώς να έχετε καλύτερη φωνή
+
+### App Store (Suomi)
+
+Lukuääni on nyt selkeämpi
+Myös Työmatkatila kuulostaa selkeämmältä
+Näin saat vielä paremman äänen
+
+### App Store (Norsk bokmål)
+
+Opplesningen høres tydeligere ut
+Pendlermodus høres også tydeligere ut
+Slik får du en enda bedre stemme
+
+### App Store (Nederlands)
+
+De voorleesstem klinkt duidelijker
+Ook de Onderweg-modus klinkt helderder
+Zo krijg je een nog betere stem
+
+### App Store (Polski)
+
+Głos lektora brzmi wyraźniej
+Tryb dojazdu też brzmi wyraźniej
+Podpowiadamy, jak mieć lepszy głos
+
+### App Store (Svenska)
+
+Uppläsningsrösten låter tydligare
+Pendlarläget låter också tydligare
+Så får du en ännu bättre röst
+
+### App Store (Türkçe)
+
+Okuma sesi artık daha net ve doğal
+Yol Modu da daha net duyuluyor
+Daha iyi bir ses için yol gösteriyoruz
+
 ## 1.0.4
 
 ### 앱스토어 (한국어)

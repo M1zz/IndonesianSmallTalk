@@ -27,7 +27,12 @@ struct SettingsView: View {
                         }
                     }
                 } footer: {
-                    Text("앱 화면 언어는 iPhone 설정 ▸ 말문 ▸ 언어에서 바꿀 수 있어요.")
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("앱 화면 언어는 iPhone 설정 ▸ 말문 ▸ 언어에서 바꿀 수 있어요.")
+                        if VoiceHint.isNeeded {
+                            Text(VoiceHint.steps)
+                        }
+                    }
                 }
 
                 Section("지원") {

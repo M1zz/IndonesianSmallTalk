@@ -101,7 +101,6 @@ class SpeechManager: ObservableObject {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = SpeechVoice.best(for: language ?? AppLanguage.learning)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.85
-        utterance.pitchMultiplier = 1.05
         utterance.postUtteranceDelay = 0.3
 
         ttsDelegate?.onFinish = { [weak self] in
@@ -338,12 +337,21 @@ class SpeechManager: ObservableObject {
 // MARK: - Voice
 
 enum SpeechVoice {
-    /// 그 언어에서 가장 좋은 목소리 (고음질 > 향상 > 기본)
+    /// 그 언어에서 가장 좋은 목소리 (고음질 > 향상 > 기본).
+    /// 품질이 같으면 시스템 기본 목소리를 쓴다 — 같은 '기본' 품질에 Eloquence(Eddy·Grandpa 등) 같은
+    /// 기계음 목소리가 섞여 있어서, 품질만 보고 고르면 그쪽이 뽑혀 발음이 뭉개진다.
     static func best(for language: AppLanguage) -> AVSpeechSynthesisVoice? {
         let code = language.speechCode
-        let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == code }
-        if let v = voices.max(by: { $0.quality.rawValue < $1.quality.rawValue }) { return v }
-        return AVSpeechSynthesisVoice(language: code)
+        let system = AVSpeechSynthesisVoice(language: code)
+        let natural = AVSpeechSynthesisVoice.speechVoices().filter {
+            $0.language == code
+                && !$0.identifier.hasPrefix("com.apple.eloquence")
+                && !$0.voiceTraits.contains(.isNoveltyVoice)
+                && !$0.voiceTraits.contains(.isPersonalVoice)
+        }
+        guard let top = natural.max(by: { $0.quality.rawValue < $1.quality.rawValue }),
+              top.quality.rawValue > (system?.quality.rawValue ?? 0) else { return system }
+        return top
     }
 }
 

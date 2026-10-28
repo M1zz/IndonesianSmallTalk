@@ -105,6 +105,7 @@
 		F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39DE7678ABA728AF7128645 /* SettingsView.swift */; };
 		FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */; };
 		FBE29439A35CB94F9FE54BED /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E496962BA16247EA6164 /* ScreenshotScene.swift */; };
+		FF9AF7BADC26DEC0259D75E7 /* VoiceHintCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +230,7 @@
 		F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotPaywallView.swift"; sourceTree = "<group>"; };
 		VERSION_XCCONFIG_REF /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		FF64E496962BA16247EA6164 /* ScreenshotScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScene.swift"; sourceTree = "<group>"; };
+		FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceHintCard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 				F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */,
 				F39DE7678ABA728AF7128645 /* SettingsView.swift */,
 				F4352E60699B45D8346BCF0A /* ScreenshotPaywallView.swift */,
+				FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */,
 				FC28528FA2EACC72C5872EBD /* ScreenshotPaywallView.swift in Sources */,
 				FBE29439A35CB94F9FE54BED /* ScreenshotScene.swift in Sources */,
+				FF9AF7BADC26DEC0259D75E7 /* VoiceHintCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
