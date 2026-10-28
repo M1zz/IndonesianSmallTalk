@@ -30,6 +30,11 @@ extension MalmunSpec {
               title: String(localized: "발음 연습과 대본 보기"),
               detail: String(localized: "따라 말하면 점수를 알려 주고, 대화 전체를 메신저처럼 읽고 들을 수 있어요.")),
 
+        // MARK: 만들고 있어요
+        .init(id: "gift", status: .building,
+              title: String(localized: "말문 Pro 선물하기"),
+              detail: String(localized: "함께 공부하는 친구나 가족에게 말문 Pro 를 선물할 수 있어요.")),
+
         // MARK: 다음에 만들어요
         .init(id: "course.morelangs", status: .planned,
               title: String(localized: "다른 언어의 하루 코스"),

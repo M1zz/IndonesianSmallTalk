@@ -41,6 +41,26 @@
       "productID": "com.devkoan.IndonesianSmallTalk.pro.lifetime",
       "referenceName": "Pro Lifetime",
       "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "39.99",
+      "familyShareable": false,
+      "internalID": "C3E9A7B1-5D24-4F86-9A0E-7B1C2D3E4F50",
+      "localizations": [
+        {
+          "description": "Give Pro to someone else with a gift code.",
+          "displayName": "Gift Malmun Pro",
+          "locale": "en_US"
+        },
+        {
+          "description": "다른 사람에게 Pro 를 선물합니다. 코드를 보내 주세요.",
+          "displayName": "말문 Pro 선물",
+          "locale": "ko"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.gift.pro",
+      "referenceName": "Gift Pro",
+      "type": "Consumable"
     }
   ],
   "settings": {},

@@ -43,6 +43,9 @@ final class MalmunPro: ObservableObject {
 
     nonisolated static let yearlyID = "com.devkoan.IndonesianSmallTalk.pro.yearly"
     nonisolated static let lifetimeID = "com.devkoan.IndonesianSmallTalk.pro.lifetime"
+    /// Pro 선물 (소모성). 받는 사람은 `lifetimeID` 를 산 것과 같아진다.
+    /// ⚠️ 판매 목록(productIDs)에 넣지 않는다. 넣으면 선물을 산 사람 자신이 Pro 가 된다.
+    nonisolated static let giftID = "com.devkoan.IndonesianSmallTalk.gift.pro"
 
     /// 퇴근길 모드 무료 장면 수 (하루)
     nonisolated static let freeDriveScenesPerDay = 3
@@ -76,6 +79,9 @@ final class MalmunPro: ObservableObject {
     }
 
     var hasPro: Bool { store.hasPro }
+    /// Pro 선물하기 엔진. 상품은 앱이 뜬 뒤에 오고 이 객체는 그 변화를 알리지 않으므로,
+    /// 화면은 이 엔진을 따로 관찰한다(`SettingsView` 의 `GiftRows`).
+    var gift: LeeoGiftStore? { store.gift }
 
     // MARK: 상황별 회화
 
