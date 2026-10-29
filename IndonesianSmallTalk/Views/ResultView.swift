@@ -1,4 +1,5 @@
 import SwiftUI
+import LeeoKit
 
 struct ResultView: View {
     @ObservedObject var session: PracticeSession
@@ -6,6 +7,9 @@ struct ResultView: View {
     var mode: PracticeRecord.Mode = .text
     let onRestart: () -> Void
     @Environment(\.dismiss) private var dismiss
+    @ObservedObject private var pro = MalmunPro.shared
+    /// 방금 끝낸 연습이 기록되면 팁 순간을 다시 본다.
+    @ObservedObject private var history = PracticeHistoryStore.shared
     @State private var recorded = false
     @State private var showTree = false
     @State private var animateScore = false
@@ -51,6 +55,11 @@ struct ResultView: View {
 
                 // ── 통계 카드
                 statsGrid
+
+                // ── 개발자 응원 부탁 — 이미 Pro 인 사람에게만, 드물게(LeeoTipAskPolicy)
+                if pro.hasPro, let tipJar = pro.tipJar {
+                    LeeoTipAskSlot<MalmunSpec>(tipJar: tipJar, reached: MalmunTipMoments.reachedNow)
+                }
 
                 // ── 대화 복습
                 conversationReview

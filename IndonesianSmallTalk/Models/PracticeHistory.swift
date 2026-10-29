@@ -1,4 +1,5 @@
 import Foundation
+import LeeoKit
 
 // MARK: - Practice Record
 
@@ -162,5 +163,36 @@ final class PracticeHistoryStore: ObservableObject {
         encoder.dateEncodingStrategy = .iso8601
         guard let data = try? encoder.encode(allRecords) else { return }
         try? data.write(to: fileURL, options: [.atomic])
+    }
+}
+
+// MARK: - Tip moments
+
+/// 개발자 응원(팁)을 부탁해도 될 만큼 말문이 도움이 된 순간. 연습 기록에서 바로 센다(모든 언어 합계).
+/// 결과 화면(`ResultView`)이 방금 끝낸 연습을 기록한 직후에 본다.
+enum MalmunTipMoments {
+    /// 마친 연습 수. 큰 것부터.
+    static let sessions = [300, 100, 30]
+    /// 말하거나 들은 문장 수. 큰 것부터.
+    static let lines = [3000, 1000, 300]
+
+    /// 넘어선 순간, **인상적인 것부터**. 연습 수가 앞이다(마친 것이 가장 분명하다).
+    static func reached(sessions done: Int, lines spoken: Int) -> [LeeoTipMoment] {
+        let bySessions = sessions.filter { done >= $0 }.map { threshold in
+            LeeoTipMoment(id: "sessions.\(threshold)",
+                          message: String(localized: "지금까지 연습을 \(done)번 마쳤어요",
+                                          comment: "Tip ask card: practice sessions finished so far"))
+        }
+        let byLines = lines.filter { spoken >= $0 }.map { threshold in
+            LeeoTipMoment(id: "lines.\(threshold)",
+                          message: String(localized: "지금까지 문장 \(spoken)개를 말하고 들었어요",
+                                          comment: "Tip ask card: sentences spoken or heard so far"))
+        }
+        return bySessions + byLines
+    }
+
+    @MainActor static var reachedNow: [LeeoTipMoment] {
+        let records = PracticeHistoryStore.shared.allRecords
+        return reached(sessions: records.count, lines: records.reduce(0) { $0 + $1.lines })
     }
 }

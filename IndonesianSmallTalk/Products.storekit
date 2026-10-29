@@ -61,6 +61,51 @@
       "productID": "com.devkoan.IndonesianSmallTalk.gift.pro",
       "referenceName": "Gift Pro",
       "type": "Consumable"
+    },
+    {
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "91D26B1F-A70B-4440-84CC-468019A39C62",
+      "localizations": [
+        {
+          "description": "A thank-you tip for the developer. Unlocks nothing.",
+          "displayName": "Small Tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.tip.small",
+      "referenceName": "Small Tip",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "354AEB40-3135-4E4D-82CB-7CDA9384ED2E",
+      "localizations": [
+        {
+          "description": "A thank-you tip for the developer. Unlocks nothing.",
+          "displayName": "Medium Tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.tip.medium",
+      "referenceName": "Medium Tip",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "9.99",
+      "familyShareable": false,
+      "internalID": "3B0F950E-3C09-4AD5-9C29-5B57D718255F",
+      "localizations": [
+        {
+          "description": "A thank-you tip for the developer. Unlocks nothing.",
+          "displayName": "Large Tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.tip.large",
+      "referenceName": "Large Tip",
+      "type": "Consumable"
     }
   ],
   "settings": {},

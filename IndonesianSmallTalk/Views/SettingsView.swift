@@ -19,6 +19,10 @@ struct SettingsView: View {
                 if let gift = pro.gift {
                     GiftRows(gift: gift, isPro: pro.hasPro)
                 }
+                // 개발자 응원하기 — 팁 상품이 있을 때만 선다
+                if let tipJar = pro.tipJar {
+                    Section { LeeoTipJarLink<MalmunSpec>(tipJar: tipJar) }
+                }
 
                 Section {
                     Button { showLanguagePicker = true } label: {

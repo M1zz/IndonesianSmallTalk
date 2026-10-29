@@ -44,7 +44,10 @@ enum MalmunSpec: LeeoAppSpec {
                 productID: MalmunPro.giftID,
                 grantsProductID: MalmunPro.lifetimeID,
                 containerIdentifier: "iCloud.com.Ysoup.FeedbackHub"
-            )
+            ),
+            // 개발자 응원하기(팁). 소모성이고 아무것도 열지 않는다. 작은 것부터.
+            // ⚠️ 팁 상품도 productIDs · entitlementIDs 에 넣지 않는다. 넣으면 낸 사람이 Pro 가 된다.
+            tipJar: LeeoTipJarConfig(productIDs: MalmunPro.tipIDs)
         )
     )
 
