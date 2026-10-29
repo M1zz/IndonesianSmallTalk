@@ -151,17 +151,17 @@ private struct PhraseRow: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
                         Text(phrase.indonesian)
-                            .font(.system(size: 16, weight: .semibold))
+                            .scaledFont(size: 16, weight: .semibold)
                         PolarityChip(polarity: phrase.polarity)
                     }
                     Text(phrase.korean)
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
                 Button(action: onPlay) {
                     Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "play.circle.fill")
-                        .font(.system(size: 24))
+                        .scaledFont(size: 24)
                         .foregroundColor(.blue)
                 }
                 .buttonStyle(.plain)
@@ -169,7 +169,7 @@ private struct PhraseRow: View {
             }
             if !phrase.context.isEmpty {
                 Text(phrase.context)
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
                     .padding(.top, 2)
             }
@@ -179,7 +179,7 @@ private struct PhraseRow: View {
                         Image(systemName: "mic.fill")
                         Text("따라말하기")
                     }
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .background(Color.blue.opacity(0.12))
@@ -192,7 +192,7 @@ private struct PhraseRow: View {
                         Image(systemName: "pencil")
                         Text("수정")
                     }
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .background(Color.gray.opacity(0.12))
@@ -214,11 +214,14 @@ struct PolarityChip: View {
         if polarity != .neutral {
             HStack(spacing: 2) {
                 Text(verbatim: polarity == .positive ? "+" : "−")
-                    .font(.system(size: 11, weight: .black))
+                    .scaledFont(size: 11, weight: .black)
+                    .accessibilityHidden(true)
                 Text(polarity == .positive ? LocalizedStringKey("긍정") : LocalizedStringKey("부정"))
-                    .font(.system(size: 9, weight: .bold))
+                    .scaledFont(size: 9, weight: .bold)
             }
-            .foregroundColor(polarity == .positive ? Color(red: 0.2, green: 0.55, blue: 0.1) : Color(red: 0.85, green: 0.4, blue: 0.0))
+            .foregroundColor(polarity == .positive
+                             ? Color(light: Color(red: 0.2, green: 0.55, blue: 0.1), dark: Color(red: 0.45, green: 0.85, blue: 0.4))
+                             : Color(light: Color(red: 0.85, green: 0.4, blue: 0.0), dark: Color(red: 1.0, green: 0.62, blue: 0.3)))
             .padding(.horizontal, 5)
             .padding(.vertical, 2)
             .background(
@@ -243,10 +246,10 @@ struct PhrasePracticeView: View {
             VStack(spacing: 24) {
                 VStack(spacing: 8) {
                     Text(phrase.indonesian)
-                        .font(.system(size: 22, weight: .bold))
+                        .scaledFont(size: 22, weight: .bold)
                         .multilineTextAlignment(.center)
                     Text(phrase.korean)
-                        .font(.system(size: 14))
+                        .scaledFont(size: 14)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                 }
@@ -254,7 +257,7 @@ struct PhrasePracticeView: View {
 
                 Button(action: { speech.speak(phrase.indonesian) }) {
                     Label("듣기", systemImage: "speaker.wave.2.fill")
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                         .background(Color.blue.opacity(0.12))
@@ -271,7 +274,7 @@ struct PhrasePracticeView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Text(speech.recognizedText)
-                            .font(.system(size: 16))
+                            .scaledFont(size: 16)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
                     }
@@ -362,9 +365,9 @@ struct PhrasePracticeView: View {
         }()
         return HStack(spacing: 8) {
             Text("\(percent)%")
-                .font(.system(size: 18, weight: .bold))
+                .scaledFont(size: 18, weight: .bold)
             Text(label)
-                .font(.system(size: 13, weight: .medium))
+                .scaledFont(size: 13, weight: .medium)
         }
         .foregroundColor(color)
         .padding(.horizontal, 14)

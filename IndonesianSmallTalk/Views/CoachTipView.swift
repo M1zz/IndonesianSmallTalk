@@ -21,18 +21,18 @@ struct CoachTipView: View {
                                     .font(.system(size: 32))
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("코치 팁")
-                                        .font(.system(size: 18, weight: .bold))
+                                        .scaledFont(size: 18, weight: .bold)
                                         .foregroundColor(.white)
                                     if let tip = node.coachTip {
                                         Text(tip.label)
-                                            .font(.system(size: 13))
+                                            .scaledFont(size: 13)
                                             .foregroundColor(.white.opacity(0.85))
                                     }
                                 }
                             }
                             // 해당 대화
                             Text("\"\(node.text)\"")
-                                .font(.system(size: 14, weight: .medium, design: .serif))
+                                .scaledFont(size: 14, weight: .medium, design: .serif)
                                 .italic()
                                 .foregroundColor(.white.opacity(0.9))
                                 .padding(.top, 2)
@@ -111,11 +111,14 @@ struct PolarityDetailBadge: View {
     var body: some View {
         HStack(spacing: 6) {
             Text(polarity == .positive ? "😊" : "😟")
+                .accessibilityHidden(true)
             (polarity == .positive ? Text("긍정 +") : Text("부정 −"))
-                .font(.system(size: 13, weight: .bold))
-                .foregroundColor(polarity == .positive ? Color(red: 0.15, green: 0.5, blue: 0.1) : Color(red: 0.6, green: 0.1, blue: 0.1))
+                .scaledFont(size: 13, weight: .bold)
+                .foregroundColor(polarity == .positive
+                             ? Color(light: Color(red: 0.2, green: 0.55, blue: 0.1), dark: Color(red: 0.45, green: 0.85, blue: 0.4))
+                             : Color(light: Color(red: 0.6, green: 0.1, blue: 0.1), dark: Color(red: 1.0, green: 0.5, blue: 0.45)))
             (polarity == .positive ? Text("긍정적인 반응") : Text("부정적인 반응"))
-                .font(.system(size: 12))
+                .scaledFont(size: 12)
                 .foregroundColor(.secondary)
         }
         .padding(.horizontal, 12)
@@ -143,9 +146,9 @@ struct InfoCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {
-                Text(icon).font(.system(size: 14))
+                Text(icon).scaledFont(size: 14)
                 Text(title)
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(.secondary)
             }
             Text(content)
@@ -173,13 +176,13 @@ struct TipCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {
-                Text(icon).font(.system(size: 14))
+                Text(icon).scaledFont(size: 14)
                 Text(title)
-                    .font(.system(size: 12, weight: .bold))
+                    .scaledFont(size: 12, weight: .bold)
                     .foregroundColor(accentColor)
             }
             Text(content)
-                .font(.system(size: 14))
+                .scaledFont(size: 14)
                 .foregroundColor(.primary)
                 .lineSpacing(3)
         }

@@ -13,21 +13,21 @@ struct OnboardingView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [Color(red: 0.96, green: 0.97, blue: 1.0),
-                         Color(red: 0.90, green: 0.92, blue: 0.99)],
+                colors: [Color(light: Color(red: 0.96, green: 0.97, blue: 1.0), dark: Color(red: 0.06, green: 0.07, blue: 0.13)),
+                         Color(light: Color(red: 0.90, green: 0.92, blue: 0.99), dark: Color(red: 0.10, green: 0.12, blue: 0.22))],
                 startPoint: .topLeading, endPoint: .bottomTrailing
             ).ignoresSafeArea()
 
             VStack(spacing: 0) {
                 // 페이지
                 TabView(selection: $page) {
-                    welcomePage.tag(0)
+                    scrollsIfNeeded(welcomePage).tag(0)
                     languagePage.tag(1)
-                    methodPage.tag(2)
+                    scrollsIfNeeded(methodPage).tag(2)
                     whyManualPage.tag(3)
-                    flowPage.tag(4)
-                    drivePage.tag(5)
-                    extrasPage.tag(6)
+                    scrollsIfNeeded(flowPage).tag(4)
+                    scrollsIfNeeded(drivePage).tag(5)
+                    scrollsIfNeeded(extrasPage).tag(6)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -44,13 +44,21 @@ struct OnboardingView: View {
                 HStack {
                     Spacer()
                     Button("건너뛰기") { finish() }
-                        .font(.system(size: 13, weight: .medium))
+                        .scaledFont(size: 13, weight: .medium)
                         .foregroundColor(.secondary)
                         .padding(.top, 12)
                         .padding(.trailing, 18)
                 }
                 Spacer()
             }
+        }
+    }
+
+    /// 큰 글자에서 한 화면을 넘으면 스크롤된다 (넘지 않으면 지금 모양 그대로)
+    private func scrollsIfNeeded<Page: View>(_ page: Page) -> some View {
+        ViewThatFits(in: .vertical) {
+            page
+            ScrollView { page }
         }
     }
 
@@ -61,20 +69,22 @@ struct OnboardingView: View {
             Spacer()
             Image("BrandMark")
                 .resizable()
+                .accessibilityHidden(true)
                 .scaledToFit()
                 .frame(width: 112, height: 112)
                 .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
                 .shadow(color: Brand.deep.opacity(0.25), radius: 14, y: 6)
             Text("말문")
-                .font(.system(size: 34, weight: .bold, design: .rounded))
+                .scaledFont(size: 34, weight: .bold, design: .rounded)
+                .accessibilityAddTraits(.isHeader)
             Text("한 줄씩 트이는 외국어 회화")
-                .font(.system(size: 14, weight: .medium))
+                .scaledFont(size: 14, weight: .medium)
                 .foregroundColor(.secondary)
             VStack(spacing: 6) {
                 Text("실제로 듣고 본 외국어 한 줄을")
-                    .font(.system(size: 16))
+                    .scaledFont(size: 16)
                 Text("내 입에 붙을 때까지 연습하는 앱")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
             }
             .multilineTextAlignment(.center)
             .padding(.top, 6)
@@ -89,16 +99,16 @@ struct OnboardingView: View {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("배울 언어")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                         .foregroundColor(.blue)
-                    Text("무슨 언어를 연습할까요?")
-                        .font(.system(size: 26, weight: .bold))
+                    Text("무슨 언어를 연습할까요?").accessibilityAddTraits(.isHeader)
+                        .scaledFont(size: 26, weight: .bold)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.top, 24)
                 LanguageGrid(selection: $language)
                 Text("홈 화면 위쪽 국기를 눌러 언제든 바꿀 수 있어요.")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.secondary)
             }
             .padding(.horizontal, 24)
@@ -110,10 +120,10 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("퇴근길 모드")
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.orange)
-                Text("운전하면서 귀로 연습")
-                    .font(.system(size: 26, weight: .bold))
+                Text("운전하면서 귀로 연습").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 26, weight: .bold)
             }
             .padding(.top, 24)
 
@@ -143,10 +153,10 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("학습 방법")
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.blue)
-                Text("들음 → 적음 → 키움")
-                    .font(.system(size: 26, weight: .bold))
+                Text("들음 → 적음 → 키움").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 26, weight: .bold)
             }
             .padding(.top, 24)
 
@@ -177,16 +187,16 @@ struct OnboardingView: View {
             VStack(alignment: .leading, spacing: 18) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("학습 철학")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                         .foregroundColor(.orange)
-                    Text("왜 굳이 직접 입력하나요?")
-                        .font(.system(size: 26, weight: .bold))
+                    Text("왜 굳이 직접 입력하나요?").accessibilityAddTraits(.isHeader)
+                        .scaledFont(size: 26, weight: .bold)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.top, 24)
 
                 Text("이 앱은 자동 번역으로 빈칸을 채우지 않습니다.")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .foregroundColor(.primary)
 
                 whyBlock(
@@ -208,7 +218,7 @@ struct OnboardingView: View {
                 )
 
                 Text("그래서 모든 시나리오·표현·답변은 본인이 직접 입력합니다. 불편하셔도 이 한 가지만 지켜주세요.")
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(.secondary)
                     .lineSpacing(3)
                     .padding(.top, 4)
@@ -224,8 +234,8 @@ struct OnboardingView: View {
         HStack(alignment: .top, spacing: 14) {
             Text(icon).font(.system(size: 28))
             VStack(alignment: .leading, spacing: 4) {
-                Text(title).font(.system(size: 15, weight: .bold))
-                Text(body).font(.system(size: 13))
+                Text(title).scaledFont(size: 15, weight: .bold)
+                Text(body).scaledFont(size: 13)
                     .foregroundColor(.secondary).lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -246,10 +256,10 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("사용 흐름")
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.blue)
-                Text("4단계로 끝")
-                    .font(.system(size: 26, weight: .bold))
+                Text("4단계로 끝").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 26, weight: .bold)
             }
             .padding(.top, 24)
 
@@ -284,10 +294,10 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("부가 기능")
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.blue)
-                Text("필요할 때 꺼내 쓰기")
-                    .font(.system(size: 26, weight: .bold))
+                Text("필요할 때 꺼내 쓰기").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 26, weight: .bold)
             }
             .padding(.top, 24)
 
@@ -306,10 +316,10 @@ struct OnboardingView: View {
                 Spacer()
                 VStack(spacing: 4) {
                     Image(systemName: "sparkles")
-                        .font(.system(size: 18))
+                        .scaledFont(size: 18)
                         .foregroundColor(.blue)
                     Text("이제 첫 시나리오를 만들어볼까요?")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                 }
                 Spacer()
             }
@@ -324,8 +334,8 @@ struct OnboardingView: View {
         HStack(alignment: .top, spacing: 14) {
             Text(emoji).font(.system(size: 32))
             VStack(alignment: .leading, spacing: 3) {
-                Text(title).font(.system(size: 15, weight: .bold))
-                Text(desc).font(.system(size: 13))
+                Text(title).scaledFont(size: 15, weight: .bold)
+                Text(desc).scaledFont(size: 13)
                     .foregroundColor(.secondary).lineSpacing(2)
             }
         }
@@ -346,8 +356,8 @@ struct OnboardingView: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.blue))
             VStack(alignment: .leading, spacing: 3) {
-                Text(title).font(.system(size: 14, weight: .bold))
-                Text(desc).font(.system(size: 12))
+                Text(title).scaledFont(size: 14, weight: .bold)
+                Text(desc).scaledFont(size: 12)
                     .foregroundColor(.secondary).lineSpacing(2)
             }
         }
@@ -355,10 +365,10 @@ struct OnboardingView: View {
 
     private func extraRow(icon: String, title: LocalizedStringKey, desc: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 12) {
-            Text(icon).font(.system(size: 24))
+            Text(icon).scaledFont(size: 24)
             VStack(alignment: .leading, spacing: 3) {
-                Text(title).font(.system(size: 14, weight: .bold))
-                Text(desc).font(.system(size: 12))
+                Text(title).scaledFont(size: 14, weight: .bold)
+                Text(desc).scaledFont(size: 12)
                     .foregroundColor(.secondary).lineSpacing(2)
             }
         }
@@ -371,10 +381,10 @@ struct OnboardingView: View {
         if page < pageCount - 1 {
             Button(action: { withAnimation { page += 1 } }) {
                 Text("다음")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 52)
+                    .frame(minHeight: 52)
                     .background(
                         LinearGradient(
                             colors: [Brand.solidBlue, Brand.deep],
@@ -387,10 +397,10 @@ struct OnboardingView: View {
         } else {
             Button(action: { finish() }) {
                 Text("시작하기")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 52)
+                    .frame(minHeight: 52)
                     .background(
                         LinearGradient(
                             colors: [Brand.solidBlue, Brand.deep],

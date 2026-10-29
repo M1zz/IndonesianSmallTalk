@@ -57,13 +57,13 @@ struct DriveModeView: View {
             HStack(spacing: 8) {
                 Text(AppLanguage.learning.flag)
                 Text(session.lesson?.title ?? String(localized: "출발 전에 눌러 두세요"))
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                     .foregroundColor(.white.opacity(0.85))
-                    .lineLimit(1)
+                    .singleLine()
                 Spacer()
                 if session.isActive {
                     Text("\(session.lessonPosition.index)/\(session.lessonPosition.count)")
-                        .font(.system(size: 12, weight: .semibold).monospacedDigit())
+                        .scaledFont(size: 12, weight: .semibold).monospacedDigit()
                         .foregroundColor(.white.opacity(0.6))
                 }
             }
@@ -72,13 +72,13 @@ struct DriveModeView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 Text(primaryText)
-                    .font(.system(size: 26, weight: .bold, design: .rounded))
+                    .scaledFont(size: 26, weight: .bold, design: .rounded)
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
                     .animation(.easeInOut(duration: 0.2), value: primaryText)
                 if !secondaryText.isEmpty {
                     Text(secondaryText)
-                        .font(.system(size: 16))
+                        .scaledFont(size: 16)
                         .foregroundColor(.white.opacity(0.75))
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -93,7 +93,7 @@ struct DriveModeView: View {
                     Text(session.heardText.isEmpty ? String(localized: "듣고 있어요…") : session.heardText)
                         .lineLimit(2)
                 }
-                .font(.system(size: 14, weight: .medium))
+                .scaledFont(size: 14, weight: .medium)
                 .foregroundColor(Brand.glow)
             } else if let result = session.lastResult {
                 resultBadge(result)
@@ -119,7 +119,7 @@ struct DriveModeView: View {
                         }
                     }
                 }
-                .font(.system(size: 12, weight: .medium))
+                .scaledFont(size: 12, weight: .medium)
                 .foregroundColor(Brand.glow)
             }
         }
@@ -167,7 +167,7 @@ struct DriveModeView: View {
                 Text("· \(session.heardText)").lineLimit(1).opacity(0.7)
             }
         }
-        .font(.system(size: 13, weight: .semibold))
+        .scaledFont(size: 13, weight: .semibold)
         .foregroundColor(color)
     }
 
@@ -186,7 +186,7 @@ struct DriveModeView: View {
             Image(systemName: icon)
             Text(label)
         }
-        .font(.system(size: 12, weight: .bold))
+        .scaledFont(size: 12, weight: .bold)
         .foregroundColor(color)
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
@@ -238,15 +238,15 @@ struct DriveModeView: View {
                     .foregroundColor(Brand.glow)
                 VStack(alignment: .leading, spacing: 2) {
                     (left == 0 ? Text("오늘 무료 장면을 다 들었어요") : Text("오늘 무료 장면 \(left)개 남음"))
-                        .font(.system(size: 14, weight: .semibold))
+                        .scaledFont(size: 14, weight: .semibold)
                         .foregroundColor(.primary)
                     Text("말문 Pro는 하루 제한 없이 들을 수 있어요")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
                 Text("Pro")
-                    .font(.system(size: 12, weight: .heavy))
+                    .scaledFont(size: 12, weight: .heavy)
                     .foregroundColor(Brand.deep)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
@@ -274,7 +274,7 @@ struct DriveModeView: View {
                     .font(.system(size: 24, weight: .semibold))
                     .frame(width: size, height: size)
                     .background(Circle().fill(Color(.secondarySystemGroupedBackground)))
-                Text(label).font(.system(size: 11, weight: .medium))
+                Text(label).scaledFont(size: 11, weight: .medium)
             }
             .foregroundColor(.primary)
         }
@@ -285,8 +285,8 @@ struct DriveModeView: View {
 
     private var sourcePicker: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("무엇을 들을까요?")
-                .font(.system(size: 13, weight: .bold))
+            Text("무엇을 들을까요?").accessibilityAddTraits(.isHeader)
+                .scaledFont(size: 13, weight: .bold)
                 .foregroundColor(.secondary)
             VStack(spacing: 0) {
                 ForEach(DriveSource.allCases) { src in
@@ -302,18 +302,19 @@ struct DriveModeView: View {
                             Text(src.title).foregroundColor(.primary)
                             Spacer()
                             Text(count == 0 ? String(localized: "아직 없음") : String(localized: "장면 \(count)개"))
-                                .font(.system(size: 12))
+                                .scaledFont(size: 12)
                                 .foregroundColor(.secondary)
                             if source == src {
                                 Image(systemName: "checkmark").foregroundColor(Brand.blue)
                             }
                         }
-                        .font(.system(size: 15))
+                        .scaledFont(size: 15)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 12)
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
+                    .accessibilityAddTraits(source == src ? .isSelected : [])
                     .disabled(count == 0)
                     .opacity(count == 0 ? 0.45 : 1)
                     if src != DriveSource.allCases.last { Divider().padding(.leading, 52) }
@@ -325,8 +326,8 @@ struct DriveModeView: View {
 
     private var settingsCard: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("듣기 설정")
-                .font(.system(size: 13, weight: .bold))
+            Text("듣기 설정").accessibilityAddTraits(.isHeader)
+                .scaledFont(size: 13, weight: .bold)
                 .foregroundColor(.secondary)
             VStack(alignment: .leading, spacing: 14) {
                 VStack(alignment: .leading, spacing: 4) {
@@ -337,6 +338,8 @@ struct DriveModeView: View {
                             .foregroundColor(.secondary)
                     }
                     Slider(value: $rate, in: 0.6...1.2, step: 0.05)
+                        .accessibilityLabel(Text("말 빠르기"))
+                        .accessibilityValue(rate < 0.8 ? Text("천천히") : rate > 1.0 ? Text("빠르게") : Text("보통"))
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
@@ -346,6 +349,8 @@ struct DriveModeView: View {
                             .foregroundColor(.secondary)
                     }
                     Slider(value: $gap, in: 0.6...2.0, step: 0.1)
+                        .accessibilityLabel(Text("말해 볼 시간"))
+                        .accessibilityValue(gap < 0.9 ? Text("짧게") : gap > 1.3 ? Text("넉넉히") : Text("보통"))
                 }
                 Toggle("정답을 한 번 더 듣기", isOn: $repeatTwice)
                 VStack(alignment: .leading, spacing: 4) {
@@ -355,17 +360,17 @@ struct DriveModeView: View {
                             Task { voiceDenied = !(await DriveVoiceListener.requestPermission()) }
                         }
                     Text("말해 볼 차례에만 폰 마이크로 들어요. 맞게 말하면 알려 주고, \"다음\" \"다시\" \"천천히\" \"그만\" 을 알아들어요. 들은 말은 기기 밖으로 보내지 않아요.")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                     if voiceOn, voiceDenied || (!DriveVoiceListener.isAuthorized && !DriveVoiceListener.needsPermission) {
                         Button("마이크·음성 인식 허락하러 가기") {
                             if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
                         }
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                     }
                 }
             }
-            .font(.system(size: 15))
+            .scaledFont(size: 15)
             .padding(16)
             .background(RoundedRectangle(cornerRadius: 16).fill(Color(.secondarySystemGroupedBackground)))
         }
@@ -381,15 +386,15 @@ struct DriveModeView: View {
                     .background(RoundedRectangle(cornerRadius: 12).fill(Brand.glow.opacity(0.15)))
                 VStack(alignment: .leading, spacing: 3) {
                     Text("차에서 쓰는 법")
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(size: 15, weight: .semibold)
                         .foregroundColor(.primary)
                     Text("연결하면 저절로 시작 · 목소리 조작 · Siri")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(14)
@@ -415,10 +420,10 @@ struct DriveGuideSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("손대지 않고, 목소리로")
-                        .font(.system(size: 24, weight: .bold))
+                    Text("손대지 않고, 목소리로").accessibilityAddTraits(.isHeader)
+                        .scaledFont(size: 24, weight: .bold)
                     Text("한 번만 설정해 두면 차에 타서 폰을 연결하는 것만으로 시작되고, 그다음은 말로 조작해요.")
-                        .font(.system(size: 14))
+                        .scaledFont(size: 14)
                         .foregroundColor(.secondary)
 
                     step(1, icon: "cable.connector", title: "폰을 차에 연결",
@@ -430,7 +435,7 @@ struct DriveGuideSheet: View {
                             if let url = URL(string: "shortcuts://") { openURL(url) }
                         } label: {
                             Label("단축어 앱 열기", systemImage: "arrow.up.forward.app")
-                                .font(.system(size: 14, weight: .semibold))
+                                .scaledFont(size: 14, weight: .semibold)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(Brand.solidBlue)
@@ -442,9 +447,9 @@ struct DriveGuideSheet: View {
                             ForEach(commandExamples, id: \.0) { cmd, meaning in
                                 HStack(spacing: 8) {
                                     Text("\"\(cmd.words(AppLanguage.native).first ?? "")\"")
-                                        .font(.system(size: 14, weight: .bold))
+                                        .scaledFont(size: 14, weight: .bold)
                                     Text(meaning)
-                                        .font(.system(size: 13))
+                                        .scaledFont(size: 13)
                                         .foregroundColor(.secondary)
                                 }
                             }
@@ -462,7 +467,7 @@ struct DriveGuideSheet: View {
                         Label("내비게이션 안내가 나오면 잠깐 멈췄다가 이어서 들려줘요.", systemImage: "location.fill")
                             .foregroundColor(.secondary)
                     }
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .padding(.top, 4)
                 }
                 .padding(20)
@@ -486,10 +491,10 @@ struct DriveGuideSheet: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 6) {
                     Image(systemName: icon).foregroundColor(Brand.blue)
-                    Text(title).font(.system(size: 16, weight: .bold))
+                    Text(title).scaledFont(size: 16, weight: .bold)
                 }
                 Text(detail)
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
                 extra()
@@ -520,16 +525,16 @@ struct DriveEntryCard: View {
                     .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Brand.glow))
                 VStack(alignment: .leading, spacing: 3) {
                     (session.isPlaying ? Text("퇴근길 모드 듣는 중") : Text("퇴근길 모드"))
-                        .font(.system(size: 16, weight: .bold))
+                        .scaledFont(size: 16, weight: .bold)
                         .foregroundColor(.primary)
                     Text(session.isPlaying ? (session.lesson?.title ?? "") : String(localized: "차에 연결하고 귀로만 연습해요"))
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
-                        .lineLimit(1)
+                        .singleLine()
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(14)

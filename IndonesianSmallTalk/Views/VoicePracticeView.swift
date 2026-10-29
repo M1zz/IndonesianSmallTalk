@@ -10,6 +10,7 @@ struct VoicePracticeView: View {
     @State private var showResult = false
     @State private var pulseAmount = 1.0
     @State private var previewChoiceId: String?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     enum Phase {
         case partnerSpeaking   // 상대방 TTS 재생 중
@@ -123,10 +124,10 @@ struct VoicePracticeView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(session.scenario.title)
-                    .font(.system(size: 15, weight: .bold))
+                    .scaledFont(size: 15, weight: .bold)
                     .foregroundColor(.white)
                 Text(session.scenario.titleKo)
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.white.opacity(0.6))
             }
 
@@ -135,16 +136,19 @@ struct VoicePracticeView: View {
             // 점수
             HStack(spacing: 4) {
                 Image(systemName: "star.fill")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.yellow)
                 Text("\(session.score)")
-                    .font(.system(size: 14, weight: .bold))
+                    .scaledFont(size: 14, weight: .bold)
                     .foregroundColor(.white)
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 6)
             .background(.white.opacity(0.1))
             .cornerRadius(20)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("점수"))
+            .accessibilityValue(Text(verbatim: "\(session.score)"))
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
@@ -161,21 +165,21 @@ struct VoicePracticeView: View {
             if let node = session.currentNode {
                 VStack(spacing: 12) {
                     Text(node.text)
-                        .font(.system(size: 22, weight: .semibold))
+                        .scaledFont(size: 22, weight: .semibold)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
 
                     if !node.displayRomanization.isEmpty {
                         Text(node.displayRomanization)
-                            .font(.system(size: 14, design: .serif))
+                            .scaledFont(size: 14, design: .serif)
                             .italic()
-                            .foregroundColor(.white.opacity(0.5))
+                            .foregroundColor(.white.opacity(0.7))
                     }
 
                     Text(node.meaning)
-                        .font(.system(size: 14))
-                        .foregroundColor(.white.opacity(0.4))
+                        .scaledFont(size: 14)
+                        .foregroundColor(.white.opacity(0.7))
                 }
                 .padding(.horizontal, 30)
             }
@@ -185,7 +189,7 @@ struct VoicePracticeView: View {
                 VStack(spacing: 8) {
                     if !speech.recognizedText.isEmpty {
                         Text(speech.recognizedText)
-                            .font(.system(size: 16, weight: .medium))
+                            .scaledFont(size: 16, weight: .medium)
                             .foregroundColor(.cyan)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 30)
@@ -201,11 +205,11 @@ struct VoicePracticeView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
                         Text("매칭됨")
-                            .font(.system(size: 12, weight: .bold))
+                            .scaledFont(size: 12, weight: .bold)
                             .foregroundColor(.green)
                     }
                     Text(matched.text)
-                        .font(.system(size: 15, weight: .medium))
+                        .scaledFont(size: 15, weight: .medium)
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
                 }
@@ -220,7 +224,7 @@ struct VoicePracticeView: View {
             Circle()
                 .fill(speakerIconColor.opacity(0.1))
                 .frame(width: 120, height: 120)
-                .scaleEffect(pulseAmount)
+                .scaleEffect(reduceMotion ? 1 : pulseAmount)
 
             Circle()
                 .fill(speakerIconColor.opacity(0.2))
@@ -230,6 +234,7 @@ struct VoicePracticeView: View {
                 .font(.system(size: 36))
                 .foregroundColor(.white)
         }
+        .accessibilityHidden(true)
         .animation(
             phase == .partnerSpeaking || phase == .recording
                 ? .easeInOut(duration: 1).repeatForever(autoreverses: true)
@@ -273,12 +278,12 @@ struct VoicePracticeView: View {
             switch phase {
             case .partnerSpeaking:
                 Text("상대방이 말하고 있어요...")
-                    .font(.system(size: 14))
-                    .foregroundColor(.white.opacity(0.5))
+                    .scaledFont(size: 14)
+                    .foregroundColor(.white.opacity(0.75))
 
             case .waitingToRecord:
                 Text("아래 중 하나로 대답해보세요")
-                    .font(.system(size: 14, weight: .medium))
+                    .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.white.opacity(0.85))
 
                 choiceHints
@@ -287,7 +292,7 @@ struct VoicePracticeView: View {
 
             case .recording:
                 Text("듣고 있어요…")
-                    .font(.system(size: 14, weight: .medium))
+                    .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.cyan)
 
                 choiceHints
@@ -298,17 +303,17 @@ struct VoicePracticeView: View {
                 ProgressView()
                     .tint(.white)
                 Text("매칭 중...")
-                    .font(.system(size: 13))
-                    .foregroundColor(.white.opacity(0.5))
+                    .scaledFont(size: 13)
+                    .foregroundColor(.white.opacity(0.75))
 
             case .matched:
                 Text("다음 대화로 넘어갑니다")
-                    .font(.system(size: 14))
+                    .scaledFont(size: 14)
                     .foregroundColor(.green.opacity(0.8))
 
             case .finished:
                 Text("대화가 끝났어요!")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .foregroundColor(.white)
             }
         }
@@ -362,27 +367,29 @@ struct VoicePracticeView: View {
                     VStack(alignment: .leading, spacing: 3) {
                         HStack(spacing: 4) {
                             Text(choice.text)
-                                .font(.system(size: 14, weight: .semibold))
+                                .scaledFont(size: 14, weight: .semibold)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
                             if choice.polarity == .positive {
                                 Text("+")
-                                    .font(.system(size: 11, weight: .black))
+                                    .scaledFont(size: 11, weight: .black)
                                     .foregroundColor(.green)
+                                    .accessibilityLabel(Text("긍정"))
                             } else if choice.polarity == .negative {
                                 Text("−")
-                                    .font(.system(size: 11, weight: .black))
+                                    .scaledFont(size: 11, weight: .black)
                                     .foregroundColor(.orange)
+                                    .accessibilityLabel(Text("부정"))
                             }
                         }
                         if !choice.displayRomanization.isEmpty {
                             Text(choice.displayRomanization)
-                                .font(.system(size: 11, design: .serif))
+                                .scaledFont(size: 11, design: .serif)
                                 .italic()
                                 .foregroundColor(.white.opacity(0.55))
                         }
                         Text(choice.meaning)
-                            .font(.system(size: 11))
+                            .scaledFont(size: 11)
                             .foregroundColor(.white.opacity(0.65))
                     }
 
@@ -390,7 +397,7 @@ struct VoicePracticeView: View {
 
                     Button(action: { previewChoice(choice) }) {
                         Image(systemName: previewChoiceId == choice.id ? "speaker.wave.2.fill" : "play.circle.fill")
-                            .font(.system(size: 18))
+                            .scaledFont(size: 18)
                             .foregroundColor(previewChoiceId == choice.id ? .cyan : .white.opacity(0.75))
                             .symbolEffect(.bounce, value: previewChoiceId == choice.id)
                     }

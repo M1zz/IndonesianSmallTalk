@@ -7,6 +7,7 @@ struct JourneyTimetableView: View {
 
     @StateObject private var launcher = JourneyLauncher()
     @State private var selectedCell: TimetableCell?
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     private var doneTotal: Int { progress.doneCount(in: JourneyData.allCourses) }
     private var total: Int { progress.totalCount(in: JourneyData.allCourses) }
@@ -46,10 +47,10 @@ struct JourneyTimetableView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(doneTotal)")
-                    .font(.system(size: 30, weight: .heavy, design: .rounded))
+                    .scaledFont(size: 30, weight: .heavy, design: .rounded)
                     .foregroundColor(.green)
                 Text("/ \(total)개 장면을 배웠어요")
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                     .foregroundColor(.secondary)
                 Spacer(minLength: 0)
             }
@@ -65,7 +66,7 @@ struct JourneyTimetableView: View {
             .frame(height: 6)
 
             Text("초록 = 배운 장면, 회색 = 아직. 칸을 누르면 그 시간의 장면을 연습해요.")
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(Color(.tertiaryLabel))
         }
         .padding(16)
@@ -85,7 +86,7 @@ struct JourneyTimetableView: View {
                         .frame(width: 34)
                     ForEach(JourneyData.weekdayOrder, id: \.self) { wd in
                         Text(JourneyData.weekdayLabel(wd))
-                            .font(.system(size: 11, weight: .medium))
+                            .scaledFont(size: 11, weight: .medium)
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                     }
@@ -95,10 +96,10 @@ struct JourneyTimetableView: View {
                     HStack(spacing: 4) {
                         VStack(spacing: 0) {
                             Text(slot.labelKo)
-                                .font(.system(size: 10, weight: .semibold))
+                                .scaledFont(size: 10, weight: .semibold)
                                 .foregroundColor(.primary)
                             Text(slot.rangeLabel)
-                                .font(.system(size: 7.5))
+                                .scaledFont(size: 7.5)
                                 .foregroundColor(.secondary)
                         }
                         .frame(width: 34)
@@ -142,7 +143,7 @@ struct JourneyTimetableView: View {
 
                 if items.isEmpty {
                     Text(verbatim: "–")
-                        .font(.system(size: 10))
+                        .scaledFont(size: 10)
                         .foregroundColor(Color(.quaternaryLabel))
                 } else {
                     VStack(spacing: 2) {
@@ -165,10 +166,22 @@ struct JourneyTimetableView: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 44)
+            // 색 없이도 구별: 다 배운 칸에 체크
+            .overlay(alignment: .topTrailing) {
+                if doneAll && differentiateWithoutColor {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundColor(.green)
+                        .padding(2)
+                }
+            }
         }
         .buttonStyle(.plain)
         .disabled(items.isEmpty)
         .accessibilityLabel(Text(verbatim: "\(JourneyData.weekdayName(weekday)) \(slot.labelKo)"))
+        .accessibilityValue(items.isEmpty ? Text(verbatim: "")
+                            : doneAll ? Text("완료")
+                            : Text(verbatim: "\(items.filter { progress.isDone($0.stop.id) }.count)/\(items.count)"))
     }
 
     // MARK: 요일이 없는 코스
@@ -181,15 +194,15 @@ struct JourneyTimetableView: View {
                 ForEach(JourneyData.anyDayCourses) { course in
                     VStack(alignment: .leading, spacing: 8) {
                         HStack(spacing: 6) {
-                            Text(course.emoji).font(.system(size: 16))
+                            Text(course.emoji).scaledFont(size: 16)
                             Text(course.titleKo)
-                                .font(.system(size: 13, weight: .bold))
+                                .scaledFont(size: 13, weight: .bold)
                             Text(course.dayLabelKo)
-                                .font(.system(size: 10))
+                                .scaledFont(size: 10)
                                 .foregroundColor(.secondary)
                             Spacer()
                             Text("\(progress.doneCount(in: course))/\(course.stopCount)")
-                                .font(.system(size: 10, weight: .bold))
+                                .scaledFont(size: 10, weight: .bold)
                                 .foregroundColor(.secondary)
                         }
 
@@ -205,17 +218,18 @@ struct JourneyTimetableView: View {
                                                       ? Color.green.opacity(0.18)
                                                       : Color(.tertiarySystemFill))
                                             Text(stop.emoji)
-                                                .font(.system(size: 15))
+                                                .scaledFont(size: 15)
                                                 .opacity(progress.isDone(stop.id) ? 1 : 0.45)
                                         }
                                         .frame(height: 42)
                                         Text(stop.time)
-                                            .font(.system(size: 8, weight: .medium))
+                                            .scaledFont(size: 8, weight: .medium)
                                             .foregroundColor(progress.isDone(stop.id) ? .green : .secondary)
                                     }
                                 }
                                 .buttonStyle(.plain)
                                 .accessibilityLabel(Text(verbatim: "\(stop.time) \(stop.placeKo)"))
+                                .accessibilityValue(progress.isDone(stop.id) ? Text("완료") : Text(verbatim: ""))
                             }
                         }
                     }
@@ -233,11 +247,12 @@ struct JourneyTimetableView: View {
     private func sectionHeader(_ icon: String, _ title: LocalizedStringKey) -> some View {
         HStack(spacing: 6) {
             Image(systemName: icon)
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(.secondary)
             Text(title)
-                .font(.system(size: 13, weight: .bold))
+                .scaledFont(size: 13, weight: .bold)
                 .foregroundColor(.secondary)
+                .accessibilityAddTraits(.isHeader)
             Spacer()
         }
         .padding(.horizontal, 18)
@@ -253,15 +268,15 @@ struct JourneyTimetableView: View {
                 VStack(spacing: 10) {
                     ForEach(cell.items, id: \.stop.id) { item in
                         HStack(spacing: 12) {
-                            Text(item.stop.emoji).font(.system(size: 22))
+                            Text(item.stop.emoji).scaledFont(size: 22)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(item.stop.placeKo)
-                                    .font(.system(size: 14, weight: .bold))
+                                    .scaledFont(size: 14, weight: .bold)
                                 Text("\(item.course.emoji) \(item.course.titleKo) · \(item.stop.time)")
-                                    .font(.system(size: 10))
+                                    .scaledFont(size: 10)
                                     .foregroundColor(.secondary)
                                 Text(item.stop.situation)
-                                    .font(.system(size: 11))
+                                    .scaledFont(size: 11)
                                     .foregroundColor(Color(.tertiaryLabel))
                                     .fixedSize(horizontal: false, vertical: true)
                                     .multilineTextAlignment(.leading)
@@ -270,7 +285,7 @@ struct JourneyTimetableView: View {
                             VStack(spacing: 6) {
                                 if progress.isDone(item.stop.id) {
                                     Image(systemName: "checkmark.circle.fill")
-                                        .font(.system(size: 16))
+                                        .scaledFont(size: 16)
                                         .foregroundColor(.green)
                                 }
                                 Button {
@@ -281,7 +296,7 @@ struct JourneyTimetableView: View {
                                     }
                                 } label: {
                                     (progress.isDone(item.stop.id) ? Text("다시") : Text("연습"))
-                                        .font(.system(size: 11, weight: .bold))
+                                        .scaledFont(size: 11, weight: .bold)
                                         .foregroundColor(.white)
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 6)

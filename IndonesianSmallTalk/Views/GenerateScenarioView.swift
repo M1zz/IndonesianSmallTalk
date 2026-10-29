@@ -83,9 +83,9 @@ struct GenerateScenarioView: View {
     private var topicSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Label("배우고 싶은 상황을 입력하세요", systemImage: "sparkles")
-                .font(.system(size: 15, weight: .semibold))
+                .scaledFont(size: 15, weight: .semibold)
             Text("Claude AI가 \(AppLanguage.learning.localizedName) 대화 트리 + 단어장 + 문법 노트를 한 번에 만들어줍니다.")
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
 
             TextEditor(text: $prompt)
@@ -97,7 +97,7 @@ struct GenerateScenarioView: View {
                 .overlay(alignment: .topLeading) {
                     if prompt.isEmpty {
                         Text("예: 식당에서 주문하기, 약국에서 약 구입하기")
-                            .font(.system(size: 14))
+                            .scaledFont(size: 14)
                             .foregroundColor(Color(UIColor.tertiaryLabel))
                             .padding(.horizontal, 14)
                             .padding(.vertical, 18)
@@ -110,13 +110,13 @@ struct GenerateScenarioView: View {
     private var suggestionsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("추천 주제")
-                .font(.system(size: 12, weight: .medium))
+                .scaledFont(size: 12, weight: .medium)
                 .foregroundColor(.secondary)
             FlowLayout(spacing: 8) {
                 ForEach(suggestions, id: \.self) { s in
                     Button(action: { prompt = s }) {
                         Text(s)
-                            .font(.system(size: 13))
+                            .scaledFont(size: 13)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
                             .background(prompt == s ? Color.blue.opacity(0.15) : Color(.systemBackground))
@@ -135,29 +135,29 @@ struct GenerateScenarioView: View {
     private var htmlSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Label("학습 사이트 HTML 붙여넣기", systemImage: "doc.on.clipboard")
-                .font(.system(size: 15, weight: .semibold))
+                .scaledFont(size: 15, weight: .semibold)
 
             VStack(alignment: .leading, spacing: 6) {
                 Text("방법")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(.secondary)
                 HStack(alignment: .top, spacing: 8) {
                     Text("①")
                     Text("Safari에서 학습 페이지 열기")
                 }
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
                 HStack(alignment: .top, spacing: 8) {
                     Text("②")
                     Text("공유 → \"페이지 소스 복사\" 또는 텍스트 전체 선택 복사")
                 }
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
                 HStack(alignment: .top, spacing: 8) {
                     Text("③")
                     Text("아래에 붙여넣기")
                 }
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
             }
             .padding(12)
@@ -167,7 +167,7 @@ struct GenerateScenarioView: View {
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $htmlText)
                     .frame(minHeight: 160, maxHeight: 260)
-                    .font(.system(size: 12, design: .monospaced))
+                    .scaledFont(size: 12, design: .monospaced)
                     .padding(10)
                     .background(Color(.systemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
@@ -175,7 +175,7 @@ struct GenerateScenarioView: View {
 
                 if htmlText.isEmpty {
                     Text("HTML 소스 또는 텍스트를 여기에 붙여넣으세요")
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(Color(UIColor.tertiaryLabel))
                         .padding(.horizontal, 14)
                         .padding(.vertical, 18)
@@ -187,13 +187,13 @@ struct GenerateScenarioView: View {
                 HStack(spacing: 6) {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                     Text("\(htmlText.count.formatted())자 입력됨")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                     Spacer()
                     Button("지우기") { htmlText = "" }
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.red)
                 }
             }
@@ -207,14 +207,14 @@ struct GenerateScenarioView: View {
             Button(action: { withAnimation { showAPIKey.toggle() } }) {
                 HStack(spacing: 6) {
                     Image(systemName: "key.fill")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(apiKey.isEmpty ? .orange : .green)
                     Text(apiKey.isEmpty ? LocalizedStringKey("Anthropic API 키 설정 필요") : LocalizedStringKey("API 키 설정됨"))
-                        .font(.system(size: 13, weight: .medium))
+                        .scaledFont(size: 13, weight: .medium)
                         .foregroundColor(apiKey.isEmpty ? .orange : .green)
                     Spacer()
                     Image(systemName: showAPIKey ? "chevron.up" : "chevron.down")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                 }
             }
@@ -223,17 +223,17 @@ struct GenerateScenarioView: View {
             if showAPIKey {
                 VStack(alignment: .leading, spacing: 6) {
                     SecureField("sk-ant-api03-...", text: $apiKey)
-                        .font(.system(size: 13, design: .monospaced))
+                        .scaledFont(size: 13, design: .monospaced)
                         .padding(10)
                         .background(Color(.systemBackground))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.separator), lineWidth: 0.5))
                     Link("API 키 발급 → console.anthropic.com",
                          destination: URL(string: "https://console.anthropic.com")!)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.blue)
                 }
-                .transition(.opacity.combined(with: .move(edge: .top)))
+                .transition(.motion(.opacity.combined(with: .move(edge: .top))))
             }
         }
         .padding(14)
@@ -252,7 +252,7 @@ struct GenerateScenarioView: View {
                         mode == .topic ? LocalizedStringKey("AI로 시나리오 생성") : LocalizedStringKey("HTML에서 시나리오 추출"),
                         systemImage: mode == .topic ? "sparkles" : "doc.text.magnifyingglass"
                     )
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .background(canGenerate ? Color.blue : Color(.systemFill))
@@ -264,7 +264,7 @@ struct GenerateScenarioView: View {
 
                 if genState == .error {
                     Label(errorMessage, systemImage: "exclamationmark.circle.fill")
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(.red)
                         .padding(.horizontal, 4)
                 }
@@ -275,10 +275,10 @@ struct GenerateScenarioView: View {
                     Text(mode == .topic
                          ? LocalizedStringKey("Claude가 시나리오를 만들고 있어요…")
                          : LocalizedStringKey("HTML에서 대화를 추출하고 있어요…"))
-                        .font(.system(size: 14))
+                        .scaledFont(size: 14)
                         .foregroundColor(.secondary)
                     Text("대화 트리 + 단어장 + 문법 노트 생성 중")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(Color(UIColor.tertiaryLabel))
                 }
                 .frame(maxWidth: .infinity)
@@ -287,7 +287,7 @@ struct GenerateScenarioView: View {
             case .success:
                 Button(action: generate) {
                     Label("다시 생성", systemImage: "arrow.clockwise")
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
                         .background(Color(.systemFill))
@@ -308,9 +308,9 @@ struct GenerateScenarioView: View {
                 Text(s.emoji).font(.system(size: 44))
                 VStack(alignment: .leading, spacing: 4) {
                     Text(s.titleKo)
-                        .font(.system(size: 18, weight: .bold))
+                        .scaledFont(size: 18, weight: .bold)
                     Text(s.title)
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                     HStack(spacing: 12) {
                         StatBadge(icon: "bubble.left.and.right", value: "\(s.nodeCount)개", label: "대화")
@@ -327,7 +327,7 @@ struct GenerateScenarioView: View {
 
             Button(action: addAndDismiss) {
                 Label("앱에 추가하기", systemImage: "plus.circle.fill")
-                    .font(.system(size: 16, weight: .semibold))
+                    .scaledFont(size: 16, weight: .semibold)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .background(Color.green)
@@ -397,12 +397,12 @@ private struct StatBadge: View {
     var body: some View {
         HStack(spacing: 3) {
             Image(systemName: icon)
-                .font(.system(size: 10))
+                .scaledFont(size: 10)
                 .foregroundColor(.blue)
             Text(value)
-                .font(.system(size: 12, weight: .semibold))
+                .scaledFont(size: 12, weight: .semibold)
             Text(label)
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(.secondary)
         }
     }

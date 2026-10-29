@@ -40,13 +40,13 @@ struct EncouragementBanner: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            Text(icon).font(.system(size: 20))
+            Text(icon).scaledFont(size: 20)
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
-                    .font(.system(size: 12, weight: .bold))
+                    .scaledFont(size: 12, weight: .bold)
                     .foregroundColor(Color(red: 0.85, green: 0.50, blue: 0.0))
                 Text(body_text)
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
                     .lineSpacing(2)
                     .fixedSize(horizontal: false, vertical: true)

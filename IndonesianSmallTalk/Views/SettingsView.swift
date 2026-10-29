@@ -93,10 +93,10 @@ struct SettingsView: View {
                             .background(RoundedRectangle(cornerRadius: 8).fill(Brand.glow))
                         VStack(alignment: .leading, spacing: 2) {
                             Text("말문 Pro")
-                                .font(.system(size: 16, weight: .semibold))
+                                .scaledFont(size: 16, weight: .semibold)
                                 .foregroundColor(.primary)
                             Text("퇴근길 모드 무제한 · 상황별 회화 전체")
-                                .font(.system(size: 12))
+                                .scaledFont(size: 12)
                                 .foregroundColor(.secondary)
                         }
                     }

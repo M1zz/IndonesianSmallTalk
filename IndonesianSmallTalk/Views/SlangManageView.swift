@@ -72,18 +72,18 @@ struct SlangManageView: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 6) {
                 Text(pair.korean)
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(size: 15, weight: .semibold)
                     .foregroundColor(.primary)
                 Image(systemName: "arrow.right")
-                    .font(.system(size: 10))
+                    .scaledFont(size: 10)
                     .foregroundColor(.secondary)
                 Text(pair.indonesian)
-                    .font(.system(size: 14))
+                    .scaledFont(size: 14)
                     .foregroundColor(.pink)
             }
             if !pair.note.isEmpty {
                 Text(pair.note)
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
             }
         }

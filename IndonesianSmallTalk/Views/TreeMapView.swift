@@ -1,5 +1,11 @@
 import SwiftUI
 
+private extension Color {
+    /// 상대방 색 — 어두운 화면에서는 밝게
+    static let otherSpeaker = Color(light: Color(red: 0.55, green: 0.40, blue: 0.20),
+                                    dark: Color(red: 0.86, green: 0.69, blue: 0.47))
+}
+
 // MARK: - Entry point (same public API as before)
 
 struct TreeMapView: View {
@@ -53,9 +59,9 @@ struct TreeMapView: View {
         Button(action: action) {
             HStack(spacing: 6) {
                 Image(systemName: icon)
-                    .font(.system(size: 13, weight: selected ? .semibold : .regular))
+                    .scaledFont(size: 13, weight: selected ? .semibold : .regular)
                 Text(label)
-                    .font(.system(size: 13, weight: selected ? .semibold : .regular))
+                    .scaledFont(size: 13, weight: selected ? .semibold : .regular)
             }
             .foregroundColor(selected ? .white : .secondary)
             .frame(maxWidth: .infinity)
@@ -64,6 +70,7 @@ struct TreeMapView: View {
             .clipShape(RoundedRectangle(cornerRadius: 9))
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
 }
 
@@ -84,14 +91,14 @@ private struct ExplorerView: View {
                 VStack(spacing: 0) {
                     currentCard
                         .id(currentNode.id)
-                        .transition(
+                        .transition(.motion(
                             .asymmetric(
                                 insertion: .move(edge: slideDirection > 0 ? .trailing : .leading)
                                     .combined(with: .opacity),
                                 removal: .move(edge: slideDirection > 0 ? .leading : .trailing)
                                     .combined(with: .opacity)
                             )
-                        )
+                        ))
 
                     if currentNode.children.isEmpty {
                         leafView
@@ -114,7 +121,7 @@ private struct ExplorerView: View {
 
                 ForEach(Array(path.enumerated()), id: \.element.id) { idx, node in
                     Image(systemName: "chevron.right")
-                        .font(.system(size: 10))
+                        .scaledFont(size: 10)
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(.horizontal, 4)
                     crumbButton(
@@ -143,7 +150,7 @@ private struct ExplorerView: View {
             }
         }) {
             Text(label)
-                .font(.system(size: 12, weight: isCurrent ? .bold : .regular))
+                .scaledFont(size: 12, weight: isCurrent ? .bold : .regular)
                 .foregroundColor(isCurrent ? .primary : .blue)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
@@ -158,7 +165,7 @@ private struct ExplorerView: View {
 
     private var currentCard: some View {
         let isMe = currentNode.speaker == .me
-        let accentColor: Color = isMe ? .blue : Color(red: 0.55, green: 0.40, blue: 0.20)
+        let accentColor: Color = isMe ? .blue : Color.otherSpeaker
 
         return VStack(alignment: .leading, spacing: 0) {
             // Speaker strip
@@ -174,7 +181,7 @@ private struct ExplorerView: View {
 
                 VStack(alignment: .leading, spacing: 1) {
                     Text(currentNode.speaker.labelKo)
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(accentColor)
                     if currentNode.polarity != .neutral {
                         polarityPill(currentNode.polarity)
@@ -185,7 +192,7 @@ private struct ExplorerView: View {
 
                 if !path.isEmpty {
                     Text("깊이 \(path.count)")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
             }
@@ -195,7 +202,7 @@ private struct ExplorerView: View {
 
             // 배우는 언어 문장 — 크게
             Text(currentNode.text)
-                .font(.system(size: 20, weight: .semibold))
+                .scaledFont(size: 20, weight: .semibold)
                 .foregroundColor(.primary)
                 .lineSpacing(4)
                 .padding(.horizontal, 20)
@@ -203,7 +210,7 @@ private struct ExplorerView: View {
             // Romanization
             if !currentNode.displayRomanization.isEmpty {
                 Text(currentNode.displayRomanization)
-                    .font(.system(size: 13, design: .serif))
+                    .scaledFont(size: 13, design: .serif)
                     .italic()
                     .foregroundColor(Color(.tertiaryLabel))
                     .padding(.horizontal, 20)
@@ -212,7 +219,7 @@ private struct ExplorerView: View {
 
             // 뜻 (화면 언어)
             Text(currentNode.meaning)
-                .font(.system(size: 14))
+                .scaledFont(size: 14)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
@@ -238,15 +245,15 @@ private struct ExplorerView: View {
     private func coachTipStrip(_ tip: CoachTip) -> some View {
         HStack(alignment: .top, spacing: 10) {
             Image(systemName: "lightbulb.fill")
-                .font(.system(size: 12))
+                .scaledFont(size: 12)
                 .foregroundColor(.yellow)
                 .padding(.top, 1)
             VStack(alignment: .leading, spacing: 2) {
                 Text(tip.label)
-                    .font(.system(size: 11, weight: .bold))
+                    .scaledFont(size: 11, weight: .bold)
                     .foregroundColor(.orange)
                 Text(tip.tip)
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.secondary)
                     .lineSpacing(2)
             }
@@ -264,10 +271,10 @@ private struct ExplorerView: View {
             // Branch count header
             HStack(spacing: 6) {
                 Image(systemName: "arrow.triangle.branch")
-                    .font(.system(size: 11, weight: .semibold))
+                    .scaledFont(size: 11, weight: .semibold)
                     .foregroundColor(.secondary)
                 Text("\(currentNode.children.count)가지 분기")
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(.secondary)
             }
             .padding(.horizontal, 20)
@@ -296,7 +303,7 @@ private struct ExplorerView: View {
                 .font(.system(size: 28))
                 .foregroundColor(.green.opacity(0.7))
             Text("대화 끝 — 이 분기는 여기서 마무리됩니다")
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
 
@@ -308,7 +315,7 @@ private struct ExplorerView: View {
                     }
                 }) {
                     Label("이전으로", systemImage: "chevron.left")
-                        .font(.system(size: 13, weight: .medium))
+                        .scaledFont(size: 13, weight: .medium)
                         .foregroundColor(.blue)
                 }
                 .buttonStyle(.plain)
@@ -326,7 +333,7 @@ private struct ExplorerView: View {
             ? (String(localized: "긍정 ✓"), .green)
             : (String(localized: "부정 ✕"), .red)
         return Text(label)
-            .font(.system(size: 9, weight: .bold))
+            .scaledFont(size: 9, weight: .bold)
             .foregroundColor(color)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
@@ -343,7 +350,7 @@ private struct BranchCard: View {
     let onTap: () -> Void
 
     private var isMe: Bool { node.speaker == .me }
-    private var accentColor: Color { isMe ? .blue : Color(red: 0.55, green: 0.40, blue: 0.20) }
+    private var accentColor: Color { isMe ? .blue : Color.otherSpeaker }
     private var childCount: Int { countDescendants(node) }
 
     var body: some View {
@@ -363,11 +370,11 @@ private struct BranchCard: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
                         Text(node.speaker.labelKo)
-                            .font(.system(size: 10, weight: .bold))
+                            .scaledFont(size: 10, weight: .bold)
                             .foregroundColor(accentColor)
                         if node.polarity != .neutral {
                             (node.polarity == .positive ? Text("긍정") : Text("부정"))
-                                .font(.system(size: 9, weight: .semibold))
+                                .scaledFont(size: 9, weight: .semibold)
                                 .foregroundColor(node.polarity == .positive ? .green : .red)
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 1)
@@ -380,29 +387,29 @@ private struct BranchCard: View {
                         Spacer()
                         if childCount > 0 {
                             Text("\(childCount)개")
-                                .font(.system(size: 10))
+                                .scaledFont(size: 10)
                                 .foregroundColor(Color(.tertiaryLabel))
                         } else {
                             Text("끝")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(Color.green.opacity(0.7))
                         }
                     }
 
                     Text(node.text)
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                         .foregroundColor(.primary)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
                     Text(node.meaning)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
-                        .lineLimit(1)
+                        .singleLine()
                 }
 
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(.horizontal, 14)
@@ -443,11 +450,12 @@ private struct OutlineNodeRow: View {
     let depth: Int
     @Binding var selected: String?
     @State private var expanded: Bool = true
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     private var isMe: Bool { node.speaker == .me }
     private var isSelected: Bool { selected == node.id }
     private let accentBlue = Brand.blue
-    private var accentColor: Color { isMe ? accentBlue : Color(red: 0.55, green: 0.40, blue: 0.20) }
+    private var accentColor: Color { isMe ? accentBlue : Color.otherSpeaker }
     private let indentWidth: CGFloat = 20
 
     var body: some View {
@@ -468,7 +476,7 @@ private struct OutlineNodeRow: View {
                             withAnimation(.easeInOut(duration: 0.18)) { expanded.toggle() }
                         }) {
                             Image(systemName: expanded ? "chevron.down" : "chevron.right")
-                                .font(.system(size: 10, weight: .semibold))
+                                .scaledFont(size: 10, weight: .semibold)
                                 .foregroundColor(Color(.tertiaryLabel))
                                 .frame(width: 20)
                         }
@@ -478,28 +486,30 @@ private struct OutlineNodeRow: View {
                         Spacer().frame(width: 20)
                     }
 
-                    // Speaker dot
+                    // Speaker dot — 색 없이도 구별: 상대방은 속이 빈 고리
                     Circle()
-                        .fill(accentColor)
+                        .fill(isMe || !differentiateWithoutColor ? accentColor : Color.clear)
+                        .overlay(Circle().strokeBorder(accentColor, lineWidth: 1.5))
                         .frame(width: 8, height: 8)
                         .padding(.trailing, 8)
+                        .accessibilityLabel(Text(node.speaker.labelKo))
 
                     // Text
                     VStack(alignment: .leading, spacing: 2) {
                         Text(node.text)
-                            .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
+                            .scaledFont(size: 13, weight: isSelected ? .semibold : .regular)
                             .foregroundColor(.primary)
                             .lineLimit(isSelected ? 4 : 2)
                             .multilineTextAlignment(.leading)
 
                         if isSelected {
                             Text(node.meaning)
-                                .font(.system(size: 11))
+                                .scaledFont(size: 11)
                                 .foregroundColor(.secondary)
-                                .transition(.opacity.combined(with: .move(edge: .top)))
+                                .transition(.motion(.opacity.combined(with: .move(edge: .top))))
                             if !node.displayRomanization.isEmpty {
                                 Text(node.displayRomanization)
-                                    .font(.system(size: 10, design: .serif))
+                                    .scaledFont(size: 10, design: .serif)
                                     .italic()
                                     .foregroundColor(Color(.tertiaryLabel))
                                     .transition(.opacity)
@@ -513,12 +523,13 @@ private struct OutlineNodeRow: View {
                     HStack(spacing: 4) {
                         if node.polarity != .neutral {
                             Text(node.polarity == .positive ? "+" : "−")
-                                .font(.system(size: 11, weight: .black))
+                                .scaledFont(size: 11, weight: .black)
                                 .foregroundColor(node.polarity == .positive ? .green : .red)
+                                .accessibilityLabel(node.polarity == .positive ? Text("긍정") : Text("부정"))
                         }
                         if !node.children.isEmpty {
                             Text("\(node.children.count)")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(Color(.quaternaryLabel))
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
@@ -533,6 +544,16 @@ private struct OutlineNodeRow: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            // 줄 안의 접기 버튼은 VoiceOver 가 따로 못 누르니 동작으로 둔다
+            .accessibilityActions {
+                if !node.children.isEmpty {
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.18)) { expanded.toggle() }
+                    } label: {
+                        expanded ? Text("접기") : Text("펼치기")
+                    }
+                }
+            }
 
             // Connector line + children
             if expanded && !node.children.isEmpty {

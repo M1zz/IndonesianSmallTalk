@@ -53,7 +53,7 @@ struct ScriptView: View {
                     }
                     if lines.count == 1 {
                         Text("아직 이어지는 대화가 없어요.")
-                            .font(.system(size: 13))
+                            .scaledFont(size: 13)
                             .foregroundColor(.secondary)
                             .padding(.top, 20)
                     }
@@ -91,9 +91,9 @@ struct ScriptView: View {
             Text(scenario.emoji).font(.system(size: 34))
             VStack(alignment: .leading, spacing: 3) {
                 Text(scenario.title)
-                    .font(.system(size: 16, weight: .bold))
+                    .scaledFont(size: 16, weight: .bold)
                 Text(scenario.titleKo)
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.secondary)
             }
             Spacer()
@@ -111,17 +111,17 @@ struct ScriptView: View {
             Button { play(node, index: index) } label: {
                 VStack(alignment: isMe ? .trailing : .leading, spacing: 4) {
                     Text(node.text)
-                        .font(.system(size: 16, weight: .medium))
+                        .scaledFont(size: 16, weight: .medium)
                         .foregroundColor(isMe ? .white : .primary)
                         .multilineTextAlignment(isMe ? .trailing : .leading)
                     if !node.displayRomanization.isEmpty {
                         Text(node.displayRomanization)
-                            .font(.system(size: 12))
+                            .scaledFont(size: 12)
                             .foregroundColor(isMe ? .white.opacity(0.8) : Brand.blue)
                     }
                     if showMeaning && !node.meaning.isEmpty {
                         Text(node.meaning)
-                            .font(.system(size: 12.5))
+                            .scaledFont(size: 12.5)
                             .foregroundColor(isMe ? .white.opacity(0.75) : .secondary)
                             .multilineTextAlignment(isMe ? .trailing : .leading)
                     }
@@ -165,7 +165,7 @@ struct ScriptView: View {
                 }
             } label: {
                 Label(String(localized: "다른 대답 \(kids.count - 1)개"), systemImage: "arrow.triangle.branch")
-                    .font(.system(size: 11.5, weight: .semibold))
+                    .scaledFont(size: 11.5, weight: .semibold)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .background(Capsule().fill(Brand.blue.opacity(0.1)))
@@ -181,7 +181,7 @@ struct ScriptView: View {
         } label: {
             Label(isPlayingAll ? String(localized: "멈추기") : String(localized: "전체 듣기"),
                   systemImage: isPlayingAll ? "stop.fill" : "play.fill")
-                .font(.system(size: 15, weight: .semibold))
+                .scaledFont(size: 15, weight: .semibold)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
                 .background(RoundedRectangle(cornerRadius: 14).fill(isPlayingAll ? Color.red : Brand.solidBlue))

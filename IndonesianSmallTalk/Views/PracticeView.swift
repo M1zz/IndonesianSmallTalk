@@ -146,10 +146,10 @@ struct PracticeView: View {
                                 // 대화 히스토리
                                 ForEach(Array(session.currentPath.enumerated()), id: \.element.id) { idx, node in
                                     chatBubbleView(idx: idx, node: node)
-                                        .transition(.asymmetric(
+                                        .transition(.motion(.asymmetric(
                                             insertion: .move(edge: .bottom).combined(with: .opacity),
                                             removal: .move(edge: .trailing).combined(with: .opacity)
-                                        ))
+                                        )))
                                 }
 
                                 // 선택지
@@ -244,9 +244,9 @@ struct PracticeView: View {
 
             VStack(alignment: .leading, spacing: 1) {
                 Text(session.scenario.title)
-                    .font(.system(size: 16, weight: .bold))
+                    .scaledFont(size: 16, weight: .bold)
                 Text(verbatim: "\(session.scenario.titleKo) · \(session.scenario.difficulty.labelKo)")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
             }
 
@@ -280,15 +280,18 @@ struct PracticeView: View {
             // 점수
             HStack(spacing: 4) {
                 Image(systemName: "star.fill")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.yellow)
                 Text("\(session.score)")
-                    .font(.system(size: 14, weight: .bold))
+                    .scaledFont(size: 14, weight: .bold)
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
             .background(Color.yellow.opacity(0.15))
             .cornerRadius(20)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("점수"))
+            .accessibilityValue(Text(verbatim: "\(session.score)"))
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
@@ -301,11 +304,11 @@ struct PracticeView: View {
         VStack(spacing: 4) {
             HStack {
                 Text("진행도")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
                 Spacer()
                 Text("\(session.currentPath.count - 1)턴")
-                    .font(.system(size: 11, weight: .semibold))
+                    .scaledFont(size: 11, weight: .semibold)
                     .foregroundColor(.secondary)
             }
             GeometryReader { geo in
@@ -331,7 +334,7 @@ struct PracticeView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 (nextSpeaker == .me ? Text("어떻게 대답할까요?") : Text("상대방이 뭐라고 할까요?"))
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.secondary)
                 Spacer()
                 // 작은 + 아이콘 — 눌러서 직접 추가도 가능
@@ -343,7 +346,7 @@ struct PracticeView: View {
                     )
                 } label: {
                     Image(systemName: "plus.circle")
-                        .font(.system(size: 16))
+                        .scaledFont(size: 16)
                         .foregroundColor(.blue.opacity(0.6))
                 }
                 .buttonStyle(.plain)
@@ -397,17 +400,17 @@ struct PracticeView: View {
                         }
                     }
                 }
-                .transition(.asymmetric(
+                .transition(.motion(.asymmetric(
                     insertion: .move(edge: .bottom).combined(with: .opacity),
                     removal: .opacity
-                ))
+                )))
             }
             .animation(.spring(response: 0.38, dampingFraction: 0.82), value: mergedChoices.count)
 
             // 선택지가 없을 때만 빈 상태 힌트
             if mergedChoices.isEmpty {
                 Text("길게 눌러서 추가하거나 위 + 버튼을 이용하세요")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(Color(.tertiaryLabel))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 12)
@@ -503,7 +506,7 @@ struct PracticeView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("어떻게 시작할까요?")
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.secondary)
                 Spacer()
             }
@@ -515,10 +518,10 @@ struct PracticeView: View {
 
                 ForEach(Array(preOpeners.enumerated()), id: \.element.id) { idx, opener in
                     preOpenerItem(opener: opener, idx: idx)
-                        .transition(.asymmetric(
+                        .transition(.motion(.asymmetric(
                             insertion: .move(edge: .bottom).combined(with: .opacity),
                             removal: .move(edge: .trailing).combined(with: .opacity)
-                        ))
+                        )))
                 }
                 .animation(.spring(response: 0.38, dampingFraction: 0.82), value: preOpeners.count)
             }
@@ -534,13 +537,21 @@ struct PracticeView: View {
                 .padding(.top, 8)
 
             openerCard(opener: session.scenario.root, index: 0, accent: .blue)
-                .onTapGesture {
-                    openerChosen = true
-                    if autoSpeak {
-                        speakNode(session.scenario.root)
-                    }
-                }
+                .onTapGesture { chooseRootOpener() }
+                .accessibleTap(hint: "첫 마디 선택 후 바로 연습") { chooseRootOpener() }
         }
+    }
+
+    private func chooseRootOpener() {
+        openerChosen = true
+        if autoSpeak { speakNode(session.scenario.root) }
+    }
+
+    private func choosePreOpener(_ opener: ConversationNode) {
+        selectedPreOpener = opener
+        session.setPreOpener(opener)
+        openerChosen = true
+        if autoSpeak { speakNode(opener) }
     }
 
     @ViewBuilder
@@ -550,7 +561,7 @@ struct PracticeView: View {
                 .fill(color)
                 .frame(width: 3, height: 13)
             Text(text)
-                .font(.system(size: 11, weight: .semibold))
+                .scaledFont(size: 11, weight: .semibold)
                 .foregroundColor(color)
         }
         .padding(.top, 4)
@@ -570,12 +581,12 @@ struct PracticeView: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Text(opener.text)
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
                     if opener.isUserAdded {
                         Text("내가 추가")
-                            .font(.system(size: 9, weight: .bold))
+                            .scaledFont(size: 9, weight: .bold)
                             .foregroundColor(.purple)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
@@ -584,12 +595,12 @@ struct PracticeView: View {
                 }
                 if !opener.displayRomanization.isEmpty {
                     Text(opener.displayRomanization)
-                        .font(.system(size: 10.5, design: .serif))
+                        .scaledFont(size: 10.5, design: .serif)
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
                 }
                 Text(opener.meaning)
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
             }
             Spacer()
@@ -601,16 +612,13 @@ struct PracticeView: View {
                 .shadow(color: .black.opacity(0.05), radius: 6, x: 0, y: 2)
         )
         .contentShape(RoundedRectangle(cornerRadius: 14))
+        .accessibilityElement(children: .combine)
     }
 
     private func preOpenerItem(opener: ConversationNode, idx: Int) -> some View {
         openerCard(opener: opener, index: idx, accent: .orange)
-            .onTapGesture {
-                selectedPreOpener = opener
-                session.setPreOpener(opener)
-                openerChosen = true
-                if autoSpeak { speakNode(opener) }
-            }
+            .onTapGesture { choosePreOpener(opener) }
+            .accessibleTap(hint: "첫 마디 선택 후 바로 연습") { choosePreOpener(opener) }
             .contextMenu {
                 Button {
                     addReplyTarget = AddReplyTarget(parentNodeId: preOpenerParentId,
@@ -638,9 +646,9 @@ struct PracticeView: View {
         Button(action: action) {
             HStack(spacing: 8) {
                 Image(systemName: icon)
-                    .font(.system(size: 18))
+                    .scaledFont(size: 18)
                 Text(label)
-                    .font(.system(size: 13, weight: .medium))
+                    .scaledFont(size: 13, weight: .medium)
                 Spacer()
             }
             .foregroundColor(color)
@@ -662,11 +670,11 @@ struct PracticeView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 (nextSpeaker == .me ? Text("추가된 내 대답") : Text("추가된 상대방 응답"))
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(size: 13, weight: .semibold)
                     .foregroundColor(.secondary)
                 Spacer()
                 Text("첫 마디 선택 후 바로 연습")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(.top, 16)
@@ -715,10 +723,10 @@ struct PracticeView: View {
                         }
                     }
                 }
-                .transition(.asymmetric(
+                .transition(.motion(.asymmetric(
                     insertion: .move(edge: .bottom).combined(with: .opacity),
                     removal: .move(edge: .trailing).combined(with: .opacity)
-                ))
+                )))
             }
             .animation(.spring(response: 0.38, dampingFraction: 0.82), value: rootLevelReplies.count)
         }
@@ -745,9 +753,9 @@ struct PracticeView: View {
                     .font(.system(size: 38))
                     .foregroundColor(.green)
                 Text("대화 완료!")
-                    .font(.system(size: 17, weight: .bold))
+                    .scaledFont(size: 17, weight: .bold)
                 Text("끝까지 이어 갔어요 🎉")
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(.secondary)
             }
 
@@ -770,14 +778,14 @@ struct PracticeView: View {
                         .animation(.linear(duration: 1), value: finishCountdown)
                     // 숫자
                     Text("\(finishCountdown)")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .scaledFont(size: 20, weight: .bold, design: .rounded)
                         .foregroundColor(.blue)
                         .contentTransition(.numericText(countsDown: true))
                         .animation(.default, value: finishCountdown)
                 }
 
                 Text("\(finishCountdown)초 후 결과 화면으로 이동")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(Color(.tertiaryLabel))
 
                 Button {
@@ -785,7 +793,7 @@ struct PracticeView: View {
                     showResult = true
                 } label: {
                     Text("결과 화면으로 가기")
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(size: 15, weight: .semibold)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 13)
@@ -797,7 +805,7 @@ struct PracticeView: View {
             // ── 다음 뎁스 추가
             VStack(spacing: 6) {
                 Text("또는 대화를 이어갈 수 있어요")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
 
                 Button {
@@ -811,11 +819,11 @@ struct PracticeView: View {
                     HStack(spacing: 8) {
                         Image(systemName: nextSpeaker == .other
                               ? "bubble.right.fill" : "bubble.left.fill")
-                            .font(.system(size: 13))
+                            .scaledFont(size: 13)
                         (nextSpeaker == .other
                              ? Text("상대방 다음 대화 추가")
                              : Text("내 다음 대화 추가"))
-                            .font(.system(size: 13, weight: .semibold))
+                            .scaledFont(size: 13, weight: .semibold)
                     }
                     .foregroundColor(.blue)
                     .frame(maxWidth: .infinity)
@@ -879,7 +887,7 @@ struct ChatBubbleView: View {
 
     private var bubbleColor: Color {
         if isMe {
-            return Color(red: 0.95, green: 0.96, blue: 1.0)
+            return Color(light: Color(red: 0.95, green: 0.96, blue: 1.0), dark: Color(red: 0.13, green: 0.16, blue: 0.27))
         } else {
             return Color(.secondarySystemGroupedBackground)
         }
@@ -905,7 +913,7 @@ struct ChatBubbleView: View {
                     if let onSpeak {
                         Button(action: onSpeak) {
                             Image(systemName: isSpeakingThis ? "speaker.wave.2.fill" : "play.circle.fill")
-                                .font(.system(size: 14))
+                                .scaledFont(size: 14)
                                 .foregroundColor(isSpeakingThis ? .blue : Color(.tertiaryLabel))
                                 .symbolEffect(.bounce, value: isSpeakingThis)
                         }
@@ -918,14 +926,14 @@ struct ChatBubbleView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     // 배우는 언어 (메인)
                     Text(node.text)
-                        .font(.system(size: 15, weight: isLatest ? .semibold : .regular))
+                        .scaledFont(size: 15, weight: isLatest ? .semibold : .regular)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
 
                     // 발음
                     if !node.displayRomanization.isEmpty {
                         Text(node.displayRomanization)
-                            .font(.system(size: 11, design: .serif))
+                            .scaledFont(size: 11, design: .serif)
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
                     }
@@ -934,9 +942,9 @@ struct ChatBubbleView: View {
                     if showTranslation {
                         Divider()
                         Text(node.meaning)
-                            .font(.system(size: 12))
+                            .scaledFont(size: 12)
                             .foregroundColor(.secondary)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
+                            .transition(.motion(.opacity.combined(with: .move(edge: .top))))
                     }
                 }
                 .padding(.horizontal, 14)
@@ -954,10 +962,15 @@ struct ChatBubbleView: View {
                         onToggleTranslation()
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .accessibleTap(hint: showTranslation ? "뜻 숨기기" : "탭하면 뜻 보기") {
+                    withAnimation(.spring(response: 0.3)) { onToggleTranslation() }
+                }
 
                 Text("탭하면 뜻 보기")
-                    .font(.system(size: 9))
-                    .foregroundColor(Color(.quaternaryLabel))
+                    .scaledFont(size: 9)
+                    .foregroundColor(Color(.tertiaryLabel))
+                    .accessibilityHidden(true)
             }
 
             if !isMe { Spacer(minLength: 40) }
@@ -967,14 +980,16 @@ struct ChatBubbleView: View {
 
     private var speakerLabel: some View {
         Text(node.speaker.labelKo)
-            .font(.system(size: 9.5, weight: .semibold))
+            .scaledFont(size: 9.5, weight: .semibold)
             .foregroundColor(isMe ? .blue : Color(.tertiaryLabel))
     }
 
     private var polarityBadge: some View {
         (node.polarity == .positive ? Text("긍정 +") : Text("부정 −"))
-            .font(.system(size: 9, weight: .bold))
-            .foregroundColor(node.polarity == .positive ? Color(red: 0.2, green: 0.55, blue: 0.1) : Color(red: 0.65, green: 0.1, blue: 0.1))
+            .scaledFont(size: 9, weight: .bold)
+            .foregroundColor(node.polarity == .positive
+                             ? Color(light: Color(red: 0.2, green: 0.55, blue: 0.1), dark: Color(red: 0.45, green: 0.85, blue: 0.4))
+                             : Color(light: Color(red: 0.65, green: 0.1, blue: 0.1), dark: Color(red: 1.0, green: 0.5, blue: 0.45)))
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
             .background(
@@ -1019,12 +1034,12 @@ struct ChoiceButton: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
                         Text(node.text)
-                            .font(.system(size: 14, weight: .medium))
+                            .scaledFont(size: 14, weight: .medium)
                             .foregroundColor(.primary)
                             .multilineTextAlignment(.leading)
                         if node.isUserAdded {
                             Text("내가 추가")
-                                .font(.system(size: 9, weight: .bold))
+                                .scaledFont(size: 9, weight: .bold)
                                 .foregroundColor(.purple)
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 2)
@@ -1036,12 +1051,12 @@ struct ChoiceButton: View {
                     }
                     if !node.displayRomanization.isEmpty {
                         Text(node.displayRomanization)
-                            .font(.system(size: 10.5, design: .serif))
+                            .scaledFont(size: 10.5, design: .serif)
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
                     }
                     Text(node.meaning)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                 }
 
@@ -1058,6 +1073,7 @@ struct ChoiceButton: View {
                                 Circle()
                                     .fill(node.polarity == .positive ? Color.green.opacity(0.12) : Color.orange.opacity(0.12))
                             )
+                            .accessibilityLabel(node.polarity == .positive ? Text("긍정") : Text("부정"))
                     }
                     if node.coachTip != nil {
                         Button(action: onTipTap) {
@@ -1084,6 +1100,12 @@ struct ChoiceButton: View {
             )
         }
         .buttonStyle(PressableButtonStyle())
+        // 버튼 안의 팁 버튼은 VoiceOver 가 따로 못 누르니 동작으로 연다
+        .accessibilityActions {
+            if node.coachTip != nil {
+                Button("코치 팁", action: onTipTap)
+            }
+        }
     }
 }
 

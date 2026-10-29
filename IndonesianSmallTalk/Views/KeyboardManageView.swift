@@ -44,7 +44,7 @@ struct KeyboardManageView: View {
                                 Image(systemName: "pencil.circle.fill")
                                     .foregroundColor(.pink)
                                 Text("슬랭 관리 (\(slangStore.pairs.count))")
-                                    .font(.system(size: 13, weight: .medium))
+                                    .scaledFont(size: 13, weight: .medium)
                                     .foregroundColor(.primary)
                                 Spacer()
                                 Image(systemName: "chevron.right")
@@ -68,9 +68,9 @@ struct KeyboardManageView: View {
                             .font(.system(size: 30))
                             .foregroundColor(.secondary)
                         Text("아직 표현이 없어요")
-                            .font(.system(size: 14, weight: .semibold))
+                            .scaledFont(size: 14, weight: .semibold)
                         Text("+ 새 표현 으로 추가하면 여기서 키보드 노출 여부를 관리할 수 있어요")
-                            .font(.system(size: 12))
+                            .scaledFont(size: 12)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }
@@ -122,9 +122,9 @@ struct KeyboardManageView: View {
                     .foregroundColor(.pink)
                 VStack(alignment: .leading, spacing: 2) {
                     Text("한국어 ↔ 인도네시아어 슬랭")
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                     Text("ㅋㅋㅋ → wkwkwk / 헐 → Anjir 같은 매핑")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                 }
             }
@@ -153,7 +153,7 @@ struct KeyboardManageView: View {
                 withAnimation { store.sortByStudyCount() }
             } label: {
                 Label("연습 많이순", systemImage: "flame.fill")
-                    .font(.system(size: 13, weight: .medium))
+                    .scaledFont(size: 13, weight: .medium)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .background(Color.orange.opacity(0.12))
@@ -165,7 +165,7 @@ struct KeyboardManageView: View {
                 withAnimation { store.sortByRecent() }
             } label: {
                 Label("최신순", systemImage: "clock.fill")
-                    .font(.system(size: 13, weight: .medium))
+                    .scaledFont(size: 13, weight: .medium)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .background(Color.purple.opacity(0.12))
@@ -181,13 +181,13 @@ struct KeyboardManageView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text("키보드에 표시 중")
                     .font(.caption).foregroundColor(.secondary)
-                Text("\(visibleCount)").font(.system(size: 26, weight: .bold))
+                Text("\(visibleCount)").scaledFont(size: 26, weight: .bold)
                     .foregroundColor(.blue)
             }
             Divider().frame(height: 36)
             VStack(alignment: .leading, spacing: 4) {
                 Text("숨김").font(.caption).foregroundColor(.secondary)
-                Text("\(hiddenCount)").font(.system(size: 26, weight: .bold))
+                Text("\(hiddenCount)").scaledFont(size: 26, weight: .bold)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             Spacer()
@@ -204,7 +204,7 @@ struct KeyboardManageView: View {
                 store.setAllInKeyboard(true)
             } label: {
                 Label("전체 켜기", systemImage: "checkmark.circle.fill")
-                    .font(.system(size: 13, weight: .medium))
+                    .scaledFont(size: 13, weight: .medium)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .background(Color.blue.opacity(0.12))
@@ -216,7 +216,7 @@ struct KeyboardManageView: View {
                 store.setAllInKeyboard(false)
             } label: {
                 Label("전체 끄기", systemImage: "minus.circle.fill")
-                    .font(.system(size: 13, weight: .medium))
+                    .scaledFont(size: 13, weight: .medium)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .background(Color.gray.opacity(0.12))
@@ -236,14 +236,14 @@ struct KeyboardManageView: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Text(phrase.indonesian)
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(size: 15, weight: .semibold)
                     PolarityChip(polarity: phrase.polarity)
                     if phrase.studyCount > 0 {
                         HStack(spacing: 2) {
                             Image(systemName: "flame.fill")
-                                .font(.system(size: 9))
+                                .scaledFont(size: 9)
                             Text("\(phrase.studyCount)")
-                                .font(.system(size: 10, weight: .bold))
+                                .scaledFont(size: 10, weight: .bold)
                         }
                         .foregroundColor(.orange)
                         .padding(.horizontal, 5)
@@ -253,16 +253,16 @@ struct KeyboardManageView: View {
                     }
                 }
                 Text(phrase.korean)
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.secondary)
                 if !phrase.context.isEmpty {
                     Text(phrase.context)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
             }
             Spacer()
-            Toggle("", isOn: binding)
+            Toggle(isOn: binding) { Text(verbatim: phrase.indonesian) }
                 .labelsHidden()
         }
         .padding(.vertical, 2)

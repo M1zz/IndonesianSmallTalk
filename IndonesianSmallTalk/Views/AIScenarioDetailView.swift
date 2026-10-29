@@ -38,7 +38,7 @@ struct AIScenarioDetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: { showTreeView = true }) {
                     Image(systemName: "arrow.triangle.branch")
-                        .font(.system(size: 14))
+                        .scaledFont(size: 14)
                 }
                 .accessibilityLabel("대화 트리 보기")
             }
@@ -69,7 +69,7 @@ struct AIScenarioDetailView: View {
 
             Button(action: { showPractice = true }) {
                 Label("대화 연습 시작", systemImage: "bubble.left.and.right.fill")
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(size: 15, weight: .semibold)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .background(Color.blue)
@@ -133,7 +133,7 @@ struct VocabularyStudyView: View {
     private func categoryChip(_ label: Text, active: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             label
-                .font(.system(size: 13, weight: active ? .semibold : .regular))
+                .scaledFont(size: 13, weight: active ? .semibold : .regular)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 7)
                 .background(active ? Color.blue : Color(.systemBackground))
@@ -149,6 +149,7 @@ struct VocabularyStudyView: View {
 struct VocabCard: View {
     let item: VocabItem
     @State private var flipped = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         ZStack {
@@ -160,7 +161,7 @@ struct VocabCard: View {
                 isBack: false
             )
             .opacity(flipped ? 0 : 1)
-            .rotation3DEffect(.degrees(flipped ? -90 : 0), axis: (x: 0, y: 1, z: 0))
+            .rotation3DEffect(.degrees(reduceMotion ? 0 : (flipped ? -90 : 0)), axis: (x: 0, y: 1, z: 0))
 
             // 뒷면 — 뜻
             cardFace(
@@ -170,10 +171,13 @@ struct VocabCard: View {
                 isBack: true
             )
             .opacity(flipped ? 1 : 0)
-            .rotation3DEffect(.degrees(flipped ? 0 : 90), axis: (x: 0, y: 1, z: 0))
+            .rotation3DEffect(.degrees(reduceMotion ? 0 : (flipped ? 0 : 90)), axis: (x: 0, y: 1, z: 0))
         }
         .animation(.easeInOut(duration: 0.25), value: flipped)
         .onTapGesture { flipped.toggle() }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: flipped ? "\(item.korean), \(item.indonesian)" : "\(item.indonesian), \(item.category)"))
+        .accessibleTap(hint: "탭해서 뒤집기") { flipped.toggle() }
         .frame(minHeight: 80)
     }
 
@@ -181,7 +185,7 @@ struct VocabCard: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
                 Text(accent)
-                    .font(.system(size: 10, weight: .medium))
+                    .scaledFont(size: 10, weight: .medium)
                     .padding(.horizontal, 7)
                     .padding(.vertical, 3)
                     .background(isBack ? Color.green.opacity(0.15) : Color.blue.opacity(0.12))
@@ -189,16 +193,16 @@ struct VocabCard: View {
                     .clipShape(Capsule())
                 Spacer()
                 Image(systemName: "arrow.2.squarepath")
-                    .font(.system(size: 10))
+                    .scaledFont(size: 10)
                     .foregroundColor(Color(UIColor.tertiaryLabel))
             }
             Text(main)
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(size: 16, weight: .semibold)
                 .foregroundColor(.primary)
             Text(sub)
-                .font(.system(size: 12))
+                .scaledFont(size: 12)
                 .foregroundColor(.secondary)
-                .lineLimit(1)
+                .singleLine()
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -241,28 +245,30 @@ struct GrammarCard: View {
 
                     VStack(alignment: .leading, spacing: 3) {
                         Text(point.titleKo)
-                            .font(.system(size: 16, weight: .bold))
+                            .scaledFont(size: 16, weight: .bold)
                             .foregroundColor(.primary)
                         Text(point.titleId)
-                            .font(.system(size: 13, weight: .medium, design: .serif))
+                            .scaledFont(size: 13, weight: .medium, design: .serif)
                             .italic()
                             .foregroundColor(.orange)
                     }
                     Spacer()
                     Image(systemName: expanded ? "chevron.up" : "chevron.down")
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                         .padding(.top, 4)
+                        .accessibilityHidden(true)
                 }
                 .padding(16)
             }
             .buttonStyle(.plain)
+            .accessibilityHint(expanded ? Text("접기") : Text("펼치기"))
 
             if expanded {
                 VStack(alignment: .leading, spacing: 12) {
                     // 설명
                     Text(point.explanation)
-                        .font(.system(size: 14))
+                        .scaledFont(size: 14)
                         .foregroundColor(.primary)
                         .lineSpacing(4)
                         .padding(.horizontal, 16)
@@ -278,11 +284,11 @@ struct GrammarCard: View {
                                         .clipShape(Capsule())
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(ex.indonesian)
-                                            .font(.system(size: 14, weight: .semibold, design: .serif))
+                                            .scaledFont(size: 14, weight: .semibold, design: .serif)
                                             .italic()
                                             .foregroundColor(.primary)
                                         Text(ex.korean)
-                                            .font(.system(size: 12))
+                                            .scaledFont(size: 12)
                                             .foregroundColor(.secondary)
                                     }
                                     Spacer()
@@ -296,7 +302,7 @@ struct GrammarCard: View {
                     }
                 }
                 .padding(.bottom, 12)
-                .transition(.opacity.combined(with: .move(edge: .top)))
+                .transition(.motion(.opacity.combined(with: .move(edge: .top))))
             }
         }
         .background(Color(.systemBackground))

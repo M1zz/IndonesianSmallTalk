@@ -99,13 +99,13 @@ struct AddVocabularyView: View {
                                         set: { examples[idx].indonesian = $0 }
                                       ))
                                 .autocorrectionDisabled()
-                                .font(.system(size: 14, weight: .medium))
+                                .scaledFont(size: 14, weight: .medium)
                             TextField("뜻",
                                       text: Binding(
                                         get: { examples[idx].korean },
                                         set: { examples[idx].korean = $0 }
                                       ))
-                                .font(.system(size: 13))
+                                .scaledFont(size: 13)
                                 .foregroundColor(.secondary)
                         }
                         .padding(.vertical, 2)
@@ -117,7 +117,7 @@ struct AddVocabularyView: View {
                         examples.append(VocabExample("", ""))
                     } label: {
                         Label("예문 추가", systemImage: "plus.circle.fill")
-                            .font(.system(size: 14, weight: .medium))
+                            .scaledFont(size: 14, weight: .medium)
                     }
                 } header: {
                     Text("예문 (선택, 여러 개 가능)")

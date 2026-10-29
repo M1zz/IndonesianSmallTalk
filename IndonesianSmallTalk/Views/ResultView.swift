@@ -91,16 +91,16 @@ struct ResultView: View {
                 .animation(.spring(response: 0.5, dampingFraction: 0.5).delay(0.1), value: animateScore)
 
             Text(gradeLabel)
-                .font(.system(size: 26, weight: .bold, design: .rounded))
+                .scaledFont(size: 26, weight: .bold, design: .rounded)
                 .foregroundColor(.primary)
 
             Text(session.feedbackKo)
-                .font(.system(size: 14))
+                .scaledFont(size: 14)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
 
             Text(session.feedbackMessage)
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(Color(.tertiaryLabel))
                 .multilineTextAlignment(.center)
         }
@@ -127,7 +127,7 @@ struct ResultView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("🔁 대화 복습")
-                    .font(.system(size: 14, weight: .bold))
+                    .scaledFont(size: 14, weight: .bold)
                 Spacer()
             }
 
@@ -149,7 +149,7 @@ struct ResultView: View {
                 showTree = true
             }) {
                 Label("대화 트리 보기", systemImage: "tree")
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(size: 15, weight: .semibold)
                     .foregroundColor(.blue)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
@@ -165,7 +165,7 @@ struct ResultView: View {
                 dismiss()
             }) {
                 Label("다시 연습하기", systemImage: "arrow.clockwise")
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(size: 15, weight: .semibold)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
@@ -180,7 +180,7 @@ struct ResultView: View {
 
             Button(action: { dismiss() }) {
                 Text("홈으로 돌아가기")
-                    .font(.system(size: 14))
+                    .scaledFont(size: 14)
                     .foregroundColor(.secondary)
             }
         }
@@ -196,12 +196,12 @@ struct StatCard: View {
 
     var body: some View {
         VStack(spacing: 6) {
-            Text(icon).font(.system(size: 24))
+            Text(icon).scaledFont(size: 24)
             Text(value)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .scaledFont(size: 22, weight: .bold, design: .rounded)
                 .foregroundColor(color)
             Text(label)
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity)
@@ -224,24 +224,24 @@ struct ReviewRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             Text(isMe ? "🧑" : "👤")
-                .font(.system(size: 14))
+                .scaledFont(size: 14)
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 5) {
                     Text(node.speaker.labelKo)
-                        .font(.system(size: 9.5, weight: .bold))
+                        .scaledFont(size: 9.5, weight: .bold)
                         .foregroundColor(isMe ? .blue : .orange)
                     if node.polarity != .neutral {
                         Text(node.polarity == .positive ? "+" : "−")
-                            .font(.system(size: 9, weight: .black))
+                            .scaledFont(size: 9, weight: .black)
                             .foregroundColor(node.polarity == .positive ? .green : .red)
                     }
                 }
                 Text(node.text)
-                    .font(.system(size: 12.5))
+                    .scaledFont(size: 12.5)
                     .foregroundColor(.primary)
                 if showTranslation {
                     Text(node.meaning)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                         .transition(.opacity)
                 }
@@ -249,7 +249,7 @@ struct ReviewRow: View {
             Spacer()
             Button(action: { withAnimation { showTranslation.toggle() } }) {
                 Image(systemName: showTranslation ? "eye.slash" : "eye")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .accessibilityLabel(showTranslation ? Text("뜻 숨기기") : Text("뜻 보기"))

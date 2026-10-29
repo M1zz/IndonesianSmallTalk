@@ -38,6 +38,15 @@ class KeyboardViewController: UIInputViewController {
             if case .slang = self { return true }
             return false
         }
+        /// 색으로 나타내는 분류의 이름 (보통 표현은 없음)
+        var categoryName: String? {
+            if isSlang { return String(localized: "슬랭") }
+            switch polarity {
+            case .positive: return String(localized: "긍정")
+            case .negative: return String(localized: "부정")
+            case .neutral: return nil
+            }
+        }
     }
 
     private var items: [Item] = []
@@ -77,10 +86,19 @@ class KeyboardViewController: UIInputViewController {
         applyAppearance(dark: isDark)
     }
 
+    /// 키보드 바탕·버튼 색. 시스템 다크 모드와 어두운 키보드 모두 따라간다.
+    private static let keyboardBackground = UIColor { $0.userInterfaceStyle == .dark ? UIColor(white: 0.12, alpha: 1) : UIColor(white: 0.96, alpha: 1) }
+    private static let keyBackground = UIColor { $0.userInterfaceStyle == .dark ? UIColor(white: 0.30, alpha: 1) : UIColor(white: 1, alpha: 0.85) }
+
+    /// '더 큰 텍스트'에 맞춰 키우되, 높이가 정해진 키보드라 1.5배까지만
+    static func scaledFont(_ size: CGFloat, weight: UIFont.Weight, style: UIFont.TextStyle) -> UIFont {
+        UIFontMetrics(forTextStyle: style).scaledFont(for: .systemFont(ofSize: size, weight: weight), maximumPointSize: size * 1.5)
+    }
+
     // MARK: - UI
 
     private func setupViews() {
-        view.backgroundColor = UIColor(white: 0.96, alpha: 1)
+        view.backgroundColor = Self.keyboardBackground
 
         // 상단 필터 바
         topBar.axis = .horizontal
@@ -130,7 +148,8 @@ class KeyboardViewController: UIInputViewController {
 
         // 빈 상태 라벨
         emptyLabel.text = String(localized: "메인 앱에서 표현을 먼저 저장해주세요")
-        emptyLabel.font = .systemFont(ofSize: 12)
+        emptyLabel.font = Self.scaledFont(12, weight: .regular, style: .footnote)
+        emptyLabel.adjustsFontForContentSizeCategory = true
         emptyLabel.textColor = .secondaryLabel
         emptyLabel.textAlignment = .center
         emptyLabel.numberOfLines = 0
@@ -195,7 +214,7 @@ class KeyboardViewController: UIInputViewController {
         config.title = title
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var out = incoming
-            out.font = .systemFont(ofSize: 11, weight: .semibold)
+            out.font = KeyboardViewController.scaledFont(11, weight: .semibold, style: .caption2)
             return out
         }
         let b = UIButton(configuration: config)
@@ -224,6 +243,8 @@ class KeyboardViewController: UIInputViewController {
             config.background.strokeWidth = 0.7
         }
         b.configuration = config
+        // 고른 필터는 색만이 아니라 VoiceOver 에도 '선택됨'으로 알린다
+        b.accessibilityTraits = selected ? [.button, .selected] : .button
     }
 
     private func makeDirectionButton() -> UIButton {
@@ -232,7 +253,7 @@ class KeyboardViewController: UIInputViewController {
         config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 9, bottom: 5, trailing: 9)
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var out = incoming
-            out.font = .systemFont(ofSize: 11, weight: .bold)
+            out.font = KeyboardViewController.scaledFont(11, weight: .bold, style: .caption2)
             return out
         }
         config.image = UIImage(systemName: "arrow.left.arrow.right",
@@ -242,6 +263,8 @@ class KeyboardViewController: UIInputViewController {
         b.setContentHuggingPriority(.required, for: .horizontal)
         b.setContentCompressionResistancePriority(.required, for: .horizontal)
         b.addTarget(self, action: #selector(didTapDirection), for: .touchUpInside)
+        // 음성 명령: 보이는 글자가 국기라 부를 이름을 따로 둔다
+        b.accessibilityUserInputLabels = [String(localized: "입력 방향")]
         styleDirectionButton(b)
         return b
     }
@@ -259,7 +282,7 @@ class KeyboardViewController: UIInputViewController {
             config.title = "\(learning) → \(native)"
             b.accessibilityLabel = String(localized: "\(AppLanguage.learning.localizedName) 보고 뜻 입력")
         }
-        config.baseBackgroundColor = UIColor(white: 1, alpha: 0.85)
+        config.baseBackgroundColor = Self.keyBackground
         config.baseForegroundColor = .label
         config.background.strokeColor = .separator
         config.background.strokeWidth = 0.5
@@ -279,7 +302,7 @@ class KeyboardViewController: UIInputViewController {
                                withConfiguration: UIImage.SymbolConfiguration(pointSize: 17, weight: .medium))
         config.cornerStyle = .medium
         config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 14, bottom: 8, trailing: 14)
-        config.baseBackgroundColor = UIColor(white: 1, alpha: 0.85)
+        config.baseBackgroundColor = Self.keyBackground
         config.baseForegroundColor = .label
         let b = UIButton(configuration: config)
         b.setContentHuggingPriority(.required, for: .horizontal)
@@ -288,7 +311,8 @@ class KeyboardViewController: UIInputViewController {
     }
 
     private func applyAppearance(dark: Bool) {
-        view.backgroundColor = dark ? UIColor(white: 0.12, alpha: 1) : UIColor(white: 0.96, alpha: 1)
+        // 어두운 키보드를 쓰는 입력창이면 시스템이 밝은 모드여도 어둡게 그린다
+        view.overrideUserInterfaceStyle = dark ? .dark : .unspecified
         collectionView.reloadData()
     }
 
@@ -378,8 +402,8 @@ extension KeyboardViewController: UICollectionViewDataSource, UICollectionViewDe
         case .ind2kor: textToInsert = item.korean
         }
         textDocumentProxy.insertText(textToInsert)
-        // 짧은 시각 피드백
-        if let cell = collectionView.cellForItem(at: indexPath) {
+        // 짧은 시각 피드백 ('동작 줄이기'면 생략)
+        if !UIAccessibility.isReduceMotionEnabled, let cell = collectionView.cellForItem(at: indexPath) {
             UIView.animate(withDuration: 0.12, animations: {
                 cell.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
             }) { _ in
@@ -409,11 +433,11 @@ enum ChipPalette {
         switch item.polarity {
         case .positive:
             return (positive.withAlphaComponent(0.18),
-                    UIColor(red: 0.0, green: 0.45, blue: 0.20, alpha: 1),
+                    UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.45, green: 0.88, blue: 0.55, alpha: 1) : UIColor(red: 0.0, green: 0.45, blue: 0.20, alpha: 1) },
                     positive.withAlphaComponent(0.85))
         case .negative:
             return (negative.withAlphaComponent(0.18),
-                    UIColor(red: 0.65, green: 0.30, blue: 0.0, alpha: 1),
+                    UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.0, green: 0.68, blue: 0.35, alpha: 1) : UIColor(red: 0.65, green: 0.30, blue: 0.0, alpha: 1) },
                     negative.withAlphaComponent(0.85))
         case .neutral:
             return (neutral.withAlphaComponent(0.12),
@@ -450,12 +474,14 @@ final class ChipCell: UICollectionViewCell {
         backgroundFill.layer.masksToBounds = true
         contentView.addSubview(backgroundFill)
 
-        primaryLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        primaryLabel.font = KeyboardViewController.scaledFont(14, weight: .semibold, style: .subheadline)
+        primaryLabel.adjustsFontForContentSizeCategory = true
         primaryLabel.numberOfLines = 1
         primaryLabel.lineBreakMode = .byTruncatingTail
         primaryLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        secondaryLabel.font = .systemFont(ofSize: 10.5)
+        secondaryLabel.font = KeyboardViewController.scaledFont(10.5, weight: .regular, style: .caption2)
+        secondaryLabel.adjustsFontForContentSizeCategory = true
         secondaryLabel.numberOfLines = 1
         secondaryLabel.lineBreakMode = .byTruncatingTail
         secondaryLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -495,11 +521,18 @@ final class ChipCell: UICollectionViewCell {
 
         }
         primaryLabel.text = primary
-        if let sub = item.sub, !sub.isEmpty {
-            secondaryLabel.text = "\(secondary) · \(sub)"
-        } else {
-            secondaryLabel.text = secondary
-        }
+        // 분류(긍정·부정·슬랭)는 색으로 보이니, '색상 없이 구별'을 켜면 글자로도 붙인다
+        let category = item.categoryName
+        let showsCategory = UIAccessibility.shouldDifferentiateWithoutColor && category != nil
+        secondaryLabel.text = [secondary, item.sub, showsCategory ? category : nil]
+            .compactMap { $0 }.filter { !$0.isEmpty }
+            .joined(separator: " · ")
+
+        // VoiceOver 는 칩 하나를 버튼 하나로 읽는다: 뜻·문장, 분류
+        isAccessibilityElement = true
+        accessibilityTraits = .button
+        accessibilityLabel = primary
+        accessibilityValue = [secondary, item.sub, category].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: ", ")
 
         let palette = ChipPalette.colors(for: item)
         backgroundFill.backgroundColor = palette.bg

@@ -48,10 +48,10 @@ struct VocabDialogView: View {
                                                 isLast: idx == visibleExampleCount - 1
                                             )
                                             .id(idx)
-                                            .transition(.asymmetric(
+                                            .transition(.motion(.asymmetric(
                                                 insertion: .move(edge: .bottom).combined(with: .opacity),
                                                 removal: .opacity
-                                            ))
+                                            )))
                                         }
                                     }
 
@@ -109,12 +109,12 @@ struct VocabDialogView: View {
         VStack(spacing: 6) {
             HStack {
                 Text("\(min(currentWordIndex + 1, words.count)) / \(words.count) 단어")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(.secondary)
                 Spacer()
                 if let w = currentWord, !w.examples.isEmpty {
                     Text("예문 \(min(visibleExampleCount, w.examples.count))/\(w.examples.count)")
-                        .font(.system(size: 12, weight: .medium))
+                        .scaledFont(size: 12, weight: .medium)
                         .foregroundColor(.secondary)
                 }
             }
@@ -141,19 +141,19 @@ struct VocabDialogView: View {
                     TierBadge(tier: word.tier)
                 }
                 Text(word.indonesian)
-                    .font(.system(size: 22, weight: .bold))
+                    .scaledFont(size: 22, weight: .bold)
                 if !word.romanization.isEmpty {
                     Text(word.romanization)
-                        .font(.system(size: 12, design: .serif))
+                        .scaledFont(size: 12, design: .serif)
                         .italic()
                         .foregroundColor(.secondary)
                 }
                 Text(word.korean)
-                    .font(.system(size: 14, weight: .medium))
+                    .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.secondary)
                 if !word.notes.isEmpty {
                     Text(word.notes)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(.top, 2)
                 }
@@ -182,6 +182,16 @@ struct VocabDialogView: View {
 
     // MARK: Bubble
 
+    private func toggleTranslation(_ index: Int) {
+        withAnimation(.spring(response: 0.3)) {
+            if revealedTranslations.contains(index) {
+                revealedTranslations.remove(index)
+            } else {
+                revealedTranslations.insert(index)
+            }
+        }
+    }
+
     private func dialogBubble(example: VocabExample, index: Int, isSpeaking: Bool, isLast: Bool) -> some View {
         let level = example.level ?? .neutral
         let bubbleColor = FormalityBadge.color(for: level)
@@ -198,23 +208,23 @@ struct VocabDialogView: View {
                         FormalityBadge(level: l)
                     }
                     Text(speakerLabel)
-                        .font(.system(size: 10, weight: .semibold))
+                        .scaledFont(size: 10, weight: .semibold)
                         .foregroundColor(.secondary)
                 }
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(example.indonesian)
-                        .font(.system(size: 16, weight: .semibold))
+                        .scaledFont(size: 16, weight: .semibold)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
 
                     if revealedTranslations.contains(index) {
                         Divider().padding(.vertical, 2)
                         Text(example.korean)
-                            .font(.system(size: 13))
+                            .scaledFont(size: 13)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.leading)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
+                            .transition(.motion(.opacity.combined(with: .move(edge: .top))))
                     }
                 }
                 .padding(.horizontal, 14)
@@ -228,14 +238,10 @@ struct VocabDialogView: View {
                                               lineWidth: isLast ? 1.5 : 0.8)
                         )
                 )
-                .onTapGesture {
-                    withAnimation(.spring(response: 0.3)) {
-                        if revealedTranslations.contains(index) {
-                            revealedTranslations.remove(index)
-                        } else {
-                            revealedTranslations.insert(index)
-                        }
-                    }
+                .onTapGesture { toggleTranslation(index) }
+                .accessibilityElement(children: .combine)
+                .accessibleTap(hint: revealedTranslations.contains(index) ? "뜻 숨기기" : "탭하면 뜻 보기") {
+                    toggleTranslation(index)
                 }
 
                 HStack(spacing: 8) {
@@ -243,7 +249,7 @@ struct VocabDialogView: View {
                         speakExample(example, at: index)
                     } label: {
                         Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "play.circle.fill")
-                            .font(.system(size: 16))
+                            .scaledFont(size: 16)
                             .foregroundColor(isSpeaking ? bubbleColor : bubbleColor.opacity(0.7))
                             .symbolEffect(.bounce, value: isSpeaking)
                     }
@@ -251,7 +257,7 @@ struct VocabDialogView: View {
                     .accessibilityLabel("예문 듣기")
 
                     Text(revealedTranslations.contains(index) ? LocalizedStringKey("탭하면 번역 숨김") : LocalizedStringKey("탭하면 뜻 보기"))
-                        .font(.system(size: 9))
+                        .scaledFont(size: 9)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
             }
@@ -266,7 +272,7 @@ struct VocabDialogView: View {
                 .font(.system(size: 32))
                 .foregroundColor(Color(.tertiaryLabel))
             Text("아래 '다음 예문' 버튼을 눌러 시작하세요")
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity)
@@ -278,7 +284,7 @@ struct VocabDialogView: View {
             Image(systemName: "checkmark.circle.fill")
                 .foregroundColor(.green)
             Text("이 단어의 예문 \(word.examples.count)개를 다 봤어요")
-                .font(.system(size: 12, weight: .medium))
+                .scaledFont(size: 12, weight: .medium)
                 .foregroundColor(.secondary)
             Spacer()
         }
@@ -340,13 +346,13 @@ struct VocabDialogView: View {
                 .font(.system(size: 80))
                 .foregroundColor(.green)
             Text("완료!")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .scaledFont(size: 28, weight: .bold, design: .rounded)
             Text("\(words.count)개 단어 · 예문 \(words.reduce(0) { $0 + $1.examples.count })개를 둘러봤어요")
-                .font(.system(size: 14))
+                .scaledFont(size: 14)
                 .foregroundColor(.secondary)
             Spacer()
             Button("닫기") { dismiss() }
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(size: 16, weight: .semibold)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)

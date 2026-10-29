@@ -90,32 +90,32 @@ struct JourneyCourseCard: View {
 
                     VStack(alignment: .leading, spacing: 3) {
                         Text(course.titleKo)
-                            .font(.system(size: 16, weight: .bold))
+                            .scaledFont(size: 16, weight: .bold)
                             .foregroundColor(.primary)
-                            .lineLimit(1)
+                            .singleLine()
                         Text(course.dayLabelKo)
-                            .font(.system(size: 11))
+                            .scaledFont(size: 11)
                             .foregroundColor(.secondary)
-                            .lineLimit(1)
+                            .singleLine()
                         HStack(spacing: 5) {
                             Label(course.timeRange, systemImage: "clock")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(.secondary)
                             Text("·").foregroundColor(.secondary)
                             Text("\(course.stopCount)개 장면")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(.secondary)
                         }
                         .padding(.top, 2)
                     }
                     Spacer(minLength: 0)
                     Image(systemName: "chevron.right")
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
 
                 Text(course.description)
-                    .font(.system(size: 11.5))
+                    .scaledFont(size: 11.5)
                     .foregroundColor(Color(.tertiaryLabel))
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
@@ -138,7 +138,7 @@ struct JourneyCourseCard: View {
                                 Text(stop.emoji).font(.system(size: 13))
                             }
                             Text(stop.time)
-                                .font(.system(size: 8, weight: .medium))
+                                .scaledFont(size: 8, weight: .medium)
                                 .foregroundColor(progress.isDone(stop.id) ? .green : .secondary)
                         }
                         if idx < course.stops.count - 1 {
@@ -149,6 +149,8 @@ struct JourneyCourseCard: View {
                         }
                     }
                 }
+                // 아래 '배운 수/전체' 가 같은 내용을 읽어 준다
+                .accessibilityHidden(true)
 
                 // ── 진행률
                 HStack(spacing: 8) {
@@ -163,7 +165,7 @@ struct JourneyCourseCard: View {
                     .frame(height: 5)
 
                     Text("\(doneCount)/\(course.stopCount)")
-                        .font(.system(size: 10, weight: .bold))
+                        .scaledFont(size: 10, weight: .bold)
                         .foregroundColor(doneCount == course.stopCount ? .green : .secondary)
                 }
             }
@@ -235,17 +237,17 @@ struct JourneyDetailView: View {
                 Text(course.emoji).font(.system(size: 40))
                 VStack(alignment: .leading, spacing: 3) {
                     Text(course.titleKo)
-                        .font(.system(size: 20, weight: .bold))
+                        .scaledFont(size: 20, weight: .bold)
                         .foregroundColor(.white)
                     Text(course.dayLabelKo)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.white.opacity(0.85))
                 }
                 Spacer(minLength: 0)
             }
 
             Text(course.description)
-                .font(.system(size: 12.5))
+                .scaledFont(size: 12.5)
                 .foregroundColor(.white.opacity(0.9))
                 .fixedSize(horizontal: false, vertical: true)
 
@@ -268,8 +270,8 @@ struct JourneyDetailView: View {
 
     private func chip(icon: String, text: String) -> some View {
         HStack(spacing: 4) {
-            Image(systemName: icon).font(.system(size: 9, weight: .semibold))
-            Text(text).font(.system(size: 10, weight: .semibold))
+            Image(systemName: icon).scaledFont(size: 9, weight: .semibold)
+            Text(text).scaledFont(size: 10, weight: .semibold)
         }
         .foregroundColor(.white)
         .padding(.horizontal, 9)
@@ -287,7 +289,7 @@ struct JourneyDetailView: View {
             .pickerStyle(.segmented)
 
             Text(orderHint)
-                .font(.system(size: 10.5))
+                .scaledFont(size: 10.5)
                 .foregroundColor(Color(.tertiaryLabel))
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -311,10 +313,10 @@ struct JourneyDetailView: View {
         VStack(spacing: 0) {
             HStack(spacing: 6) {
                 Image(systemName: "calendar.day.timeline.left")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.secondary)
                 (order == .time ? Text("하루 타임테이블") : Text("골라서 연습하기"))
-                    .font(.system(size: 13, weight: .bold))
+                    .scaledFont(size: 13, weight: .bold)
                     .foregroundColor(.secondary)
                 Spacer()
             }
@@ -340,9 +342,9 @@ struct JourneyDetailView: View {
         VStack(spacing: 8) {
             Text("🎉").font(.system(size: 34))
             Text("이 코스의 \(course.stopCount)개 장면을 모두 배웠어요")
-                .font(.system(size: 14, weight: .bold))
+                .scaledFont(size: 14, weight: .bold)
             Text("다른 코스에서 아직 안 배운 장면을 골라 보세요.")
-                .font(.system(size: 11.5))
+                .scaledFont(size: 11.5)
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity)
@@ -356,9 +358,9 @@ struct JourneyDetailView: View {
         let done = progress.isDone(stop.id)
         return HStack(alignment: .top, spacing: 10) {
             Text(stop.time)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .scaledFont(size: 12, weight: .bold, design: .rounded)
                 .foregroundColor(done ? .green : .primary)
-                .frame(width: 42, alignment: .trailing)
+                .frame(minWidth: 42, alignment: .trailing)
                 .padding(.top, 14)
 
             VStack(spacing: 0) {
@@ -403,11 +405,11 @@ struct JourneyDetailView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 6) {
                         Text(stop.placeKo)
-                            .font(.system(size: 15, weight: .bold))
+                            .scaledFont(size: 15, weight: .bold)
                             .foregroundColor(.primary)
                         if let score = progress.score(for: stop.id) {
                             Text("\(score)점")
-                                .font(.system(size: 9, weight: .bold))
+                                .scaledFont(size: 9, weight: .bold)
                                 .foregroundColor(.green)
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
@@ -417,10 +419,10 @@ struct JourneyDetailView: View {
                         Spacer(minLength: 0)
                     }
                     Text(stop.place)
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                     Text(stop.situation)
-                        .font(.system(size: 11.5))
+                        .scaledFont(size: 11.5)
                         .foregroundColor(Color(.tertiaryLabel))
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.leading)
@@ -438,7 +440,7 @@ struct JourneyDetailView: View {
                 launcher.start(stop, voice: true)
             } label: {
                 Image(systemName: "mic.fill")
-                    .font(.system(size: 15))
+                    .scaledFont(size: 15)
                     .foregroundColor(.blue)
                     .frame(width: 46)
                     .frame(maxHeight: .infinity)
@@ -469,7 +471,7 @@ struct JourneyDetailView: View {
             .frame(width: 34)
 
             Text(note)
-                .font(.system(size: 10.5, weight: .medium))
+                .scaledFont(size: 10.5, weight: .medium)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 9)
                 .padding(.vertical, 4)
@@ -495,10 +497,10 @@ struct JourneyWhyCard: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 6) {
                 Image(systemName: "shuffle")
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(.accentColor)
                 Text("앞에서부터 안 해도 됩니다")
-                    .font(.system(size: 13, weight: .bold))
+                    .scaledFont(size: 13, weight: .bold)
             }
 
             reason("실제 하루도 순서대로 오지 않아요.",
@@ -519,10 +521,10 @@ struct JourneyWhyCard: View {
     private func reason(_ title: LocalizedStringKey, _ body: LocalizedStringKey) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             (Text(verbatim: "· ") + Text(title))
-                .font(.system(size: 12, weight: .semibold))
+                .scaledFont(size: 12, weight: .semibold)
                 .foregroundColor(.primary)
             Text(body)
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.leading, 10)

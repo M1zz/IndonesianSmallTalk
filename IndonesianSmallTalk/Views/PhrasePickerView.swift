@@ -32,16 +32,16 @@ struct PhrasePickerView: View {
                                 VStack(alignment: .leading, spacing: 4) {
                                     HStack(spacing: 6) {
                                         Text(phrase.text)
-                                            .font(.system(size: 15, weight: .semibold))
+                                            .scaledFont(size: 15, weight: .semibold)
                                             .foregroundColor(.primary)
                                         PolarityChip(polarity: phrase.polarity)
                                     }
                                     Text(phrase.meaning)
-                                        .font(.system(size: 12))
+                                        .scaledFont(size: 12)
                                         .foregroundColor(.secondary)
                                     if !phrase.context.isEmpty {
                                         Text(phrase.context)
-                                            .font(.system(size: 11))
+                                            .scaledFont(size: 11)
                                             .foregroundColor(Color(.tertiaryLabel))
                                     }
                                 }

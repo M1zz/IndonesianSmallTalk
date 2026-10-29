@@ -53,11 +53,11 @@ struct PracticeHistoryView: View {
             HStack(spacing: 6) {
                 Text(language.flag)
                 Text("\(language.localizedName) 연습")
-                    .font(.system(size: 13, weight: .bold))
+                    .scaledFont(size: 13, weight: .bold)
                     .foregroundColor(.secondary)
                 Spacer()
                 Text("이번 주 \(stats.thisWeekCount)회")
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(Brand.blue)
             }
             HStack(spacing: 10) {
@@ -72,13 +72,13 @@ struct PracticeHistoryView: View {
     private func statBox(value: Int, label: Text, icon: String, color: Color) -> some View {
         VStack(spacing: 6) {
             Image(systemName: icon)
-                .font(.system(size: 16))
+                .scaledFont(size: 16)
                 .foregroundColor(color)
             Text("\(value)")
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .scaledFont(size: 22, weight: .bold, design: .rounded)
                 .foregroundColor(.primary)
             label
-                .font(.system(size: 11, weight: .medium))
+                .scaledFont(size: 11, weight: .medium)
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity)
@@ -106,16 +106,16 @@ struct PracticeHistoryView: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(rec.title.isEmpty ? rec.mode.label : rec.title)
-                    .font(.system(size: 15, weight: .semibold))
-                    .lineLimit(1)
+                    .scaledFont(size: 15, weight: .semibold)
+                    .singleLine()
                 HStack(spacing: 4) {
                     Text(rec.mode.label)
                     if !rec.titleMeaning.isEmpty {
                         Text("·")
-                        Text(rec.titleMeaning).lineLimit(1)
+                        Text(rec.titleMeaning).singleLine()
                     }
                 }
-                .font(.system(size: 12))
+                .scaledFont(size: 12)
                 .foregroundColor(.secondary)
             }
 
@@ -124,11 +124,11 @@ struct PracticeHistoryView: View {
             VStack(alignment: .trailing, spacing: 3) {
                 if let score = rec.score {
                     Text("\(score)점")
-                        .font(.system(size: 14, weight: .bold))
+                        .scaledFont(size: 14, weight: .bold)
                         .foregroundColor(scoreColor(score))
                 }
                 Text("\(rec.lines)문장 · \(rec.date.formatted(date: .omitted, time: .shortened))")
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
             }
         }
@@ -142,9 +142,9 @@ struct PracticeHistoryView: View {
                 .font(.system(size: 40))
                 .foregroundColor(Brand.blue.opacity(0.6))
             Text("아직 연습 기록이 없어요")
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(size: 16, weight: .semibold)
             Text("대화나 발음 연습을 마치면 여기에 쌓여요.")
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }

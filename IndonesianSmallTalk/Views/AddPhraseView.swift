@@ -39,7 +39,7 @@ struct AddPhraseView: View {
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
                             Image(systemName: speech.isListening ? "stop.circle.fill" : "mic.fill")
-                                .font(.system(size: 22))
+                                .scaledFont(size: 22)
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)
@@ -92,9 +92,9 @@ struct AddPhraseView: View {
                         HStack(spacing: 6) {
                             Image(systemName: "keyboard").foregroundColor(.blue)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("키보드에 표시").font(.system(size: 14, weight: .medium))
+                                Text("키보드에 표시").scaledFont(size: 14, weight: .medium)
                                 Text("말문 표현 키보드에서 한 번 탭으로 입력 가능")
-                                    .font(.system(size: 11)).foregroundColor(.secondary)
+                                    .scaledFont(size: 11).foregroundColor(.secondary)
                             }
                         }
                     }

@@ -2021,6 +2021,18 @@ https://m1zz.github.io/IndonesianSmallTalk/tr/privacy.html
 
 https://m1zz.github.io/IndonesianSmallTalk/tr/
 
+## 손쉬운 사용
+
+<!-- DeployBar 가 App Store Connect '앱의 손쉬운 사용' 에 올린다. 실제로 확인한 것만 적는다. -->
+
+### iPhone
+voiceOver
+voiceControl
+largerText
+darkInterface
+differentiateWithoutColor
+reducedMotion
+
 ## 연령 등급
 
 <!-- 내용 문항이 전부 '해당 없음' 인 앱이면 아래 줄의 주석을 풀어라.

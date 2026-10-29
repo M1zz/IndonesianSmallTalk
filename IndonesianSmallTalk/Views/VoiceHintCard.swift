@@ -26,15 +26,15 @@ struct VoiceHintCard: View {
         if !dismissed && VoiceHint.isNeeded {
             HStack(alignment: .top, spacing: 12) {
                 Image(systemName: "waveform")
-                    .font(.system(size: 18, weight: .semibold))
+                    .scaledFont(size: 18, weight: .semibold)
                     .foregroundColor(Brand.blue)
                     .padding(.top, 2)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(VoiceHint.title)
-                        .font(.system(size: 14, weight: .bold))
+                        .scaledFont(size: 14, weight: .bold)
                         .foregroundColor(.primary)
                     Text(VoiceHint.steps)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                         .lineSpacing(2)
                         .fixedSize(horizontal: false, vertical: true)
@@ -42,7 +42,7 @@ struct VoiceHintCard: View {
                 Spacer(minLength: 0)
                 Button { dismissed = true } label: {
                     Image(systemName: "xmark")
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(4)
                 }

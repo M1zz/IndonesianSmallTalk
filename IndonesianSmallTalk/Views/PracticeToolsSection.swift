@@ -16,9 +16,9 @@ struct PracticeToolsSection: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {
                 Image(systemName: "wrench.and.screwdriver")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(Brand.blue)
-                Text("연습 도구").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Text("연습 도구").scaledFont(size: 13, weight: .bold).foregroundColor(.secondary)
                 Spacer()
             }
 
@@ -85,10 +85,10 @@ struct PracticeToolsSection: View {
             }
             .accessibilityHidden(true)
             title
-                .font(.system(size: 15, weight: .bold))
+                .scaledFont(size: 15, weight: .bold)
                 .foregroundColor(.primary)
             subtitle
-                .font(.system(size: 11.5))
+                .scaledFont(size: 11.5)
                 .foregroundColor(.secondary)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
@@ -162,12 +162,12 @@ struct ScriptScenarioPicker: View {
                 Text(scenario.emoji).font(.system(size: 26))
                 VStack(alignment: .leading, spacing: 2) {
                     Text(scenario.title)
-                        .font(.system(size: 15, weight: .semibold))
-                        .lineLimit(1)
+                        .scaledFont(size: 15, weight: .semibold)
+                        .singleLine()
                     Text(scenario.titleKo)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
-                        .lineLimit(1)
+                        .singleLine()
                 }
             }
         }

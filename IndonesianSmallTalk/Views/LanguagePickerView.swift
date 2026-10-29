@@ -20,6 +20,80 @@ enum Brand {
     }
 }
 
+// MARK: - Dynamic Type
+
+extension View {
+    /// 디자인에서 정한 글자 크기를 '더 큰 텍스트' 설정만큼 키운다.
+    /// 기본 크기에서는 그대로이고, 크기가 가까운 글꼴 스타일과 같은 비율로 커진다.
+    func scaledFont(size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default) -> some View {
+        modifier(ScaledFont(size: size, weight: weight, design: design))
+    }
+}
+
+private struct ScaledFont: ViewModifier {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    let size: CGFloat
+    let weight: Font.Weight
+    let design: Font.Design
+
+    func body(content: Content) -> some View {
+        let traits = UITraitCollection(preferredContentSizeCategory: UIContentSizeCategory(dynamicTypeSize))
+        let scaled = UIFontMetrics(forTextStyle: textStyle).scaledValue(for: size, compatibleWith: traits)
+        content.font(.system(size: scaled, weight: weight, design: design))
+    }
+
+    /// 기본 크기가 가장 가까운 글꼴 스타일
+    private var textStyle: UIFont.TextStyle {
+        switch size {
+        case ..<11.5: .caption2
+        case ..<12.5: .caption1
+        case ..<14: .footnote
+        case ..<15.5: .subheadline
+        case ..<16.5: .callout
+        case ..<19: .body
+        case ..<21: .title3
+        case ..<25: .title2
+        case ..<31: .title1
+        default: .largeTitle
+        }
+    }
+}
+
+extension View {
+    /// 한 줄로 두되, 손쉬운 사용 큰 글자에서는 잘리지 않게 줄을 바꾼다.
+    func singleLine() -> some View { modifier(SingleLine()) }
+}
+
+private struct SingleLine: ViewModifier {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    func body(content: Content) -> some View {
+        content.lineLimit(dynamicTypeSize.isAccessibilitySize ? nil : 1)
+    }
+}
+
+extension View {
+    /// 탭 제스처로만 되던 동작을 VoiceOver·음성 명령에서도 누를 수 있는 버튼으로 알린다.
+    func accessibleTap(hint: LocalizedStringKey, _ action: @escaping () -> Void) -> some View {
+        accessibilityAddTraits(.isButton)
+            .accessibilityHint(Text(hint))
+            .accessibilityAction(.default, action)
+    }
+}
+
+extension AnyTransition {
+    /// '동작 줄이기'를 켜 두면 미끄러지지 않고 흐려지기만 한다.
+    static func motion(_ transition: AnyTransition) -> AnyTransition {
+        UIAccessibility.isReduceMotionEnabled ? .opacity : transition
+    }
+}
+
+extension Color {
+    /// 밝은 화면과 어두운 화면에서 다른 색
+    init(light: Color, dark: Color) {
+        self.init(UIColor { $0.userInterfaceStyle == .dark ? UIColor(dark) : UIColor(light) })
+    }
+}
+
 // MARK: - Language Picker
 
 /// 배울 언어 고르기. 화면 언어는 목록에서 빠진다.
@@ -35,11 +109,11 @@ struct LanguageGrid: View {
                     VStack(spacing: 6) {
                         Text(lang.flag).font(.system(size: 34))
                         Text(lang.localizedName)
-                            .font(.system(size: 15, weight: .semibold))
+                            .scaledFont(size: 15, weight: .semibold)
                             .foregroundColor(.primary)
                         if lang.localizedName != lang.endonym {
                             Text(lang.endonym)
-                                .font(.system(size: 11))
+                                .scaledFont(size: 11)
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -72,9 +146,9 @@ struct LanguagePickerSheet: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("무슨 언어를 연습할까요?")
-                        .font(.system(size: 22, weight: .bold))
+                        .scaledFont(size: 22, weight: .bold)
                     Text("언어마다 내 표현·내 시나리오·단어장이 따로 저장돼요. 언제든 다시 바꿀 수 있어요.")
-                        .font(.system(size: 13))
+                        .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                     LanguageGrid(selection: $selection)
                         .padding(.top, 4)

@@ -23,7 +23,7 @@ struct VocabularyView: View {
                 Section {
                     Toggle(isOn: $unlearnedOnly) {
                         Label("미학습만 보기", systemImage: "graduationcap.fill")
-                            .font(.system(size: 14))
+                            .scaledFont(size: 14)
                     }
                     .tint(.blue)
                 }
@@ -31,7 +31,7 @@ struct VocabularyView: View {
                 Section {
                     if displayed.isEmpty {
                         Text("모든 단어를 학습 완료했어요 🎉")
-                            .font(.system(size: 14))
+                            .scaledFont(size: 14)
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .padding(.vertical, 8)
@@ -77,7 +77,7 @@ struct VocabularyView: View {
                         Spacer()
                         Text("완료 \(store.learnedWords.count)개")
                     }
-                    .font(.system(size: 11))
+                    .scaledFont(size: 11)
                     .foregroundColor(.secondary)
                 }
             }
@@ -109,7 +109,7 @@ struct VocabularyView: View {
                 .multilineTextAlignment(.center)
             Button(action: onAdd) {
                 Label("단어 추가하기", systemImage: "plus.circle.fill")
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
                     .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -135,7 +135,7 @@ struct WordRow: View {
         HStack(spacing: 12) {
             Button(action: onToggle) {
                 Image(systemName: word.isLearned ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 22))
+                    .scaledFont(size: 22)
                     .foregroundColor(word.isLearned ? .green : Color(.tertiaryLabel))
                     .animation(.spring(response: 0.3), value: word.isLearned)
             }
@@ -145,33 +145,33 @@ struct WordRow: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Text(word.indonesian)
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(size: 15, weight: .semibold)
                         .foregroundColor(word.isLearned ? .secondary : .primary)
                         .strikethrough(word.isLearned)
-                        .lineLimit(1)
+                        .singleLine()
                     TierBadge(tier: word.tier)
                     CategoryBadge(category: word.category)
                 }
                 if !word.romanization.isEmpty {
                     Text(word.romanization)
-                        .font(.system(size: 11, design: .serif))
+                        .scaledFont(size: 11, design: .serif)
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
-                        .lineLimit(1)
+                        .singleLine()
                 }
                 Text(word.korean)
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(.secondary)
-                    .lineLimit(1)
+                    .singleLine()
                 HStack(spacing: 8) {
                     if !word.examples.isEmpty {
                         Label("\(word.examples.count)", systemImage: "text.bubble")
-                            .font(.system(size: 10, weight: .medium))
+                            .scaledFont(size: 10, weight: .medium)
                             .foregroundColor(Color(.tertiaryLabel))
                     }
                     if !word.notes.isEmpty {
                         Image(systemName: "note.text")
-                            .font(.system(size: 10))
+                            .scaledFont(size: 10)
                             .foregroundColor(Color(.tertiaryLabel))
                     }
                 }
@@ -196,7 +196,7 @@ struct WordRow: View {
                 }
                 if word.studyCount > 0 {
                     Text("\(word.studyCount)회")
-                        .font(.system(size: 10))
+                        .scaledFont(size: 10)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
             }
@@ -217,11 +217,11 @@ struct CategoryBadge: View {
         case "부탁·사과·감사":    return .orange
         case "의문사":            return .purple
         case "동사·조동사":       return .blue
-        case "숫자·가격":         return Color(red: 0.78, green: 0.56, blue: 0.0) // amber
+        case "숫자·가격":         return Color(light: Color(red: 0.78, green: 0.56, blue: 0.0), dark: Color(red: 0.95, green: 0.72, blue: 0.2)) // amber
         case "식당·음식":         return .red
         case "교통":              return .teal
         case "장소·방향":         return .indigo
-        case "시간":              return Color(red: 0.55, green: 0.40, blue: 0.30) // brown
+        case "시간":              return Color(light: Color(red: 0.55, green: 0.40, blue: 0.30), dark: Color(red: 0.80, green: 0.64, blue: 0.52)) // brown
         case "호텔·비즈니스":     return .gray
         case "정도·상태":         return .cyan
         case "추임새·접속사":     return .mint
@@ -233,7 +233,7 @@ struct CategoryBadge: View {
         let c = Self.color(for: category)
         // 저장은 한국어 키, 화면에는 화면 언어 이름으로
         Text(VocabWord.categoryName(category))
-            .font(.system(size: 9, weight: .bold))
+            .scaledFont(size: 9, weight: .bold)
             .foregroundColor(c)
             .padding(.horizontal, 5)
             .padding(.vertical, 2)
@@ -248,10 +248,11 @@ struct FormalityBadge: View {
 
     static func color(for level: FormalityLevel) -> Color {
         switch level {
-        case .formal:  return Color(red: 0.12, green: 0.23, blue: 0.37) // 깊은 남색
-        case .neutral: return Color(red: 0.36, green: 0.42, blue: 0.24) // 올리브
-        case .casual:  return Color(red: 0.72, green: 0.36, blue: 0.18) // 테라코타
-        case .slang:   return Color(red: 0.55, green: 0.16, blue: 0.09) // 적토
+        // 어두운 화면에서는 바탕에 묻히지 않게 한 톤 밝게
+        case .formal:  return Color(light: Color(red: 0.12, green: 0.23, blue: 0.37), dark: Color(red: 0.33, green: 0.48, blue: 0.72)) // 깊은 남색
+        case .neutral: return Color(light: Color(red: 0.36, green: 0.42, blue: 0.24), dark: Color(red: 0.50, green: 0.58, blue: 0.33)) // 올리브
+        case .casual:  return Color(light: Color(red: 0.72, green: 0.36, blue: 0.18), dark: Color(red: 0.80, green: 0.44, blue: 0.24)) // 테라코타
+        case .slang:   return Color(light: Color(red: 0.55, green: 0.16, blue: 0.09), dark: Color(red: 0.76, green: 0.30, blue: 0.22)) // 적토
         }
     }
 
@@ -262,6 +263,7 @@ struct FormalityBadge: View {
             .foregroundColor(.white)
             .frame(width: 16, height: 16)
             .background(Circle().fill(c))
+            .accessibilityLabel(Text(level.label))
     }
 }
 
@@ -290,7 +292,7 @@ struct TierBadge: View {
 
     var body: some View {
         Text(label)
-            .font(.system(size: 9, weight: .bold))
+            .scaledFont(size: 9, weight: .bold)
             .foregroundColor(color)
             .padding(.horizontal, 5)
             .padding(.vertical, 2)
@@ -312,6 +314,7 @@ struct FlashcardView: View {
     @State private var retryCount = 0
     @State private var showCompletion = false
     @AppStorage("flashcardAutoSpeak") private var autoSpeak = true
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private var current: VocabWord? {
         guard currentIndex < words.count else { return nil }
@@ -336,7 +339,7 @@ struct FlashcardView: View {
                         ZStack {
                             cardFront(word: word)
                                 .rotation3DEffect(
-                                    .degrees(isFlipped ? 90 : 0),
+                                    .degrees(reduceMotion ? 0 : (isFlipped ? 90 : 0)),
                                     axis: (x: 0, y: 1, z: 0),
                                     perspective: 0.5
                                 )
@@ -344,7 +347,7 @@ struct FlashcardView: View {
 
                             cardBack(word: word)
                                 .rotation3DEffect(
-                                    .degrees(isFlipped ? 0 : -90),
+                                    .degrees(reduceMotion ? 0 : (isFlipped ? 0 : -90)),
                                     axis: (x: 0, y: 1, z: 0),
                                     perspective: 0.5
                                 )
@@ -353,16 +356,16 @@ struct FlashcardView: View {
                         .animation(.spring(response: 0.42, dampingFraction: 0.8), value: isFlipped)
                         .padding(.horizontal, 24)
                         .id(currentIndex)
-                        .transition(.asymmetric(
+                        .transition(.motion(.asymmetric(
                             insertion: .move(edge: .trailing).combined(with: .opacity),
                             removal: .move(edge: .leading).combined(with: .opacity)
-                        ))
+                        )))
                         .onTapGesture {
                             withAnimation { isFlipped.toggle() }
                         }
 
                         Text(isFlipped ? LocalizedStringKey("알고 있나요?") : LocalizedStringKey("탭하면 뜻이 나와요"))
-                            .font(.system(size: 13))
+                            .scaledFont(size: 13)
                             .foregroundColor(Color(.tertiaryLabel))
                             .padding(.top, 16)
 
@@ -417,15 +420,15 @@ struct FlashcardView: View {
         VStack(spacing: 6) {
             HStack {
                 Text("\(min(currentIndex + 1, words.count)) / \(words.count)")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(.secondary)
                 Spacer()
                 HStack(spacing: 10) {
                     Label("\(knownCount)", systemImage: "checkmark.circle.fill")
-                        .font(.system(size: 12, weight: .medium))
+                        .scaledFont(size: 12, weight: .medium)
                         .foregroundColor(.green)
                     Label("\(retryCount)", systemImage: "arrow.clockwise")
-                        .font(.system(size: 12, weight: .medium))
+                        .scaledFont(size: 12, weight: .medium)
                         .foregroundColor(.orange)
                 }
             }
@@ -449,11 +452,12 @@ struct FlashcardView: View {
             CategoryBadge(category: word.category)
                 .scaleEffect(1.2)
             Text(word.indonesian)
-                .font(.system(size: 30, weight: .bold))
+                .scaledFont(size: 30, weight: .bold)
                 .multilineTextAlignment(.center)
+                .accessibleTap(hint: "탭해서 뒤집기") { withAnimation { isFlipped.toggle() } }
             if !word.romanization.isEmpty {
                 Text(word.romanization)
-                    .font(.system(size: 15, design: .serif))
+                    .scaledFont(size: 15, design: .serif)
                     .italic()
                     .foregroundColor(.secondary)
             }
@@ -466,7 +470,7 @@ struct FlashcardView: View {
                     Image(systemName: speech.isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2.fill")
                         .symbolEffect(.bounce, value: speech.isSpeaking)
                     Text("듣기")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                 }
                 .foregroundColor(.white)
                 .padding(.horizontal, 14)
@@ -477,9 +481,10 @@ struct FlashcardView: View {
             .padding(.top, 4)
 
             Text("탭해서 뒤집기")
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(Color(.tertiaryLabel))
                 .padding(.top, 4)
+                .accessibilityHidden(true)
         }
         .frame(maxWidth: .infinity)
         .frame(minHeight: 220)
@@ -495,18 +500,20 @@ struct FlashcardView: View {
         ScrollView {
             VStack(spacing: 14) {
                 Image(systemName: "checkmark.seal.fill")
-                    .font(.system(size: 22))
+                    .scaledFont(size: 22)
                     .foregroundColor(.blue.opacity(0.4))
+                    .accessibilityHidden(true)
                 Text(word.korean)
-                    .font(.system(size: 26, weight: .bold))
+                    .scaledFont(size: 26, weight: .bold)
                     .multilineTextAlignment(.center)
+                    .accessibleTap(hint: "탭해서 뒤집기") { withAnimation { isFlipped.toggle() } }
                 Text(word.indonesian)
-                    .font(.system(size: 14, weight: .medium))
+                    .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                 if !word.notes.isEmpty {
                     Text(word.notes)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(Color(.tertiaryLabel))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 4)
@@ -516,16 +523,16 @@ struct FlashcardView: View {
                     Divider().padding(.vertical, 2)
                     VStack(alignment: .leading, spacing: 12) {
                         Text("예문")
-                            .font(.system(size: 11, weight: .bold))
+                            .scaledFont(size: 11, weight: .bold)
                             .foregroundColor(.blue)
                         ForEach(Array(word.examples.enumerated()), id: \.offset) { idx, ex in
                             VStack(alignment: .leading, spacing: 4) {
                                 HStack(alignment: .top, spacing: 6) {
                                     Text("\(idx + 1).")
-                                        .font(.system(size: 12, weight: .semibold))
+                                        .scaledFont(size: 12, weight: .semibold)
                                         .foregroundColor(.blue.opacity(0.6))
                                     Text(ex.indonesian)
-                                        .font(.system(size: 14, weight: .semibold))
+                                        .scaledFont(size: 14, weight: .semibold)
                                         .foregroundColor(.primary)
                                         .multilineTextAlignment(.leading)
                                     if let level = ex.level {
@@ -545,7 +552,7 @@ struct FlashcardView: View {
                                     .accessibilityLabel("예문 듣기")
                                 }
                                 Text(ex.korean)
-                                    .font(.system(size: 12))
+                                    .scaledFont(size: 12)
                                     .foregroundColor(.secondary)
                                     .padding(.leading, 18)
                                     .multilineTextAlignment(.leading)
@@ -558,7 +565,7 @@ struct FlashcardView: View {
 
                 if word.studyCount > 0 {
                     Text("학습 \(word.studyCount)회")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(.top, 4)
                 }
@@ -588,9 +595,9 @@ struct FlashcardView: View {
             } label: {
                 VStack(spacing: 6) {
                     Image(systemName: "arrow.clockwise")
-                        .font(.system(size: 22, weight: .semibold))
+                        .scaledFont(size: 22, weight: .semibold)
                     Text("다시")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                 }
                 .foregroundColor(.orange)
                 .frame(maxWidth: .infinity)
@@ -609,9 +616,9 @@ struct FlashcardView: View {
             } label: {
                 VStack(spacing: 6) {
                     Image(systemName: "checkmark")
-                        .font(.system(size: 22, weight: .semibold))
+                        .scaledFont(size: 22, weight: .semibold)
                     Text("알아요!")
-                        .font(.system(size: 13, weight: .semibold))
+                        .scaledFont(size: 13, weight: .semibold)
                 }
                 .foregroundColor(.green)
                 .frame(maxWidth: .infinity)
@@ -660,9 +667,9 @@ struct FlashcardView: View {
                 Text(verbatim: knownCount == words.count ? "🎉" : knownCount > words.count / 2 ? "⭐" : "💪")
                     .font(.system(size: 64))
                 Text(knownCount == words.count ? LocalizedStringKey("완벽해요!") : LocalizedStringKey("잘했어요!"))
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                    .scaledFont(size: 24, weight: .bold, design: .rounded)
                 Text("총 \(words.count)개 중 \(knownCount)개를 알았어요")
-                    .font(.system(size: 15))
+                    .scaledFont(size: 15)
                     .foregroundColor(.secondary)
             }
 
@@ -681,7 +688,7 @@ struct FlashcardView: View {
             Spacer()
 
             Button("닫기") { dismiss() }
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(size: 16, weight: .semibold)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
@@ -705,9 +712,9 @@ private struct FlashcardResultCard: View {
                 .font(.system(size: 26))
                 .foregroundColor(color)
             Text(value)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .scaledFont(size: 22, weight: .bold, design: .rounded)
             Text(label)
-                .font(.system(size: 11))
+                .scaledFont(size: 11)
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity)

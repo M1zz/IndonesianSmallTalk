@@ -73,18 +73,18 @@ struct HomeView: View {
                 // ── 모드 선택 안내
                 HStack(spacing: 8) {
                     Image(systemName: "hand.tap")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                     Text("탭 = 텍스트 모드")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                     Text("·")
                         .foregroundColor(.secondary)
                     Image(systemName: "mic.fill")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.blue)
                     Text("마이크 = 음성 모드")
-                        .font(.system(size: 11))
+                        .scaledFont(size: 11)
                         .foregroundColor(.blue)
                 }
                 .padding(.top, 18)
@@ -164,7 +164,7 @@ struct HomeView: View {
                             .scaleEffect(1.4)
                             .tint(.white)
                         (isSharingUserScenario ? Text("iCloud에 업로드 중…") : Text("공유를 해제하는 중…"))
-                            .font(.system(size: 14, weight: .medium))
+                            .scaledFont(size: 14, weight: .medium)
                             .foregroundColor(.white)
                     }
                     .padding(28)
@@ -229,18 +229,18 @@ struct HomeView: View {
         VStack(spacing: 0) {
             HStack(spacing: 6) {
                 Image(systemName: "calendar.day.timeline.left")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.accentColor)
-                Text("하루 코스")
-                    .font(.system(size: 13, weight: .bold))
+                Text("하루 코스").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 13, weight: .bold)
                     .foregroundColor(.secondary)
                 Spacer()
                 Button { showTimetable = true } label: {
                     HStack(spacing: 4) {
                         Image(systemName: "square.grid.3x3")
-                            .font(.system(size: 10, weight: .semibold))
+                            .scaledFont(size: 10, weight: .semibold)
                         Text("주간 시간표")
-                            .font(.system(size: 11, weight: .semibold))
+                            .scaledFont(size: 11, weight: .semibold)
                     }
                     .foregroundColor(.accentColor)
                 }
@@ -262,8 +262,8 @@ struct HomeView: View {
     private var aiScenarioSection: some View {
         if !aiScenarios.isEmpty {
             HStack(spacing: 6) {
-                Image(systemName: "sparkles").font(.system(size: 12)).foregroundColor(.purple)
-                Text("AI 생성 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Image(systemName: "sparkles").scaledFont(size: 12).foregroundColor(.purple)
+                Text("AI 생성 시나리오").accessibilityAddTraits(.isHeader).scaledFont(size: 13, weight: .bold).foregroundColor(.secondary)
                 Spacer()
             }
             .padding(.horizontal, 18)
@@ -288,7 +288,7 @@ struct HomeView: View {
     private var builtinSection: some View {
         if !smallTalkScenarios.isEmpty {
             HStack {
-                Text("기본 시나리오").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Text("기본 시나리오").accessibilityAddTraits(.isHeader).scaledFont(size: 13, weight: .bold).foregroundColor(.secondary)
                 Spacer()
             }
             .padding(.horizontal, 18)
@@ -313,12 +313,12 @@ struct HomeView: View {
         if !situationScenarios.isEmpty {
             HStack(spacing: 6) {
                 Image(systemName: "map")
-                    .font(.system(size: 12))
+                    .scaledFont(size: 12)
                     .foregroundColor(.accentColor)
-                Text("상황별 회화").font(.system(size: 13, weight: .bold)).foregroundColor(.secondary)
+                Text("상황별 회화").accessibilityAddTraits(.isHeader).scaledFont(size: 13, weight: .bold).foregroundColor(.secondary)
                 Spacer()
                 Text("\(visibleSituations.count)")
-                    .font(.system(size: 11, weight: .semibold))
+                    .scaledFont(size: 11, weight: .semibold)
                     .foregroundColor(.secondary)
             }
             .padding(.horizontal, 18)
@@ -358,11 +358,11 @@ struct HomeView: View {
             withAnimation(.easeInOut(duration: 0.2)) { situationCategory = id }
         } label: {
             HStack(spacing: 4) {
-                if let icon { Text(icon).font(.system(size: 12)) }
-                Text(title).font(.system(size: 12, weight: .semibold))
+                if let icon { Text(icon).scaledFont(size: 12) }
+                Text(title).scaledFont(size: 12, weight: .semibold)
                 if locked {
                     Image(systemName: "lock.fill")
-                        .font(.system(size: 9, weight: .bold))
+                        .scaledFont(size: 9, weight: .bold)
                         .foregroundColor(selected ? .white.opacity(0.8) : Brand.glow)
                         .accessibilityLabel(Text("Pro"))
                 }
@@ -380,8 +380,8 @@ struct HomeView: View {
     private var myScenarioSection: some View {
         if !unsharedUserScenarios.isEmpty {
             HStack {
-                Text("내 스몰토크")
-                    .font(.system(size: 13, weight: .bold))
+                Text("내 스몰토크").accessibilityAddTraits(.isHeader)
+                    .scaledFont(size: 13, weight: .bold)
                     .foregroundColor(.secondary)
                 Spacer()
             }
@@ -415,10 +415,10 @@ struct HomeView: View {
     private var sharedSectionHeader: some View {
         HStack(spacing: 6) {
             Image(systemName: "person.2.fill")
-                .font(.system(size: 12))
+                .scaledFont(size: 12)
                 .foregroundColor(.purple)
-            Text("함께 보는 스몰토크")
-                .font(.system(size: 13, weight: .bold))
+            Text("함께 보는 스몰토크").accessibilityAddTraits(.isHeader)
+                .scaledFont(size: 13, weight: .bold)
                 .foregroundColor(.secondary)
             Spacer()
             if sharedScenarioStore.isLoading {
@@ -431,9 +431,10 @@ struct HomeView: View {
                     }
                 }) {
                     Image(systemName: "arrow.clockwise")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
+                .accessibilityLabel(Text("새로 고침"))
             }
         }
         .padding(.horizontal, 18)
@@ -526,21 +527,22 @@ struct HomeView: View {
                         VStack(alignment: .leading, spacing: 2) {
                             HStack(spacing: 4) {
                                 Text("말문")
-                                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                                    .scaledFont(size: 20, weight: .bold, design: .rounded)
                                     .foregroundColor(.white)
                                 Image(systemName: "chevron.down.circle.fill")
-                                    .font(.system(size: 14))
+                                    .scaledFont(size: 14)
                                     .foregroundColor(.white.opacity(0.7))
                             }
                             Text("\(language.localizedName) 회화 연습")
-                                .font(.system(size: 13, weight: .medium))
+                                .scaledFont(size: 13, weight: .medium)
                                 .foregroundColor(.white.opacity(0.8))
-                                .lineLimit(1)
+                                .singleLine()
                         }
                     }
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text("배우는 언어 바꾸기, 지금 \(language.localizedName)"))
+                .accessibilityInputLabels([Text("배우는 언어"), Text(language.localizedName)])
                 HStack(spacing: 8) {
                     StatPill(icon: "🎯", value: "\(smallTalkScenarios.count + situationScenarios.count + userScenarioStore.scenarios.count + sharedScenarios.count)", label: String(localized: "시나리오"))
                     StatPill(icon: "💬", label: String(localized: "균형 대화"))
@@ -558,8 +560,8 @@ struct HomeView: View {
                 if !pro.hasPro {
                     Button { pro.showGeneralPaywall = true } label: {
                         HStack(spacing: 4) {
-                            Image(systemName: "crown.fill").font(.system(size: 11, weight: .bold))
-                            Text("Pro").font(.system(size: 12, weight: .heavy))
+                            Image(systemName: "crown.fill").scaledFont(size: 11, weight: .bold)
+                            Text("Pro").scaledFont(size: 12, weight: .heavy)
                         }
                         .foregroundColor(Brand.deep)
                         .padding(.horizontal, 10)
@@ -595,17 +597,17 @@ struct StatPill: View {
     let label: String
     var body: some View {
         HStack(spacing: 4) {
-            Text(icon).font(.caption)
+            Text(icon).font(.caption).accessibilityHidden(true)
             if !value.isEmpty {
                 Text(value)
-                    .font(.system(size: 11, weight: .bold))
+                    .scaledFont(size: 11, weight: .bold)
                     .foregroundColor(.white)
             }
             Text(label)
-                .font(.system(size: 11, weight: .medium))
+                .scaledFont(size: 11, weight: .medium)
                 .foregroundColor(.white.opacity(0.85))
         }
-        .lineLimit(1)
+        .singleLine()
         .fixedSize()
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
@@ -660,21 +662,21 @@ struct ScenarioCard: View {
 
                     VStack(alignment: .leading, spacing: 6) {
                         Text(scenario.title)
-                            .font(.system(size: 17, weight: .bold))
+                            .scaledFont(size: 17, weight: .bold)
                             .foregroundColor(.primary)
-                            .lineLimit(1)
+                            .singleLine()
                             .minimumScaleFactor(0.85)
                         Text(scenario.titleKo)
-                            .font(.system(size: 12))
+                            .scaledFont(size: 12)
                             .foregroundColor(.secondary)
-                            .lineLimit(1)
+                            .singleLine()
                         Text(scenario.description)
-                            .font(.system(size: 11.5))
+                            .scaledFont(size: 11.5)
                             .foregroundColor(Color(.tertiaryLabel))
                             .lineLimit(2)
                         HStack(spacing: 5) {
                             Text(scenario.difficulty.labelKo)
-                                .font(.system(size: 9, weight: .bold))
+                                .scaledFont(size: 9, weight: .bold)
                                 .foregroundColor(diffColor)
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 2)
@@ -708,10 +710,10 @@ struct ScenarioCard: View {
             Button(action: onVoiceTap) {
                 VStack(spacing: 3) {
                     Image(systemName: "mic.fill")
-                        .font(.system(size: 15))
+                        .scaledFont(size: 15)
                         .foregroundColor(.blue)
                     Text("음성")
-                        .font(.system(size: 9, weight: .medium))
+                        .scaledFont(size: 9, weight: .medium)
                         .foregroundColor(.blue)
                 }
                 .frame(width: 44)
@@ -756,9 +758,9 @@ struct ScenarioCard: View {
     private func badgeChip(text: String, color: Color, icon: String? = nil) -> some View {
         HStack(spacing: 3) {
             if let icon {
-                Image(systemName: icon).font(.system(size: 8, weight: .bold))
+                Image(systemName: icon).scaledFont(size: 8, weight: .bold)
             }
-            Text(text).font(.system(size: 9, weight: .bold))
+            Text(text).scaledFont(size: 9, weight: .bold)
         }
         .foregroundColor(color)
         .padding(.horizontal, 6)
@@ -802,22 +804,22 @@ struct AIScenarioCard: View {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack(spacing: 6) {
                             Text(ai.titleKo)
-                                .font(.system(size: 16, weight: .bold))
+                                .scaledFont(size: 16, weight: .bold)
                                 .foregroundColor(.primary)
-                                .lineLimit(1)
+                                .singleLine()
                             Image(systemName: "sparkles")
-                                .font(.system(size: 10))
+                                .scaledFont(size: 10)
                                 .foregroundColor(.purple)
                         }
                         Text(ai.title)
-                            .font(.system(size: 12))
+                            .scaledFont(size: 12)
                             .foregroundColor(.secondary)
                         HStack(spacing: 8) {
                             Label("\(ai.vocabulary.count) 단어", systemImage: "textbook")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(.blue)
                             Label("\(ai.grammarPoints.count) 문법", systemImage: "book.pages")
-                                .font(.system(size: 10, weight: .medium))
+                                .scaledFont(size: 10, weight: .medium)
                                 .foregroundColor(.green)
                         }
                         .padding(.top, 1)
@@ -826,7 +828,7 @@ struct AIScenarioCard: View {
                     Spacer()
 
                     Image(systemName: "chevron.right")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
                 .padding(14)
@@ -838,7 +840,7 @@ struct AIScenarioCard: View {
             HStack(spacing: 0) {
                 Button(action: onPracticeTap) {
                     Label("대화 연습", systemImage: "bubble.left.and.right.fill")
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(.blue)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
@@ -849,7 +851,7 @@ struct AIScenarioCard: View {
 
                 Button(action: onVoiceTap) {
                     Label("음성", systemImage: "mic.fill")
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(.blue)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)

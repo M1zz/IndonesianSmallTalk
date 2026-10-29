@@ -47,7 +47,7 @@ struct ContentView: View {
                     .transition(.opacity)
 
                 addMenuSheet
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .transition(.motion(.move(edge: .bottom).combined(with: .opacity)))
             }
         }
         .animation(.spring(response: 0.38, dampingFraction: 0.82), value: showAddMenu)
@@ -119,6 +119,7 @@ struct ContentView: View {
                     .shadow(color: Color.accentColor.opacity(0.35), radius: 8, x: 0, y: 3)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(showAddMenu ? Text("닫기") : Text("추가하기"))
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
@@ -158,7 +159,7 @@ struct ContentView: View {
                 withAnimation(.spring(response: 0.32, dampingFraction: 0.85)) { showAddMenu = false }
             } label: {
                 Text("취소")
-                    .font(.system(size: 17, weight: .semibold))
+                    .scaledFont(size: 17, weight: .semibold)
                     .foregroundColor(.primary)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 16)
@@ -184,17 +185,18 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(color)
                 }
+                .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(title)
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(size: 15, weight: .semibold)
                         .foregroundColor(.primary)
                     Text(subtitle)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .medium))
+                    .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }
             .padding(.horizontal, 16)

@@ -154,13 +154,13 @@ struct PronunciationPracticeView: View {
     private var progressHeader: some View {
         HStack {
             Text("\(index + 1) / \(sentences.count)")
-                .font(.system(size: 13, weight: .bold))
+                .scaledFont(size: 13, weight: .bold)
                 .foregroundColor(.secondary)
             Spacer()
             if initialSentences == nil && source == .library {
                 Button { reload() } label: {
                     Label(String(localized: "다른 문장"), systemImage: "shuffle")
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(size: 12, weight: .semibold)
                 }
             }
         }
@@ -169,24 +169,24 @@ struct PronunciationPracticeView: View {
     private func sentenceCard(_ s: PracticeSentence) -> some View {
         VStack(spacing: 12) {
             Text(s.text)
-                .font(.system(size: 22, weight: .bold))
+                .scaledFont(size: 22, weight: .bold)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
             if !s.romanization.isEmpty {
                 Text(s.romanization)
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(Brand.blue)
             }
             if showMeaning && !s.meaning.isEmpty {
                 Text(s.meaning)
-                    .font(.system(size: 14))
+                    .scaledFont(size: 14)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             Button { listen(s) } label: {
                 Label(speech.isSpeaking ? String(localized: "듣는 중…") : String(localized: "들어 보기"),
                       systemImage: "speaker.wave.2.fill")
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
                     .background(Capsule().fill(Brand.blue.opacity(0.12)))
@@ -205,10 +205,10 @@ struct PronunciationPracticeView: View {
     private var heardCard: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("들린 말")
-                .font(.system(size: 11, weight: .bold))
+                .scaledFont(size: 11, weight: .bold)
                 .foregroundColor(.secondary)
             Text(speech.recognizedText.isEmpty ? String(localized: "듣고 있어요…") : speech.recognizedText)
-                .font(.system(size: 15))
+                .scaledFont(size: 15)
                 .foregroundColor(speech.recognizedText.isEmpty ? .secondary : .primary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -222,23 +222,23 @@ struct PronunciationPracticeView: View {
             if let score {
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
                     Text("\(score)")
-                        .font(.system(size: 46, weight: .bold, design: .rounded))
+                        .scaledFont(size: 46, weight: .bold, design: .rounded)
                         .foregroundColor(scoreColor(score))
                     Text("점")
-                        .font(.system(size: 16, weight: .semibold))
+                        .scaledFont(size: 16, weight: .semibold)
                         .foregroundColor(.secondary)
                 }
                 .accessibilityElement(children: .combine)
                 Text(scoreComment(score))
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                     .foregroundColor(scoreColor(score))
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(language.writesWithoutSpaces ? "글자별로 보기" : "낱말별로 보기")
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(size: 11, weight: .bold)
                         .foregroundColor(.secondary)
                     Text(highlighted(target: s.text, spoken: speech.recognizedText))
-                        .font(.system(size: 19, weight: .semibold))
+                        .scaledFont(size: 19, weight: .semibold)
                     HStack(spacing: 12) {
                         legend(color: .green, text: Text("맞게 들림"))
                         legend(color: .red, text: Text("놓친 부분"))
@@ -251,12 +251,12 @@ struct PronunciationPracticeView: View {
                     .font(.system(size: 30))
                     .foregroundColor(.orange)
                 Text("잘 들리지 않았어요. 조금 더 크게 다시 말해 볼까요?")
-                    .font(.system(size: 14))
+                    .scaledFont(size: 14)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             if let startError {
-                Text(startError).font(.system(size: 12)).foregroundColor(.red)
+                Text(startError).scaledFont(size: 12).foregroundColor(.red)
             }
         }
         .frame(maxWidth: .infinity)
@@ -270,7 +270,7 @@ struct PronunciationPracticeView: View {
     private func legend(color: Color, text: Text) -> some View {
         HStack(spacing: 4) {
             Circle().fill(color).frame(width: 7, height: 7)
-            text.font(.system(size: 11)).foregroundColor(.secondary)
+            text.scaledFont(size: 11).foregroundColor(.secondary)
         }
     }
 
@@ -280,11 +280,11 @@ struct PronunciationPracticeView: View {
                 .font(.system(size: 38))
                 .foregroundColor(Brand.blue.opacity(0.6))
             Text(source == .myPhrases ? "아직 내 표현이 없어요" : "연습할 문장이 없어요")
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(size: 16, weight: .semibold)
             Text(source == .myPhrases
                  ? "내 표현 탭에서 \(language.localizedName) 표현을 더하면 여기서 발음을 연습할 수 있어요."
                  : "\(language.localizedName) 기본 회화를 불러오지 못했어요.")
-                .font(.system(size: 13))
+                .scaledFont(size: 13)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }
@@ -328,13 +328,13 @@ struct PronunciationPracticeView: View {
                     .scaleEffect(phase == .recording ? 1.08 : 1)
                     .animation(.easeInOut(duration: 0.2), value: phase == .recording)
                     Text(phase == .recording ? "말이 끝나면 자동으로 채점해요" : "눌러서 따라 말해 보세요")
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
             }
         }
-        .font(.system(size: 15, weight: .semibold))
+        .scaledFont(size: 15, weight: .semibold)
     }
 
     // MARK: - Actions

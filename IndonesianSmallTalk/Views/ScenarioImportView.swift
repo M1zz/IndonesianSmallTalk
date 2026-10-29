@@ -32,14 +32,14 @@ struct ScenarioImportView: View {
                     ZStack(alignment: .topLeading) {
                         if input.isEmpty {
                             Text(verbatim: sample)
-                                .font(.system(size: 14, design: .monospaced))
+                                .scaledFont(size: 14, design: .monospaced)
                                 .foregroundColor(Color(.placeholderText))
                                 .padding(.top, 8)
                                 .padding(.leading, 5)
                                 .allowsHitTesting(false)
                         }
                         TextEditor(text: $input)
-                            .font(.system(size: 14, design: .monospaced))
+                            .scaledFont(size: 14, design: .monospaced)
                             .frame(minHeight: 180)
                             .autocorrectionDisabled()
                             .textInputAutocapitalization(.never)
@@ -54,7 +54,7 @@ struct ScenarioImportView: View {
                         }
                     }
                     .buttonStyle(.borderless)
-                    .font(.system(size: 14, weight: .semibold))
+                    .scaledFont(size: 14, weight: .semibold)
                 } header: {
                     Text("\(language.localizedName) 대화 붙여넣기")
                 } footer: {
@@ -113,7 +113,7 @@ struct ScenarioImportView: View {
         Section {
             if result.lines.isEmpty {
                 Text("읽을 수 있는 대화가 아직 없어요.")
-                    .font(.system(size: 13))
+                    .scaledFont(size: 13)
                     .foregroundColor(.secondary)
             }
             ForEach(result.lines) { line in
@@ -122,13 +122,13 @@ struct ScenarioImportView: View {
             ForEach(result.issues) { issue in
                 VStack(alignment: .leading, spacing: 3) {
                     Label(String(localized: "\(issue.lineNumber)번째 줄"), systemImage: "exclamationmark.triangle.fill")
-                        .font(.system(size: 12, weight: .bold))
+                        .scaledFont(size: 12, weight: .bold)
                         .foregroundColor(.orange)
                     Text(verbatim: issue.raw.trimmingCharacters(in: .whitespaces))
-                        .font(.system(size: 12, design: .monospaced))
+                        .scaledFont(size: 12, design: .monospaced)
                         .lineLimit(2)
                     Text(issue.message)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
             }
@@ -159,10 +159,10 @@ struct ScenarioImportView: View {
                 .background(Capsule().fill(isMe ? Brand.solidBlue : Brand.blue.opacity(0.12)))
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: line.text)
-                    .font(.system(size: 14, weight: .medium))
+                    .scaledFont(size: 14, weight: .medium)
                 if !line.meaning.isEmpty {
                     Text(verbatim: line.meaning)
-                        .font(.system(size: 12))
+                        .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }
             }

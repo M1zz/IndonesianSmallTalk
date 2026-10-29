@@ -58,7 +58,7 @@ struct AddUserReplyView: View {
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
-                        .font(.system(size: 14, weight: .medium))
+                        .scaledFont(size: 14, weight: .medium)
                         .foregroundColor(.blue)
                     }
                 }
@@ -70,7 +70,7 @@ struct AddUserReplyView: View {
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
                             Image(systemName: speech.isListening ? "stop.circle.fill" : "mic.fill")
-                                .font(.system(size: 22))
+                                .scaledFont(size: 22)
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)

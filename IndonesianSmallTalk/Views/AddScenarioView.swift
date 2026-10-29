@@ -118,7 +118,7 @@ struct AddScenarioView: View {
                             .autocorrectionDisabled()
                         Button(action: toggleDictation) {
                             Image(systemName: speech.isListening ? "stop.circle.fill" : "mic.fill")
-                                .font(.system(size: 22))
+                                .scaledFont(size: 22)
                                 .foregroundColor(speech.isListening ? .red : .blue)
                         }
                         .buttonStyle(.plain)
@@ -142,9 +142,9 @@ struct AddScenarioView: View {
                             HStack(spacing: 6) {
                                 Image(systemName: "person.2.fill").foregroundColor(.purple)
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text("친구와 함께 보기").font(.system(size: 14, weight: .medium))
+                                    Text("친구와 함께 보기").scaledFont(size: 14, weight: .medium)
                                     Text("iCloud 로 공유 — 만든 후 카드에서 공유 링크 보내기")
-                                        .font(.system(size: 11)).foregroundColor(.secondary)
+                                        .scaledFont(size: 11).foregroundColor(.secondary)
                                 }
                             }
                         }
@@ -153,7 +153,7 @@ struct AddScenarioView: View {
                             Image(systemName: shareWithFriends ? "person.2.fill" : "lock.fill")
                                 .foregroundColor(shareWithFriends ? .purple : .secondary)
                             (shareWithFriends ? Text("친구와 함께 보는 시나리오") : Text("내 기기에만 저장"))
-                                .font(.system(size: 13))
+                                .scaledFont(size: 13)
                                 .foregroundColor(.secondary)
                         }
                     }
