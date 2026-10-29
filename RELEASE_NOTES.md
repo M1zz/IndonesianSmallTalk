@@ -2,6 +2,200 @@
 
 DeployBar 가 배포할 때 이 파일의 스토어용 절을 읽어 '이 버전의 새로운 기능' 칸에 올린다.
 
+## 1.0.6
+
+### 앱스토어 (한국어)
+
+고마울 때 개발자에게 작은 팁을 보낼 수 있어요
+친구에게 Pro를 선물할 수 있어요
+VoiceOver와 음성 제어로 더 편하게 쓸 수 있어요
+큰 글씨와 다크 모드에서도 보기 편해졌어요
+녹음을 시작할 때 앱이 꺼지던 문제를 고쳤어요
+
+### App Store (English)
+
+Leave a small tip if the app helps you
+You can now gift Pro to a friend
+Better with VoiceOver and Voice Control
+Clearer with larger text and Dark Mode
+Fixed a crash when starting a recording
+
+### App Store (en-GB)
+
+Leave a small tip if the app helps you
+You can now gift Pro to a friend
+Better with VoiceOver and Voice Control
+Clearer with larger text and Dark Mode
+Fixed a crash when starting a recording
+
+### App Store (Español)
+
+Deja una pequeña propina si te gusta
+Ya puedes regalar Pro a un amigo
+Mejor con VoiceOver y Control por voz
+Mejor con texto grande y modo oscuro
+Corregido un cierre al empezar a grabar
+
+### App Store (Bahasa Indonesia)
+
+Beri tip kecil untuk berterima kasih
+Kini Pro bisa dihadiahkan ke teman
+Mendukung VoiceOver dan Kontrol Suara
+Teks besar dan mode gelap lebih jelas
+Perbaikan app tertutup saat merekam
+
+### App Store (日本語)
+
+気に入ったら開発者に小さなチップを送れます
+友だちにProをプレゼントできるようになりました
+VoiceOverや音声コントロールで使いやすくなりました
+大きな文字やダークモードでも見やすくなりました
+録音開始時にアプリが終了する問題を直しました
+
+### App Store (简体中文)
+
+想表达感谢时，可以给开发者一点小费
+现在可以把 Pro 送给朋友了
+使用旁白和语音控制时更加顺手
+大字体和深色模式下看得更清楚
+修复了开始录音时闪退的问题
+
+### App Store (繁體中文, zh-Hant)
+
+想表達感謝時，可以給開發者一點小費
+現在可以把 Pro 送給朋友了
+使用旁白和語音控制時更加順手
+大字體和深色模式下看得更清楚
+修正了開始錄音時閃退的問題
+
+### App Store (Русский)
+
+Можно оставить разработчику чаевые
+Теперь Pro можно подарить другу
+Удобно с VoiceOver и Управлением голосом
+Удобнее с крупным текстом и тёмной темой
+Исправлен вылет при начале записи
+
+### App Store (Deutsch)
+
+Sag Danke mit einem kleinen Trinkgeld
+Verschenke Pro an Freunde
+Besser mit VoiceOver und Sprachsteuerung
+Großer Text und Dunkelmodus verbessert
+Absturz beim Aufnehmen behoben
+
+### App Store (Français)
+
+Dites merci avec un petit pourboire
+Offrez Pro à un ami
+Pensé pour VoiceOver et Contrôle vocal
+Mieux en gros texte et en mode sombre
+Plantage à l’enregistrement corrigé
+
+### App Store (Português, Brasil)
+
+Deixe uma gorjeta se o app te ajudar
+Presenteie um amigo com o Pro
+Melhor com VoiceOver e Controle por Voz
+Melhor com texto grande e modo escuro
+Corrigimos um travamento ao gravar
+
+### App Store (Italiano)
+
+Lascia una piccola mancia se ti piace
+Ora puoi regalare Pro a un amico
+VoiceOver e Controllo vocale migliorati
+Testo grande e modalità scura migliorati
+Risolto il blocco in registrazione
+
+### App Store (ไทย)
+
+ส่งทิปให้นักพัฒนาได้เมื่ออยากขอบคุณ
+ส่ง Pro เป็นของขวัญให้เพื่อนได้แล้ว
+รองรับ VoiceOver และการควบคุมด้วยเสียง
+อ่านง่ายขึ้นเมื่อใช้ตัวใหญ่และโหมดมืด
+แก้ปัญหาแอปปิดเองตอนเริ่มอัดเสียง
+
+### App Store (Tiếng Việt)
+
+Gửi nhà phát triển chút tiền tip cảm ơn
+Giờ bạn có thể tặng Pro cho bạn bè
+Dùng tốt hơn với VoiceOver và Khẩu lệnh
+Dễ đọc hơn với chữ lớn và chế độ tối
+Sửa lỗi thoát ứng dụng khi ghi âm
+
+### App Store (Čeština)
+
+Poděkujte vývojáři malým spropitným
+Pro teď můžete darovat kamarádovi
+Lepší s VoiceOverem a Ovládáním hlasem
+Lepší s velkým písmem a tmavým režimem
+Opraven pád při spuštění nahrávání
+
+### App Store (Dansk)
+
+Sig tak med lidt drikkepenge
+Nu kan du give Pro i gave til en ven
+Bedre med VoiceOver og Stemmestyring
+Bedre med stor tekst og mørk tilstand
+Rettet nedbrud ved start af optagelse
+
+### App Store (Ελληνικά)
+
+Πείτε ευχαριστώ με ένα μικρό φιλοδώρημα
+Χαρίστε το Pro σε έναν φίλο
+Καλύτερο με VoiceOver και έλεγχο φωνής
+Βελτιωμένο μεγάλο κείμενο και σκούρα όψη
+Διορθώθηκε κλείσιμο κατά την ηχογράφηση
+
+### App Store (Suomi)
+
+Kiitä kehittäjää pienellä tipillä
+Voit nyt antaa Pron lahjaksi ystävälle
+Parempi VoiceOverilla ja ääniohjauksella
+Selkeämpi suurella tekstillä ja tummana
+Korjattu kaatuminen nauhoittaessa
+
+### App Store (Norsk bokmål)
+
+Si takk med litt tips til utvikleren
+Nå kan du gi Pro i gave til en venn
+Bedre med VoiceOver og Talekontroll
+Bedre med stor tekst og mørk modus
+Rettet krasj ved start av opptak
+
+### App Store (Nederlands)
+
+Bedank de maker met een kleine fooi
+Geef Pro cadeau aan een vriend
+Beter met VoiceOver en Stembediening
+Beter met grote tekst en donkere modus
+Crash bij opnemen opgelost
+
+### App Store (Polski)
+
+Podziękuj twórcy drobnym napiwkiem
+Podaruj Pro znajomemu
+Lepiej z VoiceOver i Sterowaniem głosem
+Lepiej z dużym tekstem i trybem ciemnym
+Naprawiono awarię przy nagrywaniu
+
+### App Store (Svenska)
+
+Tacka utvecklaren med lite dricks
+Nu kan du ge bort Pro till en vän
+Bättre med VoiceOver och Röststyrning
+Bättre med stor text och mörkt läge
+Fixat krasch när inspelning startar
+
+### App Store (Türkçe)
+
+Geliştiriciye küçük bir bahşiş bırakın
+Pro'yu bir arkadaşınıza hediye edin
+VoiceOver ve Sesle Denetim ile kolay
+Büyük yazı ve karanlık modda daha net
+Kayda başlarken çökme sorunu giderildi
+
 ## 1.0.5
 
 ### 앱스토어 (한국어)
