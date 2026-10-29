@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: yabancı dilde konuşma pratiği, arabada bile",
+  "description": "Bir cevap seç, konuşma o yöne aksın. Korece, Japonca, Çince, İspanyolca veya Endonezce pratiğini dinleyerek ve sesli yap, araba kullanırken bile.",
+  "hero": {
+    "headline": "Donup kalmaya son.\nİlk sen konuş.",
+    "lead": "Malmun, seçtiğin her cevabın diyaloğu farklı bir yöne götürdüğü bir konuşma antrenörü. Korece, Japonca, Çince, İspanyolca veya Endonezce öğren, arabada da sadece kulağınla ve sesinle pratik yap.",
+    "cta": "App Store’dan ücretsiz indir",
+    "note": "Dallanan diyaloglar, telaffuz pratiği ve kelime listesi ücretsiz."
+  },
+  "demo": {
+    "title": "Konuşmayı sen sürdür",
+    "lead": "Bu, uygulamadaki Endonezce “Günaydın” diyaloğu. Seçtiğin her cümle sohbeti başka bir yöne çeviriyor.",
+    "me": "Ben",
+    "other": "Karşımdaki kişi",
+    "pos": "Olumlu +",
+    "neg": "Olumsuz −",
+    "askOther": "Karşındaki ne diyebilir?",
+    "askMe": "Sen ne cevap verirsin?",
+    "done": "Konuşma bitti: {score} puan. Baştan başla ve başka bir yol dene.",
+    "restart": "Baştan",
+    "listen": "Dinle",
+    "note": "Uygulamadaki gibi: olumlu cevap 10 puan, diğerleri 5 puan. Anlamlar İngilizce görünür, uygulama Türkçe olduğunda da böyledir. Tarayıcında Endonezce bir ses varsa seçtiğin her cümleyi okur.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Cümleyi ezberledin ama cevap gelmedi mi?",
+    "text": "Ders kitabında diyaloglar hep senaryoya göre ilerler. Gerçek hayatta karşındaki hiç beklemediğin bir şey söyler. Malmun bir konuşmanın tüm dallarını önceden gezmeni sağlar, böylece ne gelirse gelsin sıradaki cümlen hazır olur. Eve dönüş yolu bile pratik zamanına dönüşür."
+  },
+  "features": [
+    {
+      "title": "Araba kullanırken kulakla pratik",
+      "text": "Yol Modu, Bluetooth veya CarPlay ile arabanın hoparlörlerinden çalar. Önce anlamı duyarsın, bir sinyal sesi sana söyleme süresi verir, sonra cevap bir kez yavaş, bir kez normal hızda çalar.\nDireksiyon tuşlarıyla ilerle ve tekrar dinle, ya da sıra sendeyken `next`, `again` veya `slower` de. Navigasyon konuştuğunda kısa bir ara verir.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Seyahatin ve gündelik hayatın tüm durumları",
+      "text": "Her dilde 53 durum diyaloğu var: temel ifadeler, gündelik sohbet, restoran, ulaşım, havalimanı, otel, alışveriş, gezi ve acil durumlar.\nEndonezce öğrenenler için daha fazlası var: elle yazılmış 5 sohbet senaryosu, haftalık programıyla 6’şar sahnelik 3 günlük kurs ve iş seyahati için 100 kelime.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Doğru söyleyip söylemediğini gör",
+      "text": "Telaffuz pratiği sana puan verir, doğru söylediğin ve kaçırdığın kelimeleri renkle gösterir.\nMetin görünümünde tüm diyalog bir sohbet gibi açılır. Baştan sona dinle ya da anlamları gizleyip kendini dene.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Üç adımda başla",
+    "items": [
+      {
+        "title": "Bir dil seç",
+        "text": "Ana ekranın en üstündeki bayrağa dokun. İfadelerin ve kelimelerin her dil için ayrı saklanır."
+      },
+      {
+        "title": "Bir diyalog aç",
+        "text": "Metin modunda cevaplara dokun, ya da mikrofona dokunup konuş: ses modu en yakın cevabı bulur."
+      },
+      {
+        "title": "Arabada Yol Modu",
+        "text": "iPhone’u arabaya bağla ve oynat’a bas. Ekrana bakmana gerek yok."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Yol Modu kontrolleri",
+    "rows": [
+      [
+        "Direksiyon: sonraki parça",
+        "Sonraki cümle"
+      ],
+      [
+        "Direksiyon: önceki parça",
+        "Aynı cümle bir kez daha"
+      ],
+      [
+        "Oynat tuşu",
+        "Duraklat ve devam et"
+      ],
+      [
+        "`next` · `skip`",
+        "Sonraki cümle"
+      ],
+      [
+        "`again` · `repeat`",
+        "Tekrar dinle"
+      ],
+      [
+        "`slower` · `faster`",
+        "Okuma hızını değiştir"
+      ],
+      [
+        "`next scene`",
+        "Sonraki diyaloğa geç"
+      ],
+      [
+        "`stop` · `pause`",
+        "Pratiği bitir"
+      ],
+      [
+        "Siri: “Malmun ile yol pratiğini başlat”",
+        "Telefona dokunmadan başla"
+      ]
+    ],
+    "note": "Uygulama Türkçe olduğunda sesli komutları İngilizce söylersin. Komutlar yalnızca sinyal sesinden sonra sıra sendeyken dinlenir. Çalan cümle arabanın oynatma bilgisinde görünür. CarPlay’de ayrı bir uygulama ekranı yoktur."
+  },
+  "pricing": {
+    "title": "Neredeyse her şey ücretsiz. Malmun Pro gerisini açar.",
+    "free": {
+      "name": "Ücretsiz",
+      "items": [
+        "Dallanan sohbetler ve günlük kurslar (Endonezce)",
+        "Durum diyalogları: temel ifadeler ve gündelik sohbet",
+        "Yol Modu, günde 3 sahne",
+        "Telaffuz, metin görünümü, diyalog içe aktarma, pratik geçmişi",
+        "İfadelerim, kelime kartları, ifade klavyesi",
+        "Arkadaşlarla senaryo paylaşma, yapay zekâyla senaryo oluşturma"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Tüm durum diyalogları: restoran, ulaşım, havalimanı, otel, alışveriş, gezi, acil durumlar",
+        "Sınırsız Yol Modu",
+        "Tüm diller için geçerli"
+      ],
+      "note": "Yıllık abonelik ya da tek seferlik ömür boyu satın alma"
+    },
+    "note": "Fiyatları uygulamada ve App Store’da görebilirsin. Yıllık abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir."
+  },
+  "faq": {
+    "title": "Sık sorulan sorular",
+    "items": [
+      {
+        "q": "Hangi dilleri öğrenebilirim?",
+        "a": "Korece, Japonca, Çince, İspanyolca ve Endonezce. Düğmeler ve menüler Türkçedir ama cümlelerin anlamları ve sesli komutlar İngilizcedir. Bu yüzden İngilizcenin kendisi listede yer almaz."
+      },
+      {
+        "q": "Arabada nasıl kullanırım?",
+        "a": "iPhone’u Bluetooth veya CarPlay ile arabaya bağla, Yol Modu’nu aç ve oynat’a bas. Ses arabanın hoparlörlerinden gelir, çalan cümle Şimdi Çalıyor’da görünür. Siri’ye “Malmun ile yol pratiğini başlat” da diyebilir ya da Kestirmeler uygulamasında bir kez otomasyon kurup CarPlay (veya arabanın Bluetooth’u) bağlanınca başlamasını sağlayabilirsin."
+      },
+      {
+        "q": "Mikrofon sürekli dinliyor mu?",
+        "a": "Hayır. Yalnızca sinyal sesinden sonra sıra sendeyken iPhone mikrofonuyla dinler, duyduklarını cihazında işler."
+      },
+      {
+        "q": "Telaffuzum tanınmıyor.",
+        "a": "Konuşma tanıma, öğrendiğin dilde çalışır. Daha sessiz bir yerde dene ve o dilin konuşma tanımasının cihazına indirilmiş olduğundan emin ol."
+      },
+      {
+        "q": "Klavyeyi nasıl eklerim?",
+        "a": "Ayarlar ▸ Genel ▸ Klavye ▸ Klavyeler ▸ Yeni Klavye Ekle’ye gidip Malmun klavyesini seç. Yazarken dünya tuşuna dokunarak geçiş yap. Tam Erişim gerekmez. Daha az ifade göstermek için ana ekranın sağ altındaki klavye simgesine dokun ▸ Klavyeyi yönet."
+      },
+      {
+        "q": "Arkadaşımın paylaştığı senaryoyu göremiyorum.",
+        "a": "Paylaşım iCloud üzerinden çalışır, bu yüzden ikinizin de iCloud’a giriş yapmış olması gerekir. Hâlâ görünmüyorsa uygulamayı tamamen kapatıp yeniden aç."
+      },
+      {
+        "q": "Yapay zekâyla senaryo oluşturmak için ne gerekir?",
+        "a": "Kendi Anthropic API anahtarını uygulamaya gir ve bir konu yaz, yeni bir diyalog oluşturulur. Diğer her şey anahtar olmadan çalışır."
+      },
+      {
+        "q": "Aboneliği nasıl iptal ederim ya da iade alırım?",
+        "a": "Ödemeleri Apple yönetir. İptal için iPhone’da Ayarlar ▸ Apple Hesabı ▸ Abonelikler ▸ Malmun. İade için reportaproblem.apple.com üzerinden Apple’a başvur."
+      },
+      {
+        "q": "Yeni iPhone aldım, Pro gitti.",
+        "a": "Aynı Apple Hesabı ile giriş yap, sonra Malmun’da Ayarlar ▸ Malmun Pro ▸ Satın Alımları Geri Yükle’ye dokun."
+      },
+      {
+        "q": "İlerlemem nerede saklanıyor?",
+        "a": "Hesap gerekmez. Verilerin cihazında ve kendi iCloud’unda kalır. Reklam ve takip yok, yalnızca anonim kullanım istatistikleri ve hata raporları gönderilir. Hataları ve isteklerini GitHub Issues’a (github.com/M1zz/IndonesianSmallTalk/issues) da yazabilirsin."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Bu akşamki eve dönüş yolun\nilk sohbetin olsun",
+    "cta": "App Store’dan ücretsiz indir"
+  },
+  "ui": {
+    "skip": "İçeriğe geç",
+    "languages": "Dil",
+    "privacy": "Gizlilik Politikası",
+    "contact": "Soru ya da önerin mi var? {email} adresine yaz, uygulamada Ayarlar ▸ Geri bildirim gönder’i kullan ya da Instagram’dan @lee25_ios hesabına ulaş."
+  }
+}

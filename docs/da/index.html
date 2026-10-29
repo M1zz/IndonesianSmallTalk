@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Samtaletræning</title>
-  <meta name="description" content="Malmun er en iOS-app, hvor du øver forgrenede samtaler på seks sprog, med en håndfri pendlertilstand til bilen.">
+  <title>Malmun: øv samtaler på fremmedsprog, også i bilen</title>
+  <meta name="description" content="Vælg et svar, og samtalen tager den retning. Øv koreansk, japansk, kinesisk, spansk eller indonesisk med ører og stemme, også mens du kører.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/da/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: øv samtaler på fremmedsprog, også i bilen">
+  <meta property="og:description" content="Vælg et svar, og samtalen tager den retning. Øv koreansk, japansk, kinesisk, spansk eller indonesisk med ører og stemme, også mens du kører.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/da/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/da/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Sider"><a href="./" aria-current="page">Hjem</a> <a href="support.html">Support</a> <a href="privacy.html">Privatliv</a></nav>
-    </div>
+  <a class="skip" href="#main">Gå til indhold</a>
+  <header class="bar">
+    <a class="brand" href="../da/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Sprog</a>
   </header>
-  <nav class="langs" aria-label="Sprog">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da" aria-current="true">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Tal et nyt sprog, én replik ad gangen</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Support</a>
-      <a class="btn ghost" href="privacy.html">Privatlivspolitik</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Om Malmun</h2>
-      <p>Malmun hjælper dig med at øve rigtige samtaler gennem forgrenede dialoger. Vælg et sprog at lære — indonesisk, engelsk, japansk, kinesisk, spansk eller koreansk — og brug selve appen på et af de samme seks sprog.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Smalltalk med forgreninger</div><div class="desc">Samtalen går derhen, hvor dine svar fører den. Øv ved at læse og trykke eller ved at tale højt.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 situationssamtaler</div><div class="desc">På alle sprog: grundlæggende vendinger, hverdagssnak, restaurant, transport, lufthavn, hotel, shopping, sightseeing og nødsituationer.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Ekstra til indonesisk</div><div class="desc">Håndskrevet smalltalk, tre dagsforløb med et ugeskema og et grundordforråd på 100 ord.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Pendlertilstand</div><div class="desc">Øv med ørerne i bilen via Bluetooth eller CarPlay. Lyden kommer ud af bilens højttalere, og sætningen vises under Afspilles nu. Du hører betydningen, et klokkeslag, og så er det din tur til at sige den. Derefter høres svaret langsomt og i normalt tempo. Der er ingen separat CarPlay-skærm til appen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Håndfri betjening</div><div class="desc">Brug rattets knapper til næste, forrige og afspil, eller sig under din tur: næste, igen, langsommere, hurtigere, næste scene, stop. Siger du replikken rigtigt, hører du "Flot!". Start med Siri, eller automatisk med en automatisering i Genveje, når du slutter telefonen til bilen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Træningsværktøjer</div><div class="desc">Udtaletræning med score, manuskriptvisning, import af dialoger ved at indsætte tekst og øvehistorik.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Mine udtryk og flashcards</div><div class="desc">Gem de udtryk, du opsnapper, og gennemgå ordforrådskort, der læser ordene højt.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Udtrykstastatur</div><div class="desc">Se betydningen, tryk én gang, og sætningen skrives på det sprog, du lærer.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Del med venner</div><div class="desc">Del scenarier med venner via iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">AI-scenarier</div><div class="desc">Tilføj din egen Anthropic API-nøgle, skriv et emne, og få en helt ny dialog.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Slut med at gå i stå.<br>Sig det først.</h1>
+        <p class="lead">Malmun er en samtaletræner, hvor hvert svar du vælger, sender dialogen i en ny retning. Lær koreansk, japansk, kinesisk, spansk eller indonesisk, og øv i bilen med kun ørerne og stemmen.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Hent gratis i App Store</a><a class="try" href="#try">Før selv samtalen videre ↓</a></div>
+        <p class="muted small">Forgrenede samtaler, udtaletræning og ordforråd er gratis.</p>
       </div>
+      <div class="phone"><img src="../img/da/02-practice.jpg" alt="Slut med at gå i stå. Sig det først." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Alt er gratis bortset fra de to ting nedenfor.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Før selv samtalen videre</h2>
+      <p class="muted">Det her er ”Godmorgen”, en indonesisk samtale, præcis som den ligger i appen. Hver sætning du vælger, fører samtalen et nyt sted hen.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Før selv samtalen videre&quot;, &quot;lead&quot;: &quot;Det her er ”Godmorgen”, en indonesisk samtale, præcis som den ligger i appen. Hver sætning du vælger, fører samtalen et nyt sted hen.&quot;, &quot;me&quot;: &quot;Mig&quot;, &quot;other&quot;: &quot;Den anden person&quot;, &quot;pos&quot;: &quot;Positiv +&quot;, &quot;neg&quot;: &quot;Negativ −&quot;, &quot;askOther&quot;: &quot;Hvad kunne den anden sige?&quot;, &quot;askMe&quot;: &quot;Hvad svarer du?&quot;, &quot;done&quot;: &quot;Samtalen er slut: {score} point. Start forfra og prøv en anden vej.&quot;, &quot;restart&quot;: &quot;Start forfra&quot;, &quot;listen&quot;: &quot;Lyt&quot;, &quot;note&quot;: &quot;Ligesom i appen: et positivt svar giver 10 point, alle andre 5. Betydningerne står på engelsk, som i appen når den er på dansk. Har din browser en indonesisk stemme, læser den hver sætning op.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Kunne sætningen, men ikke svaret?</h2>
+      <p>I lærebogen følger samtaler altid manuskriptet. I virkeligheden svarer folk noget, du ikke havde set komme. Med Malmun går du alle grene af en samtale igennem på forhånd, så den næste sætning er klar, uanset hvad der kommer. Selv turen hjem bliver til træningstid.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Øv med ørerne, mens du kører</h2>
+        <p>Pendlertilstand spiller gennem bilens højttalere via Bluetooth eller CarPlay. Først hører du betydningen, efter et signal får du tid til selv at sige det, og så spilles svaret én gang langsomt og én gang i normalt tempo.<br>Spring frem og lyt igen med rattets knapper, eller sig <code>next</code>, <code>again</code> eller <code>slower</code>, når det er din tur. Den holder pause, når navigationen giver besked.</p>
+      </div>
+      <div class="phone"><img src="../img/da/03-drive.jpg" alt="Øv med ørerne, mens du kører" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Alle situationer fra rejsen og hverdagen</h2>
+        <p>Hvert sprog har 53 situationssamtaler: det grundlæggende, hverdagssnak, restaurant, transport, lufthavn, hotel, shopping, sightseeing og nødsituationer.<br>Lærer du indonesisk, er der mere: 5 håndskrevne small talk-scenarier, 3 dagsforløb med 6 scener hver og et ugeskema samt 100 ord til forretningsrejsen.</p>
+      </div>
+      <div class="phone"><img src="../img/da/01-home.jpg" alt="Alle situationer fra rejsen og hverdagen" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tjek at du sagde det rigtigt</h2>
+        <p>Udtaletræningen giver dig point og farver de ord, du ramte, og dem du missede.<br>I manuskriptet ligger hele samtalen som en chat. Lyt den igennem, eller skjul betydningerne og test dig selv.</p>
+      </div>
+      <div class="phone"><img src="../img/da/05-pronunciation.jpg" alt="Tjek at du sagde det rigtigt" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Kom i gang i tre trin</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Vælg et sprog</h3><p>Tryk på flaget øverst på startskærmen. Sætninger og ord gemmes hver for sig for hvert sprog.</p></li>
+<li class="card"><span class="n">2</span><h3>Åbn en samtale</h3><p>Tryk på svar i teksttilstand, eller tryk på mikrofonen og tal: stemmetilstand finder det svar, der ligger tættest på.</p></li>
+<li class="card"><span class="n">3</span><h3>I bilen: Pendlertilstand</h3><p>Forbind iPhone med bilen, og tryk på afspil. Du behøver ikke kigge på skærmen.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Styr Pendlertilstand</h2>
+      <div class="card table">
+        <dl><div><dt>Rat: næste nummer</dt><dd>Næste sætning</dd></div><div><dt>Rat: forrige nummer</dt><dd>Samme sætning én gang til</dd></div><div><dt>Afspilningsknap</dt><dd>Pause og fortsæt</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Næste sætning</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Hør igen</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Skift oplæsningstempo</dd></div><div><dt><code>next scene</code></dt><dd>Videre til næste samtale</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Stop træningen</dd></div><div><dt>Siri: ”Start pendlertræning i Malmun”</dt><dd>Start uden at røre iPhone</dd></div></dl>
+      </div>
+      <p class="muted">Når appen er på dansk, siger du stemmekommandoerne på engelsk. De bliver kun hørt, når det er din tur efter signalet. Den aktuelle sætning vises i bilens afspilningsinfo. Der er ingen særskilt appskærm i CarPlay.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Næsten alt er gratis. Malmun Pro åbner resten.</h2>
       <div class="plans">
-        <div class="plan"><h3>Gratis</h3><ul><li>Smalltalk, dagsforløb og grundordforråd</li><li>Situationssamtaler om grundlæggende vendinger og hverdagssnak</li><li>Pendlertilstand, 3 scener om dagen</li><li>Udtaletræning, manuskriptvisning, import ved indsætning og øvehistorik</li><li>Mine udtryk, flashcards, udtrykstastatur, deling med venner og AI-scenarier</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Alle situationssamtaler: restaurant, transport, lufthavn, hotel, shopping, sightseeing, nødsituationer</li><li>Ubegrænset pendlertilstand</li></ul></div>
+        <div class="card plan free">
+          <h3>Gratis</h3>
+          <ul><li>Forgrenet small talk og dagsforløb (indonesisk)</li><li>Situationssamtaler: det grundlæggende og hverdagssnak</li><li>Pendlertilstand, 3 scener om dagen</li><li>Udtaletræning, manuskript, import af samtaler, træningshistorik</li><li>Mine sætninger, ordkort, sætningstastatur</li><li>Del scenarier med venner, lav scenarier med AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Alle situationssamtaler: restaurant, transport, lufthavn, hotel, shopping, sightseeing, nødsituationer</li><li>Ubegrænset Pendlertilstand</li><li>Gælder alle sprog</li></ul>
+          <p class="muted">Årsabonnement eller ét køb for altid</p>
+        </div>
       </div>
-      <p class="note">Vælg et årligt abonnement eller et engangskøb med livstidsadgang. Se priserne i appen eller i App Store.</p>
+      <p class="muted">Priserne står i appen og i App Store. Årsabonnementet fornyes automatisk, medmindre du opsiger det senest 24 timer før perioden slutter.</p>
     </section>
-    <section id="privacy">
-      <h2>Privatliv</h2>
-      <p>Ingen konto og ingen sporing til reklamer. Det, du lærer, bliver på din enhed og i iCloud, hvis du slår deling til. Appen sender kun anonyme brugsstatistikker og fejlrapporter, så den kan rettes og forbedres.</p>
-      <p><a href="privacy.html">Læs hele privatlivspolitikken</a> · <a href="support.html">Supportside</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Ofte stillede spørgsmål</h2>
+      <div class="faq"><details><summary>Hvilke sprog kan jeg lære?</summary><p>Koreansk, japansk, kinesisk, spansk og indonesisk. Knapper og menuer er på dansk, men sætningernes betydning og stemmekommandoerne er på engelsk. Derfor står engelsk ikke selv på listen.</p></details>
+<details><summary>Hvordan bruger jeg den i bilen?</summary><p>Forbind iPhone med bilen via Bluetooth eller CarPlay, åbn Pendlertilstand, og tryk på afspil. Lyden kommer fra bilens højttalere, og den aktuelle sætning vises under Spiller nu. Du kan også sige til Siri ”Start pendlertræning i Malmun” eller én gang lave en automatisering i appen Genveje, så træningen starter, når CarPlay (eller bilens Bluetooth) forbindes.</p></details>
+<details><summary>Lytter mikrofonen hele tiden?</summary><p>Nej. Kun når det er din tur efter signalet, via iPhones mikrofon, og det, den hører, behandles på enheden.</p></details>
+<details><summary>Min udtale bliver ikke genkendt.</summary><p>Talegenkendelsen kører på det sprog, du lærer. Prøv et mere stille sted, og tjek at talegenkendelse for sproget er hentet på enheden.</p></details>
+<details><summary>Hvordan tilføjer jeg tastaturet?</summary><p>Gå til Indstillinger ▸ Generelt ▸ Tastatur ▸ Tastaturer ▸ Tilføj nyt tastatur, og vælg Malmun-tastaturet. Tryk på globussen, mens du skriver, for at skifte. Fuld adgang er ikke nødvendig. Vil du vise færre sætninger, så tryk på tastaturikonet nederst til højre på startskærmen ▸ Administrer tastatur.</p></details>
+<details><summary>Jeg kan ikke se et scenarie, en ven har delt.</summary><p>Deling foregår via iCloud, så I skal begge være logget ind på iCloud. Dukker det stadig ikke op, så luk appen helt og åbn den igen.</p></details>
+<details><summary>Hvad skal der til for at lave scenarier med AI?</summary><p>Indtast din egen Anthropic-API-nøgle i appen og skriv et emne, så laves en ny samtale. Alt andet virker uden nøgle.</p></details>
+<details><summary>Hvordan opsiger jeg eller får pengene tilbage?</summary><p>Betalinger håndteres af Apple. Opsig i iPhones Indstillinger ▸ Apple-konto ▸ Abonnementer ▸ Malmun. Refusion beder du Apple om på reportaproblem.apple.com.</p></details>
+<details><summary>Ny iPhone, og Pro er væk.</summary><p>Log ind med samme Apple-konto, og tryk i Malmun på Indstillinger ▸ Malmun Pro ▸ Gendan køb.</p></details>
+<details><summary>Hvor gemmes mine fremskridt?</summary><p>Du behøver ingen konto. Dine data bliver på enheden og i din egen iCloud. Ingen reklamer og ingen sporing, kun anonym brugsstatistik og fejlrapporter. Fejl og ønsker er også velkomne på GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Spørgsmål eller feedback? Skriv til <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, brug Indstillinger ▸ Send feedback i appen, eller find os på Instagram: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Gør turen hjem i aften<br>til din første samtale</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Hent gratis i App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Sprog"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da" aria-current="page">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Privatlivspolitik</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

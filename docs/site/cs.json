@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: trénujte konverzaci v cizím jazyce, i v autě",
+  "description": "Vyberte odpověď a rozhovor se vydá tím směrem. Trénujte korejštinu, japonštinu, čínštinu, španělštinu nebo indonéštinu poslechem a nahlas, i za volantem.",
+  "hero": {
+    "headline": "Už žádné zaseknutí.\nPromluvte první.",
+    "lead": "Malmun je konverzační trenažér, ve kterém každá zvolená odpověď pošle rozhovor jinam. Učte se korejsky, japonsky, čínsky, španělsky nebo indonésky a v autě trénujte jen ušima a hlasem.",
+    "cta": "Stáhnout zdarma z App Storu",
+    "note": "Větvené rozhovory, procvičování výslovnosti a slovník jsou zdarma."
+  },
+  "demo": {
+    "title": "Veďte rozhovor sami",
+    "lead": "Tohle je „Dobré ráno“, indonéský rozhovor přímo z aplikace. Každá zvolená věta stočí hovor jiným směrem.",
+    "me": "Já",
+    "other": "Druhá osoba",
+    "pos": "Pozitivní +",
+    "neg": "Negativní −",
+    "askOther": "Co může říct druhá strana?",
+    "askMe": "Co odpovíte?",
+    "done": "Konec rozhovoru: {score} bodů. Začněte znovu a zkuste jinou cestu.",
+    "restart": "Znovu",
+    "listen": "Poslechnout",
+    "note": "Stejně jako v aplikaci: pozitivní odpověď dává 10 bodů, ostatní 5. Významy jsou v angličtině, tak jako v aplikaci nastavené na češtinu. Pokud má prohlížeč indonéský hlas, přečte každou zvolenou větu.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Větu jste uměli, ale odpověď nepřišla?",
+    "text": "V učebnici jdou rozhovory vždycky podle scénáře. Ve skutečnosti vám druhý odpoví něco, co jste nečekali. Malmun vás předem provede všemi větvemi rozhovoru, takže další větu máte připravenou, ať přijde cokoli. I cesta domů se promění v trénink."
+  },
+  "features": [
+    {
+      "title": "Trénujte poslechem za jízdy",
+      "text": "Režim dojíždění hraje z reproduktorů auta přes Bluetooth nebo CarPlay. Nejdřív uslyšíte význam, po signálu máte čas to říct sami a pak zazní odpověď jednou pomalu a jednou normálním tempem.\nPřeskakujte a opakujte tlačítky na volantu, nebo řekněte `next`, `again` či `slower`, když jste na řadě. Při pokynech navigace se přehrávání pozastaví.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Všechny situace z cest i všedního dne",
+      "text": "Každý jazyk má 53 situačních dialogů: základy, běžný hovor, restaurace, doprava, letiště, hotel, nákupy, prohlídky a nouzové situace.\nKdo se učí indonésky, dostane víc: 5 ručně psaných small talků, 3 denní kurzy po 6 scénách s týdenním rozvrhem a 100 slov na služební cestu.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Ověřte si, že jste to řekli správně",
+      "text": "Procvičování výslovnosti vám dá skóre a barevně označí slova, která se povedla, i ta, která vám utekla.\nV přepisu vidíte celý rozhovor jako chat. Poslechněte si ho vcelku, nebo skryjte významy a vyzkoušejte se.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Začít jde ve třech krocích",
+    "items": [
+      {
+        "title": "Vyberte jazyk",
+        "text": "Klepněte na vlajku nahoře na domovské obrazovce. Fráze a slovíčka se ukládají pro každý jazyk zvlášť."
+      },
+      {
+        "title": "Otevřete rozhovor",
+        "text": "V textovém režimu klepejte na odpovědi, nebo klepněte na mikrofon a mluvte: hlasový režim najde nejbližší odpověď."
+      },
+      {
+        "title": "V autě režim dojíždění",
+        "text": "Připojte iPhone k autu a stiskněte přehrávání. Na displej se dívat nemusíte."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Ovládání režimu dojíždění",
+    "rows": [
+      [
+        "Volant: další skladba",
+        "Další věta"
+      ],
+      [
+        "Volant: předchozí skladba",
+        "Stejná věta ještě jednou"
+      ],
+      [
+        "Tlačítko přehrávání",
+        "Pauza a pokračování"
+      ],
+      [
+        "`next` · `skip`",
+        "Další věta"
+      ],
+      [
+        "`again` · `repeat`",
+        "Poslechnout znovu"
+      ],
+      [
+        "`slower` · `faster`",
+        "Změnit rychlost čtení"
+      ],
+      [
+        "`next scene`",
+        "Na další rozhovor"
+      ],
+      [
+        "`stop` · `pause`",
+        "Ukončit trénink"
+      ],
+      [
+        "Siri: „Spustit trénink dojíždění v Malmun“",
+        "Spustit bez dotyku iPhonu"
+      ]
+    ],
+    "note": "Když je aplikace v češtině, hlasové povely říkáte anglicky. Poslouchá je jen ve chvíli, kdy jste po signálu na řadě. Aktuální věta se zobrazí v informacích o přehrávání v autě. Vlastní obrazovku v CarPlay aplikace nemá."
+  },
+  "pricing": {
+    "title": "Skoro všechno je zdarma. Malmun Pro odemkne zbytek.",
+    "free": {
+      "name": "Zdarma",
+      "items": [
+        "Větvený small talk a denní kurzy (indonéština)",
+        "Situační dialogy: základy a běžný hovor",
+        "Režim dojíždění, 3 scény denně",
+        "Výslovnost, přepis, import rozhovorů, historie tréninku",
+        "Moje fráze, kartičky slovíček, klávesnice frází",
+        "Sdílení scénářů s přáteli, scénáře vytvořené AI"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Všechny situační dialogy: restaurace, doprava, letiště, hotel, nákupy, prohlídky, nouzové situace",
+        "Režim dojíždění bez omezení",
+        "Platí pro všechny jazyky"
+      ],
+      "note": "Roční předplatné nebo jednorázový nákup navždy"
+    },
+    "note": "Ceny najdete v aplikaci a v App Storu. Roční předplatné se automaticky obnoví, pokud ho nezrušíte nejpozději 24 hodin před koncem období."
+  },
+  "faq": {
+    "title": "Časté dotazy",
+    "items": [
+      {
+        "q": "Jaké jazyky se můžu učit?",
+        "a": "Korejštinu, japonštinu, čínštinu, španělštinu a indonéštinu. Tlačítka a nabídky jsou česky, ale významy vět a hlasové povely jsou anglicky. Proto samotná angličtina v seznamu není."
+      },
+      {
+        "q": "Jak ji používat v autě?",
+        "a": "Připojte iPhone k autu přes Bluetooth nebo CarPlay, otevřete režim dojíždění a stiskněte přehrávání. Zvuk jde z reproduktorů auta a aktuální věta se ukáže v části Právě hraje. Můžete také říct Siri „Spustit trénink dojíždění v Malmun“, nebo si jednou v aplikaci Zkratky nastavit automatizaci, která trénink spustí, jakmile se připojí CarPlay (nebo Bluetooth auta)."
+      },
+      {
+        "q": "Poslouchá mikrofon pořád?",
+        "a": "Ne. Poslouchá jen ve chvíli, kdy jste po signálu na řadě, přes mikrofon iPhonu, a co uslyší, se zpracuje v zařízení."
+      },
+      {
+        "q": "Moje výslovnost se nerozpoznává.",
+        "a": "Rozpoznávání řeči běží v jazyce, který se učíte. Zkuste to v tišším prostředí a zkontrolujte, že je rozpoznávání řeči pro ten jazyk v zařízení stažené."
+      },
+      {
+        "q": "Jak přidám klávesnici?",
+        "a": "Otevřete Nastavení ▸ Obecné ▸ Klávesnice ▸ Klávesnice ▸ Přidat novou klávesnici a vyberte klávesnici Malmun. Při psaní na ni přepnete tlačítkem se zeměkoulí. Plný přístup není potřeba. Chcete-li zobrazit méně frází, klepněte na ikonu klávesnice vpravo dole na domovské obrazovce ▸ Spravovat klávesnici."
+      },
+      {
+        "q": "Nevidím scénář, který sdílel kamarád.",
+        "a": "Sdílení funguje přes iCloud, takže musíte být oba přihlášení k iCloudu. Pokud se pořád nezobrazí, aplikaci úplně zavřete a znovu otevřete."
+      },
+      {
+        "q": "Co potřebuji k vytváření scénářů pomocí AI?",
+        "a": "Zadejte do aplikace vlastní API klíč Anthropic a napište téma, vznikne nový rozhovor. Všechno ostatní funguje i bez klíče."
+      },
+      {
+        "q": "Jak zruším předplatné nebo dostanu peníze zpět?",
+        "a": "Platby vyřizuje Apple. Zrušit můžete v Nastavení iPhonu ▸ Účet Apple ▸ Předplatná ▸ Malmun. O vrácení peněz požádejte Apple na reportaproblem.apple.com."
+      },
+      {
+        "q": "Nový iPhone a Pro zmizelo.",
+        "a": "Přihlaste se stejným Účtem Apple a v Malmun klepněte na Nastavení ▸ Malmun Pro ▸ Obnovit nákupy."
+      },
+      {
+        "q": "Kde se ukládá můj pokrok?",
+        "a": "Účet nepotřebujete. Data zůstávají v zařízení a ve vašem iCloudu. Žádné reklamy ani sledování, odesílají se jen anonymní statistiky používání a hlášení chyb. Chyby a přání můžete hlásit i na GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Ať je dnešní cesta domů\nvaším prvním rozhovorem",
+    "cta": "Stáhnout zdarma z App Storu"
+  },
+  "ui": {
+    "skip": "Přejít na obsah",
+    "languages": "Jazyk",
+    "privacy": "Zásady ochrany soukromí",
+    "contact": "Dotazy nebo připomínky? Napište na {email}, použijte Nastavení ▸ Poslat zpětnou vazbu v aplikaci, nebo nám napište na Instagram: @lee25_ios."
+  }
+}

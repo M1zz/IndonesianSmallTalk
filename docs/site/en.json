@@ -1,0 +1,180 @@
+{
+  "title": "Malmun: small talk practice in 6 languages, even on your commute",
+  "description": "Pick a reply and the conversation branches that way. Practice Korean, Japanese, Chinese, Spanish or Indonesian by ear and out loud, even while you drive.",
+  "hero": {
+    "headline": "Stop freezing up.\nSay it first.",
+    "lead": "Malmun is a conversation trainer where every reply you pick sends the dialogue somewhere different. Learn Korean, Japanese, Chinese, Spanish or Indonesian, and on your drive, practice with just your ears and your voice.",
+    "cta": "Get it free on the App Store",
+    "note": "Branching dialogues, pronunciation practice and flashcards are free."
+  },
+  "demo": {
+    "title": "Keep the conversation going",
+    "lead": "This is “Morning Greetings”, an Indonesian dialogue straight from the app. Every line you pick takes the conversation in a different direction.",
+    "me": "Me",
+    "other": "Other person",
+    "pos": "Positive +",
+    "neg": "Negative −",
+    "askOther": "What might they say?",
+    "askMe": "What will you say?",
+    "done": "That's the end. You scored {score}. Go back and try a different path.",
+    "restart": "Start over",
+    "listen": "Hear it",
+    "note": "Just like the app: a positive reply scores 10, anything else scores 5. If your browser has an Indonesian voice, it reads each line you pick.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Memorized the phrase, then blanked on the reply?",
+    "text": "Textbook dialogues always go to plan. Real people answer with something you didn't see coming. Malmun lets you walk every branch of a conversation ahead of time, so whatever comes back, you have a next line ready. Even the drive home turns into practice."
+  },
+  "features": [
+    {
+      "title": "Practice by ear while you drive",
+      "text": "Commute Mode plays through your car speakers over Bluetooth or CarPlay. You hear the meaning, a chime gives you time to say it, then the answer plays once slowly and once at normal speed.\nSkip and repeat with the steering-wheel buttons, or just say `next`, `again` or `slower` on your turn. It pauses for navigation prompts.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Every scene from travel and daily life",
+      "text": "Each language has 53 situational dialogues, from basics and casual chat to restaurants, getting around, the airport, hotels, shopping, sightseeing and emergencies.\nIndonesian has more: 5 hand-made small-talk scenarios, 3 Day Courses of 6 scenes each with a weekly timetable, and a 100-word business-trip deck.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Check that you said it right",
+      "text": "Pronunciation practice gives you a score and colors the words you nailed and the ones you missed.\nScript view lays out the whole dialogue like a chat. Play it straight through, or hide the meanings and test yourself.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Three steps to start",
+    "items": [
+      {
+        "title": "Pick a language",
+        "text": "Tap the flag at the top of the home screen. Phrases and vocab are kept separately for each language."
+      },
+      {
+        "title": "Open a dialogue",
+        "text": "Tap replies in text mode, or tap the mic and speak. Voice mode finds the closest reply."
+      },
+      {
+        "title": "In the car, use Commute Mode",
+        "text": "Connect your phone to the car and press play. No need to look at the screen."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Commute Mode controls",
+    "rows": [
+      ["Steering wheel: next track", "Next sentence"],
+      ["Steering wheel: previous track", "Same sentence again"],
+      ["Play button", "Pause and resume"],
+      ["`next` · `skip`", "Next sentence"],
+      ["`again` · `repeat`", "Hear it again"],
+      ["`slower` · `faster`", "Change the reading speed"],
+      ["`next scene`", "Jump to the next dialogue"],
+      ["`stop` · `pause`", "Stop practicing"],
+      ["Siri: “Start commute practice in Malmun”", "Start without touching the phone"]
+    ],
+    "note": "Voice commands are only heard on your turn, after the chime. Say the sentence right and you hear “Nice!”. The current sentence shows in your car's Now Playing. There is no separate CarPlay app screen."
+  },
+  "pricing": {
+    "title": "Almost everything is free. Pro opens the rest.",
+    "free": {
+      "name": "Free",
+      "items": [
+        "Branching small talk and Day Courses (Indonesian)",
+        "Situational dialogues: Basics and Casual chat",
+        "Commute Mode, 3 scenes a day",
+        "Pronunciation practice, script view, dialogue import, practice history",
+        "My phrases, vocab flashcards, phrase keyboard",
+        "Share scenarios with friends, generate scenarios with AI"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Every situational dialogue: restaurants, getting around, airport, hotels, shopping, sightseeing, emergencies",
+        "Unlimited Commute Mode",
+        "Covers all six languages"
+      ],
+      "note": "Yearly subscription or a one-time lifetime purchase"
+    },
+    "note": "See prices in the app or on the App Store. The yearly plan renews automatically unless cancelled at least 24 hours before the period ends."
+  },
+  "faq": {
+    "title": "Questions",
+    "items": [
+      {
+        "q": "How do I use it in the car?",
+        "a": "Connect your phone to the car over Bluetooth or CarPlay, open Commute Mode and press play. Sound comes from the car speakers and the current sentence shows in Now Playing. You can also ask Siri to “Start commute practice in Malmun”, or set up a Shortcuts automation once so it starts when CarPlay (or your car's Bluetooth) connects."
+      },
+      {
+        "q": "Is the mic always listening?",
+        "a": "No. It only listens on your turn, after the chime, through the phone mic, and what it hears is processed on your device. Say commands in the app's display language."
+      },
+      {
+        "q": "Which languages can I learn?",
+        "a": "Korean, Japanese, Chinese, Spanish and Indonesian, plus English if your app runs in one of those languages. The language the app shows meanings in can't be picked as the one you learn."
+      },
+      {
+        "q": "It isn't recognizing my pronunciation.",
+        "a": "Speech recognition runs in the language you're learning. Try somewhere quieter, and check that speech recognition for that language is downloaded on your device."
+      },
+      {
+        "q": "How do I add the keyboard?",
+        "a": "Go to Settings ▸ General ▸ Keyboard ▸ Keyboards ▸ Add New Keyboard and choose the Malmun keyboard. Tap the globe key while typing to switch to it. Full Access isn't needed. To show fewer phrases, tap the keyboard icon at the bottom right of the home screen ▸ Manage keyboard and switch phrases on or off."
+      },
+      {
+        "q": "I can't see a scenario my friend shared.",
+        "a": "Sharing with friends works through iCloud, so you both need to be signed in to iCloud. If it still doesn't appear, fully close the app and open it again."
+      },
+      {
+        "q": "What do I need to generate scenarios with AI?",
+        "a": "Add your own Anthropic API key in the app and type a topic, and it writes a new dialogue. Everything else works without a key."
+      },
+      {
+        "q": "How do I cancel or get a refund?",
+        "a": "Payments are handled by Apple. Cancel in iPhone Settings ▸ Apple Account ▸ Subscriptions ▸ Malmun. For a refund, ask Apple at reportaproblem.apple.com."
+      },
+      {
+        "q": "I got a new phone and Pro is gone.",
+        "a": "Sign in with the same Apple Account, then go to Settings ▸ Malmun Pro ▸ Restore Purchases in Malmun."
+      },
+      {
+        "q": "Where is my progress stored?",
+        "a": "No account needed. Your learning data stays on your device and in your own iCloud. No ads, no tracking, only anonymous usage statistics and crash diagnostics. Bugs and feature requests are also welcome on GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Turn tonight's drive home\ninto your first conversation",
+    "cta": "Get it free on the App Store"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "languages": "Language",
+    "privacy": "Privacy Policy",
+    "contact": "Questions or feedback? Write to {email}, use Settings ▸ Send Feedback in the app, or find us on Instagram at @lee25_ios."
+  }
+}

@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Latihan Percakapan</title>
-  <meta name="description" content="Malmun adalah aplikasi iOS untuk berlatih percakapan bercabang dalam enam bahasa, lengkap dengan Mode Perjalanan tanpa tangan di mobil.">
+  <title>Malmun: latihan ngobrol dalam bahasa asing, bahkan di mobil</title>
+  <meta name="description" content="Pilih jawaban, dan percakapan berlanjut ke arah itu. Latihan bahasa Inggris, Korea, Jepang, Mandarin, atau Spanyol lewat telinga dan suara, bahkan sambil menyetir.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/id/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,154 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: latihan ngobrol dalam bahasa asing, bahkan di mobil">
+  <meta property="og:description" content="Pilih jawaban, dan percakapan berlanjut ke arah itu. Latihan bahasa Inggris, Korea, Jepang, Mandarin, atau Spanyol lewat telinga dan suara, bahkan sambil menyetir.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/id/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/id/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Halaman"><a href="./" aria-current="page">Beranda</a> <a href="support.html">Dukungan</a> <a href="privacy.html">Privasi</a></nav>
-    </div>
+  <a class="skip" href="#main">Langsung ke konten</a>
+  <header class="bar">
+    <a class="brand" href="../id/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Bahasa</a>
   </header>
-  <nav class="langs" aria-label="Bahasa">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id" aria-current="true">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Lancar ngobrol, satu kalimat demi satu kalimat</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Dukungan</a>
-      <a class="btn ghost" href="privacy.html">Kebijakan Privasi</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Tentang Malmun</h2>
-      <p>Malmun membantumu berlatih percakapan sungguhan lewat dialog bercabang. Pilih bahasa yang ingin dipelajari, yaitu Indonesia, Inggris, Jepang, Mandarin, Spanyol, atau Korea, dan gunakan aplikasinya dalam salah satu dari enam bahasa yang sama.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Obrolan ringan bercabang</div><div class="desc">Alur percakapan mengikuti jawabanmu. Berlatih dengan membaca dan mengetuk, atau dengan berbicara langsung.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 dialog situasi</div><div class="desc">Di setiap bahasa: dasar, obrolan sehari-hari, restoran, transportasi, bandara, hotel, belanja, wisata, dan darurat.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Lebih banyak untuk bahasa Indonesia</div><div class="desc">Obrolan ringan yang ditulis sendiri, tiga kursus sehari dengan jadwal mingguan, dan 100 kosakata dasar.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Mode Perjalanan</div><div class="desc">Berlatih lewat pendengaran di mobil melalui Bluetooth atau CarPlay. Suara keluar dari speaker mobil dan kalimatnya tampil di Sedang Diputar. Dengar artinya, bunyi ting, giliranmu mengucapkan, lalu jawabannya pelan dan dengan kecepatan normal. Tidak ada layar aplikasi khusus di CarPlay.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Kontrol tanpa tangan</div><div class="desc">Pakai tombol berikutnya, sebelumnya, dan putar di setir, atau ucapkan saat giliranmu: lanjut, ulang, lebih pelan, lebih cepat, adegan berikutnya, berhenti. Kalau kalimatmu benar, kamu akan mendengar "Bagus!". Mulai lewat Siri, atau otomatis dengan otomatisasi Pintasan saat tersambung ke mobil.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Alat latihan</div><div class="desc">Latihan pelafalan dengan skor, tampilan naskah, impor dialog dengan menempel, dan riwayat latihan.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Frasa Saya & kartu kosakata</div><div class="desc">Simpan frasa baru dan ulangi kartu kosakata yang membacakan kata dengan suara.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Keyboard frasa</div><div class="desc">Lihat artinya, ketuk sekali, dan kalimat dalam bahasa yang kamu pelajari langsung terketik.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Bersama teman</div><div class="desc">Bagikan skenario dengan teman lewat iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Skenario AI</div><div class="desc">Masukkan kunci API Anthropic milikmu sendiri, tulis topik, dan dapatkan dialog baru.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Jangan diam saja.<br>Mulai duluan.</h1>
+        <p class="lead">Malmun adalah aplikasi latihan percakapan, dan setiap jawaban yang kamu pilih membawa obrolan ke arah yang berbeda. Belajar bahasa Inggris, Korea, Jepang, Mandarin, atau Spanyol, dan di jalan pulang kerja, latihan cukup dengan telinga dan suara.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Unduh gratis di App Store</a></div>
+        <p class="muted small">Percakapan bercabang, latihan pelafalan, dan kosakata gratis.</p>
       </div>
+      <div class="phone"><img src="../img/id/02-practice.jpg" alt="Jangan diam saja. Mulai duluan." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Semua fitur gratis, kecuali dua hal di bawah ini.</p>
+
+
+
+    <section class="problem reveal">
+      <h2>Sudah hafal kalimatnya, tapi bingung waktu harus menjawab?</h2>
+      <p>Dialog di buku selalu berjalan sesuai naskah. Lawan bicara di dunia nyata sering menjawab hal yang tidak kamu duga. Malmun mengajakmu menyusuri semua cabang percakapan lebih dulu, jadi apa pun jawabannya, kalimat berikutnya sudah siap. Perjalanan pulang pun jadi waktu latihan.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Latihan lewat telinga sambil menyetir</h2>
+        <p>Mode Perjalanan diputar lewat speaker mobil dengan Bluetooth atau CarPlay. Kamu mendengar artinya dulu, bunyi ding memberi waktu untuk mengucapkannya, lalu jawabannya diputar sekali pelan dan sekali dengan kecepatan normal.<br>Lanjut dan ulang dengan tombol di setir, atau ucapkan <code>lanjut</code>, <code>ulang</code>, atau <code>pelan</code> saat giliranmu. Pemutaran berhenti sebentar saat navigasi memberi arahan.</p>
+      </div>
+      <div class="phone"><img src="../img/id/03-drive.jpg" alt="Latihan lewat telinga sambil menyetir" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Semua situasi untuk liburan dan sehari-hari</h2>
+        <p>Setiap bahasa punya 53 percakapan situasional, mulai dari ungkapan dasar dan obrolan santai sampai restoran, transportasi, bandara, hotel, belanja, wisata, dan keadaan darurat.<br>Semua bisa didengar, diucapkan, dan dicek pelafalannya.</p>
+      </div>
+      <div class="phone"><img src="../img/id/01-home.jpg" alt="Semua situasi untuk liburan dan sehari-hari" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Pastikan ucapanmu terdengar benar</h2>
+        <p>Latihan pelafalan memberi skor dan menandai dengan warna kata yang sudah tepat dan yang terlewat.<br>Di Lihat naskah, seluruh percakapan tampil seperti chat. Dengarkan sampai habis, atau sembunyikan artinya untuk menguji diri sendiri.</p>
+      </div>
+      <div class="phone"><img src="../img/id/05-pronunciation.jpg" alt="Pastikan ucapanmu terdengar benar" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Mulai dalam tiga langkah</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Pilih bahasa</h3><p>Ketuk bendera di bagian atas layar utama. Kalimat dan kosakatamu disimpan terpisah untuk setiap bahasa.</p></li>
+<li class="card"><span class="n">2</span><h3>Buka satu percakapan</h3><p>Ketuk jawaban di mode teks, atau ketuk mikrofon lalu bicara. Mode suara mencarikan jawaban yang paling mirip.</p></li>
+<li class="card"><span class="n">3</span><h3>Di mobil, pakai Mode Perjalanan</h3><p>Sambungkan ponsel ke mobil lalu tekan putar. Tidak perlu melihat layar.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Kontrol Mode Perjalanan</h2>
+      <div class="card table">
+        <dl><div><dt>Setir: lagu berikutnya</dt><dd>Kalimat berikutnya</dd></div><div><dt>Setir: lagu sebelumnya</dt><dd>Kalimat yang sama sekali lagi</dd></div><div><dt>Tombol putar</dt><dd>Jeda dan lanjutkan</dd></div><div><dt><code>lanjut</code> · <code>berikutnya</code></dt><dd>Kalimat berikutnya</dd></div><div><dt><code>ulang</code> · <code>sekali lagi</code></dt><dd>Dengar lagi</dd></div><div><dt><code>pelan</code> · <code>cepat</code></dt><dd>Ubah kecepatan bacaan</dd></div><div><dt><code>adegan berikutnya</code></dt><dd>Pindah ke percakapan berikutnya</dd></div><div><dt><code>berhenti</code> · <code>jeda</code></dt><dd>Berhenti latihan</dd></div><div><dt>Siri: “Mulai latihan perjalanan di Malmun”</dt><dd>Mulai tanpa menyentuh ponsel</dd></div></dl>
+      </div>
+      <p class="muted">Perintah suara hanya didengar saat giliranmu, setelah bunyi ding. Kalau kalimatnya benar, kamu mendengar “Bagus!”. Kalimat yang sedang diputar muncul di layar pemutaran mobil. Tidak ada layar aplikasi khusus di CarPlay.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Hampir semuanya gratis. Malmun Pro membuka sisanya.</h2>
       <div class="plans">
-        <div class="plan"><h3>Gratis</h3><ul><li>Obrolan ringan, kursus sehari, dan kosakata dasar</li><li>Dialog situasi dasar dan sehari-hari</li><li>Mode Perjalanan 3 adegan per hari</li><li>Latihan pelafalan, naskah, impor dengan menempel, dan riwayat latihan</li><li>Frasa Saya, kartu kosakata, keyboard frasa, berbagi dengan teman, dan skenario AI</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Semua dialog situasi: restoran, transportasi, bandara, hotel, belanja, wisata, darurat</li><li>Mode Perjalanan tanpa batas</li></ul></div>
+        <div class="card plan free">
+          <h3>Gratis</h3>
+          <ul><li>Percakapan situasional: ungkapan dasar dan obrolan santai</li><li>Mode Perjalanan, 3 adegan per hari</li><li>Latihan pelafalan, naskah, impor percakapan, riwayat latihan</li><li>Kalimatku, kartu kosakata, keyboard kalimat</li><li>Berbagi skenario dengan teman, membuat skenario dengan AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Semua percakapan situasional: restoran, transportasi, bandara, hotel, belanja, wisata, darurat</li><li>Mode Perjalanan tanpa batas</li><li>Berlaku untuk semua bahasa</li></ul>
+          <p class="muted">Langganan tahunan atau sekali bayar seumur hidup</p>
+        </div>
       </div>
-      <p class="note">Pilih langganan tahunan atau pembelian sekali seumur hidup. Lihat harganya di aplikasi atau di App Store.</p>
+      <p class="muted">Lihat harganya di aplikasi atau di App Store. Langganan tahunan diperpanjang otomatis kecuali dibatalkan paling lambat 24 jam sebelum periodenya berakhir.</p>
     </section>
-    <section id="privacy">
-      <h2>Privasi</h2>
-      <p>Tanpa akun dan tanpa pelacakan iklan. Bahan belajarmu tersimpan di perangkatmu dan di iCloud milikmu jika kamu menyalakan fitur berbagi. Aplikasi hanya mengirim statistik penggunaan anonim dan laporan galat agar bisa diperbaiki dan dikembangkan.</p>
-      <p><a href="privacy.html">Baca kebijakan privasi lengkap</a> · <a href="support.html">Halaman dukungan</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Pertanyaan umum</h2>
+      <div class="faq"><details><summary>Bagaimana cara memakainya di mobil?</summary><p>Sambungkan iPhone ke mobil lewat Bluetooth atau CarPlay, buka Mode Perjalanan, lalu tekan putar. Suara keluar dari speaker mobil dan kalimat yang sedang diputar tampil di Sedang Diputar. Kamu juga bisa bilang ke Siri “Mulai latihan perjalanan di Malmun”, atau sekali saja buat otomatisasi di app Pintasan agar latihan mulai begitu CarPlay (atau Bluetooth mobil) tersambung.</p></details>
+<details><summary>Apakah mikrofon mendengarkan terus?</summary><p>Tidak. Mikrofon ponsel hanya mendengar saat giliranmu, setelah bunyi ding, dan suaramu diproses di perangkat. Ucapkan perintah dalam bahasa tampilan aplikasi.</p></details>
+<details><summary>Bahasa apa saja yang bisa dipelajari?</summary><p>Inggris, Korea, Jepang, Mandarin, dan Spanyol. Kalau aplikasi tampil dalam bahasa Indonesia, arti kalimat dan perintah suara memakai bahasa Indonesia, jadi bahasa Indonesia sendiri tidak muncul di daftar pilihan.</p></details>
+<details><summary>Pelafalanku tidak dikenali dengan baik.</summary><p>Pengenalan suara berjalan dalam bahasa yang sedang kamu pelajari. Coba di tempat yang lebih tenang, dan pastikan pengenalan suara untuk bahasa itu sudah terunduh di perangkatmu.</p></details>
+<details><summary>Bagaimana cara menambahkan keyboard?</summary><p>Buka Pengaturan ▸ Umum ▸ Papan Ketik ▸ Papan Ketik ▸ Tambah Papan Ketik Baru, lalu pilih keyboard Malmun. Saat mengetik, ketuk tombol bola dunia untuk beralih. Akses Penuh tidak diperlukan. Untuk mengurangi kalimat yang muncul, ketuk ikon keyboard di kanan bawah layar utama ▸ Kelola keyboard.</p></details>
+<details><summary>Skenario yang dibagikan temanku tidak muncul.</summary><p>Fitur berbagi dengan teman memakai iCloud, jadi kalian berdua harus masuk ke iCloud. Kalau masih belum muncul, tutup aplikasi sepenuhnya lalu buka lagi.</p></details>
+<details><summary>Apa yang dibutuhkan untuk membuat skenario dengan AI?</summary><p>Masukkan kunci API Anthropic milikmu sendiri di aplikasi dan tulis topiknya, lalu percakapan baru dibuatkan. Fitur lain tetap bisa dipakai tanpa kunci.</p></details>
+<details><summary>Bagaimana cara membatalkan langganan atau minta refund?</summary><p>Pembayaran diurus oleh Apple. Batalkan di Pengaturan iPhone ▸ Akun Apple ▸ Langganan ▸ Malmun. Untuk refund, ajukan ke Apple di reportaproblem.apple.com.</p></details>
+<details><summary>Ganti iPhone, kok Pro-nya hilang?</summary><p>Masuk dengan Akun Apple yang sama, lalu di Malmun buka Pengaturan ▸ Malmun Pro ▸ Pulihkan Pembelian.</p></details>
+<details><summary>Di mana data belajarku disimpan?</summary><p>Tidak perlu akun. Data belajarmu tetap di perangkat dan di iCloud milikmu. Tanpa iklan dan pelacakan, hanya statistik pemakaian anonim dan laporan error yang dikirim. Bug dan permintaan fitur juga bisa ditulis di GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Ada pertanyaan atau masukan? Kirim ke <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, lewat Pengaturan ▸ Kirim Masukan di aplikasi, atau Instagram @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Jadikan perjalanan pulang<br>percakapan pertamamu</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Unduh gratis di App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Bahasa"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id" aria-current="page">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Kebijakan Privasi</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
 </body>
 </html>

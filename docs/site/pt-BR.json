@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: pratique conversação em outros idiomas, até no carro",
+  "description": "Escolha uma resposta e a conversa segue por esse caminho. Pratique coreano, japonês, chinês, espanhol ou indonésio ouvindo e falando, até dirigindo.",
+  "hero": {
+    "headline": "Chega de travar.\nFale você primeiro.",
+    "lead": "Malmun é um treino de conversação em que cada resposta escolhida leva o diálogo para um lado diferente. Aprenda coreano, japonês, chinês, espanhol ou indonésio e, no carro, pratique só com os ouvidos e a voz.",
+    "cta": "Baixe grátis na App Store",
+    "note": "Diálogos com ramificações, prática de pronúncia e vocabulário são grátis."
+  },
+  "demo": {
+    "title": "Continue a conversa você mesmo",
+    "lead": "Este é “Bom dia”, um diálogo em indonésio do jeito que está no app. Cada frase que você escolhe leva a conversa para outro rumo.",
+    "me": "Eu",
+    "other": "Outra pessoa",
+    "pos": "Positivo +",
+    "neg": "Negativo −",
+    "askOther": "O que a outra pessoa pode dizer?",
+    "askMe": "O que você responde?",
+    "done": "Fim da conversa. Você fez {score} pontos. Comece de novo e tente outro caminho.",
+    "restart": "Recomeçar",
+    "listen": "Ouvir",
+    "note": "Igual ao app: resposta positiva vale 10 pontos, qualquer outra vale 5. Os significados aparecem em inglês, como no app quando ele está em português. Se o seu navegador tiver uma voz em indonésio, ele lê cada frase escolhida.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Decorou a frase e travou na hora de responder?",
+    "text": "No livro, os diálogos sempre seguem o roteiro. Na vida real, a pessoa responde algo que você não esperava. O Malmun deixa você percorrer antes todos os caminhos de uma conversa, para ter a próxima frase pronta, venha o que vier. Até a volta para casa vira hora de praticar."
+  },
+  "features": [
+    {
+      "title": "Pratique de ouvido enquanto dirige",
+      "text": "O Modo Trajeto toca nos alto-falantes do carro via Bluetooth ou CarPlay. Primeiro você ouve o significado, um sinal dá tempo para você falar e depois a resposta toca uma vez devagar e outra em velocidade normal.\nAvance e repita pelos botões do volante, ou diga `next`, `again` ou `slower` na sua vez. Pausa sozinho quando o GPS dá instruções.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Todas as situações de viagem e do dia a dia",
+      "text": "Cada idioma tem 53 diálogos por situação: o básico, papo do dia a dia, restaurante, transporte, aeroporto, hotel, compras, passeios e emergências.\nPara quem aprende indonésio tem mais: 5 bate-papos feitos à mão, 3 cursos do dia com 6 cenas cada e cronograma semanal, e 100 palavras para viagem de trabalho.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Confira se você falou certo",
+      "text": "A prática de pronúncia dá uma nota e marca com cores as palavras que você acertou e as que escaparam.\nNo roteiro, o diálogo inteiro aparece como um chat. Ouça tudo de uma vez ou esconda os significados para se testar.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Comece em três passos",
+    "items": [
+      {
+        "title": "Escolha um idioma",
+        "text": "Toque na bandeira no topo da tela inicial. Frases e vocabulário ficam separados por idioma."
+      },
+      {
+        "title": "Abra um diálogo",
+        "text": "Toque nas respostas no modo texto, ou toque no microfone e fale: o modo voz encontra a resposta mais parecida."
+      },
+      {
+        "title": "No carro, Modo Trajeto",
+        "text": "Conecte o iPhone ao carro e aperte o play. Nem precisa olhar a tela."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Controles do Modo Trajeto",
+    "rows": [
+      [
+        "Volante: próxima faixa",
+        "Próxima frase"
+      ],
+      [
+        "Volante: faixa anterior",
+        "A mesma frase de novo"
+      ],
+      [
+        "Botão de play",
+        "Pausar e continuar"
+      ],
+      [
+        "`next` · `skip`",
+        "Próxima frase"
+      ],
+      [
+        "`again` · `repeat`",
+        "Ouvir de novo"
+      ],
+      [
+        "`slower` · `faster`",
+        "Mudar a velocidade da leitura"
+      ],
+      [
+        "`next scene`",
+        "Ir para o próximo diálogo"
+      ],
+      [
+        "`stop` · `pause`",
+        "Parar de praticar"
+      ],
+      [
+        "Siri: “Iniciar prática do trajeto no Malmun”",
+        "Começar sem tocar no iPhone"
+      ]
+    ],
+    "note": "Com o app em português, os comandos de voz são falados em inglês. Eles só são ouvidos na sua vez, depois do sinal. A frase atual aparece nas informações de reprodução do carro. Não existe uma tela própria do app no CarPlay."
+  },
+  "pricing": {
+    "title": "Quase tudo é grátis. O Malmun Pro libera o resto.",
+    "free": {
+      "name": "Grátis",
+      "items": [
+        "Bate-papos com ramificações e cursos do dia (indonésio)",
+        "Diálogos por situação: o básico e papo do dia a dia",
+        "Modo Trajeto, 3 cenas por dia",
+        "Pronúncia, roteiro, importar diálogos, histórico de prática",
+        "Minhas frases, cartões de vocabulário, teclado de frases",
+        "Compartilhar cenários com amigos, criar cenários com IA"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Todos os diálogos por situação: restaurante, transporte, aeroporto, hotel, compras, passeios, emergências",
+        "Modo Trajeto sem limite",
+        "Vale para todos os idiomas"
+      ],
+      "note": "Assinatura anual ou compra única vitalícia"
+    },
+    "note": "Veja os preços no app ou na App Store. A assinatura anual renova automaticamente, a menos que seja cancelada pelo menos 24 horas antes do fim do período."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "q": "Quais idiomas posso aprender?",
+        "a": "Coreano, japonês, chinês, espanhol e indonésio. A interface fica em português, mas os significados das frases e os comandos de voz ficam em inglês. Por isso o inglês não aparece na lista."
+      },
+      {
+        "q": "Como uso no carro?",
+        "a": "Conecte o iPhone ao carro por Bluetooth ou CarPlay, abra o Modo Trajeto e aperte o play. O som sai pelos alto-falantes do carro e a frase atual aparece em Reproduzindo. Você também pode dizer à Siri “Iniciar prática do trajeto no Malmun”, ou criar uma vez uma automação no app Atalhos para começar assim que o CarPlay (ou o Bluetooth do carro) conectar."
+      },
+      {
+        "q": "O microfone fica ouvindo o tempo todo?",
+        "a": "Não. Ele só ouve na sua vez, depois do sinal, pelo microfone do iPhone, e o que ouve é processado no próprio aparelho."
+      },
+      {
+        "q": "Minha pronúncia não é reconhecida.",
+        "a": "O reconhecimento de fala funciona no idioma que você está aprendendo. Tente num lugar mais silencioso e confira se o reconhecimento de fala desse idioma está baixado no aparelho."
+      },
+      {
+        "q": "Como adiciono o teclado?",
+        "a": "Vá em Ajustes ▸ Geral ▸ Teclado ▸ Teclados ▸ Adicionar Novo Teclado e escolha o teclado do Malmun. Enquanto digita, toque no globo para trocar. Não precisa de acesso total. Para mostrar menos frases, toque no ícone do teclado no canto inferior direito da tela inicial ▸ Gerenciar teclado."
+      },
+      {
+        "q": "Não vejo um cenário que um amigo compartilhou.",
+        "a": "O compartilhamento funciona pelo iCloud, então os dois precisam estar com a sessão do iCloud ativa. Se ainda não aparecer, feche o app por completo e abra de novo."
+      },
+      {
+        "q": "O que preciso para criar cenários com IA?",
+        "a": "Coloque sua própria chave de API da Anthropic no app e escreva um tema: ele cria um diálogo novo. Todo o resto funciona sem chave."
+      },
+      {
+        "q": "Como cancelo ou peço reembolso?",
+        "a": "Os pagamentos são feitos pela Apple. Para cancelar: Ajustes do iPhone ▸ Conta Apple ▸ Assinaturas ▸ Malmun. Para reembolso, peça à Apple em reportaproblem.apple.com."
+      },
+      {
+        "q": "Troquei de iPhone e perdi o Pro.",
+        "a": "Entre com a mesma Conta Apple e, no Malmun, toque em Ajustes ▸ Malmun Pro ▸ Restaurar compras."
+      },
+      {
+        "q": "Onde fica salvo meu progresso?",
+        "a": "Não precisa de conta. Seus dados ficam no aparelho e no seu próprio iCloud. Sem anúncios e sem rastreamento: só são enviadas estatísticas de uso anônimas e relatórios de erro. Bugs e pedidos também podem ir para o GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Faça da volta para casa\nsua primeira conversa",
+    "cta": "Baixe grátis na App Store"
+  },
+  "ui": {
+    "skip": "Pular para o conteúdo",
+    "languages": "Idioma",
+    "privacy": "Política de Privacidade",
+    "contact": "Dúvidas ou sugestões? Escreva para {email}, use Ajustes ▸ Enviar feedback no app ou chame no Instagram @lee25_ios."
+  }
+}

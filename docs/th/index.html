@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — ฝึกสนทนา</title>
-  <meta name="description" content="Malmun คือแอป iOS สำหรับฝึกบทสนทนาแบบแตกแขนงใน 6 ภาษา พร้อมโหมดเดินทางที่ไม่ต้องใช้มือเวลาอยู่ในรถ">
+  <title>Malmun: ฝึกพูดภาษาต่างประเทศ แม้ระหว่างขับรถ</title>
+  <meta name="description" content="เลือกคำตอบแล้วบทสนทนาจะไปตามทางนั้น ฝึกภาษาเกาหลี ญี่ปุ่น จีน สเปน หรืออินโดนีเซียด้วยหูและเสียงของคุณ แม้ระหว่างขับรถ">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/th/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: ฝึกพูดภาษาต่างประเทศ แม้ระหว่างขับรถ">
+  <meta property="og:description" content="เลือกคำตอบแล้วบทสนทนาจะไปตามทางนั้น ฝึกภาษาเกาหลี ญี่ปุ่น จีน สเปน หรืออินโดนีเซียด้วยหูและเสียงของคุณ แม้ระหว่างขับรถ">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/th/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/th/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="หน้า"><a href="./" aria-current="page">หน้าแรก</a> <a href="support.html">ช่วยเหลือ</a> <a href="privacy.html">ความเป็นส่วนตัว</a></nav>
-    </div>
+  <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header class="bar">
+    <a class="brand" href="../th/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">ภาษา</a>
   </header>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th" aria-current="true">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">พูดภาษาใหม่ให้ได้ ทีละประโยค</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">ช่วยเหลือ</a>
-      <a class="btn ghost" href="privacy.html">นโยบายความเป็นส่วนตัว</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>เกี่ยวกับ Malmun</h2>
-      <p>Malmun ช่วยให้คุณฝึกสนทนาแบบเรื่องจริงผ่านบทสนทนาที่แตกแขนง เลือกภาษาที่อยากเรียนได้ ไม่ว่าจะเป็นอินโดนีเซีย อังกฤษ ญี่ปุ่น จีน สเปน หรือเกาหลี และเลือกใช้หน้าจอแอปเป็นภาษาใดภาษาหนึ่งใน 6 ภาษาเดียวกันนี้ได้ด้วย</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">สมอลล์ทอล์กที่แตกแขนง</div><div class="desc">บทสนทนาเดินไปตามคำตอบที่คุณเลือก ฝึกด้วยการอ่านแล้วแตะ หรือพูดออกเสียงก็ได้</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">บทสนทนาตามสถานการณ์ 53 บท</div><div class="desc">มีครบทุกภาษา ทั้งพื้นฐาน คุยเล่นทั่วไป ร้านอาหาร การเดินทาง สนามบิน โรงแรม ช้อปปิ้ง เที่ยวชมสถานที่ และเหตุฉุกเฉิน</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">เพิ่มเติมสำหรับภาษาอินโดนีเซีย</div><div class="desc">สมอลล์ทอล์กที่เขียนขึ้นด้วยมือ คอร์สหนึ่งวัน 3 คอร์สพร้อมตารางประจำสัปดาห์ และคำศัพท์เริ่มต้น 100 คำ</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">โหมดเดินทาง</div><div class="desc">ฝึกด้วยหูในรถผ่านบลูทูธหรือ CarPlay เสียงจะออกลำโพงรถ และประโยคปัจจุบันจะแสดงใน "กำลังเล่น" คุณจะได้ฟังความหมาย เสียงติ๊ง ถึงตาคุณพูด แล้วฟังเฉลยแบบช้าและแบบความเร็วปกติ ทั้งนี้ไม่มีหน้าจอแอปแยกต่างหากบน CarPlay</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">ควบคุมโดยไม่ต้องใช้มือ</div><div class="desc">ใช้ปุ่มถัดไป ก่อนหน้า และเล่นบนพวงมาลัย หรือพูดในตาของคุณว่า ถัดไป อีกครั้ง ช้าลง เร็วขึ้น ฉากถัดไป หรือหยุด พูดประโยคถูกก็จะได้ยินว่า "เยี่ยม!" เริ่มด้วย Siri หรือให้เริ่มเองด้วยระบบอัตโนมัติในแอปทางลัดเมื่อเชื่อมต่อกับรถ</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">เครื่องมือฝึก</div><div class="desc">ฝึกออกเสียงพร้อมคะแนน มุมมองสคริปต์ นำเข้าบทสนทนาด้วยการวางข้อความ และประวัติการฝึก</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">วลีของฉันและแฟลชการ์ด</div><div class="desc">บันทึกวลีที่เจอ และทบทวนคำศัพท์ด้วยแฟลชการ์ดที่อ่านออกเสียงให้ฟัง</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">คีย์บอร์ดวลี</div><div class="desc">ดูความหมาย แตะครั้งเดียว ประโยคในภาษาที่คุณกำลังเรียนก็ถูกพิมพ์ให้ทันที</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">แชร์กับเพื่อน</div><div class="desc">แชร์สถานการณ์ให้เพื่อนผ่าน iCloud</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">สถานการณ์จาก AI</div><div class="desc">ใส่คีย์ Anthropic API ของคุณเอง พิมพ์หัวข้อ แล้วรับบทสนทนาใหม่เอี่ยม</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>เลิกพูดไม่ออก<br>เป็นฝ่ายเริ่มก่อน</h1>
+        <p class="lead">Malmun คือแอปฝึกบทสนทนาที่ทุกคำตอบที่คุณเลือกจะพาบทสนทนาไปคนละทาง เลือกเรียนภาษาเกาหลี ญี่ปุ่น จีน สเปน หรืออินโดนีเซีย และเวลาอยู่บนรถก็ฝึกได้ด้วยหูกับเสียงอย่างเดียว</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">ดาวน์โหลดฟรีบน App Store</a><a class="try" href="#try">ลองต่อบทสนทนาด้วยตัวเอง ↓</a></div>
+        <p class="muted small">บทสนทนาแบบแตกแขนง ฝึกออกเสียง และคำศัพท์ ใช้ได้ฟรี</p>
       </div>
+      <div class="phone"><img src="../img/th/02-practice.jpg" alt="เลิกพูดไม่ออก เป็นฝ่ายเริ่มก่อน" width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>ทุกอย่างใช้ฟรี ยกเว้นสองอย่างด้านล่างนี้</p>
+
+
+    <section class="reveal" id="try">
+      <h2>ลองต่อบทสนทนาด้วยตัวเอง</h2>
+      <p class="muted">นี่คือบทสนทนาภาษาอินโดนีเซีย “ทักทายตอนเช้า” จากในแอปจริง ทุกประโยคที่คุณเลือกจะพาบทสนทนาไปอีกทาง</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;ลองต่อบทสนทนาด้วยตัวเอง&quot;, &quot;lead&quot;: &quot;นี่คือบทสนทนาภาษาอินโดนีเซีย “ทักทายตอนเช้า” จากในแอปจริง ทุกประโยคที่คุณเลือกจะพาบทสนทนาไปอีกทาง&quot;, &quot;me&quot;: &quot;ฉัน&quot;, &quot;other&quot;: &quot;อีกฝ่าย&quot;, &quot;pos&quot;: &quot;เชิงบวก +&quot;, &quot;neg&quot;: &quot;เชิงลบ −&quot;, &quot;askOther&quot;: &quot;อีกฝ่ายจะพูดว่าอะไร&quot;, &quot;askMe&quot;: &quot;คุณจะตอบว่าอะไร&quot;, &quot;done&quot;: &quot;จบบทสนทนาแล้ว ได้ {score} คะแนน ลองเริ่มใหม่แล้วเลือกทางอื่นดู&quot;, &quot;restart&quot;: &quot;เริ่มใหม่&quot;, &quot;listen&quot;: &quot;ฟัง&quot;, &quot;note&quot;: &quot;เหมือนในแอป คำตอบเชิงบวกได้ 10 คะแนน คำตอบอื่นได้ 5 คะแนน ความหมายแสดงเป็นภาษาอังกฤษ เหมือนในแอปเมื่อใช้ภาษาไทย ถ้าเบราว์เซอร์มีเสียงภาษาอินโดนีเซีย จะอ่านประโยคที่คุณเลือกให้ฟัง&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>จำประโยคได้ แต่พอถึงตอนต้องตอบกลับนึกไม่ออก?</h2>
+      <p>ในหนังสือ บทสนทนาเป็นไปตามบททุกครั้ง แต่ในชีวิตจริง อีกฝ่ายมักตอบสิ่งที่คุณไม่ได้คาดไว้ Malmun ให้คุณเดินผ่านทุกทางแยกของบทสนทนาไว้ก่อน ไม่ว่าอีกฝ่ายจะพูดอะไร ประโยคถัดไปก็พร้อมแล้ว แม้แต่ทางกลับบ้านก็กลายเป็นเวลาฝึก</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ฝึกด้วยหูระหว่างขับรถ</h2>
+        <p>โหมดเดินทางเล่นผ่านลำโพงรถด้วย Bluetooth หรือ CarPlay คุณจะได้ยินความหมายก่อน เสียงสัญญาณจะเว้นเวลาให้คุณพูดเอง แล้วคำตอบจะเล่นช้าหนึ่งรอบและความเร็วปกติอีกหนึ่งรอบ<br>ข้ามและฟังซ้ำได้ด้วยปุ่มบนพวงมาลัย หรือพูด <code>next</code>, <code>again</code>, <code>slower</code> เมื่อถึงตาคุณ และจะหยุดชั่วคราวเมื่อระบบนำทางพูด</p>
+      </div>
+      <div class="phone"><img src="../img/th/03-drive.jpg" alt="ฝึกด้วยหูระหว่างขับรถ" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ครบทุกสถานการณ์ทั้งเที่ยวและชีวิตประจำวัน</h2>
+        <p>ทุกภาษามีบทสนทนาตามสถานการณ์ 53 บท ตั้งแต่ประโยคพื้นฐาน คุยเล่นทั่วไป ร้านอาหาร การเดินทาง สนามบิน โรงแรม ช้อปปิ้ง เที่ยวชม ไปจนถึงเหตุฉุกเฉิน<br>ถ้าเรียนภาษาอินโดนีเซียจะมีเพิ่มอีก ทั้งบทคุยเล่นที่เขียนเอง 5 บท คอร์สหนึ่งวัน 3 คอร์ส คอร์สละ 6 ฉากพร้อมตารางรายสัปดาห์ และคำศัพท์สำหรับไปทำงานต่างประเทศ 100 คำ</p>
+      </div>
+      <div class="phone"><img src="../img/th/01-home.jpg" alt="ครบทุกสถานการณ์ทั้งเที่ยวและชีวิตประจำวัน" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>เช็กว่าพูดถูกหรือเปล่า</h2>
+        <p>ฝึกออกเสียงจะให้คะแนน และใช้สีบอกคำที่พูดถูกกับคำที่พลาดไป<br>ในหน้าดูสคริปต์ บทสนทนาทั้งหมดจะแสดงเหมือนแชต ฟังรวดเดียวจบ หรือซ่อนความหมายไว้ทดสอบตัวเองก็ได้</p>
+      </div>
+      <div class="phone"><img src="../img/th/05-pronunciation.jpg" alt="เช็กว่าพูดถูกหรือเปล่า" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>เริ่มได้ในสามขั้นตอน</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>เลือกภาษา</h3><p>แตะธงด้านบนสุดของหน้าหลัก ประโยคและคำศัพท์จะบันทึกแยกตามภาษา</p></li>
+<li class="card"><span class="n">2</span><h3>เปิดบทสนทนา</h3><p>แตะคำตอบในโหมดข้อความ หรือแตะไมโครโฟนแล้วพูด โหมดเสียงจะหาคำตอบที่ใกล้ที่สุดให้</p></li>
+<li class="card"><span class="n">3</span><h3>บนรถใช้โหมดเดินทาง</h3><p>เชื่อมต่อ iPhone กับรถแล้วกดเล่น ไม่ต้องมองหน้าจอ</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>การควบคุมโหมดเดินทาง</h2>
+      <div class="card table">
+        <dl><div><dt>พวงมาลัย: เพลงถัดไป</dt><dd>ประโยคถัดไป</dd></div><div><dt>พวงมาลัย: เพลงก่อนหน้า</dt><dd>ประโยคเดิมอีกครั้ง</dd></div><div><dt>ปุ่มเล่น</dt><dd>หยุดชั่วคราวและเล่นต่อ</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>ประโยคถัดไป</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>ฟังอีกครั้ง</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>ปรับความเร็วการอ่าน</dd></div><div><dt><code>next scene</code></dt><dd>ไปบทสนทนาถัดไป</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>เลิกฝึก</dd></div><div><dt>บอก Siri ว่า “เริ่มฝึกระหว่างเดินทางใน Malmun”</dt><dd>เริ่มโดยไม่ต้องแตะ iPhone</dd></div></dl>
+      </div>
+      <p class="muted">เมื่อแอปใช้ภาษาไทย ให้พูดคำสั่งเสียงเป็นภาษาอังกฤษ คำสั่งจะถูกฟังเฉพาะตอนถึงตาคุณหลังเสียงสัญญาณ ประโยคที่กำลังเล่นจะแสดงในข้อมูลการเล่นบนหน้าจอรถ CarPlay ไม่มีหน้าจอแอปแยก</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>เกือบทุกอย่างใช้ฟรี Malmun Pro ปลดล็อกส่วนที่เหลือ</h2>
       <div class="plans">
-        <div class="plan"><h3>ฟรี</h3><ul><li>สมอลล์ทอล์ก คอร์สหนึ่งวัน และคำศัพท์เริ่มต้น</li><li>บทสนทนาตามสถานการณ์หมวดพื้นฐานและคุยเล่นทั่วไป</li><li>โหมดเดินทาง วันละ 3 ฉาก</li><li>ฝึกออกเสียง มุมมองสคริปต์ นำเข้าด้วยการวางข้อความ และประวัติการฝึก</li><li>วลีของฉัน แฟลชการ์ด คีย์บอร์ดวลี การแชร์กับเพื่อน และสถานการณ์จาก AI</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>บทสนทนาตามสถานการณ์ทั้งหมด: ร้านอาหาร การเดินทาง สนามบิน โรงแรม ช้อปปิ้ง เที่ยวชมสถานที่ เหตุฉุกเฉิน</li><li>โหมดเดินทางไม่จำกัด</li></ul></div>
+        <div class="card plan free">
+          <h3>ฟรี</h3>
+          <ul><li>คุยเล่นแบบแตกแขนงและคอร์สหนึ่งวัน (ภาษาอินโดนีเซีย)</li><li>บทสนทนาตามสถานการณ์: ประโยคพื้นฐานและคุยเล่นทั่วไป</li><li>โหมดเดินทาง วันละ 3 ฉาก</li><li>ฝึกออกเสียง ดูสคริปต์ นำเข้าบทสนทนา ประวัติการฝึก</li><li>ประโยคของฉัน บัตรคำศัพท์ คีย์บอร์ดประโยค</li><li>แชร์บทสนทนากับเพื่อน สร้างบทสนทนาด้วย AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>บทสนทนาตามสถานการณ์ทั้งหมด: ร้านอาหาร การเดินทาง สนามบิน โรงแรม ช้อปปิ้ง เที่ยวชม เหตุฉุกเฉิน</li><li>โหมดเดินทางไม่จำกัด</li><li>ใช้ได้กับทุกภาษา</li></ul>
+          <p class="muted">สมัครรายปี หรือซื้อครั้งเดียวใช้ได้ตลอด</p>
+        </div>
       </div>
-      <p class="note">เลือกสมัครรายปีหรือซื้อขาดครั้งเดียวแบบตลอดชีพ ดูราคาได้ในแอปหรือบน App Store</p>
+      <p class="muted">ดูราคาได้ในแอปและบน App Store การสมัครรายปีจะต่ออายุอัตโนมัติ เว้นแต่ยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบ</p>
     </section>
-    <section id="privacy">
-      <h2>ความเป็นส่วนตัว</h2>
-      <p>ไม่ต้องมีบัญชีและไม่มีการติดตามเพื่อโฆษณา สิ่งที่คุณเรียนอยู่ในเครื่องของคุณ และอยู่ใน iCloud หากคุณเปิดการแชร์ แอปส่งเพียงสถิติการใช้งานแบบไม่ระบุตัวตนและรายงานข้อผิดพลาด เพื่อใช้แก้ไขและปรับปรุงแอป</p>
-      <p><a href="privacy.html">อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม</a> · <a href="support.html">หน้าช่วยเหลือ</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>คำถามที่พบบ่อย</h2>
+      <div class="faq"><details><summary>เรียนภาษาอะไรได้บ้าง</summary><p>ภาษาเกาหลี ญี่ปุ่น จีน สเปน และอินโดนีเซีย ปุ่มและเมนูเป็นภาษาไทย แต่ความหมายของประโยคและคำสั่งเสียงเป็นภาษาอังกฤษ ภาษาอังกฤษจึงไม่อยู่ในรายการให้เลือกเรียน</p></details>
+<details><summary>ใช้บนรถอย่างไร</summary><p>เชื่อมต่อ iPhone กับรถผ่าน Bluetooth หรือ CarPlay เปิดโหมดเดินทางแล้วกดเล่น เสียงจะออกทางลำโพงรถ และประโยคที่กำลังเล่นจะแสดงใน “กำลังเล่น” จะบอก Siri ว่า “เริ่มฝึกระหว่างเดินทางใน Malmun” ก็ได้ หรือตั้งค่าอัตโนมัติในแอปคำสั่งลัดไว้ครั้งเดียว ให้เริ่มทันทีที่เชื่อมต่อ CarPlay (หรือ Bluetooth ของรถ)</p></details>
+<details><summary>ไมโครโฟนฟังตลอดเวลาไหม</summary><p>ไม่ ไมโครโฟนของ iPhone จะฟังเฉพาะตอนถึงตาคุณหลังเสียงสัญญาณ และสิ่งที่ได้ยินจะประมวลผลบนเครื่องเท่านั้น</p></details>
+<details><summary>แอปจับการออกเสียงไม่ค่อยได้</summary><p>การรู้จำเสียงทำงานในภาษาที่คุณกำลังเรียน ลองฝึกในที่เงียบกว่านี้ และตรวจดูว่าได้ดาวน์โหลดการรู้จำเสียงของภาษานั้นไว้ในเครื่องแล้ว</p></details>
+<details><summary>เพิ่มคีย์บอร์ดอย่างไร</summary><p>ไปที่ การตั้งค่า ▸ ทั่วไป ▸ แป้นพิมพ์ ▸ แป้นพิมพ์ ▸ เพิ่มแป้นพิมพ์ใหม่ แล้วเลือกคีย์บอร์ด Malmun ระหว่างพิมพ์ให้แตะปุ่มลูกโลกเพื่อสลับ ไม่ต้องเปิดการเข้าถึงแบบเต็ม ถ้าอยากให้แสดงประโยคน้อยลง ให้แตะไอคอนคีย์บอร์ดมุมขวาล่างของหน้าหลัก ▸ จัดการคีย์บอร์ด</p></details>
+<details><summary>ไม่เห็นบทสนทนาที่เพื่อนแชร์มา</summary><p>การแชร์กับเพื่อนทำงานผ่าน iCloud ทั้งสองคนจึงต้องลงชื่อเข้า iCloud ถ้ายังไม่เห็น ให้ปิดแอปให้สนิทแล้วเปิดใหม่</p></details>
+<details><summary>ต้องใช้อะไรบ้างถึงจะสร้างบทสนทนาด้วย AI ได้</summary><p>ใส่คีย์ API ของ Anthropic ของคุณเองในแอปแล้วพิมพ์หัวข้อ แอปจะสร้างบทสนทนาใหม่ให้ ฟีเจอร์อื่นทั้งหมดใช้ได้แม้ไม่มีคีย์</p></details>
+<details><summary>ยกเลิกการสมัครหรือขอเงินคืนอย่างไร</summary><p>การชำระเงินดำเนินการโดย Apple ยกเลิกได้ที่ การตั้งค่า iPhone ▸ บัญชี Apple ▸ การสมัครรับ ▸ Malmun ส่วนการขอเงินคืนให้ส่งคำขอถึง Apple ที่ reportaproblem.apple.com</p></details>
+<details><summary>เปลี่ยน iPhone แล้ว Pro หายไป</summary><p>ลงชื่อเข้าด้วยบัญชี Apple เดิม แล้วใน Malmun แตะ การตั้งค่า ▸ Malmun Pro ▸ กู้คืนการซื้อ</p></details>
+<details><summary>ความคืบหน้าในการเรียนเก็บไว้ที่ไหน</summary><p>ไม่ต้องมีบัญชี ข้อมูลอยู่ในเครื่องและใน iCloud ของคุณเอง ไม่มีโฆษณาและไม่ติดตาม ส่งเพียงสถิติการใช้งานแบบไม่ระบุตัวตนและรายงานข้อผิดพลาดเท่านั้น แจ้งบั๊กหรือขอฟีเจอร์ได้ที่ GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues) ด้วย</p></details></div>
+      <p class="contact">มีคำถามหรือข้อเสนอแนะ เขียนถึงเราได้ที่ <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> ผ่าน การตั้งค่า ▸ ส่งความคิดเห็น ในแอป หรือทาง Instagram @lee25_ios</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>ให้ทางกลับบ้านคืนนี้<br>เป็นบทสนทนาแรกของคุณ</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">ดาวน์โหลดฟรีบน App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="ภาษา"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th" aria-current="page">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

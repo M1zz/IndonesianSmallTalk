@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — разговорная практика</title>
-  <meta name="description" content="Malmun — приложение для iOS, в котором можно тренировать диалоги с ветвлением на шести языках, а в машине — заниматься без рук в режиме «В пути».">
+  <title>Malmun: разговорная практика, даже за рулём</title>
+  <meta name="description" content="Выберите ответ, и разговор пойдёт в эту сторону. Тренируйте корейский, японский, китайский, испанский или индонезийский на слух и вслух, даже по дороге на работу.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/ru/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: разговорная практика, даже за рулём">
+  <meta property="og:description" content="Выберите ответ, и разговор пойдёт в эту сторону. Тренируйте корейский, японский, китайский, испанский или индонезийский на слух и вслух, даже по дороге на работу.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/ru/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/ru/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Pages"><a href="./" aria-current="page">Главная</a> <a href="support.html">Поддержка</a> <a href="privacy.html">Конфиденциальность</a></nav>
-    </div>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <header class="bar">
+    <a class="brand" href="../ru/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Язык</a>
   </header>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru" aria-current="true">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Говорите на новом языке — реплика за репликой</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Поддержка</a>
-      <a class="btn ghost" href="privacy.html">Политика конфиденциальности</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>О Malmun</h2>
-      <p>Malmun помогает готовиться к настоящим разговорам с помощью диалогов с ветвлением. Выберите язык для изучения — индонезийский, английский, японский, китайский, испанский или корейский, — а сам интерфейс приложения можно включить на любом из тех же шести языков.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Small talk с ветвлением</div><div class="desc">Разговор идёт туда, куда его ведут ваши ответы. Тренируйтесь, читая и нажимая, или говоря вслух.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 диалога по ситуациям</div><div class="desc">На каждом языке: базовые фразы, повседневное общение, рестораны, транспорт, аэропорт, отели, покупки, достопримечательности и экстренные случаи.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Больше для индонезийского</div><div class="desc">Small talk, написанный вручную, три курса «Один день» с недельным расписанием и стартовый словарь из 100 слов.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Режим «В пути»</div><div class="desc">Тренируйтесь на слух в машине по Bluetooth или CarPlay. Звук идёт через динамики автомобиля, а фраза отображается в разделе «Исполняется». Вы слышите значение, затем сигнал — и ваша очередь говорить, после чего правильный ответ звучит медленно и в обычном темпе. Отдельного экрана приложения в CarPlay нет.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Управление без рук</div><div class="desc">Пользуйтесь кнопками на руле — «следующий», «предыдущий» и «воспроизведение» — или говорите в свою очередь: «дальше», «ещё раз», «медленнее», «быстрее», «следующая сцена», «стоп». Если вы сказали фразу верно, то услышите «Отлично!». Запускайте практику через Siri или автоматически — с помощью автоматизации в «Командах» при подключении к машине.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Инструменты практики</div><div class="desc">Тренировка произношения с оценкой, просмотр сценария, импорт диалогов вставкой текста и история практики.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Мои фразы и карточки</div><div class="desc">Сохраняйте фразы, которые вы узнали, и повторяйте слова по карточкам, которые читают их вслух.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Клавиатура фраз</div><div class="desc">Увидели значение, нажали один раз — и фраза напечатана на изучаемом языке.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Делитесь с друзьями</div><div class="desc">Делитесь сценариями с друзьями через iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Сценарии от ИИ</div><div class="desc">Добавьте свой ключ Anthropic API, введите тему — и получите новый диалог.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Хватит теряться.<br>Заговорите первым.</h1>
+        <p class="lead">В тренажёре разговора Malmun каждый выбранный ответ уводит диалог в свою сторону. Учите корейский, японский, китайский, испанский или индонезийский, а в машине занимайтесь только на слух и голосом.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Скачать бесплатно в App Store</a><a class="try" href="#try">Продолжите разговор сами ↓</a></div>
+        <p class="muted small">Ветвящиеся диалоги, тренировка произношения и словарь бесплатны.</p>
       </div>
+      <div class="phone"><img src="../img/ru/02-practice.jpg" alt="Хватит теряться. Заговорите первым." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Бесплатно всё, кроме двух вещей ниже.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Продолжите разговор сами</h2>
+      <p class="muted">Это «Утреннее приветствие», индонезийский диалог прямо из приложения. Каждая выбранная фраза поворачивает разговор в другую сторону.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Продолжите разговор сами&quot;, &quot;lead&quot;: &quot;Это «Утреннее приветствие», индонезийский диалог прямо из приложения. Каждая выбранная фраза поворачивает разговор в другую сторону.&quot;, &quot;me&quot;: &quot;Я&quot;, &quot;other&quot;: &quot;Собеседник&quot;, &quot;pos&quot;: &quot;Позитивный +&quot;, &quot;neg&quot;: &quot;Негативный −&quot;, &quot;askOther&quot;: &quot;Что может сказать собеседник?&quot;, &quot;askMe&quot;: &quot;Что вы ответите?&quot;, &quot;done&quot;: &quot;Разговор окончен: {score} очков. Начните заново и попробуйте другой путь.&quot;, &quot;restart&quot;: &quot;Сначала&quot;, &quot;listen&quot;: &quot;Послушать&quot;, &quot;note&quot;: &quot;Как в приложении: позитивный ответ даёт 10 очков, любой другой 5. Перевод фраз на английском, как и в приложении на русском. Если в браузере есть индонезийский голос, он прочитает каждую выбранную фразу.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Фразу выучили, а ответить не смогли?</h2>
+      <p>В учебнике диалоги всегда идут по сценарию. В жизни собеседник отвечает то, чего вы не ждали. Malmun заранее проводит вас по всем веткам разговора, чтобы следующая фраза была наготове, что бы вам ни сказали. Даже дорога домой становится временем практики.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Занимайтесь на слух за рулём</h2>
+        <p>Режим «В пути» играет через динамики машины по Bluetooth или CarPlay. Сначала вы слышите перевод, после сигнала у вас есть время сказать фразу самому, затем ответ звучит один раз медленно и один раз в обычном темпе.<br>Листайте и повторяйте кнопками на руле или говорите <code>next</code>, <code>again</code>, <code>slower</code>, когда ваша очередь. Во время подсказок навигатора воспроизведение приостанавливается.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/03-drive.jpg" alt="Занимайтесь на слух за рулём" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Все ситуации для поездок и жизни</h2>
+        <p>В каждом языке 53 диалога по ситуациям: основы, повседневный разговор, ресторан, транспорт, аэропорт, отель, покупки, экскурсии и экстренные случаи.<br>Для тех, кто учит индонезийский, есть ещё больше: 5 авторских small talk, 3 курса «Один день» по 6 сцен с недельным расписанием и 100 слов для командировки.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/01-home.jpg" alt="Все ситуации для поездок и жизни" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Проверьте, правильно ли сказали</h2>
+        <p>Тренировка произношения ставит оценку и выделяет цветом слова, которые получились, и те, что вы пропустили.<br>В сценарии весь диалог раскрывается как переписка. Прослушайте его целиком или скройте перевод и проверьте себя.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/05-pronunciation.jpg" alt="Проверьте, правильно ли сказали" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Начать можно в три шага</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Выберите язык</h3><p>Нажмите на флаг вверху главного экрана. Фразы и словарь хранятся отдельно для каждого языка.</p></li>
+<li class="card"><span class="n">2</span><h3>Откройте диалог</h3><p>Нажимайте ответы в текстовом режиме или нажмите микрофон и говорите: голосовой режим найдёт ближайший ответ.</p></li>
+<li class="card"><span class="n">3</span><h3>В машине: режим «В пути»</h3><p>Подключите iPhone к машине и нажмите воспроизведение. Смотреть на экран не нужно.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Управление режимом «В пути»</h2>
+      <div class="card table">
+        <dl><div><dt>Руль: следующий трек</dt><dd>Следующая фраза</dd></div><div><dt>Руль: предыдущий трек</dt><dd>Та же фраза ещё раз</dd></div><div><dt>Кнопка воспроизведения</dt><dd>Пауза и продолжение</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Следующая фраза</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Прослушать ещё раз</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Изменить скорость чтения</dd></div><div><dt><code>next scene</code></dt><dd>Перейти к следующему диалогу</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Закончить тренировку</dd></div><div><dt>Siri: «Malmun: начать тренировку в пути»</dt><dd>Начать, не касаясь iPhone</dd></div></dl>
+      </div>
+      <p class="muted">Когда приложение на русском, голосовые команды произносятся по-английски. Их слушают только в вашу очередь, после сигнала. Текущая фраза видна в информации о воспроизведении на экране машины. Отдельного экрана приложения в CarPlay нет.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Почти всё бесплатно. Malmun Pro открывает остальное.</h2>
       <div class="plans">
-        <div class="plan"><h3>Бесплатно</h3><ul><li>Small talk, курсы «Один день» и стартовый словарь</li><li>Диалоги по ситуациям: базовые и повседневные</li><li>Режим «В пути»: 3 сцены в день</li><li>Тренировка произношения, просмотр сценария, импорт вставкой и история практики</li><li>Мои фразы, карточки, клавиатура фраз, обмен с друзьями и сценарии от ИИ</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Все диалоги по ситуациям: рестораны, транспорт, аэропорт, отель, покупки, достопримечательности, экстренные случаи</li><li>Режим «В пути» без ограничений</li></ul></div>
+        <div class="card plan free">
+          <h3>Бесплатно</h3>
+          <ul><li>Ветвящийся small talk и курсы «Один день» (индонезийский)</li><li>Диалоги по ситуациям: основы и повседневный разговор</li><li>Режим «В пути», 3 сцены в день</li><li>Произношение, сценарий, импорт диалогов, история занятий</li><li>Мои фразы, карточки слов, клавиатура фраз</li><li>Обмен сценариями с друзьями, сценарии с помощью ИИ</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Все диалоги по ситуациям: ресторан, транспорт, аэропорт, отель, покупки, экскурсии, экстренные случаи</li><li>Режим «В пути» без ограничений</li><li>Действует для всех языков</li></ul>
+          <p class="muted">Годовая подписка или разовая покупка навсегда</p>
+        </div>
       </div>
-      <p class="note">Выберите годовую подписку или единовременную покупку навсегда. Цены смотрите в приложении или в App Store.</p>
+      <p class="muted">Цены смотрите в приложении и в App Store. Годовая подписка продлевается автоматически, если не отменить её минимум за 24 часа до конца периода.</p>
     </section>
-    <section id="privacy">
-      <h2>Конфиденциальность</h2>
-      <p>Без учётной записи и без рекламного отслеживания. То, что вы учите, остаётся на вашем устройстве и, если вы включите общий доступ, в iCloud. Приложение отправляет только анонимную статистику использования и отчёты об ошибках, чтобы его можно было исправлять и улучшать.</p>
-      <p><a href="privacy.html">Полный текст политики конфиденциальности</a> · <a href="support.html">Страница поддержки</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Частые вопросы</h2>
+      <div class="faq"><details><summary>Какие языки можно учить?</summary><p>Корейский, японский, китайский, испанский и индонезийский. Интерфейс на русском, но перевод фраз и голосовые команды на английском, поэтому сам английский в списке не появляется.</p></details>
+<details><summary>Как пользоваться в машине?</summary><p>Подключите iPhone к машине по Bluetooth или через CarPlay, откройте режим «В пути» и нажмите воспроизведение. Звук идёт из динамиков машины, текущая фраза видна в «Исполняется». Можно сказать Siri «Malmun: начать тренировку в пути» или один раз настроить автоматизацию в приложении «Команды», чтобы тренировка начиналась при подключении CarPlay (или Bluetooth машины).</p></details>
+<details><summary>Микрофон слушает всё время?</summary><p>Нет. Он слушает только в вашу очередь, после сигнала, через микрофон iPhone, а услышанное обрабатывается на устройстве.</p></details>
+<details><summary>Моё произношение плохо распознаётся.</summary><p>Распознавание речи работает на языке, который вы учите. Попробуйте в более тихом месте и проверьте, загружено ли распознавание речи для этого языка на устройстве.</p></details>
+<details><summary>Как добавить клавиатуру?</summary><p>Откройте Настройки ▸ Основные ▸ Клавиатура ▸ Клавиатуры ▸ Новые клавиатуры и выберите клавиатуру Malmun. При наборе переключайтесь кнопкой с глобусом. Полный доступ не нужен. Чтобы фраз было меньше, нажмите значок клавиатуры в правом нижнем углу главного экрана ▸ Управление клавиатурой.</p></details>
+<details><summary>Не вижу сценарий, которым поделился друг.</summary><p>Обмен работает через iCloud, поэтому вы оба должны войти в iCloud. Если сценарий всё равно не появился, полностью закройте приложение и откройте снова.</p></details>
+<details><summary>Что нужно, чтобы создавать сценарии с ИИ?</summary><p>Введите в приложении свой ключ API Anthropic и напишите тему, и появится новый диалог. Всё остальное работает без ключа.</p></details>
+<details><summary>Как отменить подписку или вернуть деньги?</summary><p>Платежи обрабатывает Apple. Отменить подписку можно в Настройках iPhone ▸ Аккаунт Apple ▸ Подписки ▸ Malmun. Возврат запрашивайте у Apple на reportaproblem.apple.com.</p></details>
+<details><summary>Сменил iPhone, и Pro пропал.</summary><p>Войдите с тем же Аккаунтом Apple и в Malmun нажмите Настройки ▸ Malmun Pro ▸ Восстановить покупки.</p></details>
+<details><summary>Где хранится мой прогресс?</summary><p>Аккаунт не нужен. Данные остаются на устройстве и в вашем iCloud. Ни рекламы, ни отслеживания: отправляются только анонимная статистика использования и отчёты об ошибках. Об ошибках и пожеланиях можно написать и в GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Вопросы или пожелания? Пишите на <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, через Настройки ▸ Отправить отзыв в приложении или в Instagram @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Пусть дорога домой станет<br>вашим первым разговором</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Скачать бесплатно в App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Язык"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru" aria-current="page">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Политика конфиденциальности</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

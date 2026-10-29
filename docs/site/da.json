@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: øv samtaler på fremmedsprog, også i bilen",
+  "description": "Vælg et svar, og samtalen tager den retning. Øv koreansk, japansk, kinesisk, spansk eller indonesisk med ører og stemme, også mens du kører.",
+  "hero": {
+    "headline": "Slut med at gå i stå.\nSig det først.",
+    "lead": "Malmun er en samtaletræner, hvor hvert svar du vælger, sender dialogen i en ny retning. Lær koreansk, japansk, kinesisk, spansk eller indonesisk, og øv i bilen med kun ørerne og stemmen.",
+    "cta": "Hent gratis i App Store",
+    "note": "Forgrenede samtaler, udtaletræning og ordforråd er gratis."
+  },
+  "demo": {
+    "title": "Før selv samtalen videre",
+    "lead": "Det her er ”Godmorgen”, en indonesisk samtale, præcis som den ligger i appen. Hver sætning du vælger, fører samtalen et nyt sted hen.",
+    "me": "Mig",
+    "other": "Den anden person",
+    "pos": "Positiv +",
+    "neg": "Negativ −",
+    "askOther": "Hvad kunne den anden sige?",
+    "askMe": "Hvad svarer du?",
+    "done": "Samtalen er slut: {score} point. Start forfra og prøv en anden vej.",
+    "restart": "Start forfra",
+    "listen": "Lyt",
+    "note": "Ligesom i appen: et positivt svar giver 10 point, alle andre 5. Betydningerne står på engelsk, som i appen når den er på dansk. Har din browser en indonesisk stemme, læser den hver sætning op.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Kunne sætningen, men ikke svaret?",
+    "text": "I lærebogen følger samtaler altid manuskriptet. I virkeligheden svarer folk noget, du ikke havde set komme. Med Malmun går du alle grene af en samtale igennem på forhånd, så den næste sætning er klar, uanset hvad der kommer. Selv turen hjem bliver til træningstid."
+  },
+  "features": [
+    {
+      "title": "Øv med ørerne, mens du kører",
+      "text": "Pendlertilstand spiller gennem bilens højttalere via Bluetooth eller CarPlay. Først hører du betydningen, efter et signal får du tid til selv at sige det, og så spilles svaret én gang langsomt og én gang i normalt tempo.\nSpring frem og lyt igen med rattets knapper, eller sig `next`, `again` eller `slower`, når det er din tur. Den holder pause, når navigationen giver besked.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Alle situationer fra rejsen og hverdagen",
+      "text": "Hvert sprog har 53 situationssamtaler: det grundlæggende, hverdagssnak, restaurant, transport, lufthavn, hotel, shopping, sightseeing og nødsituationer.\nLærer du indonesisk, er der mere: 5 håndskrevne small talk-scenarier, 3 dagsforløb med 6 scener hver og et ugeskema samt 100 ord til forretningsrejsen.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Tjek at du sagde det rigtigt",
+      "text": "Udtaletræningen giver dig point og farver de ord, du ramte, og dem du missede.\nI manuskriptet ligger hele samtalen som en chat. Lyt den igennem, eller skjul betydningerne og test dig selv.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Kom i gang i tre trin",
+    "items": [
+      {
+        "title": "Vælg et sprog",
+        "text": "Tryk på flaget øverst på startskærmen. Sætninger og ord gemmes hver for sig for hvert sprog."
+      },
+      {
+        "title": "Åbn en samtale",
+        "text": "Tryk på svar i teksttilstand, eller tryk på mikrofonen og tal: stemmetilstand finder det svar, der ligger tættest på."
+      },
+      {
+        "title": "I bilen: Pendlertilstand",
+        "text": "Forbind iPhone med bilen, og tryk på afspil. Du behøver ikke kigge på skærmen."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Styr Pendlertilstand",
+    "rows": [
+      [
+        "Rat: næste nummer",
+        "Næste sætning"
+      ],
+      [
+        "Rat: forrige nummer",
+        "Samme sætning én gang til"
+      ],
+      [
+        "Afspilningsknap",
+        "Pause og fortsæt"
+      ],
+      [
+        "`next` · `skip`",
+        "Næste sætning"
+      ],
+      [
+        "`again` · `repeat`",
+        "Hør igen"
+      ],
+      [
+        "`slower` · `faster`",
+        "Skift oplæsningstempo"
+      ],
+      [
+        "`next scene`",
+        "Videre til næste samtale"
+      ],
+      [
+        "`stop` · `pause`",
+        "Stop træningen"
+      ],
+      [
+        "Siri: ”Start pendlertræning i Malmun”",
+        "Start uden at røre iPhone"
+      ]
+    ],
+    "note": "Når appen er på dansk, siger du stemmekommandoerne på engelsk. De bliver kun hørt, når det er din tur efter signalet. Den aktuelle sætning vises i bilens afspilningsinfo. Der er ingen særskilt appskærm i CarPlay."
+  },
+  "pricing": {
+    "title": "Næsten alt er gratis. Malmun Pro åbner resten.",
+    "free": {
+      "name": "Gratis",
+      "items": [
+        "Forgrenet small talk og dagsforløb (indonesisk)",
+        "Situationssamtaler: det grundlæggende og hverdagssnak",
+        "Pendlertilstand, 3 scener om dagen",
+        "Udtaletræning, manuskript, import af samtaler, træningshistorik",
+        "Mine sætninger, ordkort, sætningstastatur",
+        "Del scenarier med venner, lav scenarier med AI"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Alle situationssamtaler: restaurant, transport, lufthavn, hotel, shopping, sightseeing, nødsituationer",
+        "Ubegrænset Pendlertilstand",
+        "Gælder alle sprog"
+      ],
+      "note": "Årsabonnement eller ét køb for altid"
+    },
+    "note": "Priserne står i appen og i App Store. Årsabonnementet fornyes automatisk, medmindre du opsiger det senest 24 timer før perioden slutter."
+  },
+  "faq": {
+    "title": "Ofte stillede spørgsmål",
+    "items": [
+      {
+        "q": "Hvilke sprog kan jeg lære?",
+        "a": "Koreansk, japansk, kinesisk, spansk og indonesisk. Knapper og menuer er på dansk, men sætningernes betydning og stemmekommandoerne er på engelsk. Derfor står engelsk ikke selv på listen."
+      },
+      {
+        "q": "Hvordan bruger jeg den i bilen?",
+        "a": "Forbind iPhone med bilen via Bluetooth eller CarPlay, åbn Pendlertilstand, og tryk på afspil. Lyden kommer fra bilens højttalere, og den aktuelle sætning vises under Spiller nu. Du kan også sige til Siri ”Start pendlertræning i Malmun” eller én gang lave en automatisering i appen Genveje, så træningen starter, når CarPlay (eller bilens Bluetooth) forbindes."
+      },
+      {
+        "q": "Lytter mikrofonen hele tiden?",
+        "a": "Nej. Kun når det er din tur efter signalet, via iPhones mikrofon, og det, den hører, behandles på enheden."
+      },
+      {
+        "q": "Min udtale bliver ikke genkendt.",
+        "a": "Talegenkendelsen kører på det sprog, du lærer. Prøv et mere stille sted, og tjek at talegenkendelse for sproget er hentet på enheden."
+      },
+      {
+        "q": "Hvordan tilføjer jeg tastaturet?",
+        "a": "Gå til Indstillinger ▸ Generelt ▸ Tastatur ▸ Tastaturer ▸ Tilføj nyt tastatur, og vælg Malmun-tastaturet. Tryk på globussen, mens du skriver, for at skifte. Fuld adgang er ikke nødvendig. Vil du vise færre sætninger, så tryk på tastaturikonet nederst til højre på startskærmen ▸ Administrer tastatur."
+      },
+      {
+        "q": "Jeg kan ikke se et scenarie, en ven har delt.",
+        "a": "Deling foregår via iCloud, så I skal begge være logget ind på iCloud. Dukker det stadig ikke op, så luk appen helt og åbn den igen."
+      },
+      {
+        "q": "Hvad skal der til for at lave scenarier med AI?",
+        "a": "Indtast din egen Anthropic-API-nøgle i appen og skriv et emne, så laves en ny samtale. Alt andet virker uden nøgle."
+      },
+      {
+        "q": "Hvordan opsiger jeg eller får pengene tilbage?",
+        "a": "Betalinger håndteres af Apple. Opsig i iPhones Indstillinger ▸ Apple-konto ▸ Abonnementer ▸ Malmun. Refusion beder du Apple om på reportaproblem.apple.com."
+      },
+      {
+        "q": "Ny iPhone, og Pro er væk.",
+        "a": "Log ind med samme Apple-konto, og tryk i Malmun på Indstillinger ▸ Malmun Pro ▸ Gendan køb."
+      },
+      {
+        "q": "Hvor gemmes mine fremskridt?",
+        "a": "Du behøver ingen konto. Dine data bliver på enheden og i din egen iCloud. Ingen reklamer og ingen sporing, kun anonym brugsstatistik og fejlrapporter. Fejl og ønsker er også velkomne på GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Gør turen hjem i aften\ntil din første samtale",
+    "cta": "Hent gratis i App Store"
+  },
+  "ui": {
+    "skip": "Gå til indhold",
+    "languages": "Sprog",
+    "privacy": "Privatlivspolitik",
+    "contact": "Spørgsmål eller feedback? Skriv til {email}, brug Indstillinger ▸ Send feedback i appen, eller find os på Instagram: @lee25_ios."
+  }
+}

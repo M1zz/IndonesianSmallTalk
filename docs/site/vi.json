@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: luyện nói ngoại ngữ, cả khi đang lái xe",
+  "description": "Chọn một câu trả lời, cuộc trò chuyện sẽ rẽ theo hướng đó. Luyện tiếng Hàn, Nhật, Trung, Tây Ban Nha hoặc Indonesia bằng tai và giọng nói, ngay cả khi lái xe.",
+  "hero": {
+    "headline": "Hết ấp úng.\nHãy mở lời trước.",
+    "lead": "Malmun là ứng dụng luyện hội thoại, mỗi câu trả lời bạn chọn sẽ đưa cuộc trò chuyện sang một hướng khác. Học tiếng Hàn, Nhật, Trung, Tây Ban Nha hoặc Indonesia, và khi lái xe thì luyện chỉ bằng tai và giọng nói.",
+    "cta": "Tải miễn phí trên App Store",
+    "note": "Hội thoại phân nhánh, luyện phát âm và từ vựng đều miễn phí."
+  },
+  "demo": {
+    "title": "Tự mình nối tiếp cuộc trò chuyện",
+    "lead": "Đây là “Chào buổi sáng”, một đoạn hội thoại tiếng Indonesia lấy nguyên từ ứng dụng. Mỗi câu bạn chọn sẽ đưa câu chuyện sang hướng khác.",
+    "me": "Tôi",
+    "other": "Người đối diện",
+    "pos": "Tích cực +",
+    "neg": "Tiêu cực −",
+    "askOther": "Người kia có thể nói gì?",
+    "askMe": "Bạn sẽ đáp lại thế nào?",
+    "done": "Hết hội thoại: {score} điểm. Bắt đầu lại và thử một hướng khác nhé.",
+    "restart": "Làm lại",
+    "listen": "Nghe",
+    "note": "Giống trong ứng dụng: câu trả lời tích cực được 10 điểm, các câu khác 5 điểm. Nghĩa của câu hiển thị bằng tiếng Anh, giống như trong ứng dụng khi dùng tiếng Việt. Nếu trình duyệt có giọng tiếng Indonesia, mỗi câu bạn chọn sẽ được đọc lên.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Thuộc câu rồi mà đến lúc đáp lại thì cứng họng?",
+    "text": "Trong sách, hội thoại luôn đi đúng kịch bản. Ngoài đời, người ta hay đáp lại những câu bạn không ngờ tới. Malmun cho bạn đi trước qua mọi nhánh của một cuộc trò chuyện, để dù họ nói gì, câu tiếp theo cũng đã sẵn sàng. Ngay cả quãng đường về nhà cũng thành giờ luyện tập."
+  },
+  "features": [
+    {
+      "title": "Luyện bằng tai khi lái xe",
+      "text": "Chế độ đi làm phát qua loa ô tô bằng Bluetooth hoặc CarPlay. Đầu tiên bạn nghe nghĩa, tiếng chuông cho bạn thời gian tự nói, rồi đáp án được phát một lần chậm và một lần ở tốc độ bình thường.\nChuyển câu và nghe lại bằng nút trên vô lăng, hoặc nói `next`, `again`, `slower` khi đến lượt. Ứng dụng tạm dừng khi bản đồ đọc chỉ dẫn.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Đủ mọi tình huống du lịch và thường ngày",
+      "text": "Mỗi ngôn ngữ có 53 hội thoại theo tình huống: câu cơ bản, chuyện trò hằng ngày, nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan và khẩn cấp.\nNếu học tiếng Indonesia còn có thêm: 5 kịch bản trò chuyện viết tay, 3 khóa học theo ngày mỗi khóa 6 cảnh kèm thời khóa biểu tuần, và 100 từ cho chuyến công tác.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Kiểm tra xem mình nói đúng chưa",
+      "text": "Luyện phát âm cho bạn điểm số và tô màu những từ đã nói đúng cùng những từ bị bỏ sót.\nỞ phần xem kịch bản, cả đoạn hội thoại hiện ra như một cuộc chat. Nghe một lượt từ đầu đến cuối, hoặc ẩn nghĩa đi để tự kiểm tra.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Bắt đầu chỉ với ba bước",
+    "items": [
+      {
+        "title": "Chọn ngôn ngữ",
+        "text": "Chạm vào lá cờ trên cùng màn hình chính. Câu và từ vựng được lưu riêng cho từng ngôn ngữ."
+      },
+      {
+        "title": "Mở một hội thoại",
+        "text": "Chạm vào câu trả lời ở chế độ chữ, hoặc chạm micro và nói: chế độ giọng nói sẽ tìm câu gần nhất."
+      },
+      {
+        "title": "Trên xe, dùng Chế độ đi làm",
+        "text": "Kết nối iPhone với xe rồi nhấn phát. Không cần nhìn màn hình."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Điều khiển Chế độ đi làm",
+    "rows": [
+      [
+        "Vô lăng: bài tiếp theo",
+        "Câu tiếp theo"
+      ],
+      [
+        "Vô lăng: bài trước",
+        "Nghe lại câu vừa rồi"
+      ],
+      [
+        "Nút phát",
+        "Tạm dừng và tiếp tục"
+      ],
+      [
+        "`next` · `skip`",
+        "Câu tiếp theo"
+      ],
+      [
+        "`again` · `repeat`",
+        "Nghe lại"
+      ],
+      [
+        "`slower` · `faster`",
+        "Đổi tốc độ đọc"
+      ],
+      [
+        "`next scene`",
+        "Sang hội thoại tiếp theo"
+      ],
+      [
+        "`stop` · `pause`",
+        "Dừng luyện tập"
+      ],
+      [
+        "Siri: “Bắt đầu luyện đi làm trong Malmun”",
+        "Bắt đầu mà không chạm vào iPhone"
+      ]
+    ],
+    "note": "Khi ứng dụng dùng tiếng Việt, bạn nói lệnh bằng tiếng Anh. Lệnh chỉ được nghe khi đến lượt bạn, sau tiếng chuông. Câu đang phát hiện trong thông tin phát nhạc trên màn hình xe. CarPlay không có màn hình ứng dụng riêng."
+  },
+  "pricing": {
+    "title": "Gần như mọi thứ đều miễn phí. Malmun Pro mở phần còn lại.",
+    "free": {
+      "name": "Miễn phí",
+      "items": [
+        "Trò chuyện phân nhánh và khóa học theo ngày (tiếng Indonesia)",
+        "Hội thoại theo tình huống: câu cơ bản và chuyện trò hằng ngày",
+        "Chế độ đi làm, 3 cảnh mỗi ngày",
+        "Phát âm, kịch bản, nhập hội thoại, lịch sử luyện tập",
+        "Câu của tôi, thẻ từ vựng, bàn phím câu",
+        "Chia sẻ kịch bản với bạn bè, tạo kịch bản bằng AI"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Toàn bộ hội thoại theo tình huống: nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan, khẩn cấp",
+        "Chế độ đi làm không giới hạn",
+        "Áp dụng cho mọi ngôn ngữ"
+      ],
+      "note": "Gói năm hoặc mua một lần dùng trọn đời"
+    },
+    "note": "Xem giá trong ứng dụng và trên App Store. Gói năm tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi hết kỳ."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "items": [
+      {
+        "q": "Tôi có thể học những ngôn ngữ nào?",
+        "a": "Tiếng Hàn, Nhật, Trung, Tây Ban Nha và Indonesia. Nút bấm và menu là tiếng Việt, nhưng nghĩa của câu và lệnh giọng nói là tiếng Anh. Vì vậy bản thân tiếng Anh không có trong danh sách."
+      },
+      {
+        "q": "Dùng trên ô tô thế nào?",
+        "a": "Kết nối iPhone với xe qua Bluetooth hoặc CarPlay, mở Chế độ đi làm và nhấn phát. Âm thanh phát qua loa xe, câu đang phát hiện ở mục Đang phát. Bạn cũng có thể nói với Siri “Bắt đầu luyện đi làm trong Malmun”, hoặc tạo một lần tự động hóa trong ứng dụng Phím tắt để bắt đầu ngay khi CarPlay (hoặc Bluetooth của xe) kết nối."
+      },
+      {
+        "q": "Micro có nghe liên tục không?",
+        "a": "Không. Micro chỉ nghe khi đến lượt bạn sau tiếng chuông, qua micro của iPhone, và những gì nghe được chỉ xử lý trên thiết bị."
+      },
+      {
+        "q": "Phát âm của tôi không được nhận ra.",
+        "a": "Nhận dạng giọng nói chạy bằng ngôn ngữ bạn đang học. Hãy thử ở nơi yên tĩnh hơn và kiểm tra rằng nhận dạng giọng nói của ngôn ngữ đó đã được tải về thiết bị."
+      },
+      {
+        "q": "Thêm bàn phím bằng cách nào?",
+        "a": "Vào Cài đặt ▸ Cài đặt chung ▸ Bàn phím ▸ Bàn phím ▸ Thêm bàn phím mới và chọn bàn phím Malmun. Khi gõ, chạm nút quả địa cầu để chuyển. Không cần cho phép truy cập đầy đủ. Muốn hiện ít câu hơn, chạm biểu tượng bàn phím ở góc dưới bên phải màn hình chính ▸ Quản lý bàn phím."
+      },
+      {
+        "q": "Tôi không thấy kịch bản bạn tôi đã chia sẻ.",
+        "a": "Chia sẻ hoạt động qua iCloud, nên cả hai cần đăng nhập iCloud. Nếu vẫn không thấy, hãy đóng hẳn ứng dụng rồi mở lại."
+      },
+      {
+        "q": "Cần gì để tạo kịch bản bằng AI?",
+        "a": "Nhập khóa API Anthropic của riêng bạn vào ứng dụng và viết một chủ đề, một hội thoại mới sẽ được tạo. Mọi thứ khác vẫn dùng được khi không có khóa."
+      },
+      {
+        "q": "Hủy gói hoặc xin hoàn tiền thế nào?",
+        "a": "Thanh toán do Apple xử lý. Hủy trong Cài đặt iPhone ▸ Tài khoản Apple ▸ Đăng ký ▸ Malmun. Muốn hoàn tiền, hãy gửi yêu cầu cho Apple tại reportaproblem.apple.com."
+      },
+      {
+        "q": "Đổi iPhone mới thì mất Pro.",
+        "a": "Đăng nhập cùng Tài khoản Apple, rồi trong Malmun chạm Cài đặt ▸ Malmun Pro ▸ Khôi phục giao dịch mua."
+      },
+      {
+        "q": "Tiến độ học của tôi được lưu ở đâu?",
+        "a": "Không cần tài khoản. Dữ liệu nằm trên thiết bị và trong iCloud của chính bạn. Không quảng cáo, không theo dõi, chỉ gửi thống kê sử dụng ẩn danh và báo cáo lỗi. Bạn cũng có thể báo lỗi hoặc góp ý trên GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Biến quãng đường về nhà tối nay\nthành cuộc trò chuyện đầu tiên",
+    "cta": "Tải miễn phí trên App Store"
+  },
+  "ui": {
+    "skip": "Đến nội dung chính",
+    "languages": "Ngôn ngữ",
+    "privacy": "Chính sách quyền riêng tư",
+    "contact": "Có câu hỏi hay góp ý? Gửi về {email}, dùng Cài đặt ▸ Gửi phản hồi trong ứng dụng, hoặc nhắn Instagram @lee25_ios."
+  }
+}

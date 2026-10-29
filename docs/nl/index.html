@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Gesprekken oefenen</title>
-  <meta name="description" content="Malmun is een iOS-app om gesprekken met vertakkingen te oefenen in zes talen, met een handsfree Onderweg-modus voor in de auto.">
+  <title>Malmun: oefen gesprekken in een vreemde taal, zelfs in de auto</title>
+  <meta name="description" content="Kies een antwoord en het gesprek gaat die kant op. Oefen Koreaans, Japans, Chinees, Spaans of Indonesisch met je oren en je stem, zelfs achter het stuur.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/nl/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: oefen gesprekken in een vreemde taal, zelfs in de auto">
+  <meta property="og:description" content="Kies een antwoord en het gesprek gaat die kant op. Oefen Koreaans, Japans, Chinees, Spaans of Indonesisch met je oren en je stem, zelfs achter het stuur.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/nl/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/nl/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Pagina's"><a href="./" aria-current="page">Start</a> <a href="support.html">Support</a> <a href="privacy.html">Privacy</a></nav>
-    </div>
+  <a class="skip" href="#main">Naar de inhoud</a>
+  <header class="bar">
+    <a class="brand" href="../nl/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Taal</a>
   </header>
-  <nav class="langs" aria-label="Taal">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl" aria-current="true">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Spreek een nieuwe taal, regel voor regel</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Support</a>
-      <a class="btn ghost" href="privacy.html">Privacybeleid</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Over Malmun</h2>
-      <p>Met Malmun oefen je echte gesprekken aan de hand van dialogen met vertakkingen. Kies een taal om te leren — Indonesisch, Engels, Japans, Chinees, Spaans of Koreaans — en gebruik de app zelf in een van diezelfde zes talen.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Smalltalk met vertakkingen</div><div class="desc">Het gesprek gaat waar jouw antwoorden het heen brengen. Oefen door te lezen en te tikken, of door hardop te spreken.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 situatiegesprekken</div><div class="desc">In elke taal: basiszinnen, alledaagse gesprekken, restaurants, vervoer, het vliegveld, hotels, winkelen, bezienswaardigheden en noodgevallen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Extra voor het Indonesisch</div><div class="desc">Met de hand geschreven smalltalk, drie dagcursussen met een weekrooster en een startwoordenschat van 100 woorden.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Onderweg-modus</div><div class="desc">Oefen met je oren in de auto via Bluetooth of CarPlay. Het geluid komt uit de speakers van je auto en de zin staat bij Nu aan het spelen. Je hoort de betekenis, een belsignaal, jouw beurt om het te zeggen, en daarna het antwoord langzaam en op normaal tempo. Er is geen apart CarPlay-appscherm.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Handsfree bediening</div><div class="desc">Gebruik de knoppen volgende, vorige en afspelen op je stuur, of spreek tijdens je beurt: volgende, opnieuw, langzamer, sneller, volgende scène, stop. Zeg je de zin goed, dan hoor je "Mooi!". Start met Siri, of automatisch met een automatisering in Opdrachten zodra je met de auto verbindt.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Oefenhulpmiddelen</div><div class="desc">Uitspraak oefenen met een score, scriptweergave, dialogen importeren door te plakken en oefengeschiedenis.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Mijn zinnen & flashcards</div><div class="desc">Bewaar zinnen die je oppikt en herhaal woordenschat met flashcards die woorden hardop voorlezen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Zinnentoetsenbord</div><div class="desc">Bekijk de betekenis, tik één keer en de zin wordt getypt in de taal die je leert.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Delen met vrienden</div><div class="desc">Deel scenario's via iCloud met vrienden.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">AI-scenario's</div><div class="desc">Voeg je eigen Anthropic API-sleutel toe, typ een onderwerp en krijg een gloednieuwe dialoog.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Niet meer dichtklappen.<br>Begin zelf.</h1>
+        <p class="lead">Malmun is een gesprekstrainer waarin elk antwoord dat je kiest het gesprek een andere kant op stuurt. Leer Koreaans, Japans, Chinees, Spaans of Indonesisch, en oefen in de auto alleen met je oren en je stem.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Gratis in de App Store</a><a class="try" href="#try">Zet het gesprek zelf voort ↓</a></div>
+        <p class="muted small">Vertakte gesprekken, uitspraak oefenen en woordenschat zijn gratis.</p>
       </div>
+      <div class="phone"><img src="../img/nl/02-practice.jpg" alt="Niet meer dichtklappen. Begin zelf." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Alles is gratis, op de twee onderstaande dingen na.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Zet het gesprek zelf voort</h2>
+      <p class="muted">Dit is ‘Goedemorgen’, een Indonesisch gesprek zoals het in de app staat. Met elke zin die je kiest, gaat het gesprek een andere kant op.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Zet het gesprek zelf voort&quot;, &quot;lead&quot;: &quot;Dit is ‘Goedemorgen’, een Indonesisch gesprek zoals het in de app staat. Met elke zin die je kiest, gaat het gesprek een andere kant op.&quot;, &quot;me&quot;: &quot;Ik&quot;, &quot;other&quot;: &quot;De ander&quot;, &quot;pos&quot;: &quot;Positief +&quot;, &quot;neg&quot;: &quot;Negatief −&quot;, &quot;askOther&quot;: &quot;Wat zou de ander zeggen?&quot;, &quot;askMe&quot;: &quot;Wat zeg jij terug?&quot;, &quot;done&quot;: &quot;Einde gesprek: {score} punten. Begin opnieuw en probeer een andere route.&quot;, &quot;restart&quot;: &quot;Opnieuw&quot;, &quot;listen&quot;: &quot;Beluisteren&quot;, &quot;note&quot;: &quot;Net als in de app: een positief antwoord levert 10 punten op, de rest 5. De betekenissen staan in het Engels, zoals in de app als die in het Nederlands staat. Heeft je browser een Indonesische stem, dan leest hij elke gekozen zin voor.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Zin uit je hoofd geleerd, en dan geen antwoord?</h2>
+      <p>In het lesboek lopen gesprekken altijd volgens plan. In het echt zegt de ander iets wat je niet zag aankomen. Met Malmun loop je vooraf alle vertakkingen van een gesprek door, zodat je de volgende zin klaar hebt, wat er ook komt. Zelfs de rit naar huis wordt oefentijd.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Oefen op gehoor terwijl je rijdt</h2>
+        <p>Onderweg-modus speelt via Bluetooth of CarPlay door de speakers van je auto. Eerst hoor je de betekenis, na een piepje heb je tijd om het zelf te zeggen, daarna hoor je het antwoord één keer langzaam en één keer op normaal tempo.<br>Ga verder en herhaal met de knoppen op het stuur, of zeg <code>next</code>, <code>again</code> of <code>slower</code> als je aan de beurt bent. Bij aanwijzingen van de navigatie pauzeert het even.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/03-drive.jpg" alt="Oefen op gehoor terwijl je rijdt" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Alle situaties voor reis en dagelijks leven</h2>
+        <p>Elke taal heeft 53 situatiegesprekken: basis, dagelijkse praat, restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden en noodgevallen.<br>Leer je Indonesisch, dan is er meer: 5 zelfgeschreven smalltalkgesprekken, 3 dagcursussen van 6 scènes met weekrooster en 100 woorden voor een zakenreis.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/01-home.jpg" alt="Alle situaties voor reis en dagelijks leven" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Check of je het goed zei</h2>
+        <p>Uitspraak oefenen geeft je een score en kleurt de woorden die goed gingen en die je miste.<br>In de scriptweergave zie je het hele gesprek als een chat. Luister het in één keer af of verberg de betekenissen om jezelf te testen.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/05-pronunciation.jpg" alt="Check of je het goed zei" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>In drie stappen aan de slag</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Kies een taal</h3><p>Tik op de vlag bovenaan het beginscherm. Zinnen en woorden worden per taal apart bewaard.</p></li>
+<li class="card"><span class="n">2</span><h3>Open een gesprek</h3><p>Tik antwoorden aan in tekstmodus, of tik op de microfoon en praat: spraakmodus vindt het antwoord dat er het dichtst bij zit.</p></li>
+<li class="card"><span class="n">3</span><h3>In de auto: Onderweg-modus</h3><p>Verbind je iPhone met de auto en druk op afspelen. Naar het scherm kijken hoeft niet.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Onderweg-modus bedienen</h2>
+      <div class="card table">
+        <dl><div><dt>Stuur: volgend nummer</dt><dd>Volgende zin</dd></div><div><dt>Stuur: vorig nummer</dt><dd>Dezelfde zin nog een keer</dd></div><div><dt>Afspeelknop</dt><dd>Pauzeren en verder</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Volgende zin</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Opnieuw horen</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Voorleestempo aanpassen</dd></div><div><dt><code>next scene</code></dt><dd>Naar het volgende gesprek</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Stoppen met oefenen</dd></div><div><dt>Siri: ‘Start onderweg oefenen in Malmun’</dt><dd>Beginnen zonder je iPhone aan te raken</dd></div></dl>
+      </div>
+      <p class="muted">Staat de app in het Nederlands, dan spreek je de commando’s in het Engels uit. Ze worden alleen gehoord als je na het piepje aan de beurt bent. De huidige zin staat in de afspeelinformatie van de auto. Er is geen apart app-scherm in CarPlay.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Bijna alles is gratis. Malmun Pro opent de rest.</h2>
       <div class="plans">
-        <div class="plan"><h3>Gratis</h3><ul><li>Smalltalk, dagcursussen en startwoordenschat</li><li>Basis- en alledaagse situatiegesprekken</li><li>Onderweg-modus, 3 scènes per dag</li><li>Uitspraak oefenen, scriptweergave, importeren door te plakken en oefengeschiedenis</li><li>Mijn zinnen, flashcards, zinnentoetsenbord, delen met vrienden en AI-scenario's</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Alle situatiegesprekken: restaurant, vervoer, vliegveld, hotel, winkelen, bezienswaardigheden, noodgevallen</li><li>Onbeperkt Onderweg-modus</li></ul></div>
+        <div class="card plan free">
+          <h3>Gratis</h3>
+          <ul><li>Vertakte smalltalk en dagcursussen (Indonesisch)</li><li>Situatiegesprekken: basis en dagelijkse praat</li><li>Onderweg-modus, 3 scènes per dag</li><li>Uitspraak, script, gesprekken importeren, oefengeschiedenis</li><li>Mijn zinnen, woordkaarten, zinnentoetsenbord</li><li>Scenario’s delen met vrienden, scenario’s maken met AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Alle situatiegesprekken: restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden, noodgevallen</li><li>Onderweg-modus zonder limiet</li><li>Geldt voor alle talen</li></ul>
+          <p class="muted">Jaarabonnement of eenmalige aankoop voor altijd</p>
+        </div>
       </div>
-      <p class="note">Kies een jaarabonnement of een eenmalige levenslange aankoop. Bekijk de prijzen in de app of in de App Store.</p>
+      <p class="muted">Prijzen vind je in de app en in de App Store. Het jaarabonnement wordt automatisch verlengd, tenzij je het uiterlijk 24 uur voor het einde van de periode opzegt.</p>
     </section>
-    <section id="privacy">
-      <h2>Privacy</h2>
-      <p>Geen account en geen advertentietracking. Wat je leert, blijft op je apparaat en in iCloud als je delen aanzet. De app verstuurt alleen anonieme gebruiksstatistieken en foutrapporten, zodat problemen kunnen worden opgelost en de app kan worden verbeterd.</p>
-      <p><a href="privacy.html">Lees het volledige privacybeleid</a> · <a href="support.html">Supportpagina</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq"><details><summary>Welke talen kan ik leren?</summary><p>Koreaans, Japans, Chinees, Spaans en Indonesisch. De knoppen en menu’s zijn in het Nederlands, maar de betekenissen van de zinnen en de spraakcommando’s zijn in het Engels. Daarom staat Engels zelf niet in de lijst.</p></details>
+<details><summary>Hoe gebruik ik het in de auto?</summary><p>Verbind je iPhone via Bluetooth of CarPlay met de auto, open Onderweg-modus en druk op afspelen. Het geluid komt uit de speakers en de huidige zin staat bij Huidige weergave. Je kunt ook tegen Siri zeggen ‘Start onderweg oefenen in Malmun’, of eenmalig in de Opdrachten-app een automatisering maken die start zodra CarPlay (of de Bluetooth van je auto) verbindt.</p></details>
+<details><summary>Luistert de microfoon de hele tijd mee?</summary><p>Nee. Alleen als je na het piepje aan de beurt bent, via de microfoon van je iPhone, en wat hij hoort wordt op je apparaat verwerkt.</p></details>
+<details><summary>Mijn uitspraak wordt niet herkend.</summary><p>Spraakherkenning werkt in de taal die je leert. Probeer het op een rustigere plek en controleer of spraakherkenning voor die taal op je apparaat is gedownload.</p></details>
+<details><summary>Hoe voeg ik het toetsenbord toe?</summary><p>Ga naar Instellingen ▸ Algemeen ▸ Toetsenbord ▸ Toetsenborden ▸ Voeg nieuw toetsenbord toe en kies het Malmun-toetsenbord. Tik tijdens het typen op de wereldbol om te wisselen. Volledige toegang is niet nodig. Minder zinnen tonen? Tik rechtsonder op het beginscherm op het toetsenbordsymbool ▸ Toetsenbord beheren.</p></details>
+<details><summary>Ik zie een scenario niet dat een vriend heeft gedeeld.</summary><p>Delen loopt via iCloud, dus jullie moeten allebei bij iCloud ingelogd zijn. Verschijnt het nog steeds niet, sluit de app dan helemaal af en open hem opnieuw.</p></details>
+<details><summary>Wat heb ik nodig om scenario’s met AI te maken?</summary><p>Vul je eigen Anthropic-API-sleutel in de app in en typ een onderwerp, dan wordt er een nieuw gesprek gemaakt. Al het andere werkt ook zonder sleutel.</p></details>
+<details><summary>Hoe zeg ik op of krijg ik mijn geld terug?</summary><p>Betalingen lopen via Apple. Opzeggen doe je op je iPhone via Instellingen ▸ Apple Account ▸ Abonnementen ▸ Malmun. Geld terugvragen doe je bij Apple via reportaproblem.apple.com.</p></details>
+<details><summary>Nieuwe iPhone en Pro is weg.</summary><p>Log in met hetzelfde Apple Account en tik in Malmun op Instellingen ▸ Malmun Pro ▸ Aankopen herstellen.</p></details>
+<details><summary>Waar wordt mijn voortgang bewaard?</summary><p>Je hebt geen account nodig. Je gegevens blijven op je apparaat en in je eigen iCloud. Geen advertenties en geen tracking, alleen anonieme gebruiksstatistieken en foutrapporten. Bugs en wensen zijn ook welkom op GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Vragen of feedback? Mail naar <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, gebruik Instellingen ▸ Feedback sturen in de app of stuur een bericht op Instagram: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Maak van je rit naar huis<br>je eerste gesprek</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Gratis in de App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Taal"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Privacybeleid</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

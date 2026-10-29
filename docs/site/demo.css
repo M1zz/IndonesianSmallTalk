@@ -1,0 +1,53 @@
+/* 말문 웹 체험. 내 말은 오른쪽 키 색 말풍선, 상대 말은 왼쪽 — 앱의 연습 화면과 같은 자리. */
+.demo-card { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s5); align-items: start; }
+
+.mm-chat { background: var(--bg); border-radius: var(--r-inner); padding: var(--s4);
+           display: flex; flex-direction: column; gap: var(--s3); min-height: 360px; max-height: 460px; overflow-y: auto; }
+.mm-row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s1); }
+.mm-row.me { align-items: flex-end; }
+.mm-who { font-size: 0.75rem; color: var(--muted); padding: 0 var(--s2); }
+.mm-bubble { position: relative; max-width: 88%; padding: var(--s3) var(--s4); border-radius: 18px;
+             background: var(--surface); line-height: 1.4; }
+.mm-row.me .mm-bubble { background: var(--accent); color: var(--on-accent); }
+.mm-bubble span { display: block; font-weight: 600; }
+.mm-bubble small { display: block; margin-top: 2px; opacity: .75; font-size: 0.8125rem; }
+.mm-row.fresh .mm-bubble { animation: mm-in .35s var(--ease); }
+@keyframes mm-in { from { opacity: 0; transform: translateY(8px); } }
+
+.mm-say { display: none; position: absolute; right: -6px; bottom: -6px; width: 28px; height: 28px; border-radius: 50%;
+          border: 0; background: var(--surface); box-shadow: 0 2px 8px rgb(0 0 0 / .15); cursor: pointer; font-size: 13px; }
+.can-speak .mm-say { display: block; }
+.mm-say::after { content: ""; position: absolute; inset: -8px; }   /* 누르는 자리는 44px */
+
+.mm-score { display: inline-flex; gap: var(--s1); align-items: center; font-weight: 700; color: #B7791F;
+            background: color-mix(in srgb, #FFB547 22%, transparent); border-radius: 999px; padding: var(--s1) var(--s3); }
+.mm-score b { font-variant-numeric: tabular-nums; min-width: 2ch; }
+.mm-ask { font-weight: 700; margin: var(--s4) 0 var(--s3); }
+
+.mm-choices { display: grid; gap: var(--s2); }
+.mm-choice { font: inherit; text-align: left; color: var(--text); background: var(--bg); border: 2px solid transparent;
+             border-radius: var(--r-inner); padding: var(--s3) var(--s4); min-height: 44px; cursor: pointer;
+             transition: border-color .15s var(--ease), transform .15s var(--ease); }
+.mm-choice:hover { border-color: var(--accent); }
+.mm-choice:active { transform: scale(.98); }
+.mm-choice > span[lang] { display: block; font-weight: 600; }
+.mm-choice small { display: block; color: var(--muted); font-size: 0.8125rem; margin: 2px 0 var(--s2); }
+.mm-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; border-radius: 999px; padding: 2px var(--s2); }
+.mm-badge.pos { color: #1F8A3B; background: color-mix(in srgb, #34C759 16%, transparent); }
+.mm-badge.neg { color: #C2410C; background: color-mix(in srgb, #FF9500 16%, transparent); }
+
+.mm-restart { font: inherit; font-weight: 600; margin-top: var(--s4); min-height: 44px; padding: 0 var(--s5);
+              border-radius: 999px; cursor: pointer; color: var(--text); background: transparent; border: 2px solid var(--line); }
+.mm-restart:hover { border-color: var(--accent); color: var(--accent); }
+.mm-note { margin-top: var(--s3); }
+
+@media (prefers-color-scheme: dark) {
+  .mm-score { color: #FFC56E; }
+  .mm-badge.pos { color: #5EE08A; }
+  .mm-badge.neg { color: #FFB25C; }
+}
+@media (prefers-reduced-motion: reduce) { .mm-row.fresh .mm-bubble { animation: none; } }
+@media (max-width: 760px) {
+  .demo-card { grid-template-columns: 1fr; }
+  .mm-chat { min-height: 0; max-height: 340px; }
+}

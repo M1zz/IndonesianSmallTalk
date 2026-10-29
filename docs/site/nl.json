@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: oefen gesprekken in een vreemde taal, zelfs in de auto",
+  "description": "Kies een antwoord en het gesprek gaat die kant op. Oefen Koreaans, Japans, Chinees, Spaans of Indonesisch met je oren en je stem, zelfs achter het stuur.",
+  "hero": {
+    "headline": "Niet meer dichtklappen.\nBegin zelf.",
+    "lead": "Malmun is een gesprekstrainer waarin elk antwoord dat je kiest het gesprek een andere kant op stuurt. Leer Koreaans, Japans, Chinees, Spaans of Indonesisch, en oefen in de auto alleen met je oren en je stem.",
+    "cta": "Gratis in de App Store",
+    "note": "Vertakte gesprekken, uitspraak oefenen en woordenschat zijn gratis."
+  },
+  "demo": {
+    "title": "Zet het gesprek zelf voort",
+    "lead": "Dit is ‘Goedemorgen’, een Indonesisch gesprek zoals het in de app staat. Met elke zin die je kiest, gaat het gesprek een andere kant op.",
+    "me": "Ik",
+    "other": "De ander",
+    "pos": "Positief +",
+    "neg": "Negatief −",
+    "askOther": "Wat zou de ander zeggen?",
+    "askMe": "Wat zeg jij terug?",
+    "done": "Einde gesprek: {score} punten. Begin opnieuw en probeer een andere route.",
+    "restart": "Opnieuw",
+    "listen": "Beluisteren",
+    "note": "Net als in de app: een positief antwoord levert 10 punten op, de rest 5. De betekenissen staan in het Engels, zoals in de app als die in het Nederlands staat. Heeft je browser een Indonesische stem, dan leest hij elke gekozen zin voor.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Zin uit je hoofd geleerd, en dan geen antwoord?",
+    "text": "In het lesboek lopen gesprekken altijd volgens plan. In het echt zegt de ander iets wat je niet zag aankomen. Met Malmun loop je vooraf alle vertakkingen van een gesprek door, zodat je de volgende zin klaar hebt, wat er ook komt. Zelfs de rit naar huis wordt oefentijd."
+  },
+  "features": [
+    {
+      "title": "Oefen op gehoor terwijl je rijdt",
+      "text": "Onderweg-modus speelt via Bluetooth of CarPlay door de speakers van je auto. Eerst hoor je de betekenis, na een piepje heb je tijd om het zelf te zeggen, daarna hoor je het antwoord één keer langzaam en één keer op normaal tempo.\nGa verder en herhaal met de knoppen op het stuur, of zeg `next`, `again` of `slower` als je aan de beurt bent. Bij aanwijzingen van de navigatie pauzeert het even.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Alle situaties voor reis en dagelijks leven",
+      "text": "Elke taal heeft 53 situatiegesprekken: basis, dagelijkse praat, restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden en noodgevallen.\nLeer je Indonesisch, dan is er meer: 5 zelfgeschreven smalltalkgesprekken, 3 dagcursussen van 6 scènes met weekrooster en 100 woorden voor een zakenreis.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Check of je het goed zei",
+      "text": "Uitspraak oefenen geeft je een score en kleurt de woorden die goed gingen en die je miste.\nIn de scriptweergave zie je het hele gesprek als een chat. Luister het in één keer af of verberg de betekenissen om jezelf te testen.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "In drie stappen aan de slag",
+    "items": [
+      {
+        "title": "Kies een taal",
+        "text": "Tik op de vlag bovenaan het beginscherm. Zinnen en woorden worden per taal apart bewaard."
+      },
+      {
+        "title": "Open een gesprek",
+        "text": "Tik antwoorden aan in tekstmodus, of tik op de microfoon en praat: spraakmodus vindt het antwoord dat er het dichtst bij zit."
+      },
+      {
+        "title": "In de auto: Onderweg-modus",
+        "text": "Verbind je iPhone met de auto en druk op afspelen. Naar het scherm kijken hoeft niet."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Onderweg-modus bedienen",
+    "rows": [
+      [
+        "Stuur: volgend nummer",
+        "Volgende zin"
+      ],
+      [
+        "Stuur: vorig nummer",
+        "Dezelfde zin nog een keer"
+      ],
+      [
+        "Afspeelknop",
+        "Pauzeren en verder"
+      ],
+      [
+        "`next` · `skip`",
+        "Volgende zin"
+      ],
+      [
+        "`again` · `repeat`",
+        "Opnieuw horen"
+      ],
+      [
+        "`slower` · `faster`",
+        "Voorleestempo aanpassen"
+      ],
+      [
+        "`next scene`",
+        "Naar het volgende gesprek"
+      ],
+      [
+        "`stop` · `pause`",
+        "Stoppen met oefenen"
+      ],
+      [
+        "Siri: ‘Start onderweg oefenen in Malmun’",
+        "Beginnen zonder je iPhone aan te raken"
+      ]
+    ],
+    "note": "Staat de app in het Nederlands, dan spreek je de commando’s in het Engels uit. Ze worden alleen gehoord als je na het piepje aan de beurt bent. De huidige zin staat in de afspeelinformatie van de auto. Er is geen apart app-scherm in CarPlay."
+  },
+  "pricing": {
+    "title": "Bijna alles is gratis. Malmun Pro opent de rest.",
+    "free": {
+      "name": "Gratis",
+      "items": [
+        "Vertakte smalltalk en dagcursussen (Indonesisch)",
+        "Situatiegesprekken: basis en dagelijkse praat",
+        "Onderweg-modus, 3 scènes per dag",
+        "Uitspraak, script, gesprekken importeren, oefengeschiedenis",
+        "Mijn zinnen, woordkaarten, zinnentoetsenbord",
+        "Scenario’s delen met vrienden, scenario’s maken met AI"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Alle situatiegesprekken: restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden, noodgevallen",
+        "Onderweg-modus zonder limiet",
+        "Geldt voor alle talen"
+      ],
+      "note": "Jaarabonnement of eenmalige aankoop voor altijd"
+    },
+    "note": "Prijzen vind je in de app en in de App Store. Het jaarabonnement wordt automatisch verlengd, tenzij je het uiterlijk 24 uur voor het einde van de periode opzegt."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Welke talen kan ik leren?",
+        "a": "Koreaans, Japans, Chinees, Spaans en Indonesisch. De knoppen en menu’s zijn in het Nederlands, maar de betekenissen van de zinnen en de spraakcommando’s zijn in het Engels. Daarom staat Engels zelf niet in de lijst."
+      },
+      {
+        "q": "Hoe gebruik ik het in de auto?",
+        "a": "Verbind je iPhone via Bluetooth of CarPlay met de auto, open Onderweg-modus en druk op afspelen. Het geluid komt uit de speakers en de huidige zin staat bij Huidige weergave. Je kunt ook tegen Siri zeggen ‘Start onderweg oefenen in Malmun’, of eenmalig in de Opdrachten-app een automatisering maken die start zodra CarPlay (of de Bluetooth van je auto) verbindt."
+      },
+      {
+        "q": "Luistert de microfoon de hele tijd mee?",
+        "a": "Nee. Alleen als je na het piepje aan de beurt bent, via de microfoon van je iPhone, en wat hij hoort wordt op je apparaat verwerkt."
+      },
+      {
+        "q": "Mijn uitspraak wordt niet herkend.",
+        "a": "Spraakherkenning werkt in de taal die je leert. Probeer het op een rustigere plek en controleer of spraakherkenning voor die taal op je apparaat is gedownload."
+      },
+      {
+        "q": "Hoe voeg ik het toetsenbord toe?",
+        "a": "Ga naar Instellingen ▸ Algemeen ▸ Toetsenbord ▸ Toetsenborden ▸ Voeg nieuw toetsenbord toe en kies het Malmun-toetsenbord. Tik tijdens het typen op de wereldbol om te wisselen. Volledige toegang is niet nodig. Minder zinnen tonen? Tik rechtsonder op het beginscherm op het toetsenbordsymbool ▸ Toetsenbord beheren."
+      },
+      {
+        "q": "Ik zie een scenario niet dat een vriend heeft gedeeld.",
+        "a": "Delen loopt via iCloud, dus jullie moeten allebei bij iCloud ingelogd zijn. Verschijnt het nog steeds niet, sluit de app dan helemaal af en open hem opnieuw."
+      },
+      {
+        "q": "Wat heb ik nodig om scenario’s met AI te maken?",
+        "a": "Vul je eigen Anthropic-API-sleutel in de app in en typ een onderwerp, dan wordt er een nieuw gesprek gemaakt. Al het andere werkt ook zonder sleutel."
+      },
+      {
+        "q": "Hoe zeg ik op of krijg ik mijn geld terug?",
+        "a": "Betalingen lopen via Apple. Opzeggen doe je op je iPhone via Instellingen ▸ Apple Account ▸ Abonnementen ▸ Malmun. Geld terugvragen doe je bij Apple via reportaproblem.apple.com."
+      },
+      {
+        "q": "Nieuwe iPhone en Pro is weg.",
+        "a": "Log in met hetzelfde Apple Account en tik in Malmun op Instellingen ▸ Malmun Pro ▸ Aankopen herstellen."
+      },
+      {
+        "q": "Waar wordt mijn voortgang bewaard?",
+        "a": "Je hebt geen account nodig. Je gegevens blijven op je apparaat en in je eigen iCloud. Geen advertenties en geen tracking, alleen anonieme gebruiksstatistieken en foutrapporten. Bugs en wensen zijn ook welkom op GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Maak van je rit naar huis\nje eerste gesprek",
+    "cta": "Gratis in de App Store"
+  },
+  "ui": {
+    "skip": "Naar de inhoud",
+    "languages": "Taal",
+    "privacy": "Privacybeleid",
+    "contact": "Vragen of feedback? Mail naar {email}, gebruik Instellingen ▸ Feedback sturen in de app of stuur een bericht op Instagram: @lee25_ios."
+  }
+}

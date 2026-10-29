@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Luyện hội thoại</title>
-  <meta name="description" content="Malmun là ứng dụng iOS giúp luyện hội thoại rẽ nhánh bằng sáu ngôn ngữ, kèm Chế độ đi làm rảnh tay khi lái xe.">
+  <title>Malmun: luyện nói ngoại ngữ, cả khi đang lái xe</title>
+  <meta name="description" content="Chọn một câu trả lời, cuộc trò chuyện sẽ rẽ theo hướng đó. Luyện tiếng Hàn, Nhật, Trung, Tây Ban Nha hoặc Indonesia bằng tai và giọng nói, ngay cả khi lái xe.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/vi/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: luyện nói ngoại ngữ, cả khi đang lái xe">
+  <meta property="og:description" content="Chọn một câu trả lời, cuộc trò chuyện sẽ rẽ theo hướng đó. Luyện tiếng Hàn, Nhật, Trung, Tây Ban Nha hoặc Indonesia bằng tai và giọng nói, ngay cả khi lái xe.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/vi/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/vi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Trang"><a href="./" aria-current="page">Trang chủ</a> <a href="support.html">Hỗ trợ</a> <a href="privacy.html">Quyền riêng tư</a></nav>
-    </div>
+  <a class="skip" href="#main">Đến nội dung chính</a>
+  <header class="bar">
+    <a class="brand" href="../vi/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Ngôn ngữ</a>
   </header>
-  <nav class="langs" aria-label="Ngôn ngữ">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Nói một ngôn ngữ mới, từng câu một</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Hỗ trợ</a>
-      <a class="btn ghost" href="privacy.html">Chính sách quyền riêng tư</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Giới thiệu Malmun</h2>
-      <p>Malmun giúp bạn luyện những cuộc hội thoại thật qua các đoạn thoại rẽ nhánh. Hãy chọn ngôn ngữ muốn học — tiếng Indonesia, tiếng Anh, tiếng Nhật, tiếng Trung, tiếng Tây Ban Nha hoặc tiếng Hàn — và dùng chính ứng dụng bằng bất kỳ ngôn ngữ nào trong sáu ngôn ngữ đó.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Hội thoại xã giao rẽ nhánh</div><div class="desc">Cuộc trò chuyện đi theo những câu trả lời của bạn. Luyện bằng cách đọc và chạm, hoặc nói thành tiếng.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 đoạn hội thoại theo tình huống</div><div class="desc">Ở mọi ngôn ngữ: cơ bản, trò chuyện hằng ngày, nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan và tình huống khẩn cấp.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Thêm cho tiếng Indonesia</div><div class="desc">Hội thoại xã giao viết tay, ba khóa học theo ngày kèm thời khóa biểu tuần, và bộ 100 từ vựng khởi đầu.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Chế độ đi làm</div><div class="desc">Luyện bằng tai trên xe qua Bluetooth hoặc CarPlay. Âm thanh phát qua loa xe và câu hiện tại hiển thị ở mục Đang phát. Nghe nghĩa, một tiếng chuông, đến lượt bạn nói, rồi nghe đáp án chậm và đúng tốc độ thường. Không có màn hình ứng dụng CarPlay riêng.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Điều khiển rảnh tay</div><div class="desc">Dùng nút tiếp, trước và phát trên vô lăng, hoặc nói trong lượt của bạn: tiếp, lại, chậm hơn, nhanh hơn, cảnh tiếp theo, dừng. Nói đúng câu là bạn sẽ nghe "Tốt lắm!". Bắt đầu bằng Siri, hoặc tự động bằng Phím tắt khi bạn kết nối với xe.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Công cụ luyện tập</div><div class="desc">Luyện phát âm có điểm số, xem kịch bản, nhập hội thoại bằng cách dán, và lịch sử luyện tập.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Cụm từ của tôi & thẻ ghi nhớ</div><div class="desc">Lưu những cụm từ bạn học được và ôn từ vựng bằng thẻ ghi nhớ có đọc to từng từ.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Bàn phím cụm từ</div><div class="desc">Xem nghĩa, chạm một lần, và câu sẽ được gõ bằng ngôn ngữ bạn đang học.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Chia sẻ với bạn bè</div><div class="desc">Chia sẻ tình huống với bạn bè qua iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Tình huống do AI tạo</div><div class="desc">Thêm khóa API Anthropic của riêng bạn, nhập một chủ đề và nhận ngay một đoạn hội thoại hoàn toàn mới.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Hết ấp úng.<br>Hãy mở lời trước.</h1>
+        <p class="lead">Malmun là ứng dụng luyện hội thoại, mỗi câu trả lời bạn chọn sẽ đưa cuộc trò chuyện sang một hướng khác. Học tiếng Hàn, Nhật, Trung, Tây Ban Nha hoặc Indonesia, và khi lái xe thì luyện chỉ bằng tai và giọng nói.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Tải miễn phí trên App Store</a><a class="try" href="#try">Tự mình nối tiếp cuộc trò chuyện ↓</a></div>
+        <p class="muted small">Hội thoại phân nhánh, luyện phát âm và từ vựng đều miễn phí.</p>
       </div>
+      <div class="phone"><img src="../img/vi/02-practice.jpg" alt="Hết ấp úng. Hãy mở lời trước." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Mọi thứ đều miễn phí, trừ hai mục dưới đây.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Tự mình nối tiếp cuộc trò chuyện</h2>
+      <p class="muted">Đây là “Chào buổi sáng”, một đoạn hội thoại tiếng Indonesia lấy nguyên từ ứng dụng. Mỗi câu bạn chọn sẽ đưa câu chuyện sang hướng khác.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Tự mình nối tiếp cuộc trò chuyện&quot;, &quot;lead&quot;: &quot;Đây là “Chào buổi sáng”, một đoạn hội thoại tiếng Indonesia lấy nguyên từ ứng dụng. Mỗi câu bạn chọn sẽ đưa câu chuyện sang hướng khác.&quot;, &quot;me&quot;: &quot;Tôi&quot;, &quot;other&quot;: &quot;Người đối diện&quot;, &quot;pos&quot;: &quot;Tích cực +&quot;, &quot;neg&quot;: &quot;Tiêu cực −&quot;, &quot;askOther&quot;: &quot;Người kia có thể nói gì?&quot;, &quot;askMe&quot;: &quot;Bạn sẽ đáp lại thế nào?&quot;, &quot;done&quot;: &quot;Hết hội thoại: {score} điểm. Bắt đầu lại và thử một hướng khác nhé.&quot;, &quot;restart&quot;: &quot;Làm lại&quot;, &quot;listen&quot;: &quot;Nghe&quot;, &quot;note&quot;: &quot;Giống trong ứng dụng: câu trả lời tích cực được 10 điểm, các câu khác 5 điểm. Nghĩa của câu hiển thị bằng tiếng Anh, giống như trong ứng dụng khi dùng tiếng Việt. Nếu trình duyệt có giọng tiếng Indonesia, mỗi câu bạn chọn sẽ được đọc lên.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Thuộc câu rồi mà đến lúc đáp lại thì cứng họng?</h2>
+      <p>Trong sách, hội thoại luôn đi đúng kịch bản. Ngoài đời, người ta hay đáp lại những câu bạn không ngờ tới. Malmun cho bạn đi trước qua mọi nhánh của một cuộc trò chuyện, để dù họ nói gì, câu tiếp theo cũng đã sẵn sàng. Ngay cả quãng đường về nhà cũng thành giờ luyện tập.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Luyện bằng tai khi lái xe</h2>
+        <p>Chế độ đi làm phát qua loa ô tô bằng Bluetooth hoặc CarPlay. Đầu tiên bạn nghe nghĩa, tiếng chuông cho bạn thời gian tự nói, rồi đáp án được phát một lần chậm và một lần ở tốc độ bình thường.<br>Chuyển câu và nghe lại bằng nút trên vô lăng, hoặc nói <code>next</code>, <code>again</code>, <code>slower</code> khi đến lượt. Ứng dụng tạm dừng khi bản đồ đọc chỉ dẫn.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/03-drive.jpg" alt="Luyện bằng tai khi lái xe" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Đủ mọi tình huống du lịch và thường ngày</h2>
+        <p>Mỗi ngôn ngữ có 53 hội thoại theo tình huống: câu cơ bản, chuyện trò hằng ngày, nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan và khẩn cấp.<br>Nếu học tiếng Indonesia còn có thêm: 5 kịch bản trò chuyện viết tay, 3 khóa học theo ngày mỗi khóa 6 cảnh kèm thời khóa biểu tuần, và 100 từ cho chuyến công tác.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/01-home.jpg" alt="Đủ mọi tình huống du lịch và thường ngày" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kiểm tra xem mình nói đúng chưa</h2>
+        <p>Luyện phát âm cho bạn điểm số và tô màu những từ đã nói đúng cùng những từ bị bỏ sót.<br>Ở phần xem kịch bản, cả đoạn hội thoại hiện ra như một cuộc chat. Nghe một lượt từ đầu đến cuối, hoặc ẩn nghĩa đi để tự kiểm tra.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/05-pronunciation.jpg" alt="Kiểm tra xem mình nói đúng chưa" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Bắt đầu chỉ với ba bước</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Chọn ngôn ngữ</h3><p>Chạm vào lá cờ trên cùng màn hình chính. Câu và từ vựng được lưu riêng cho từng ngôn ngữ.</p></li>
+<li class="card"><span class="n">2</span><h3>Mở một hội thoại</h3><p>Chạm vào câu trả lời ở chế độ chữ, hoặc chạm micro và nói: chế độ giọng nói sẽ tìm câu gần nhất.</p></li>
+<li class="card"><span class="n">3</span><h3>Trên xe, dùng Chế độ đi làm</h3><p>Kết nối iPhone với xe rồi nhấn phát. Không cần nhìn màn hình.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Điều khiển Chế độ đi làm</h2>
+      <div class="card table">
+        <dl><div><dt>Vô lăng: bài tiếp theo</dt><dd>Câu tiếp theo</dd></div><div><dt>Vô lăng: bài trước</dt><dd>Nghe lại câu vừa rồi</dd></div><div><dt>Nút phát</dt><dd>Tạm dừng và tiếp tục</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Câu tiếp theo</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Nghe lại</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Đổi tốc độ đọc</dd></div><div><dt><code>next scene</code></dt><dd>Sang hội thoại tiếp theo</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Dừng luyện tập</dd></div><div><dt>Siri: “Bắt đầu luyện đi làm trong Malmun”</dt><dd>Bắt đầu mà không chạm vào iPhone</dd></div></dl>
+      </div>
+      <p class="muted">Khi ứng dụng dùng tiếng Việt, bạn nói lệnh bằng tiếng Anh. Lệnh chỉ được nghe khi đến lượt bạn, sau tiếng chuông. Câu đang phát hiện trong thông tin phát nhạc trên màn hình xe. CarPlay không có màn hình ứng dụng riêng.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Gần như mọi thứ đều miễn phí. Malmun Pro mở phần còn lại.</h2>
       <div class="plans">
-        <div class="plan"><h3>Miễn phí</h3><ul><li>Hội thoại xã giao, khóa học theo ngày và từ vựng khởi đầu</li><li>Hội thoại theo tình huống cơ bản và hằng ngày</li><li>Chế độ đi làm, 3 cảnh mỗi ngày</li><li>Luyện phát âm, xem kịch bản, nhập bằng cách dán và lịch sử luyện tập</li><li>Cụm từ của tôi, thẻ ghi nhớ, bàn phím cụm từ, chia sẻ với bạn bè và tình huống do AI tạo</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Toàn bộ hội thoại theo tình huống: nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan, khẩn cấp</li><li>Chế độ đi làm không giới hạn</li></ul></div>
+        <div class="card plan free">
+          <h3>Miễn phí</h3>
+          <ul><li>Trò chuyện phân nhánh và khóa học theo ngày (tiếng Indonesia)</li><li>Hội thoại theo tình huống: câu cơ bản và chuyện trò hằng ngày</li><li>Chế độ đi làm, 3 cảnh mỗi ngày</li><li>Phát âm, kịch bản, nhập hội thoại, lịch sử luyện tập</li><li>Câu của tôi, thẻ từ vựng, bàn phím câu</li><li>Chia sẻ kịch bản với bạn bè, tạo kịch bản bằng AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Toàn bộ hội thoại theo tình huống: nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan, khẩn cấp</li><li>Chế độ đi làm không giới hạn</li><li>Áp dụng cho mọi ngôn ngữ</li></ul>
+          <p class="muted">Gói năm hoặc mua một lần dùng trọn đời</p>
+        </div>
       </div>
-      <p class="note">Chọn gói đăng ký theo năm hoặc mua trọn đời một lần. Xem giá trong ứng dụng hoặc trên App Store.</p>
+      <p class="muted">Xem giá trong ứng dụng và trên App Store. Gói năm tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi hết kỳ.</p>
     </section>
-    <section id="privacy">
-      <h2>Quyền riêng tư</h2>
-      <p>Không cần tài khoản và không theo dõi quảng cáo. Nội dung bạn học chỉ nằm trên thiết bị của bạn và trong iCloud nếu bạn bật chia sẻ. Ứng dụng chỉ gửi thống kê sử dụng ẩn danh và báo cáo lỗi để có thể sửa lỗi và cải thiện.</p>
-      <p><a href="privacy.html">Đọc toàn bộ chính sách quyền riêng tư</a> · <a href="support.html">Trang hỗ trợ</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Câu hỏi thường gặp</h2>
+      <div class="faq"><details><summary>Tôi có thể học những ngôn ngữ nào?</summary><p>Tiếng Hàn, Nhật, Trung, Tây Ban Nha và Indonesia. Nút bấm và menu là tiếng Việt, nhưng nghĩa của câu và lệnh giọng nói là tiếng Anh. Vì vậy bản thân tiếng Anh không có trong danh sách.</p></details>
+<details><summary>Dùng trên ô tô thế nào?</summary><p>Kết nối iPhone với xe qua Bluetooth hoặc CarPlay, mở Chế độ đi làm và nhấn phát. Âm thanh phát qua loa xe, câu đang phát hiện ở mục Đang phát. Bạn cũng có thể nói với Siri “Bắt đầu luyện đi làm trong Malmun”, hoặc tạo một lần tự động hóa trong ứng dụng Phím tắt để bắt đầu ngay khi CarPlay (hoặc Bluetooth của xe) kết nối.</p></details>
+<details><summary>Micro có nghe liên tục không?</summary><p>Không. Micro chỉ nghe khi đến lượt bạn sau tiếng chuông, qua micro của iPhone, và những gì nghe được chỉ xử lý trên thiết bị.</p></details>
+<details><summary>Phát âm của tôi không được nhận ra.</summary><p>Nhận dạng giọng nói chạy bằng ngôn ngữ bạn đang học. Hãy thử ở nơi yên tĩnh hơn và kiểm tra rằng nhận dạng giọng nói của ngôn ngữ đó đã được tải về thiết bị.</p></details>
+<details><summary>Thêm bàn phím bằng cách nào?</summary><p>Vào Cài đặt ▸ Cài đặt chung ▸ Bàn phím ▸ Bàn phím ▸ Thêm bàn phím mới và chọn bàn phím Malmun. Khi gõ, chạm nút quả địa cầu để chuyển. Không cần cho phép truy cập đầy đủ. Muốn hiện ít câu hơn, chạm biểu tượng bàn phím ở góc dưới bên phải màn hình chính ▸ Quản lý bàn phím.</p></details>
+<details><summary>Tôi không thấy kịch bản bạn tôi đã chia sẻ.</summary><p>Chia sẻ hoạt động qua iCloud, nên cả hai cần đăng nhập iCloud. Nếu vẫn không thấy, hãy đóng hẳn ứng dụng rồi mở lại.</p></details>
+<details><summary>Cần gì để tạo kịch bản bằng AI?</summary><p>Nhập khóa API Anthropic của riêng bạn vào ứng dụng và viết một chủ đề, một hội thoại mới sẽ được tạo. Mọi thứ khác vẫn dùng được khi không có khóa.</p></details>
+<details><summary>Hủy gói hoặc xin hoàn tiền thế nào?</summary><p>Thanh toán do Apple xử lý. Hủy trong Cài đặt iPhone ▸ Tài khoản Apple ▸ Đăng ký ▸ Malmun. Muốn hoàn tiền, hãy gửi yêu cầu cho Apple tại reportaproblem.apple.com.</p></details>
+<details><summary>Đổi iPhone mới thì mất Pro.</summary><p>Đăng nhập cùng Tài khoản Apple, rồi trong Malmun chạm Cài đặt ▸ Malmun Pro ▸ Khôi phục giao dịch mua.</p></details>
+<details><summary>Tiến độ học của tôi được lưu ở đâu?</summary><p>Không cần tài khoản. Dữ liệu nằm trên thiết bị và trong iCloud của chính bạn. Không quảng cáo, không theo dõi, chỉ gửi thống kê sử dụng ẩn danh và báo cáo lỗi. Bạn cũng có thể báo lỗi hoặc góp ý trên GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Có câu hỏi hay góp ý? Gửi về <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, dùng Cài đặt ▸ Gửi phản hồi trong ứng dụng, hoặc nhắn Instagram @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Biến quãng đường về nhà tối nay<br>thành cuộc trò chuyện đầu tiên</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Tải miễn phí trên App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Ngôn ngữ"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Chính sách quyền riêng tư</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

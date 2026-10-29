@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Esercizi di conversazione</title>
-  <meta name="description" content="Malmun è un'app per iOS per esercitarsi in conversazioni a ramificazione in sei lingue, con una Modalità tragitto a mani libere per l'auto.">
+  <title>Malmun: allenati a conversare, anche in macchina</title>
+  <meta name="description" content="Scegli una risposta e la conversazione prende quella strada. Allenati in coreano, giapponese, cinese, spagnolo o indonesiano ascoltando e parlando, anche mentre guidi.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/it/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: allenati a conversare, anche in macchina">
+  <meta property="og:description" content="Scegli una risposta e la conversazione prende quella strada. Allenati in coreano, giapponese, cinese, spagnolo o indonesiano ascoltando e parlando, anche mentre guidi.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/it/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/it/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Pages"><a href="./" aria-current="page">Home</a> <a href="support.html">Assistenza</a> <a href="privacy.html">Privacy</a></nav>
-    </div>
+  <a class="skip" href="#main">Vai al contenuto</a>
+  <header class="bar">
+    <a class="brand" href="../it/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Lingua</a>
   </header>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it" aria-current="true">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Parla una nuova lingua, una battuta alla volta</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Assistenza</a>
-      <a class="btn ghost" href="privacy.html">Informativa sulla privacy</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Cos'è Malmun</h2>
-      <p>Malmun ti aiuta a esercitarti in conversazioni vere con dialoghi che si ramificano. Scegli la lingua da imparare — indonesiano, inglese, giapponese, cinese, spagnolo o coreano — e usa l'app stessa in una qualsiasi di queste sei lingue.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Small talk a ramificazione</div><div class="desc">La conversazione va dove la portano le tue risposte. Esercitati leggendo e toccando, oppure parlando ad alta voce.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 dialoghi per situazione</div><div class="desc">In ogni lingua: le basi, chiacchiere di tutti i giorni, ristoranti, spostamenti, aeroporto, hotel, shopping, visite ed emergenze.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Qualcosa in più per l'indonesiano</div><div class="desc">Small talk scritto a mano, tre corsi giornalieri con un orario settimanale e un vocabolario di base di 100 parole.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Modalità tragitto</div><div class="desc">Esercitati ascoltando in auto, via Bluetooth o CarPlay. L'audio esce dagli altoparlanti dell'auto e la frase compare in In riproduzione. Ascolti il significato, senti un suono, tocca a te dirlo, poi la risposta lentamente e a velocità normale. Non esiste una schermata dell'app dedicata su CarPlay.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Controllo a mani libere</div><div class="desc">Usa i tasti avanti, indietro e riproduci del volante, oppure parla durante il tuo turno: avanti, ancora, più piano, più veloce, scena successiva, basta. Se dici bene la frase, senti "Bene!". Avvia con Siri, o in automatico con un'automazione di Comandi rapidi quando ti colleghi all'auto.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Strumenti di esercizio</div><div class="desc">Esercizio di pronuncia con punteggio, vista copione, importazione di dialoghi incollandoli e cronologia degli esercizi.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Le mie frasi e flashcard</div><div class="desc">Salva le frasi che impari e ripassa il vocabolario con flashcard che leggono le parole ad alta voce.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Tastiera di frasi</div><div class="desc">Guarda il significato, tocca una volta e la frase viene scritta nella lingua che stai imparando.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Condividi con gli amici</div><div class="desc">Condividi gli scenari con gli amici tramite iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Scenari con l'IA</div><div class="desc">Aggiungi la tua chiave API di Anthropic, scrivi un argomento e ottieni un dialogo tutto nuovo.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Basta bloccarsi.<br>Parla tu per primo.</h1>
+        <p class="lead">Malmun è un allenatore di conversazione in cui ogni risposta che scegli porta il dialogo da un’altra parte. Impara coreano, giapponese, cinese, spagnolo o indonesiano e, in macchina, allenati solo con le orecchie e la voce.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Scaricala gratis dall’App Store</a><a class="try" href="#try">Porta avanti tu la conversazione ↓</a></div>
+        <p class="muted small">Dialoghi a bivi, esercizi di pronuncia e vocabolario sono gratis.</p>
       </div>
+      <div class="phone"><img src="../img/it/02-practice.jpg" alt="Basta bloccarsi. Parla tu per primo." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Tutto è gratis tranne le due cose qui sotto.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Porta avanti tu la conversazione</h2>
+      <p class="muted">Ecco “Buongiorno”, un dialogo in indonesiano preso così com’è dall’app. Ogni frase che scegli porta lo scambio in un’altra direzione.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Porta avanti tu la conversazione&quot;, &quot;lead&quot;: &quot;Ecco “Buongiorno”, un dialogo in indonesiano preso così com’è dall’app. Ogni frase che scegli porta lo scambio in un’altra direzione.&quot;, &quot;me&quot;: &quot;Io&quot;, &quot;other&quot;: &quot;Altra persona&quot;, &quot;pos&quot;: &quot;Positivo +&quot;, &quot;neg&quot;: &quot;Negativo −&quot;, &quot;askOther&quot;: &quot;Cosa potrebbe dirti?&quot;, &quot;askMe&quot;: &quot;Tu cosa rispondi?&quot;, &quot;done&quot;: &quot;Fine della conversazione: {score} punti. Ricomincia e prova un’altra strada.&quot;, &quot;restart&quot;: &quot;Ricomincia&quot;, &quot;listen&quot;: &quot;Ascolta&quot;, &quot;note&quot;: &quot;Come nell’app: una risposta positiva vale 10 punti, le altre 5. I significati sono in inglese, come nell’app quando è in italiano. Se il browser ha una voce indonesiana, legge ad alta voce ogni frase scelta.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Sapevi la frase, ma non cosa rispondere?</h2>
+      <p>Sul libro i dialoghi vanno sempre secondo copione. Nella realtà l’altra persona ti risponde con qualcosa che non ti aspettavi. Malmun ti fa percorrere prima tutti i bivi di una conversazione, così hai la frase successiva pronta qualunque cosa arrivi. Anche il tragitto verso casa diventa allenamento.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Allenati ad ascoltare mentre guidi</h2>
+        <p>La modalità tragitto suona dagli altoparlanti dell’auto via Bluetooth o CarPlay. Prima senti il significato, un segnale ti dà il tempo di dirlo tu, poi la risposta passa una volta lenta e una a velocità normale.<br>Avanti e ripeti con i tasti al volante, oppure di’ <code>next</code>, <code>again</code> o <code>slower</code> quando tocca a te. Si mette in pausa durante le indicazioni del navigatore.</p>
+      </div>
+      <div class="phone"><img src="../img/it/03-drive.jpg" alt="Allenati ad ascoltare mentre guidi" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tutte le situazioni di viaggio e di ogni giorno</h2>
+        <p>Ogni lingua ha 53 dialoghi per situazione: basi, chiacchiere quotidiane, ristorante, spostamenti, aeroporto, hotel, shopping, visite ed emergenze.<br>Se impari l’indonesiano c’è di più: 5 small talk scritti a mano, 3 corsi giornalieri da 6 scene con orario settimanale e 100 parole per i viaggi di lavoro.</p>
+      </div>
+      <div class="phone"><img src="../img/it/01-home.jpg" alt="Tutte le situazioni di viaggio e di ogni giorno" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Controlla di averlo detto bene</h2>
+        <p>L’esercizio di pronuncia ti dà un punteggio e colora le parole azzeccate e quelle mancate.<br>Nel copione vedi tutto il dialogo come una chat. Ascoltalo di fila o nascondi i significati per metterti alla prova.</p>
+      </div>
+      <div class="phone"><img src="../img/it/05-pronunciation.jpg" alt="Controlla di averlo detto bene" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Si comincia in tre passi</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Scegli una lingua</h3><p>Tocca la bandiera in alto nella schermata principale. Frasi e vocabolario sono salvati separatamente per ogni lingua.</p></li>
+<li class="card"><span class="n">2</span><h3>Apri un dialogo</h3><p>Tocca le risposte in modalità testo, oppure tocca il microfono e parla: la modalità voce trova la risposta più vicina.</p></li>
+<li class="card"><span class="n">3</span><h3>In auto, modalità tragitto</h3><p>Collega l’iPhone all’auto e premi play. Non serve guardare lo schermo.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Comandi della modalità tragitto</h2>
+      <div class="card table">
+        <dl><div><dt>Volante: brano successivo</dt><dd>Frase successiva</dd></div><div><dt>Volante: brano precedente</dt><dd>La stessa frase un’altra volta</dd></div><div><dt>Tasto play</dt><dd>Pausa e ripresa</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Frase successiva</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Riascolta</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Cambia la velocità di lettura</dd></div><div><dt><code>next scene</code></dt><dd>Passa al dialogo successivo</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Smetti di allenarti</dd></div><div><dt>Siri: “Avvia esercizio del tragitto in Malmun”</dt><dd>Parti senza toccare l’iPhone</dd></div></dl>
+      </div>
+      <p class="muted">Con l’app in italiano, i comandi vocali si dicono in inglese. Vengono ascoltati solo nel tuo turno, dopo il segnale. La frase in corso appare nelle informazioni di riproduzione dell’auto. Non c’è una schermata dell’app dedicata in CarPlay.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Quasi tutto è gratis. Malmun Pro sblocca il resto.</h2>
       <div class="plans">
-        <div class="plan"><h3>Gratis</h3><ul><li>Small talk, corsi giornalieri e vocabolario di base</li><li>Dialoghi per situazione di base e di tutti i giorni</li><li>Modalità tragitto, 3 scene al giorno</li><li>Esercizio di pronuncia, vista copione, importazione incollando e cronologia degli esercizi</li><li>Le mie frasi, flashcard, tastiera di frasi, condivisione con gli amici e scenari con l'IA</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Tutti i dialoghi per situazione: ristoranti, spostamenti, aeroporto, hotel, shopping, visite, emergenze</li><li>Modalità tragitto illimitata</li></ul></div>
+        <div class="card plan free">
+          <h3>Gratis</h3>
+          <ul><li>Small talk a bivi e corsi giornalieri (indonesiano)</li><li>Dialoghi per situazione: basi e chiacchiere quotidiane</li><li>Modalità tragitto, 3 scene al giorno</li><li>Pronuncia, copione, importazione dialoghi, cronologia</li><li>Le mie frasi, schede di vocabolario, tastiera di frasi</li><li>Condividere scenari con gli amici, crearli con l’IA</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Tutti i dialoghi per situazione: ristorante, spostamenti, aeroporto, hotel, shopping, visite, emergenze</li><li>Modalità tragitto senza limiti</li><li>Vale per tutte le lingue</li></ul>
+          <p class="muted">Abbonamento annuale o acquisto unico a vita</p>
+        </div>
       </div>
-      <p class="note">Scegli un abbonamento annuale oppure un acquisto unico a vita. I prezzi sono nell'app e sull'App Store.</p>
+      <p class="muted">Trovi i prezzi nell’app e sull’App Store. L’abbonamento annuale si rinnova da solo se non lo disdici almeno 24 ore prima della fine del periodo.</p>
     </section>
-    <section id="privacy">
-      <h2>Privacy</h2>
-      <p>Nessun account e nessun tracciamento pubblicitario. Quello che studi resta sul tuo dispositivo e su iCloud se attivi la condivisione. L'app invia solo statistiche d'uso anonime e segnalazioni di errore, per poterla correggere e migliorare.</p>
-      <p><a href="privacy.html">Leggi l'informativa completa sulla privacy</a> · <a href="support.html">Pagina di assistenza</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Domande frequenti</h2>
+      <div class="faq"><details><summary>Quali lingue posso imparare?</summary><p>Coreano, giapponese, cinese, spagnolo e indonesiano. L’interfaccia è in italiano, ma i significati delle frasi e i comandi vocali sono in inglese. Per questo l’inglese non compare nell’elenco.</p></details>
+<details><summary>Come si usa in macchina?</summary><p>Collega l’iPhone all’auto via Bluetooth o CarPlay, apri la modalità tragitto e premi play. L’audio esce dagli altoparlanti e la frase in corso appare in In riproduzione. Puoi anche dire a Siri “Avvia esercizio del tragitto in Malmun”, oppure creare una volta un’automazione nell’app Comandi perché parta appena si collega CarPlay (o il Bluetooth dell’auto).</p></details>
+<details><summary>Il microfono ascolta sempre?</summary><p>No. Ascolta solo nel tuo turno, dopo il segnale, con il microfono dell’iPhone, e ciò che sente viene elaborato sul dispositivo.</p></details>
+<details><summary>La mia pronuncia non viene riconosciuta.</summary><p>Il riconoscimento vocale funziona nella lingua che stai imparando. Prova in un posto più silenzioso e controlla che il riconoscimento vocale di quella lingua sia scaricato sul dispositivo.</p></details>
+<details><summary>Come aggiungo la tastiera?</summary><p>Vai in Impostazioni ▸ Generali ▸ Tastiera ▸ Tastiere ▸ Aggiungi nuova tastiera e scegli la tastiera di Malmun. Mentre scrivi, tocca il globo per passare a lei. Non serve l’accesso completo. Per mostrare meno frasi, tocca l’icona della tastiera in basso a destra nella schermata principale ▸ Gestisci tastiera.</p></details>
+<details><summary>Non vedo uno scenario condiviso da un amico.</summary><p>La condivisione passa da iCloud, quindi dovete aver effettuato entrambi l’accesso a iCloud. Se ancora non compare, chiudi del tutto l’app e riaprila.</p></details>
+<details><summary>Cosa serve per creare scenari con l’IA?</summary><p>Inserisci nell’app la tua chiave API di Anthropic e scrivi un argomento: viene creato un nuovo dialogo. Tutto il resto funziona anche senza chiave.</p></details>
+<details><summary>Come disdico o chiedo un rimborso?</summary><p>I pagamenti li gestisce Apple. Per disdire: Impostazioni dell’iPhone ▸ Account Apple ▸ Abbonamenti ▸ Malmun. Per un rimborso, rivolgiti ad Apple su reportaproblem.apple.com.</p></details>
+<details><summary>Ho cambiato iPhone e il Pro è sparito.</summary><p>Accedi con lo stesso Account Apple e in Malmun tocca Impostazioni ▸ Malmun Pro ▸ Ripristina acquisti.</p></details>
+<details><summary>Dove vengono salvati i miei progressi?</summary><p>Non serve un account. I tuoi dati restano sul dispositivo e nel tuo iCloud. Niente pubblicità né tracciamento: vengono inviate solo statistiche d’uso anonime e rapporti sugli errori. Bug e richieste sono benvenuti anche su GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Domande o suggerimenti? Scrivi a <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, usa Impostazioni ▸ Invia feedback nell’app o cercaci su Instagram: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Fai del tragitto di stasera<br>la tua prima conversazione</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Scaricala gratis dall’App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Lingua"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it" aria-current="page">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Informativa sulla privacy</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

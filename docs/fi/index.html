@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Keskusteluharjoittelu</title>
-  <meta name="description" content="Malmun on iOS-sovellus haarautuvien keskustelujen harjoitteluun kuudella kielellä. Mukana on käsiä vapauttava työmatkatila autoon.">
+  <title>Malmun: harjoittele keskustelua vieraalla kielellä, myös autossa</title>
+  <meta name="description" content="Valitse vastaus, ja keskustelu jatkuu siihen suuntaan. Harjoittele koreaa, japania, kiinaa, espanjaa tai indonesiaa kuuntelemalla ja puhumalla, myös ajaessa.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/fi/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: harjoittele keskustelua vieraalla kielellä, myös autossa">
+  <meta property="og:description" content="Valitse vastaus, ja keskustelu jatkuu siihen suuntaan. Harjoittele koreaa, japania, kiinaa, espanjaa tai indonesiaa kuuntelemalla ja puhumalla, myös ajaessa.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/fi/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/fi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Sivut"><a href="./" aria-current="page">Etusivu</a> <a href="support.html">Tuki</a> <a href="privacy.html">Tietosuoja</a></nav>
-    </div>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+  <header class="bar">
+    <a class="brand" href="../fi/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Kieli</a>
   </header>
-  <nav class="langs" aria-label="Kieli">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi" aria-current="true">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Puhu uutta kieltä, yksi rivi kerrallaan</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Tuki</a>
-      <a class="btn ghost" href="privacy.html">Tietosuojakäytäntö</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Tietoa Malmunista</h2>
-      <p>Malmunin avulla harjoittelet oikeita keskusteluja haarautuvien dialogien kautta. Valitse opiskeltava kieli — indonesia, englanti, japani, kiina, espanja tai korea — ja käytä sovellusta halutessasi millä tahansa näistä kuudesta kielestä.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Haarautuva small talk</div><div class="desc">Keskustelu etenee siihen suuntaan, mihin vastauksesi sen vievät. Harjoittele lukemalla ja napauttamalla tai puhumalla ääneen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 tilannekeskustelua</div><div class="desc">Jokaisella kielellä: perusasiat, arkijutustelu, ravintolat, liikkuminen, lentokenttä, hotellit, ostokset, nähtävyydet ja hätätilanteet.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Lisää indonesiaan</div><div class="desc">Käsin kirjoitettua small talkia, kolme päiväkurssia viikkoaikatauluineen ja 100 sanan perussanasto.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Työmatkatila</div><div class="desc">Harjoittele korvakuulolta autossa Bluetoothin tai CarPlayn kautta. Ääni soi auton kaiuttimista ja lause näkyy Soitetaan nyt -näkymässä. Kuulet merkityksen, sitten merkkiäänen, jonka jälkeen on sinun vuorosi sanoa lause, ja lopuksi oikea vastaus soi hitaasti ja normaalilla nopeudella. CarPlayssa ei ole erillistä sovellusnäkymää.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Käsiä vapauttava ohjaus</div><div class="desc">Käytä ohjauspyörän seuraava-, edellinen- ja toistopainikkeita tai puhu omalla vuorollasi: seuraava, uudelleen, hitaammin, nopeammin, seuraava kohtaus, lopeta. Kun sanot rivin oikein, kuulet ”Hienoa!”. Käynnistä Sirillä tai automaattisesti Pikakomennot-automaatiolla, kun yhdistät auton.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Harjoitustyökalut</div><div class="desc">Ääntämisharjoitus pisteytyksellä, käsikirjoitusnäkymä, dialogien tuonti liittämällä ja harjoitushistoria.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Omat ilmaukset ja muistikortit</div><div class="desc">Tallenna oppimasi ilmaukset ja kertaa sanastoa muistikorteilla, jotka lukevat sanat ääneen.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Ilmausnäppäimistö</div><div class="desc">Näet merkityksen, napautat kerran, ja lause kirjoitetaan opiskelemallasi kielellä.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Jaa ystäville</div><div class="desc">Jaa skenaarioita ystävien kanssa iCloudin kautta.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Tekoälyskenaariot</div><div class="desc">Lisää oma Anthropic API -avaimesi, kirjoita aihe ja saat uuden dialogin.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Ei enää jähmettymistä.<br>Aloita sinä.</h1>
+        <p class="lead">Malmun on keskusteluvalmentaja, jossa jokainen valitsemasi vastaus vie dialogin eri suuntaan. Opi koreaa, japania, kiinaa, espanjaa tai indonesiaa, ja harjoittele autossa pelkillä korvilla ja äänellä.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Lataa ilmaiseksi App Storesta</a><a class="try" href="#try">Jatka keskustelua itse ↓</a></div>
+        <p class="muted small">Haarautuvat keskustelut, ääntämisharjoitus ja sanasto ovat ilmaisia.</p>
       </div>
+      <div class="phone"><img src="../img/fi/02-practice.jpg" alt="Ei enää jähmettymistä. Aloita sinä." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Kaikki on ilmaista alla olevia kahta asiaa lukuun ottamatta.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Jatka keskustelua itse</h2>
+      <p class="muted">Tämä on ”Hyvää huomenta”, indonesiankielinen keskustelu suoraan sovelluksesta. Jokainen valitsemasi lause vie keskustelun eri suuntaan.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Jatka keskustelua itse&quot;, &quot;lead&quot;: &quot;Tämä on ”Hyvää huomenta”, indonesiankielinen keskustelu suoraan sovelluksesta. Jokainen valitsemasi lause vie keskustelun eri suuntaan.&quot;, &quot;me&quot;: &quot;Minä&quot;, &quot;other&quot;: &quot;Keskustelukumppani&quot;, &quot;pos&quot;: &quot;Myönteinen +&quot;, &quot;neg&quot;: &quot;Kielteinen −&quot;, &quot;askOther&quot;: &quot;Mitä toinen voisi sanoa?&quot;, &quot;askMe&quot;: &quot;Mitä vastaat?&quot;, &quot;done&quot;: &quot;Keskustelu päättyi: {score} pistettä. Aloita alusta ja kokeile toista reittiä.&quot;, &quot;restart&quot;: &quot;Alusta&quot;, &quot;listen&quot;: &quot;Kuuntele&quot;, &quot;note&quot;: &quot;Kuten sovelluksessa: myönteinen vastaus antaa 10 pistettä, muut 5. Merkitykset näkyvät englanniksi, kuten sovelluksessakin sen ollessa suomeksi. Jos selaimessa on indonesiankielinen ääni, se lukee jokaisen valitun lauseen.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Lause oli hallussa, mutta vastaus ei tullut?</h2>
+      <p>Oppikirjassa keskustelut etenevät aina käsikirjoituksen mukaan. Oikeasti toinen vastaa jotain, mitä et odottanut. Malmunilla käyt keskustelun kaikki haarat läpi etukäteen, joten seuraava lause on valmiina, tuli mitä tuli. Jopa kotimatkasta tulee harjoitusaikaa.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Harjoittele kuuntelemalla ajon aikana</h2>
+        <p>Työmatkatila soi auton kaiuttimista Bluetoothin tai CarPlayn kautta. Ensin kuulet merkityksen, äänimerkin jälkeen saat aikaa sanoa sen itse, ja lopuksi vastaus soi kerran hitaasti ja kerran normaalitahdissa.<br>Siirry ja kuuntele uudelleen ohjauspyörän painikkeilla, tai sano <code>next</code>, <code>again</code> tai <code>slower</code>, kun on vuorosi. Toisto pysähtyy navigaattorin opasteiden ajaksi.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/03-drive.jpg" alt="Harjoittele kuuntelemalla ajon aikana" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kaikki matkan ja arjen tilanteet</h2>
+        <p>Jokaisessa kielessä on 53 tilannekeskustelua: perusteet, arkijutustelu, ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet ja hätätilanteet.<br>Indonesian opiskelijalle on enemmän: 5 käsin kirjoitettua small talk -skenaariota, 3 kuuden kohtauksen päiväkurssia viikkoaikatauluineen ja 100 sanaa työmatkalle.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/01-home.jpg" alt="Kaikki matkan ja arjen tilanteet" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tarkista, menikö se oikein</h2>
+        <p>Ääntämisharjoitus antaa pisteet ja värittää sanat, jotka osuivat, ja ne, jotka jäivät.<br>Käsikirjoitusnäkymässä koko keskustelu on kuin chat. Kuuntele se kerralla tai piilota merkitykset ja testaa itseäsi.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/05-pronunciation.jpg" alt="Tarkista, menikö se oikein" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Alkuun kolmessa vaiheessa</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Valitse kieli</h3><p>Napauta lippua alkunäkymän yläreunassa. Fraasit ja sanat tallentuvat kullekin kielelle erikseen.</p></li>
+<li class="card"><span class="n">2</span><h3>Avaa keskustelu</h3><p>Napauta vastauksia tekstitilassa, tai napauta mikrofonia ja puhu: äänitila löytää lähimmän vastauksen.</p></li>
+<li class="card"><span class="n">3</span><h3>Autossa työmatkatila</h3><p>Yhdistä iPhone autoon ja paina toistoa. Näyttöä ei tarvitse katsoa.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Työmatkatilan ohjaus</h2>
+      <div class="card table">
+        <dl><div><dt>Ohjauspyörä: seuraava kappale</dt><dd>Seuraava lause</dd></div><div><dt>Ohjauspyörä: edellinen kappale</dt><dd>Sama lause uudelleen</dd></div><div><dt>Toistopainike</dt><dd>Tauko ja jatka</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Seuraava lause</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Kuuntele uudelleen</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Muuta lukunopeutta</dd></div><div><dt><code>next scene</code></dt><dd>Seuraavaan keskusteluun</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Lopeta harjoitus</dd></div><div><dt>Siri: ”Aloita työmatkaharjoitus sovelluksella Malmun”</dt><dd>Aloita koskematta iPhoneen</dd></div></dl>
+      </div>
+      <p class="muted">Kun sovellus on suomeksi, puhekomennot sanotaan englanniksi. Ne kuunnellaan vain sinun vuorollasi äänimerkin jälkeen. Nykyinen lause näkyy auton toistotiedoissa. CarPlayssa ei ole omaa sovellusnäkymää.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Melkein kaikki on ilmaista. Malmun Pro avaa loput.</h2>
       <div class="plans">
-        <div class="plan"><h3>Ilmainen</h3><ul><li>Small talk, päiväkurssit ja perussanasto</li><li>Perusasioiden ja arkijutustelun tilannekeskustelut</li><li>Työmatkatila, 3 kohtausta päivässä</li><li>Ääntämisharjoitus, käsikirjoitusnäkymä, tuonti liittämällä ja harjoitushistoria</li><li>Omat ilmaukset, muistikortit, ilmausnäppäimistö, jakaminen ystäville ja tekoälyskenaariot</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Kaikki tilannekeskustelut: ravintolat, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet, hätätilanteet</li><li>Rajaton työmatkatila</li></ul></div>
+        <div class="card plan free">
+          <h3>Ilmainen</h3>
+          <ul><li>Haarautuva small talk ja päiväkurssit (indonesia)</li><li>Tilannekeskustelut: perusteet ja arkijutustelu</li><li>Työmatkatila, 3 kohtausta päivässä</li><li>Ääntäminen, käsikirjoitus, keskustelujen tuonti, harjoitushistoria</li><li>Omat fraasit, sanakortit, fraasinäppäimistö</li><li>Skenaarioiden jakaminen ystäville, skenaariot tekoälyllä</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Kaikki tilannekeskustelut: ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet, hätätilanteet</li><li>Rajaton työmatkatila</li><li>Koskee kaikkia kieliä</li></ul>
+          <p class="muted">Vuositilaus tai kertaosto ikuisesti</p>
+        </div>
       </div>
-      <p class="note">Valitse vuositilaus tai kertaostos eliniäksi. Hinnat näet sovelluksessa tai App Storessa.</p>
+      <p class="muted">Hinnat näet sovelluksessa ja App Storessa. Vuositilaus uusiutuu automaattisesti, ellei sitä peruta viimeistään 24 tuntia ennen kauden loppua.</p>
     </section>
-    <section id="privacy">
-      <h2>Tietosuoja</h2>
-      <p>Ei tiliä eikä mainosseurantaa. Opiskelemasi sisältö pysyy laitteellasi ja iCloudissa, jos otat jakamisen käyttöön. Sovellus lähettää vain nimettömiä käyttötilastoja ja virheraportteja, jotta sitä voidaan korjata ja parantaa.</p>
-      <p><a href="privacy.html">Lue koko tietosuojakäytäntö</a> · <a href="support.html">Tukisivu</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Usein kysyttyä</h2>
+      <div class="faq"><details><summary>Mitä kieliä voin opiskella?</summary><p>Koreaa, japania, kiinaa, espanjaa ja indonesiaa. Painikkeet ja valikot ovat suomeksi, mutta lauseiden merkitykset ja puhekomennot ovat englanniksi. Siksi englanti itse ei ole listalla.</p></details>
+<details><summary>Miten käytän sitä autossa?</summary><p>Yhdistä iPhone autoon Bluetoothilla tai CarPlaylla, avaa työmatkatila ja paina toistoa. Ääni tulee auton kaiuttimista, ja lause näkyy kohdassa Toistetaan nyt. Voit myös sanoa Sirille ”Aloita työmatkaharjoitus sovelluksella Malmun” tai tehdä kerran Pikakomennot-appiin automaation, joka käynnistyy, kun CarPlay (tai auton Bluetooth) yhdistyy.</p></details>
+<details><summary>Kuunteleeko mikrofoni koko ajan?</summary><p>Ei. Se kuuntelee vain sinun vuorollasi äänimerkin jälkeen iPhonen mikrofonilla, ja kuultu käsitellään laitteella.</p></details>
+<details><summary>Ääntämistäni ei tunnisteta.</summary><p>Puheentunnistus toimii opiskelemallasi kielellä. Kokeile hiljaisemmassa paikassa ja tarkista, että kielen puheentunnistus on ladattu laitteelle.</p></details>
+<details><summary>Miten lisään näppäimistön?</summary><p>Avaa Asetukset ▸ Yleiset ▸ Näppäimistö ▸ Näppäimistöt ▸ Lisää uusi näppäimistö ja valitse Malmun-näppäimistö. Vaihda siihen kirjoittaessa maapallopainikkeella. Täyttä käyttöoikeutta ei tarvita. Jos haluat vähemmän fraaseja, napauta alkunäkymän oikean alakulman näppäimistökuvaketta ▸ Hallitse näppäimistöä.</p></details>
+<details><summary>En näe ystävän jakamaa skenaariota.</summary><p>Jakaminen toimii iCloudin kautta, joten teidän molempien on oltava kirjautuneena iCloudiin. Jos se ei vieläkään näy, sulje sovellus kokonaan ja avaa se uudelleen.</p></details>
+<details><summary>Mitä tarvitsen skenaarioiden tekemiseen tekoälyllä?</summary><p>Lisää sovellukseen oma Anthropic-API-avaimesi ja kirjoita aihe, niin uusi keskustelu syntyy. Kaikki muu toimii ilman avainta.</p></details>
+<details><summary>Miten peruutan tilauksen tai saan rahat takaisin?</summary><p>Maksut hoitaa Apple. Peruuta iPhonen Asetukset ▸ Apple-tili ▸ Tilaukset ▸ Malmun. Hyvitystä pyydät Applelta osoitteessa reportaproblem.apple.com.</p></details>
+<details><summary>Uusi iPhone, ja Pro katosi.</summary><p>Kirjaudu samalla Apple-tilillä ja napauta Malmunissa Asetukset ▸ Malmun Pro ▸ Palauta ostokset.</p></details>
+<details><summary>Mihin edistymiseni tallennetaan?</summary><p>Tiliä ei tarvita. Tiedot pysyvät laitteellasi ja omassa iCloudissasi. Ei mainoksia eikä seurantaa, vain nimetöntä käyttötilastoa ja virheraportteja. Bugeista ja toiveista voi kertoa myös GitHub Issuesissa (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Kysyttävää tai palautetta? Kirjoita osoitteeseen <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, käytä sovelluksen kohtaa Asetukset ▸ Lähetä palautetta tai löydä meidät Instagramista: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Tee illan kotimatkasta<br>ensimmäinen keskustelusi</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Lataa ilmaiseksi App Storesta</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Kieli"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi" aria-current="page">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Tietosuojakäytäntö</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

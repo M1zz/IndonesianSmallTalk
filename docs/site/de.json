@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: Smalltalk üben, auch auf dem Weg zur Arbeit",
+  "description": "Wähle eine Antwort, und das Gespräch nimmt diese Richtung. Übe Koreanisch, Japanisch, Chinesisch, Spanisch oder Indonesisch mit Ohr und Stimme, sogar beim Autofahren.",
+  "hero": {
+    "headline": "Nicht mehr stocken.\nEinfach anfangen.",
+    "lead": "Malmun ist ein Gesprächstrainer, bei dem jede Antwort, die du wählst, den Dialog in eine andere Richtung lenkt. Lerne Koreanisch, Japanisch, Chinesisch, Spanisch oder Indonesisch und übe im Auto nur mit den Ohren und deiner Stimme.",
+    "cta": "Kostenlos im App Store laden",
+    "note": "Verzweigte Dialoge, Ausspracheübung und Vokabeln sind kostenlos."
+  },
+  "demo": {
+    "title": "Führ das Gespräch selbst weiter",
+    "lead": "Das ist „Guten Morgen“, ein indonesischer Dialog direkt aus der App. Mit jedem Satz, den du wählst, läuft das Gespräch woandershin.",
+    "me": "Ich",
+    "other": "Gesprächspartner",
+    "pos": "Positiv +",
+    "neg": "Negativ −",
+    "askOther": "Was könnte dein Gegenüber sagen?",
+    "askMe": "Was antwortest du?",
+    "done": "Gespräch zu Ende. Du hast {score} Punkte. Fang noch mal an und probier einen anderen Weg.",
+    "restart": "Von vorn",
+    "listen": "Anhören",
+    "note": "Wie in der App: Eine positive Antwort bringt 10 Punkte, jede andere 5. Die Bedeutungen stehen auf Englisch, so wie in der App, wenn sie auf Deutsch läuft. Hat dein Browser eine indonesische Stimme, liest er jeden gewählten Satz vor.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Den Satz auswendig gelernt, und dann fehlt die Antwort?",
+    "text": "Im Lehrbuch laufen Dialoge immer nach Plan. Echte Menschen antworten mit etwas, das du nicht erwartet hast. Mit Malmun gehst du vorher alle Abzweigungen eines Gesprächs durch, damit du den nächsten Satz parat hast, egal was kommt. Sogar die Heimfahrt wird zur Übungszeit."
+  },
+  "features": [
+    {
+      "title": "Beim Fahren mit den Ohren üben",
+      "text": "Der Feierabend-Modus spielt über Bluetooth oder CarPlay aus den Autolautsprechern. Du hörst zuerst die Bedeutung, nach einem Signalton sprichst du selbst, dann kommt die Lösung einmal langsam und einmal in normalem Tempo.\nMit den Lenkradtasten springst du weiter oder wiederholst, und wenn du dran bist, sagst du einfach `next`, `again` oder `slower`. Bei Navigationsansagen pausiert die Übung.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Alle Situationen für Reise und Alltag",
+      "text": "Jede Sprache hat 53 Situationsgespräche: Grundlagen und Alltagsgespräche, Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing und Notfälle.\nWer Indonesisch lernt, bekommt noch mehr: 5 handgeschriebene Smalltalk-Szenarien, 3 Tageskurse mit je 6 Szenen samt Wochenplan und 100 Wörter für die Geschäftsreise.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Prüfen, ob es richtig klang",
+      "text": "Die Ausspracheübung gibt dir eine Punktzahl und markiert farbig, welche Wörter gesessen haben und welche nicht.\nIn der Skriptansicht liegt der ganze Dialog wie ein Chat vor dir. Hör ihn am Stück an oder blende die Bedeutungen aus und teste dich selbst.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "In drei Schritten loslegen",
+    "items": [
+      {
+        "title": "Sprache wählen",
+        "text": "Tippe oben auf dem Startbildschirm auf die Flagge. Ausdrücke und Vokabeln werden für jede Sprache getrennt gespeichert."
+      },
+      {
+        "title": "Einen Dialog öffnen",
+        "text": "Tippe Antworten im Textmodus an, oder tippe aufs Mikrofon und sprich. Der Sprachmodus findet die passendste Antwort."
+      },
+      {
+        "title": "Im Auto: Feierabend-Modus",
+        "text": "iPhone mit dem Auto verbinden, Wiedergabe drücken, fertig. Aufs Display musst du nicht schauen."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Feierabend-Modus steuern",
+    "rows": [
+      [
+        "Lenkrad: nächster Titel",
+        "Nächster Satz"
+      ],
+      [
+        "Lenkrad: vorheriger Titel",
+        "Derselbe Satz noch einmal"
+      ],
+      [
+        "Wiedergabetaste",
+        "Pause und weiter"
+      ],
+      [
+        "`next` · `skip`",
+        "Nächster Satz"
+      ],
+      [
+        "`again` · `repeat`",
+        "Noch einmal hören"
+      ],
+      [
+        "`slower` · `faster`",
+        "Vorlesetempo ändern"
+      ],
+      [
+        "`next scene`",
+        "Zum nächsten Dialog"
+      ],
+      [
+        "`stop` · `pause`",
+        "Übung beenden"
+      ],
+      [
+        "Siri: „Feierabend-Übung in Malmun starten“",
+        "Starten, ohne das iPhone anzufassen"
+      ]
+    ],
+    "note": "Wenn die App auf Deutsch läuft, sprichst du die Befehle auf Englisch. Sie werden nur gehört, wenn du nach dem Signalton dran bist. Der aktuelle Satz erscheint in der Wiedergabeanzeige des Autos. Einen eigenen CarPlay-Bildschirm gibt es nicht."
+  },
+  "pricing": {
+    "title": "Fast alles ist kostenlos. Malmun Pro schaltet den Rest frei.",
+    "free": {
+      "name": "Kostenlos",
+      "items": [
+        "Verzweigter Smalltalk und Tageskurse (Indonesisch)",
+        "Situationsgespräche: Grundlagen und Alltag",
+        "Feierabend-Modus, 3 Szenen pro Tag",
+        "Ausspracheübung, Skriptansicht, Dialogimport, Übungsverlauf",
+        "Meine Ausdrücke, Vokabelkarten, Ausdruckstastatur",
+        "Szenarien mit Freunden teilen, Szenarien mit KI erstellen"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Alle Situationsgespräche: Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing, Notfälle",
+        "Feierabend-Modus ohne Limit",
+        "Gilt für alle Lernsprachen"
+      ],
+      "note": "Jahresabo oder einmaliger Lifetime-Kauf"
+    },
+    "note": "Die Preise findest du in der App und im App Store. Das Jahresabo verlängert sich automatisch, wenn du es nicht spätestens 24 Stunden vor Ablauf kündigst."
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Welche Sprachen kann ich lernen?",
+        "a": "Koreanisch, Japanisch, Chinesisch, Spanisch und Indonesisch. Die Bedienoberfläche ist auf Deutsch, die Bedeutungen der Übungssätze und die Sprachbefehle sind aber auf Englisch. Deshalb steht Englisch selbst nicht zur Auswahl."
+      },
+      {
+        "q": "Wie nutze ich die App im Auto?",
+        "a": "Verbinde dein iPhone per Bluetooth oder CarPlay, öffne den Feierabend-Modus und starte die Wiedergabe. Der Ton kommt aus den Autolautsprechern, der aktuelle Satz erscheint unter „Aktuelle Wiedergabe“. Du kannst auch zu Siri sagen: „Feierabend-Übung in Malmun starten“. Oder richte einmalig in der Kurzbefehle-App ▸ Automation ein, dass die Übung startet, sobald CarPlay (oder das Bluetooth deines Autos) verbunden ist."
+      },
+      {
+        "q": "Hört das Mikrofon die ganze Zeit mit?",
+        "a": "Nein. Es hört nur, wenn du nach dem Signalton dran bist, über das iPhone-Mikrofon, und das Gehörte wird auf deinem Gerät verarbeitet."
+      },
+      {
+        "q": "Meine Aussprache wird nicht erkannt.",
+        "a": "Die Spracherkennung läuft in der Sprache, die du lernst. Versuch es an einem ruhigeren Ort und prüfe, ob die Spracherkennung für diese Sprache auf deinem Gerät geladen ist."
+      },
+      {
+        "q": "Wie füge ich die Tastatur hinzu?",
+        "a": "Öffne Einstellungen ▸ Allgemein ▸ Tastatur ▸ Tastaturen ▸ Neue Tastatur hinzufügen und wähle die Malmun-Tastatur. Beim Schreiben wechselst du mit der Globustaste. Voller Zugriff ist nicht nötig. Welche Ausdrücke erscheinen, stellst du über das Tastatursymbol unten rechts auf dem Startbildschirm ▸ Tastatur verwalten ein."
+      },
+      {
+        "q": "Ich sehe ein Szenario nicht, das mein Freund geteilt hat.",
+        "a": "Das Teilen läuft über iCloud, ihr müsst also beide in iCloud angemeldet sein. Erscheint es trotzdem nicht, beende die App vollständig und öffne sie erneut."
+      },
+      {
+        "q": "Was brauche ich, um Szenarien mit KI zu erstellen?",
+        "a": "Hinterlege deinen eigenen Anthropic-API-Schlüssel in der App und gib ein Thema ein, dann entsteht ein neuer Dialog. Alles andere funktioniert auch ohne Schlüssel."
+      },
+      {
+        "q": "Wie kündige ich oder bekomme eine Erstattung?",
+        "a": "Zahlungen wickelt Apple ab. Kündigen kannst du auf dem iPhone unter Einstellungen ▸ Apple Account ▸ Abonnements ▸ Malmun. Eine Erstattung beantragst du bei Apple unter reportaproblem.apple.com."
+      },
+      {
+        "q": "Neues iPhone, und Pro ist weg.",
+        "a": "Melde dich mit demselben Apple Account an und tippe in Malmun auf Einstellungen ▸ Malmun Pro ▸ Käufe wiederherstellen."
+      },
+      {
+        "q": "Wo wird mein Lernfortschritt gespeichert?",
+        "a": "Du brauchst kein Konto. Deine Daten bleiben auf deinem Gerät und in deiner eigenen iCloud. Keine Werbung, kein Tracking, nur anonyme Nutzungsstatistiken und Fehlerberichte. Fehler und Wünsche kannst du auch auf GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues) melden."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Mach die Heimfahrt heute\nzu deinem ersten Gespräch",
+    "cta": "Kostenlos im App Store laden"
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "languages": "Sprache",
+    "privacy": "Datenschutzerklärung",
+    "contact": "Fragen oder Feedback? Schreib an {email}, über Einstellungen ▸ Feedback senden in der App oder auf Instagram an @lee25_ios."
+  }
+}

@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Εξάσκηση συνομιλίας</title>
-  <meta name="description" content="Το Malmun είναι μια εφαρμογή iOS για εξάσκηση σε συνομιλίες που διακλαδώνονται, σε έξι γλώσσες, με Λειτουργία διαδρομής χωρίς χέρια για το αυτοκίνητο.">
+  <title>Malmun: εξάσκηση στη συζήτηση σε ξένη γλώσσα, ακόμη και στο αυτοκίνητο</title>
+  <meta name="description" content="Διάλεξε μια απάντηση και η συζήτηση πάει προς τα εκεί. Κάνε εξάσκηση σε κορεατικά, ιαπωνικά, κινεζικά, ισπανικά ή ινδονησιακά με το αυτί και τη φωνή, ακόμη και στο τιμόνι.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/el/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: εξάσκηση στη συζήτηση σε ξένη γλώσσα, ακόμη και στο αυτοκίνητο">
+  <meta property="og:description" content="Διάλεξε μια απάντηση και η συζήτηση πάει προς τα εκεί. Κάνε εξάσκηση σε κορεατικά, ιαπωνικά, κινεζικά, ισπανικά ή ινδονησιακά με το αυτί και τη φωνή, ακόμη και στο τιμόνι.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/el/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/el/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Σελίδες"><a href="./" aria-current="page">Αρχική</a> <a href="support.html">Υποστήριξη</a> <a href="privacy.html">Απόρρητο</a></nav>
-    </div>
+  <a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+  <header class="bar">
+    <a class="brand" href="../el/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Γλώσσα</a>
   </header>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el" aria-current="true">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Μίλα μια νέα γλώσσα, γραμμή γραμμή</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Υποστήριξη</a>
-      <a class="btn ghost" href="privacy.html">Πολιτική απορρήτου</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Σχετικά με το Malmun</h2>
-      <p>Το Malmun σε βοηθά να εξασκείσαι σε πραγματικές συζητήσεις μέσα από διαλόγους που διακλαδώνονται. Διάλεξε τη γλώσσα που θέλεις να μάθεις — Ινδονησιακά, Αγγλικά, Ιαπωνικά, Κινεζικά, Ισπανικά ή Κορεατικά — και χρησιμοποίησε την ίδια την εφαρμογή σε οποιαδήποτε από αυτές τις έξι γλώσσες.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Small talk που διακλαδώνεται</div><div class="desc">Η συζήτηση πηγαίνει εκεί που την οδηγούν οι απαντήσεις σου. Εξασκήσου διαβάζοντας και πατώντας ή μιλώντας φωναχτά.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 διάλογοι ανά κατάσταση</div><div class="desc">Σε κάθε γλώσσα: βασικά, καθημερινή κουβέντα, εστιατόρια, μετακινήσεις, αεροδρόμιο, ξενοδοχεία, ψώνια, αξιοθέατα και έκτακτες ανάγκες.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Επιπλέον για τα Ινδονησιακά</div><div class="desc">Small talk γραμμένο στο χέρι, τρία μαθήματα ημέρας με εβδομαδιαίο πρόγραμμα και βασικό λεξιλόγιο 100 λέξεων.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Λειτουργία διαδρομής</div><div class="desc">Εξασκήσου με τα αυτιά στο αυτοκίνητο μέσω Bluetooth ή CarPlay. Ο ήχος παίζει από τα ηχεία του αυτοκινήτου και η πρόταση εμφανίζεται στο «Παίζει τώρα». Ακούς το νόημα, ένα κουδούνι, μετά είναι η σειρά σου να το πεις και έπειτα η απάντηση αργά και με κανονική ταχύτητα. Δεν υπάρχει ξεχωριστή οθόνη της εφαρμογής στο CarPlay.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Έλεγχος χωρίς χέρια</div><div class="desc">Χρησιμοποίησε τα κουμπιά επόμενο, προηγούμενο και αναπαραγωγή του τιμονιού ή μίλα στη σειρά σου: επόμενο, ξανά, πιο αργά, πιο γρήγορα, επόμενη σκηνή, σταμάτα. Αν πεις σωστά τη γραμμή, θα ακούσεις «Μπράβο!». Ξεκίνα με τη Siri ή αυτόματα με έναν αυτοματισμό στις Συντομεύσεις μόλις συνδεθείς στο αυτοκίνητο.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Εργαλεία εξάσκησης</div><div class="desc">Εξάσκηση προφοράς με βαθμό, προβολή σεναρίου, εισαγωγή διαλόγων με επικόλληση και ιστορικό εξάσκησης.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Οι φράσεις μου & κάρτες</div><div class="desc">Αποθήκευσε τις φράσεις που μαθαίνεις και επανέλαβε λεξιλόγιο με κάρτες που διαβάζουν τις λέξεις φωναχτά.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Πληκτρολόγιο φράσεων</div><div class="desc">Δες το νόημα, πάτα μία φορά και η πρόταση γράφεται στη γλώσσα που μαθαίνεις.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Κοινή χρήση με φίλους</div><div class="desc">Μοιράσου σενάρια με φίλους μέσω iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Σενάρια με AI</div><div class="desc">Πρόσθεσε το δικό σου κλειδί API της Anthropic, γράψε ένα θέμα και πάρε έναν ολοκαίνουργιο διάλογο.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Τέλος στο κόλλημα.<br>Μίλα πρώτος.</h1>
+        <p class="lead">Το Malmun είναι ένας προπονητής συζήτησης όπου κάθε απάντηση που διαλέγεις στέλνει τον διάλογο αλλού. Μάθε κορεατικά, ιαπωνικά, κινεζικά, ισπανικά ή ινδονησιακά και στο αυτοκίνητο κάνε εξάσκηση μόνο με τα αυτιά και τη φωνή σου.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Κατέβασέ το δωρεάν στο App Store</a><a class="try" href="#try">Συνέχισε εσύ τη συζήτηση ↓</a></div>
+        <p class="muted small">Διάλογοι με διακλαδώσεις, εξάσκηση προφοράς και λεξιλόγιο είναι δωρεάν.</p>
       </div>
+      <div class="phone"><img src="../img/el/02-practice.jpg" alt="Τέλος στο κόλλημα. Μίλα πρώτος." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Όλα είναι δωρεάν εκτός από τα δύο παρακάτω.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Συνέχισε εσύ τη συζήτηση</h2>
+      <p class="muted">Αυτό είναι το «Καλημέρα», ένας ινδονησιακός διάλογος όπως ακριβώς υπάρχει στην εφαρμογή. Κάθε φράση που διαλέγεις στρίβει τη συζήτηση αλλού.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Συνέχισε εσύ τη συζήτηση&quot;, &quot;lead&quot;: &quot;Αυτό είναι το «Καλημέρα», ένας ινδονησιακός διάλογος όπως ακριβώς υπάρχει στην εφαρμογή. Κάθε φράση που διαλέγεις στρίβει τη συζήτηση αλλού.&quot;, &quot;me&quot;: &quot;Εγώ&quot;, &quot;other&quot;: &quot;Ο άλλος&quot;, &quot;pos&quot;: &quot;Θετικό +&quot;, &quot;neg&quot;: &quot;Αρνητικό −&quot;, &quot;askOther&quot;: &quot;Τι μπορεί να πει ο άλλος;&quot;, &quot;askMe&quot;: &quot;Εσύ τι απαντάς;&quot;, &quot;done&quot;: &quot;Τέλος συζήτησης: {score} πόντοι. Ξεκίνα από την αρχή και δοκίμασε άλλο δρόμο.&quot;, &quot;restart&quot;: &quot;Από την αρχή&quot;, &quot;listen&quot;: &quot;Άκουσε&quot;, &quot;note&quot;: &quot;Όπως στην εφαρμογή: μια θετική απάντηση δίνει 10 πόντους, κάθε άλλη 5. Οι σημασίες εμφανίζονται στα αγγλικά, όπως και στην εφαρμογή όταν είναι στα ελληνικά. Αν ο φυλλομετρητής έχει ινδονησιακή φωνή, διαβάζει κάθε φράση που διαλέγεις.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Ήξερες τη φράση, αλλά όχι την απάντηση;</h2>
+      <p>Στο βιβλίο οι διάλογοι πάνε πάντα κατά το σενάριο. Στην πραγματικότητα ο άλλος απαντά κάτι που δεν περίμενες. Το Malmun σε βάζει να περπατήσεις από πριν όλες τις διακλαδώσεις μιας συζήτησης, ώστε η επόμενη φράση να είναι έτοιμη ό,τι κι αν έρθει. Ακόμη και ο δρόμος για το σπίτι γίνεται χρόνος εξάσκησης.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Εξάσκηση με το αυτί ενώ οδηγείς</h2>
+        <p>Η Λειτουργία διαδρομής παίζει από τα ηχεία του αυτοκινήτου μέσω Bluetooth ή CarPlay. Πρώτα ακούς τη σημασία, ένας ήχος σού δίνει χρόνο να το πεις, και μετά η απάντηση ακούγεται μία φορά αργά και μία σε κανονική ταχύτητα.<br>Προχώρα και ξανάκουσε με τα κουμπιά του τιμονιού ή πες <code>next</code>, <code>again</code> ή <code>slower</code> όταν είναι η σειρά σου. Κάνει παύση όταν μιλά η πλοήγηση.</p>
+      </div>
+      <div class="phone"><img src="../img/el/03-drive.jpg" alt="Εξάσκηση με το αυτί ενώ οδηγείς" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Όλες οι καταστάσεις του ταξιδιού και της καθημερινότητας</h2>
+        <p>Κάθε γλώσσα έχει 53 διαλόγους ανά κατάσταση: βασικά, καθημερινή κουβέντα, εστιατόριο, μετακινήσεις, αεροδρόμιο, ξενοδοχείο, ψώνια, αξιοθέατα και επείγοντα.<br>Αν μαθαίνεις ινδονησιακά, υπάρχουν κι άλλα: 5 χειροποίητα σενάρια κουβέντας, 3 μαθήματα ημέρας με 6 σκηνές το καθένα και εβδομαδιαίο πρόγραμμα, και 100 λέξεις για επαγγελματικό ταξίδι.</p>
+      </div>
+      <div class="phone"><img src="../img/el/01-home.jpg" alt="Όλες οι καταστάσεις του ταξιδιού και της καθημερινότητας" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Δες αν το είπες σωστά</h2>
+        <p>Η εξάσκηση προφοράς σού δίνει βαθμό και χρωματίζει τις λέξεις που πέτυχες και όσες σου ξέφυγαν.<br>Στην προβολή σεναρίου βλέπεις όλο τον διάλογο σαν συνομιλία. Άκουσέ τον μονορούφι ή κρύψε τις σημασίες και δοκίμασε τον εαυτό σου.</p>
+      </div>
+      <div class="phone"><img src="../img/el/05-pronunciation.jpg" alt="Δες αν το είπες σωστά" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Ξεκινάς σε τρία βήματα</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Διάλεξε γλώσσα</h3><p>Πάτησε τη σημαία στην κορυφή της αρχικής οθόνης. Φράσεις και λέξεις αποθηκεύονται χωριστά για κάθε γλώσσα.</p></li>
+<li class="card"><span class="n">2</span><h3>Άνοιξε έναν διάλογο</h3><p>Πάτα απαντήσεις στη λειτουργία κειμένου ή πάτα το μικρόφωνο και μίλα: η φωνητική λειτουργία βρίσκει την πιο κοντινή απάντηση.</p></li>
+<li class="card"><span class="n">3</span><h3>Στο αυτοκίνητο, Λειτουργία διαδρομής</h3><p>Σύνδεσε το iPhone με το αυτοκίνητο και πάτα αναπαραγωγή. Δεν χρειάζεται να κοιτάς την οθόνη.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Χειρισμός της Λειτουργίας διαδρομής</h2>
+      <div class="card table">
+        <dl><div><dt>Τιμόνι: επόμενο κομμάτι</dt><dd>Επόμενη φράση</dd></div><div><dt>Τιμόνι: προηγούμενο κομμάτι</dt><dd>Η ίδια φράση ξανά</dd></div><div><dt>Κουμπί αναπαραγωγής</dt><dd>Παύση και συνέχεια</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Επόμενη φράση</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Άκουσέ τη ξανά</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Αλλαγή ταχύτητας ανάγνωσης</dd></div><div><dt><code>next scene</code></dt><dd>Στον επόμενο διάλογο</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Τέλος εξάσκησης</dd></div><div><dt>Siri: «Έναρξη εξάσκησης διαδρομής στο Malmun»</dt><dd>Ξεκίνα χωρίς να αγγίξεις το iPhone</dd></div></dl>
+      </div>
+      <p class="muted">Όταν η εφαρμογή είναι στα ελληνικά, οι φωνητικές εντολές λέγονται στα αγγλικά. Ακούγονται μόνο όταν είναι η σειρά σου, μετά τον ήχο. Η τρέχουσα φράση φαίνεται στις πληροφορίες αναπαραγωγής του αυτοκινήτου. Δεν υπάρχει ξεχωριστή οθόνη εφαρμογής στο CarPlay.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Σχεδόν όλα είναι δωρεάν. Το Malmun Pro ξεκλειδώνει τα υπόλοιπα.</h2>
       <div class="plans">
-        <div class="plan"><h3>Δωρεάν</h3><ul><li>Small talk, μαθήματα ημέρας και βασικό λεξιλόγιο</li><li>Βασικοί και καθημερινοί διάλογοι ανά κατάσταση</li><li>Λειτουργία διαδρομής, 3 σκηνές την ημέρα</li><li>Εξάσκηση προφοράς, προβολή σεναρίου, εισαγωγή με επικόλληση και ιστορικό εξάσκησης</li><li>Οι φράσεις μου, κάρτες, πληκτρολόγιο φράσεων, κοινή χρήση με φίλους και σενάρια με AI</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Όλοι οι διάλογοι ανά κατάσταση: εστιατόριο, μετακινήσεις, αεροδρόμιο, ξενοδοχείο, ψώνια, αξιοθέατα, έκτακτες ανάγκες</li><li>Απεριόριστη Λειτουργία διαδρομής</li></ul></div>
+        <div class="card plan free">
+          <h3>Δωρεάν</h3>
+          <ul><li>Κουβέντα με διακλαδώσεις και μαθήματα ημέρας (ινδονησιακά)</li><li>Διάλογοι ανά κατάσταση: βασικά και καθημερινή κουβέντα</li><li>Λειτουργία διαδρομής, 3 σκηνές τη μέρα</li><li>Προφορά, σενάριο, εισαγωγή διαλόγων, ιστορικό εξάσκησης</li><li>Οι φράσεις μου, κάρτες λεξιλογίου, πληκτρολόγιο φράσεων</li><li>Κοινή χρήση σεναρίων με φίλους, σενάρια με τεχνητή νοημοσύνη</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Όλοι οι διάλογοι ανά κατάσταση: εστιατόριο, μετακινήσεις, αεροδρόμιο, ξενοδοχείο, ψώνια, αξιοθέατα, επείγοντα</li><li>Απεριόριστη Λειτουργία διαδρομής</li><li>Ισχύει για όλες τις γλώσσες</li></ul>
+          <p class="muted">Ετήσια συνδρομή ή εφάπαξ αγορά για πάντα</p>
+        </div>
       </div>
-      <p class="note">Διάλεξε ετήσια συνδρομή ή εφάπαξ αγορά εφ' όρου ζωής. Δες τις τιμές στην εφαρμογή ή στο App Store.</p>
+      <p class="muted">Τις τιμές θα τις βρεις στην εφαρμογή και στο App Store. Η ετήσια συνδρομή ανανεώνεται αυτόματα, εκτός αν ακυρωθεί τουλάχιστον 24 ώρες πριν λήξει η περίοδος.</p>
     </section>
-    <section id="privacy">
-      <h2>Απόρρητο</h2>
-      <p>Χωρίς λογαριασμό και χωρίς παρακολούθηση για διαφημίσεις. Ό,τι μελετάς μένει στη συσκευή σου και στο iCloud, αν ενεργοποιήσεις την κοινή χρήση. Η εφαρμογή στέλνει μόνο ανώνυμα στατιστικά χρήσης και αναφορές σφαλμάτων, ώστε να διορθώνεται και να βελτιώνεται.</p>
-      <p><a href="privacy.html">Διάβασε ολόκληρη την πολιτική απορρήτου</a> · <a href="support.html">Σελίδα υποστήριξης</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Συχνές ερωτήσεις</h2>
+      <div class="faq"><details><summary>Ποιες γλώσσες μπορώ να μάθω;</summary><p>Κορεατικά, ιαπωνικά, κινεζικά, ισπανικά και ινδονησιακά. Τα κουμπιά και τα μενού είναι στα ελληνικά, αλλά οι σημασίες των φράσεων και οι φωνητικές εντολές είναι στα αγγλικά. Γι’ αυτό τα αγγλικά δεν εμφανίζονται στη λίστα.</p></details>
+<details><summary>Πώς το χρησιμοποιώ στο αυτοκίνητο;</summary><p>Σύνδεσε το iPhone με Bluetooth ή CarPlay, άνοιξε τη Λειτουργία διαδρομής και πάτα αναπαραγωγή. Ο ήχος βγαίνει από τα ηχεία και η τρέχουσα φράση φαίνεται στο «Παίζει τώρα». Μπορείς επίσης να πεις στη Siri «Έναρξη εξάσκησης διαδρομής στο Malmun» ή να φτιάξεις μία φορά έναν αυτοματισμό στην εφαρμογή Συντομεύσεις, ώστε να ξεκινά μόλις συνδεθεί το CarPlay (ή το Bluetooth του αυτοκινήτου).</p></details>
+<details><summary>Ακούει το μικρόφωνο συνέχεια;</summary><p>Όχι. Ακούει μόνο όταν είναι η σειρά σου μετά τον ήχο, από το μικρόφωνο του iPhone, και ό,τι ακούει επεξεργάζεται στη συσκευή.</p></details>
+<details><summary>Η προφορά μου δεν αναγνωρίζεται.</summary><p>Η αναγνώριση ομιλίας λειτουργεί στη γλώσσα που μαθαίνεις. Δοκίμασε σε πιο ήσυχο μέρος και έλεγξε ότι η αναγνώριση ομιλίας γι’ αυτή τη γλώσσα έχει ληφθεί στη συσκευή.</p></details>
+<details><summary>Πώς προσθέτω το πληκτρολόγιο;</summary><p>Πήγαινε στις Ρυθμίσεις ▸ Γενικά ▸ Πληκτρολόγιο ▸ Πληκτρολόγια ▸ Προσθήκη νέου πληκτρολογίου και διάλεξε το πληκτρολόγιο Malmun. Όταν γράφεις, πάτα την υδρόγειο για εναλλαγή. Η πλήρης πρόσβαση δεν χρειάζεται. Για λιγότερες φράσεις, πάτα το εικονίδιο πληκτρολογίου κάτω δεξιά στην αρχική οθόνη ▸ Διαχείριση πληκτρολογίου.</p></details>
+<details><summary>Δεν βλέπω σενάριο που μοιράστηκε ένας φίλος.</summary><p>Η κοινή χρήση γίνεται μέσω iCloud, οπότε πρέπει να είστε και οι δύο συνδεδεμένοι στο iCloud. Αν ακόμη δεν εμφανίζεται, κλείσε τελείως την εφαρμογή και άνοιξέ την ξανά.</p></details>
+<details><summary>Τι χρειάζομαι για να φτιάχνω σενάρια με τεχνητή νοημοσύνη;</summary><p>Βάλε στην εφαρμογή το δικό σου κλειδί API της Anthropic και γράψε ένα θέμα, και θα δημιουργηθεί νέος διάλογος. Όλα τα άλλα λειτουργούν χωρίς κλειδί.</p></details>
+<details><summary>Πώς ακυρώνω ή παίρνω επιστροφή χρημάτων;</summary><p>Τις πληρωμές τις χειρίζεται η Apple. Ακύρωση από τις Ρυθμίσεις του iPhone ▸ Λογαριασμός Apple ▸ Συνδρομές ▸ Malmun. Για επιστροφή χρημάτων, κάνε αίτημα στην Apple στο reportaproblem.apple.com.</p></details>
+<details><summary>Άλλαξα iPhone και χάθηκε το Pro.</summary><p>Συνδέσου με τον ίδιο Λογαριασμό Apple και στο Malmun πάτα Ρυθμίσεις ▸ Malmun Pro ▸ Επαναφορά αγορών.</p></details>
+<details><summary>Πού αποθηκεύεται η πρόοδός μου;</summary><p>Δεν χρειάζεται λογαριασμός. Τα δεδομένα μένουν στη συσκευή σου και στο δικό σου iCloud. Χωρίς διαφημίσεις και παρακολούθηση, στέλνονται μόνο ανώνυμα στατιστικά χρήσης και αναφορές σφαλμάτων. Σφάλματα και προτάσεις μπορείς να γράψεις και στο GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Ερωτήσεις ή σχόλια; Γράψε στο <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, από τις Ρυθμίσεις ▸ Αποστολή σχολίων στην εφαρμογή ή στο Instagram: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Κάνε τη διαδρομή της επιστροφής<br>την πρώτη σου συζήτηση</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Κατέβασέ το δωρεάν στο App Store</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Γλώσσα"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el" aria-current="page">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Πολιτική απορρήτου</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

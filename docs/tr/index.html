@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Konuşma Pratiği</title>
-  <meta name="description" content="Malmun, altı dilde dallanan konuşmalarla pratik yapmanı sağlayan bir iOS uygulamasıdır. Arabada eller serbest kullanabileceğin bir Yol Modu da var.">
+  <title>Malmun: yabancı dilde konuşma pratiği, arabada bile</title>
+  <meta name="description" content="Bir cevap seç, konuşma o yöne aksın. Korece, Japonca, Çince, İspanyolca veya Endonezce pratiğini dinleyerek ve sesli yap, araba kullanırken bile.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: yabancı dilde konuşma pratiği, arabada bile">
+  <meta property="og:description" content="Bir cevap seç, konuşma o yöne aksın. Korece, Japonca, Çince, İspanyolca veya Endonezce pratiğini dinleyerek ve sesli yap, araba kullanırken bile.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/tr/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/tr/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Sayfalar"><a href="./" aria-current="page">Ana Sayfa</a> <a href="support.html">Destek</a> <a href="privacy.html">Gizlilik</a></nav>
-    </div>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="bar">
+    <a class="brand" href="../tr/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Dil</a>
   </header>
-  <nav class="langs" aria-label="Dil">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr" aria-current="true">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Yeni bir dili satır satır konuş</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Destek</a>
-      <a class="btn ghost" href="privacy.html">Gizlilik Politikası</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>Malmun Hakkında</h2>
-      <p>Malmun, dallanan diyaloglarla gerçek konuşmaları pratik etmene yardımcı olur. Öğrenmek istediğin dili seç (Endonezce, İngilizce, Japonca, Çince, İspanyolca ya da Korece); uygulamanın kendisini de aynı altı dilden birinde kullanabilirsin.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Dallanan kısa sohbetler</div><div class="desc">Konuşma, cevaplarının götürdüğü yere gider. Okuyup dokunarak ya da yüksek sesle söyleyerek pratik yap.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 durum diyaloğu</div><div class="desc">Her dilde: temel ifadeler, günlük sohbet, restoran, ulaşım, havalimanı, otel, alışveriş, gezi ve acil durumlar.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Endonezce için ekstralar</div><div class="desc">Elle hazırlanmış kısa sohbetler, haftalık programlı üç günlük kurs ve 100 kelimelik başlangıç kelime listesi.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Yol Modu</div><div class="desc">Arabada Bluetooth veya CarPlay ile kulağınla pratik yap. Ses araba hoparlörlerinden çalar, cümle de "Şimdi Çalıyor" bölümünde görünür. Önce anlamı duyarsın, bir zil sesi gelir, söyleme sırası sana geçer; ardından doğru cevap yavaş ve normal hızda çalar. CarPlay'de ayrı bir uygulama ekranı yoktur.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Eller serbest kontrol</div><div class="desc">Direksiyondaki sonraki, önceki ve oynat düğmelerini kullan ya da sıran geldiğinde sesle söyle: sonraki, tekrar, yavaş, hızlı, sonraki sahne, dur. Cümleyi doğru söylersen "Güzel!" dediğini duyarsın. Siri ile başlat ya da arabaya bağlanınca Kısayollar otomasyonuyla kendiliğinden başlat.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Pratik araçları</div><div class="desc">Puanlı telaffuz pratiği, metin görünümü, yapıştırarak diyalog içe aktarma ve pratik geçmişi.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">İfadelerim ve flaş kartlar</div><div class="desc">Öğrendiğin ifadeleri kaydet ve kelimeleri sesli okuyan flaş kartlarla tekrar et.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">İfade klavyesi</div><div class="desc">Anlama bak, bir kez dokun; cümle öğrendiğin dilde yazılsın.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Arkadaşlarla paylaş</div><div class="desc">Senaryoları iCloud ile arkadaşlarınla paylaş.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Yapay zekâ senaryoları</div><div class="desc">Kendi Anthropic API anahtarını ekle, bir konu yaz ve yepyeni bir diyalog al.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Donup kalmaya son.<br>İlk sen konuş.</h1>
+        <p class="lead">Malmun, seçtiğin her cevabın diyaloğu farklı bir yöne götürdüğü bir konuşma antrenörü. Korece, Japonca, Çince, İspanyolca veya Endonezce öğren, arabada da sadece kulağınla ve sesinle pratik yap.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">App Store’dan ücretsiz indir</a><a class="try" href="#try">Konuşmayı sen sürdür ↓</a></div>
+        <p class="muted small">Dallanan diyaloglar, telaffuz pratiği ve kelime listesi ücretsiz.</p>
       </div>
+      <div class="phone"><img src="../img/tr/02-practice.jpg" alt="Donup kalmaya son. İlk sen konuş." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Aşağıdaki iki özellik dışında her şey ücretsiz.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Konuşmayı sen sürdür</h2>
+      <p class="muted">Bu, uygulamadaki Endonezce “Günaydın” diyaloğu. Seçtiğin her cümle sohbeti başka bir yöne çeviriyor.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Konuşmayı sen sürdür&quot;, &quot;lead&quot;: &quot;Bu, uygulamadaki Endonezce “Günaydın” diyaloğu. Seçtiğin her cümle sohbeti başka bir yöne çeviriyor.&quot;, &quot;me&quot;: &quot;Ben&quot;, &quot;other&quot;: &quot;Karşımdaki kişi&quot;, &quot;pos&quot;: &quot;Olumlu +&quot;, &quot;neg&quot;: &quot;Olumsuz −&quot;, &quot;askOther&quot;: &quot;Karşındaki ne diyebilir?&quot;, &quot;askMe&quot;: &quot;Sen ne cevap verirsin?&quot;, &quot;done&quot;: &quot;Konuşma bitti: {score} puan. Baştan başla ve başka bir yol dene.&quot;, &quot;restart&quot;: &quot;Baştan&quot;, &quot;listen&quot;: &quot;Dinle&quot;, &quot;note&quot;: &quot;Uygulamadaki gibi: olumlu cevap 10 puan, diğerleri 5 puan. Anlamlar İngilizce görünür, uygulama Türkçe olduğunda da böyledir. Tarayıcında Endonezce bir ses varsa seçtiğin her cümleyi okur.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Cümleyi ezberledin ama cevap gelmedi mi?</h2>
+      <p>Ders kitabında diyaloglar hep senaryoya göre ilerler. Gerçek hayatta karşındaki hiç beklemediğin bir şey söyler. Malmun bir konuşmanın tüm dallarını önceden gezmeni sağlar, böylece ne gelirse gelsin sıradaki cümlen hazır olur. Eve dönüş yolu bile pratik zamanına dönüşür.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Araba kullanırken kulakla pratik</h2>
+        <p>Yol Modu, Bluetooth veya CarPlay ile arabanın hoparlörlerinden çalar. Önce anlamı duyarsın, bir sinyal sesi sana söyleme süresi verir, sonra cevap bir kez yavaş, bir kez normal hızda çalar.<br>Direksiyon tuşlarıyla ilerle ve tekrar dinle, ya da sıra sendeyken <code>next</code>, <code>again</code> veya <code>slower</code> de. Navigasyon konuştuğunda kısa bir ara verir.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/03-drive.jpg" alt="Araba kullanırken kulakla pratik" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Seyahatin ve gündelik hayatın tüm durumları</h2>
+        <p>Her dilde 53 durum diyaloğu var: temel ifadeler, gündelik sohbet, restoran, ulaşım, havalimanı, otel, alışveriş, gezi ve acil durumlar.<br>Endonezce öğrenenler için daha fazlası var: elle yazılmış 5 sohbet senaryosu, haftalık programıyla 6’şar sahnelik 3 günlük kurs ve iş seyahati için 100 kelime.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/01-home.jpg" alt="Seyahatin ve gündelik hayatın tüm durumları" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Doğru söyleyip söylemediğini gör</h2>
+        <p>Telaffuz pratiği sana puan verir, doğru söylediğin ve kaçırdığın kelimeleri renkle gösterir.<br>Metin görünümünde tüm diyalog bir sohbet gibi açılır. Baştan sona dinle ya da anlamları gizleyip kendini dene.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/05-pronunciation.jpg" alt="Doğru söyleyip söylemediğini gör" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Üç adımda başla</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Bir dil seç</h3><p>Ana ekranın en üstündeki bayrağa dokun. İfadelerin ve kelimelerin her dil için ayrı saklanır.</p></li>
+<li class="card"><span class="n">2</span><h3>Bir diyalog aç</h3><p>Metin modunda cevaplara dokun, ya da mikrofona dokunup konuş: ses modu en yakın cevabı bulur.</p></li>
+<li class="card"><span class="n">3</span><h3>Arabada Yol Modu</h3><p>iPhone’u arabaya bağla ve oynat’a bas. Ekrana bakmana gerek yok.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Yol Modu kontrolleri</h2>
+      <div class="card table">
+        <dl><div><dt>Direksiyon: sonraki parça</dt><dd>Sonraki cümle</dd></div><div><dt>Direksiyon: önceki parça</dt><dd>Aynı cümle bir kez daha</dd></div><div><dt>Oynat tuşu</dt><dd>Duraklat ve devam et</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Sonraki cümle</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Tekrar dinle</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Okuma hızını değiştir</dd></div><div><dt><code>next scene</code></dt><dd>Sonraki diyaloğa geç</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Pratiği bitir</dd></div><div><dt>Siri: “Malmun ile yol pratiğini başlat”</dt><dd>Telefona dokunmadan başla</dd></div></dl>
+      </div>
+      <p class="muted">Uygulama Türkçe olduğunda sesli komutları İngilizce söylersin. Komutlar yalnızca sinyal sesinden sonra sıra sendeyken dinlenir. Çalan cümle arabanın oynatma bilgisinde görünür. CarPlay’de ayrı bir uygulama ekranı yoktur.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Neredeyse her şey ücretsiz. Malmun Pro gerisini açar.</h2>
       <div class="plans">
-        <div class="plan"><h3>Ücretsiz</h3><ul><li>Kısa sohbetler, günlük kurslar ve başlangıç kelime listesi</li><li>Temel ve günlük durum diyalogları</li><li>Yol Modu, günde 3 sahne</li><li>Telaffuz pratiği, metin görünümü, yapıştırarak içe aktarma ve pratik geçmişi</li><li>İfadelerim, flaş kartlar, ifade klavyesi, arkadaşlarla paylaşım ve yapay zekâ senaryoları</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Tüm durum diyalogları: restoran, ulaşım, havalimanı, otel, alışveriş, gezi, acil durumlar</li><li>Sınırsız Yol Modu</li></ul></div>
+        <div class="card plan free">
+          <h3>Ücretsiz</h3>
+          <ul><li>Dallanan sohbetler ve günlük kurslar (Endonezce)</li><li>Durum diyalogları: temel ifadeler ve gündelik sohbet</li><li>Yol Modu, günde 3 sahne</li><li>Telaffuz, metin görünümü, diyalog içe aktarma, pratik geçmişi</li><li>İfadelerim, kelime kartları, ifade klavyesi</li><li>Arkadaşlarla senaryo paylaşma, yapay zekâyla senaryo oluşturma</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Tüm durum diyalogları: restoran, ulaşım, havalimanı, otel, alışveriş, gezi, acil durumlar</li><li>Sınırsız Yol Modu</li><li>Tüm diller için geçerli</li></ul>
+          <p class="muted">Yıllık abonelik ya da tek seferlik ömür boyu satın alma</p>
+        </div>
       </div>
-      <p class="note">Yıllık abonelik ya da tek seferlik ömür boyu satın alma arasından seç. Fiyatları uygulamada veya App Store'da görebilirsin.</p>
+      <p class="muted">Fiyatları uygulamada ve App Store’da görebilirsin. Yıllık abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir.</p>
     </section>
-    <section id="privacy">
-      <h2>Gizlilik</h2>
-      <p>Hesap yok, reklam takibi yok. Çalıştıkların cihazında kalır; paylaşımı açarsan iCloud'da da tutulur. Uygulama yalnızca hataların giderilmesi ve geliştirilmesi için anonim kullanım istatistikleri ve hata raporları gönderir.</p>
-      <p><a href="privacy.html">Gizlilik politikasının tamamını oku</a> · <a href="support.html">Destek sayfası</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Sık sorulan sorular</h2>
+      <div class="faq"><details><summary>Hangi dilleri öğrenebilirim?</summary><p>Korece, Japonca, Çince, İspanyolca ve Endonezce. Düğmeler ve menüler Türkçedir ama cümlelerin anlamları ve sesli komutlar İngilizcedir. Bu yüzden İngilizcenin kendisi listede yer almaz.</p></details>
+<details><summary>Arabada nasıl kullanırım?</summary><p>iPhone’u Bluetooth veya CarPlay ile arabaya bağla, Yol Modu’nu aç ve oynat’a bas. Ses arabanın hoparlörlerinden gelir, çalan cümle Şimdi Çalıyor’da görünür. Siri’ye “Malmun ile yol pratiğini başlat” da diyebilir ya da Kestirmeler uygulamasında bir kez otomasyon kurup CarPlay (veya arabanın Bluetooth’u) bağlanınca başlamasını sağlayabilirsin.</p></details>
+<details><summary>Mikrofon sürekli dinliyor mu?</summary><p>Hayır. Yalnızca sinyal sesinden sonra sıra sendeyken iPhone mikrofonuyla dinler, duyduklarını cihazında işler.</p></details>
+<details><summary>Telaffuzum tanınmıyor.</summary><p>Konuşma tanıma, öğrendiğin dilde çalışır. Daha sessiz bir yerde dene ve o dilin konuşma tanımasının cihazına indirilmiş olduğundan emin ol.</p></details>
+<details><summary>Klavyeyi nasıl eklerim?</summary><p>Ayarlar ▸ Genel ▸ Klavye ▸ Klavyeler ▸ Yeni Klavye Ekle’ye gidip Malmun klavyesini seç. Yazarken dünya tuşuna dokunarak geçiş yap. Tam Erişim gerekmez. Daha az ifade göstermek için ana ekranın sağ altındaki klavye simgesine dokun ▸ Klavyeyi yönet.</p></details>
+<details><summary>Arkadaşımın paylaştığı senaryoyu göremiyorum.</summary><p>Paylaşım iCloud üzerinden çalışır, bu yüzden ikinizin de iCloud’a giriş yapmış olması gerekir. Hâlâ görünmüyorsa uygulamayı tamamen kapatıp yeniden aç.</p></details>
+<details><summary>Yapay zekâyla senaryo oluşturmak için ne gerekir?</summary><p>Kendi Anthropic API anahtarını uygulamaya gir ve bir konu yaz, yeni bir diyalog oluşturulur. Diğer her şey anahtar olmadan çalışır.</p></details>
+<details><summary>Aboneliği nasıl iptal ederim ya da iade alırım?</summary><p>Ödemeleri Apple yönetir. İptal için iPhone’da Ayarlar ▸ Apple Hesabı ▸ Abonelikler ▸ Malmun. İade için reportaproblem.apple.com üzerinden Apple’a başvur.</p></details>
+<details><summary>Yeni iPhone aldım, Pro gitti.</summary><p>Aynı Apple Hesabı ile giriş yap, sonra Malmun’da Ayarlar ▸ Malmun Pro ▸ Satın Alımları Geri Yükle’ye dokun.</p></details>
+<details><summary>İlerlemem nerede saklanıyor?</summary><p>Hesap gerekmez. Verilerin cihazında ve kendi iCloud’unda kalır. Reklam ve takip yok, yalnızca anonim kullanım istatistikleri ve hata raporları gönderilir. Hataları ve isteklerini GitHub Issues’a (github.com/M1zz/IndonesianSmallTalk/issues) da yazabilirsin.</p></details></div>
+      <p class="contact">Soru ya da önerin mi var? <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> adresine yaz, uygulamada Ayarlar ▸ Geri bildirim gönder’i kullan ya da Instagram’dan @lee25_ios hesabına ulaş.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Bu akşamki eve dönüş yolun<br>ilk sohbetin olsun</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">App Store’dan ücretsiz indir</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Dil"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr" aria-current="page">Türkçe</a></nav>
+    <p><a href="privacy.html">Gizlilik Politikası</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,207 @@
+{
+  "title": "Malmun: harjoittele keskustelua vieraalla kielellä, myös autossa",
+  "description": "Valitse vastaus, ja keskustelu jatkuu siihen suuntaan. Harjoittele koreaa, japania, kiinaa, espanjaa tai indonesiaa kuuntelemalla ja puhumalla, myös ajaessa.",
+  "hero": {
+    "headline": "Ei enää jähmettymistä.\nAloita sinä.",
+    "lead": "Malmun on keskusteluvalmentaja, jossa jokainen valitsemasi vastaus vie dialogin eri suuntaan. Opi koreaa, japania, kiinaa, espanjaa tai indonesiaa, ja harjoittele autossa pelkillä korvilla ja äänellä.",
+    "cta": "Lataa ilmaiseksi App Storesta",
+    "note": "Haarautuvat keskustelut, ääntämisharjoitus ja sanasto ovat ilmaisia."
+  },
+  "demo": {
+    "title": "Jatka keskustelua itse",
+    "lead": "Tämä on ”Hyvää huomenta”, indonesiankielinen keskustelu suoraan sovelluksesta. Jokainen valitsemasi lause vie keskustelun eri suuntaan.",
+    "me": "Minä",
+    "other": "Keskustelukumppani",
+    "pos": "Myönteinen +",
+    "neg": "Kielteinen −",
+    "askOther": "Mitä toinen voisi sanoa?",
+    "askMe": "Mitä vastaat?",
+    "done": "Keskustelu päättyi: {score} pistettä. Aloita alusta ja kokeile toista reittiä.",
+    "restart": "Alusta",
+    "listen": "Kuuntele",
+    "note": "Kuten sovelluksessa: myönteinen vastaus antaa 10 pistettä, muut 5. Merkitykset näkyvät englanniksi, kuten sovelluksessakin sen ollessa suomeksi. Jos selaimessa on indonesiankielinen ääni, se lukee jokaisen valitun lauseen.",
+    "meanings": {
+      "m_root": "Good morning!",
+      "m_a": "Morning! Nice weather today, huh?",
+      "m_b": "Morning... I'm so sleepy, I haven't even had coffee yet",
+      "m_a1": "Yes! It's so clear out, it puts me in a good mood",
+      "m_a2": "Yes! It makes me actually want to work",
+      "m_b1": "Me neither! Let's get coffee, my treat",
+      "m_b2": "Oh, me too! I'm so sleepy this morning",
+      "m_a1a": "Want to go for a walk at lunch?",
+      "m_a1b": "I'd love to, but I'm swamped today",
+      "m_a2a": "Love that! Have a great day!",
+      "m_b1a": "Really? Thanks! That's so nice of you",
+      "m_b2a": "Haha, we're in the same boat! Let's get coffee",
+      "m_a1a1": "Sure! How about one o'clock?",
+      "m_a1a2": "I've got plans today. Let's do it next week!",
+      "m_a1b1": "Even a fifteen-minute walk makes a difference!",
+      "m_a1b2": "Yeah, being busy has become the norm",
+      "m_a2a1": "Thanks! You too!",
+      "m_a2a2": "Haha, hope it lasts till the evening",
+      "m_b1a1": "Don't mention it! Have a great day",
+      "m_b1a2": "Haha, us sleepyheads have to look out for each other",
+      "m_b2a1": "Yes! Morning coffee together is the best",
+      "m_b2a2": "Oh, coffee gives me heart palpitations. I'll have tea"
+    }
+  },
+  "problem": {
+    "title": "Lause oli hallussa, mutta vastaus ei tullut?",
+    "text": "Oppikirjassa keskustelut etenevät aina käsikirjoituksen mukaan. Oikeasti toinen vastaa jotain, mitä et odottanut. Malmunilla käyt keskustelun kaikki haarat läpi etukäteen, joten seuraava lause on valmiina, tuli mitä tuli. Jopa kotimatkasta tulee harjoitusaikaa."
+  },
+  "features": [
+    {
+      "title": "Harjoittele kuuntelemalla ajon aikana",
+      "text": "Työmatkatila soi auton kaiuttimista Bluetoothin tai CarPlayn kautta. Ensin kuulet merkityksen, äänimerkin jälkeen saat aikaa sanoa sen itse, ja lopuksi vastaus soi kerran hitaasti ja kerran normaalitahdissa.\nSiirry ja kuuntele uudelleen ohjauspyörän painikkeilla, tai sano `next`, `again` tai `slower`, kun on vuorosi. Toisto pysähtyy navigaattorin opasteiden ajaksi.",
+      "shot": "03-drive"
+    },
+    {
+      "title": "Kaikki matkan ja arjen tilanteet",
+      "text": "Jokaisessa kielessä on 53 tilannekeskustelua: perusteet, arkijutustelu, ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet ja hätätilanteet.\nIndonesian opiskelijalle on enemmän: 5 käsin kirjoitettua small talk -skenaariota, 3 kuuden kohtauksen päiväkurssia viikkoaikatauluineen ja 100 sanaa työmatkalle.",
+      "shot": "01-home"
+    },
+    {
+      "title": "Tarkista, menikö se oikein",
+      "text": "Ääntämisharjoitus antaa pisteet ja värittää sanat, jotka osuivat, ja ne, jotka jäivät.\nKäsikirjoitusnäkymässä koko keskustelu on kuin chat. Kuuntele se kerralla tai piilota merkitykset ja testaa itseäsi.",
+      "shot": "05-pronunciation"
+    }
+  ],
+  "steps": {
+    "title": "Alkuun kolmessa vaiheessa",
+    "items": [
+      {
+        "title": "Valitse kieli",
+        "text": "Napauta lippua alkunäkymän yläreunassa. Fraasit ja sanat tallentuvat kullekin kielelle erikseen."
+      },
+      {
+        "title": "Avaa keskustelu",
+        "text": "Napauta vastauksia tekstitilassa, tai napauta mikrofonia ja puhu: äänitila löytää lähimmän vastauksen."
+      },
+      {
+        "title": "Autossa työmatkatila",
+        "text": "Yhdistä iPhone autoon ja paina toistoa. Näyttöä ei tarvitse katsoa."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Työmatkatilan ohjaus",
+    "rows": [
+      [
+        "Ohjauspyörä: seuraava kappale",
+        "Seuraava lause"
+      ],
+      [
+        "Ohjauspyörä: edellinen kappale",
+        "Sama lause uudelleen"
+      ],
+      [
+        "Toistopainike",
+        "Tauko ja jatka"
+      ],
+      [
+        "`next` · `skip`",
+        "Seuraava lause"
+      ],
+      [
+        "`again` · `repeat`",
+        "Kuuntele uudelleen"
+      ],
+      [
+        "`slower` · `faster`",
+        "Muuta lukunopeutta"
+      ],
+      [
+        "`next scene`",
+        "Seuraavaan keskusteluun"
+      ],
+      [
+        "`stop` · `pause`",
+        "Lopeta harjoitus"
+      ],
+      [
+        "Siri: ”Aloita työmatkaharjoitus sovelluksella Malmun”",
+        "Aloita koskematta iPhoneen"
+      ]
+    ],
+    "note": "Kun sovellus on suomeksi, puhekomennot sanotaan englanniksi. Ne kuunnellaan vain sinun vuorollasi äänimerkin jälkeen. Nykyinen lause näkyy auton toistotiedoissa. CarPlayssa ei ole omaa sovellusnäkymää."
+  },
+  "pricing": {
+    "title": "Melkein kaikki on ilmaista. Malmun Pro avaa loput.",
+    "free": {
+      "name": "Ilmainen",
+      "items": [
+        "Haarautuva small talk ja päiväkurssit (indonesia)",
+        "Tilannekeskustelut: perusteet ja arkijutustelu",
+        "Työmatkatila, 3 kohtausta päivässä",
+        "Ääntäminen, käsikirjoitus, keskustelujen tuonti, harjoitushistoria",
+        "Omat fraasit, sanakortit, fraasinäppäimistö",
+        "Skenaarioiden jakaminen ystäville, skenaariot tekoälyllä"
+      ]
+    },
+    "pro": {
+      "name": "Malmun Pro",
+      "items": [
+        "Kaikki tilannekeskustelut: ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet, hätätilanteet",
+        "Rajaton työmatkatila",
+        "Koskee kaikkia kieliä"
+      ],
+      "note": "Vuositilaus tai kertaosto ikuisesti"
+    },
+    "note": "Hinnat näet sovelluksessa ja App Storessa. Vuositilaus uusiutuu automaattisesti, ellei sitä peruta viimeistään 24 tuntia ennen kauden loppua."
+  },
+  "faq": {
+    "title": "Usein kysyttyä",
+    "items": [
+      {
+        "q": "Mitä kieliä voin opiskella?",
+        "a": "Koreaa, japania, kiinaa, espanjaa ja indonesiaa. Painikkeet ja valikot ovat suomeksi, mutta lauseiden merkitykset ja puhekomennot ovat englanniksi. Siksi englanti itse ei ole listalla."
+      },
+      {
+        "q": "Miten käytän sitä autossa?",
+        "a": "Yhdistä iPhone autoon Bluetoothilla tai CarPlaylla, avaa työmatkatila ja paina toistoa. Ääni tulee auton kaiuttimista, ja lause näkyy kohdassa Toistetaan nyt. Voit myös sanoa Sirille ”Aloita työmatkaharjoitus sovelluksella Malmun” tai tehdä kerran Pikakomennot-appiin automaation, joka käynnistyy, kun CarPlay (tai auton Bluetooth) yhdistyy."
+      },
+      {
+        "q": "Kuunteleeko mikrofoni koko ajan?",
+        "a": "Ei. Se kuuntelee vain sinun vuorollasi äänimerkin jälkeen iPhonen mikrofonilla, ja kuultu käsitellään laitteella."
+      },
+      {
+        "q": "Ääntämistäni ei tunnisteta.",
+        "a": "Puheentunnistus toimii opiskelemallasi kielellä. Kokeile hiljaisemmassa paikassa ja tarkista, että kielen puheentunnistus on ladattu laitteelle."
+      },
+      {
+        "q": "Miten lisään näppäimistön?",
+        "a": "Avaa Asetukset ▸ Yleiset ▸ Näppäimistö ▸ Näppäimistöt ▸ Lisää uusi näppäimistö ja valitse Malmun-näppäimistö. Vaihda siihen kirjoittaessa maapallopainikkeella. Täyttä käyttöoikeutta ei tarvita. Jos haluat vähemmän fraaseja, napauta alkunäkymän oikean alakulman näppäimistökuvaketta ▸ Hallitse näppäimistöä."
+      },
+      {
+        "q": "En näe ystävän jakamaa skenaariota.",
+        "a": "Jakaminen toimii iCloudin kautta, joten teidän molempien on oltava kirjautuneena iCloudiin. Jos se ei vieläkään näy, sulje sovellus kokonaan ja avaa se uudelleen."
+      },
+      {
+        "q": "Mitä tarvitsen skenaarioiden tekemiseen tekoälyllä?",
+        "a": "Lisää sovellukseen oma Anthropic-API-avaimesi ja kirjoita aihe, niin uusi keskustelu syntyy. Kaikki muu toimii ilman avainta."
+      },
+      {
+        "q": "Miten peruutan tilauksen tai saan rahat takaisin?",
+        "a": "Maksut hoitaa Apple. Peruuta iPhonen Asetukset ▸ Apple-tili ▸ Tilaukset ▸ Malmun. Hyvitystä pyydät Applelta osoitteessa reportaproblem.apple.com."
+      },
+      {
+        "q": "Uusi iPhone, ja Pro katosi.",
+        "a": "Kirjaudu samalla Apple-tilillä ja napauta Malmunissa Asetukset ▸ Malmun Pro ▸ Palauta ostokset."
+      },
+      {
+        "q": "Mihin edistymiseni tallennetaan?",
+        "a": "Tiliä ei tarvita. Tiedot pysyvät laitteellasi ja omassa iCloudissasi. Ei mainoksia eikä seurantaa, vain nimetöntä käyttötilastoa ja virheraportteja. Bugeista ja toiveista voi kertoa myös GitHub Issuesissa (github.com/M1zz/IndonesianSmallTalk/issues)."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Tee illan kotimatkasta\nensimmäinen keskustelusi",
+    "cta": "Lataa ilmaiseksi App Storesta"
+  },
+  "ui": {
+    "skip": "Siirry sisältöön",
+    "languages": "Kieli",
+    "privacy": "Tietosuojakäytäntö",
+    "contact": "Kysyttävää tai palautetta? Kirjoita osoitteeseen {email}, käytä sovelluksen kohtaa Asetukset ▸ Lähetä palautetta tai löydä meidät Instagramista: @lee25_ios."
+  }
+}

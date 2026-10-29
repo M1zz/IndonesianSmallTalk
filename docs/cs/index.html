@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Malmun — Konverzační trénink</title>
-  <meta name="description" content="Malmun je aplikace pro iOS na procvičování větvených konverzací v šesti jazycích, s režimem dojíždění, který v autě funguje bez rukou.">
+  <title>Malmun: trénujte konverzaci v cizím jazyce, i v autě</title>
+  <meta name="description" content="Vyberte odpověď a rozhovor se vydá tím směrem. Trénujte korejštinu, japonštinu, čínštinu, španělštinu nebo indonéštinu poslechem a nahlas, i za volantem.">
+  <meta name="theme-color" content="#3B4CCA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1020" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6764088776">
   <link rel="canonical" href="https://m1zz.github.io/IndonesianSmallTalk/cs/">
   <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/IndonesianSmallTalk/">
   <link rel="alternate" hreflang="en" href="https://m1zz.github.io/IndonesianSmallTalk/en/">
@@ -32,82 +34,161 @@
   <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/IndonesianSmallTalk/sv/">
   <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/IndonesianSmallTalk/tr/">
   <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/IndonesianSmallTalk/">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmun: trénujte konverzaci v cizím jazyce, i v autě">
+  <meta property="og:description" content="Vyberte odpověď a rozhovor se vydá tím směrem. Trénujte korejštinu, japonštinu, čínštinu, španělštinu nebo indonéštinu poslechem a nahlas, i za volantem.">
+  <meta property="og:url" content="https://m1zz.github.io/IndonesianSmallTalk/cs/">
+  <meta property="og:image" content="https://m1zz.github.io/IndonesianSmallTalk/img/cs/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#3B4CCA}@media (prefers-color-scheme:dark){:root{--accent:#8F9BFF}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="./">Malmun</a>
-      <nav class="pages" aria-label="Stránky"><a href="./" aria-current="page">Domů</a> <a href="support.html">Podpora</a> <a href="privacy.html">Ochrana soukromí</a></nav>
-    </div>
+  <a class="skip" href="#main">Přejít na obsah</a>
+  <header class="bar">
+    <a class="brand" href="../cs/"><img src="../icon.png" alt="" width="32" height="32">Malmun</a>
+    <a class="lang-link" href="#languages">Jazyk</a>
   </header>
-  <nav class="langs" aria-label="Jazyk">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs" aria-current="true">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
-  <div class="hero">
-    <div class="flags" aria-hidden="true">🇮🇩 🇺🇸 🇯🇵 🇨🇳 🇪🇸 🇰🇷</div>
-    <h1>Malmun</h1>
-    <p class="tagline">Rozmluvte se v novém jazyce, věta po větě</p>
-    <div class="cta">
-      <a class="btn primary" href="support.html">Podpora</a>
-      <a class="btn ghost" href="privacy.html">Zásady ochrany soukromí</a>
-    </div>
-  </div>
-  <main>
-    <section>
-      <h2>O aplikaci Malmun</h2>
-      <p>Malmun vám pomáhá procvičovat skutečné konverzace pomocí větvených dialogů. Vyberte si jazyk, který se chcete učit — indonéštinu, angličtinu, japonštinu, čínštinu, španělštinu nebo korejštinu — a aplikaci samotnou můžete používat v kterémkoli z těchto šesti jazyků.</p>
-      <div class="features">
-        <div class="feature"><div class="icon" aria-hidden="true">💬</div><div class="title">Větvený small talk</div><div class="desc">Rozhovor jde tam, kam ho zavedou vaše odpovědi. Trénujte čtením a klepáním, nebo nahlas.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🧳</div><div class="title">53 situačních dialogů</div><div class="desc">V každém jazyce: základy, běžná konverzace, restaurace, doprava, letiště, hotely, nakupování, prohlídky a nouzové situace.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🇮🇩</div><div class="title">Navíc pro indonéštinu</div><div class="desc">Ručně psaný small talk, tři denní kurzy s týdenním rozvrhem a základní slovník o 100 slovech.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🚗</div><div class="title">Režim dojíždění</div><div class="desc">Trénujte v autě jen poslechem přes Bluetooth nebo CarPlay. Zvuk hraje z reproduktorů auta a věta se zobrazuje v přehrávači Právě hraje. Uslyšíte význam, cinknutí, pak na vás přijde řada s řečí a nakonec správnou odpověď pomalu i normálním tempem. Samostatná obrazovka aplikace v CarPlay neexistuje.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🗣️</div><div class="title">Ovládání bez rukou</div><div class="desc">Používejte tlačítka další, předchozí a přehrát na volantu, nebo během své řady mluvte: další, znovu, pomaleji, rychleji, další scéna, stop. Když větu řeknete správně, uslyšíte „Super!“. Spustit můžete Siri, nebo automaticky pomocí automatizace ve Zkratkách po připojení k autu.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><div class="title">Nástroje k procvičování</div><div class="desc">Procvičování výslovnosti se skóre, zobrazení přepisu, import dialogů vložením textu a historie tréninku.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">📚</div><div class="title">Moje fráze a kartičky</div><div class="desc">Ukládejte si fráze, které se naučíte, a opakujte slovíčka s kartičkami, které slova čtou nahlas.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">⌨️</div><div class="title">Klávesnice frází</div><div class="desc">Podívejte se na význam, jednou klepněte a věta se napíše v jazyce, který se učíte.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">👥</div><div class="title">Sdílení s kamarády</div><div class="desc">Sdílejte scénáře s kamarády přes iCloud.</div></div>
-        <div class="feature"><div class="icon" aria-hidden="true">✨</div><div class="title">Scénáře od AI</div><div class="desc">Přidejte svůj vlastní klíč Anthropic API, zadejte téma a získáte zcela nový dialog.</div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Už žádné zaseknutí.<br>Promluvte první.</h1>
+        <p class="lead">Malmun je konverzační trenažér, ve kterém každá zvolená odpověď pošle rozhovor jinam. Učte se korejsky, japonsky, čínsky, španělsky nebo indonésky a v autě trénujte jen ušima a hlasem.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6764088776">Stáhnout zdarma z App Storu</a><a class="try" href="#try">Veďte rozhovor sami ↓</a></div>
+        <p class="muted small">Větvené rozhovory, procvičování výslovnosti a slovník jsou zdarma.</p>
       </div>
+      <div class="phone"><img src="../img/cs/02-practice.jpg" alt="Už žádné zaseknutí. Promluvte první." width="600" height="1303" decoding="async"></div>
     </section>
-    <section id="pro">
-      <h2>Malmun Pro</h2>
-      <p>Všechno je zdarma kromě dvou věcí uvedených níže.</p>
+
+
+    <section class="reveal" id="try">
+      <h2>Veďte rozhovor sami</h2>
+      <p class="muted">Tohle je „Dobré ráno“, indonéský rozhovor přímo z aplikace. Každá zvolená věta stočí hovor jiným směrem.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Veďte rozhovor sami&quot;, &quot;lead&quot;: &quot;Tohle je „Dobré ráno“, indonéský rozhovor přímo z aplikace. Každá zvolená věta stočí hovor jiným směrem.&quot;, &quot;me&quot;: &quot;Já&quot;, &quot;other&quot;: &quot;Druhá osoba&quot;, &quot;pos&quot;: &quot;Pozitivní +&quot;, &quot;neg&quot;: &quot;Negativní −&quot;, &quot;askOther&quot;: &quot;Co může říct druhá strana?&quot;, &quot;askMe&quot;: &quot;Co odpovíte?&quot;, &quot;done&quot;: &quot;Konec rozhovoru: {score} bodů. Začněte znovu a zkuste jinou cestu.&quot;, &quot;restart&quot;: &quot;Znovu&quot;, &quot;listen&quot;: &quot;Poslechnout&quot;, &quot;note&quot;: &quot;Stejně jako v aplikaci: pozitivní odpověď dává 10 bodů, ostatní 5. Významy jsou v angličtině, tak jako v aplikaci nastavené na češtinu. Pokud má prohlížeč indonéský hlas, přečte každou zvolenou větu.&quot;, &quot;meanings&quot;: {&quot;m_root&quot;: &quot;Good morning!&quot;, &quot;m_a&quot;: &quot;Morning! Nice weather today, huh?&quot;, &quot;m_b&quot;: &quot;Morning... I&#x27;m so sleepy, I haven&#x27;t even had coffee yet&quot;, &quot;m_a1&quot;: &quot;Yes! It&#x27;s so clear out, it puts me in a good mood&quot;, &quot;m_a2&quot;: &quot;Yes! It makes me actually want to work&quot;, &quot;m_b1&quot;: &quot;Me neither! Let&#x27;s get coffee, my treat&quot;, &quot;m_b2&quot;: &quot;Oh, me too! I&#x27;m so sleepy this morning&quot;, &quot;m_a1a&quot;: &quot;Want to go for a walk at lunch?&quot;, &quot;m_a1b&quot;: &quot;I&#x27;d love to, but I&#x27;m swamped today&quot;, &quot;m_a2a&quot;: &quot;Love that! Have a great day!&quot;, &quot;m_b1a&quot;: &quot;Really? Thanks! That&#x27;s so nice of you&quot;, &quot;m_b2a&quot;: &quot;Haha, we&#x27;re in the same boat! Let&#x27;s get coffee&quot;, &quot;m_a1a1&quot;: &quot;Sure! How about one o&#x27;clock?&quot;, &quot;m_a1a2&quot;: &quot;I&#x27;ve got plans today. Let&#x27;s do it next week!&quot;, &quot;m_a1b1&quot;: &quot;Even a fifteen-minute walk makes a difference!&quot;, &quot;m_a1b2&quot;: &quot;Yeah, being busy has become the norm&quot;, &quot;m_a2a1&quot;: &quot;Thanks! You too!&quot;, &quot;m_a2a2&quot;: &quot;Haha, hope it lasts till the evening&quot;, &quot;m_b1a1&quot;: &quot;Don&#x27;t mention it! Have a great day&quot;, &quot;m_b1a2&quot;: &quot;Haha, us sleepyheads have to look out for each other&quot;, &quot;m_b2a1&quot;: &quot;Yes! Morning coffee together is the best&quot;, &quot;m_b2a2&quot;: &quot;Oh, coffee gives me heart palpitations. I&#x27;ll have tea&quot;}}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Větu jste uměli, ale odpověď nepřišla?</h2>
+      <p>V učebnici jdou rozhovory vždycky podle scénáře. Ve skutečnosti vám druhý odpoví něco, co jste nečekali. Malmun vás předem provede všemi větvemi rozhovoru, takže další větu máte připravenou, ať přijde cokoli. I cesta domů se promění v trénink.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Trénujte poslechem za jízdy</h2>
+        <p>Režim dojíždění hraje z reproduktorů auta přes Bluetooth nebo CarPlay. Nejdřív uslyšíte význam, po signálu máte čas to říct sami a pak zazní odpověď jednou pomalu a jednou normálním tempem.<br>Přeskakujte a opakujte tlačítky na volantu, nebo řekněte <code>next</code>, <code>again</code> či <code>slower</code>, když jste na řadě. Při pokynech navigace se přehrávání pozastaví.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/03-drive.jpg" alt="Trénujte poslechem za jízdy" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Všechny situace z cest i všedního dne</h2>
+        <p>Každý jazyk má 53 situačních dialogů: základy, běžný hovor, restaurace, doprava, letiště, hotel, nákupy, prohlídky a nouzové situace.<br>Kdo se učí indonésky, dostane víc: 5 ručně psaných small talků, 3 denní kurzy po 6 scénách s týdenním rozvrhem a 100 slov na služební cestu.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/01-home.jpg" alt="Všechny situace z cest i všedního dne" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Ověřte si, že jste to řekli správně</h2>
+        <p>Procvičování výslovnosti vám dá skóre a barevně označí slova, která se povedla, i ta, která vám utekla.<br>V přepisu vidíte celý rozhovor jako chat. Poslechněte si ho vcelku, nebo skryjte významy a vyzkoušejte se.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/05-pronunciation.jpg" alt="Ověřte si, že jste to řekli správně" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Začít jde ve třech krocích</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Vyberte jazyk</h3><p>Klepněte na vlajku nahoře na domovské obrazovce. Fráze a slovíčka se ukládají pro každý jazyk zvlášť.</p></li>
+<li class="card"><span class="n">2</span><h3>Otevřete rozhovor</h3><p>V textovém režimu klepejte na odpovědi, nebo klepněte na mikrofon a mluvte: hlasový režim najde nejbližší odpověď.</p></li>
+<li class="card"><span class="n">3</span><h3>V autě režim dojíždění</h3><p>Připojte iPhone k autu a stiskněte přehrávání. Na displej se dívat nemusíte.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Ovládání režimu dojíždění</h2>
+      <div class="card table">
+        <dl><div><dt>Volant: další skladba</dt><dd>Další věta</dd></div><div><dt>Volant: předchozí skladba</dt><dd>Stejná věta ještě jednou</dd></div><div><dt>Tlačítko přehrávání</dt><dd>Pauza a pokračování</dd></div><div><dt><code>next</code> · <code>skip</code></dt><dd>Další věta</dd></div><div><dt><code>again</code> · <code>repeat</code></dt><dd>Poslechnout znovu</dd></div><div><dt><code>slower</code> · <code>faster</code></dt><dd>Změnit rychlost čtení</dd></div><div><dt><code>next scene</code></dt><dd>Na další rozhovor</dd></div><div><dt><code>stop</code> · <code>pause</code></dt><dd>Ukončit trénink</dd></div><div><dt>Siri: „Spustit trénink dojíždění v Malmun“</dt><dd>Spustit bez dotyku iPhonu</dd></div></dl>
+      </div>
+      <p class="muted">Když je aplikace v češtině, hlasové povely říkáte anglicky. Poslouchá je jen ve chvíli, kdy jste po signálu na řadě. Aktuální věta se zobrazí v informacích o přehrávání v autě. Vlastní obrazovku v CarPlay aplikace nemá.</p>
+    </section>
+
+
+    <section class="reveal" id="pricing">
+      <h2>Skoro všechno je zdarma. Malmun Pro odemkne zbytek.</h2>
       <div class="plans">
-        <div class="plan"><h3>Zdarma</h3><ul><li>Small talk, denní kurzy a základní slovník</li><li>Základní a běžné situační dialogy</li><li>Režim dojíždění, 3 scény denně</li><li>Procvičování výslovnosti, zobrazení přepisu, import vložením a historie tréninku</li><li>Moje fráze, kartičky, klávesnice frází, sdílení s kamarády a scénáře od AI</li></ul></div>
-        <div class="plan pro"><h3>Malmun Pro</h3><ul><li>Všechny situační dialogy: restaurace, doprava, letiště, hotel, nakupování, prohlídky, nouzové situace</li><li>Neomezený režim dojíždění</li></ul></div>
+        <div class="card plan free">
+          <h3>Zdarma</h3>
+          <ul><li>Větvený small talk a denní kurzy (indonéština)</li><li>Situační dialogy: základy a běžný hovor</li><li>Režim dojíždění, 3 scény denně</li><li>Výslovnost, přepis, import rozhovorů, historie tréninku</li><li>Moje fráze, kartičky slovíček, klávesnice frází</li><li>Sdílení scénářů s přáteli, scénáře vytvořené AI</li></ul>
+          
+        </div>
+        <div class="card plan pro">
+          <h3>Malmun Pro</h3>
+          <ul><li>Všechny situační dialogy: restaurace, doprava, letiště, hotel, nákupy, prohlídky, nouzové situace</li><li>Režim dojíždění bez omezení</li><li>Platí pro všechny jazyky</li></ul>
+          <p class="muted">Roční předplatné nebo jednorázový nákup navždy</p>
+        </div>
       </div>
-      <p class="note">Vyberte si roční předplatné nebo jednorázový doživotní nákup. Ceny najdete v aplikaci nebo v App Storu.</p>
+      <p class="muted">Ceny najdete v aplikaci a v App Storu. Roční předplatné se automaticky obnoví, pokud ho nezrušíte nejpozději 24 hodin před koncem období.</p>
     </section>
-    <section id="privacy">
-      <h2>Ochrana soukromí</h2>
-      <p>Žádný účet a žádné sledování pro reklamu. To, co se učíte, zůstává ve vašem zařízení a v iCloudu, pokud zapnete sdílení. Aplikace odesílá jen anonymní statistiky používání a hlášení o chybách, aby ji bylo možné opravovat a zlepšovat.</p>
-      <p><a href="privacy.html">Přečtěte si celé zásady ochrany soukromí</a> · <a href="support.html">Stránka podpory</a></p>
+
+    <section class="reveal" id="faq">
+      <h2>Časté dotazy</h2>
+      <div class="faq"><details><summary>Jaké jazyky se můžu učit?</summary><p>Korejštinu, japonštinu, čínštinu, španělštinu a indonéštinu. Tlačítka a nabídky jsou česky, ale významy vět a hlasové povely jsou anglicky. Proto samotná angličtina v seznamu není.</p></details>
+<details><summary>Jak ji používat v autě?</summary><p>Připojte iPhone k autu přes Bluetooth nebo CarPlay, otevřete režim dojíždění a stiskněte přehrávání. Zvuk jde z reproduktorů auta a aktuální věta se ukáže v části Právě hraje. Můžete také říct Siri „Spustit trénink dojíždění v Malmun“, nebo si jednou v aplikaci Zkratky nastavit automatizaci, která trénink spustí, jakmile se připojí CarPlay (nebo Bluetooth auta).</p></details>
+<details><summary>Poslouchá mikrofon pořád?</summary><p>Ne. Poslouchá jen ve chvíli, kdy jste po signálu na řadě, přes mikrofon iPhonu, a co uslyší, se zpracuje v zařízení.</p></details>
+<details><summary>Moje výslovnost se nerozpoznává.</summary><p>Rozpoznávání řeči běží v jazyce, který se učíte. Zkuste to v tišším prostředí a zkontrolujte, že je rozpoznávání řeči pro ten jazyk v zařízení stažené.</p></details>
+<details><summary>Jak přidám klávesnici?</summary><p>Otevřete Nastavení ▸ Obecné ▸ Klávesnice ▸ Klávesnice ▸ Přidat novou klávesnici a vyberte klávesnici Malmun. Při psaní na ni přepnete tlačítkem se zeměkoulí. Plný přístup není potřeba. Chcete-li zobrazit méně frází, klepněte na ikonu klávesnice vpravo dole na domovské obrazovce ▸ Spravovat klávesnici.</p></details>
+<details><summary>Nevidím scénář, který sdílel kamarád.</summary><p>Sdílení funguje přes iCloud, takže musíte být oba přihlášení k iCloudu. Pokud se pořád nezobrazí, aplikaci úplně zavřete a znovu otevřete.</p></details>
+<details><summary>Co potřebuji k vytváření scénářů pomocí AI?</summary><p>Zadejte do aplikace vlastní API klíč Anthropic a napište téma, vznikne nový rozhovor. Všechno ostatní funguje i bez klíče.</p></details>
+<details><summary>Jak zruším předplatné nebo dostanu peníze zpět?</summary><p>Platby vyřizuje Apple. Zrušit můžete v Nastavení iPhonu ▸ Účet Apple ▸ Předplatná ▸ Malmun. O vrácení peněz požádejte Apple na reportaproblem.apple.com.</p></details>
+<details><summary>Nový iPhone a Pro zmizelo.</summary><p>Přihlaste se stejným Účtem Apple a v Malmun klepněte na Nastavení ▸ Malmun Pro ▸ Obnovit nákupy.</p></details>
+<details><summary>Kde se ukládá můj pokrok?</summary><p>Účet nepotřebujete. Data zůstávají v zařízení a ve vašem iCloudu. Žádné reklamy ani sledování, odesílají se jen anonymní statistiky používání a hlášení chyb. Chyby a přání můžete hlásit i na GitHub Issues (github.com/M1zz/IndonesianSmallTalk/issues).</p></details></div>
+      <p class="contact">Dotazy nebo připomínky? Napište na <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>, použijte Nastavení ▸ Poslat zpětnou vazbu v aplikaci, nebo nám napište na Instagram: @lee25_ios.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Ať je dnešní cesta domů<br>vaším prvním rozhovorem</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6764088776">Stáhnout zdarma z App Storu</a>
     </section>
   </main>
-  <footer>© 2026 <span lang="ko">말문</span> · Malmun</footer>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Jazyk"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../en-GB/" hreflang="en-GB" lang="en-GB">English (UK)</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs" aria-current="page">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Zásady ochrany soukromí</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 Malmun</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>
