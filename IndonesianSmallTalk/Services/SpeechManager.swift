@@ -150,6 +150,14 @@ class SpeechManager: ObservableObject {
     }
 
     private func beginRecognition() throws {
+        // 세션이 녹음용으로 안 맞았거나(실패·다른 앱이 가져감) 마이크가 없으면 입력 형식이 0Hz·0채널로 온다.
+        // 그대로 installTap 하면 AVAudioEngine 이 ObjC 예외를 던져 앱이 죽으므로, 오류로 돌려준다.
+        let inputNode = audioEngine.inputNode
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        guard recordingFormat.sampleRate > 0, recordingFormat.channelCount > 0 else {
+            throw SpeechError.microphoneUnavailable
+        }
+
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: AppLanguage.learning.speechCode))
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionRequest else { return }
@@ -173,8 +181,6 @@ class SpeechManager: ObservableObject {
             }
         }
 
-        let inputNode = audioEngine.inputNode
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, _ in
             recognitionRequest.append(buffer)
             self?.detectSilence(buffer: buffer)
@@ -315,6 +321,8 @@ class SpeechManager: ObservableObject {
     private static func levenshtein(_ a: String, _ b: String) -> Int {
         let aArr = Array(a)
         let bArr = Array(b)
+        // 한쪽이 비면 1...0 범위가 되어 앱이 죽는다 — 거리는 다른 쪽 길이.
+        guard !aArr.isEmpty, !bArr.isEmpty else { return max(aArr.count, bArr.count) }
         var dp = Array(0...bArr.count)
 
         for i in 1...aArr.count {
@@ -332,6 +340,11 @@ class SpeechManager: ObservableObject {
         }
         return dp[bArr.count]
     }
+}
+
+enum SpeechError: Error {
+    /// 녹음할 입력(마이크)을 열 수 없다
+    case microphoneUnavailable
 }
 
 // MARK: - Voice

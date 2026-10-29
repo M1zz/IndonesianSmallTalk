@@ -1,5 +1,12 @@
 # todo
 
+## 1.0.4 크래시 (허브 릴리즈 빨강, 2026-10-29)
+> 새 크래시 14가지 20건, 활성 설치 1대. 대부분 워치독(메인 스레드가 오래 묶임), 1건은 abort.
+- [x] abort: 마이크 입력 형식이 0Hz·0채널일 때 installTap 이 ObjC 예외로 죽던 것, 오류로 돌려줌(SpeechManager)
+- [x] 발음 비교가 빈 문자열에서 1...0 범위로 죽던 것, 퇴근길 모드가 장면 0개일 때 메인을 붙잡던 루프
+- [ ] 워치독 19건: 원인 못 찾음. 허브 진단 상세의 전체 콜스택을 1.0.4 dSYM 으로 풀 것(앱 프레임 단서는 VoicePracticeView 다시 그리기 중 하나뿐)
+- [ ] 실기기에서 음성 연습 화면을 오래 열어 두기 · 백그라운드 갔다 오기 재현
+
 ## 하루 코스 (타임테이블) 기능 — 완료
 - [x] `Models/Journey.swift` — JourneyCourse / JourneyStop 모델 + 진행률 저장소(JourneyProgressStore)
 - [x] `Models/JourneyData.swift` — 3개 코스 × 6개 장면(각 7노드 대화 트리)

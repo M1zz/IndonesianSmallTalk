@@ -203,7 +203,7 @@ final class DriveSession: NSObject, ObservableObject {
     }
 
     private func loop() async {
-        while !Task.isCancelled, isPlaying {
+        while !Task.isCancelled, isPlaying, !lessons.isEmpty {
             guard lessonIndex < lessons.count else { lessonIndex = 0; continue }
             let current = lessons[lessonIndex]
             lesson = current
