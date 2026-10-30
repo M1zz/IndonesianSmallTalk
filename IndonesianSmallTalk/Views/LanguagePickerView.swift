@@ -159,10 +159,10 @@ struct LanguagePickerSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("취소") { dismiss() }
+                    Button("취소", systemImage: "xmark") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("바꾸기") {
+                    Button("바꾸기", systemImage: "checkmark") {
                         learningRaw = selection.rawValue
                         dismiss()
                     }

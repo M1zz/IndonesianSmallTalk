@@ -64,13 +64,13 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") { dismiss() }
+                    Button("닫기", systemImage: "xmark") { dismiss() }
                 }
             }
             .leeoPaywallSheet(MalmunSpec.self, isPresented: $showPaywall, features: MalmunPro.paywallFeatures)
             .sheet(isPresented: $showLanguagePicker) { LanguagePickerSheet() }
             .sheet(isPresented: $showDriveGuide) { DriveGuideSheet() }
-            .fullScreenCover(isPresented: $showOnboarding) { OnboardingView() }
+            .fullScreenCover(isPresented: $showOnboarding) { OnboardingView().foldConfined() }
         }
         .tint(Brand.blue)
     }
@@ -165,7 +165,7 @@ private struct GiftRows: View {
                                                  initialCategory: .purchase)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
-                                Button("닫기") { showSupport = false }
+                                Button("닫기", systemImage: "xmark") { showSupport = false }
                             }
                         }
                 }

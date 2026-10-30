@@ -67,7 +67,7 @@ struct RoadmapScreen: View {
                     LeeoFeedbackView<MalmunSpec>(initialType: .feature)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
-                                Button("닫기") { showFeedback = false }
+                                Button("닫기", systemImage: "xmark") { showFeedback = false }
                             }
                         }
                 }

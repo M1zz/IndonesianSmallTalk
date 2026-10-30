@@ -275,7 +275,7 @@ struct TreeSheetView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("닫기") { dismiss() }
+                        Button("닫기", systemImage: "xmark") { dismiss() }
                             .fontWeight(.semibold)
                     }
                 }

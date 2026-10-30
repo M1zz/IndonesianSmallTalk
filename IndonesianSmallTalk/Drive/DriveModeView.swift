@@ -476,7 +476,7 @@ struct DriveGuideSheet: View {
             .navigationTitle("차에서 쓰는 법")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) { Button("닫기", systemImage: "xmark") { dismiss() } }
             }
         }
     }

@@ -309,7 +309,7 @@ struct PhrasePracticeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("닫기") { dismiss() }
+                    Button("닫기", systemImage: "xmark") { dismiss() }
                 }
             }
             .task {

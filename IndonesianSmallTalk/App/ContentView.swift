@@ -18,6 +18,60 @@ struct ContentView: View {
     #endif
 
     var body: some View {
+        // 아이폰 듀오를 펴면 고르는 쪽(가로면 왼쪽, 세로면 아래)에 지금 화면, 결과 쪽(오른쪽, 위)에 연습 기록.
+        // 접혀 있거나 보통 아이폰이면 고르는 쪽만 그린다. 지금 화면 그대로다.
+        // 떠 있는 탭 막대와 추가 메뉴도 고르는 쪽 판 안에 있어 접힌 선을 넘지 않는다.
+        FoldSplitView {
+            tabs
+        } result: {
+            NavigationStack { PracticeHistoryView() }
+                .id(learningRaw)
+                // 이 판 안에서는 접히지 않은 화면처럼 선다.
+                .environment(\.foldLayout, .single)
+        }
+        .sheet(isPresented: $showAddScenario) {
+            AddScenarioView()
+        }
+        .sheet(isPresented: $showGenerateScenario) {
+            GenerateScenarioView()
+                .environmentObject(aiScenarioStore)
+        }
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView()
+                .foldConfined()
+        }
+        // 잠긴 기능을 누르면 그 기능을 앞세운 페이월 (구매·복원하면 저절로 닫힌다)
+        .sheet(item: $pro.paywallFeature) { feature in
+            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures, leadFeature: feature)
+                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+        }
+        .sheet(isPresented: $pro.showGeneralPaywall) {
+            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures)
+                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+        }
+        #if DEBUG
+        .fullScreenCover(isPresented: .constant(ScreenshotScene.current.map { $0 != .home } ?? false)) {
+            if let scene = ScreenshotScene.current { ScreenshotSceneHost(scene: scene) }
+        }
+        .sheet(isPresented: $showScreenshotPaywall) {
+            if let c = ScreenshotPaywallView.launchConfig {
+                ScreenshotPaywallView(yearlyPrice: c.yearly, lifetimePrice: c.lifetime, selected: c.selected)
+            }
+        }
+        #endif
+        .task {
+            if !hasSeenOnboarding {
+                showOnboarding = true
+            } else if !LanguagePrefs.hasChosenLearning {
+                // 다국어 이전부터 쓰던 사용자: 하던 언어(인도네시아어)를 그대로 고른 것으로 둔다.
+                learningRaw = AppLanguage.learning.rawValue
+            }
+        }
+    }
+
+    // MARK: Tabs
+
+    private var tabs: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 NavigationStack { HomeView() }
@@ -51,43 +105,6 @@ struct ContentView: View {
             }
         }
         .animation(.spring(response: 0.38, dampingFraction: 0.82), value: showAddMenu)
-        .sheet(isPresented: $showAddScenario) {
-            AddScenarioView()
-        }
-        .sheet(isPresented: $showGenerateScenario) {
-            GenerateScenarioView()
-                .environmentObject(aiScenarioStore)
-        }
-        .fullScreenCover(isPresented: $showOnboarding) {
-            OnboardingView()
-        }
-        // 잠긴 기능을 누르면 그 기능을 앞세운 페이월 (구매·복원하면 저절로 닫힌다)
-        .sheet(item: $pro.paywallFeature) { feature in
-            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures, leadFeature: feature)
-                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
-        }
-        .sheet(isPresented: $pro.showGeneralPaywall) {
-            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures)
-                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
-        }
-        #if DEBUG
-        .fullScreenCover(isPresented: .constant(ScreenshotScene.current.map { $0 != .home } ?? false)) {
-            if let scene = ScreenshotScene.current { ScreenshotSceneHost(scene: scene) }
-        }
-        .sheet(isPresented: $showScreenshotPaywall) {
-            if let c = ScreenshotPaywallView.launchConfig {
-                ScreenshotPaywallView(yearlyPrice: c.yearly, lifetimePrice: c.lifetime, selected: c.selected)
-            }
-        }
-        #endif
-        .task {
-            if !hasSeenOnboarding {
-                showOnboarding = true
-            } else if !LanguagePrefs.hasChosenLearning {
-                // 다국어 이전부터 쓰던 사용자: 하던 언어(인도네시아어)를 그대로 고른 것으로 둔다.
-                learningRaw = AppLanguage.learning.rawValue
-            }
-        }
     }
 
     // MARK: Floating Bar

@@ -1,5 +1,6 @@
 import CloudKit
 import SwiftUI
+import LeeoKit
 
 struct HomeView: View {
     private let language = AppLanguage.learning
@@ -179,6 +180,7 @@ struct HomeView: View {
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView()
+                .foldConfined()
         }
         .sheet(isPresented: $showLanguagePicker) {
             LanguagePickerSheet()
