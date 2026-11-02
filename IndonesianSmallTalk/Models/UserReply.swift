@@ -110,9 +110,12 @@ final class UserReplyStore: ObservableObject {
         guard let data = try? Data(contentsOf: fileURL) else { return }
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        if let decoded = try? decoder.decode([UserReply].self, from: data) {
-            replies = decoded
+        guard let decoded = try? decoder.decode([UserReply].self, from: data) else {
+            // 못 읽은 원본을 옆에 남긴다 — 빈 목록으로 시작해 다음 저장이 덮어써도 되찾을 수 있게
+            try? FileManager.default.copyItem(at: fileURL, to: fileURL.appendingPathExtension("unreadable"))
+            return
         }
+        replies = decoded
     }
 
     private func save() {
