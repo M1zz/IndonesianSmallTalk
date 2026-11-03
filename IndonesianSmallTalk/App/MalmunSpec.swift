@@ -18,6 +18,9 @@ enum MalmunSpec: LeeoAppSpec {
         appIdentifier: "com.devkoan.IndonesianSmallTalk"
     )
 
+    /// 백업 금고(LeeoVault)가 함께 담는 앱 그룹.
+    static let appGroups = ["group.com.devkoan.IndonesianSmallTalk"]
+
     /// 정책·지원 페이지는 앱 화면 언어의 페이지로 연다 (docs/ — 한국어는 맨 위, 나머지는 <언어 코드>/).
     static let legal: LeeoLegalConfig = {
         let base = "https://m1zz.github.io/IndonesianSmallTalk/"
