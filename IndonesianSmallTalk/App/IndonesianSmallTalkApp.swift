@@ -55,6 +55,10 @@ struct IndonesianSmallTalkApp: App {
                     if phase == .active {
                         Task { await refreshAll() }
                     }
+                    // 내 표현을 Spotlight 에 다시 싣는다 (→ DriveIntents.swift)
+                    if phase != .inactive {
+                        Task { await PhraseEntity.reindex() }
+                    }
                 }
         }
     }

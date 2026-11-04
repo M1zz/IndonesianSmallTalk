@@ -265,6 +265,8 @@ struct DriveModeView: View {
             if !ok { voiceDenied = true }
         }
         session.start(source)
+        // 화면에서 시작한 것도 Siri 에 알린다 — 다음엔 Siri 가 먼저 권한다.
+        _ = try? await IntentDonationManager.shared.donate(intent: StartDriveIntent())
     }
 
     private func controlButton(icon: String, label: LocalizedStringKey, size: CGFloat, action: @escaping () -> Void) -> some View {

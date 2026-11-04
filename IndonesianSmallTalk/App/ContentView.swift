@@ -89,6 +89,10 @@ struct ContentView: View {
             }
             .safeAreaInset(edge: .bottom) { floatingBar }
             .id(learningRaw)
+            // Spotlight · Siri 에서 고른 내 표현 → '내 표현' 탭 (여는 건 MyPhrasesView)
+            .onChange(of: PhraseOpenRequest.shared.phraseID, initial: true) { _, id in
+                if id != nil { selectedTab = 1 }
+            }
 
             if showAddMenu {
                 Color.black.opacity(0.28)

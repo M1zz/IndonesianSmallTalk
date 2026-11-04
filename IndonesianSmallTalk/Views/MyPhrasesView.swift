@@ -58,6 +58,11 @@ struct MyPhrasesView: View {
                 }
             }
         }
+        .onChange(of: PhraseOpenRequest.shared.phraseID, initial: true) { _, id in
+            guard let id else { return }
+            PhraseOpenRequest.shared.phraseID = nil
+            practicing = store.allPhrases.first { $0.id == id }
+        }
         .sheet(item: $practicing) { phrase in
             PhrasePracticeView(phrase: phrase)
         }
