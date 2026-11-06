@@ -57,7 +57,7 @@ struct ResultView: View {
                 statsGrid
 
                 // ── 개발자 응원 부탁 — 이미 Pro 인 사람에게만, 드물게(LeeoTipAskPolicy)
-                if pro.hasPro, let tipJar = pro.tipJar {
+                if pro.tier == .pro, let tipJar = pro.tipJar {
                     LeeoTipAskSlot<MalmunSpec>(tipJar: tipJar, reached: MalmunTipMoments.reachedNow)
                 }
 

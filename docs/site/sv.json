@@ -126,28 +126,29 @@
     "note": "När appen är på svenska säger du röstkommandona på engelska. De hörs bara när det är din tur, efter signalen. Den aktuella meningen visas i bilens uppspelningsinfo. Det finns ingen egen appskärm i CarPlay."
   },
   "pricing": {
-    "title": "Nästan allt är gratis. Malmun Pro låser upp resten.",
+    "title": "Börja gratis. Gå längre med Plus eller Pro.",
     "free": {
       "name": "Gratis",
       "items": [
-        "Förgrenat småprat och dagskurser (indonesiska)",
-        "Situationsdialoger: grunder och vardagsprat",
-        "Pendlarläge, 3 scener per dag",
-        "Uttalsövning, manus, importera samtal, övningshistorik",
+        "Alla sex språk, med situationsdialogerna grunder och vardagsprat",
+        "Förgrenat småprat, dagskurser och veckoschema (indonesiska)",
+        "Förgrenade samtal med text eller röst, uttalsövning, manus, övningshistorik",
         "Mina fraser, ordkort, frastangentbord",
-        "Dela scenarier med vänner, skapa scenarier med AI"
+        "Pendlarläge, 3 scener per dag, även med start via Siri",
+        "Upp till 3 egna eller importerade scenarier, visa scenarier som vänner delar"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Alla situationsdialoger: restaurang, att ta sig fram, flygplats, hotell, shopping, sightseeing, nödsituationer",
-        "Obegränsat Pendlarläge",
-        "Gäller alla språk"
+        "Plus: alla 53 situationsdialoger (restaurang, att ta sig fram, flygplats, hotell, shopping, sightseeing, nödsituationer) på alla sex språk",
+        "Plus: obegränsat med egna scenarier och importerade samtal",
+        "Pro: allt i Plus och obegränsat Pendlarläge",
+        "Pro: skapa scenarier med AI (din egen Anthropic-API-nyckel) och dela scenarier med vänner via iCloud"
       ],
-      "note": "Årsprenumeration eller ett engångsköp för alltid"
+      "note": "Var och en som vecko-, månads- eller årsprenumeration eller som engångsköp för alltid. Nya prenumeranter får rabatt på första året med årsprenumerationen."
     },
-    "note": "Priserna ser du i appen och på App Store. Årsprenumerationen förnyas automatiskt om du inte säger upp den senast 24 timmar innan perioden slutar."
+    "note": "Priserna ser du i appen och på App Store. Prenumerationer förnyas automatiskt om du inte säger upp dem senast 24 timmar innan perioden slutar. Har du köpt Malmun när appen kostade pengar, eller köpt Malmun Pro, behåller du alla funktioner utan att köpa något mer."
   },
   "faq": {
     "title": "Vanliga frågor",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Jag ser inte ett scenario som en vän har delat.",
-        "a": "Delning går via iCloud, så ni behöver båda vara inloggade i iCloud. Syns det ändå inte, stäng appen helt och öppna den igen."
+        "a": "Delning går via iCloud, så ni behöver båda vara inloggade i iCloud. Syns det ändå inte, stäng appen helt och öppna den igen. Att dela scenarier ingår i Malmun Pro, att visa delade scenarier är gratis."
       },
       {
         "q": "Vad behövs för att skapa scenarier med AI?",
-        "a": "Lägg in din egen Anthropic-API-nyckel i appen och skriv ett ämne, så skapas ett nytt samtal. Allt annat fungerar utan nyckel."
+        "a": "Lägg in din egen Anthropic-API-nyckel i appen och skriv ett ämne, så skapas ett nytt samtal. Att skapa scenarier med AI ingår i Malmun Pro. Inget annat i appen kräver en nyckel."
       },
       {
         "q": "Hur säger jag upp eller får pengarna tillbaka?",
         "a": "Betalningar sköts av Apple. Säg upp i iPhones Inställningar ▸ Apple-konto ▸ Prenumerationer ▸ Malmun. Återbetalning begär du hos Apple på reportaproblem.apple.com."
       },
       {
-        "q": "Ny iPhone och Pro är borta.",
-        "a": "Logga in med samma Apple-konto och tryck i Malmun på Inställningar ▸ Malmun Pro ▸ Återställ köp."
+        "q": "Ny iPhone och Plus eller Pro är borta.",
+        "a": "Logga in med samma Apple-konto och tryck i Malmun på Inställningar (kugghjulet uppe till höger på startskärmen) ▸ Återställ köp."
       },
       {
         "q": "Var sparas mina framsteg?",

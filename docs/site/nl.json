@@ -126,28 +126,29 @@
     "note": "Staat de app in het Nederlands, dan spreek je de commando’s in het Engels uit. Ze worden alleen gehoord als je na het piepje aan de beurt bent. De huidige zin staat in de afspeelinformatie van de auto. Er is geen apart app-scherm in CarPlay."
   },
   "pricing": {
-    "title": "Bijna alles is gratis. Malmun Pro opent de rest.",
+    "title": "Begin gratis. Met Plus of Pro kun je verder.",
     "free": {
       "name": "Gratis",
       "items": [
-        "Vertakte smalltalk en dagcursussen (Indonesisch)",
-        "Situatiegesprekken: basis en dagelijkse praat",
-        "Onderweg-modus, 3 scènes per dag",
-        "Uitspraak, script, gesprekken importeren, oefengeschiedenis",
+        "Alle zes talen, met de situatiegesprekken basis en dagelijkse praat",
+        "Vertakte smalltalk, dagcursussen en weekrooster (Indonesisch)",
+        "Vertakte gesprekken met tekst of stem, uitspraak, script, oefengeschiedenis",
         "Mijn zinnen, woordkaarten, zinnentoetsenbord",
-        "Scenario’s delen met vrienden, scenario’s maken met AI"
+        "Onderweg-modus, 3 scènes per dag, ook te starten met Siri",
+        "Tot 3 eigen of geïmporteerde scenario’s, door vrienden gedeelde scenario’s bekijken"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Alle situatiegesprekken: restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden, noodgevallen",
-        "Onderweg-modus zonder limiet",
-        "Geldt voor alle talen"
+        "Plus: alle 53 situatiegesprekken (restaurant, vervoer, luchthaven, hotel, winkelen, bezienswaardigheden, noodgevallen) in alle zes talen",
+        "Plus: onbeperkt eigen scenario’s en gesprekken importeren",
+        "Pro: alles van Plus en de Onderweg-modus zonder limiet",
+        "Pro: scenario’s maken met AI (je eigen Anthropic-API-sleutel) en scenario’s delen met vrienden via iCloud"
       ],
-      "note": "Jaarabonnement of eenmalige aankoop voor altijd"
+      "note": "Elk als week-, maand- of jaarabonnement of als eenmalige aankoop voor altijd. Nieuwe abonnees krijgen korting op het eerste jaar van het jaarabonnement."
     },
-    "note": "Prijzen vind je in de app en in de App Store. Het jaarabonnement wordt automatisch verlengd, tenzij je het uiterlijk 24 uur voor het einde van de periode opzegt."
+    "note": "Prijzen vind je in de app en in de App Store. Abonnementen worden automatisch verlengd, tenzij je ze uiterlijk 24 uur voor het einde van de periode opzegt. Heb je Malmun gekocht toen de app nog betaald was, of Malmun Pro aangeschaft, dan houd je alle functies zonder iets bij te kopen."
   },
   "faq": {
     "title": "Veelgestelde vragen",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Ik zie een scenario niet dat een vriend heeft gedeeld.",
-        "a": "Delen loopt via iCloud, dus jullie moeten allebei bij iCloud ingelogd zijn. Verschijnt het nog steeds niet, sluit de app dan helemaal af en open hem opnieuw."
+        "a": "Delen loopt via iCloud, dus jullie moeten allebei bij iCloud ingelogd zijn. Verschijnt het nog steeds niet, sluit de app dan helemaal af en open hem opnieuw. Scenario’s delen hoort bij Malmun Pro; gedeelde scenario’s bekijken is gratis."
       },
       {
         "q": "Wat heb ik nodig om scenario’s met AI te maken?",
-        "a": "Vul je eigen Anthropic-API-sleutel in de app in en typ een onderwerp, dan wordt er een nieuw gesprek gemaakt. Al het andere werkt ook zonder sleutel."
+        "a": "Vul je eigen Anthropic-API-sleutel in de app in en typ een onderwerp, dan wordt er een nieuw gesprek gemaakt. Scenario’s maken met AI hoort bij Malmun Pro. Voor de rest van de app heb je geen sleutel nodig."
       },
       {
         "q": "Hoe zeg ik op of krijg ik mijn geld terug?",
         "a": "Betalingen lopen via Apple. Opzeggen doe je op je iPhone via Instellingen ▸ Apple Account ▸ Abonnementen ▸ Malmun. Geld terugvragen doe je bij Apple via reportaproblem.apple.com."
       },
       {
-        "q": "Nieuwe iPhone en Pro is weg.",
-        "a": "Log in met hetzelfde Apple Account en tik in Malmun op Instellingen ▸ Malmun Pro ▸ Aankopen herstellen."
+        "q": "Nieuwe iPhone en Plus of Pro is weg.",
+        "a": "Log in met hetzelfde Apple Account en tik in Malmun op Instellingen (het tandwiel rechtsboven op het startscherm) ▸ Aankopen herstellen."
       },
       {
         "q": "Waar wordt mijn voortgang bewaard?",

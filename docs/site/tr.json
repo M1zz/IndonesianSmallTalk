@@ -126,28 +126,29 @@
     "note": "Uygulama Türkçe olduğunda sesli komutları İngilizce söylersin. Komutlar yalnızca sinyal sesinden sonra sıra sendeyken dinlenir. Çalan cümle arabanın oynatma bilgisinde görünür. CarPlay’de ayrı bir uygulama ekranı yoktur."
   },
   "pricing": {
-    "title": "Neredeyse her şey ücretsiz. Malmun Pro gerisini açar.",
+    "title": "Ücretsiz başla. Daha fazlası için Malmun Plus ya da Pro.",
     "free": {
       "name": "Ücretsiz",
       "items": [
-        "Dallanan sohbetler ve günlük kurslar (Endonezce)",
-        "Durum diyalogları: temel ifadeler ve gündelik sohbet",
-        "Yol Modu, günde 3 sahne",
-        "Telaffuz, metin görünümü, diyalog içe aktarma, pratik geçmişi",
+        "Altı dilin hepsi, durum diyalogları: temel ifadeler ve gündelik sohbet",
+        "Dallanan sohbetler, günlük kurslar ve haftalık program (Endonezce)",
+        "Yazıyla ya da sesle dallanan konuşma pratiği, telaffuz, metin görünümü, pratik geçmişi",
         "İfadelerim, kelime kartları, ifade klavyesi",
-        "Arkadaşlarla senaryo paylaşma, yapay zekâyla senaryo oluşturma"
+        "Yol Modu, günde 3 sahne, Siri ile başlatma dahil",
+        "Kendi oluşturduğun ya da içe aktardığın 3 senaryo, arkadaşlarının paylaştığı senaryoları görme"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Tüm durum diyalogları: restoran, ulaşım, havalimanı, otel, alışveriş, gezi, acil durumlar",
-        "Sınırsız Yol Modu",
-        "Tüm diller için geçerli"
+        "Plus: 53 durum diyaloğunun hepsi (restoran, ulaşım, havalimanı, otel, alışveriş, gezi, acil durumlar), altı dilin hepsinde",
+        "Plus: sınırsız kendi senaryoların ve diyalog içe aktarma",
+        "Pro: Plus’taki her şey ve sınırsız Yol Modu",
+        "Pro: yapay zekâyla senaryo oluşturma (kendi Anthropic API anahtarınla) ve iCloud ile arkadaşlarınla senaryo paylaşma"
       ],
-      "note": "Yıllık abonelik ya da tek seferlik ömür boyu satın alma"
+      "note": "Her biri haftalık, aylık ya da yıllık abonelik veya tek seferlik ömür boyu satın alma olarak sunulur. Yıllık abonelikte yeni abonelere ilk yıl indirimlidir."
     },
-    "note": "Fiyatları uygulamada ve App Store’da görebilirsin. Yıllık abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir."
+    "note": "Fiyatları uygulamada ve App Store’da görebilirsin. Abonelikler, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Malmun’u ücretliyken satın aldıysan ya da Malmun Pro’n varsa tüm özellikler ek ödeme olmadan sende kalır."
   },
   "faq": {
     "title": "Sık sorulan sorular",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Arkadaşımın paylaştığı senaryoyu göremiyorum.",
-        "a": "Paylaşım iCloud üzerinden çalışır, bu yüzden ikinizin de iCloud’a giriş yapmış olması gerekir. Hâlâ görünmüyorsa uygulamayı tamamen kapatıp yeniden aç."
+        "a": "Paylaşım iCloud üzerinden çalışır, bu yüzden ikinizin de iCloud’a giriş yapmış olması gerekir. Hâlâ görünmüyorsa uygulamayı tamamen kapatıp yeniden aç. Senaryo paylaşmak bir Malmun Pro özelliğidir; sana gönderilenleri görmek ücretsizdir."
       },
       {
         "q": "Yapay zekâyla senaryo oluşturmak için ne gerekir?",
-        "a": "Kendi Anthropic API anahtarını uygulamaya gir ve bir konu yaz, yeni bir diyalog oluşturulur. Diğer her şey anahtar olmadan çalışır."
+        "a": "Kendi Anthropic API anahtarını uygulamaya gir ve bir konu yaz, yeni bir diyalog oluşturulur. Yapay zekâyla senaryo oluşturma Malmun Pro’ya dahildir. Diğer özelliklerin hiçbiri anahtar gerektirmez."
       },
       {
         "q": "Aboneliği nasıl iptal ederim ya da iade alırım?",
         "a": "Ödemeleri Apple yönetir. İptal için iPhone’da Ayarlar ▸ Apple Hesabı ▸ Abonelikler ▸ Malmun. İade için reportaproblem.apple.com üzerinden Apple’a başvur."
       },
       {
-        "q": "Yeni iPhone aldım, Pro gitti.",
-        "a": "Aynı Apple Hesabı ile giriş yap, sonra Malmun’da Ayarlar ▸ Malmun Pro ▸ Satın Alımları Geri Yükle’ye dokun."
+        "q": "Yeni iPhone aldım, Plus ya da Pro gitti.",
+        "a": "Aynı Apple Hesabı ile giriş yap, sonra Malmun’da Ayarlar (ana ekranın sağ üstündeki dişli) ▸ Satın Alımları Geri Yükle’ye dokun."
       },
       {
         "q": "İlerlemem nerede saklanıyor?",

@@ -10,6 +10,8 @@ struct SettingsView: View {
     @State private var showLanguagePicker = false
     @State private var showOnboarding = false
     @State private var showDriveGuide = false
+    @State private var showGraduation = false
+    @State private var showManageSubscription = false
 
     var body: some View {
         NavigationStack {
@@ -17,7 +19,7 @@ struct SettingsView: View {
                 proSection
                 // Pro 선물 보내기 · 받은 코드 넣기
                 if let gift = pro.gift {
-                    GiftRows(gift: gift, isPro: pro.hasPro)
+                    GiftRows(gift: gift, isPro: pro.tier == .pro)
                 }
                 // 개발자 응원하기 — 팁 상품이 있을 때만 선다
                 if let tipJar = pro.tipJar {
@@ -67,7 +69,14 @@ struct SettingsView: View {
                     Button("닫기", systemImage: "xmark") { dismiss() }
                 }
             }
-            .leeoPaywallSheet(MalmunSpec.self, isPresented: $showPaywall, features: MalmunPro.paywallFeatures)
+            .sheet(isPresented: $showPaywall) { PaywallView() }
+            .sheet(isPresented: $showGraduation) {
+                LeeoGraduationOfferView(graduate: pro.product(ProEntitlement.graduateID)) {
+                    await pro.didChangePurchases()
+                }
+                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+            }
+            .manageSubscriptionsSheet(isPresented: $showManageSubscription)
             .sheet(isPresented: $showLanguagePicker) { LanguagePickerSheet() }
             .sheet(isPresented: $showDriveGuide) { DriveGuideSheet() }
             .fullScreenCover(isPresented: $showOnboarding) { OnboardingView().foldConfined() }
@@ -75,49 +84,48 @@ struct SettingsView: View {
         .tint(Brand.blue)
     }
 
+    /// 말문 Plus · Pro — 지금 칸, 페이월, 구매 복원. 구독 중이면 구독 관리와 '평생으로 바꾸기' 가 늘 아래에 선다.
     @ViewBuilder
     private var proSection: some View {
         Section {
-            if pro.hasPro {
-                Label {
-                    Text("말문 Pro 사용 중")
-                } icon: {
-                    Image(systemName: "crown.fill").foregroundColor(Brand.glow)
+            Button { showPaywall = true } label: {
+                HStack(spacing: 12) {
+                    Image(systemName: "crown.fill")
+                        .foregroundColor(Brand.deep)
+                        .frame(width: 32, height: 32)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Brand.glow))
+                        .accessibilityHidden(true)
+                    Text("말문 Plus · Pro", comment: "Paywall title. Malmun is the app name")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Text(verbatim: pro.tier.title)
+                        .foregroundColor(.secondary)
                 }
-            } else {
-                Button { showPaywall = true } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "crown.fill")
-                            .foregroundColor(Brand.deep)
-                            .frame(width: 32, height: 32)
-                            .background(RoundedRectangle(cornerRadius: 8).fill(Brand.glow))
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("말문 Pro")
-                                .scaledFont(size: 16, weight: .semibold)
-                                .foregroundColor(.primary)
-                            Text("퇴근길 모드 무제한 · 상황별 회화 전체")
-                                .scaledFont(size: 12)
-                                .foregroundColor(.secondary)
-                        }
-                    }
+            }
+            if pro.subscription != nil {
+                Button(LeeoLadderText.manageSubscription) { showManageSubscription = true }
+                if pro.product(ProEntitlement.graduateID) != nil {
+                    Button(LeeoLadderText.switchToLifetimeEntry) { showGraduation = true }
                 }
+            }
+            if pro.tier < .pro {
                 Button {
-                    Task { await pro.store.restore() }
+                    Task { await pro.restore() }
                 } label: {
                     HStack {
                         Label("구매 복원", systemImage: "arrow.clockwise")
-                        if pro.store.isRestoring {
+                        if pro.isWorking {
                             Spacer()
                             ProgressView()
                         }
                     }
                 }
-                .disabled(pro.store.isRestoring)
+                .disabled(pro.isWorking)
             }
         } footer: {
-            if let error = pro.store.lastError {
+            if let error = pro.failureMessage {
                 Text(error).foregroundColor(.orange)
-            } else if !pro.hasPro {
+            } else if pro.subscription != nil || pro.tier == .free {
                 Text("구독 해지·환불은 iPhone 설정 ▸ Apple 계정 ▸ 구독에서 할 수 있어요.")
             }
         }

@@ -99,28 +99,29 @@
     "note": "Voice commands are only heard on your turn, after the chime. Say the sentence right and you hear “Nice!”. The current sentence shows in your car's Now Playing. There is no separate CarPlay app screen."
   },
   "pricing": {
-    "title": "Almost everything is free. Pro opens the rest.",
+    "title": "Start free. Go further with Plus or Pro.",
     "free": {
       "name": "Free",
       "items": [
-        "Branching small talk and Day Courses (Indonesian)",
-        "Situational dialogues: Basics and Casual chat",
-        "Commute Mode, 3 scenes a day",
-        "Pronunciation practice, script view, dialogue import, practice history",
+        "All six languages, with the Basics and Casual chat dialogues",
+        "Branching small talk, Day Courses and the weekly timetable (Indonesian)",
+        "Branching practice by text or voice, pronunciation practice, script view, practice history",
         "My phrases, vocab flashcards, phrase keyboard",
-        "Share scenarios with friends, generate scenarios with AI"
+        "Commute Mode, 3 scenes a day, including starting it with Siri",
+        "Up to 3 scenarios you make or import, and viewing scenarios friends share with you"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Every situational dialogue: restaurants, getting around, airport, hotels, shopping, sightseeing, emergencies",
-        "Unlimited Commute Mode",
-        "Covers all six languages"
+        "Plus: all 53 situational dialogues (restaurants, getting around, airport, hotels, shopping, sightseeing, emergencies) in all six languages",
+        "Plus: unlimited scenarios of your own and dialogue imports",
+        "Pro: everything in Plus, plus unlimited Commute Mode",
+        "Pro: generate scenarios with AI (your own Anthropic API key) and share scenarios with friends over iCloud"
       ],
-      "note": "Yearly subscription or a one-time lifetime purchase"
+      "note": "Each comes as a weekly, monthly or yearly subscription or a one-time lifetime purchase. New subscribers get a discounted first year on the yearly plan."
     },
-    "note": "See prices in the app or on the App Store. The yearly plan renews automatically unless cancelled at least 24 hours before the period ends."
+    "note": "See prices in the app or on the App Store. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends. If you paid for Malmun before it went free, or bought Malmun Pro, you keep every feature with nothing more to buy."
   },
   "faq": {
     "title": "Questions",
@@ -147,19 +148,19 @@
       },
       {
         "q": "I can't see a scenario my friend shared.",
-        "a": "Sharing with friends works through iCloud, so you both need to be signed in to iCloud. If it still doesn't appear, fully close the app and open it again."
+        "a": "Sharing with friends works through iCloud, so you both need to be signed in to iCloud. If it still doesn't appear, fully close the app and open it again. Sharing scenarios is a Malmun Pro feature; viewing the ones you receive is free."
       },
       {
         "q": "What do I need to generate scenarios with AI?",
-        "a": "Add your own Anthropic API key in the app and type a topic, and it writes a new dialogue. Everything else works without a key."
+        "a": "Add your own Anthropic API key in the app and type a topic, and it writes a new dialogue. Generating scenarios with AI is part of Malmun Pro. Nothing else in the app needs a key."
       },
       {
         "q": "How do I cancel or get a refund?",
         "a": "Payments are handled by Apple. Cancel in iPhone Settings ▸ Apple Account ▸ Subscriptions ▸ Malmun. For a refund, ask Apple at reportaproblem.apple.com."
       },
       {
-        "q": "I got a new phone and Pro is gone.",
-        "a": "Sign in with the same Apple Account, then go to Settings ▸ Malmun Pro ▸ Restore Purchases in Malmun."
+        "q": "I got a new phone and Plus or Pro is gone.",
+        "a": "Sign in with the same Apple Account, then in Malmun open Settings (the gear at the top right of the home screen) ▸ Restore Purchases."
       },
       {
         "q": "Where is my progress stored?",

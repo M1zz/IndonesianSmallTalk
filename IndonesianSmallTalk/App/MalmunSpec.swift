@@ -3,9 +3,9 @@ import LeeoKit
 
 /// LeeoKit 계약 — 말문의 이름·연락처·정책 링크·수익모델을 한곳에 둔다.
 ///
-/// 수익모델(부분 유료화): 기본 스몰토크·하루 코스·내 표현·단어장·키보드·발음 연습은 모두 무료.
-/// 말문 Pro 는 두 가지를 연다 — 퇴근길 모드 무제한(무료는 하루 3장면), 상황별 회화 전체(무료는 기본·일상 대화).
-/// 상품은 연간 구독(체험은 App Store Connect 에서 설정) + 평생 구매.
+/// 수익모델: 무료 다운로드 + 무료 · Plus · Pro (1.0.7 까지는 유료 다운로드였다 — 그때 받은 사람은 Pro).
+/// Plus 는 상황별 회화 전체 · 내 시나리오 무제한, Pro 는 거기에 퇴근길 모드 무제한 · AI 시나리오 · 친구와 나누기.
+/// 칸마다 주 · 월 · 연 구독과 평생. 칸과 상품의 원본은 Models/MalmunPro.swift.
 ///
 /// 피드백·익명 사용 통계·크래시 진단·원격 킬스위치는 공용 허브(FeedbackHub)로 간다 — appIdentifier(번들 ID)로 앱을 구분.
 /// ⚠️ 그 iCloud 컨테이너 권한이 IndonesianSmallTalk.entitlements 에 있다. 빼면 CKContainer 를 만드는 순간 앱이 죽는다.
@@ -31,26 +31,30 @@ enum MalmunSpec: LeeoAppSpec {
         )
     }()
 
+    /// 무료 · Plus · Pro. 칸마다 주 · 월 · 연 구독과 평생 (→ Models/MalmunPro.swift).
     static let monetization = LeeoMonetization.freemiumSubscription(
         LeeoSubscriptionConfig(
-            productIDs: [MalmunPro.yearlyID, MalmunPro.lifetimeID],
+            productIDs: ProEntitlement.productIDs,
             termsURL: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+            entitlementIDs: ProEntitlement.entitlementIDs,
+            // 칸(Plus · Pro)마다 무엇이 열리는지는 `ProFeature.tier` 가 정한다. 여기는 한도의 선언일 뿐이다.
             gate: LeeoGatePolicy(
-                freeLimits: [ProFeature.commute.rawValue: MalmunPro.freeDriveScenesPerDay],
-                proOnly: [ProFeature.situations.rawValue],
+                freeLimits: [ProFeature.commute.rawValue: MalmunPro.freeDriveScenesPerDay,
+                             ProFeature.scenarios.rawValue: MalmunPro.freeScenarioLimit],
+                proOnly: [ProFeature.situations.rawValue, ProFeature.aiScenario.rawValue, ProFeature.share.rawValue],
                 warnWhenRemaining: 1
             ),
-            // Pro 선물하기. 보내는 사람은 소모성 선물 상품을 사고, 받는 사람은 평생 Pro 를 산 것과 같아진다.
+            // Pro 선물하기. 보내는 사람은 소모성 선물 상품을 사고, 받는 사람은 Pro 평생을 산 것과 같아진다.
             // 선물 기록은 피드백과 같은 허브 컨테이너의 공개 DB 에 둔다. entitlements 에 이미 있다.
             // ⚠️ 선물 상품은 productIDs · entitlementIDs 에 넣지 않는다. 넣으면 선물을 산 사람이 Pro 가 된다.
             gift: LeeoGiftConfig(
-                productID: MalmunPro.giftID,
-                grantsProductID: MalmunPro.lifetimeID,
+                productID: ProEntitlement.giftID,
+                grantsProductID: ProEntitlement.proLifetimeID,
                 containerIdentifier: "iCloud.com.Ysoup.FeedbackHub"
             ),
             // 개발자 응원하기(팁). 소모성이고 아무것도 열지 않는다. 작은 것부터.
             // ⚠️ 팁 상품도 productIDs · entitlementIDs 에 넣지 않는다. 넣으면 낸 사람이 Pro 가 된다.
-            tipJar: LeeoTipJarConfig(productIDs: MalmunPro.tipIDs)
+            tipJar: LeeoTipJarConfig(productIDs: ProEntitlement.tipIDs)
         )
     )
 

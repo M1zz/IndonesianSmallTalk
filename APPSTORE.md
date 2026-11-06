@@ -63,17 +63,20 @@ Siri에게 "말문 퇴근길 연습 시작"이라고 말해 시작하고, 단축
 시나리오와 답을 직접 추가하고, iCloud로 친구와 나눌 수 있습니다
 내 Anthropic API 키를 넣으면 AI가 새 시나리오를 만들어 줍니다
 
-말문 Pro
-아래 두 가지를 빼면 모든 기능이 무료입니다
-상황별 회화는 기본 표현과 일상 대화가 무료이고, 나머지 상황은 Pro에서 열립니다
-퇴근길 모드는 하루 3장면까지 무료, Pro는 무제한입니다
-Pro는 연간 구독 또는 한 번 결제하는 평생 이용권이며, 6개 언어 모두에 적용됩니다
+무료와 말문 Plus, 말문 Pro
+무료로 6개 언어 모두에서 상황별 회화의 기본 표현과 일상 대화, 갈래 회화 연습, 발음 연습, 대본 보기, 단어 카드, 문장 키보드를 쓸 수 있습니다
+인도네시아어 스몰토크 시나리오와 하루 코스, 주간 시간표도 무료입니다
+퇴근길 모드는 하루 3장면까지, 직접 만들거나 가져온 시나리오는 3개까지 무료입니다
+말문 Plus는 상황별 회화 53개 전체를 열고, 직접 만든 시나리오와 대화 가져오기를 무제한으로 쓰게 합니다
+말문 Pro는 Plus 전부에 퇴근길 모드 무제한, AI로 시나리오 만들기, iCloud로 친구와 시나리오 나누기를 더합니다
+Plus와 Pro는 주간, 월간, 연간 구독 또는 한 번 결제하는 평생 이용권 가운데 고를 수 있고, 6개 언어 모두에 적용됩니다
+예전에 돈을 내고 앱을 받으셨거나 말문 Pro를 이미 구입하신 분은 따로 결제하지 않아도 지금처럼 모든 기능을 쓸 수 있습니다
 
 개인정보
 계정이 필요 없습니다. 학습 기록은 기기와 내 iCloud에만 저장되고, 음성 인식은 기기 안에서 처리합니다. 광고와 추적이 없으며, 익명 사용 통계와 오류 진단만 개발자의 iCloud로 보내집니다.
 
 구독 안내
-연간 구독은 현재 기간이 끝나기 최소 24시간 전에 해지하지 않으면 자동으로 갱신됩니다. 해지는 설정 앱의 Apple 계정 구독에서 할 수 있습니다. 평생 이용권은 한 번만 결제합니다.
+말문 Plus와 말문 Pro는 주간, 월간, 연간 자동 갱신 구독과 한 번 결제하는 평생 이용권으로 제공됩니다. 연간 구독은 처음 구독하는 분께 첫 해 할인가가 적용되고, 그 뒤에는 정가로 갱신됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 해지하지 않으면 자동으로 갱신됩니다. 해지는 설정 앱의 Apple 계정 구독에서 할 수 있습니다. 평생 이용권은 한 번만 결제합니다.
 이용약관(EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 개인정보처리방침: https://m1zz.github.io/IndonesianSmallTalk/privacy.html
 
@@ -147,17 +150,20 @@ Phrase keyboard: tap a meaning and the sentence in your learning language is typ
 Add your own scenarios and replies, and share them with friends through iCloud
 Generate new scenarios with AI using your own Anthropic API key
 
-MALMUN PRO
-Everything is free except two things
-Situational dialogues: Basics and Casual chat are free, the rest unlock with Pro
-Commute Mode: 3 scenes a day for free, unlimited with Pro
-Pro is a yearly subscription or a one-time lifetime purchase, and it covers all six languages
+FREE, PLUS AND PRO
+Free in all six languages: Basics and Casual chat, branching and pronunciation practice, script view, flashcards, phrase keyboard
+Indonesian small talk, Day Courses and the weekly timetable are free too
+Commute Mode for 3 scenes a day and 3 scenarios you make or import are free
+Malmun Plus unlocks all 53 dialogues and unlimited scenarios and imports
+Malmun Pro adds unlimited Commute Mode, AI scenarios and sharing with friends over iCloud
+Choose weekly, monthly or yearly, or pay once for lifetime
+Already paid for Malmun or bought Malmun Pro? You keep every feature
 
 PRIVACY
 No account. Your learning data stays on your device and in your own iCloud, and speech is recognized on device. No ads, no tracking. Only anonymous usage statistics and crash diagnostics are sent to the developer's iCloud.
 
 SUBSCRIPTION DETAILS
-The yearly plan renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions. Lifetime is a single one-time charge.
+Plus and Pro come as weekly, monthly or yearly auto-renewing subscriptions, or as a one-time lifetime purchase. The yearly plan has a discounted first year for new subscribers, then renews at the regular price. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends. Cancel in Settings > Apple Account > Subscriptions.
 Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy Policy: https://m1zz.github.io/IndonesianSmallTalk/en/privacy.html
 
@@ -196,8 +202,6 @@ Convierte el camino al trabajo en tu clase de conversación. Escucha el signific
 Deja de quedarte en blanco cuando alguien te saca plática.
 Elige una respuesta, escúchala, dila en voz alta y suelta la lengua en inglés, japonés, chino, coreano, indonesio o español.
 
-Malmun nació como una app de charla en indonesio y ahora enseña seis idiomas. Toca la bandera en la pantalla de inicio para cambiar el idioma que estudias. Tus frases, escenarios y vocabulario se guardan por separado en cada idioma.
-
 CONVERSACIONES QUE SE RAMIFICAN
 Cada respuesta que eliges lleva la conversación por otro camino
 Ve qué significa cada respuesta, cómo podría reaccionar la otra persona, para bien o para mal, y tu puntuación
@@ -231,17 +235,17 @@ Teclado de frases: toca un significado y la frase en el idioma que estudias se e
 Agrega tus propios escenarios y respuestas, y compártelos con tus amigos por iCloud
 Genera escenarios nuevos con IA usando tu propia clave de API de Anthropic
 
-MALMUN PRO
-Todo es gratis menos dos cosas
-Conversaciones por situación: lo básico y la charla cotidiana son gratis, el resto se desbloquea con Pro
-Modo trayecto: 3 escenas al día gratis, sin límite con Pro
-Pro es una suscripción anual o una compra única de por vida, y vale para los seis idiomas
+GRATIS, MALMUN PLUS Y MALMUN PRO
+Gratis: lo básico y la charla cotidiana en los seis idiomas, las conversaciones con ramas, la pronunciación, las tarjetas, el teclado y 3 escenas al día del modo trayecto
+Malmun Plus: las 53 conversaciones por situación y escenarios propios sin límite
+Malmun Pro: todo lo de Plus, modo trayecto sin límite, escenarios con IA y compartirlos por iCloud
+¿Ya pagaste por Malmun o compraste Malmun Pro? Conservas todas las funciones
 
 PRIVACIDAD
 Sin cuentas. Tu aprendizaje se queda en tu dispositivo y en tu propio iCloud, y el reconocimiento de voz se hace en el dispositivo. Sin anuncios ni rastreo. Solo se envían estadísticas de uso anónimas y diagnósticos de errores al iCloud del desarrollador.
 
 DETALLES DE LA SUSCRIPCIÓN
-La suscripción anual se renueva automáticamente a menos que la canceles al menos 24 horas antes de que termine el periodo actual. Puedes administrarla o cancelarla en Configuración > Cuenta de Apple > Suscripciones. La opción de por vida se paga una sola vez.
+Plus y Pro: suscripción semanal, mensual o anual, o compra única de por vida. El plan anual tiene descuento el primer año para nuevos suscriptores y luego se renueva al precio normal. Las suscripciones se renuevan solas salvo que las canceles al menos 24 horas antes del fin del periodo, en Configuración > Cuenta de Apple > Suscripciones. La opción de por vida se paga una sola vez.
 Términos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Política de privacidad: https://m1zz.github.io/IndonesianSmallTalk/es/privacy.html
 
@@ -280,8 +284,6 @@ Jadikan perjalanan pulang kerja kelas percakapan. Dengar artinya, ucapkan sendir
 Nggak perlu lagi gugup saat diajak ngobrol orang asing.
 Pilih jawaban, dengarkan, ucapkan, dan biasakan diri ngobrol dalam bahasa Inggris, Jepang, Mandarin, Korea, Spanyol, atau Indonesia.
 
-Malmun awalnya aplikasi latihan basa-basi bahasa Indonesia, sekarang mengajarkan enam bahasa. Ketuk bendera di layar utama untuk mengganti bahasa yang dipelajari. Kalimat, skenario, dan kosakata kamu disimpan terpisah untuk tiap bahasa.
-
 PERCAKAPAN BERCABANG
 Setiap jawaban yang kamu pilih membawa obrolan ke arah yang berbeda
 Lihat arti tiap jawaban, reaksi lawan bicara yang positif atau negatif, dan skormu
@@ -315,17 +317,17 @@ Keyboard kalimat: ketuk sebuah arti, kalimat dalam bahasa yang kamu pelajari lan
 Tambahkan skenario dan jawaban sendiri, lalu bagikan ke teman lewat iCloud
 Buat skenario baru dengan AI memakai kunci API Anthropic milikmu sendiri
 
-MALMUN PRO
-Semua fitur gratis, kecuali dua hal
-Percakapan situasional: kategori dasar dan obrolan santai gratis, sisanya terbuka dengan Pro
-Mode Perjalanan: gratis 3 adegan per hari, tanpa batas dengan Pro
-Pro tersedia sebagai langganan tahunan atau pembelian sekali seumur hidup, dan berlaku untuk keenam bahasa
+GRATIS, MALMUN PLUS, DAN MALMUN PRO
+Gratis: percakapan dasar dan obrolan santai di semua bahasa, latihan bercabang, pelafalan, kartu kosakata, keyboard, dan 3 adegan Mode Perjalanan per hari
+Malmun Plus: ke-53 percakapan situasional dan skenario sendiri tanpa batas
+Malmun Pro: semua isi Plus, Mode Perjalanan tanpa batas, skenario dengan AI, dan berbagi lewat iCloud
+Sudah pernah membayar Malmun atau membeli Malmun Pro? Semua fitur tetap milikmu
 
 PRIVASI
 Tanpa akun. Data belajarmu tetap di perangkat dan iCloud milikmu, dan pengenalan suara diproses di perangkat. Tanpa iklan, tanpa pelacakan. Hanya statistik penggunaan anonim dan diagnostik error yang dikirim ke iCloud pengembang.
 
 INFO LANGGANAN
-Langganan tahunan diperpanjang otomatis kecuali dibatalkan paling lambat 24 jam sebelum periode berjalan berakhir. Atur atau batalkan di Pengaturan > Akun Apple > Langganan. Paket seumur hidup hanya dibayar sekali.
+Plus dan Pro: langganan mingguan, bulanan, atau tahunan, atau sekali bayar seumur hidup. Pelanggan baru mendapat potongan di tahun pertama langganan tahunan, lalu diperpanjang dengan harga normal. Langganan diperpanjang otomatis kecuali dibatalkan paling lambat 24 jam sebelum periode berakhir, di Pengaturan > Akun Apple > Langganan. Paket seumur hidup hanya dibayar sekali.
 Ketentuan Penggunaan (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Kebijakan Privasi: https://m1zz.github.io/IndonesianSmallTalk/id/privacy.html
 
@@ -399,17 +401,20 @@ Siriに「Malmunで通勤練習を始めて」と話しかけて開始。ショ�
 シナリオや返事を自分で追加して、iCloudで友だちと共有
 自分のAnthropic APIキーを使って、AIが新しいシナリオを作ります
 
-Malmun Pro
-次の2つ以外はすべて無料です
-場面別会話：基本表現と雑談は無料、そのほかの場面はProで開放
-通勤モード：1日3場面まで無料、Proなら無制限
-Proは年額サブスクリプション、または一度の購入でずっと使える買い切りプランで、6か国語すべてに使えます
+無料、Malmun Plus、Malmun Pro
+無料で、6か国語すべての場面別会話の基本表現と雑談、分岐する会話練習、発音練習、スクリプト表示、単語カード、フレーズキーボードが使えます
+インドネシア語の雑談シナリオ、一日コース、週間スケジュールも無料です
+通勤モードは1日3場面まで、自作や取り込んだシナリオは3本まで無料です
+Malmun Plusなら場面別会話53本すべてが開き、自作シナリオと会話の取り込みが無制限になります
+Malmun ProはPlusのすべてに加えて、通勤モード無制限、AIでのシナリオ作成、iCloudでの友だちとのシナリオ共有が使えます
+PlusとProはそれぞれ週額、月額、年額のサブスクリプションか、買い切りプランから選べ、6か国語すべてに使えます
+以前に有料でアプリを購入した方や、Malmun Proを購入済みの方は、追加の購入なしでこれまでどおりすべての機能を使えます
 
 プライバシー
 アカウント登録は不要です。学習データは端末とご自身のiCloudにだけ保存され、音声認識は端末内で行います。広告もトラッキングもありません。匿名の利用統計とクラッシュ診断のみ、開発者のiCloudに送信されます。
 
 サブスクリプションについて
-年額プランは、現在の期間が終了する24時間前までに解約しない限り自動更新されます。管理と解約は、設定アプリのAppleアカウント内「サブスクリプション」から行えます。買い切りプランのお支払いは一度だけです。
+Malmun PlusとMalmun Proは、週額、月額、年額の自動更新サブスクリプションと、一度だけ支払う買い切りプランでご利用いただけます。年額プランは初めて登録する方に限り初年度が割引価格になり、その後は通常価格で更新されます。サブスクリプションは、現在の期間が終了する24時間前までに解約しない限り自動更新されます。管理と解約は、設定アプリのAppleアカウント内「サブスクリプション」から行えます。買い切りプランのお支払いは一度だけです。
 利用規約（EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 プライバシーポリシー：https://m1zz.github.io/IndonesianSmallTalk/ja/privacy.html
 
@@ -483,17 +488,20 @@ Malmun 最初是一款印尼语闲聊练习应用，现在支持6种语言。点
 自己添加场景和回答，并通过 iCloud 分享给朋友
 使用你自己的 Anthropic API 密钥，让 AI 生成新的场景
 
-Malmun Pro
-除以下两项外，所有功能都免费
-情景会话：基础表达和日常闲聊免费，其余场景需要 Pro 解锁
-通勤模式：每天免费3个场景，Pro 不限次数
-Pro 提供按年订阅和一次性买断两种方式，6种语言全部适用
+免费版、Malmun Plus 与 Malmun Pro
+免费即可使用全部6种语言的情景会话基础表达和日常闲聊、分支对话练习、发音练习、剧本视图、单词卡和常用句键盘
+印尼语闲聊场景、一日课程和每周课表也都免费
+通勤模式每天免费3个场景，自己创建或导入的场景最多免费3个
+Malmun Plus 解锁全部53段情景会话，自建场景和导入对话不限数量
+Malmun Pro 包含 Plus 的全部内容，另有不限次数的通勤模式、用 AI 生成场景，以及通过 iCloud 与朋友分享场景
+Plus 和 Pro 都可以选择按周、按月、按年订阅，或一次性买断，6种语言全部适用
+以前付费下载过 Malmun 或已购买 Malmun Pro 的用户，无需再次购买，仍可像以前一样使用全部功能
 
 隐私
 无需注册账号。学习数据只保存在你的设备和你自己的 iCloud 中，语音识别在设备上完成。没有广告，没有追踪。只有匿名使用统计和崩溃诊断会发送到开发者的 iCloud。
 
 订阅说明
-年度订阅会自动续订，除非在当前订阅期结束前至少24小时取消。你可以在“设置”中的 Apple 账户“订阅”里管理或取消订阅。买断方案只需支付一次。
+Malmun Plus 和 Malmun Pro 提供按周、按月、按年自动续订的订阅，以及一次性付费的买断方案。首次订阅年度方案可享首年优惠价，之后按原价续订。订阅会自动续订，除非在当前订阅期结束前至少24小时取消。你可以在“设置”中的 Apple 账户“订阅”里管理或取消订阅。买断方案只需支付一次。
 使用条款（EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 隐私政策：https://m1zz.github.io/IndonesianSmallTalk/zh-Hans/privacy.html
 
@@ -567,17 +575,17 @@ Phrase keyboard: tap a meaning and the sentence in your learning language is typ
 Add your own scenarios and replies, and share them with friends through iCloud
 Generate new scenarios with AI using your own Anthropic API key
 
-MALMUN PRO
-Everything is free apart from two things
-Situational dialogues: Basics and Casual chat are free, the rest unlock with Pro
-Commute Mode: 3 scenes a day for free, unlimited with Pro
-Pro is a yearly subscription or a one-off lifetime purchase, and it covers all six languages
+FREE, MALMUN PLUS AND MALMUN PRO
+Free: Basics and Casual chat in all six languages, branching practice, pronunciation, flashcards, the keyboard and 3 Commute Mode scenes a day
+Malmun Plus: all 53 situational dialogues and unlimited scenarios of your own
+Malmun Pro: everything in Plus, unlimited Commute Mode, AI scenarios and sharing over iCloud
+Already paid for Malmun or bought Malmun Pro? You keep every feature
 
 PRIVACY
 No account. Your learning data stays on your device and in your own iCloud, and speech is recognised on device. No ads, no tracking. Only anonymous usage statistics and crash diagnostics are sent to the developer's iCloud.
 
 SUBSCRIPTION DETAILS
-The yearly plan renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions. Lifetime is a single one-off charge.
+Plus and Pro come as weekly, monthly or yearly subscriptions or a one-off lifetime purchase. New subscribers get a discounted first year on the yearly plan, which then renews at the standard price. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends. Manage them in Settings > Apple Account > Subscriptions. Lifetime is a single one-off charge.
 Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy Policy: https://m1zz.github.io/IndonesianSmallTalk/en-GB/privacy.html
 
@@ -651,17 +659,20 @@ Malmun 一開始是一款印尼語閒聊練習 App，現在可以學 6 種語言
 自己新增情境和回答，還能透過 iCloud 分享給朋友
 填入你自己的 Anthropic API 金鑰，就能讓 AI 幫你生成新情境
 
-Malmun Pro
-除了下面兩項，其他功能全部免費
-情境會話：基本表達與日常閒聊免費，其餘情境用 Pro 解鎖
-通勤模式：每天免費 3 個場景，Pro 不限次數
-Pro 可選擇年訂閱或一次買斷的終身方案，6 種語言通用
+免費版、Malmun Plus 與 Malmun Pro
+免費就能使用 6 種語言的情境會話基本表達與日常閒聊、分岔對話練習、發音練習、腳本檢視、單字卡和常用句鍵盤
+印尼語的閒聊情境、一日課程和每週課表也都免費
+通勤模式每天免費 3 個場景，自己新增或匯入的情境最多免費 3 個
+Malmun Plus 解鎖全部 53 段情境會話，自己新增的情境和匯入對話不限數量
+Malmun Pro 包含 Plus 的所有內容，再加上通勤模式不限次數、用 AI 生成情境，以及透過 iCloud 和朋友分享情境
+Plus 和 Pro 都可選擇週訂閱、月訂閱、年訂閱，或一次買斷的終身方案，6 種語言通用
+以前付費下載過 Malmun，或已買過 Malmun Pro 的人，不必再買，所有功能照常使用
 
 隱私
 不用註冊帳號。學習資料只存在你的裝置和你自己的 iCloud，語音辨識在裝置上完成。沒有廣告，也沒有追蹤。只有匿名的使用統計和當機診斷資料，會傳到開發者的 iCloud。
 
 訂閱說明
-年訂閱會自動續訂，除非在目前的訂閱期間結束前至少 24 小時取消。你可以在「設定」▸ Apple 帳號 ▸ 訂閱項目中管理或取消。終身方案只需付費一次。
+Malmun Plus 與 Malmun Pro 提供週、月、年自動續訂的訂閱，以及一次付清的終身方案。第一次訂閱年訂閱可享第一年優惠價，之後以原價續訂。訂閱會自動續訂，除非在目前的訂閱期間結束前至少 24 小時取消。你可以在「設定」▸ Apple 帳號 ▸ 訂閱項目中管理或取消。終身方案只需付費一次。
 使用條款 (EULA)：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 隱私權政策：https://m1zz.github.io/IndonesianSmallTalk/zh-Hant/privacy.html
 
@@ -700,7 +711,7 @@ Malmun: говорим на 6 языках
 Хватит теряться, когда с вами заговорили на иностранном языке.
 Выбирайте ответ, слушайте его, повторяйте вслух — и живой small talk на индонезийском, английском, японском, китайском, испанском или корейском перестанет вас пугать.
 
-Malmun начинался как приложение для small talk на индонезийском, а теперь учит шести языкам. Нажмите на флаг на главном экране, чтобы сменить изучаемый язык. Ваши фразы, сценарии и словарь хранятся отдельно для каждого языка.
+Язык меняется флагом на главном экране, а ваши фразы, сценарии и словарь хранятся отдельно для каждого языка.
 
 ДИАЛОГИ С ВЕТВЛЕНИЕМ
 Каждый выбранный ответ уводит разговор в свою сторону
@@ -721,11 +732,11 @@ Malmun начинался как приложение для small talk на и�
 
 ДИАЛОГИ ПО СИТУАЦИЯМ И КУРСЫ
 На каждом языке есть 53 диалога для реальных ситуаций: базовые фразы, обычное общение, ресторан, транспорт, аэропорт, отель, покупки, достопримечательности и экстренные случаи
-У индонезийского есть и больше: 5 сценариев small talk, написанных вручную, 3 курса «Один день» по 6 сцен (день путешествия по Бандунгу, первый день в офисе в Джакарте, выходные в районе) с недельным расписанием и словарь из 100 слов для командировки
+У индонезийского есть и больше: 5 сценариев small talk, написанных вручную, 3 курса «Один день» по 6 сцен, от поездки в Бандунг до первого дня в офисе в Джакарте, с недельным расписанием и словарь из 100 слов для командировки
 
 ИНСТРУМЕНТЫ ПРАКТИКИ
 Тренировка произношения с оценкой: удачно произнесённые слова и пропущенные выделяются цветом
-Просмотр сценария: читайте весь диалог как переписку, нажимайте на любую реплику, чтобы услышать её, слушайте всё подряд или скрывайте значения, чтобы проверить себя
+Просмотр сценария: весь диалог как переписка, любую реплику можно послушать, а значения скрыть, чтобы проверить себя
 Импорт диалога: просто вставьте текст
 История практики с серией занятий подряд
 
@@ -735,17 +746,17 @@ Malmun начинался как приложение для small talk на и�
 Добавляйте свои сценарии и ответы и делитесь ими с друзьями через iCloud
 Создавайте новые сценарии с помощью ИИ, подставив собственный ключ Anthropic API
 
-MALMUN PRO
-Бесплатно всё, кроме двух вещей
-Диалоги по ситуациям: «Базовые фразы» и «Обычное общение» бесплатны, остальные откроются с Pro
-Режим «В пути»: 3 сцены в день бесплатно, с Pro — без ограничений
-Pro — это годовая подписка или единовременная покупка навсегда, и действует она для всех шести языков
+MALMUN PLUS И MALMUN PRO
+Бесплатно: все шесть языков, «Базовые фразы» и «Обычное общение», индонезийские сценарии и курсы, 3 сцены в день в режиме «В пути» и до 3 своих сценариев
+Plus открывает все 53 диалога по ситуациям и снимает лимит на свои сценарии и импорт
+Pro добавляет безлимитный режим «В пути», сценарии с ИИ и обмен сценариями через iCloud
+Если вы уже платили за Malmun или Malmun Pro, все функции остаются у вас
 
 КОНФИДЕНЦИАЛЬНОСТЬ
 Регистрация не нужна. Данные для обучения хранятся только на вашем устройстве и в вашем iCloud, а речь распознаётся на устройстве. Без рекламы и слежки. Разработчику в его iCloud отправляется лишь анонимная статистика использования и отчёты о сбоях.
 
 УСЛОВИЯ ПОДПИСКИ
-Годовая подписка продлевается автоматически, если не отменить её минимум за 24 часа до окончания текущего периода. Управлять подпиской и отменять её можно в «Настройки» > учётная запись Apple > «Подписки». Покупка навсегда оплачивается один раз.
+Plus и Pro: подписка на неделю, месяц или год либо разовая покупка навсегда. Новым подписчикам первый год годовой подписки со скидкой, затем обычная цена. Подписка продлевается автоматически, если не отменить её минимум за 24 часа до конца периода. Отмена: «Настройки» > учётная запись Apple > «Подписки».
 Условия использования (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Политика конфиденциальности: https://m1zz.github.io/IndonesianSmallTalk/ru/privacy.html
 
@@ -784,7 +795,7 @@ Mach aus deiner Autofahrt einen Sprachkurs: Bedeutung hören, selbst sprechen, d
 Schluss mit dem Verstummen, wenn dich jemand anspricht.
 Wähle eine Antwort, hör sie dir an, sprich sie laut nach: So kommt echter Smalltalk in Indonesisch, Englisch, Japanisch, Chinesisch, Spanisch oder Koreanisch über deine Lippen.
 
-Malmun hat als Smalltalk-App für Indonesisch angefangen und bringt dir heute sechs Sprachen bei. Tippe auf dem Startbildschirm auf die Flagge, um die Lernsprache zu wechseln. Deine Ausdrücke, Szenarien und Vokabeln werden für jede Sprache getrennt gespeichert.
+Tippe auf dem Startbildschirm auf die Flagge, um die Lernsprache zu wechseln. Deine Ausdrücke, Szenarien und Vokabeln werden für jede Sprache getrennt gespeichert.
 
 GESPRÄCHE MIT VERZWEIGUNGEN
 Jede Antwort, die du wählst, führt das Gespräch woandershin
@@ -805,7 +816,7 @@ Kommt eine Navigationsansage, macht die App kurz Pause
 
 SITUATIONSDIALOGE UND KURSE
 In jeder Sprache warten 53 Dialoge für echte Situationen: Grundlagen, lockere Gespräche, Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing und Notfälle
-Für Indonesisch gibt es noch mehr: 5 handgeschriebene Smalltalk-Szenarien, 3 Tageskurse mit je 6 Szenen (ein Reisetag in Bandung, der erste Tag in einem Büro in Jakarta, ein Wochenende im Viertel) samt Wochenplan und 100 Wörter Geschäftsreise-Wortschatz
+Für Indonesisch gibt es noch mehr: 5 handgeschriebene Smalltalk-Szenarien, 3 Tageskurse mit je 6 Szenen samt Wochenplan und 100 Wörter Geschäftsreise-Wortschatz
 
 ÜBUNGSWERKZEUGE
 Ausspracheübung mit Punktzahl, die zeigt, welche Wörter gesessen haben und welche du verpasst hast
@@ -816,20 +827,19 @@ Dialogimport: Text einfügen und daraus einen Übungsdialog machen
 MACH ES ZU DEINEM
 Eigene Ausdrücke speichern und Vokabeln mit vertonten Karteikarten lernen
 Ausdruckstastatur: Tippe auf eine Bedeutung, und der Satz in deiner Lernsprache wird in jeder App eingegeben
-Eigene Szenarien und Antworten hinzufügen und per iCloud mit Freunden teilen
-Mit deinem eigenen Anthropic-API-Schlüssel erstellt dir eine KI neue Szenarien
+Eigene Szenarien und Antworten hinzufügen
 
-MALMUN PRO
-Alles ist kostenlos, bis auf zwei Dinge
-Situationsdialoge: Grundlagen und lockere Gespräche sind kostenlos, die übrigen Situationen schaltest du mit Pro frei
-Feierabend-Modus: 3 Szenen pro Tag gratis, mit Pro unbegrenzt
-Pro gibt es als Jahresabo oder als einmaligen Lifetime-Kauf, und es gilt für alle sechs Sprachen
+KOSTENLOS, PLUS UND PRO
+Kostenlos: Grundlagen und lockere Gespräche in allen Sprachen, alle Übungswerkzeuge, indonesischer Smalltalk mit Tageskursen, 3 Feierabend-Szenen pro Tag und 3 eigene Szenarien
+Malmun Plus: alle 53 Situationsdialoge und unbegrenzt eigene Szenarien
+Malmun Pro: alles aus Plus, dazu Feierabend-Modus ohne Limit, Szenarien per KI mit eigenem Anthropic-API-Schlüssel und das Teilen mit Freunden über iCloud
+Hast du Malmun früher gekauft oder Malmun Pro erworben, behältst du alle Funktionen
 
 DATENSCHUTZ
 Kein Konto nötig. Deine Lerndaten bleiben auf deinem Gerät und in deiner eigenen iCloud, und die Spracherkennung läuft auf dem Gerät. Keine Werbung, kein Tracking. Nur anonyme Nutzungsstatistiken und Absturzdiagnosen gehen an die iCloud des Entwicklers.
 
 INFOS ZUM ABO
-Das Jahresabo verlängert sich automatisch, wenn du es nicht mindestens 24 Stunden vor Ablauf der aktuellen Laufzeit kündigst. Verwalten oder kündigen kannst du es unter Einstellungen > Apple-Account > Abonnements. Der Lifetime-Kauf wird nur einmal berechnet.
+Malmun Plus und Pro gibt es als Wochen-, Monats- oder Jahresabo und als einmaligen Lifetime-Kauf. Neue Abonnenten zahlen im ersten Jahr des Jahresabos weniger, danach den regulären Preis. Abos verlängern sich automatisch, wenn du sie nicht mindestens 24 Stunden vor Ablauf der Laufzeit kündigst. Verwalten oder kündigen unter Einstellungen > Apple-Account > Abonnements.
 Nutzungsbedingungen (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Datenschutzerklärung: https://m1zz.github.io/IndonesianSmallTalk/de/privacy.html
 
@@ -868,8 +878,6 @@ Transformez votre trajet en cours de conversation. Écoutez le sens, dites la ph
 Fini les blancs quand quelqu'un vous adresse la parole.
 Choisissez une réponse, écoutez-la, dites-la à voix haute : du vrai small talk, en indonésien, anglais, japonais, chinois, espagnol ou coréen.
 
-Malmun enseigne six langues. Touchez le drapeau de l'écran d'accueil pour changer de langue : expressions, scénarios et vocabulaire sont enregistrés séparément pour chacune.
-
 DES CONVERSATIONS QUI SE RAMIFIENT
 Chaque réponse choisie mène la conversation ailleurs
 Chaque réponse s'accompagne de son sens, de la réaction possible de l'autre personne, bonne ou mauvaise, et de votre score
@@ -885,7 +893,6 @@ Au volant : piste suivante pour la phrase suivante, piste précédente pour la r
 À votre tour, l'appli vous dit si c'était juste et comprend « suivant », « encore », « plus lentement », « plus vite », « scène suivante » et « stop » dans votre langue
 Elle n'écoute qu'à votre tour, avec le micro du téléphone, sur votre appareil
 Dites à Siri « Lancer l'entraînement trajet dans Malmun », ou démarrez automatiquement via Raccourcis dès que la voiture se connecte
-L'appli se met en pause pendant les instructions de navigation
 
 DIALOGUES PAR SITUATION ET PARCOURS
 Chaque langue compte 53 dialogues pour des situations réelles : bases, conversation courante, restaurant, déplacements, aéroport, hôtel, shopping, visites et urgences
@@ -903,17 +910,17 @@ Clavier d'expressions : touchez un sens et la phrase dans la langue apprise se s
 Ajoutez vos propres scénarios et réponses, et partagez-les avec vos amis via iCloud
 Générez des scénarios avec l'IA via votre propre clé API Anthropic
 
-MALMUN PRO
-Tout est gratuit, sauf deux choses
-Dialogues par situation : les bases et la conversation courante sont gratuits, le reste se débloque avec Pro
-Mode trajet : 3 scènes par jour gratuitement, sans limite avec Pro
-Pro est un abonnement annuel ou un achat unique à vie, valable pour les six langues
+GRATUIT, MALMUN PLUS ET MALMUN PRO
+Gratuit : bases et conversation courante dans les six langues, dialogues à embranchements, prononciation, cartes, clavier et 3 scènes par jour en mode trajet
+Malmun Plus : les 53 dialogues par situation et vos scénarios sans limite
+Malmun Pro : tout Plus, mode trajet illimité, scénarios par IA et partage via iCloud
+Déjà payé Malmun ou acheté Malmun Pro ? Vous gardez tout
 
 CONFIDENTIALITÉ
 Aucun compte requis. Vos données d'apprentissage restent sur votre appareil et dans votre propre iCloud, et la reconnaissance vocale s'effectue sur l'appareil. Ni publicité ni suivi. Seules des statistiques anonymes et des diagnostics de plantage parviennent à l'iCloud du développeur.
 
 INFORMATIONS SUR L'ABONNEMENT
-L'abonnement annuel se renouvelle automatiquement, sauf résiliation au moins 24 heures avant la fin de la période en cours. Gérez-le ou résiliez-le dans Réglages > Compte Apple > Abonnements. L'achat à vie se règle une seule fois.
+Plus et Pro : abonnement hebdomadaire, mensuel ou annuel, ou achat unique à vie. Premier abonnement annuel réduit la première année, puis renouvelé au tarif normal. Renouvellement automatique sauf résiliation au moins 24 heures avant la fin de la période, dans Réglages > Compte Apple > Abonnements. L'achat à vie se règle une seule fois.
 Conditions d'utilisation (EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Politique de confidentialité : https://m1zz.github.io/IndonesianSmallTalk/fr/privacy.html
 
@@ -952,8 +959,6 @@ Transforme o trajeto em aula de conversação. Ouça o significado, fale você m
 Chega de travar quando alguém puxa conversa.
 Escolha uma resposta, ouça, diga em voz alta e leve para a boca o small talk de verdade em indonésio, inglês, japonês, chinês, espanhol ou coreano.
 
-O Malmun nasceu como um app de small talk em indonésio e hoje ensina seis idiomas. Toque na bandeira da tela inicial para trocar o idioma que você está aprendendo. Suas frases, cenários e vocabulário ficam guardados separadamente para cada idioma.
-
 CONVERSAS QUE SE RAMIFICAM
 Cada resposta que você escolhe leva a conversa para um lado diferente
 Veja o que cada resposta significa, como a outra pessoa pode reagir, bem ou mal, e a sua nota
@@ -987,17 +992,17 @@ Teclado de frases: toque num significado e a frase no idioma que você aprende �
 Adicione seus próprios cenários e respostas e compartilhe com amigos pelo iCloud
 Gere novos cenários com IA usando a sua própria chave de API da Anthropic
 
-MALMUN PRO
-Tudo é grátis, menos duas coisas
-Diálogos por situação: Básico e Papo informal são grátis, o resto é liberado com o Pro
-Modo Trajeto: 3 cenas por dia grátis, ilimitado com o Pro
-O Pro é uma assinatura anual ou uma compra única vitalícia, e vale para os seis idiomas
+GRÁTIS, MALMUN PLUS E MALMUN PRO
+Grátis: Básico e Papo informal nos seis idiomas, conversas ramificadas, pronúncia, flashcards, teclado e 3 cenas por dia no Modo Trajeto
+Malmun Plus: os 53 diálogos por situação e cenários seus sem limite
+Malmun Pro: tudo do Plus, Modo Trajeto ilimitado, cenários com IA e compartilhamento pelo iCloud
+Já pagou pelo Malmun ou comprou o Malmun Pro? Você continua com tudo
 
 PRIVACIDADE
 Sem cadastro. Seus dados de aprendizado ficam no seu aparelho e no seu próprio iCloud, e a fala é reconhecida no aparelho. Sem anúncios, sem rastreamento. Só estatísticas de uso anônimas e diagnósticos de falhas são enviados ao iCloud do desenvolvedor.
 
 DETALHES DA ASSINATURA
-O plano anual é renovado automaticamente, a menos que seja cancelado pelo menos 24 horas antes do fim do período atual. Gerencie ou cancele em Ajustes > Conta Apple > Assinaturas. O plano vitalício é uma cobrança única.
+Plus e Pro: assinatura semanal, mensal ou anual, ou compra única vitalícia. Quem assina pela primeira vez tem desconto no primeiro ano do plano anual, que depois renova pelo preço normal. As assinaturas renovam automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período, em Ajustes > Conta Apple > Assinaturas. O plano vitalício é uma cobrança única.
 Termos de Uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Política de Privacidade: https://m1zz.github.io/IndonesianSmallTalk/pt-BR/privacy.html
 
@@ -1036,8 +1041,6 @@ Trasforma il tragitto in una lezione di conversazione. Ascolti il significato, l
 Basta bloccarti quando qualcuno ti rivolge la parola.
 Scegli una risposta, ascoltala, dilla ad alta voce e porta nella tua bocca vero small talk in indonesiano, inglese, giapponese, cinese, spagnolo o coreano.
 
-Malmun è nata come app di small talk in indonesiano e oggi insegna sei lingue. Tocca la bandiera nella schermata Home per cambiare la lingua che stai imparando. Frasi, scenari e vocabolario restano separati per ogni lingua.
-
 CONVERSAZIONI CHE SI RAMIFICANO
 Ogni risposta che scegli porta la conversazione in una direzione diversa
 Scopri cosa significa ogni risposta, come potrebbe reagire l'altra persona, in bene o in male, e il tuo punteggio
@@ -1071,17 +1074,17 @@ Tastiera di frasi: tocca un significato e la frase nella lingua che impari viene
 Aggiungi scenari e risposte tuoi e condividili con gli amici tramite iCloud
 Genera nuovi scenari con l'IA usando la tua chiave API di Anthropic
 
-MALMUN PRO
-Tutto è gratis tranne due cose
-Dialoghi per situazione: Basi e Chiacchiere informali sono gratis, il resto si sblocca con Pro
-Modalità tragitto: 3 scene al giorno gratis, senza limiti con Pro
-Pro è un abbonamento annuale oppure un acquisto unico a vita, e vale per tutte e sei le lingue
+GRATIS, MALMUN PLUS E MALMUN PRO
+Gratis: Basi e Chiacchiere informali nelle sei lingue, dialoghi a bivi, pronuncia, flashcard, tastiera e 3 scene al giorno in tragitto
+Malmun Plus: tutti i 53 dialoghi per situazione e scenari tuoi senza limiti
+Malmun Pro: tutto Plus, tragitto senza limiti, scenari con l'IA e condivisione via iCloud
+Hai già pagato Malmun o acquistato Malmun Pro? Tieni tutte le funzioni
 
 PRIVACY
 Nessun account. I tuoi dati di studio restano sul tuo dispositivo e nel tuo iCloud, e il parlato viene riconosciuto sul dispositivo. Niente pubblicità, niente tracciamento. All'iCloud dello sviluppatore arrivano solo statistiche d'uso anonime e diagnostica degli arresti anomali.
 
 DETTAGLI SULL'ABBONAMENTO
-Il piano annuale si rinnova automaticamente a meno che non venga disdetto almeno 24 ore prima della fine del periodo in corso. Puoi gestirlo o disdirlo in Impostazioni > Account Apple > Abbonamenti. L'acquisto a vita è un unico pagamento.
+Plus e Pro: abbonamento settimanale, mensile o annuale, oppure acquisto unico a vita. Al primo abbonamento il piano annuale è scontato il primo anno, poi si rinnova a prezzo pieno. Gli abbonamenti si rinnovano se non disdetti almeno 24 ore prima della fine del periodo, in Impostazioni > Account Apple > Abbonamenti. L'acquisto a vita è un unico pagamento.
 Condizioni d'uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Informativa sulla privacy: https://m1zz.github.io/IndonesianSmallTalk/it/privacy.html
 
@@ -1155,17 +1158,20 @@ Malmun เริ่มต้นจากแอปสมอลล์ทอล์�
 เพิ่มสถานการณ์และคำตอบของคุณเอง แล้วแชร์ให้เพื่อนผ่าน iCloud
 สร้างสถานการณ์ใหม่ด้วย AI โดยใช้คีย์ Anthropic API ของคุณเอง
 
-MALMUN PRO
-ทุกอย่างใช้ฟรี ยกเว้นสองอย่าง
-บทสนทนาตามสถานการณ์: หมวดพื้นฐานและคุยเล่นทั่วไปใช้ฟรี ที่เหลือปลดล็อกด้วย Pro
-โหมดเดินทาง: ฟรีวันละ 3 ฉาก ไม่จำกัดเมื่อใช้ Pro
-Pro เป็นการสมัครรายปีหรือซื้อขาดครั้งเดียวแบบตลอดชีพ และใช้ได้กับทั้ง 6 ภาษา
+แบบฟรี MALMUN PLUS และ MALMUN PRO
+ใช้ฟรีได้ทั้ง 6 ภาษา: บทสนทนาตามสถานการณ์หมวดพื้นฐานและคุยเล่นทั่วไป ฝึกบทสนทนาแบบแตกแขนง ฝึกออกเสียง มุมมองสคริปต์ แฟลชการ์ดคำศัพท์ และคีย์บอร์ดวลี
+สถานการณ์สมอลล์ทอล์กภาษาอินโดนีเซีย คอร์สหนึ่งวัน และตารางประจำสัปดาห์ก็ใช้ฟรีเช่นกัน
+โหมดเดินทางใช้ฟรีวันละ 3 ฉาก และเก็บสถานการณ์ที่สร้างเองหรือนำเข้าได้ฟรีสูงสุด 3 รายการ
+Malmun Plus ปลดล็อกบทสนทนาตามสถานการณ์ครบทั้ง 53 บท และสร้างสถานการณ์เองหรือนำเข้าบทสนทนาได้ไม่จำกัด
+Malmun Pro ได้ทุกอย่างใน Plus พร้อมโหมดเดินทางไม่จำกัด สร้างสถานการณ์ด้วย AI และแชร์สถานการณ์ให้เพื่อนผ่าน iCloud
+Plus และ Pro เลือกได้ทั้งแบบสมัครรายสัปดาห์ รายเดือน รายปี หรือซื้อขาดครั้งเดียวแบบตลอดชีพ และใช้ได้กับทั้ง 6 ภาษา
+ใครเคยซื้อแอปตอนที่ยังเป็นแอปแบบเสียเงิน หรือซื้อ Malmun Pro ไว้แล้ว ใช้ได้ทุกฟีเจอร์เหมือนเดิมโดยไม่ต้องซื้อเพิ่ม
 
 ความเป็นส่วนตัว
 ไม่ต้องสมัครบัญชี ข้อมูลการเรียนอยู่ในเครื่องและใน iCloud ของคุณเอง และการรู้จำเสียงพูดทำงานในเครื่อง ไม่มีโฆษณา ไม่มีการติดตาม มีเพียงสถิติการใช้งานแบบไม่ระบุตัวตนและข้อมูลวินิจฉัยข้อขัดข้องที่ส่งไปยัง iCloud ของผู้พัฒนา
 
 รายละเอียดการสมัครสมาชิก
-แพ็กเกจรายปีต่ออายุอัตโนมัติ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน จัดการหรือยกเลิกได้ที่ การตั้งค่า > บัญชี Apple > การสมัครสมาชิก ส่วนแบบตลอดชีพชำระเพียงครั้งเดียว
+Malmun Plus และ Malmun Pro มีทั้งแบบสมัครสมาชิกรายสัปดาห์ รายเดือน และรายปีที่ต่ออายุอัตโนมัติ และแบบตลอดชีพที่ชำระครั้งเดียว ผู้ที่สมัครแพ็กเกจรายปีเป็นครั้งแรกจะได้ราคาส่วนลดในปีแรก หลังจากนั้นจะต่ออายุในราคาปกติ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน จัดการหรือยกเลิกได้ที่ การตั้งค่า > บัญชี Apple > การสมัครสมาชิก ส่วนแบบตลอดชีพชำระเพียงครั้งเดียว
 ข้อกำหนดการใช้งาน (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 นโยบายความเป็นส่วนตัว: https://m1zz.github.io/IndonesianSmallTalk/th/privacy.html
 
@@ -1204,11 +1210,11 @@ Biến quãng đường đi làm thành lớp học hội thoại. Nghe nghĩa, 
 Đừng ngập ngừng nữa mỗi khi có người bắt chuyện bằng ngoại ngữ.
 Chọn câu trả lời, nghe, rồi tự nói thành tiếng để những câu xã giao thật đi vào miệng bạn: tiếng Indonesia, tiếng Anh, tiếng Nhật, tiếng Trung, tiếng Tây Ban Nha hoặc tiếng Hàn.
 
-Malmun khởi đầu là ứng dụng hội thoại tiếng Indonesia và nay đã dạy sáu ngôn ngữ. Chạm vào lá cờ trên màn hình chính để đổi ngôn ngữ đang học. Cụm từ, tình huống và từ vựng của bạn được lưu riêng cho từng ngôn ngữ.
+Chạm vào lá cờ trên màn hình chính để đổi ngôn ngữ đang học. Cụm từ, tình huống và từ vựng được lưu riêng cho từng ngôn ngữ.
 
 HỘI THOẠI RẼ NHÁNH
 Mỗi câu trả lời bạn chọn sẽ dẫn cuộc trò chuyện đi theo một hướng khác
-Xem nghĩa của từng câu trả lời, người đối diện có thể phản ứng thế nào, tốt hay chưa tốt, và điểm số của bạn
+Xem nghĩa, phản ứng của người đối diện và điểm số cho từng câu trả lời
 Chế độ văn bản: chạm vào câu trả lời để nghe đọc to
 Chế độ giọng nói: bạn nói, nhận dạng giọng nói sẽ tìm câu trả lời gần nhất
 Tiếng Indonesia có thêm mẹo từ huấn luyện viên về cách người bản xứ thực sự nói chuyện
@@ -1216,12 +1222,12 @@ Tiếng Indonesia có thêm mẹo từ huấn luyện viên về cách người 
 CHẾ ĐỘ ĐI LÀM
 Luyện bằng tai khi lái xe, không cần nhìn màn hình
 Âm thanh phát qua loa xe bằng Bluetooth hoặc CarPlay, câu hiện tại hiển thị ở mục Đang phát
-Bạn nghe nghĩa trước, tiếng chuông báo đến lượt bạn nói, rồi đáp án được phát chậm một lần và đúng tốc độ thường một lần
-Nút trên vô lăng: nút bài kế tiếp để sang câu tiếp theo, nút bài trước để nghe thêm một lần, nút phát và tạm dừng như bình thường
+Nghe nghĩa trước, chuông báo đến lượt bạn nói, rồi nghe đáp án chậm một lần và tốc độ thường một lần
+Nút trên vô lăng: bài kế tiếp để sang câu sau, bài trước để nghe lại, phát và tạm dừng như thường
 Đến lượt bạn, ứng dụng báo ngay khi bạn nói đúng, và hiểu các lệnh "tiếp", "lại", "chậm hơn", "nhanh hơn", "cảnh tiếp theo" và "dừng" bằng chính ngôn ngữ bạn dùng
-Ứng dụng chỉ lắng nghe trong lượt của bạn, qua micro điện thoại và ngay trên thiết bị của bạn
+Chỉ lắng nghe trong lượt của bạn, qua micro điện thoại, ngay trên thiết bị
 Nhờ Siri "Bắt đầu luyện đi làm trong Malmun", hoặc tạo tự động hóa trong Phím tắt để tự bắt đầu khi xe kết nối
-Có chỉ dẫn đường đi? Ứng dụng sẽ tạm dừng cho bạn nghe
+Tự tạm dừng khi có chỉ dẫn đường
 
 HỘI THOẠI THEO TÌNH HUỐNG VÀ KHÓA HỌC
 Mỗi ngôn ngữ có 53 đoạn hội thoại cho tình huống thật: cơ bản, trò chuyện hằng ngày, nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan và khẩn cấp
@@ -1229,7 +1235,7 @@ Tiếng Indonesia còn nhiều hơn: 5 tình huống xã giao viết tay, 3 khó
 
 CÔNG CỤ LUYỆN TẬP
 Luyện phát âm có điểm số, tô nổi những từ bạn nói đúng và những từ còn sót
-Xem kịch bản: đọc cả đoạn hội thoại như đang nhắn tin, chạm vào câu bất kỳ để nghe, phát liền một mạch, hoặc ẩn phần nghĩa để tự kiểm tra
+Xem kịch bản: đọc cả hội thoại như tin nhắn, chạm câu bất kỳ để nghe, phát liền mạch, hoặc ẩn nghĩa để tự kiểm tra
 Nhập hội thoại chỉ bằng cách dán văn bản
 Lịch sử luyện tập cùng chuỗi ngày học liên tiếp
 
@@ -1239,17 +1245,19 @@ Bàn phím cụm từ: chạm vào nghĩa, câu bằng ngôn ngữ bạn đang h
 Tự thêm tình huống và câu trả lời, rồi chia sẻ với bạn bè qua iCloud
 Tạo tình huống mới bằng AI với khóa API Anthropic của chính bạn
 
-MALMUN PRO
-Mọi thứ đều miễn phí, trừ hai mục
-Hội thoại theo tình huống: Cơ bản và Trò chuyện hằng ngày miễn phí, phần còn lại mở khóa bằng Pro
-Chế độ đi làm: miễn phí 3 cảnh mỗi ngày, không giới hạn với Pro
-Pro là gói đăng ký theo năm hoặc mua trọn đời một lần, và áp dụng cho cả sáu ngôn ngữ
+MIỄN PHÍ, MALMUN PLUS VÀ MALMUN PRO
+Miễn phí với cả sáu ngôn ngữ: hội thoại Cơ bản và Trò chuyện hằng ngày, hội thoại phân nhánh, luyện phát âm, thẻ từ vựng, bàn phím cụm từ, cùng tình huống và khóa học tiếng Indonesia
+Chế độ đi làm miễn phí 3 cảnh mỗi ngày, tối đa 3 tình huống tự tạo hoặc nhập vào
+Malmun Plus: đủ 53 hội thoại theo tình huống, tự tạo và nhập hội thoại không giới hạn
+Malmun Pro: mọi thứ của Plus, Chế độ đi làm không giới hạn, tạo tình huống bằng AI, chia sẻ với bạn bè qua iCloud
+Mỗi gói có đăng ký tuần, tháng, năm hoặc mua trọn đời
+Đã trả tiền tải Malmun hoặc đã mua Malmun Pro? Bạn vẫn dùng mọi tính năng, không cần mua thêm
 
 QUYỀN RIÊNG TƯ
 Không cần tài khoản. Dữ liệu học của bạn chỉ nằm trên thiết bị và trong iCloud của chính bạn, và giọng nói được nhận dạng ngay trên thiết bị. Không quảng cáo, không theo dõi. Chỉ có thống kê sử dụng ẩn danh và chẩn đoán sự cố được gửi đến iCloud của nhà phát triển.
 
 THÔNG TIN ĐĂNG KÝ
-Gói theo năm tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi kết thúc kỳ hiện tại. Bạn có thể quản lý hoặc hủy gói tại Cài đặt > Tài khoản Apple > Đăng ký. Gói trọn đời chỉ thanh toán một lần duy nhất.
+Gói tuần, tháng, năm tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi kết thúc kỳ hiện tại. Người đăng ký gói năm lần đầu được giảm giá năm đầu, sau đó gia hạn theo giá thường. Bạn có thể quản lý hoặc hủy gói tại Cài đặt > Tài khoản Apple > Đăng ký. Gói trọn đời chỉ thanh toán một lần.
 Điều khoản sử dụng (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Chính sách quyền riêng tư: https://m1zz.github.io/IndonesianSmallTalk/vi/privacy.html
 
@@ -1323,17 +1331,17 @@ Klávesnice frází: klepněte na význam a věta ve studovaném jazyce se napí
 Přidávejte vlastní scénáře a odpovědi a sdílejte je s kamarády přes iCloud
 Nové scénáře vytvářejte pomocí AI s vlastním klíčem Anthropic API
 
-MALMUN PRO
-Všechno je zdarma kromě dvou věcí
-Situační dialogy: Základy a Běžné povídání jsou zdarma, ostatní odemknete s Pro
-Režim dojíždění: 3 scény denně zdarma, s Pro bez omezení
-Pro je roční předplatné nebo jednorázový doživotní nákup a platí pro všech šest jazyků
+MALMUN PLUS A MALMUN PRO
+Zdarma: všech šest jazyků, Základy a Běžné povídání, indonéské scénáře a kurzy, 3 scény denně v režimu dojíždění a až 3 vlastní scénáře
+Plus odemkne všech 53 situačních dialogů a vlastní scénáře i import bez omezení
+Pro přidá k Plus režim dojíždění bez omezení, scénáře od AI a sdílení scénářů přes iCloud
+Pokud jste za Malmun nebo Malmun Pro už zaplatili, všechny funkce vám zůstávají
 
 SOUKROMÍ
 Žádný účet. Vaše studijní data zůstávají ve vašem zařízení a ve vašem vlastním iCloudu a řeč se rozpoznává přímo v zařízení. Žádné reklamy, žádné sledování. Do iCloudu vývojáře se odesílají jen anonymní statistiky používání a diagnostika pádů.
 
 INFORMACE O PŘEDPLATNÉM
-Roční předplatné se automaticky obnovuje, pokud ho nezrušíte alespoň 24 hodin před koncem aktuálního období. Správa a zrušení: Nastavení > Účet Apple > Předplatná. Doživotní verze je jednorázová platba.
+Plus i Pro: týdenní, měsíční nebo roční předplatné, nebo jednorázový doživotní nákup. Noví předplatitelé mají první rok ročního předplatného se slevou, pak za běžnou cenu. Předplatné se automaticky obnovuje, pokud ho nezrušíte alespoň 24 hodin před koncem období. Správa a zrušení: Nastavení > Účet Apple > Předplatná.
 Podmínky použití (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Zásady ochrany soukromí: https://m1zz.github.io/IndonesianSmallTalk/cs/privacy.html
 
@@ -1372,7 +1380,7 @@ Gør bilturen til samtaletræning. Hør betydningen, sig det selv, og hør så s
 Slut med at gå i stå, når nogen begynder at snakke til dig.
 Vælg et svar, hør det, sig det højt, og få rigtig smalltalk på indonesisk, engelsk, japansk, kinesisk, spansk eller koreansk ind i munden.
 
-Malmun startede som en app til indonesisk smalltalk og lærer nu seks sprog. Tryk på flaget på startskærmen for at skifte det sprog, du lærer. Dine udtryk, scenarier og dit ordforråd gemmes separat for hvert sprog.
+Tryk på flaget på startskærmen for at skifte det sprog, du lærer. Dine udtryk, scenarier og dit ordforråd gemmes separat for hvert sprog.
 
 SAMTALER MED FORGRENINGER
 Hvert svar, du vælger, sender samtalen i en ny retning
@@ -1407,17 +1415,17 @@ Udtrykstastatur: tryk på en betydning, så skrives sætningen på det sprog, du
 Tilføj dine egne scenarier og svar, og del dem med venner via iCloud
 Lav nye scenarier med AI ved hjælp af din egen Anthropic API-nøgle
 
-MALMUN PRO
-Alt er gratis bortset fra to ting
-Situationssamtaler: Grundlæggende vendinger og hverdagssnak er gratis, resten låses op med Pro
-Pendlertilstand: 3 scener om dagen gratis, ubegrænset med Pro
-Pro er et årligt abonnement eller et engangskøb med livstidsadgang og gælder for alle seks sprog
+GRATIS, MALMUN PLUS OG MALMUN PRO
+Gratis: alle seks sprog, grundlæggende vendinger og hverdagssnak, alle træningsværktøjer, indonesisk smalltalk med dagsforløb, 3 scener om dagen i pendlertilstand og op til 3 egne eller importerede scenarier
+Malmun Plus: alle 53 situationssamtaler og ubegrænset med egne scenarier
+Malmun Pro: alt i Plus samt ubegrænset pendlertilstand, scenarier med AI og deling med venner via iCloud
+Har du allerede købt Malmun eller Malmun Pro, beholder du alle funktioner
 
 PRIVATLIV
 Ingen konto. Dine læringsdata bliver på din enhed og i din egen iCloud, og tale genkendes på enheden. Ingen reklamer, ingen sporing. Kun anonyme brugsstatistikker og nedbrudsdiagnostik sendes til udviklerens iCloud.
 
 OM ABONNEMENTET
-Det årlige abonnement fornyes automatisk, medmindre det opsiges senest 24 timer før udgangen af den igangværende periode. Administrer eller opsig det under Indstillinger > Apple-konto > Abonnementer. Livstidsadgang er en enkelt engangsbetaling.
+Malmun Plus og Pro fås som uge-, måneds- eller årsabonnement og som et engangskøb med livstidsadgang. Nye abonnenter får rabat på første år af årsabonnementet, som derefter fornyes til normalprisen. Abonnementer fornyes automatisk, medmindre de opsiges senest 24 timer før periodens udløb. Administrer eller opsig under Indstillinger > Apple-konto > Abonnementer. Livstidsadgang er en enkelt engangsbetaling.
 Brugsvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privatlivspolitik: https://m1zz.github.io/IndonesianSmallTalk/da/privacy.html
 
@@ -1456,7 +1464,7 @@ Small talk χωρίς χέρια
 Μην κοκκαλώνεις όταν κάποιος σου πιάνει κουβέντα.
 Διάλεξε μια απάντηση, άκουσέ την, πες την φωναχτά και κάνε το πραγματικό small talk δικό σου στα Ινδονησιακά, Αγγλικά, Ιαπωνικά, Κινεζικά, Ισπανικά ή Κορεατικά.
 
-Το Malmun ξεκίνησε ως εφαρμογή small talk για Ινδονησιακά και σήμερα διδάσκει έξι γλώσσες. Πάτα τη σημαία στην αρχική οθόνη για να αλλάξεις γλώσσα. Οι φράσεις, τα σενάρια και το λεξιλόγιό σου αποθηκεύονται ξεχωριστά για κάθε γλώσσα.
+Πάτα τη σημαία στην αρχική οθόνη για να αλλάξεις γλώσσα. Οι φράσεις, τα σενάρια και το λεξιλόγιό σου αποθηκεύονται ξεχωριστά για κάθε γλώσσα.
 
 ΣΥΝΟΜΙΛΙΕΣ ΠΟΥ ΔΙΑΚΛΑΔΩΝΟΝΤΑΙ
 Κάθε απάντηση που διαλέγεις πηγαίνει τη συζήτηση αλλού
@@ -1477,31 +1485,31 @@ Small talk χωρίς χέρια
 
 ΣΥΖΗΤΗΣΕΙΣ ΑΝΑ ΚΑΤΑΣΤΑΣΗ ΚΑΙ ΜΑΘΗΜΑΤΑ
 Κάθε γλώσσα έχει 53 διαλόγους για πραγματικές καταστάσεις: βασικά, καθημερινή κουβέντα, εστιατόριο, μετακινήσεις, αεροδρόμιο, ξενοδοχείο, ψώνια, αξιοθέατα και έκτακτες ανάγκες
-Τα Ινδονησιακά έχουν ακόμα περισσότερα: 5 σενάρια small talk φτιαγμένα στο χέρι, 3 μαθήματα ημέρας με 6 σκηνές το καθένα (μια ταξιδιωτική μέρα στο Μπαντούνγκ, η πρώτη μέρα σε γραφείο στην Τζακάρτα, ένα Σαββατοκύριακο στη γειτονιά) με εβδομαδιαίο πρόγραμμα και 100 λέξεις για επαγγελματικό ταξίδι
+Τα Ινδονησιακά έχουν ακόμα περισσότερα: 5 σενάρια small talk φτιαγμένα στο χέρι, 3 μαθήματα ημέρας με 6 σκηνές το καθένα, με εβδομαδιαίο πρόγραμμα και 100 λέξεις για επαγγελματικό ταξίδι
 
 ΕΡΓΑΛΕΙΑ ΕΞΑΣΚΗΣΗΣ
 Εξάσκηση προφοράς με βαθμό, που επισημαίνει τις λέξεις που έπιασες και αυτές που έχασες
-Προβολή σεναρίου: διάβασε όλο τον διάλογο σαν chat, πάτα μια γραμμή για να την ακούσεις, παίξε τον όλο ή κρύψε τα νοήματα για να τεστάρεις τον εαυτό σου
+Προβολή σεναρίου: όλος ο διάλογος σαν chat, πάτα μια γραμμή για να την ακούσεις ή κρύψε τα νοήματα για να τεστάρεις τον εαυτό σου
 Εισαγωγή διαλόγου με επικόλληση κειμένου
 Ιστορικό εξάσκησης και ημέρες στη σειρά
 
 ΦΤΙΑΞΕ ΤΟ ΔΙΚΟ ΣΟΥ
-Αποθήκευσε τις δικές σου φράσεις και μελέτησε λεξιλόγιο με κάρτες που διαβάζουν τις λέξεις φωναχτά
+Αποθήκευσε τις δικές σου φράσεις και μελέτησε λεξιλόγιο με κάρτες με ήχο
 Πληκτρολόγιο φράσεων: πάτα ένα νόημα και η πρόταση στη γλώσσα που μαθαίνεις γράφεται σε οποιαδήποτε εφαρμογή
 Πρόσθεσε δικά σου σενάρια και απαντήσεις και μοιράσου τα με φίλους μέσω iCloud
 Φτιάξε νέα σενάρια με AI χρησιμοποιώντας το δικό σου κλειδί API της Anthropic
 
-MALMUN PRO
-Όλα είναι δωρεάν εκτός από δύο πράγματα
-Συζητήσεις ανά κατάσταση: τα Βασικά και η Καθημερινή κουβέντα είναι δωρεάν, τα υπόλοιπα ξεκλειδώνουν με το Pro
-Λειτουργία διαδρομής: 3 σκηνές την ημέρα δωρεάν, απεριόριστα με το Pro
-Το Pro είναι ετήσια συνδρομή ή εφάπαξ αγορά εφ' όρου ζωής και ισχύει και για τις έξι γλώσσες
+MALMUN PLUS ΚΑΙ MALMUN PRO
+Δωρεάν: και οι έξι γλώσσες, τα Βασικά και η Καθημερινή κουβέντα, τα ινδονησιακά σενάρια και μαθήματα, 3 σκηνές τη μέρα στη Λειτουργία διαδρομής και έως 3 δικά σου σενάρια
+Το Plus ξεκλειδώνει και τις 53 συζητήσεις και απεριόριστα δικά σου σενάρια και εισαγωγές
+Το Pro προσθέτει απεριόριστη Λειτουργία διαδρομής, σενάρια με AI και κοινή χρήση μέσω iCloud
+Αν έχεις ήδη πληρώσει για το Malmun ή το Malmun Pro, κρατάς όλες τις λειτουργίες
 
 ΑΠΟΡΡΗΤΟ
 Χωρίς λογαριασμό. Τα δεδομένα εκμάθησης μένουν στη συσκευή σου και στο δικό σου iCloud και η αναγνώριση ομιλίας γίνεται στη συσκευή. Χωρίς διαφημίσεις, χωρίς παρακολούθηση. Στο iCloud του προγραμματιστή στέλνονται μόνο ανώνυμα στατιστικά χρήσης και διαγνωστικά σφαλμάτων.
 
 ΠΛΗΡΟΦΟΡΙΕΣ ΣΥΝΔΡΟΜΗΣ
-Η ετήσια συνδρομή ανανεώνεται αυτόματα, εκτός αν ακυρωθεί τουλάχιστον 24 ώρες πριν από το τέλος της τρέχουσας περιόδου. Διαχειρίσου ή ακύρωσέ την από τις Ρυθμίσεις > Λογαριασμός Apple > Συνδρομές. Η αγορά εφ' όρου ζωής χρεώνεται μία μόνο φορά.
+Plus και Pro: εβδομαδιαία, μηνιαία ή ετήσια συνδρομή ή εφάπαξ αγορά εφ' όρου ζωής. Οι νέοι συνδρομητές έχουν έκπτωση στον πρώτο χρόνο της ετήσιας, μετά ισχύει η κανονική τιμή. Η συνδρομή ανανεώνεται αυτόματα, εκτός αν ακυρωθεί τουλάχιστον 24 ώρες πριν λήξει η περίοδος. Ακύρωση: Ρυθμίσεις > Λογαριασμός Apple > Συνδρομές.
 Όροι χρήσης (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Πολιτική απορρήτου: https://m1zz.github.io/IndonesianSmallTalk/el/privacy.html
 
@@ -1540,7 +1548,7 @@ Muuta ajomatkasi keskustelutunniksi. Kuule merkitys, sano lause itse ja kuule si
 Älä enää jähmety, kun joku aloittaa keskustelun.
 Valitse vastaus, kuuntele se, sano se ääneen ja opi oikeaa small talkia indonesiaksi, englanniksi, japaniksi, kiinaksi, espanjaksi tai koreaksi.
 
-Malmun alkoi indonesian small talk -sovelluksena ja opettaa nyt kuutta kieltä. Vaihda opiskelukieltä napauttamalla lippua etusivulla. Omat ilmaukset, skenaariot ja sanasto tallentuvat erikseen kullekin kielelle.
+Vaihda opiskelukieltä napauttamalla lippua etusivulla. Omat ilmaukset, skenaariot ja sanasto tallentuvat erikseen kullekin kielelle.
 
 HAARAUTUVAT KESKUSTELUT
 Jokainen valitsemasi vastaus vie keskustelun eri suuntaan
@@ -1561,7 +1569,7 @@ Navigaattorin ohjeet? Toisto keskeytyy niiden ajaksi
 
 TILANNEKESKUSTELUT JA KURSSIT
 Jokaisella kielellä on 53 keskustelua oikeisiin tilanteisiin: perusasiat, rento jutustelu, ravintolat, liikkuminen, lentokenttä, hotellit, ostokset, nähtävyydet ja hätätilanteet
-Indonesiaan on vielä enemmän: 5 käsin kirjoitettua small talk -skenaariota, 3 päiväkurssia, joissa kussakin on 6 kohtausta (matkapäivä Bandungissa, ensimmäinen työpäivä jakartalaisessa toimistossa, viikonloppu naapurustossa), viikkoaikataulu sekä 100 sanan liikematkasanasto
+Indonesiaan on vielä enemmän: 5 käsin kirjoitettua small talk -skenaariota, 3 päiväkurssia, joissa kussakin on 6 kohtausta, viikkoaikataulu sekä 100 sanan liikematkasanasto
 
 HARJOITUSTYÖKALUT
 Ääntämisharjoitus pisteytyksellä: näet, mitkä sanat onnistuivat ja mitkä jäivät väliin
@@ -1572,20 +1580,19 @@ Harjoitushistoria ja päiväputki
 TEE SIITÄ OMASI
 Tallenna omia ilmauksia ja opiskele sanastoa muistikorteilla, joissa on ääni
 Ilmausnäppäimistö: napauta merkitystä, niin opiskelemallasi kielellä kirjoitettu lause ilmestyy mihin tahansa sovellukseen
-Lisää omia skenaarioita ja vastauksia ja jaa ne ystäville iCloudin kautta
-Luo uusia skenaarioita tekoälyllä omalla Anthropic API -avaimellasi
+Lisää omia skenaarioita ja vastauksia
 
-MALMUN PRO
-Kaikki on ilmaista kahta asiaa lukuun ottamatta
-Tilannekeskustelut: Perusasiat ja Rento jutustelu ovat ilmaisia, loput avautuvat Prolla
-Työmatkatila: 3 kohtausta päivässä ilmaiseksi, rajattomasti Prolla
-Pro on vuositilaus tai kertaostos eliniäksi, ja se kattaa kaikki kuusi kieltä
+ILMAINEN, PLUS JA PRO
+Ilmaiseksi: kaikki kuusi kieltä, Perusasiat ja Rento jutustelu, kaikki harjoitustyökalut, indonesian small talk ja päiväkurssit, 3 työmatkatilan kohtausta päivässä sekä enintään 3 omaa tai tuotua skenaariota
+Malmun Plus: kaikki 53 tilannekeskustelua ja rajattomasti omia skenaarioita
+Malmun Pro: kaikki, mitä Plus sisältää, sekä rajaton työmatkatila, skenaariot tekoälyllä omalla Anthropic API -avaimellasi ja jakaminen ystäville iCloudin kautta
+Jos ostit jo Malmunin tai Malmun Pron, saat pitää kaikki ominaisuudet
 
 YKSITYISYYS
 Ei tiliä. Opiskelutietosi pysyvät laitteellasi ja omassa iCloudissasi, ja puhe tunnistetaan laitteella. Ei mainoksia eikä seurantaa. Kehittäjän iCloudiin lähetetään vain nimettömiä käyttötilastoja ja kaatumisdiagnostiikkaa.
 
 TILAUKSEN TIEDOT
-Vuositilaus uusiutuu automaattisesti, ellei sitä peruta vähintään 24 tuntia ennen nykyisen jakson päättymistä. Voit hallita tai perua tilauksen kohdassa Asetukset > Apple-tili > Tilaukset. Elinikäinen osto on kertamaksu.
+Malmun Plus ja Pro ovat saatavilla viikko-, kuukausi- tai vuositilauksena sekä kertaostoksena eliniäksi. Uudet tilaajat saavat vuositilauksen ensimmäisen vuoden alennuksella, minkä jälkeen se uusiutuu normaalihintaan. Tilaukset uusiutuvat automaattisesti, ellei niitä peruta vähintään 24 tuntia ennen jakson päättymistä. Hallitse tai peru kohdassa Asetukset > Apple-tili > Tilaukset.
 Käyttöehdot (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Tietosuojakäytäntö: https://m1zz.github.io/IndonesianSmallTalk/fi/privacy.html
 
@@ -1659,17 +1666,17 @@ Uttrykkstastatur: trykk på en betydning, så skrives setningen på språket du 
 Legg til dine egne scenarioer og svar, og del dem med venner via iCloud
 Lag nye scenarioer med AI ved hjelp av din egen Anthropic API-nøkkel
 
-MALMUN PRO
-Alt er gratis bortsett fra to ting
-Situasjonssamtaler: Grunnleggende og Uformell prat er gratis, resten låses opp med Pro
-Pendlermodus: 3 scener om dagen gratis, ubegrenset med Pro
-Pro er et årsabonnement eller et engangskjøp for livet, og gjelder for alle seks språkene
+GRATIS, MALMUN PLUS OG MALMUN PRO
+Gratis: alle seks språk, Grunnleggende og Uformell prat, alle øvingsverktøyene, indonesisk smalltalk med dagskurs, 3 scener om dagen i pendlermodus og opptil 3 egne eller importerte scenarioer
+Malmun Plus: alle 53 situasjonssamtaler og ubegrenset med egne scenarioer
+Malmun Pro: alt i Plus, pluss ubegrenset pendlermodus, scenarioer med AI og deling med venner via iCloud
+Har du allerede kjøpt Malmun eller Malmun Pro, beholder du alle funksjonene
 
 PERSONVERN
 Ingen konto. Læringsdataene dine blir værende på enheten din og i din egen iCloud, og tale gjenkjennes på enheten. Ingen reklame, ingen sporing. Bare anonym bruksstatistikk og krasjdiagnostikk sendes til utviklerens iCloud.
 
 ABONNEMENTSINFORMASJON
-Årsabonnementet fornyes automatisk med mindre det sies opp minst 24 timer før utgangen av gjeldende periode. Administrer eller si opp i Innstillinger > Apple-konto > Abonnementer. Livstid er én enkelt betaling.
+Malmun Plus og Pro fås som uke-, måneds- eller årsabonnement og som et engangskjøp for livet. Nye abonnenter får rabatt det første året på årsabonnementet, som deretter fornyes til ordinær pris. Abonnementer fornyes automatisk med mindre de sies opp minst 24 timer før utgangen av perioden. Administrer eller si opp i Innstillinger > Apple-konto > Abonnementer. Livstid er én enkelt betaling.
 Bruksvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Personvernerklæring: https://m1zz.github.io/IndonesianSmallTalk/nb/privacy.html
 
@@ -1708,7 +1715,7 @@ Maak van je rit een gesprekkenles. Hoor de betekenis, zeg het zelf en hoor dan h
 Sta niet langer met je mond vol tanden als iemand een gesprek begint.
 Kies een antwoord, hoor het, zeg het hardop en leer echte smalltalk in het Indonesisch, Engels, Japans, Chinees, Spaans of Koreaans.
 
-Malmun begon als Indonesische smalltalk-app en leert je nu zes talen. Tik op het startscherm op de vlag om te wisselen welke taal je leert. Je zinnen, scenario's en woordenschat worden per taal apart bewaard.
+Tik op het startscherm op de vlag om te wisselen welke taal je leert. Je zinnen, scenario's en woordenschat worden per taal apart bewaard.
 
 GESPREKKEN MET VERTAKKINGEN
 Elk antwoord dat je kiest, geeft het gesprek een andere wending
@@ -1729,7 +1736,7 @@ Navigatie-instructies? Dan pauzeert de app even
 
 SITUATIEGESPREKKEN EN CURSUSSEN
 In elke taal zitten 53 situatiegesprekken: basiszinnen, alledaagse gesprekken, restaurants, vervoer, het vliegveld, hotels, winkelen, bezienswaardigheden en noodgevallen
-Het Indonesisch heeft nog meer: 5 met de hand geschreven smalltalk-scenario's, 3 dagcursussen van elk 6 scènes (een reisdag in Bandung, je eerste dag op kantoor in Jakarta, een weekend in de buurt) met een weekrooster, en een woordenlijst van 100 woorden voor zakenreizen
+Het Indonesisch heeft nog meer: 5 met de hand geschreven smalltalk-scenario's, 3 dagcursussen van elk 6 scènes met een weekrooster, en een woordenlijst van 100 woorden voor zakenreizen
 
 OEFENHULPMIDDELEN
 Uitspraak oefenen met een score, waarbij je ziet welke woorden goed gingen en welke je hebt gemist
@@ -1740,20 +1747,19 @@ Oefengeschiedenis met je reeks dagen op rij
 MAAK HET JOUW EIGEN
 Bewaar je eigen zinnen en leer woorden met flashcards en audio
 Zinnentoetsenbord: tik op een betekenis en de zin in de taal die je leert wordt in elke app getypt
-Voeg je eigen scenario's en antwoorden toe en deel ze via iCloud met vrienden
-Laat AI nieuwe scenario's maken met je eigen Anthropic API-sleutel
+Voeg je eigen scenario's en antwoorden toe
 
-MALMUN PRO
-Alles is gratis, op twee dingen na
-Situatiegesprekken: Basis en Alledaags zijn gratis, de rest ontgrendel je met Pro
-Onderweg-modus: 3 scènes per dag gratis, onbeperkt met Pro
-Pro is een jaarabonnement of een eenmalige levenslange aankoop en geldt voor alle zes talen
+GRATIS, PLUS EN PRO
+Gratis: alle zes talen, Basis en Alledaags, alle oefenhulpmiddelen, Indonesische smalltalk met dagcursussen, 3 scènes per dag in de Onderweg-modus en tot 3 eigen scenario's
+Malmun Plus: alle 53 situatiegesprekken en onbeperkt eigen scenario's
+Malmun Pro: alles van Plus en de Onderweg-modus zonder limiet, scenario's maken met AI (eigen Anthropic API-sleutel) en delen met vrienden via iCloud
+Heb je Malmun al gekocht of Malmun Pro aangeschaft, dan houd je alle functies
 
 PRIVACY
 Geen account nodig. Je leergegevens blijven op je apparaat en in je eigen iCloud, en spraak wordt op het apparaat herkend. Geen advertenties, geen tracking. Alleen anonieme gebruiksstatistieken en crashdiagnostiek gaan naar de iCloud van de ontwikkelaar.
 
 INFORMATIE OVER HET ABONNEMENT
-Het jaarabonnement wordt automatisch verlengd, tenzij je het minstens 24 uur voor het einde van de lopende periode opzegt. Je kunt het beheren of opzeggen via Instellingen > Apple Account > Abonnementen. De levenslange aankoop is een eenmalige betaling.
+Malmun Plus en Pro zijn er als week-, maand- of jaarabonnement en als eenmalige levenslange aankoop. Nieuwe abonnees krijgen korting op het eerste jaar van het jaarabonnement, daarna geldt de normale prijs. Abonnementen worden automatisch verlengd, tenzij je ze minstens 24 uur voor het einde van de periode opzegt. Beheren of opzeggen via Instellingen > Apple Account > Abonnementen.
 Gebruiksvoorwaarden (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacybeleid: https://m1zz.github.io/IndonesianSmallTalk/nl/privacy.html
 
@@ -1792,7 +1798,7 @@ Zamień drogę do pracy w lekcję rozmowy. Usłyszysz znaczenie, powiesz zdanie 
 Koniec z zawieszaniem się, gdy ktoś zagaduje po obcemu.
 Wybierz odpowiedź, posłuchaj jej, powiedz na głos i oswój prawdziwy small talk po indonezyjsku, angielsku, japońsku, chińsku, hiszpańsku lub koreańsku.
 
-Malmun zaczynał jako aplikacja do small talku po indonezyjsku, a dziś uczy sześciu języków. Dotknij flagi na ekranie głównym, aby zmienić język nauki. Twoje zwroty, scenariusze i słówka są zapisywane osobno dla każdego języka.
+Dotknij flagi na ekranie głównym, aby zmienić język nauki. Twoje zwroty, scenariusze i słówka są zapisywane osobno dla każdego języka.
 
 ROZMOWY, KTÓRE SIĘ ROZGAŁĘZIAJĄ
 Każda wybrana odpowiedź kieruje rozmowę w inną stronę
@@ -1827,17 +1833,17 @@ Klawiatura zwrotów: dotknij znaczenia, a zdanie w języku nauki wpisze się w d
 Dodawaj własne scenariusze i odpowiedzi i udostępniaj je znajomym przez iCloud
 Generuj nowe scenariusze z AI za pomocą własnego klucza API Anthropic
 
-MALMUN PRO
-Wszystko jest darmowe poza dwiema rzeczami
-Dialogi sytuacyjne: podstawy i luźna rozmowa są bezpłatne, resztę odblokowuje Pro
-Tryb dojazdu: 3 scenki dziennie za darmo, bez limitu z Pro
-Pro to roczna subskrypcja albo jednorazowy zakup na zawsze i obejmuje wszystkie sześć języków
+MALMUN PLUS I MALMUN PRO
+Za darmo: wszystkie sześć języków, podstawy i luźna rozmowa, indonezyjskie scenariusze i kursy, 3 scenki dziennie w Trybie dojazdu i do 3 własnych scenariuszy
+Plus odblokowuje wszystkie 53 dialogi sytuacyjne oraz własne scenariusze i import bez limitu
+Pro dodaje do Plus Tryb dojazdu bez limitu, scenariusze z AI i udostępnianie przez iCloud
+Kto już zapłacił za Malmun albo Malmun Pro, zachowuje wszystkie funkcje
 
 PRYWATNOŚĆ
 Bez konta. Dane z nauki zostają na Twoim urządzeniu i w Twoim iCloud, a mowa jest rozpoznawana na urządzeniu. Bez reklam i śledzenia. Do iCloud twórcy trafiają tylko anonimowe statystyki użycia i diagnostyka awarii.
 
 SZCZEGÓŁY SUBSKRYPCJI
-Subskrypcja roczna odnawia się automatycznie, chyba że anulujesz ją co najmniej 24 godziny przed końcem bieżącego okresu. Zarządzaj nią lub anuluj w Ustawienia > Konto Apple > Subskrypcje. Zakup na zawsze to jednorazowa płatność.
+Plus i Pro: subskrypcja tygodniowa, miesięczna lub roczna albo jednorazowy zakup na zawsze. Nowi subskrybenci mają tańszy pierwszy rok subskrypcji rocznej, potem obowiązuje zwykła cena. Subskrypcja odnawia się automatycznie, chyba że anulujesz ją co najmniej 24 godziny przed końcem okresu. Zarządzaj nią w Ustawienia > Konto Apple > Subskrypcje.
 Warunki użytkowania (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Polityka prywatności: https://m1zz.github.io/IndonesianSmallTalk/pl/privacy.html
 
@@ -1911,17 +1917,17 @@ Frastangentbord: tryck på en betydelse så skrivs meningen på språket du lär
 Lägg till egna scenarier och svar och dela dem med vänner via iCloud
 Skapa nya scenarier med AI med din egen Anthropic API-nyckel
 
-MALMUN PRO
-Allt är gratis utom två saker
-Situationsdialoger: Grunderna och Vardagssnack är gratis, resten låses upp med Pro
-Pendlarläge: 3 scener om dagen gratis, obegränsat med Pro
-Pro är en årsprenumeration eller ett engångsköp för livet, och gäller för alla sex språk
+GRATIS, MALMUN PLUS OCH MALMUN PRO
+Gratis: alla sex språk, Grunderna och Vardagssnack, alla övningsverktyg, indonesiskt småprat med dagskurser, 3 scener om dagen i pendlarläget och upp till 3 egna eller importerade scenarier
+Malmun Plus: alla 53 situationsdialoger och obegränsat med egna scenarier
+Malmun Pro: allt i Plus samt obegränsat pendlarläge, scenarier med AI och delning med vänner via iCloud
+Har du redan köpt Malmun eller Malmun Pro behåller du alla funktioner
 
 INTEGRITET
 Inget konto. Din inlärningsdata stannar på din enhet och i din egen iCloud, och tal känns igen på enheten. Inga annonser, ingen spårning. Det enda som skickas till utvecklarens iCloud är anonym användningsstatistik och kraschdiagnostik.
 
 PRENUMERATIONSINFORMATION
-Årsprenumerationen förnyas automatiskt om den inte avslutas senast 24 timmar före slutet av den pågående perioden. Hantera eller avsluta den under Inställningar > Apple-konto > Prenumerationer. Livstidsköpet är en enda engångsbetalning.
+Malmun Plus och Pro finns som vecko-, månads- eller årsprenumeration och som ett engångsköp för livet. Nya prenumeranter får rabatt på första året med årsprenumerationen, som sedan förnyas till ordinarie pris. Prenumerationer förnyas automatiskt om de inte avslutas senast 24 timmar före periodens slut. Hantera eller avsluta under Inställningar > Apple-konto > Prenumerationer. Livstidsköpet är en enda engångsbetalning.
 Användarvillkor (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Integritetspolicy: https://m1zz.github.io/IndonesianSmallTalk/sv/privacy.html
 
@@ -1995,17 +2001,17 @@ Kendi ifadelerini kaydet, sesli kelime kartlarıyla çalış
 Kendi senaryolarını ve cevaplarını ekle, iCloud ile arkadaşlarınla paylaş
 Kendi Anthropic API anahtarınla yapay zekâya yeni senaryolar ürettir
 
-MALMUN PRO
-İki özellik dışında her şey ücretsiz
-Durumlara göre diyaloglar: Temel ifadeler ve Günlük sohbet ücretsiz, geri kalanı Pro ile açılır
-Yol Modu: günde 3 sahne ücretsiz, Pro ile sınırsız
-Pro, yıllık abonelik ya da tek seferlik ömür boyu satın alma olarak sunulur ve altı dilin hepsini kapsar
+MALMUN PLUS VE MALMUN PRO
+Ücretsiz: altı dilin hepsi, Temel ifadeler ve Günlük sohbet, Endonezce senaryolar ve kurslar, Yol Modu'nda günde 3 sahne ve en fazla 3 kendi senaryon
+Plus 53 durum diyaloğunun hepsini açar, kendi senaryoların ve içe aktarma sınırsız olur
+Pro, Plus'a sınırsız Yol Modu, yapay zekâyla senaryo ve iCloud ile senaryo paylaşmayı ekler
+Malmun'a ya da Malmun Pro'ya daha önce ödeme yaptıysan tüm özellikler sende kalır
 
 GİZLİLİK
 Hesap gerekmez. Öğrenme verilerin cihazında ve kendi iCloud'unda kalır, konuşma tanıma cihaz üzerinde yapılır. Reklam ve takip yok. Geliştiricinin iCloud'una yalnızca anonim kullanım istatistikleri ve çökme tanılamaları gönderilir.
 
 ABONELİK BİLGİLERİ
-Yıllık abonelik, geçerli dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Ayarlar > Apple Hesabı > Abonelikler bölümünden yönetebilir veya iptal edebilirsin. Ömür boyu seçeneği tek seferlik bir ödemedir.
+Plus ve Pro: haftalık, aylık ya da yıllık abonelik veya tek seferlik ömür boyu satın alma. Yıllık abonelikte yeni abonelere ilk yıl indirimlidir, sonra normal fiyat geçerlidir. Abonelik, dönem bitiminden en az 24 saat önce iptal edilmezse otomatik yenilenir. İptal: Ayarlar > Apple Hesabı > Abonelikler.
 Kullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Gizlilik Politikası: https://m1zz.github.io/IndonesianSmallTalk/tr/privacy.html
 

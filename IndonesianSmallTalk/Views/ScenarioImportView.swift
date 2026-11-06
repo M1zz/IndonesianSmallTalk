@@ -17,6 +17,9 @@ struct ScenarioImportView: View {
     @State private var copiedPrompt = false
     /// 붙여 넣은 글에서 마지막으로 채운 제목 (사용자가 고쳤으면 덮어쓰지 않으려고)
     @State private var autoTitle = ""
+    @ObservedObject private var pro = MalmunPro.shared
+    /// 이 시트 위에 띄우는 페이월 (앱 맨 아래 시트는 이 시트 위로 못 뜬다)
+    @State private var paywallFeature: ProFeature?
 
     private var language: AppLanguage { AppLanguage.learning }
     private var parsed: ScenarioImporter.Result { ScenarioImporter.parse(input, firstIsOther: firstIsOther) }
@@ -94,6 +97,8 @@ struct ScenarioImportView: View {
                         .disabled(!canSave)
                 }
             }
+            // 가져온 대화도 내 시나리오 한도(무료 3개)에 든다. Plus 를 사고 돌아오면 이어서 저장한다.
+            .malmunPaywall($paywallFeature) { _ in save(parsed) }
             .onChange(of: input) { _, _ in
                 // 붙여 넣은 글에 제목이 있으면 채워 준다
                 let r = parsed
@@ -197,6 +202,10 @@ struct ScenarioImportView: View {
     // MARK: - Save
 
     private func save(_ result: ScenarioImporter.Result) {
+        guard pro.canAddScenario(currentCount: scenarioStore.allScenarios.count) else {
+            paywallFeature = .scenarios
+            return
+        }
         guard let saved = ScenarioImporter.save(
             result,
             title: title.trimmingCharacters(in: .whitespaces),

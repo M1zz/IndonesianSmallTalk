@@ -126,28 +126,29 @@
     "note": "Gdy aplikacja jest po polsku, komendy głosowe wypowiadasz po angielsku. Są słuchane tylko w twojej kolejce, po sygnale. Bieżące zdanie widać w informacjach o odtwarzaniu w samochodzie. CarPlay nie ma osobnego ekranu aplikacji."
   },
   "pricing": {
-    "title": "Prawie wszystko jest za darmo. Malmun Pro odblokowuje resztę.",
+    "title": "Zacznij za darmo. Więcej odblokują Malmun Plus i Pro.",
     "free": {
       "name": "Za darmo",
       "items": [
-        "Rozgałęziony small talk i kursy jednego dnia (indonezyjski)",
-        "Dialogi sytuacyjne: podstawy i codzienne pogaduszki",
-        "Tryb dojazdu, 3 sceny dziennie",
-        "Wymowa, skrypt, import rozmów, historia ćwiczeń",
+        "Wszystkie sześć języków, dialogi sytuacyjne: podstawy i codzienne pogaduszki",
+        "Rozgałęziony small talk, kursy jednego dnia i tygodniowy plan (indonezyjski)",
+        "Rozgałęzione rozmowy tekstem i głosem, wymowa, skrypt, historia ćwiczeń",
         "Moje zwroty, fiszki, klawiatura zwrotów",
-        "Udostępnianie scenariuszy znajomym, scenariusze tworzone przez AI"
+        "Tryb dojazdu, 3 sceny dziennie, także start przez Siri",
+        "Do 3 własnych lub zaimportowanych scenariuszy, podgląd scenariuszy od znajomych"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Wszystkie dialogi sytuacyjne: restauracja, transport, lotnisko, hotel, zakupy, zwiedzanie, nagłe wypadki",
-        "Tryb dojazdu bez limitu",
-        "Obejmuje wszystkie języki"
+        "Plus: wszystkie 53 dialogi sytuacyjne (restauracja, transport, lotnisko, hotel, zakupy, zwiedzanie, nagłe wypadki) we wszystkich sześciu językach",
+        "Plus: własne scenariusze i import rozmów bez limitu",
+        "Pro: wszystko z Plus i Tryb dojazdu bez limitu",
+        "Pro: scenariusze tworzone przez AI (Twój klucz API Anthropic) i udostępnianie scenariuszy znajomym przez iCloud"
       ],
-      "note": "Subskrypcja roczna albo jednorazowy zakup na zawsze"
+      "note": "Każdy plan jako subskrypcja tygodniowa, miesięczna lub roczna albo jednorazowy zakup na zawsze. Nowi subskrybenci mają tańszy pierwszy rok subskrypcji rocznej."
     },
-    "note": "Ceny znajdziesz w aplikacji i w App Store. Subskrypcja roczna odnawia się automatycznie, jeśli nie anulujesz jej najpóźniej 24 godziny przed końcem okresu."
+    "note": "Ceny znajdziesz w aplikacji i w App Store. Subskrypcja odnawia się automatycznie, jeśli nie anulujesz jej najpóźniej 24 godziny przed końcem okresu. Kto kupił Malmun, zanim stał się darmowy, albo ma Malmun Pro, zachowuje wszystkie funkcje bez dopłat."
   },
   "faq": {
     "title": "Częste pytania",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Nie widzę scenariusza udostępnionego przez znajomego.",
-        "a": "Udostępnianie działa przez iCloud, więc oboje musicie być zalogowani do iCloud. Jeśli nadal go nie widać, zamknij aplikację całkowicie i otwórz ponownie."
+        "a": "Udostępnianie działa przez iCloud, więc oboje musicie być zalogowani do iCloud. Jeśli nadal go nie widać, zamknij aplikację całkowicie i otwórz ponownie. Udostępnianie scenariuszy wymaga Malmun Pro, a oglądanie otrzymanych jest bezpłatne."
       },
       {
         "q": "Czego potrzebuję, żeby tworzyć scenariusze z AI?",
-        "a": "Wpisz w aplikacji własny klucz API Anthropic i podaj temat, a powstanie nowa rozmowa. Wszystko inne działa bez klucza."
+        "a": "Wpisz w aplikacji własny klucz API Anthropic i podaj temat, a powstanie nowa rozmowa. Tworzenie scenariuszy z AI należy do Malmun Pro. Pozostałe funkcje nie potrzebują klucza."
       },
       {
         "q": "Jak anulować subskrypcję albo odzyskać pieniądze?",
         "a": "Płatności obsługuje Apple. Anulujesz w Ustawieniach iPhone’a ▸ Konto Apple ▸ Subskrypcje ▸ Malmun. Zwrotu pieniędzy żądasz od Apple na reportaproblem.apple.com."
       },
       {
-        "q": "Nowy iPhone i Pro zniknęło.",
-        "a": "Zaloguj się tym samym Kontem Apple i w Malmun stuknij Ustawienia ▸ Malmun Pro ▸ Przywróć zakupy."
+        "q": "Nowy iPhone, a Plus lub Pro zniknęło.",
+        "a": "Zaloguj się tym samym Kontem Apple i w Malmun stuknij Ustawienia (koło zębate w prawym górnym rogu ekranu głównego) ▸ Przywróć zakupy."
       },
       {
         "q": "Gdzie zapisują się moje postępy?",

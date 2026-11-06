@@ -3,11 +3,11 @@ import SwiftUI
 
 /// 앱스토어 스크린샷 전용 장면 (Debug 빌드에만 있다). 시뮬레이터에서 손으로 누르지 않고
 /// 같은 화면을 언어마다 똑같이 찍으려고 실행 인자로 연다.
-///   -ScreenshotScene home | practice | drive | script | pronunciation
+///   -ScreenshotScene home | practice | drive | script | pronunciation | paywall
 ///   -ScreenshotLearning <AppLanguage.rawValue>   (배울 언어를 못 박는다)
 /// 찍는 스크립트: scripts/capture_store_screenshots.sh
 enum ScreenshotScene: String {
-    case home, practice, drive, script, pronunciation
+    case home, practice, drive, script, pronunciation, paywall
 
     static var current: ScreenshotScene? {
         let args = ProcessInfo.processInfo.arguments
@@ -55,6 +55,15 @@ struct ScreenshotSceneHost: View {
     let scene: ScreenshotScene
 
     var body: some View {
+        // 페이월은 스스로 NavigationStack 을 가진다
+        if scene == .paywall {
+            PaywallView(feature: .situations)
+        } else {
+            scenes
+        }
+    }
+
+    private var scenes: some View {
         NavigationStack {
             switch scene {
             case .practice:
@@ -66,7 +75,7 @@ struct ScreenshotSceneHost: View {
             case .drive:
                 DriveModeView()
                     .onAppear { DriveSession.shared.debugShowcase() }
-            case .home:
+            case .home, .paywall:
                 EmptyView()
             }
         }

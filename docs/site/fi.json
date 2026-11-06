@@ -126,28 +126,29 @@
     "note": "Kun sovellus on suomeksi, puhekomennot sanotaan englanniksi. Ne kuunnellaan vain sinun vuorollasi äänimerkin jälkeen. Nykyinen lause näkyy auton toistotiedoissa. CarPlayssa ei ole omaa sovellusnäkymää."
   },
   "pricing": {
-    "title": "Melkein kaikki on ilmaista. Malmun Pro avaa loput.",
+    "title": "Aloita ilmaiseksi. Plus ja Pro avaavat lisää.",
     "free": {
       "name": "Ilmainen",
       "items": [
-        "Haarautuva small talk ja päiväkurssit (indonesia)",
-        "Tilannekeskustelut: perusteet ja arkijutustelu",
-        "Työmatkatila, 3 kohtausta päivässä",
-        "Ääntäminen, käsikirjoitus, keskustelujen tuonti, harjoitushistoria",
+        "Kaikki kuusi kieltä sekä tilannekeskustelujen perusteet ja arkijutustelu",
+        "Haarautuva small talk, päiväkurssit ja viikkoaikataulu (indonesia)",
+        "Haarautuvat keskustelut tekstillä tai äänellä, ääntäminen, käsikirjoitus, harjoitushistoria",
         "Omat fraasit, sanakortit, fraasinäppäimistö",
-        "Skenaarioiden jakaminen ystäville, skenaariot tekoälyllä"
+        "Työmatkatila, 3 kohtausta päivässä, myös Sirillä käynnistettynä",
+        "Enintään 3 omaa tai tuotua skenaariota, ystävien jakamien skenaarioiden katselu"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Kaikki tilannekeskustelut: ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet, hätätilanteet",
-        "Rajaton työmatkatila",
-        "Koskee kaikkia kieliä"
+        "Plus: kaikki 53 tilannekeskustelua (ravintola, liikkuminen, lentokenttä, hotelli, ostokset, nähtävyydet, hätätilanteet) kaikilla kuudella kielellä",
+        "Plus: rajattomasti omia skenaarioita ja keskustelujen tuontia",
+        "Pro: kaikki, mitä Plus sisältää, ja rajaton työmatkatila",
+        "Pro: skenaariot tekoälyllä (oma Anthropic-API-avain) ja skenaarioiden jakaminen ystäville iCloudin kautta"
       ],
-      "note": "Vuositilaus tai kertaosto ikuisesti"
+      "note": "Kumpikin viikko-, kuukausi- tai vuositilauksena tai kertaostona ikuisesti. Uudet tilaajat saavat vuositilauksen ensimmäisen vuoden alennuksella."
     },
-    "note": "Hinnat näet sovelluksessa ja App Storessa. Vuositilaus uusiutuu automaattisesti, ellei sitä peruta viimeistään 24 tuntia ennen kauden loppua."
+    "note": "Hinnat näet sovelluksessa ja App Storessa. Tilaukset uusiutuvat automaattisesti, ellei niitä peruta viimeistään 24 tuntia ennen kauden loppua. Jos ostit Malmunin silloin, kun se oli maksullinen, tai ostit Malmun Pron, saat pitää kaikki ominaisuudet ostamatta mitään lisää."
   },
   "faq": {
     "title": "Usein kysyttyä",
@@ -174,19 +175,19 @@
       },
       {
         "q": "En näe ystävän jakamaa skenaariota.",
-        "a": "Jakaminen toimii iCloudin kautta, joten teidän molempien on oltava kirjautuneena iCloudiin. Jos se ei vieläkään näy, sulje sovellus kokonaan ja avaa se uudelleen."
+        "a": "Jakaminen toimii iCloudin kautta, joten teidän molempien on oltava kirjautuneena iCloudiin. Jos se ei vieläkään näy, sulje sovellus kokonaan ja avaa se uudelleen. Skenaarioiden jakaminen on Malmun Pron ominaisuus, mutta jaettujen skenaarioiden katselu on ilmaista."
       },
       {
         "q": "Mitä tarvitsen skenaarioiden tekemiseen tekoälyllä?",
-        "a": "Lisää sovellukseen oma Anthropic-API-avaimesi ja kirjoita aihe, niin uusi keskustelu syntyy. Kaikki muu toimii ilman avainta."
+        "a": "Lisää sovellukseen oma Anthropic-API-avaimesi ja kirjoita aihe, niin uusi keskustelu syntyy. Skenaarioiden tekeminen tekoälyllä on Malmun Pron ominaisuus. Mikään muu sovelluksessa ei tarvitse avainta."
       },
       {
         "q": "Miten peruutan tilauksen tai saan rahat takaisin?",
         "a": "Maksut hoitaa Apple. Peruuta iPhonen Asetukset ▸ Apple-tili ▸ Tilaukset ▸ Malmun. Hyvitystä pyydät Applelta osoitteessa reportaproblem.apple.com."
       },
       {
-        "q": "Uusi iPhone, ja Pro katosi.",
-        "a": "Kirjaudu samalla Apple-tilillä ja napauta Malmunissa Asetukset ▸ Malmun Pro ▸ Palauta ostokset."
+        "q": "Uusi iPhone, ja Plus tai Pro katosi.",
+        "a": "Kirjaudu samalla Apple-tilillä ja napauta Malmunissa Asetukset (rataskuvake etusivun oikeassa yläkulmassa) ▸ Palauta ostokset."
       },
       {
         "q": "Mihin edistymiseni tallennetaan?",

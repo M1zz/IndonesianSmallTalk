@@ -3,39 +3,39 @@
   "nonRenewingSubscriptions": [],
   "products": [
     {
-      "displayPrice": "39.99",
+      "internalID": "A30AF1FC-11B4-4007-A411-DBF0A4D19E52",
+      "displayPrice": "29.99",
+      "familyShareable": false,
+      "localizations": [
+        {
+          "description": "상황별 회화 53개 전체와 내 시나리오 무제한",
+          "displayName": "말문 Plus 평생",
+          "locale": "ko_KR"
+        },
+        {
+          "description": "All 53 situations and unlimited own scenarios",
+          "displayName": "Malmun Plus Lifetime",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.plus.lifetime",
+      "referenceName": "Plus Lifetime",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "44.99",
       "familyShareable": false,
       "internalID": "00CD15C4-0D83-4F39-BD18-2B939A186493",
       "localizations": [
         {
-          "description": "Unlimited Commute Mode and every situational dialogue — pay once, yours forever.",
+          "description": "Plus 전부, 퇴근길 모드 무제한, AI 시나리오",
+          "displayName": "말문 Pro 평생",
+          "locale": "ko_KR"
+        },
+        {
+          "description": "All of Plus, unlimited Commute Mode, AI",
           "displayName": "Malmun Pro Lifetime",
           "locale": "en_US"
-        },
-        {
-          "description": "퇴근길 모드 무제한과 상황별 회화 전체 — 한 번 결제로 평생.",
-          "displayName": "말문 Pro 평생",
-          "locale": "ko"
-        },
-        {
-          "description": "通勤モード無制限とすべてのシーン別会話。一度の購入でずっと使えます。",
-          "displayName": "Malmun Pro 買い切り",
-          "locale": "ja"
-        },
-        {
-          "description": "无限通勤模式和全部情景对话，一次购买永久使用。",
-          "displayName": "Malmun Pro 永久版",
-          "locale": "zh_Hans"
-        },
-        {
-          "description": "Modo trayecto sin límites y todos los diálogos por situación. Pagas una vez y es tuyo.",
-          "displayName": "Malmun Pro de por vida",
-          "locale": "es_ES"
-        },
-        {
-          "description": "Mode Perjalanan tanpa batas dan semua dialog situasi. Bayar sekali, milikmu selamanya.",
-          "displayName": "Malmun Pro Seumur Hidup",
-          "locale": "id"
         }
       ],
       "productID": "com.devkoan.IndonesianSmallTalk.pro.lifetime",
@@ -43,7 +43,47 @@
       "type": "NonConsumable"
     },
     {
-      "displayPrice": "39.99",
+      "internalID": "D0D59FD2-BEB0-4913-9102-3BE73854A0BF",
+      "displayPrice": "14.99",
+      "familyShareable": false,
+      "localizations": [
+        {
+          "description": "Plus 평생을 가진 분의 Pro 평생 올리기",
+          "displayName": "Plus 평생에서 Pro 평생으로",
+          "locale": "ko_KR"
+        },
+        {
+          "description": "Upgrade your Plus Lifetime to Pro Lifetime",
+          "displayName": "Plus to Pro Lifetime",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.pro.upgrade",
+      "referenceName": "Plus to Pro Lifetime Upgrade",
+      "type": "NonConsumable"
+    },
+    {
+      "internalID": "FC0EA5AD-4BF5-45B7-993A-B8888B7FE4E6",
+      "displayPrice": "29.99",
+      "familyShareable": false,
+      "localizations": [
+        {
+          "description": "구독하던 분을 위한 Pro 평생",
+          "displayName": "말문 Pro 평생 (구독 졸업)",
+          "locale": "ko_KR"
+        },
+        {
+          "description": "Pro Lifetime for current subscribers",
+          "displayName": "Malmun Pro Lifetime (Graduate)",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.devkoan.IndonesianSmallTalk.pro.graduate",
+      "referenceName": "Pro Lifetime for Subscribers",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "44.99",
       "familyShareable": false,
       "internalID": "C3E9A7B1-5D24-4F86-9A0E-7B1C2D3E4F50",
       "localizations": [
@@ -118,52 +158,176 @@
         {
           "adHocOffers": [],
           "codeOffers": [],
-          "displayPrice": "19.99",
+          "displayPrice": "14.99",
           "familyShareable": false,
           "groupNumber": 1,
           "internalID": "6A327C62-154D-49D0-B2BF-900043B8C412",
           "introductoryOffer": {
             "internalID": "DD3E5D37-85D6-4072-BF1D-6FE898683BD4",
-            "paymentMode": "free",
-            "subscriptionPeriod": "P1W"
+            "numberOfPeriods": 1,
+            "paymentMode": "payUpFront",
+            "subscriptionPeriod": "P1Y",
+            "displayPrice": "7.49"
           },
           "localizations": [
             {
-              "description": "Unlimited Commute Mode and every situational dialogue.",
+              "description": "Plus 전부, 퇴근길 모드 무제한, AI 시나리오",
+              "displayName": "말문 Pro 연간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All of Plus, unlimited Commute Mode, AI",
               "displayName": "Malmun Pro Yearly",
               "locale": "en_US"
-            },
-            {
-              "description": "퇴근길 모드 무제한과 상황별 회화 전체.",
-              "displayName": "말문 Pro 연간",
-              "locale": "ko"
-            },
-            {
-              "description": "通勤モード無制限とすべてのシーン別会話。",
-              "displayName": "Malmun Pro 年額",
-              "locale": "ja"
-            },
-            {
-              "description": "无限通勤模式和全部情景对话。",
-              "displayName": "Malmun Pro 年度",
-              "locale": "zh_Hans"
-            },
-            {
-              "description": "Modo trayecto sin límites y todos los diálogos por situación.",
-              "displayName": "Malmun Pro anual",
-              "locale": "es_ES"
-            },
-            {
-              "description": "Mode Perjalanan tanpa batas dan semua dialog situasi.",
-              "displayName": "Malmun Pro Tahunan",
-              "locale": "id"
             }
           ],
           "productID": "com.devkoan.IndonesianSmallTalk.pro.yearly",
           "recurringSubscriptionPeriod": "P1Y",
           "referenceName": "Pro Yearly",
           "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
-          "type": "RecurringSubscription"
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "internalID": "44D414D3-C193-4F65-B477-B36ACBE8790C",
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "4.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Plus 전부, 퇴근길 모드 무제한, AI 시나리오",
+              "displayName": "말문 Pro 월간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All of Plus, unlimited Commute Mode, AI",
+              "displayName": "Malmun Pro Monthly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.devkoan.IndonesianSmallTalk.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pro Monthly",
+          "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "internalID": "EAAD082C-AF9E-406A-A6CF-DB80622CD365",
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "1.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Plus 전부, 퇴근길 모드 무제한, AI 시나리오",
+              "displayName": "말문 Pro 주간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All of Plus, unlimited Commute Mode, AI",
+              "displayName": "Malmun Pro Weekly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.devkoan.IndonesianSmallTalk.pro.weekly",
+          "recurringSubscriptionPeriod": "P1W",
+          "referenceName": "Pro Weekly",
+          "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "internalID": "AA7A3C0D-F2A5-4381-9F66-24EC1416B1E6",
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "9.99",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "introductoryOffer": {
+            "internalID": "B5BCDF66-A8E5-44CE-8EC7-87625FFCB353",
+            "numberOfPeriods": 1,
+            "paymentMode": "payUpFront",
+            "subscriptionPeriod": "P1Y",
+            "displayPrice": "4.99"
+          },
+          "localizations": [
+            {
+              "description": "상황별 회화 53개 전체와 내 시나리오 무제한",
+              "displayName": "말문 Plus 연간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All 53 situations and unlimited own scenarios",
+              "displayName": "Malmun Plus Yearly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.devkoan.IndonesianSmallTalk.plus.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Plus Yearly",
+          "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "internalID": "1CB97C81-A997-46A6-8894-25B570E014EE",
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "3.49",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "상황별 회화 53개 전체와 내 시나리오 무제한",
+              "displayName": "말문 Plus 월간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All 53 situations and unlimited own scenarios",
+              "displayName": "Malmun Plus Monthly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.devkoan.IndonesianSmallTalk.plus.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Plus Monthly",
+          "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "internalID": "07811A9F-B388-4B77-BCF5-BD50841901DD",
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "1.49",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "상황별 회화 53개 전체와 내 시나리오 무제한",
+              "displayName": "말문 Plus 주간",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "All 53 situations and unlimited own scenarios",
+              "displayName": "Malmun Plus Weekly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.devkoan.IndonesianSmallTalk.plus.weekly",
+          "recurringSubscriptionPeriod": "P1W",
+          "referenceName": "Plus Weekly",
+          "subscriptionGroupID": "9AC806F4-3C78-4AD0-9298-B6A883D61EDF",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
         }
       ]
     }

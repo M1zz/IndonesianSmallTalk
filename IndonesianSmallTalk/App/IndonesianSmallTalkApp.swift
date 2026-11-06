@@ -48,12 +48,16 @@ struct IndonesianSmallTalkApp: App {
                     AppDelegate.onRemoteNotification = {
                         Task { await refreshAll() }
                     }
+                    // 산 칸을 영수증으로 다시 읽는다 (팁 · 선물 엔진도 스토어가 함께 깨운다)
+                    Task { await MalmunPro.shared.refresh() }
                     await refreshAll()
                     try? await CloudKitService.shared.ensureSubscriptions()
                 }
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .active {
                         Task { await refreshAll() }
+                        // 다른 기기에서 샀거나 구독이 끝났을 수 있다.
+                        Task { await MalmunPro.shared.refresh() }
                     }
                     // 내 표현을 Spotlight 에 다시 싣는다 (→ DriveIntents.swift)
                     if phase != .inactive {

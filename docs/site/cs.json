@@ -126,28 +126,29 @@
     "note": "Když je aplikace v češtině, hlasové povely říkáte anglicky. Poslouchá je jen ve chvíli, kdy jste po signálu na řadě. Aktuální věta se zobrazí v informacích o přehrávání v autě. Vlastní obrazovku v CarPlay aplikace nemá."
   },
   "pricing": {
-    "title": "Skoro všechno je zdarma. Malmun Pro odemkne zbytek.",
+    "title": "Začněte zdarma. Víc odemkne Malmun Plus nebo Pro.",
     "free": {
       "name": "Zdarma",
       "items": [
-        "Větvený small talk a denní kurzy (indonéština)",
-        "Situační dialogy: základy a běžný hovor",
-        "Režim dojíždění, 3 scény denně",
-        "Výslovnost, přepis, import rozhovorů, historie tréninku",
+        "Všech šest jazyků, situační dialogy: základy a běžný hovor",
+        "Větvený small talk, denní kurzy a týdenní rozvrh (indonéština)",
+        "Větvené rozhovory textem i hlasem, výslovnost, přepis, historie tréninku",
         "Moje fráze, kartičky slovíček, klávesnice frází",
-        "Sdílení scénářů s přáteli, scénáře vytvořené AI"
+        "Režim dojíždění, 3 scény denně, včetně spuštění přes Siri",
+        "Až 3 vlastní nebo importované scénáře, prohlížení scénářů od přátel"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Všechny situační dialogy: restaurace, doprava, letiště, hotel, nákupy, prohlídky, nouzové situace",
-        "Režim dojíždění bez omezení",
-        "Platí pro všechny jazyky"
+        "Plus: všech 53 situačních dialogů (restaurace, doprava, letiště, hotel, nákupy, prohlídky, nouzové situace) ve všech šesti jazycích",
+        "Plus: vlastní scénáře a import rozhovorů bez omezení",
+        "Pro: vše z Plus a režim dojíždění bez omezení",
+        "Pro: scénáře vytvořené AI (váš vlastní API klíč Anthropic) a sdílení scénářů s přáteli přes iCloud"
       ],
-      "note": "Roční předplatné nebo jednorázový nákup navždy"
+      "note": "Obojí jako týdenní, měsíční nebo roční předplatné, nebo jednorázový nákup navždy. Noví předplatitelé mají první rok ročního předplatného se slevou."
     },
-    "note": "Ceny najdete v aplikaci a v App Storu. Roční předplatné se automaticky obnoví, pokud ho nezrušíte nejpozději 24 hodin před koncem období."
+    "note": "Ceny najdete v aplikaci a v App Storu. Předplatné se automaticky obnoví, pokud ho nezrušíte nejpozději 24 hodin před koncem období. Kdo za Malmun zaplatil, když byl placený, nebo si koupil Malmun Pro, má dál všechny funkce bez doplácení."
   },
   "faq": {
     "title": "Časté dotazy",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Nevidím scénář, který sdílel kamarád.",
-        "a": "Sdílení funguje přes iCloud, takže musíte být oba přihlášení k iCloudu. Pokud se pořád nezobrazí, aplikaci úplně zavřete a znovu otevřete."
+        "a": "Sdílení funguje přes iCloud, takže musíte být oba přihlášení k iCloudu. Pokud se pořád nezobrazí, aplikaci úplně zavřete a znovu otevřete. Sdílet scénáře můžete s Malmun Pro, prohlížet ty, které dostanete, je zdarma."
       },
       {
         "q": "Co potřebuji k vytváření scénářů pomocí AI?",
-        "a": "Zadejte do aplikace vlastní API klíč Anthropic a napište téma, vznikne nový rozhovor. Všechno ostatní funguje i bez klíče."
+        "a": "Zadejte do aplikace vlastní API klíč Anthropic a napište téma, vznikne nový rozhovor. Tvorba scénářů pomocí AI je součástí Malmun Pro. Ostatní funkce klíč nepotřebují."
       },
       {
         "q": "Jak zruším předplatné nebo dostanu peníze zpět?",
         "a": "Platby vyřizuje Apple. Zrušit můžete v Nastavení iPhonu ▸ Účet Apple ▸ Předplatná ▸ Malmun. O vrácení peněz požádejte Apple na reportaproblem.apple.com."
       },
       {
-        "q": "Nový iPhone a Pro zmizelo.",
-        "a": "Přihlaste se stejným Účtem Apple a v Malmun klepněte na Nastavení ▸ Malmun Pro ▸ Obnovit nákupy."
+        "q": "Nový iPhone a Plus nebo Pro zmizelo.",
+        "a": "Přihlaste se stejným Účtem Apple a v Malmun klepněte na Nastavení (ozubené kolečko vpravo nahoře na domovské obrazovce) ▸ Obnovit nákupy."
       },
       {
         "q": "Kde se ukládá můj pokrok?",

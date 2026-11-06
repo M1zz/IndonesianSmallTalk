@@ -126,28 +126,29 @@
     "note": "Wenn die App auf Deutsch läuft, sprichst du die Befehle auf Englisch. Sie werden nur gehört, wenn du nach dem Signalton dran bist. Der aktuelle Satz erscheint in der Wiedergabeanzeige des Autos. Einen eigenen CarPlay-Bildschirm gibt es nicht."
   },
   "pricing": {
-    "title": "Fast alles ist kostenlos. Malmun Pro schaltet den Rest frei.",
+    "title": "Kostenlos starten. Mit Plus oder Pro geht mehr.",
     "free": {
       "name": "Kostenlos",
       "items": [
-        "Verzweigter Smalltalk und Tageskurse (Indonesisch)",
-        "Situationsgespräche: Grundlagen und Alltag",
-        "Feierabend-Modus, 3 Szenen pro Tag",
-        "Ausspracheübung, Skriptansicht, Dialogimport, Übungsverlauf",
+        "Alle sechs Sprachen mit den Situationsgesprächen Grundlagen und Alltag",
+        "Verzweigter Smalltalk, Tageskurse und Wochenplan (Indonesisch)",
+        "Verzweigte Dialoge per Text oder Stimme, Ausspracheübung, Skriptansicht, Übungsverlauf",
         "Meine Ausdrücke, Vokabelkarten, Ausdruckstastatur",
-        "Szenarien mit Freunden teilen, Szenarien mit KI erstellen"
+        "Feierabend-Modus mit 3 Szenen pro Tag, auch per Siri startbar",
+        "Bis zu 3 eigene oder importierte Szenarien, von Freunden geteilte Szenarien ansehen"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Alle Situationsgespräche: Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing, Notfälle",
-        "Feierabend-Modus ohne Limit",
-        "Gilt für alle Lernsprachen"
+        "Plus: alle 53 Situationsgespräche (Restaurant, unterwegs, Flughafen, Hotel, Shopping, Sightseeing, Notfälle) in allen sechs Sprachen",
+        "Plus: unbegrenzt eigene Szenarien und Dialogimporte",
+        "Pro: alles aus Plus und dazu der Feierabend-Modus ohne Limit",
+        "Pro: Szenarien mit KI erstellen (eigener Anthropic-API-Schlüssel) und Szenarien über iCloud mit Freunden teilen"
       ],
-      "note": "Jahresabo oder einmaliger Lifetime-Kauf"
+      "note": "Jeweils als Wochen-, Monats- oder Jahresabo oder als einmaliger Lifetime-Kauf. Neue Abonnenten bekommen das erste Jahr des Jahresabos günstiger."
     },
-    "note": "Die Preise findest du in der App und im App Store. Das Jahresabo verlängert sich automatisch, wenn du es nicht spätestens 24 Stunden vor Ablauf kündigst."
+    "note": "Die Preise findest du in der App und im App Store. Abos verlängern sich automatisch, wenn du sie nicht spätestens 24 Stunden vor Ablauf kündigst. Hast du Malmun früher gekauft oder Malmun Pro erworben, behältst du alle Funktionen, ohne noch etwas zu kaufen."
   },
   "faq": {
     "title": "Häufige Fragen",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Ich sehe ein Szenario nicht, das mein Freund geteilt hat.",
-        "a": "Das Teilen läuft über iCloud, ihr müsst also beide in iCloud angemeldet sein. Erscheint es trotzdem nicht, beende die App vollständig und öffne sie erneut."
+        "a": "Das Teilen läuft über iCloud, ihr müsst also beide in iCloud angemeldet sein. Erscheint es trotzdem nicht, beende die App vollständig und öffne sie erneut. Szenarien teilen ist eine Funktion von Malmun Pro, geteilte Szenarien ansehen ist kostenlos."
       },
       {
         "q": "Was brauche ich, um Szenarien mit KI zu erstellen?",
-        "a": "Hinterlege deinen eigenen Anthropic-API-Schlüssel in der App und gib ein Thema ein, dann entsteht ein neuer Dialog. Alles andere funktioniert auch ohne Schlüssel."
+        "a": "Hinterlege deinen eigenen Anthropic-API-Schlüssel in der App und gib ein Thema ein, dann entsteht ein neuer Dialog. Szenarien mit KI erstellen gehört zu Malmun Pro. Für alles andere in der App brauchst du keinen Schlüssel."
       },
       {
         "q": "Wie kündige ich oder bekomme eine Erstattung?",
         "a": "Zahlungen wickelt Apple ab. Kündigen kannst du auf dem iPhone unter Einstellungen ▸ Apple Account ▸ Abonnements ▸ Malmun. Eine Erstattung beantragst du bei Apple unter reportaproblem.apple.com."
       },
       {
-        "q": "Neues iPhone, und Pro ist weg.",
-        "a": "Melde dich mit demselben Apple Account an und tippe in Malmun auf Einstellungen ▸ Malmun Pro ▸ Käufe wiederherstellen."
+        "q": "Neues iPhone, und Plus oder Pro ist weg.",
+        "a": "Melde dich mit demselben Apple Account an und tippe in Malmun auf Einstellungen (das Zahnrad oben rechts auf dem Startbildschirm) ▸ Käufe wiederherstellen."
       },
       {
         "q": "Wo wird mein Lernfortschritt gespeichert?",

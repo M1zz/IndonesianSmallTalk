@@ -366,7 +366,7 @@ struct HomeView: View {
                     Image(systemName: "lock.fill")
                         .scaledFont(size: 9, weight: .bold)
                         .foregroundColor(selected ? .white.opacity(0.8) : Brand.glow)
-                        .accessibilityLabel(Text("Pro"))
+                        .accessibilityLabel(Text(verbatim: "Plus"))
                 }
             }
             .foregroundColor(selected ? .white : .primary)
@@ -445,6 +445,7 @@ struct HomeView: View {
 
     // 이미 CloudKit에 올라간 SharedScenario 공유 (내가 공유한 항목 재공유)
     private func shareScenario(id: UUID) {
+        guard pro.allows(.share) else { return pro.showPaywall(.share) }
         Task {
             do {
                 let (share, container) = try await CloudKitService.shared.createShare(for: id)
@@ -481,6 +482,8 @@ struct HomeView: View {
 
     // 로컬 UserScenario → CloudKit 업로드 후 공유
     private func shareUserScenario(_ userScenario: UserScenario) {
+        // 친구와 나누기는 Pro. 공유 해제 · 지우기 · 받은 시나리오 보기는 늘 열려 있다.
+        guard pro.allows(.share) else { return pro.showPaywall(.share) }
         Task {
             isSharingUserScenario = true
             defer { isSharingUserScenario = false }
@@ -559,7 +562,7 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
 
             HStack(spacing: 8) {
-                if !pro.hasPro {
+                if pro.plansOnSale && pro.tier < .pro {
                     Button { pro.showGeneralPaywall = true } label: {
                         HStack(spacing: 4) {
                             Image(systemName: "crown.fill").scaledFont(size: 11, weight: .bold)

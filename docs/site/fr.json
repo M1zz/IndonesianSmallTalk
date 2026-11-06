@@ -126,28 +126,29 @@
     "note": "Quand l’app est en français, les commandes vocales se disent en anglais. Elles ne sont écoutées que pendant votre tour, après le signal. La phrase en cours s’affiche dans les infos de lecture de la voiture. Il n’y a pas d’écran d’app CarPlay dédié."
   },
   "pricing": {
-    "title": "Presque tout est gratuit. Malmun Pro ouvre le reste.",
+    "title": "Gratuit pour commencer. Plus ou Pro pour aller plus loin.",
     "free": {
       "name": "Gratuit",
       "items": [
-        "Small talk à embranchements et parcours d’une journée (indonésien)",
-        "Dialogues par situation : bases et conversation courante",
-        "Mode trajet, 3 scènes par jour",
-        "Prononciation, script, import de dialogues, historique",
+        "Toutes les langues proposées, avec les bases et la conversation courante",
+        "Small talk à embranchements, parcours d’une journée et emploi du temps (indonésien)",
+        "Dialogues à embranchements à l’écrit ou à l’oral, prononciation, script, historique",
         "Mes expressions, cartes de vocabulaire, clavier d’expressions",
-        "Partage de scénarios entre amis, scénarios créés par IA"
+        "Mode trajet, 3 scènes par jour, lancement par Siri compris",
+        "Jusqu’à 3 scénarios créés ou importés, et les scénarios partagés par vos amis"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Tous les dialogues par situation : restaurant, transports, aéroport, hôtel, shopping, visites, urgences",
-        "Mode trajet illimité",
-        "Valable pour toutes les langues apprises"
+        "Plus : les 53 dialogues par situation (restaurant, transports, aéroport, hôtel, shopping, visites, urgences) dans toutes les langues",
+        "Plus : vos propres scénarios et imports de dialogues, sans limite",
+        "Pro : tout Plus, et le mode trajet illimité",
+        "Pro : création de scénarios par IA (avec votre clé API Anthropic) et partage de scénarios avec vos amis via iCloud"
       ],
-      "note": "Abonnement annuel ou achat unique à vie"
+      "note": "Chacun en abonnement hebdomadaire, mensuel ou annuel, ou en achat unique à vie. Premier abonnement annuel à prix réduit la première année."
     },
-    "note": "Les prix sont indiqués dans l’app et sur l’App Store. L’abonnement annuel se renouvelle automatiquement sauf résiliation au moins 24 heures avant la fin de la période."
+    "note": "Les prix sont indiqués dans l’app et sur l’App Store. Les abonnements se renouvellent automatiquement sauf résiliation au moins 24 heures avant la fin de la période. Si vous avez payé Malmun avant qu’il devienne gratuit, ou acheté Malmun Pro, vous gardez toutes les fonctions sans rien racheter."
   },
   "faq": {
     "title": "Questions fréquentes",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Je ne vois pas un scénario partagé par un ami.",
-        "a": "Le partage passe par iCloud : vous devez être connectés tous les deux à iCloud. S’il n’apparaît toujours pas, fermez complètement l’app puis rouvrez-la."
+        "a": "Le partage passe par iCloud : vous devez être connectés tous les deux à iCloud. S’il n’apparaît toujours pas, fermez complètement l’app puis rouvrez-la. Partager des scénarios fait partie de Malmun Pro ; consulter ceux que vous recevez est gratuit."
       },
       {
         "q": "Que faut-il pour créer des scénarios avec l’IA ?",
-        "a": "Saisissez votre propre clé API Anthropic dans l’app et indiquez un thème : un nouveau dialogue est créé. Tout le reste fonctionne sans clé."
+        "a": "Saisissez votre propre clé API Anthropic dans l’app et indiquez un thème : un nouveau dialogue est créé. La création de scénarios par IA fait partie de Malmun Pro. Aucune autre fonction de l’app ne demande de clé."
       },
       {
         "q": "Comment résilier ou me faire rembourser ?",
         "a": "Les paiements sont gérés par Apple. Pour résilier : Réglages de l’iPhone ▸ Compte Apple ▸ Abonnements ▸ Malmun. Pour un remboursement, faites la demande à Apple sur reportaproblem.apple.com."
       },
       {
-        "q": "Nouvel iPhone, et Pro a disparu.",
-        "a": "Connectez-vous avec le même compte Apple, puis dans Malmun touchez Réglages ▸ Malmun Pro ▸ Restaurer les achats."
+        "q": "Nouvel iPhone, et Plus ou Pro a disparu.",
+        "a": "Connectez-vous avec le même compte Apple, puis dans Malmun ouvrez Réglages (la roue dentée en haut à droite de l’écran d’accueil) ▸ Restaurer les achats."
       },
       {
         "q": "Où est stockée ma progression ?",

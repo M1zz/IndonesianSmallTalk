@@ -126,28 +126,29 @@
     "note": "Når appen er på norsk, sier du talekommandoene på engelsk. De blir bare hørt når det er din tur etter signalet. Setningen som spilles, vises i bilens avspillingsinfo. Det finnes ingen egen appskjerm i CarPlay."
   },
   "pricing": {
-    "title": "Nesten alt er gratis. Malmun Pro låser opp resten.",
+    "title": "Start gratis. Kom lenger med Plus eller Pro.",
     "free": {
       "name": "Gratis",
       "items": [
-        "Forgrenet småprat og dagskurs (indonesisk)",
-        "Situasjonssamtaler: det grunnleggende og hverdagsprat",
-        "Pendlermodus, 3 scener om dagen",
-        "Uttaleøving, manus, import av samtaler, øvingshistorikk",
+        "Alle seks språk, med situasjonssamtalene det grunnleggende og hverdagsprat",
+        "Forgrenet småprat, dagskurs og ukeplan (indonesisk)",
+        "Forgrenede samtaler med tekst eller stemme, uttaleøving, manus, øvingshistorikk",
         "Mine setninger, ordkort, setningstastatur",
-        "Del scenarier med venner, lag scenarier med KI"
+        "Pendlermodus, 3 scener om dagen, også med start via Siri",
+        "Opptil 3 egne eller importerte scenarier, se scenarier som venner deler med deg"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Alle situasjonssamtaler: restaurant, transport, flyplass, hotell, shopping, sightseeing, nødsituasjoner",
-        "Pendlermodus uten grense",
-        "Gjelder alle språk"
+        "Plus: alle 53 situasjonssamtaler (restaurant, transport, flyplass, hotell, shopping, sightseeing, nødsituasjoner) på alle seks språk",
+        "Plus: ubegrenset med egne scenarier og import av samtaler",
+        "Pro: alt i Plus og Pendlermodus uten grense",
+        "Pro: lag scenarier med KI (din egen Anthropic-API-nøkkel) og del scenarier med venner via iCloud"
       ],
-      "note": "Årsabonnement eller ett kjøp for alltid"
+      "note": "Hver for seg som uke-, måneds- eller årsabonnement eller ett kjøp for alltid. Nye abonnenter får rabatt det første året på årsabonnementet."
     },
-    "note": "Prisene står i appen og i App Store. Årsabonnementet fornyes automatisk med mindre du sier det opp senest 24 timer før perioden er over."
+    "note": "Prisene står i appen og i App Store. Abonnementer fornyes automatisk med mindre du sier dem opp senest 24 timer før perioden er over. Har du kjøpt Malmun da appen kostet penger, eller kjøpt Malmun Pro, beholder du alle funksjonene uten å kjøpe noe mer."
   },
   "faq": {
     "title": "Vanlige spørsmål",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Jeg ser ikke et scenario en venn har delt.",
-        "a": "Deling går via iCloud, så dere må begge være logget på iCloud. Dukker det fortsatt ikke opp, lukk appen helt og åpne den igjen."
+        "a": "Deling går via iCloud, så dere må begge være logget på iCloud. Dukker det fortsatt ikke opp, lukk appen helt og åpne den igjen. Å dele scenarier er en del av Malmun Pro, mens det er gratis å se delte scenarier."
       },
       {
         "q": "Hva trengs for å lage scenarier med KI?",
-        "a": "Legg inn din egen Anthropic-API-nøkkel i appen og skriv et tema, så lages en ny samtale. Alt annet fungerer uten nøkkel."
+        "a": "Legg inn din egen Anthropic-API-nøkkel i appen og skriv et tema, så lages en ny samtale. Å lage scenarier med KI er en del av Malmun Pro. Ingenting annet i appen krever en nøkkel."
       },
       {
         "q": "Hvordan sier jeg opp eller får refusjon?",
         "a": "Betalinger håndteres av Apple. Si opp i Innstillinger på iPhone ▸ Apple-konto ▸ Abonnementer ▸ Malmun. Refusjon ber du Apple om på reportaproblem.apple.com."
       },
       {
-        "q": "Ny iPhone, og Pro er borte.",
-        "a": "Logg på med samme Apple-konto, og trykk i Malmun på Innstillinger ▸ Malmun Pro ▸ Gjenopprett kjøp."
+        "q": "Ny iPhone, og Plus eller Pro er borte.",
+        "a": "Logg på med samme Apple-konto, og trykk i Malmun på Innstillinger (tannhjulet øverst til høyre på startskjermen) ▸ Gjenopprett kjøp."
       },
       {
         "q": "Hvor lagres fremgangen min?",

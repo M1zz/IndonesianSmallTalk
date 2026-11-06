@@ -126,28 +126,29 @@
     "note": "Com o app em português, os comandos de voz são falados em inglês. Eles só são ouvidos na sua vez, depois do sinal. A frase atual aparece nas informações de reprodução do carro. Não existe uma tela própria do app no CarPlay."
   },
   "pricing": {
-    "title": "Quase tudo é grátis. O Malmun Pro libera o resto.",
+    "title": "Comece grátis. Vá além com o Plus ou o Pro.",
     "free": {
       "name": "Grátis",
       "items": [
-        "Bate-papos com ramificações e cursos do dia (indonésio)",
-        "Diálogos por situação: o básico e papo do dia a dia",
-        "Modo Trajeto, 3 cenas por dia",
-        "Pronúncia, roteiro, importar diálogos, histórico de prática",
+        "Todos os idiomas que você pode aprender, com o básico e o papo do dia a dia",
+        "Bate-papos com ramificações, cursos do dia e grade semanal (indonésio)",
+        "Conversas ramificadas por texto ou voz, pronúncia, roteiro, histórico de prática",
         "Minhas frases, cartões de vocabulário, teclado de frases",
-        "Compartilhar cenários com amigos, criar cenários com IA"
+        "Modo Trajeto, 3 cenas por dia, inclusive iniciando pela Siri",
+        "Até 3 cenários criados ou importados por você, e os cenários que amigos compartilham com você"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Todos os diálogos por situação: restaurante, transporte, aeroporto, hotel, compras, passeios, emergências",
-        "Modo Trajeto sem limite",
-        "Vale para todos os idiomas"
+        "Plus: os 53 diálogos por situação (restaurante, transporte, aeroporto, hotel, compras, passeios, emergências) em todos os idiomas",
+        "Plus: cenários próprios e importação de diálogos sem limite",
+        "Pro: tudo do Plus e Modo Trajeto sem limite",
+        "Pro: criar cenários com IA (com a sua própria chave de API da Anthropic) e compartilhar cenários com amigos pelo iCloud"
       ],
-      "note": "Assinatura anual ou compra única vitalícia"
+      "note": "Cada um como assinatura semanal, mensal ou anual, ou compra única vitalícia. Quem assina o plano anual pela primeira vez tem desconto no primeiro ano."
     },
-    "note": "Veja os preços no app ou na App Store. A assinatura anual renova automaticamente, a menos que seja cancelada pelo menos 24 horas antes do fim do período."
+    "note": "Veja os preços no app ou na App Store. As assinaturas renovam automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período. Se você pagou pelo Malmun antes de ele ficar grátis, ou comprou o Malmun Pro, continua com todos os recursos sem pagar nada a mais."
   },
   "faq": {
     "title": "Perguntas frequentes",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Não vejo um cenário que um amigo compartilhou.",
-        "a": "O compartilhamento funciona pelo iCloud, então os dois precisam estar com a sessão do iCloud ativa. Se ainda não aparecer, feche o app por completo e abra de novo."
+        "a": "O compartilhamento funciona pelo iCloud, então os dois precisam estar com a sessão do iCloud ativa. Se ainda não aparecer, feche o app por completo e abra de novo. Compartilhar cenários é um recurso do Malmun Pro; ver os que você recebe é grátis."
       },
       {
         "q": "O que preciso para criar cenários com IA?",
-        "a": "Coloque sua própria chave de API da Anthropic no app e escreva um tema: ele cria um diálogo novo. Todo o resto funciona sem chave."
+        "a": "Coloque sua própria chave de API da Anthropic no app e escreva um tema: ele cria um diálogo novo. Criar cenários com IA faz parte do Malmun Pro. Nenhum outro recurso do app precisa de chave."
       },
       {
         "q": "Como cancelo ou peço reembolso?",
         "a": "Os pagamentos são feitos pela Apple. Para cancelar: Ajustes do iPhone ▸ Conta Apple ▸ Assinaturas ▸ Malmun. Para reembolso, peça à Apple em reportaproblem.apple.com."
       },
       {
-        "q": "Troquei de iPhone e perdi o Pro.",
-        "a": "Entre com a mesma Conta Apple e, no Malmun, toque em Ajustes ▸ Malmun Pro ▸ Restaurar compras."
+        "q": "Troquei de iPhone e perdi o Plus ou o Pro.",
+        "a": "Entre com a mesma Conta Apple e, no Malmun, abra Ajustes (a engrenagem no canto superior direito da tela inicial) ▸ Restaurar compras."
       },
       {
         "q": "Onde fica salvo meu progresso?",

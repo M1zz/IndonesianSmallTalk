@@ -1,65 +1,58 @@
-# 말문 부분 유료화 (말문 Pro)
+# 말문 요금제 (무료 · Plus · Pro)
 
-## 무엇이 무료이고 무엇이 Pro 인가
+1.0.7(빌드 10)까지는 유료 다운로드였다. 다음 버전부터 **무료 다운로드 + 무료 · Plus · Pro** 다.
 
-| | 무료 | Pro |
-|---|---|---|
-| 스몰토크·하루 코스(인도네시아어) | 전부 | |
-| 상황별 회화 (6개 언어) | 기본 · 일상 대화 | 공항 · 숙소 · 식당 · 교통 · 쇼핑 · 관광 · 긴급 |
-| 퇴근길 모드 | 하루 3장면 | 무제한 |
-| 내 표현 · 단어장 · 키보드 · 발음 연습 · 대본 · 가져오기 · AI 생성 | 전부 | |
+## 무엇이 어느 칸인가
 
-- 퇴근길 장면은 **시작할 때** 하나로 센다(끝나기 직전에 건너뛰어도 한 장면). 같은 장면을 다시 들으면 세지 않는다. 날짜가 바뀌면 다시 3장면.
-- 한도에 닿으면 소리로 알려 주고 멈춘다. 화면이 떠 있으면 페이월이 뜬다.
-- 잠긴 분류는 퇴근길 '상황별 회화'·발음 연습 추천 문장·대본 고르기에서도 빠진다.
-- 기존 사용자에게서 빼앗는 기능은 없다 (잠긴 두 기능은 이번 버전에 새로 생긴 것).
-
-## 코드
-
-- `App/MalmunSpec.swift` — LeeoKit 계약. `monetization = .freemiumSubscription(...)`, 게이트 키 `commute`(무료 3) · `situations`(Pro 전용)
-- `Models/MalmunPro.swift` — `MalmunPro.shared`: LeeoStore(구매·복원·권한), 무료 한도, 페이월 띄우기
-- 페이월 화면은 LeeoKit `LeeoPaywallView` (6개 언어 내장, 구독 기간·약관·개인정보 링크·복원 포함). `ContentView` 에서 시트로 띄운다.
-- DEBUG 빌드는 잠금 없이 동작한다. 잠금·구매를 시험하려면 실행 인자 `-paywall`.
-- `IndonesianSmallTalk/Products.storekit` — Xcode 에서 실행하면 이 파일로 가짜 구매를 시험한다 (가격은 시험용 숫자일 뿐).
-
-## 가격 (추천)
-
-| 상품 | 상품 ID | 유형 | 추천 가격 | 무료 체험 |
-|---|---|---|---|---|
-| 말문 Pro 연간 | `com.devkoan.IndonesianSmallTalk.pro.yearly` | 자동 갱신 구독 · 1년 (그룹 `Malmun Pro`) | **$19.99 / 년** | 1주 |
-| 말문 Pro 평생 | `com.devkoan.IndonesianSmallTalk.pro.lifetime` | 비소모성 (한 번 결제) | **$39.99** | — |
-
-- **근거**: 큰 언어 앱 연간 구독은 대략 $80~$100 (Duolingo Super·Speak·Babbel). 말문 Pro 는 퇴근길 모드·상황별 회화 두 가지만 여는 1인 앱이라 그 4분의 1 수준으로 잡았다.
-- **평생 = 연간의 2배**: 2년 넘게 쓸 사람은 평생을, 대부분은 연간을 고르게 한다.
-- **다른 안**: 낮게 $14.99 / $29.99 (전환을 먼저 보고 싶을 때), 높게 $29.99 / $59.99 (상황별 회화를 더 늘린 뒤).
-- 다른 나라 가격은 App Store Connect 가 미국 가격 기준으로 자동 환산한다. 한국만 따로 정하고 싶으면 그 나라 가격을 직접 고친다.
-- `IndonesianSmallTalk/Products.storekit` 의 시험 가격도 이 숫자로 맞춰 두었다 (Xcode 시험용일 뿐, 실제 가격은 App Store Connect 가 정한다).
-
-## 내가 할 일
-
-| # | 어디서 | 할 일 | 비고 |
+| 기능 | 무료 | Plus | Pro |
 |---|---|---|---|
-| 1 | App Store Connect ▸ 비즈니스 | 유료 앱 계약·세금·은행 정보가 '활성'인지 확인 | 비활성이면 상품이 앱에 안 뜬다 |
-| 2 | 앱 ▸ 구독 | 구독 그룹 `Malmun Pro` 만들기 → 그 안에 `…pro.yearly` (1년) | ID 는 코드와 글자 하나까지 같아야 한다 |
-| 3 | 앱 ▸ 구독 ▸ 연간 | 가격 **$19.99**, 도입 혜택 **1주 무료 체험** | |
-| 4 | 앱 ▸ 인앱 구매 | 비소모성 `…pro.lifetime`, 가격 **$39.99** | |
-| 5 | 두 상품 모두 | 표시 이름·설명 6개 언어 (Products.storekit 의 문구를 그대로 써도 됨), 심사 정보 ▸ 스크린샷: 연간 = `docs/screenshots/iap-review/en-US/1-pro-yearly.png`, 평생 = `…/en-US/2-pro-lifetime.png` (한국어판은 `ko/`) | 가격을 다르게 정했으면 `scripts/capture_paywall_screenshot.sh <UDID> '$가격' '$가격'` 로 다시 찍는다 |
-| 6 | 구독 그룹 | 그룹 표시 이름 현지화 (예: 말문 Pro / Malmun Pro) | |
-| 7 | 앱 ▸ 앱 개인정보 | 아래 표대로 수집 항목 고치기 | 이번에 익명 통계가 새로 생겼다 |
-| 8 | 버전 제출 | 이번 버전 심사에 두 상품을 함께 선택 | 처음 파는 상품은 버전과 같이 심사받는다 |
-| 9 | (기기에서 처음 빌드할 때) | Xcode 자동 서명이 App ID 에 `iCloud.com.Ysoup.FeedbackHub` 컨테이너를 붙이는지 확인. 실패하면 developer.apple.com ▸ Identifiers ▸ `com.devkoan.IndonesianSmallTalk` ▸ iCloud ▸ 컨테이너에 추가 | 다른 앱들과 같은 팀(QGAQ3AY3R3)이라 보통 저절로 된다 |
+| 배울 언어 6개 | ✓ | ✓ | ✓ |
+| 상황별 회화 | 기본 · 일상 | 53개 전체 | 53개 전체 |
+| 하루 코스 · 주간 시간표 · 스몰토크 | ✓ | ✓ | ✓ |
+| 발음 연습 · 스크립트 · 연습 기록 | ✓ | ✓ | ✓ |
+| 내 문장 · 단어 카드 · 문장 키보드 | ✓ | ✓ | ✓ |
+| 직접 만든 시나리오 · 가져오기 | 3개 | 무제한 | 무제한 |
+| 퇴근길 모드 | 하루 3장면 | 하루 3장면 | 무제한 |
+| AI 시나리오 만들기 | – | – | ✓ |
+| iCloud로 친구와 나누기 | – | – | ✓ |
 
-### 앱 개인정보 라벨 (7번)
+- 원본은 `Models/MalmunPro.swift` 한 곳(`ProTier` · `ProFeature.tier` · `PlanComparisonRow`). 페이월 · 잠긴 자리가 모두 거기를 읽는다.
+- 퇴근길 장면은 **시작할 때** 하나로 센다. 한도에 닿으면 소리로 알려 주고 멈추며, 화면이 떠 있으면(아니면 다음에 앱을 열 때) Pro 페이월이 뜬다.
+- 내 시나리오 한도는 **새로 만들 때만** 막는다. 예전에 만든 것이 3개를 넘어도 보고 · 연습하고 · 고치고 · 지운다. 친구가 나눠 준 시나리오 보기, 공유 해제도 늘 열려 있다.
+- 잠긴 상황별 회화 분류는 퇴근길 · 발음 연습 추천 · 대본 고르기에서도 빠진다.
+- **스토어에서 유료 칸 상품을 한 번도 못 불러온 기기는 아무것도 잠그지 않는다**(`plansOnSale`). 한 번 불러오면 그 뒤로는 잠근다.
+- 팁 · 선물은 그대로. 팁은 아무것도 열지 않고, 응원 부탁은 Pro 에게만 한다. 선물은 Pro 평생을 연다.
+- 언제나 평생 패스는 팔지 않는다(포트폴리오 전체에서 판매 중단). 이미 산 사람은 Pro.
 
-| 데이터 | 수집 | 사용자와 연결 | 추적 | 목적 |
+## 이미 산 사람
+
+- `AppTransaction.originalAppVersion` ≤ **"10"**(유료 다운로드 마지막 빌드)이면 Pro (`ProEntitlement.lastPaidBuild`). 실제 App Store 결제(environment == .production)만 믿는다.
+- ⚠️ 무료로 바꾸기 전에 유료 빌드를 또 내면 이 값을 그 번호로 올린다.
+- 예전 상품 `…pro.yearly`(Pro 연) · `…pro.lifetime`(Pro 평생)은 그대로 이어 쓴다. 구독자 · 구매자 · 선물받은 사람은 그대로 Pro.
+
+## 상품 (구독 그룹 `Malmun Pro`, Pro 가 단계 1 · Plus 가 단계 2)
+
+| 상품 ID | 종류 | 기간 | 원화 | 달러 |
 |---|---|---|---|---|
-| 사용 데이터 ▸ 제품 상호 작용 (실행·사용 횟수) | 예 | 아니요 | 아니요 | 분석 |
-| 진단 ▸ 충돌 데이터 · 성능 데이터 | 예 | 아니요 | 아니요 | 앱 기능 |
-| 연락처 정보 ▸ 이메일 (피드백에 적은 경우만) | 예 | 예 | 아니요 | 고객 지원 |
-| 사용자 콘텐츠 ▸ 고객 지원 (피드백 내용) | 예 | 아니요 | 아니요 | 고객 지원 |
-| 구매 내역 | 아니요 (Apple 이 처리) | | | |
+| `com.devkoan.IndonesianSmallTalk.plus.weekly` | 자동 갱신 | 1주 | ₩2,200 | $1.49 |
+| `com.devkoan.IndonesianSmallTalk.plus.monthly` | 자동 갱신 | 1개월 | ₩5,500 | $3.49 |
+| `com.devkoan.IndonesianSmallTalk.plus.yearly` | 자동 갱신 | 1년 (첫 해 반값) | ₩14,000 | $9.99 |
+| `com.devkoan.IndonesianSmallTalk.plus.lifetime` | 비소모성 | – | ₩43,000 | $29.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.weekly` | 자동 갱신 | 1주 | ₩3,300 | $1.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.monthly` | 자동 갱신 | 1개월 | ₩7,700 | $4.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.yearly` (기존) | 자동 갱신 | 1년 (첫 해 반값) | ₩22,000 | $14.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.lifetime` (기존) | 비소모성 | – | ₩65,000 | $44.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.upgrade` | 비소모성 (Plus 평생 → Pro 평생) | – | ₩22,000 | $14.99 |
+| `com.devkoan.IndonesianSmallTalk.pro.graduate` | 비소모성 (구독 졸업 Pro 평생) | – | ₩43,000 | $29.99 |
 
-## 나중에
+`IndonesianSmallTalk/Products.storekit` 에 모두 있다(스킴 Run 에 연결됨). Xcode 에서 ⌘R 할 때 실행 인자 `-paywall` 을 켜면 잠금과 구매를 시험한다 — 없으면 DEBUG 는 Pro 로 연다.
+`-ScreenshotScene paywall` 로 페이월만 띄울 수 있다.
 
-- 페이월 노출·구매 퍼널은 허브(FeedbackHubViewer)에서 `paywall_shown → purchase_started → purchase_completed` 로 보인다 (LeeoUsageAnalytics 가 스스로 보낸다).
-- 원격 킬스위치: FeedbackHub ▸ RemoteFlags ▸ `flags_com.devkoan.IndonesianSmallTalk` 에 `driveVoice` 를 0 으로 두면 퇴근길 목소리 조작만 꺼진다.
+## 페이월이 뜨는 곳
+
+- 잠긴 상황별 회화(홈) → Plus 칸 앞
+- 퇴근길 모드 그날 4번째 장면 → Pro 칸 앞
+- 내 시나리오 · 가져온 대화를 4번째로 저장 → Plus (사고 돌아오면 저장을 마친다)
+- AI 시나리오 만들기 · 친구와 나누기(만들기 화면의 토글, 카드의 공유) → Pro
+- 홈의 Pro 단추 · 설정 ▸ 말문 Plus · Pro
+- 구독 6개월째 · 갱신 7일 전: 구독 졸업 제안(`LeeoGraduationOfferView`, 산 뒤 구독 관리 화면 안내). 설정의 '평생으로 바꾸기' 는 구독 중이면 늘 보인다.

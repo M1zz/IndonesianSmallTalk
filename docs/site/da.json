@@ -126,28 +126,29 @@
     "note": "Når appen er på dansk, siger du stemmekommandoerne på engelsk. De bliver kun hørt, når det er din tur efter signalet. Den aktuelle sætning vises i bilens afspilningsinfo. Der er ingen særskilt appskærm i CarPlay."
   },
   "pricing": {
-    "title": "Næsten alt er gratis. Malmun Pro åbner resten.",
+    "title": "Start gratis. Kom længere med Plus eller Pro.",
     "free": {
       "name": "Gratis",
       "items": [
-        "Forgrenet small talk og dagsforløb (indonesisk)",
-        "Situationssamtaler: det grundlæggende og hverdagssnak",
-        "Pendlertilstand, 3 scener om dagen",
-        "Udtaletræning, manuskript, import af samtaler, træningshistorik",
+        "Alle seks sprog med situationssamtalerne det grundlæggende og hverdagssnak",
+        "Forgrenet small talk, dagsforløb og ugeskema (indonesisk)",
+        "Forgrenede samtaler med tekst eller stemme, udtaletræning, manuskript, træningshistorik",
         "Mine sætninger, ordkort, sætningstastatur",
-        "Del scenarier med venner, lav scenarier med AI"
+        "Pendlertilstand, 3 scener om dagen, også når du starter med Siri",
+        "Op til 3 egne eller importerede scenarier, se scenarier, som venner deler med dig"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Alle situationssamtaler: restaurant, transport, lufthavn, hotel, shopping, sightseeing, nødsituationer",
-        "Ubegrænset Pendlertilstand",
-        "Gælder alle sprog"
+        "Plus: alle 53 situationssamtaler (restaurant, transport, lufthavn, hotel, shopping, sightseeing, nødsituationer) på alle seks sprog",
+        "Plus: ubegrænset med egne scenarier og import af samtaler",
+        "Pro: alt i Plus og ubegrænset Pendlertilstand",
+        "Pro: lav scenarier med AI (din egen Anthropic-API-nøgle), og del scenarier med venner via iCloud"
       ],
-      "note": "Årsabonnement eller ét køb for altid"
+      "note": "Hver især som uge-, måneds- eller årsabonnement eller ét køb for altid. Nye abonnenter får rabat på det første år af årsabonnementet."
     },
-    "note": "Priserne står i appen og i App Store. Årsabonnementet fornyes automatisk, medmindre du opsiger det senest 24 timer før perioden slutter."
+    "note": "Priserne står i appen og i App Store. Abonnementer fornyes automatisk, medmindre du opsiger dem senest 24 timer før perioden slutter. Har du købt Malmun, dengang appen kostede penge, eller købt Malmun Pro, beholder du alle funktioner uden at købe mere."
   },
   "faq": {
     "title": "Ofte stillede spørgsmål",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Jeg kan ikke se et scenarie, en ven har delt.",
-        "a": "Deling foregår via iCloud, så I skal begge være logget ind på iCloud. Dukker det stadig ikke op, så luk appen helt og åbn den igen."
+        "a": "Deling foregår via iCloud, så I skal begge være logget ind på iCloud. Dukker det stadig ikke op, så luk appen helt og åbn den igen. Deling af scenarier er en del af Malmun Pro, mens det er gratis at se delte scenarier."
       },
       {
         "q": "Hvad skal der til for at lave scenarier med AI?",
-        "a": "Indtast din egen Anthropic-API-nøgle i appen og skriv et emne, så laves en ny samtale. Alt andet virker uden nøgle."
+        "a": "Indtast din egen Anthropic-API-nøgle i appen og skriv et emne, så laves en ny samtale. At lave scenarier med AI er en del af Malmun Pro. Intet andet i appen kræver en nøgle."
       },
       {
         "q": "Hvordan opsiger jeg eller får pengene tilbage?",
         "a": "Betalinger håndteres af Apple. Opsig i iPhones Indstillinger ▸ Apple-konto ▸ Abonnementer ▸ Malmun. Refusion beder du Apple om på reportaproblem.apple.com."
       },
       {
-        "q": "Ny iPhone, og Pro er væk.",
-        "a": "Log ind med samme Apple-konto, og tryk i Malmun på Indstillinger ▸ Malmun Pro ▸ Gendan køb."
+        "q": "Ny iPhone, og Plus eller Pro er væk.",
+        "a": "Log ind med samme Apple-konto, og tryk i Malmun på Indstillinger (tandhjulet øverst til højre på startskærmen) ▸ Gendan køb."
       },
       {
         "q": "Hvor gemmes mine fremskridt?",

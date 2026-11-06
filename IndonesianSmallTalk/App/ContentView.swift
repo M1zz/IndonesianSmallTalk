@@ -12,10 +12,7 @@ struct ContentView: View {
     @State private var showGenerateScenario = false
     @State private var showOnboarding = false
     @ObservedObject private var pro = MalmunPro.shared
-    #if DEBUG
-    /// 인앱 구매 심사 스크린샷용 (-ScreenshotPaywall)
-    @State private var showScreenshotPaywall = ScreenshotPaywallView.launchConfig != nil
-    #endif
+    @State private var showGraduation = false
 
     var body: some View {
         // 아이폰 듀오를 펴면 고르는 쪽(가로면 왼쪽, 세로면 아래)에 지금 화면, 결과 쪽(오른쪽, 위)에 연습 기록.
@@ -40,23 +37,28 @@ struct ContentView: View {
             OnboardingView()
                 .foldConfined()
         }
-        // 잠긴 기능을 누르면 그 기능을 앞세운 페이월 (구매·복원하면 저절로 닫힌다)
+        // 잠긴 기능을 누르면 그 칸을 앞세운 페이월 (사면 저절로 닫힌다)
         .sheet(item: $pro.paywallFeature) { feature in
-            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures, leadFeature: feature)
-                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+            PaywallView(feature: feature)
         }
         .sheet(isPresented: $pro.showGeneralPaywall) {
-            LeeoPaywallView<MalmunSpec>(features: MalmunPro.paywallFeatures)
-                .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+            PaywallView()
+        }
+        // 구독 졸업: 6개월째와 갱신 7일 전에 한 번씩 (산 뒤 구독 관리 화면으로 해지를 돕는다)
+        .sheet(isPresented: $showGraduation) {
+            LeeoGraduationOfferView(graduate: pro.product(ProEntitlement.graduateID)) {
+                await pro.didChangePurchases()
+            }
+            .leeoStyle(LeeoStyle(accent: Brand.solidBlue))
+        }
+        .onChange(of: pro.graduationIsDue) { _, due in
+            guard due, !showOnboarding else { return }
+            pro.markGraduationOffered()
+            showGraduation = true
         }
         #if DEBUG
         .fullScreenCover(isPresented: .constant(ScreenshotScene.current.map { $0 != .home } ?? false)) {
             if let scene = ScreenshotScene.current { ScreenshotSceneHost(scene: scene) }
-        }
-        .sheet(isPresented: $showScreenshotPaywall) {
-            if let c = ScreenshotPaywallView.launchConfig {
-                ScreenshotPaywallView(yearlyPrice: c.yearly, lifetimePrice: c.lifetime, selected: c.selected)
-            }
         }
         #endif
         .task {
@@ -158,7 +160,10 @@ struct ContentView: View {
                     color: .purple
                 ) {
                     withAnimation(.spring(response: 0.32, dampingFraction: 0.85)) { showAddMenu = false }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { showGenerateScenario = true }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        // AI 시나리오 만들기는 Pro (이미 만든 AI 시나리오는 그대로 보고 연습한다)
+                        if pro.allows(.aiScenario) { showGenerateScenario = true } else { pro.showPaywall(.aiScenario) }
+                    }
                 }
 
                 Divider()

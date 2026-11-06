@@ -126,28 +126,29 @@
     "note": "Khi ứng dụng dùng tiếng Việt, bạn nói lệnh bằng tiếng Anh. Lệnh chỉ được nghe khi đến lượt bạn, sau tiếng chuông. Câu đang phát hiện trong thông tin phát nhạc trên màn hình xe. CarPlay không có màn hình ứng dụng riêng."
   },
   "pricing": {
-    "title": "Gần như mọi thứ đều miễn phí. Malmun Pro mở phần còn lại.",
+    "title": "Bắt đầu miễn phí. Muốn hơn nữa thì có Malmun Plus · Pro.",
     "free": {
       "name": "Miễn phí",
       "items": [
-        "Trò chuyện phân nhánh và khóa học theo ngày (tiếng Indonesia)",
-        "Hội thoại theo tình huống: câu cơ bản và chuyện trò hằng ngày",
-        "Chế độ đi làm, 3 cảnh mỗi ngày",
-        "Phát âm, kịch bản, nhập hội thoại, lịch sử luyện tập",
+        "Cả sáu ngôn ngữ, với hội thoại theo tình huống: câu cơ bản và chuyện trò hằng ngày",
+        "Trò chuyện phân nhánh, khóa học theo ngày và thời khóa biểu tuần (tiếng Indonesia)",
+        "Luyện hội thoại phân nhánh bằng chữ hoặc giọng nói, phát âm, kịch bản, lịch sử luyện tập",
         "Câu của tôi, thẻ từ vựng, bàn phím câu",
-        "Chia sẻ kịch bản với bạn bè, tạo kịch bản bằng AI"
+        "Chế độ đi làm, 3 cảnh mỗi ngày, kể cả bắt đầu bằng Siri",
+        "Tối đa 3 kịch bản tự tạo hoặc nhập vào, xem kịch bản bạn bè chia sẻ"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Toàn bộ hội thoại theo tình huống: nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan, khẩn cấp",
-        "Chế độ đi làm không giới hạn",
-        "Áp dụng cho mọi ngôn ngữ"
+        "Plus: toàn bộ 53 hội thoại theo tình huống (nhà hàng, đi lại, sân bay, khách sạn, mua sắm, tham quan, khẩn cấp) cho cả sáu ngôn ngữ",
+        "Plus: tự tạo kịch bản và nhập hội thoại không giới hạn",
+        "Pro: mọi thứ của Plus, thêm Chế độ đi làm không giới hạn",
+        "Pro: tạo kịch bản bằng AI (khóa API Anthropic của riêng bạn) và chia sẻ kịch bản với bạn bè qua iCloud"
       ],
-      "note": "Gói năm hoặc mua một lần dùng trọn đời"
+      "note": "Mỗi gói có thể đăng ký theo tuần, tháng, năm hoặc mua một lần dùng trọn đời. Người đăng ký gói năm lần đầu được giảm giá năm đầu."
     },
-    "note": "Xem giá trong ứng dụng và trên App Store. Gói năm tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi hết kỳ."
+    "note": "Xem giá trong ứng dụng và trên App Store. Gói đăng ký tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi hết kỳ. Nếu bạn đã trả tiền tải Malmun trước đây hoặc đã mua Malmun Pro, bạn vẫn dùng được mọi tính năng mà không cần mua thêm."
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
@@ -174,19 +175,19 @@
       },
       {
         "q": "Tôi không thấy kịch bản bạn tôi đã chia sẻ.",
-        "a": "Chia sẻ hoạt động qua iCloud, nên cả hai cần đăng nhập iCloud. Nếu vẫn không thấy, hãy đóng hẳn ứng dụng rồi mở lại."
+        "a": "Chia sẻ hoạt động qua iCloud, nên cả hai cần đăng nhập iCloud. Nếu vẫn không thấy, hãy đóng hẳn ứng dụng rồi mở lại. Chia sẻ kịch bản là tính năng của Malmun Pro, còn xem kịch bản được chia sẻ thì miễn phí."
       },
       {
         "q": "Cần gì để tạo kịch bản bằng AI?",
-        "a": "Nhập khóa API Anthropic của riêng bạn vào ứng dụng và viết một chủ đề, một hội thoại mới sẽ được tạo. Mọi thứ khác vẫn dùng được khi không có khóa."
+        "a": "Tạo kịch bản bằng AI là tính năng của Malmun Pro. Nhập khóa API Anthropic của riêng bạn vào ứng dụng và viết một chủ đề, một hội thoại mới sẽ được tạo. Chỉ tính năng này mới cần khóa."
       },
       {
         "q": "Hủy gói hoặc xin hoàn tiền thế nào?",
         "a": "Thanh toán do Apple xử lý. Hủy trong Cài đặt iPhone ▸ Tài khoản Apple ▸ Đăng ký ▸ Malmun. Muốn hoàn tiền, hãy gửi yêu cầu cho Apple tại reportaproblem.apple.com."
       },
       {
-        "q": "Đổi iPhone mới thì mất Pro.",
-        "a": "Đăng nhập cùng Tài khoản Apple, rồi trong Malmun chạm Cài đặt ▸ Malmun Pro ▸ Khôi phục giao dịch mua."
+        "q": "Đổi iPhone mới thì mất Plus hoặc Pro.",
+        "a": "Đăng nhập cùng Tài khoản Apple, rồi trong Malmun chạm Cài đặt (biểu tượng bánh răng ở góc trên bên phải màn hình chính) ▸ Khôi phục giao dịch mua."
       },
       {
         "q": "Tiến độ học của tôi được lưu ở đâu?",

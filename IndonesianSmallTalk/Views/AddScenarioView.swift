@@ -26,6 +26,9 @@ struct AddScenarioView: View {
     @State private var permissionAsked = false
     @State private var saving = false
     @State private var saveError: String?
+    @ObservedObject private var pro = MalmunPro.shared
+    /// 이 시트 위에 띄우는 페이월 (앱 맨 아래 시트는 이 시트 위로 못 뜬다)
+    @State private var paywallFeature: ProFeature?
 
     init(editing: ScenarioEditTarget? = nil) {
         self.editing = editing
@@ -191,6 +194,20 @@ struct AddScenarioView: View {
                     await speech.requestPermissions()
                 }
             }
+            // 친구와 나누기는 Pro — 켜려 하면 페이월, 사고 돌아오면 켜 둔다.
+            .onChange(of: shareWithFriends) { _, on in
+                if on, !pro.allows(.share) {
+                    shareWithFriends = false
+                    paywallFeature = .share
+                }
+            }
+            .malmunPaywall($paywallFeature) { feature in
+                switch feature {
+                case .share: shareWithFriends = true
+                case .scenarios: saveLocal()
+                default: break
+                }
+            }
             .onChange(of: speech.recognizedText) { _, newValue in
                 if speech.isListening, !newValue.isEmpty {
                     openingIndonesian = newValue
@@ -267,6 +284,11 @@ struct AddScenarioView: View {
     }
 
     private func saveLocal() {
+        // 직접 만든 시나리오는 무료로 3개까지. 더 만들려면 Plus — 사고 돌아오면 이어서 저장한다.
+        guard pro.canAddScenario(currentCount: store.allScenarios.count) else {
+            paywallFeature = .scenarios
+            return
+        }
         let s = UserScenario(
             title: trimmed(title),
             titleKo: trimmed(titleKo),

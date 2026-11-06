@@ -88,27 +88,29 @@
     "note": "Perintah suara hanya didengar saat giliranmu, setelah bunyi ding. Kalau kalimatnya benar, kamu mendengar “Bagus!”. Kalimat yang sedang diputar muncul di layar pemutaran mobil. Tidak ada layar aplikasi khusus di CarPlay."
   },
   "pricing": {
-    "title": "Hampir semuanya gratis. Malmun Pro membuka sisanya.",
+    "title": "Mulai gratis. Lebih jauh dengan Plus atau Pro.",
     "free": {
       "name": "Gratis",
       "items": [
-        "Percakapan situasional: ungkapan dasar dan obrolan santai",
-        "Mode Perjalanan, 3 adegan per hari",
-        "Latihan pelafalan, naskah, impor percakapan, riwayat latihan",
+        "Semua bahasa yang bisa dipelajari, dengan ungkapan dasar dan obrolan santai",
+        "Latihan percakapan bercabang lewat teks atau suara",
+        "Latihan pelafalan, naskah, riwayat latihan",
         "Kalimatku, kartu kosakata, keyboard kalimat",
-        "Berbagi skenario dengan teman, membuat skenario dengan AI"
+        "Mode Perjalanan, 3 adegan per hari, termasuk dimulai lewat Siri",
+        "Hingga 3 skenario buatan sendiri atau hasil impor, dan melihat skenario yang dibagikan teman"
       ]
     },
     "pro": {
-      "name": "Malmun Pro",
+      "name": "Malmun Plus · Pro",
       "items": [
-        "Semua percakapan situasional: restoran, transportasi, bandara, hotel, belanja, wisata, darurat",
-        "Mode Perjalanan tanpa batas",
-        "Berlaku untuk semua bahasa"
+        "Plus: ke-53 percakapan situasional (restoran, transportasi, bandara, hotel, belanja, wisata, darurat) di semua bahasa",
+        "Plus: skenario buatan sendiri dan impor percakapan tanpa batas",
+        "Pro: semua isi Plus dan Mode Perjalanan tanpa batas",
+        "Pro: membuat skenario dengan AI (pakai kunci API Anthropic milikmu) dan berbagi skenario dengan teman lewat iCloud"
       ],
-      "note": "Langganan tahunan atau sekali bayar seumur hidup"
+      "note": "Masing-masing tersedia sebagai langganan mingguan, bulanan, atau tahunan, atau sekali bayar seumur hidup. Pelanggan baru mendapat potongan harga di tahun pertama langganan tahunan."
     },
-    "note": "Lihat harganya di aplikasi atau di App Store. Langganan tahunan diperpanjang otomatis kecuali dibatalkan paling lambat 24 jam sebelum periodenya berakhir."
+    "note": "Lihat harganya di aplikasi atau di App Store. Langganan diperpanjang otomatis kecuali dibatalkan paling lambat 24 jam sebelum periodenya berakhir. Kalau dulu kamu membayar untuk mengunduh Malmun atau sudah membeli Malmun Pro, semua fitur tetap bisa kamu pakai tanpa bayar lagi."
   },
   "faq": {
     "title": "Pertanyaan umum",
@@ -135,19 +137,19 @@
       },
       {
         "q": "Skenario yang dibagikan temanku tidak muncul.",
-        "a": "Fitur berbagi dengan teman memakai iCloud, jadi kalian berdua harus masuk ke iCloud. Kalau masih belum muncul, tutup aplikasi sepenuhnya lalu buka lagi."
+        "a": "Fitur berbagi dengan teman memakai iCloud, jadi kalian berdua harus masuk ke iCloud. Kalau masih belum muncul, tutup aplikasi sepenuhnya lalu buka lagi. Berbagi skenario adalah fitur Malmun Pro, sedangkan melihat skenario yang kamu terima gratis."
       },
       {
         "q": "Apa yang dibutuhkan untuk membuat skenario dengan AI?",
-        "a": "Masukkan kunci API Anthropic milikmu sendiri di aplikasi dan tulis topiknya, lalu percakapan baru dibuatkan. Fitur lain tetap bisa dipakai tanpa kunci."
+        "a": "Masukkan kunci API Anthropic milikmu sendiri di aplikasi dan tulis topiknya, lalu percakapan baru dibuatkan. Membuat skenario dengan AI termasuk fitur Malmun Pro. Fitur lain tidak membutuhkan kunci."
       },
       {
         "q": "Bagaimana cara membatalkan langganan atau minta refund?",
         "a": "Pembayaran diurus oleh Apple. Batalkan di Pengaturan iPhone ▸ Akun Apple ▸ Langganan ▸ Malmun. Untuk refund, ajukan ke Apple di reportaproblem.apple.com."
       },
       {
-        "q": "Ganti iPhone, kok Pro-nya hilang?",
-        "a": "Masuk dengan Akun Apple yang sama, lalu di Malmun buka Pengaturan ▸ Malmun Pro ▸ Pulihkan Pembelian."
+        "q": "Ganti iPhone, kok Plus atau Pro-nya hilang?",
+        "a": "Masuk dengan Akun Apple yang sama, lalu di Malmun buka Pengaturan (ikon roda gigi di kanan atas layar utama) ▸ Pulihkan Pembelian."
       },
       {
         "q": "Di mana data belajarku disimpan?",
