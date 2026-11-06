@@ -2,6 +2,176 @@
 
 DeployBar 가 배포할 때 이 파일의 스토어용 절을 읽어 '이 버전의 새로운 기능' 칸에 올린다.
 
+## 1.0.7
+
+### 앱스토어 (한국어)
+
+기록을 매일 자동으로 백업해요
+iCloud나 파일에서 기록을 되살릴 수 있어요
+내 표현을 iPhone 검색과 Siri에서 바로 열어요
+업데이트 뒤 기록이 사라질 수 있던 문제를 고쳤어요
+
+### App Store (English)
+
+Your progress is now backed up every day
+Restore it from iCloud or a file
+Open your phrases from Search or Siri
+Fixed a bug that could erase your data
+
+### App Store (en-GB)
+
+Your progress is now backed up every day
+Restore it from iCloud or a file
+Open your phrases from Search or Siri
+Fixed a bug that could erase your data
+
+### App Store (Español)
+
+Copia de seguridad automática diaria
+Restáurala desde iCloud o un archivo
+Busca tus frases en el iPhone o con Siri
+Corregida una posible pérdida de datos
+
+### App Store (Bahasa Indonesia)
+
+Data dicadangkan otomatis setiap hari
+Pulihkan dari iCloud atau file
+Buka frasa Anda lewat Pencarian dan Siri
+Perbaikan risiko data hilang
+
+### App Store (日本語)
+
+記録を毎日自動でバックアップします
+iCloudやファイルから復元できます
+マイフレーズを検索やSiriからすぐ開けます
+記録が消えることがある問題を直しました
+
+### App Store (简体中文)
+
+每天自动备份你的记录
+可从 iCloud 或文件恢复记录
+用 iPhone 搜索或 Siri 直接打开你的表达
+修复了更新后记录可能丢失的问题
+
+### App Store (繁體中文, zh-Hant)
+
+每天自動備份你的紀錄
+可從 iCloud 或檔案回復紀錄
+用 iPhone 搜尋或 Siri 直接打開你的表達
+修正了更新後紀錄可能遺失的問題
+
+### App Store (Русский)
+
+Ежедневная автокопия ваших записей
+Восстановление из iCloud или файла
+Ваши фразы — в Поиске iPhone и Siri
+Исправлена возможная потеря данных
+
+### App Store (Deutsch)
+
+Tägliches automatisches Backup
+Wiederherstellen aus iCloud oder Datei
+Deine Sätze per Suche und Siri öffnen
+Möglicher Datenverlust behoben
+
+### App Store (Français)
+
+Sauvegarde automatique chaque jour
+Restauration depuis iCloud ou un fichier
+Vos phrases dans Recherche et Siri
+Perte de données possible corrigée
+
+### App Store (Português, Brasil)
+
+Backup automático todos os dias
+Restaure pelo iCloud ou por um arquivo
+Abra suas frases pela Busca e pela Siri
+Corrigimos uma possível perda de dados
+
+### App Store (Italiano)
+
+Backup automatico ogni giorno
+Ripristina da iCloud o da un file
+Apri le tue frasi da Ricerca e Siri
+Risolta una possibile perdita di dati
+
+### App Store (ไทย)
+
+สำรองข้อมูลอัตโนมัติทุกวัน
+กู้คืนจาก iCloud หรือไฟล์ได้
+เปิดวลีของคุณจากการค้นหาหรือ Siri ได้
+แก้ปัญหาข้อมูลอาจหายหลังอัปเดต
+
+### App Store (Tiếng Việt)
+
+Tự động sao lưu mỗi ngày
+Khôi phục từ iCloud hoặc tệp
+Mở cụm từ của bạn qua Tìm kiếm và Siri
+Sửa lỗi có thể mất dữ liệu
+
+### App Store (Čeština)
+
+Automatická záloha každý den
+Obnova z iCloudu nebo ze souboru
+Vaše fráze ve Vyhledávání a v Siri
+Opravena možná ztráta dat
+
+### App Store (Dansk)
+
+Automatisk backup hver dag
+Gendan fra iCloud eller en fil
+Find dine fraser i Søgning og Siri
+Rettet muligt tab af data
+
+### App Store (Ελληνικά)
+
+Αυτόματο αντίγραφο ασφαλείας κάθε μέρα
+Επαναφορά από iCloud ή αρχείο
+Οι φράσεις σας στην Αναζήτηση και Siri
+Διορθώθηκε πιθανή απώλεια δεδομένων
+
+### App Store (Suomi)
+
+Automaattinen varmuuskopio joka päivä
+Palauta iCloudista tai tiedostosta
+Avaa fraasisi Haulla tai Sirillä
+Korjattu tietojen mahdollinen katoaminen
+
+### App Store (Norsk bokmål)
+
+Automatisk sikkerhetskopi hver dag
+Gjenopprett fra iCloud eller en fil
+Finn frasene dine i Søk og Siri
+Rettet mulig tap av data
+
+### App Store (Nederlands)
+
+Elke dag automatisch een back-up
+Herstel vanuit iCloud of een bestand
+Open je zinnen via Zoeken en Siri
+Mogelijk gegevensverlies opgelost
+
+### App Store (Polski)
+
+Codzienna automatyczna kopia zapasowa
+Przywracanie z iCloud lub z pliku
+Twoje zwroty w Wyszukiwaniu i Siri
+Naprawiono możliwą utratę danych
+
+### App Store (Svenska)
+
+Automatisk säkerhetskopia varje dag
+Återställ från iCloud eller en fil
+Hitta dina fraser i Sök och Siri
+Fixat möjlig dataförlust
+
+### App Store (Türkçe)
+
+Her gün otomatik yedekleme
+iCloud'dan veya dosyadan geri yükleyin
+İfadelerinizi Arama ve Siri'den açın
+Olası veri kaybı sorunu giderildi
+
 ## 1.0.6
 
 ### 앱스토어 (한국어)
