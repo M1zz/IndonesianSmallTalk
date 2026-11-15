@@ -445,10 +445,12 @@ final class DriveSession: NSObject, ObservableObject {
         if engine.isRunning, withMic != micTapInstalled { stopEngine() }
         if withMic, !micTapInstalled {
             let input = engine.inputNode
-            let format = input.outputFormat(forBus: 0)
-            if format.sampleRate > 0 {
+            // 하드웨어 형식으로 확인하고 탭 형식은 버스에 맡긴다(nil). 세션을 바꾼 직후의
+            // outputFormat 으로 탭을 걸면 형식이 어긋나 예외로 죽을 수 있다(초견 1.0.6 과 같은 자리).
+            let hardware = input.inputFormat(forBus: 0)
+            if hardware.sampleRate > 0, hardware.channelCount > 0 {
                 let listener = voice
-                input.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
+                input.installTap(onBus: 0, bufferSize: 1024, format: nil) { buffer, _ in
                     listener.append(buffer)
                 }
                 micTapInstalled = true
