@@ -8,7 +8,6 @@ struct VoicePracticeView: View {
     @State private var phase: Phase = .partnerSpeaking
     @State private var matchedChoice: ConversationNode?
     @State private var showResult = false
-    @State private var pulseAmount = 1.0
     @State private var previewChoiceId: String?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -220,11 +219,17 @@ struct VoicePracticeView: View {
 
     private var speakerIcon: some View {
         ZStack {
-            // 외곽 펄스
-            Circle()
-                .fill(speakerIconColor.opacity(0.1))
-                .frame(width: 120, height: 120)
-                .scaleEffect(reduceMotion ? 1 : pulseAmount)
+            // 외곽 펄스 — 말하는 · 듣는 동안만 그린다. 단계가 바뀌면 고리가 화면에서 빠지면서
+            // 반복 애니메이션도 함께 끝난다. 예전에는 값만 1.0 으로 돌려놓아 repeatForever 가
+            // 계속 돌았고, 화면이 끝없이 다시 그려져 앱이 종료 요청에 5초 안에 못 답했다(1.0.4 워치독 21건).
+            if isPulsing && !reduceMotion {
+                PulseRing(color: speakerIconColor)
+                    .id(phase)
+            } else {
+                Circle()
+                    .fill(speakerIconColor.opacity(0.1))
+                    .frame(width: 120, height: 120)
+            }
 
             Circle()
                 .fill(speakerIconColor.opacity(0.2))
@@ -235,20 +240,9 @@ struct VoicePracticeView: View {
                 .foregroundColor(.white)
         }
         .accessibilityHidden(true)
-        .animation(
-            phase == .partnerSpeaking || phase == .recording
-                ? .easeInOut(duration: 1).repeatForever(autoreverses: true)
-                : .default,
-            value: pulseAmount
-        )
-        .onChange(of: phase) { newPhase in
-            if newPhase == .partnerSpeaking || newPhase == .recording {
-                pulseAmount = 1.15
-            } else {
-                pulseAmount = 1.0
-            }
-        }
     }
+
+    private var isPulsing: Bool { phase == .partnerSpeaking || phase == .recording }
 
     private var speakerIconColor: Color {
         switch phase {
@@ -526,5 +520,23 @@ struct VoicePracticeView: View {
                 }
             }
         }
+    }
+}
+
+/// 숨 쉬듯 커졌다 작아지는 고리. 화면에 있는 동안만 돈다.
+private struct PulseRing: View {
+    let color: Color
+    @State private var expanded = false
+
+    var body: some View {
+        Circle()
+            .fill(color.opacity(0.1))
+            .frame(width: 120, height: 120)
+            .scaleEffect(expanded ? 1.15 : 1)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                    expanded = true
+                }
+            }
     }
 }
