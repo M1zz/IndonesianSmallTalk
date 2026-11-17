@@ -10,6 +10,8 @@ struct ContentView: View {
     @State private var showAddMenu = false
     @State private var showAddScenario = false
     @State private var showGenerateScenario = false
+    /// 중국 본토 계정이면 AI 생성 메뉴를 감춘다(`ChinaMainlandGate`). 확인 전에는 안 보인다.
+    @State private var aiAllowed = false
     @State private var showOnboarding = false
     @ObservedObject private var pro = MalmunPro.shared
     @State private var showGraduation = false
@@ -26,6 +28,7 @@ struct ContentView: View {
                 // 이 판 안에서는 접히지 않은 화면처럼 선다.
                 .environment(\.foldLayout, .single)
         }
+        .task { aiAllowed = await ChinaMainlandGate.allowsAIGeneration() }
         .sheet(isPresented: $showAddScenario) {
             AddScenarioView()
         }
@@ -153,6 +156,7 @@ struct ContentView: View {
     private var addMenuSheet: some View {
         VStack(spacing: 10) {
             VStack(spacing: 0) {
+                if aiAllowed {
                 addMenuRow(
                     icon: "sparkles",
                     title: "AI로 생성하기",
@@ -168,6 +172,7 @@ struct ContentView: View {
 
                 Divider()
                     .padding(.leading, 74)
+                }
 
                 addMenuRow(
                     icon: "square.and.pencil",

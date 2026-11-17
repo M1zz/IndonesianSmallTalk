@@ -38,3 +38,8 @@
 - [ ] 코스 상세의 '지금' 마커/보기 전환 시뮬레이터 육안 확인 (빌드만 확인함)
 - [ ] AI 생성 시나리오도 코스로 묶기 (사용자가 직접 타임테이블 구성)
 - [ ] 코스 완주 시 결과/뱃지 화면
+
+## 중국 본토 AI 규정 대응 (2026-11-17)
+- [x] 중국 본토 App Store 계정이면 AI 생성 기능을 감춤(`ChinaMainlandGate`, Storefront CHN · 모르면 기기 지역 CN)
+- [ ] 다음 버전 제출
+- [ ] App Store Connect → 앱 → 일반 → App Compliance: AI-Generated or Synthetic Content "No", Security Assessment "No" (2027-01-31 까지)

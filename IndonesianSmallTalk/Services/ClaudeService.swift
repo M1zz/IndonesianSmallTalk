@@ -1,3 +1,4 @@
+import StoreKit
 import Foundation
 
 // MARK: - Errors
@@ -542,5 +543,16 @@ actor ClaudeService {
             .map { $0.trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty }
             .joined(separator: "\n")
+    }
+}
+
+/// 중국 본토 App Store 계정이면 AI 생성 기능을 끈다.
+/// 현지법(AI 생성 · 합성 콘텐츠 표시 방법, 보안 평가)상 이 기능을 중국 본토에 내려면 LLM 비안(备案) 번호와
+/// 보안 평가 보고서가 필요하다. 지역에서 막아 두고 App Store Connect 의 App Compliance 에는 "아니요"로 신고한다.
+enum ChinaMainlandGate {
+    static func allowsAIGeneration() async -> Bool {
+        if let code = await Storefront.current?.countryCode { return code != "CHN" }
+        // App Store 계정을 모르면(로그아웃 등) 기기 지역으로.
+        return Locale.current.region?.identifier != "CN"
     }
 }
