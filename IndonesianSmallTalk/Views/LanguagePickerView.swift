@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - Brand
 
-/// 말문 브랜드 색. 아이콘(scripts/make_app_icon.py)과 같은 남색 → 파랑, 문틈 빛은 주황.
+/// 말문 브랜드 색. 아이콘(scripts/make_app_icon.py)과 같은 파랑 → 남색 바탕, 돌아오는 말풍선은 주황.
 enum Brand {
     static let deep = Color(red: 0.12, green: 0.16, blue: 0.47)
     /// 글자·아이콘에 쓰는 파랑. 어두운 화면에서는 밝게 바꿔 잘 보이게 한다.

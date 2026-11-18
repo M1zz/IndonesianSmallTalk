@@ -176,7 +176,7 @@ def header_html(lang):
     key = ICON.as_uri()
     left_img = (RAW / lang / "03-drive.png").as_uri()
     right_img = (RAW / lang / "01-home.png").as_uri()
-    # 앱 아이콘(말풍선 속 열린 문)을 안전 영역 바깥에 흩는다. 아이폰에서는 잘려도 되는 장식이다.
+    # 앱 아이콘(맞물린 말풍선 둘)을 안전 영역 바깥에 흩는다. 아이폰에서는 잘려도 되는 장식이다.
     keys = [(-40, 80, 300, -14), (330, 1130, 240, 12), (3330, 120, 260, 16), (3620, 1040, 300, -10),
             (2930, 1260, 200, -6), (650, 40, 190, 8)]
     keys_html = "".join(f'<img class="key" src="{key}" style="left:{x}px;top:{y}px;width:{w}px;'
