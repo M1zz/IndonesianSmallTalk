@@ -42,6 +42,8 @@ struct IndonesianSmallTalkApp: App {
                 .environmentObject(journeyProgressStore)
                 // 아이폰 듀오: 창 크기로 접힘을 재서 아래로 흘린다. 시트 · 알림창도 접힌 선을 비킨다 (LeeoKit Fold).
                 .foldAware()
+                // 숫자는 0-9, 달력은 양력으로 (아랍어에서 ١٢٣ · 이슬람력과 섞이지 않게 → Locale.app)
+                .environment(\.locale, .app)
                 .task {
                     // 퇴근길 모드가 화면과 같은 저장소를 읽도록
                     DriveContent.phrases = { [phraseStore] in phraseStore.phrases }

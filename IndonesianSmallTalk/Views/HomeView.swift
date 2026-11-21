@@ -666,16 +666,16 @@ struct ScenarioCard: View {
                     }
 
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(scenario.title)
+                        Text(scenario.title.bidiIsolated)
                             .scaledFont(size: 17, weight: .bold)
                             .foregroundColor(.primary)
                             .singleLine()
                             .minimumScaleFactor(0.85)
-                        Text(scenario.titleKo)
+                        Text(scenario.titleKo.bidiIsolated)
                             .scaledFont(size: 12)
                             .foregroundColor(.secondary)
                             .singleLine()
-                        Text(scenario.description)
+                        Text(scenario.description.bidiIsolated)
                             .scaledFont(size: 11.5)
                             .foregroundColor(Color(.tertiaryLabel))
                             .lineLimit(2)
@@ -808,7 +808,7 @@ struct AIScenarioCard: View {
 
                     VStack(alignment: .leading, spacing: 5) {
                         HStack(spacing: 6) {
-                            Text(ai.titleKo)
+                            Text(ai.titleKo.bidiIsolated)
                                 .scaledFont(size: 16, weight: .bold)
                                 .foregroundColor(.primary)
                                 .singleLine()
@@ -816,7 +816,7 @@ struct AIScenarioCard: View {
                                 .scaledFont(size: 10)
                                 .foregroundColor(.purple)
                         }
-                        Text(ai.title)
+                        Text(ai.title.bidiIsolated)
                             .scaledFont(size: 12)
                             .foregroundColor(.secondary)
                         HStack(spacing: 8) {
@@ -832,7 +832,7 @@ struct AIScenarioCard: View {
 
                     Spacer()
 
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.forward")
                         .scaledFont(size: 12)
                         .foregroundColor(Color(.tertiaryLabel))
                 }

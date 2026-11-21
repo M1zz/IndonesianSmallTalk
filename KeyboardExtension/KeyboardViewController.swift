@@ -169,7 +169,7 @@ class KeyboardViewController: UIInputViewController {
         nextKeyboardButton.accessibilityLabel = String(localized: "다음 키보드")
         nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
 
-        backspaceButton = makeBarButton(systemName: "delete.left")
+        backspaceButton = makeBarButton(systemName: "delete.backward")
         backspaceButton.accessibilityLabel = String(localized: "지우기")
         backspaceButton.addTarget(self, action: #selector(didTapBackspace), for: .touchUpInside)
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressBackspace(_:)))

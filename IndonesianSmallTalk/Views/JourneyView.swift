@@ -6,7 +6,7 @@ extension JourneyData {
     /// 화면 언어의 온전한 요일 이름 (월요일 / Monday …). weekday 는 Calendar 기준 1 = 일요일
     static func weekdayName(_ weekday: Int) -> String {
         let f = DateFormatter()
-        f.locale = Locale(identifier: AppLanguage.native.rawValue)
+        f.locale = AppLanguage.isRightToLeft ? .app : Locale(identifier: AppLanguage.native.rawValue)
         return f.standaloneWeekdaySymbols[weekday - 1]
     }
 }
@@ -89,7 +89,7 @@ struct JourneyCourseCard: View {
                     }
 
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(course.titleKo)
+                        Text(course.titleKo.bidiIsolated)
                             .scaledFont(size: 16, weight: .bold)
                             .foregroundColor(.primary)
                             .singleLine()
@@ -109,7 +109,7 @@ struct JourneyCourseCard: View {
                         .padding(.top, 2)
                     }
                     Spacer(minLength: 0)
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.forward")
                         .scaledFont(size: 12, weight: .semibold)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
@@ -236,7 +236,7 @@ struct JourneyDetailView: View {
             HStack(spacing: 12) {
                 Text(course.emoji).font(.system(size: 40))
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(course.titleKo)
+                    Text(course.titleKo.bidiIsolated)
                         .scaledFont(size: 20, weight: .bold)
                         .foregroundColor(.white)
                     Text(course.dayLabelKo)
@@ -253,8 +253,8 @@ struct JourneyDetailView: View {
 
             HStack(spacing: 8) {
                 chip(icon: "clock", text: course.timeRange)
-                chip(icon: "list.bullet", text: String(localized: "\(course.stopCount)개 장면"))
-                chip(icon: "checkmark.circle", text: String(localized: "\(doneCount)개 배움"))
+                chip(icon: "list.bullet", text: String(localized: "\(course.stopCount)개 장면", locale: .app))
+                chip(icon: "checkmark.circle", text: String(localized: "\(doneCount)개 배움", locale: .app))
             }
         }
         .padding(20)
@@ -303,7 +303,7 @@ struct JourneyDetailView: View {
         case .todo:
             let left = course.stops.count - doneCount
             return left == 0 ? String(localized: "이 코스는 다 배웠어요. 다른 코스도 골라 보세요.")
-                             : String(localized: "아직 안 배운 \(left)개만 보여주고 있어요.")
+                             : String(localized: "아직 안 배운 \(left)개만 보여주고 있어요.", locale: .app)
         }
     }
 

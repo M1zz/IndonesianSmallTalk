@@ -168,17 +168,17 @@ struct PronunciationPracticeView: View {
 
     private func sentenceCard(_ s: PracticeSentence) -> some View {
         VStack(spacing: 12) {
-            Text(s.text)
+            Text(s.text.bidiIsolated)
                 .scaledFont(size: 22, weight: .bold)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
             if !s.romanization.isEmpty {
-                Text(s.romanization)
+                Text(s.romanization.bidiIsolated)
                     .scaledFont(size: 13)
                     .foregroundColor(Brand.blue)
             }
             if showMeaning && !s.meaning.isEmpty {
-                Text(s.meaning)
+                Text(s.meaning.bidiIsolated)
                     .scaledFont(size: 14)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -304,7 +304,7 @@ struct PronunciationPracticeView: View {
                 }
                 Button(action: next) {
                     Label(index + 1 < sentences.count ? String(localized: "다음 문장") : String(localized: "처음부터"),
-                          systemImage: "arrow.right")
+                          systemImage: "arrow.forward")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
                         .background(RoundedRectangle(cornerRadius: 14).fill(Brand.solidBlue))
@@ -472,7 +472,9 @@ struct PronunciationPracticeView: View {
                 if i < words.count - 1 { result += AttributedString(" ") }
             }
         }
-        return result
+        // 아랍어 화면에서도 문장이 제 방향으로 놓이게 앞뒤를 방향 격리 문자로 감싼다 (→ String.bidiIsolated)
+        guard AppLanguage.isRightToLeft else { return result }
+        return AttributedString("\u{2068}") + result + AttributedString("\u{2069}")
     }
 
     private func scoreColor(_ s: Int) -> Color {

@@ -71,13 +71,13 @@ struct SlangManageView: View {
     private func slangRow(_ pair: SlangPair) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 6) {
-                Text(pair.korean)
+                Text(pair.korean.bidiIsolated)
                     .scaledFont(size: 15, weight: .semibold)
                     .foregroundColor(.primary)
-                Image(systemName: "arrow.right")
+                Image(systemName: "arrow.forward")
                     .scaledFont(size: 10)
                     .foregroundColor(.secondary)
-                Text(pair.indonesian)
+                Text(pair.indonesian.bidiIsolated)
                     .scaledFont(size: 14)
                     .foregroundColor(.pink)
             }

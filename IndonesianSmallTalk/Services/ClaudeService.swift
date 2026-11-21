@@ -14,7 +14,7 @@ enum ClaudeError: LocalizedError {
         switch self {
         case .missingAPIKey:          return String(localized: "API 키를 입력해주세요.")
         case .networkError(let e):    return String(localized: "네트워크 오류: \(e.localizedDescription)")
-        case .apiError(let c, _):     return String(localized: "API 오류 (\(c)). API 키를 확인해주세요.")
+        case .apiError(let c, _):     return String(localized: "API 오류 (\(c)). API 키를 확인해주세요.", locale: .app)
         case .emptyResponse:          return String(localized: "빈 응답을 받았어요. 다시 시도해주세요.")
         case .invalidJSON(let s):     return String(localized: "응답 파싱 실패: \(String(s.prefix(120)))…")
         }

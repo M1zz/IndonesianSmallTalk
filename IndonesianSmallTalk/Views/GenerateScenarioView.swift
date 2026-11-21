@@ -188,7 +188,7 @@ struct GenerateScenarioView: View {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
                         .scaledFont(size: 12)
-                    Text("\(htmlText.count.formatted())자 입력됨")
+                    Text("\(htmlText.count.formatted(.number.locale(.app)))자 입력됨")
                         .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                     Spacer()
@@ -307,9 +307,9 @@ struct GenerateScenarioView: View {
             HStack(spacing: 12) {
                 Text(s.emoji).font(.system(size: 44))
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(s.titleKo)
+                    Text(s.titleKo.bidiIsolated)
                         .scaledFont(size: 18, weight: .bold)
-                    Text(s.title)
+                    Text(s.title.bidiIsolated)
                         .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                     HStack(spacing: 12) {

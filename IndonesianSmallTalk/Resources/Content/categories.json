@@ -2,6 +2,7 @@
   "airport" : {
     "icon" : "✈️",
     "name" : {
+      "ar" : "المطار",
       "cs" : "Letiště",
       "da" : "Lufthavn",
       "de" : "Flughafen",
@@ -30,6 +31,7 @@
   "basic" : {
     "icon" : "📚",
     "name" : {
+      "ar" : "الأساسيات",
       "cs" : "Základy",
       "da" : "Grundlæggende vendinger",
       "de" : "Grundlagen",
@@ -58,6 +60,7 @@
   "casual" : {
     "icon" : "💬",
     "name" : {
+      "ar" : "الحياة اليومية",
       "cs" : "Běžné povídání",
       "da" : "Hverdagssnak",
       "de" : "Lockere Gespräche",
@@ -86,6 +89,7 @@
   "emergency" : {
     "icon" : "🚨",
     "name" : {
+      "ar" : "الطوارئ",
       "cs" : "Nouzové situace",
       "da" : "Nødsituationer",
       "de" : "Notfälle",
@@ -114,6 +118,7 @@
   "hotel" : {
     "icon" : "🏨",
     "name" : {
+      "ar" : "السكن",
       "cs" : "Ubytování",
       "da" : "Overnatning",
       "de" : "Unterkunft",
@@ -142,6 +147,7 @@
   "restaurant" : {
     "icon" : "🍽️",
     "name" : {
+      "ar" : "المطعم",
       "cs" : "Restaurace",
       "da" : "Restaurant",
       "de" : "Restaurant",
@@ -170,6 +176,7 @@
   "shopping" : {
     "icon" : "🛍️",
     "name" : {
+      "ar" : "التسوّق",
       "cs" : "Nakupování",
       "da" : "Shopping",
       "de" : "Shopping",
@@ -198,6 +205,7 @@
   "tourism" : {
     "icon" : "🗺️",
     "name" : {
+      "ar" : "السياحة",
       "cs" : "Prohlídky",
       "da" : "Sightseeing",
       "de" : "Sightseeing",
@@ -226,6 +234,7 @@
   "transportation" : {
     "icon" : "🚗",
     "name" : {
+      "ar" : "المواصلات",
       "cs" : "Doprava",
       "da" : "Transport",
       "de" : "Unterwegs",

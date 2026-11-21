@@ -71,13 +71,13 @@ struct DriveModeView: View {
             phaseBadge
 
             VStack(alignment: .leading, spacing: 8) {
-                Text(primaryText)
+                Text(primaryText.bidiIsolated)
                     .scaledFont(size: 26, weight: .bold, design: .rounded)
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
                     .animation(.easeInOut(duration: 0.2), value: primaryText)
                 if !secondaryText.isEmpty {
-                    Text(secondaryText)
+                    Text(secondaryText.bidiIsolated)
                         .scaledFont(size: 16)
                         .foregroundColor(.white.opacity(0.75))
                         .fixedSize(horizontal: false, vertical: true)
@@ -164,7 +164,7 @@ struct DriveModeView: View {
             Image(systemName: icon)
             Text(label)
             if !session.heardText.isEmpty, result != .good {
-                Text("· \(session.heardText)").lineLimit(1).opacity(0.7)
+                Text("· \(session.heardText.bidiIsolated)").lineLimit(1).opacity(0.7)
             }
         }
         .scaledFont(size: 13, weight: .semibold)
@@ -303,7 +303,7 @@ struct DriveModeView: View {
                                 .foregroundColor(Brand.blue)
                             Text(src.title).foregroundColor(.primary)
                             Spacer()
-                            Text(count == 0 ? String(localized: "아직 없음") : String(localized: "장면 \(count)개"))
+                            Text(count == 0 ? String(localized: "아직 없음") : String(localized: "장면 \(count)개", locale: .app))
                                 .scaledFont(size: 12)
                                 .foregroundColor(.secondary)
                             if source == src {
@@ -395,7 +395,7 @@ struct DriveModeView: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.forward")
                     .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }
@@ -448,7 +448,7 @@ struct DriveGuideSheet: View {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(commandExamples, id: \.0) { cmd, meaning in
                                 HStack(spacing: 8) {
-                                    Text("\"\(cmd.words(AppLanguage.native).first ?? "")\"")
+                                    Text("\"\(cmd.spokenWords.first ?? "")\"")
                                         .scaledFont(size: 14, weight: .bold)
                                     Text(meaning)
                                         .scaledFont(size: 13)
@@ -535,7 +535,7 @@ struct DriveEntryCard: View {
                         .singleLine()
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.forward")
                     .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }

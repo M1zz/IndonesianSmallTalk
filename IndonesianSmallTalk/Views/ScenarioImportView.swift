@@ -126,7 +126,7 @@ struct ScenarioImportView: View {
             }
             ForEach(result.issues) { issue in
                 VStack(alignment: .leading, spacing: 3) {
-                    Label(String(localized: "\(issue.lineNumber)번째 줄"), systemImage: "exclamationmark.triangle.fill")
+                    Label(String(localized: "\(issue.lineNumber)번째 줄", locale: .app), systemImage: "exclamationmark.triangle.fill")
                         .scaledFont(size: 12, weight: .bold)
                         .foregroundColor(.orange)
                     Text(verbatim: issue.raw.trimmingCharacters(in: .whitespaces))
@@ -163,10 +163,10 @@ struct ScenarioImportView: View {
                 .frame(width: 34, height: 20)
                 .background(Capsule().fill(isMe ? Brand.solidBlue : Brand.blue.opacity(0.12)))
             VStack(alignment: .leading, spacing: 2) {
-                Text(verbatim: line.text)
+                Text(verbatim: line.text.bidiIsolated)
                     .scaledFont(size: 14, weight: .medium)
                 if !line.meaning.isEmpty {
-                    Text(verbatim: line.meaning)
+                    Text(verbatim: line.meaning.bidiIsolated)
                         .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                 }

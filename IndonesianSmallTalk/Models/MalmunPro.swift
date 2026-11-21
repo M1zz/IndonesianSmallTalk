@@ -69,7 +69,7 @@ enum ProFeature: String, Identifiable, CaseIterable {
     var reason: String {
         switch self {
         case .situations: return String(localized: "공항 · 숙소 · 식당 · 긴급 같은 상황별 회화는 Plus에서 열려요.", comment: "Paywall reason: locked situational dialogue")
-        case .scenarios: return String(localized: "직접 만든 시나리오는 무료로 \(MalmunPro.freeScenarioLimit)개까지예요. Plus는 원하는 만큼 만들 수 있어요.", comment: "Paywall reason: free limit of own scenarios. Argument is the limit, e.g. 3")
+        case .scenarios: return String(localized: "직접 만든 시나리오는 무료로 \(MalmunPro.freeScenarioLimit)개까지예요. Plus는 원하는 만큼 만들 수 있어요.", locale: .app, comment: "Paywall reason: free limit of own scenarios. Argument is the limit, e.g. 3")
         case .commute: return String(localized: "말문 Pro는 하루 제한 없이 들을 수 있어요")
         case .aiScenario: return String(localized: "AI 시나리오 만들기는 Pro에서 열려요.", comment: "Paywall reason: AI scenario builder")
         case .share: return String(localized: "친구와 나누기는 Pro에서 열려요.", comment: "Paywall reason: sharing scenarios with friends over iCloud")
@@ -93,7 +93,7 @@ struct PlanComparisonRow: Identifiable {
     static var all: [PlanComparisonRow] {
         let all53 = String(localized: "53개 전체", comment: "Paywall comparison: all 53 situational dialogues")
         let unlimited = String(localized: "무제한", comment: "Paywall comparison: no limit")
-        let threeScenes = String(localized: "하루 \(MalmunPro.freeDriveScenesPerDay)장면", comment: "Paywall comparison: commute mode scenes per day, e.g. 3 a day")
+        let threeScenes = String(localized: "하루 \(MalmunPro.freeDriveScenesPerDay)장면", locale: .app, comment: "Paywall comparison: commute mode scenes per day, e.g. 3 a day")
         return [
             .init(title: String(localized: "배울 언어 6개", comment: "Paywall comparison row"), free: .yes, plus: .yes, pro: .yes),
             .init(title: String(localized: "상황별 회화", comment: "Paywall comparison row: situational dialogues"),
@@ -103,7 +103,7 @@ struct PlanComparisonRow: Identifiable {
             .init(title: String(localized: "발음 연습 · 스크립트 · 연습 기록", comment: "Paywall comparison row"), free: .yes, plus: .yes, pro: .yes),
             .init(title: String(localized: "내 문장 · 단어 카드 · 문장 키보드", comment: "Paywall comparison row"), free: .yes, plus: .yes, pro: .yes),
             .init(title: String(localized: "직접 만든 시나리오 · 가져오기", comment: "Paywall comparison row: own scenarios and imported dialogues"),
-                  free: .text(String(localized: "\(MalmunPro.freeScenarioLimit)개", comment: "Paywall comparison: free scenario limit, e.g. 3")),
+                  free: .text(String(localized: "\(MalmunPro.freeScenarioLimit)개", locale: .app, comment: "Paywall comparison: free scenario limit, e.g. 3")),
                   plus: .text(unlimited), pro: .text(unlimited), feature: .scenarios),
             .init(title: String(localized: "퇴근길 모드", comment: "Paywall comparison row: commute mode"),
                   free: .text(threeScenes), plus: .text(threeScenes), pro: .text(unlimited), feature: .commute),

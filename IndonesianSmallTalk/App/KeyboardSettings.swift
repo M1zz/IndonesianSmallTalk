@@ -9,9 +9,11 @@ enum InputDirection: String, Codable {
     case ind2kor
 
     var symbol: String {
+        // 화살표는 글 방향을 따른다 (아랍어 화면에서는 오른쪽에서 왼쪽으로 읽는다)
+        let arrow = AppLanguage.isRightToLeft ? "←" : "→"
         switch self {
-        case .kor2ind: return "\(AppLanguage.native.flag) → \(AppLanguage.learning.flag)"
-        case .ind2kor: return "\(AppLanguage.learning.flag) → \(AppLanguage.native.flag)"
+        case .kor2ind: return "\(AppLanguage.native.flag) \(arrow) \(AppLanguage.learning.flag)"
+        case .ind2kor: return "\(AppLanguage.learning.flag) \(arrow) \(AppLanguage.native.flag)"
         }
     }
 

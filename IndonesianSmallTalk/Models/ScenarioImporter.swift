@@ -180,7 +180,7 @@ enum ScenarioImporter {
         let scenario = UserScenario(
             title: title,
             titleKo: titleMeaning,
-            description: String(localized: "가져온 대화 · \(result.lines.count)마디"),
+            description: String(localized: "가져온 대화 · \(result.lines.count)마디", locale: .app),
             emoji: emoji.isEmpty ? "💬" : emoji,
             difficultyRaw: (result.lines.count > 8
                             ? ConversationScenario.Difficulty.intermediate

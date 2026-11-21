@@ -213,8 +213,8 @@ final class DriveSession: NSObject, ObservableObject {
                 phase = .finished
                 line = nil
                 updateNowPlaying()
-                await say(String(localized: "오늘 무료 장면 \(MalmunPro.freeDriveScenesPerDay)개를 다 들었어요. 말문 Pro로 계속 들을 수 있어요."),
-                          in: AppLanguage.native, rate: 1.0)
+                await sayUI(String(localized: "오늘 무료 장면 \(MalmunPro.freeDriveScenesPerDay)개를 다 들었어요. 말문 Pro로 계속 들을 수 있어요.", locale: .app),
+                            rate: 1.0)
                 MalmunPro.shared.showPaywall(.commute)
                 pause()
                 return
@@ -227,7 +227,7 @@ final class DriveSession: NSObject, ObservableObject {
                 phase = .intro
                 line = nil
                 updateNowPlaying()
-                await say(String(localized: "다음 장면, \(current.title)"), in: AppLanguage.native, rate: 1.0)
+                await sayUI(String(localized: "다음 장면, \(current.title)"), rate: 1.0)
                 await rest(0.6)
             }
             while lineIndex < current.lines.count {
@@ -299,7 +299,7 @@ final class DriveSession: NSObject, ObservableObject {
         heardText = heard
         if let ack = pendingAck {
             pendingAck = nil
-            await say(ack, in: AppLanguage.native, rate: 1.05)
+            await sayUI(ack, rate: 1.05)
         }
         return heard
     }
@@ -311,10 +311,10 @@ final class DriveSession: NSObject, ObservableObject {
         if score >= 0.75 {
             lastResult = .good
             correctCount += 1
-            await say(String(localized: "좋아요!"), in: AppLanguage.native, rate: 1.05)
+            await sayUI(String(localized: "좋아요!"), rate: 1.05)
         } else if score >= 0.4 {
             lastResult = .close
-            await say(String(localized: "거의 맞았어요"), in: AppLanguage.native, rate: 1.05)
+            await sayUI(String(localized: "거의 맞았어요"), rate: 1.05)
         } else {
             lastResult = .missed
         }
@@ -377,9 +377,18 @@ final class DriveSession: NSObject, ObservableObject {
     // MARK: - Speech
 
     private func say(_ text: String, in lang: AppLanguage, rate: Double) async {
+        await say(text, code: lang.speechCode, rate: rate)
+    }
+
+    /// 앱이 화면 언어로 하는 말 ("다음 장면", "좋아요!"). 아랍어 화면은 native 가 영어라 따로 고른다 (→ uiSpeechCode).
+    private func sayUI(_ text: String, rate: Double) async {
+        await say(text, code: AppLanguage.uiSpeechCode, rate: rate)
+    }
+
+    private func say(_ text: String, code: String, rate: Double) async {
         guard !Task.isCancelled, isPlaying, !text.isEmpty else { return }
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = SpeechVoice.best(for: lang)
+        utterance.voice = SpeechVoice.best(code: code)
         utterance.rate = Float(Double(AVSpeechUtteranceDefaultSpeechRate) * rate)
         await withCheckedContinuation { (cont: CheckedContinuation<Void, Never>) in
             speechContinuation?.resume()

@@ -54,10 +54,46 @@ enum DriveCommand: CaseIterable {
         }
     }
 
+    /// 아랍어 화면에서 알아듣는 말. 화면 언어(native)는 6개 안에서만 고르므로 아랍어는 따로 둔다 (인식은 ar-SA).
+    var arabicWords: [String] {
+        switch self {
+        case .nextScene: return ["المشهد التالي", "تخطي المشهد"]
+        case .next: return ["التالي", "بعده", "تخطي"]
+        case .again: return ["مرة أخرى", "مره ثانيه", "كرر", "أعد", "عيد"]
+        case .slower: return ["أبطأ", "على مهل", "بشويش", "ببطء"]
+        case .faster: return ["أسرع", "بسرعة"]
+        case .stop: return ["توقف", "وقف", "إيقاف", "خلاص"]
+        }
+    }
+
+    /// 지금 화면에서 알아듣는 말 (앞쪽이 대표)
+    var spokenWords: [String] {
+        AppLanguage.isRightToLeft ? arabicWords : words(AppLanguage.native)
+    }
+
+    /// 아랍어는 같은 말을 여러 꼴로 적는다 — 함자 · 타 마르부타 · 알리프 막수라 · 모음 부호를 한 꼴로 모은다.
+    static func normalizeArabic(_ text: String) -> String {
+        var s = text.applyingTransform(.stripDiacritics, reverse: false) ?? text
+        for (from, to) in [("أ", "ا"), ("إ", "ا"), ("آ", "ا"), ("ة", "ه"), ("ى", "ي"), ("ـ", "")] {
+            s = s.replacingOccurrences(of: from, with: to)
+        }
+        return s
+    }
+
     /// 짧은 말 하나가 명령인지 본다. 문장 연습을 명령으로 잘못 알아듣지 않도록 짧을 때만.
     static func match(_ heard: String, in lang: AppLanguage) -> DriveCommand? {
-        let text = heard.lowercased().trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
+        var text = heard.lowercased().trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
         guard !text.isEmpty else { return nil }
+        if AppLanguage.isRightToLeft {
+            text = normalizeArabic(text)
+            guard text.split(separator: " ").count <= 3 else { return nil }
+            for cmd in allCases {
+                for w in cmd.spokenWords.map(normalizeArabic) where text == w || text.hasPrefix(w + " ") || text.hasSuffix(" " + w) {
+                    return cmd
+                }
+            }
+            return nil
+        }
         let short = lang.writesWithoutSpaces || lang == .korean ? text.count <= 8 : text.split(separator: " ").count <= 3
         guard short else { return nil }
         for cmd in allCases {
@@ -116,7 +152,7 @@ final class DriveVoiceListener {
         lastHeardAt = nil
         commandFired = false
 
-        commandRecognizer = SFSpeechRecognizer(locale: Locale(identifier: native.speechCode))
+        commandRecognizer = SFSpeechRecognizer(locale: Locale(identifier: AppLanguage.uiSpeechCode))
         commandRequest = makeRequest(for: commandRecognizer)
         if let commandRecognizer, let commandRequest {
             commandTask = commandRecognizer.recognitionTask(with: commandRequest) { [weak self] result, _ in

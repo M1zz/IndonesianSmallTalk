@@ -47,7 +47,7 @@ struct KeyboardManageView: View {
                                     .scaledFont(size: 13, weight: .medium)
                                     .foregroundColor(.primary)
                                 Spacer()
-                                Image(systemName: "chevron.right")
+                                Image(systemName: "chevron.forward")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }
@@ -235,7 +235,7 @@ struct KeyboardManageView: View {
         return HStack(alignment: .top, spacing: 10) {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text(phrase.indonesian)
+                    Text(phrase.indonesian.bidiIsolated)
                         .scaledFont(size: 15, weight: .semibold)
                     PolarityChip(polarity: phrase.polarity)
                     if phrase.studyCount > 0 {
@@ -252,17 +252,17 @@ struct KeyboardManageView: View {
                         .cornerRadius(4)
                     }
                 }
-                Text(phrase.korean)
+                Text(phrase.korean.bidiIsolated)
                     .scaledFont(size: 12)
                     .foregroundColor(.secondary)
                 if !phrase.context.isEmpty {
-                    Text(phrase.context)
+                    Text(phrase.context.bidiIsolated)
                         .scaledFont(size: 11)
                         .foregroundColor(Color(.tertiaryLabel))
                 }
             }
             Spacer()
-            Toggle(isOn: binding) { Text(verbatim: phrase.indonesian) }
+            Toggle(isOn: binding) { Text(verbatim: phrase.indonesian.bidiIsolated) }
                 .labelsHidden()
         }
         .padding(.vertical, 2)

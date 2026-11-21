@@ -161,10 +161,10 @@ struct ScriptScenarioPicker: View {
             HStack(spacing: 12) {
                 Text(scenario.emoji).font(.system(size: 26))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(scenario.title)
+                    Text(scenario.title.bidiIsolated)
                         .scaledFont(size: 15, weight: .semibold)
                         .singleLine()
-                    Text(scenario.titleKo)
+                    Text(scenario.titleKo.bidiIsolated)
                         .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                         .singleLine()

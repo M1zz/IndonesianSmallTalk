@@ -183,12 +183,12 @@ enum MalmunTipMoments {
     static func reached(sessions done: Int, lines spoken: Int) -> [LeeoTipMoment] {
         let bySessions = sessions.filter { done >= $0 }.map { threshold in
             LeeoTipMoment(id: "sessions.\(threshold)",
-                          message: String(localized: "지금까지 연습을 \(done)번 마쳤어요",
+                          message: String(localized: "지금까지 연습을 \(done)번 마쳤어요", locale: .app,
                                           comment: "Tip ask card: practice sessions finished so far"))
         }
         let byLines = lines.filter { spoken >= $0 }.map { threshold in
             LeeoTipMoment(id: "lines.\(threshold)",
-                          message: String(localized: "지금까지 문장 \(spoken)개를 말하고 들었어요",
+                          message: String(localized: "지금까지 문장 \(spoken)개를 말하고 들었어요", locale: .app,
                                           comment: "Tip ask card: sentences spoken or heard so far"))
         }
         return bySessions + byLines

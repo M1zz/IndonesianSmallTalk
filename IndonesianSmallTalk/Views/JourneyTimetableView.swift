@@ -195,7 +195,7 @@ struct JourneyTimetableView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack(spacing: 6) {
                             Text(course.emoji).scaledFont(size: 16)
-                            Text(course.titleKo)
+                            Text(course.titleKo.bidiIsolated)
                                 .scaledFont(size: 13, weight: .bold)
                             Text(course.dayLabelKo)
                                 .scaledFont(size: 10)
@@ -272,7 +272,7 @@ struct JourneyTimetableView: View {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(item.stop.placeKo)
                                     .scaledFont(size: 14, weight: .bold)
-                                Text("\(item.course.emoji) \(item.course.titleKo) · \(item.stop.time)")
+                                Text("\(item.course.emoji) \(item.course.titleKo.bidiIsolated) · \(item.stop.time)")
                                     .scaledFont(size: 10)
                                     .foregroundColor(.secondary)
                                 Text(item.stop.situation)

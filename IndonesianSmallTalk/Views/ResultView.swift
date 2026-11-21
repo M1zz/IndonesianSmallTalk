@@ -111,7 +111,7 @@ struct ResultView: View {
     private var statsGrid: some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
             StatCard(icon: "⭐", value: "\(session.score)", label: "점수", color: .yellow)
-            StatCard(icon: "💬", value: String(localized: "\(session.totalChoices)턴"), label: "대화 턴", color: .blue)
+            StatCard(icon: "💬", value: String(localized: "\(session.totalChoices)턴", locale: .app), label: "대화 턴", color: .blue)
             StatCard(icon: "😊", value: "\(session.positiveChoices)", label: "긍정 선택", color: .green)
             StatCard(
                 icon: "📊",
@@ -236,11 +236,11 @@ struct ReviewRow: View {
                             .foregroundColor(node.polarity == .positive ? .green : .red)
                     }
                 }
-                Text(node.text)
+                Text(node.text.bidiIsolated)
                     .scaledFont(size: 12.5)
                     .foregroundColor(.primary)
                 if showTranslation {
-                    Text(node.meaning)
+                    Text(node.meaning.bidiIsolated)
                         .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                         .transition(.opacity)
@@ -271,7 +271,7 @@ struct TreeSheetView: View {
     var body: some View {
         NavigationStack {
             TreeMapView(scenario: scenario)
-                .navigationTitle(Text("대화 트리 · \(scenario.titleKo)"))
+                .navigationTitle(Text("대화 트리 · \(scenario.titleKo.bidiIsolated)"))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {

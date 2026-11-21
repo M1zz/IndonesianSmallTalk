@@ -122,10 +122,10 @@ struct VoicePracticeView: View {
             .accessibilityLabel(Text("닫기"))
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(session.scenario.title)
+                Text(session.scenario.title.bidiIsolated)
                     .scaledFont(size: 15, weight: .bold)
                     .foregroundColor(.white)
-                Text(session.scenario.titleKo)
+                Text(session.scenario.titleKo.bidiIsolated)
                     .scaledFont(size: 11)
                     .foregroundColor(.white.opacity(0.6))
             }
@@ -163,20 +163,20 @@ struct VoicePracticeView: View {
             // 현재 대사
             if let node = session.currentNode {
                 VStack(spacing: 12) {
-                    Text(node.text)
+                    Text(node.text.bidiIsolated)
                         .scaledFont(size: 22, weight: .semibold)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
 
                     if !node.displayRomanization.isEmpty {
-                        Text(node.displayRomanization)
+                        Text(node.displayRomanization.bidiIsolated)
                             .scaledFont(size: 14, design: .serif)
                             .italic()
                             .foregroundColor(.white.opacity(0.7))
                     }
 
-                    Text(node.meaning)
+                    Text(node.meaning.bidiIsolated)
                         .scaledFont(size: 14)
                         .foregroundColor(.white.opacity(0.7))
                 }
@@ -187,7 +187,7 @@ struct VoicePracticeView: View {
             if phase == .recording || phase == .processing {
                 VStack(spacing: 8) {
                     if !speech.recognizedText.isEmpty {
-                        Text(speech.recognizedText)
+                        Text(speech.recognizedText.bidiIsolated)
                             .scaledFont(size: 16, weight: .medium)
                             .foregroundColor(.cyan)
                             .multilineTextAlignment(.center)
@@ -207,7 +207,7 @@ struct VoicePracticeView: View {
                             .scaledFont(size: 12, weight: .bold)
                             .foregroundColor(.green)
                     }
-                    Text(matched.text)
+                    Text(matched.text.bidiIsolated)
                         .scaledFont(size: 15, weight: .medium)
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
@@ -360,7 +360,7 @@ struct VoicePracticeView: View {
 
                     VStack(alignment: .leading, spacing: 3) {
                         HStack(spacing: 4) {
-                            Text(choice.text)
+                            Text(choice.text.bidiIsolated)
                                 .scaledFont(size: 14, weight: .semibold)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
@@ -377,12 +377,12 @@ struct VoicePracticeView: View {
                             }
                         }
                         if !choice.displayRomanization.isEmpty {
-                            Text(choice.displayRomanization)
+                            Text(choice.displayRomanization.bidiIsolated)
                                 .scaledFont(size: 11, design: .serif)
                                 .italic()
                                 .foregroundColor(.white.opacity(0.55))
                         }
-                        Text(choice.meaning)
+                        Text(choice.meaning.bidiIsolated)
                             .scaledFont(size: 11)
                             .foregroundColor(.white.opacity(0.65))
                     }

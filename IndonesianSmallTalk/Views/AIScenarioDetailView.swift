@@ -244,10 +244,10 @@ struct GrammarCard: View {
                         .frame(width: 36, alignment: .leading)
 
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(point.titleKo)
+                        Text(point.titleKo.bidiIsolated)
                             .scaledFont(size: 16, weight: .bold)
                             .foregroundColor(.primary)
-                        Text(point.titleId)
+                        Text(point.titleId.bidiIsolated)
                             .scaledFont(size: 13, weight: .medium, design: .serif)
                             .italic()
                             .foregroundColor(.orange)
@@ -283,11 +283,11 @@ struct GrammarCard: View {
                                         .frame(width: 3)
                                         .clipShape(Capsule())
                                     VStack(alignment: .leading, spacing: 2) {
-                                        Text(ex.indonesian)
+                                        Text(ex.indonesian.bidiIsolated)
                                             .scaledFont(size: 14, weight: .semibold, design: .serif)
                                             .italic()
                                             .foregroundColor(.primary)
-                                        Text(ex.korean)
+                                        Text(ex.korean.bidiIsolated)
                                             .scaledFont(size: 12)
                                             .foregroundColor(.secondary)
                                     }

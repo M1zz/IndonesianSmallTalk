@@ -54,7 +54,7 @@ struct AddUserReplyView: View {
                                     .foregroundColor(.secondary)
                             }
                             Spacer()
-                            Image(systemName: "chevron.right")
+                            Image(systemName: "chevron.forward")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }

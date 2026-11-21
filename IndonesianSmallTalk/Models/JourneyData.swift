@@ -64,7 +64,7 @@ struct JourneyData {
     static func weekdayLabel(_ weekday: Int) -> String {
         // 화면 언어의 짧은 요일 이름 (일·월… / Sun·Mon…)
         let f = DateFormatter()
-        f.locale = Locale(identifier: AppLanguage.native.rawValue)
+        f.locale = AppLanguage.isRightToLeft ? .app : Locale(identifier: AppLanguage.native.rawValue)
         return f.shortStandaloneWeekdaySymbols[weekday - 1]
     }
 

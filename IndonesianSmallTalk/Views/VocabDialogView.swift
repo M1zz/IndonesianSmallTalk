@@ -140,15 +140,15 @@ struct VocabDialogView: View {
                     CategoryBadge(category: word.category)
                     TierBadge(tier: word.tier)
                 }
-                Text(word.indonesian)
+                Text(word.indonesian.bidiIsolated)
                     .scaledFont(size: 22, weight: .bold)
                 if !word.romanization.isEmpty {
-                    Text(word.romanization)
+                    Text(word.romanization.bidiIsolated)
                         .scaledFont(size: 12, design: .serif)
                         .italic()
                         .foregroundColor(.secondary)
                 }
-                Text(word.korean)
+                Text(word.korean.bidiIsolated)
                     .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.secondary)
                 if !word.notes.isEmpty {
@@ -213,14 +213,14 @@ struct VocabDialogView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(example.indonesian)
+                    Text(example.indonesian.bidiIsolated)
                         .scaledFont(size: 16, weight: .semibold)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
 
                     if revealedTranslations.contains(index) {
                         Divider().padding(.vertical, 2)
-                        Text(example.korean)
+                        Text(example.korean.bidiIsolated)
                             .scaledFont(size: 13)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.leading)
@@ -318,7 +318,7 @@ struct VocabDialogView: View {
                         Text(atLastWord ? LocalizedStringKey("학습 완료") : LocalizedStringKey("다음 단어"))
 
                             .fontWeight(.semibold)
-                        Image(systemName: atLastWord ? "checkmark" : "arrow.right")
+                        Image(systemName: atLastWord ? "checkmark" : "arrow.forward")
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)

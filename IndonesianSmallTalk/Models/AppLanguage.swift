@@ -74,6 +74,13 @@ enum AppLanguage: String, CaseIterable, Identifiable, Codable {
     /// 그 밖의 번역(체코어 등)으로 뜬 화면에서 언어 이름 · 분류 이름을 그 말로 보여 주려면 이것을 쓴다.
     static let uiCode: String = Bundle.main.preferredLocalizations.first ?? "en"
 
+    /// 화면이 오른쪽에서 왼쪽으로 흐르는가 (아랍어)
+    static let isRightToLeft: Bool = Locale.Language(identifier: uiCode).characterDirection == .rightToLeft
+
+    /// 화면 글을 소리 내 읽고 "다음" "다시" 같은 명령을 알아듣는 말의 지역 코드.
+    /// 화면 언어(native)는 6개 안에서만 고르므로 아랍어 화면은 native 가 영어다 — 아랍어 글은 아랍어 목소리로 읽는다.
+    static var uiSpeechCode: String { isRightToLeft ? "ar-SA" : native.speechCode }
+
     /// 지금 배우는 언어. 키보드 익스텐션도 읽어야 해서 App Group 기본값에 둔다.
     static var learning: AppLanguage {
         get {
@@ -132,4 +139,28 @@ extension Dictionary where Key == String, Value == String {
             ?? values.first
             ?? ""
     }
+}
+
+// MARK: - 글 방향
+
+extension String {
+    /// 배우는 언어 문장 · 뜻 · 사용자가 적은 글처럼 화면 언어와 글 방향이 다를 수 있는 글을 그릴 때 쓴다.
+    /// 아랍어(오른쪽에서 왼쪽) 화면에서는 "Apa kabar?" 가 "?Apa kabar" 로 보였다.
+    /// 앞뒤를 방향 격리 문자(FSI … PDI)로 감싸면 글은 제 첫 글자의 방향대로 놓인다.
+    /// 그리기에만 쓴다 — 저장 · 소리 내 읽기 · 채점 · 복사에는 원래 글을 쓴다. 다른 언어 화면에서는 그대로 돌려준다.
+    var bidiIsolated: String { AppLanguage.isRightToLeft ? "\u{2068}\(self)\u{2069}" : self }
+}
+
+// MARK: - 숫자 · 달력
+
+extension Locale {
+    /// 화면에 쓰는 로케일. 아랍어에서는 숫자를 0-9, 달력을 양력으로 맞춘다 — 사우디 기기는 ١٢٣ 이나
+    /// 이슬람력이 기본일 수 있어 "%lld" 로 넣은 숫자와 날짜가 한 화면에 섞였다. 다른 언어는 기기 그대로.
+    static let app: Locale = {
+        guard AppLanguage.isRightToLeft else { return .current }
+        var parts = Locale.Components(locale: .current)
+        parts.numberingSystem = Locale.NumberingSystem("latn")
+        parts.calendar = .gregorian
+        return Locale(components: parts)
+    }()
 }

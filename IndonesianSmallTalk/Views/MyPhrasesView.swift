@@ -155,11 +155,11 @@ private struct PhraseRow: View {
             HStack(alignment: .top, spacing: 8) {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
-                        Text(phrase.indonesian)
+                        Text(phrase.indonesian.bidiIsolated)
                             .scaledFont(size: 16, weight: .semibold)
                         PolarityChip(polarity: phrase.polarity)
                     }
-                    Text(phrase.korean)
+                    Text(phrase.korean.bidiIsolated)
                         .scaledFont(size: 13)
                         .foregroundColor(.secondary)
                 }
@@ -173,7 +173,7 @@ private struct PhraseRow: View {
                 .accessibilityLabel("듣기")
             }
             if !phrase.context.isEmpty {
-                Text(phrase.context)
+                Text(phrase.context.bidiIsolated)
                     .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
                     .padding(.top, 2)
@@ -250,10 +250,10 @@ struct PhrasePracticeView: View {
         NavigationStack {
             VStack(spacing: 24) {
                 VStack(spacing: 8) {
-                    Text(phrase.indonesian)
+                    Text(phrase.indonesian.bidiIsolated)
                         .scaledFont(size: 22, weight: .bold)
                         .multilineTextAlignment(.center)
-                    Text(phrase.korean)
+                    Text(phrase.korean.bidiIsolated)
                         .scaledFont(size: 14)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)

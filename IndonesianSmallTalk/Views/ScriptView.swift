@@ -90,9 +90,9 @@ struct ScriptView: View {
         HStack(spacing: 12) {
             Text(scenario.emoji).font(.system(size: 34))
             VStack(alignment: .leading, spacing: 3) {
-                Text(scenario.title)
+                Text(scenario.title.bidiIsolated)
                     .scaledFont(size: 16, weight: .bold)
-                Text(scenario.titleKo)
+                Text(scenario.titleKo.bidiIsolated)
                     .scaledFont(size: 12)
                     .foregroundColor(.secondary)
             }
@@ -110,17 +110,17 @@ struct ScriptView: View {
             if isMe { Spacer(minLength: 50) }
             Button { play(node, index: index) } label: {
                 VStack(alignment: isMe ? .trailing : .leading, spacing: 4) {
-                    Text(node.text)
+                    Text(node.text.bidiIsolated)
                         .scaledFont(size: 16, weight: .medium)
                         .foregroundColor(isMe ? .white : .primary)
                         .multilineTextAlignment(isMe ? .trailing : .leading)
                     if !node.displayRomanization.isEmpty {
-                        Text(node.displayRomanization)
+                        Text(node.displayRomanization.bidiIsolated)
                             .scaledFont(size: 12)
                             .foregroundColor(isMe ? .white.opacity(0.8) : Brand.blue)
                     }
                     if showMeaning && !node.meaning.isEmpty {
-                        Text(node.meaning)
+                        Text(node.meaning.bidiIsolated)
                             .scaledFont(size: 12.5)
                             .foregroundColor(isMe ? .white.opacity(0.75) : .secondary)
                             .multilineTextAlignment(isMe ? .trailing : .leading)
@@ -159,12 +159,12 @@ struct ScriptView: View {
                         if kid.id == currentId {
                             Label(kid.text, systemImage: "checkmark")
                         } else {
-                            Text(kid.text)
+                            Text(kid.text.bidiIsolated)
                         }
                     }
                 }
             } label: {
-                Label(String(localized: "다른 대답 \(kids.count - 1)개"), systemImage: "arrow.triangle.branch")
+                Label(String(localized: "다른 대답 \(kids.count - 1)개", locale: .app), systemImage: "arrow.triangle.branch")
                     .scaledFont(size: 11.5, weight: .semibold)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)

@@ -144,7 +144,7 @@ struct WordRow: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text(word.indonesian)
+                    Text(word.indonesian.bidiIsolated)
                         .scaledFont(size: 15, weight: .semibold)
                         .foregroundColor(word.isLearned ? .secondary : .primary)
                         .strikethrough(word.isLearned)
@@ -153,13 +153,13 @@ struct WordRow: View {
                     CategoryBadge(category: word.category)
                 }
                 if !word.romanization.isEmpty {
-                    Text(word.romanization)
+                    Text(word.romanization.bidiIsolated)
                         .scaledFont(size: 11, design: .serif)
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
                         .singleLine()
                 }
-                Text(word.korean)
+                Text(word.korean.bidiIsolated)
                     .scaledFont(size: 13)
                     .foregroundColor(.secondary)
                     .singleLine()
@@ -451,12 +451,12 @@ struct FlashcardView: View {
         VStack(spacing: 16) {
             CategoryBadge(category: word.category)
                 .scaleEffect(1.2)
-            Text(word.indonesian)
+            Text(word.indonesian.bidiIsolated)
                 .scaledFont(size: 30, weight: .bold)
                 .multilineTextAlignment(.center)
                 .accessibleTap(hint: "탭해서 뒤집기") { withAnimation { isFlipped.toggle() } }
             if !word.romanization.isEmpty {
-                Text(word.romanization)
+                Text(word.romanization.bidiIsolated)
                     .scaledFont(size: 15, design: .serif)
                     .italic()
                     .foregroundColor(.secondary)
@@ -503,11 +503,11 @@ struct FlashcardView: View {
                     .scaledFont(size: 22)
                     .foregroundColor(.blue.opacity(0.4))
                     .accessibilityHidden(true)
-                Text(word.korean)
+                Text(word.korean.bidiIsolated)
                     .scaledFont(size: 26, weight: .bold)
                     .multilineTextAlignment(.center)
                     .accessibleTap(hint: "탭해서 뒤집기") { withAnimation { isFlipped.toggle() } }
-                Text(word.indonesian)
+                Text(word.indonesian.bidiIsolated)
                     .scaledFont(size: 14, weight: .medium)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -531,7 +531,7 @@ struct FlashcardView: View {
                                     Text("\(idx + 1).")
                                         .scaledFont(size: 12, weight: .semibold)
                                         .foregroundColor(.blue.opacity(0.6))
-                                    Text(ex.indonesian)
+                                    Text(ex.indonesian.bidiIsolated)
                                         .scaledFont(size: 14, weight: .semibold)
                                         .foregroundColor(.primary)
                                         .multilineTextAlignment(.leading)
@@ -551,7 +551,7 @@ struct FlashcardView: View {
                                     .buttonStyle(.plain)
                                     .accessibilityLabel("예문 듣기")
                                 }
-                                Text(ex.korean)
+                                Text(ex.korean.bidiIsolated)
                                     .scaledFont(size: 12)
                                     .foregroundColor(.secondary)
                                     .padding(.leading, 18)

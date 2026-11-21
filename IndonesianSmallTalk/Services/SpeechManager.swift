@@ -354,7 +354,10 @@ enum SpeechVoice {
     /// 품질이 같으면 시스템 기본 목소리를 쓴다 — 같은 '기본' 품질에 Eloquence(Eddy·Grandpa 등) 같은
     /// 기계음 목소리가 섞여 있어서, 품질만 보고 고르면 그쪽이 뽑혀 발음이 뭉개진다.
     static func best(for language: AppLanguage) -> AVSpeechSynthesisVoice? {
-        let code = language.speechCode
+        best(code: language.speechCode)
+    }
+
+    static func best(code: String) -> AVSpeechSynthesisVoice? {
         let system = AVSpeechSynthesisVoice(language: code)
         let natural = AVSpeechSynthesisVoice.speechVoices().filter {
             $0.language == code

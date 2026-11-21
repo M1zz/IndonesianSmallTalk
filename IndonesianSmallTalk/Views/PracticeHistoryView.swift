@@ -112,7 +112,7 @@ struct PracticeHistoryView: View {
                     Text(rec.mode.label)
                     if !rec.titleMeaning.isEmpty {
                         Text("·")
-                        Text(rec.titleMeaning).singleLine()
+                        Text(rec.titleMeaning.bidiIsolated).singleLine()
                     }
                 }
                 .scaledFont(size: 12)
@@ -127,7 +127,7 @@ struct PracticeHistoryView: View {
                         .scaledFont(size: 14, weight: .bold)
                         .foregroundColor(scoreColor(score))
                 }
-                Text("\(rec.lines)문장 · \(rec.date.formatted(date: .omitted, time: .shortened))")
+                Text("\(rec.lines)문장 · \(rec.date.formatted(Date.FormatStyle(date: .omitted, time: .shortened, locale: .app)))")
                     .scaledFont(size: 11)
                     .foregroundColor(Color(.tertiaryLabel))
             }
@@ -158,7 +158,7 @@ struct PracticeHistoryView: View {
         let cal = Calendar.current
         if cal.isDateInToday(day) { return String(localized: "오늘") }
         if cal.isDateInYesterday(day) { return String(localized: "어제") }
-        return day.formatted(.dateTime.month().day().weekday(.abbreviated))
+        return day.formatted(.dateTime.month().day().weekday(.abbreviated).locale(.app))
     }
 
     private func scoreColor(_ score: Int) -> Color {

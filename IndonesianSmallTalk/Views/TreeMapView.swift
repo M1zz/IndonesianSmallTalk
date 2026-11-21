@@ -120,7 +120,7 @@ private struct ExplorerView: View {
                 crumbButton(label: scenario.emoji + " " + String(localized: "루트"), index: -1)
 
                 ForEach(Array(path.enumerated()), id: \.element.id) { idx, node in
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.forward")
                         .scaledFont(size: 10)
                         .foregroundColor(Color(.tertiaryLabel))
                         .padding(.horizontal, 4)
@@ -201,7 +201,7 @@ private struct ExplorerView: View {
             .padding(.bottom, 14)
 
             // 배우는 언어 문장 — 크게
-            Text(currentNode.text)
+            Text(currentNode.text.bidiIsolated)
                 .scaledFont(size: 20, weight: .semibold)
                 .foregroundColor(.primary)
                 .lineSpacing(4)
@@ -218,7 +218,7 @@ private struct ExplorerView: View {
             }
 
             // 뜻 (화면 언어)
-            Text(currentNode.meaning)
+            Text(currentNode.meaning.bidiIsolated)
                 .scaledFont(size: 14)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 20)
@@ -314,7 +314,7 @@ private struct ExplorerView: View {
                         path.removeLast()
                     }
                 }) {
-                    Label("이전으로", systemImage: "chevron.left")
+                    Label("이전으로", systemImage: "chevron.backward")
                         .scaledFont(size: 13, weight: .medium)
                         .foregroundColor(.blue)
                 }
@@ -396,19 +396,19 @@ private struct BranchCard: View {
                         }
                     }
 
-                    Text(node.text)
+                    Text(node.text.bidiIsolated)
                         .scaledFont(size: 14, weight: .medium)
                         .foregroundColor(.primary)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
-                    Text(node.meaning)
+                    Text(node.meaning.bidiIsolated)
                         .scaledFont(size: 12)
                         .foregroundColor(.secondary)
                         .singleLine()
                 }
 
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.forward")
                     .scaledFont(size: 12, weight: .semibold)
                     .foregroundColor(Color(.tertiaryLabel))
             }
@@ -475,7 +475,7 @@ private struct OutlineNodeRow: View {
                         Button(action: {
                             withAnimation(.easeInOut(duration: 0.18)) { expanded.toggle() }
                         }) {
-                            Image(systemName: expanded ? "chevron.down" : "chevron.right")
+                            Image(systemName: expanded ? "chevron.down" : "chevron.forward")
                                 .scaledFont(size: 10, weight: .semibold)
                                 .foregroundColor(Color(.tertiaryLabel))
                                 .frame(width: 20)
@@ -496,14 +496,14 @@ private struct OutlineNodeRow: View {
 
                     // Text
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(node.text)
+                        Text(node.text.bidiIsolated)
                             .scaledFont(size: 13, weight: isSelected ? .semibold : .regular)
                             .foregroundColor(.primary)
                             .lineLimit(isSelected ? 4 : 2)
                             .multilineTextAlignment(.leading)
 
                         if isSelected {
-                            Text(node.meaning)
+                            Text(node.meaning.bidiIsolated)
                                 .scaledFont(size: 11)
                                 .foregroundColor(.secondary)
                                 .transition(.motion(.opacity.combined(with: .move(edge: .top))))

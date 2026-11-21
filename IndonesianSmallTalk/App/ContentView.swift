@@ -226,7 +226,7 @@ struct ContentView: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.forward")
                     .scaledFont(size: 12, weight: .medium)
                     .foregroundColor(Color(.tertiaryLabel))
             }

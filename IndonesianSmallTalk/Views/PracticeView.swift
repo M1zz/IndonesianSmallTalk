@@ -233,7 +233,7 @@ struct PracticeView: View {
     private var topBar: some View {
         HStack(spacing: 12) {
             Button(action: { dismiss() }) {
-                Image(systemName: "chevron.left")
+                Image(systemName: "chevron.backward")
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.primary)
                     .frame(width: 36, height: 36)
@@ -243,9 +243,9 @@ struct PracticeView: View {
             .accessibilityLabel(Text("뒤로"))
 
             VStack(alignment: .leading, spacing: 1) {
-                Text(session.scenario.title)
+                Text(session.scenario.title.bidiIsolated)
                     .scaledFont(size: 16, weight: .bold)
-                Text(verbatim: "\(session.scenario.titleKo) · \(session.scenario.difficulty.labelKo)")
+                Text(verbatim: "\(session.scenario.titleKo.bidiIsolated) · \(session.scenario.difficulty.labelKo)")
                     .scaledFont(size: 11)
                     .foregroundColor(.secondary)
             }
@@ -580,7 +580,7 @@ struct PracticeView: View {
             }
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text(opener.text)
+                    Text(opener.text.bidiIsolated)
                         .scaledFont(size: 14, weight: .medium)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
@@ -594,12 +594,12 @@ struct PracticeView: View {
                     }
                 }
                 if !opener.displayRomanization.isEmpty {
-                    Text(opener.displayRomanization)
+                    Text(opener.displayRomanization.bidiIsolated)
                         .scaledFont(size: 10.5, design: .serif)
                         .italic()
                         .foregroundColor(Color(.tertiaryLabel))
                 }
-                Text(opener.meaning)
+                Text(opener.meaning.bidiIsolated)
                     .scaledFont(size: 11)
                     .foregroundColor(.secondary)
             }
@@ -775,6 +775,8 @@ struct PracticeView: View {
                         )
                         .frame(width: 60, height: 60)
                         .rotationEffect(.degrees(-90))
+                        // 아랍어 화면에서도 12시에서 시작해 시계 방향으로 줄어들게
+                        .environment(\.layoutDirection, .leftToRight)
                         .animation(.linear(duration: 1), value: finishCountdown)
                     // 숫자
                     Text("\(finishCountdown)")
@@ -925,14 +927,14 @@ struct ChatBubbleView: View {
                 // 말풍선
                 VStack(alignment: .leading, spacing: 6) {
                     // 배우는 언어 (메인)
-                    Text(node.text)
+                    Text(node.text.bidiIsolated)
                         .scaledFont(size: 15, weight: isLatest ? .semibold : .regular)
                         .foregroundColor(.primary)
                         .multilineTextAlignment(.leading)
 
                     // 발음
                     if !node.displayRomanization.isEmpty {
-                        Text(node.displayRomanization)
+                        Text(node.displayRomanization.bidiIsolated)
                             .scaledFont(size: 11, design: .serif)
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
@@ -941,7 +943,7 @@ struct ChatBubbleView: View {
                     // 번역 (탭 토글)
                     if showTranslation {
                         Divider()
-                        Text(node.meaning)
+                        Text(node.meaning.bidiIsolated)
                             .scaledFont(size: 12)
                             .foregroundColor(.secondary)
                             .transition(.motion(.opacity.combined(with: .move(edge: .top))))
@@ -1033,7 +1035,7 @@ struct ChoiceButton: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
-                        Text(node.text)
+                        Text(node.text.bidiIsolated)
                             .scaledFont(size: 14, weight: .medium)
                             .foregroundColor(.primary)
                             .multilineTextAlignment(.leading)
@@ -1050,12 +1052,12 @@ struct ChoiceButton: View {
                         }
                     }
                     if !node.displayRomanization.isEmpty {
-                        Text(node.displayRomanization)
+                        Text(node.displayRomanization.bidiIsolated)
                             .scaledFont(size: 10.5, design: .serif)
                             .italic()
                             .foregroundColor(Color(.tertiaryLabel))
                     }
-                    Text(node.meaning)
+                    Text(node.meaning.bidiIsolated)
                         .scaledFont(size: 11)
                         .foregroundColor(.secondary)
                 }

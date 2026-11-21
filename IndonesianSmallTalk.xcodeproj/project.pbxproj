@@ -525,6 +525,7 @@
 				pl,
 				sv,
 				tr,
+				ar,
 				Base,
 			);
 			mainGroup = MAINGRP;
