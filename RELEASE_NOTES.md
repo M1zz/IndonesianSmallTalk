@@ -2,6 +2,158 @@
 
 DeployBar 가 배포할 때 이 파일의 스토어용 절을 읽어 '이 버전의 새로운 기능' 칸에 올린다.
 
+## 1.0.8
+
+### 앱스토어 (한국어)
+
+이제 아랍어로도 말문을 쓸 수 있어요
+아랍어 화면은 오른쪽에서 왼쪽으로 읽혀요
+퇴근길 모드가 아랍어 말도 알아들어요
+
+### App Store (English)
+
+Malmun now speaks Arabic
+Arabic screens read right to left
+Commute Mode understands Arabic commands
+
+### App Store (en-GB)
+
+Malmun now speaks Arabic
+Arabic screens read right to left
+Commute Mode understands Arabic commands
+
+### App Store (Español)
+
+Malmun ya está disponible en árabe
+En árabe se lee de derecha a izquierda
+En el coche entiende órdenes en árabe
+
+### App Store (Bahasa Indonesia)
+
+Malmun kini tersedia dalam bahasa Arab
+Tampilan Arab dibaca dari kanan ke kiri
+Di mobil, perintah suara Arab dipahami
+
+### App Store (日本語)
+
+アラビア語で使えるようになりました
+アラビア語の画面は右から左に表示します
+通勤モードがアラビア語の声に対応しました
+
+### App Store (简体中文)
+
+Malmun 现已支持阿拉伯语
+阿拉伯语界面从右向左显示
+通勤模式能听懂阿拉伯语指令
+
+### App Store (繁體中文, zh-Hant)
+
+Malmun 現已支援阿拉伯文
+阿拉伯文介面由右至左顯示
+通勤模式聽得懂阿拉伯語指令
+
+### App Store (Русский)
+
+Malmun теперь на арабском
+Арабский экран читается справа налево
+Режим в пути понимает арабские команды
+
+### App Store (Deutsch)
+
+Malmun gibt es jetzt auf Arabisch
+Arabisch läuft von rechts nach links
+Im Auto versteht es arabische Befehle
+
+### App Store (Français)
+
+Malmun est désormais disponible en arabe
+L’arabe se lit de droite à gauche
+En voiture, il comprend l’arabe
+
+### App Store (Português, Brasil)
+
+O Malmun agora está em árabe
+Em árabe, a leitura vai da direita
+O modo trajeto entende comandos em árabe
+
+### App Store (Italiano)
+
+Malmun ora è disponibile in arabo
+L’arabo si legge da destra a sinistra
+In auto capisce i comandi in arabo
+
+### App Store (ไทย)
+
+ใช้ Malmun เป็นภาษาอาหรับได้แล้ว
+หน้าจอภาษาอาหรับอ่านจากขวาไปซ้าย
+โหมดระหว่างเดินทางเข้าใจคำสั่งภาษาอาหรับ
+
+### App Store (Tiếng Việt)
+
+Malmun nay đã có tiếng Ả Rập
+Tiếng Ả Rập hiển thị từ phải sang trái
+Chế độ đi đường hiểu lệnh tiếng Ả Rập
+
+### App Store (Čeština)
+
+Malmun je nově i v arabštině
+Arabské obrazovky se čtou zprava doleva
+Režim cesty rozumí arabským povelům
+
+### App Store (Dansk)
+
+Malmun findes nu på arabisk
+Arabisk vises fra højre mod venstre
+I bilen forstår den arabiske ord
+
+### App Store (Ελληνικά)
+
+Το Malmun μιλά πλέον αραβικά
+Στα αραβικά η οθόνη διαβάζεται από δεξιά
+Στο αυτοκίνητο καταλαβαίνει αραβικά
+
+### App Store (Suomi)
+
+Malmun on nyt saatavilla arabiaksi
+Arabiankielinen näkymä luetaan oikealta
+Autossa se ymmärtää arabiaa
+
+### App Store (Norsk bokmål)
+
+Malmun finnes nå på arabisk
+Arabisk vises fra høyre mot venstre
+Pendlemodus forstår arabiske kommandoer
+
+### App Store (Nederlands)
+
+Malmun is nu ook in het Arabisch
+Arabisch lees je van rechts naar links
+In de auto begrijpt het Arabisch
+
+### App Store (Polski)
+
+Malmun jest teraz po arabsku
+Arabski czytasz od prawej do lewej
+W aucie rozumie polecenia po arabsku
+
+### App Store (Svenska)
+
+Malmun finns nu på arabiska
+Arabiska visas från höger till vänster
+I bilen förstår den arabiska kommandon
+
+### App Store (Türkçe)
+
+Malmun artık Arapça da kullanılabilir
+Arapça ekran sağdan sola okunur
+Yol Modu Arapça komutları anlıyor
+
+### 앱스토어 (아랍어)
+
+أصبح Malmun متاحًا بالعربية
+الواجهة تُقرأ من اليمين إلى اليسار
+وضع التنقّل يفهم أوامرك بالعربية
+
 ## 1.0.7
 
 ### 앱스토어 (한국어)
