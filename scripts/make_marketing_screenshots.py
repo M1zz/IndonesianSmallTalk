@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """마케팅 스크린샷 목업 생성: HTML 생성 → 헤드리스 Chrome 렌더링.
 
 슬라이드마다 layout 이 달라 배치가 다양함:
@@ -24,6 +25,11 @@ LAYOUT_OF = ["hero-bleed", "left-text", "dark", "text-bottom", "flat-rotate"]
 
 # (헤드라인, 서브카피) — 언어마다 따로 쓴 문구. 번역하지 말고 그 나라 말로.
 COPY = {
+    "ar": [("تكلّم لغة جديدة<br>بثقة", "محادثات حقيقية، سطرًا بعد سطر"),
+           ("تدرّب على<br>محادثات حقيقية", "اختر ردّك وواصل الحديث"),
+           ("تدرّب بأذنك<br>في مشوارك", "اسمع، قل، وتحقّق. دون أن تلمس الهاتف"),
+           ("اقرأ كل حوار<br>كأنه دردشة", "اضغط أي سطر لتسمعه"),
+           ("ردّد واعرف<br>نتيجتك", "تدريب النطق وسجل تدريبك")],
     "ko": [("말문이 트이는<br>외국어 회화", "6개 언어 중 골라 배우세요"),
            ("고르면서 익히는<br>진짜 대화", "대답을 골라 대화를 이어 가요"),
            ("퇴근길 차 안에서<br>귀로 연습", "뜻 듣고, 말해 보고, 정답 듣기"),
@@ -201,7 +207,30 @@ body { background:#1E2978; }
 BODY_TEXT_FIRST = '<div class="headline">{headline}</div><div class="sub">{sub}</div><div class="wrap"><div class="phone"><img src="{img}"></div></div>'
 BODY_PHONE_FIRST = '<div class="wrap"><div class="phone"><img src="{img}"></div></div><div class="headline">{headline}</div><div class="sub">{sub}</div>'
 
-HTML = """<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><style>
+# 오른쪽에서 왼쪽으로 읽는 언어: 글은 오른쪽에 붙이고, 기운 폰은 거울처럼 반대로 놓는다.
+# 아랍 글자는 자간을 좁히면 이음이 끊어져 보인다 — 자간을 0 으로.
+RTL_LANGS = {"ar"}
+RTL_BASE = """
+body { font-family:"SF Arabic", "Geeza Pro", -apple-system, sans-serif; }
+.headline, .sub { letter-spacing:0; }
+"""
+RTL_LAYOUTS = {
+    "left-text": """
+.headline { text-align:right; margin:300px 110px 0 0; }
+.sub { text-align:right; margin:48px 114px 0 0; }
+.wrap { left:94px; perspective-origin:70% 30%; }
+.phone { transform:rotateY(-16deg) rotateX(2deg); }
+""",
+    "text-bottom": """
+.phone { transform:rotateY(10deg) rotateX(2deg); }
+""",
+    "flat-rotate": """
+.wrap { left:104px; }
+.phone { transform:rotate(6deg); }
+""",
+}
+
+HTML = """<!doctype html><html lang="{lang}" dir="{dir}"><head><meta charset="utf-8"><style>
 {base}{layout}
 </style></head><body>{body}</body></html>"""
 
@@ -226,7 +255,10 @@ def main(langs):
             base = BASE_CSS
             if lang == "zh-Hans":   # 중국어는 일본어 글꼴(히라기노)로 그리지 않게
                 base = base.replace('"Hiragino Sans", "PingFang SC"', '"PingFang SC", "Hiragino Sans"')
-            html_path.write_text(HTML.format(lang=lang, base=base, layout=LAYOUTS[layout], body=body), encoding="utf-8")
+            rtl = lang in RTL_LANGS
+            layout_css = LAYOUTS[layout] + (RTL_BASE + RTL_LAYOUTS.get(layout, "") if rtl else "")
+            html_path.write_text(HTML.format(lang=lang, dir="rtl" if rtl else "ltr", base=base, layout=layout_css, body=body),
+                                 encoding="utf-8")
             tmp = WORK / f"{lang}-{fname}"
             # 다른 Chrome 과 프로필을 같이 쓰면 그리다 죽는다 — 따로 쓰고, 세 번까지 한다.
             # 그림을 다 쓴 뒤 닫다가 죽어도(Teardown watchdog) 파일이 있으면 된 것이다.

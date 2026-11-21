@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """App Store 크리에이티브 자산(제품 페이지 헤더 · 검색 결과) 생성: HTML → 헤드리스 Chrome.
 
 사용법: python3 scripts/make_creative_assets.py [언어 ...]     (없으면 전부)
@@ -60,6 +61,7 @@ SEARCH = {
     "ru": ("Изучение языков", "Заговорите<br>на 6 языках", "Живой разговор — реплика за репликой"),
     "zh-Hant": ("外語學習", "6 種語言，<br>開口就能說", "真實對話，一句一句練"),
     "en-GB": ("Language learning", "Find your voice<br>in 6 languages", "Real small talk, one line at a time"),
+    "ar": ("تعلّم اللغات", "تكلّم لغة جديدة<br>بثقة", "محادثات حقيقية، سطرًا بعد سطر"),
 }
 
 # 헤더는 처음 온 사람에게 **한 가지 약속**만 한다(Apple: 단일한 생각, 빽빽하지 않게).
@@ -90,7 +92,11 @@ HEADER = {
     "ru": ("Разговорная практика", "Говорите смелее,<br>реплика за репликой"),
     "zh-Hant": ("外語口說練習", "一句一句，<br>練到敢開口"),
     "en-GB": ("Conversation practice", "Speak up,<br>one line at a time"),
+    "ar": ("تدريب المحادثة", "انطلق في الكلام<br>سطرًا بعد سطر"),
 }
+
+# 오른쪽에서 왼쪽으로 읽는 언어: 검색 결과는 글을 오른쪽, 기기를 왼쪽에 거울처럼 놓는다.
+RTL_LANGS = {"ar"}
 
 # ⚠️ 바탕 · 글자색은 기존 스크린샷(make_marketing_screenshots.py)과 같다. 다르면 페이지에서
 #    헤더만 남의 앱처럼 보인다.
@@ -107,6 +113,9 @@ body { background:#EEF0FB; position:relative;
 :lang(th) .headline, :lang(th) .eyebrow, :lang(th) .sub,
 :lang(ja) .headline, :lang(zh) .headline { letter-spacing:0; }
 :lang(th) .headline { line-height:1.3; }
+/* 아랍 글자는 자간을 좁히면 이음이 끊어져 보인다. */
+:lang(ar) body, :lang(ar) .text { font-family:"SF Arabic", "Geeza Pro", -apple-system, sans-serif; }
+:lang(ar) .headline, :lang(ar) .eyebrow, :lang(ar) .sub { letter-spacing:0; line-height:1.3; }
 /* 한국어는 낱말 중간에서 끊지 않는다("키 / 보드"). */
 :lang(ko) .headline, :lang(ko) .sub, :lang(ko) .eyebrow { word-break:keep-all; }
 .phone { position:absolute; background:#17171a; border:6px solid #3a3a3e; padding:40px; border-radius:190px;
@@ -158,11 +167,14 @@ def search_html(lang):
     ph_w = 1040
     ph_left = l + col + int(sw * 0.04)
     img = (RAW / lang / "01-home.png").as_uri()
+    text_left, glow2_left = l, l - 700
+    if lang in RTL_LANGS:   # 거울처럼: 기기는 왼쪽, 글은 오른쪽
+        ph_left, text_left, glow2_left = W - ph_left - ph_w, r - col, W - (l - 700) - 1400
     return f"""
 <div class="glow" style="left:{ph_left - 300}px;top:500px;width:1700px;height:1700px;background:rgba(59,76,202,.18)"></div>
-<div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(255,181,71,.16)"></div>
+<div class="glow" style="left:{glow2_left}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(255,181,71,.16)"></div>
 {phone(img, ph_left, t - 360, ph_w, 0)}
-<div class="text" style="left:{l}px;top:{t}px;width:{col}px;height:{sh}px">
+<div class="text" style="left:{text_left}px;top:{t}px;width:{col}px;height:{sh}px">
   <div class="eyebrow" style="font-size:96px">{eyebrow}</div>
   <div class="headline" data-max="250" data-min="140" style="margin-top:36px">{headline}</div>
   <div class="sub" style="font-size:84px;margin-top:52px">{sub}</div>
@@ -199,7 +211,8 @@ def html_lang(lang):
 def render(lang, kind):
     W, H, _ = SPEC[kind]
     body = search_html(lang) if kind == "search" else header_html(lang)
-    page = (f'<!doctype html><html lang="{html_lang(lang)}"><head><meta charset="utf-8"><style>'
+    rtl = ' dir="rtl"' if lang in RTL_LANGS else ""
+    page = (f'<!doctype html><html lang="{html_lang(lang)}"{rtl}><head><meta charset="utf-8"><style>'
             f'{BASE_CSS % {"W": W, "H": H}}</style></head><body>{body}{FIT_JS}</body></html>')
     html_path = pathlib.Path(tempfile.gettempdir()) / f"malmun-creative-{lang}-{kind}.html"
     html_path.write_text(page, encoding="utf-8")

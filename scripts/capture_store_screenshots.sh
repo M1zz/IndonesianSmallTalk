@@ -22,10 +22,10 @@ typeset -A LEARN LOCALE_OF
 LEARN=(ko id en ko es en id en ja en zh-Hans en)
 # 그 밖의 화면 언어는 앱이 영어 화면으로 여겨 한국어를 배운다 (앱 기본값)
 LEARN[zh-Hant]=en   # 중국어(번체) 화면은 중국어 화면으로 여겨 영어를 배운다
-for l in en-GB ru de fr pt-BR it th vi cs da el fi nb nl pl sv tr; do LEARN[$l]=ko; done
+for l in en-GB ru de fr pt-BR it th vi cs da el fi nb nl pl sv tr ar; do LEARN[$l]=ko; done
 LOCALE_OF=(ko ko_KR en en_US es es_MX id id_ID ja ja_JP zh-Hans zh_CN
   en-GB en_GB zh-Hant zh_TW ru ru_RU de de_DE fr fr_FR pt-BR pt_BR it it_IT th th_TH vi vi_VN
-  cs cs_CZ da da_DK el el_GR fi fi_FI nb nb_NO nl nl_NL pl pl_PL sv sv_SE tr tr_TR)
+  cs cs_CZ da da_DK el el_GR fi fi_FI nb nb_NO nl nl_NL pl pl_PL sv sv_SE tr tr_TR ar ar_SA)
 
 xcrun simctl boot $U 2>/dev/null || true
 xcrun simctl bootstatus $U >/dev/null
@@ -43,7 +43,8 @@ for lang in $LANGS; do
     f=$OUT/$lang/0$i-$scene.png
     lim 60 xcrun simctl terminate $U $APP 2>/dev/null || true
     lim 180 xcrun simctl launch $U $APP -hasSeenOnboarding YES -AppleLanguages "($lang)" -AppleLocale ${LOCALE_OF[$lang]} \
-      -ScreenshotScene $scene -ScreenshotLearning ${LEARN[$lang]} -drive.voice NO >/dev/null || true
+      -ScreenshotScene $scene -ScreenshotLearning ${LEARN[$lang]} -drive.voice NO \
+      -leeo.celebration.done '(welcome)'   # LeeoKit 감사 카드가 화면을 덮지 않게 >/dev/null || true
     sleep ${SHOT_WAIT:-7}   # 맥이 바쁘면 SHOT_WAIT=15 처럼 늘린다
     for try in 1 2 3 4; do
       rm -f $f
