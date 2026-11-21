@@ -141,3 +141,8 @@ footer a { color: var(--muted); }
   .contact-row .label { width: 100%; }
   section, .card { padding: 20px 16px; }
 }
+
+/* 오른쪽에서 왼쪽으로 읽는 언어(아랍어) */
+[dir="rtl"] .brand::before { margin-right: 0; margin-left: 8px; }
+[dir="rtl"] ul { padding-left: 0; padding-right: 22px; }
+[dir="rtl"] h2, [dir="rtl"] .brand, [dir="rtl"] .headline { letter-spacing: 0; }
