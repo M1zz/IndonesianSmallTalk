@@ -47,6 +47,8 @@ struct ContentView: View {
         .sheet(isPresented: $pro.showGeneralPaywall) {
             PaywallView()
         }
+        // App Store 이벤트 링크(<번들 ID>://paywall)로 열리면 요금제를 띄운다 (LeeoKit).
+        .leeoPaywallLink(isPresented: $pro.showGeneralPaywall)
         // 구독 졸업: 6개월째와 갱신 7일 전에 한 번씩 (산 뒤 구독 관리 화면으로 해지를 돕는다)
         .sheet(isPresented: $showGraduation) {
             LeeoGraduationOfferView(graduate: pro.product(ProEntitlement.graduateID)) {
