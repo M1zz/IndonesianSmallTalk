@@ -63,52 +63,59 @@
 		BK005 /* SlangPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038 /* SlangPair.swift */; };
 		BK006 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039 /* KeyboardSettings.swift */; };
 		BK007 /* SharedSlangReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AK005 /* SharedSlangReader.swift */; };
-		KEMBED /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = KEXT_PROD /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
-		FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */; };
-		F416B6EB06EFC86EA3AC2EF6 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FBA3F3DC75BDB7E426B585F1 /* categories.json */; };
-		FF1FD45D988C55692649A84B /* situations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F9FBBEF064FB3742A7E62528 /* situations.en.json */; };
-		FE491C6A2BBAE6E1F7112E7C /* situations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = F1FFF706935143F59992EA9B /* situations.es.json */; };
-		FC8A745CE2DC5C5732EED62D /* situations.id.json in Resources */ = {isa = PBXBuildFile; fileRef = F87ADB3A2F1FBDF2828886B9 /* situations.id.json */; };
-		F5D0D52AC0D5F69098BEBA32 /* situations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F214F63CCB77E386A3EEE066 /* situations.ja.json */; };
-		F47B615E00D79A9DFED9549C /* situations.ko.json in Resources */ = {isa = PBXBuildFile; fileRef = FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */; };
-		F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1EB32035078539A59182F4 /* situations.zh-Hans.json */; };
-		F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
-		FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB81844C92327399855D38B /* LanguagePickerView.swift */; };
-		FA3933CBF3FACA19C81C2003 /* translations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */; };
-		FCA2A64F8180986C4F776673 /* translations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */; };
-		F8CA5AB1BCCA38989DACDA12 /* DriveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */; };
 		F02FDE584811EACDA56A1F35 /* DriveSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2262340000C8DD247B56658 /* DriveSession.swift */; };
-		F8E78B032C19FE70D526F1AC /* DriveIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574193272ACD644BB2BD07E /* DriveIntents.swift */; };
-		FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */; };
-		F9B376843D0AD3E933313A57 /* translations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC758A670B7CE2F1F8ABC48 /* translations.es.json */; };
-		F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */; };
-		FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDC313F8F4410256B94754 /* PracticeHistory.swift */; };
-		FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */; };
-		F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */; };
-		F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */; };
-		F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */; };
-		F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */; };
-		FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */; };
-		F57DF1C9171646A5B4EA1FDC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
-		FE56983A16717AFB9675252B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */; };
-		FF2489AF42566AB51051181F /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */; };
-		F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
-		F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */; };
+		F04A70389C5CE236DAF7C99F /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
 		F2FADC7CCEBE55F081DF06A3 /* DriveVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6680224751BCA0FCE5272BD /* DriveVoice.swift */; };
-		F8863DB6BEBF0BDC19CCD641 /* AudioSessionQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */; };
-		LK_BUILDFILE /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = LK_PRODUCT /* LeeoKit */; };
+		F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
+		F41277AD105B57BCDC5E88ED /* ScenarioImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */; };
+		F416B6EB06EFC86EA3AC2EF6 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FBA3F3DC75BDB7E426B585F1 /* categories.json */; };
+		F45583D1923937FF22B3E03F /* PronunciationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */; };
+		F47B615E00D79A9DFED9549C /* situations.ko.json in Resources */ = {isa = PBXBuildFile; fileRef = FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */; };
+		F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */; };
 		F4AD92B70DA05A74C30AB733 /* MalmunSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */; };
-		F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5972DF71DC51861A016E08A /* MalmunPro.swift */; };
-		F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00762B29720746776F158C8 /* MalmunFlags.swift */; };
-		FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */; };
 		F4D37D25354B3FC1C9D786F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39DE7678ABA728AF7128645 /* SettingsView.swift */; };
-		FC28528FA2EACC72C5872EBD /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4352E60699B45D8346BCF0A /* PaywallView.swift */; };
+		F4DE98548288E80B2D0B7E7B /* PracticeToolsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */; };
+		F57DF1C9171646A5B4EA1FDC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */; };
+		F5D0D52AC0D5F69098BEBA32 /* situations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F214F63CCB77E386A3EEE066 /* situations.ja.json */; };
+		F5FC7162C181967D2F296513 /* DriveModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */; };
+		F7BCDAB7A089AA3A4A5054F1 /* situations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1EB32035078539A59182F4 /* situations.zh-Hans.json */; };
+		F82CF595CFF961AD792B3E43 /* PracticeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */; };
+		F8863DB6BEBF0BDC19CCD641 /* AudioSessionQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */; };
+		F8CA5AB1BCCA38989DACDA12 /* DriveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */; };
+		F8E78B032C19FE70D526F1AC /* DriveIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574193272ACD644BB2BD07E /* DriveIntents.swift */; };
+		F9426C4B62FEBFA9E26D97CB /* MalmunFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00762B29720746776F158C8 /* MalmunFlags.swift */; };
+		F9685D00CD5826C27D1F4444 /* MalmunPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5972DF71DC51861A016E08A /* MalmunPro.swift */; };
+		F9B376843D0AD3E933313A57 /* translations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = FDC758A670B7CE2F1F8ABC48 /* translations.es.json */; };
+		F9CE6BAE017636D2CC600282 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83286092105437F1826CA /* AppLanguage.swift */; };
+		FA3933CBF3FACA19C81C2003 /* translations.ja.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */; };
+		FB15C56AD0E6FF2580D5C815 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */; };
+		FBB4C52B7C7AAFCAF0535DB1 /* translations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */; };
 		FBE29439A35CB94F9FE54BED /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E496962BA16247EA6164 /* ScreenshotScene.swift */; };
+		FC28528FA2EACC72C5872EBD /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4352E60699B45D8346BCF0A /* PaywallView.swift */; };
+		FC81F58B8668601F7E13FDF2 /* ContentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */; };
+		FC8A745CE2DC5C5732EED62D /* situations.id.json in Resources */ = {isa = PBXBuildFile; fileRef = F87ADB3A2F1FBDF2828886B9 /* situations.id.json */; };
+		FCA2A64F8180986C4F776673 /* translations.zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */; };
+		FD76EC8EDCDE0288C68948BA /* PracticeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDC313F8F4410256B94754 /* PracticeHistory.swift */; };
+		FE491C6A2BBAE6E1F7112E7C /* situations.es.json in Resources */ = {isa = PBXBuildFile; fileRef = F1FFF706935143F59992EA9B /* situations.es.json */; };
+		FE56983A16717AFB9675252B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */; };
+		FE64700E5F1D13BD365BB85D /* ScenarioImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */; };
+		FF15818BA421AD2B6F50B78F /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB81844C92327399855D38B /* LanguagePickerView.swift */; };
+		FF1FD45D988C55692649A84B /* situations.en.json in Resources */ = {isa = PBXBuildFile; fileRef = F9FBBEF064FB3742A7E62528 /* situations.en.json */; };
+		FF22A1E944F02360C23C3962 /* MalmunRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */; };
+		FF2489AF42566AB51051181F /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */; };
 		FF9AF7BADC26DEC0259D75E7 /* VoiceHintCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */; };
+		KEMBED /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = KEXT_PROD /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		LK_BUILDFILE /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = LK_PRODUCT /* LeeoKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C4CC3B93B2A1A42CD5608953 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = PROJ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = TARGET;
+			remoteInfo = IndonesianSmallTalk;
+		};
 		KEXT_PROXY /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = PROJ /* Project object */;
@@ -133,6 +140,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8ACA0DE6B6B2D8E733F153EE /* IndonesianSmallTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndonesianSmallTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A001 /* IndonesianSmallTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndonesianSmallTalkApp.swift; sourceTree = "<group>"; };
 		A002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A003 /* ConversationTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTree.swift; sourceTree = "<group>"; };
@@ -188,53 +196,63 @@
 		AK003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AK004 /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
 		AK005 /* SharedSlangReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSlangReader.swift; sourceTree = "<group>"; };
+		F00762B29720746776F158C8 /* MalmunFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalmunFlags.swift; sourceTree = "<group>"; };
+		F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveModeView.swift; sourceTree = "<group>"; };
+		F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
+		F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalmunSpec.swift; sourceTree = "<group>"; };
+		F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeToolsSection.swift; sourceTree = "<group>"; };
+		F1FFF706935143F59992EA9B /* situations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/situations.es.json; sourceTree = "<group>"; };
+		F214F63CCB77E386A3EEE066 /* situations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/situations.ja.json; sourceTree = "<group>"; };
+		F2262340000C8DD247B56658 /* DriveSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSession.swift; sourceTree = "<group>"; };
+		F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistoryView.swift; sourceTree = "<group>"; };
+		F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/translations.en.json; sourceTree = "<group>"; };
+		F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionQueue.swift; sourceTree = "<group>"; };
+		F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLibrary.swift; sourceTree = "<group>"; };
+		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveContent.swift; sourceTree = "<group>"; };
+		F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationPracticeView.swift; sourceTree = "<group>"; };
+		F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.zh-Hans.json"; sourceTree = "<group>"; };
+		F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/translations.ja.json; sourceTree = "<group>"; };
+		F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalmunRoadmap.swift; sourceTree = "<group>"; };
+		F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptView.swift; sourceTree = "<group>"; };
+		F4352E60699B45D8346BCF0A /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		F574193272ACD644BB2BD07E /* DriveIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveIntents.swift; sourceTree = "<group>"; };
+		F5972DF71DC51861A016E08A /* MalmunPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalmunPro.swift; sourceTree = "<group>"; };
+		F6680224751BCA0FCE5272BD /* DriveVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveVoice.swift; sourceTree = "<group>"; };
+		F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioImporter.swift; sourceTree = "<group>"; };
+		F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioImportView.swift; sourceTree = "<group>"; };
+		F87ADB3A2F1FBDF2828886B9 /* situations.id.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/situations.id.json; sourceTree = "<group>"; };
+		F8D83286092105437F1826CA /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		F9FBBEF064FB3742A7E62528 /* situations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/situations.en.json; sourceTree = "<group>"; };
+		FA8D973941C2DD687D13BF6B /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		FB1EB32035078539A59182F4 /* situations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.zh-Hans.json"; sourceTree = "<group>"; };
+		FBA3F3DC75BDB7E426B585F1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/categories.json; sourceTree = "<group>"; };
+		FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/situations.ko.json; sourceTree = "<group>"; };
+		FDBDC313F8F4410256B94754 /* PracticeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistory.swift; sourceTree = "<group>"; };
+		FDC758A670B7CE2F1F8ABC48 /* translations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Content/translations.es.json; sourceTree = "<group>"; };
+		FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		FEB81844C92327399855D38B /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerView.swift; sourceTree = "<group>"; };
+		FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceHintCard.swift; sourceTree = "<group>"; };
+		FF64E496962BA16247EA6164 /* ScreenshotScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotScene.swift; sourceTree = "<group>"; };
 		KEXT_PROD /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		PROD /* IndonesianSmallTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndonesianSmallTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8D83286092105437F1826CA /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppLanguage.swift"; sourceTree = "<group>"; };
-		F35F3DDDE6428C453D7F38EE /* ContentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentLibrary.swift"; sourceTree = "<group>"; };
-		FBA3F3DC75BDB7E426B585F1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/categories.json"; sourceTree = "<group>"; };
-		F9FBBEF064FB3742A7E62528 /* situations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.en.json"; sourceTree = "<group>"; };
-		F1FFF706935143F59992EA9B /* situations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.es.json"; sourceTree = "<group>"; };
-		F87ADB3A2F1FBDF2828886B9 /* situations.id.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.id.json"; sourceTree = "<group>"; };
-		F214F63CCB77E386A3EEE066 /* situations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ja.json"; sourceTree = "<group>"; };
-		FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.ko.json"; sourceTree = "<group>"; };
-		FB1EB32035078539A59182F4 /* situations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/situations.zh-Hans.json"; sourceTree = "<group>"; };
-		FEB81844C92327399855D38B /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagePickerView.swift"; sourceTree = "<group>"; };
-		F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.ja.json"; sourceTree = "<group>"; };
-		F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.zh-Hans.json"; sourceTree = "<group>"; };
-		F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveContent.swift"; sourceTree = "<group>"; };
-		F2262340000C8DD247B56658 /* DriveSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveSession.swift"; sourceTree = "<group>"; };
-		F574193272ACD644BB2BD07E /* DriveIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveIntents.swift"; sourceTree = "<group>"; };
-		F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.en.json"; sourceTree = "<group>"; };
-		FDC758A670B7CE2F1F8ABC48 /* translations.es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Content/translations.es.json"; sourceTree = "<group>"; };
-		F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveModeView.swift"; sourceTree = "<group>"; };
-		FDBDC313F8F4410256B94754 /* PracticeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory.swift"; sourceTree = "<group>"; };
-		F79CCB34C2930C05A045C8B4 /* ScenarioImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImporter.swift"; sourceTree = "<group>"; };
-		F229D0BFBA8197D6D9D9494D /* PracticeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistoryView.swift"; sourceTree = "<group>"; };
-		F1CCE3F9E54EBCDF0C9C5DED /* PracticeToolsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeToolsSection.swift"; sourceTree = "<group>"; };
-		F3DADAB6732B07136313D443 /* PronunciationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PronunciationPracticeView.swift"; sourceTree = "<group>"; };
-		F7B27C6B2ABC91F252C8761A /* ScenarioImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioImportView.swift"; sourceTree = "<group>"; };
-		F4081E6B0B922DF9FA5D4BD3 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScriptView.swift"; sourceTree = "<group>"; };
-		FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "Localizable.xcstrings"; sourceTree = "<group>"; };
-		F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "InfoPlist.xcstrings"; sourceTree = "<group>"; };
-		F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "AppShortcuts.xcstrings"; sourceTree = "<group>"; };
-		FDE1F588EBD7A8ACD23AABAC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		F6680224751BCA0FCE5272BD /* DriveVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriveVoice.swift"; sourceTree = "<group>"; };
-		F33FC3126B060C1FD5D87719 /* AudioSessionQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioSessionQueue.swift"; sourceTree = "<group>"; };
-		F1555FB71CE0832A2002CBD1 /* MalmunSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunSpec.swift"; sourceTree = "<group>"; };
-		F5972DF71DC51861A016E08A /* MalmunPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunPro.swift"; sourceTree = "<group>"; };
-		FA8D973941C2DD687D13BF6B /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
-		F00762B29720746776F158C8 /* MalmunFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunFlags.swift"; sourceTree = "<group>"; };
-		F3FE847072B92BAA4F9E12C7 /* MalmunRoadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MalmunRoadmap.swift"; sourceTree = "<group>"; };
-		F39DE7678ABA728AF7128645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
-		F4352E60699B45D8346BCF0A /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaywallView.swift"; sourceTree = "<group>"; };
 		VERSION_XCCONFIG_REF /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
-		FF64E496962BA16247EA6164 /* ScreenshotScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScene.swift"; sourceTree = "<group>"; };
-		FF44BA97D5BC9D6F4DA75B91 /* VoiceHintCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceHintCard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		49F4BDE9BD9B89498463F86E /* IndonesianSmallTalkTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = IndonesianSmallTalkTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		KEXT_FWPHASE /* Frameworks */ = {
+		037166E01C4587330C8538CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,6 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				LK_BUILDFILE /* LeeoKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		KEXT_FWPHASE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +291,18 @@
 				FF64E496962BA16247EA6164 /* ScreenshotScene.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		GRP_DRIVE /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */,
+				F2262340000C8DD247B56658 /* DriveSession.swift */,
+				F574193272ACD644BB2BD07E /* DriveIntents.swift */,
+				F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */,
+				F6680224751BCA0FCE5272BD /* DriveVoice.swift */,
+			);
+			path = Drive;
 			sourceTree = "<group>";
 		};
 		GRP_MODELS /* Models */ = {
@@ -292,6 +329,27 @@
 				F5972DF71DC51861A016E08A /* MalmunPro.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP_RESOURCES /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3F3DC75BDB7E426B585F1 /* categories.json */,
+				F9FBBEF064FB3742A7E62528 /* situations.en.json */,
+				F1FFF706935143F59992EA9B /* situations.es.json */,
+				F87ADB3A2F1FBDF2828886B9 /* situations.id.json */,
+				F214F63CCB77E386A3EEE066 /* situations.ja.json */,
+				FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */,
+				FB1EB32035078539A59182F4 /* situations.zh-Hans.json */,
+				F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */,
+				F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */,
+				F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */,
+				FDC758A670B7CE2F1F8ABC48 /* translations.es.json */,
+				FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */,
+				F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */,
+				F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		GRP_SERVICES /* Services */ = {
@@ -374,6 +432,7 @@
 				KEXT_GRP /* KeyboardExtension */,
 				PRODGRP /* Products */,
 				VERSION_XCCONFIG_REF /* Version.xcconfig */,
+				49F4BDE9BD9B89498463F86E /* IndonesianSmallTalkTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,6 +441,7 @@
 			children = (
 				PROD /* IndonesianSmallTalk.app */,
 				KEXT_PROD /* KeyboardExtension.appex */,
+				8ACA0DE6B6B2D8E733F153EE /* IndonesianSmallTalkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -403,42 +463,30 @@
 			path = IndonesianSmallTalk;
 			sourceTree = "<group>";
 		};
-		GRP_RESOURCES /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FBA3F3DC75BDB7E426B585F1 /* categories.json */,
-				F9FBBEF064FB3742A7E62528 /* situations.en.json */,
-				F1FFF706935143F59992EA9B /* situations.es.json */,
-				F87ADB3A2F1FBDF2828886B9 /* situations.id.json */,
-				F214F63CCB77E386A3EEE066 /* situations.ja.json */,
-				FD52E9B3B8CB100DEC2EACD1 /* situations.ko.json */,
-				FB1EB32035078539A59182F4 /* situations.zh-Hans.json */,
-				F3E9CB3D0F4279EDE4D4323C /* translations.ja.json */,
-				F3E790C54AECCC24167AD914 /* translations.zh-Hans.json */,
-				F2CE0F4F9BFBD3F38ABB8513 /* translations.en.json */,
-				FDC758A670B7CE2F1F8ABC48 /* translations.es.json */,
-				FBB04F0DD3C949BCD9C00B84 /* Localizable.xcstrings */,
-				F2D48B340C41B474E8BC75C5 /* InfoPlist.xcstrings */,
-				F0C310CD53D55D255C4EDC8F /* AppShortcuts.xcstrings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		GRP_DRIVE /* Drive */ = {
-			isa = PBXGroup;
-			children = (
-				F3A3C227F2C22D82E18EEB94 /* DriveContent.swift */,
-				F2262340000C8DD247B56658 /* DriveSession.swift */,
-				F574193272ACD644BB2BD07E /* DriveIntents.swift */,
-				F02FDE7DD1F73E0CBDCAA5CD /* DriveModeView.swift */,
-				F6680224751BCA0FCE5272BD /* DriveVoice.swift */,
-			);
-			path = Drive;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55D1CD7238E7C5466509D740 /* IndonesianSmallTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6576D1173188E2B0857CCC0 /* Build configuration list for PBXNativeTarget "IndonesianSmallTalkTests" */;
+			buildPhases = (
+				66AC5BD0E7917DF1D6A1FFED /* Sources */,
+				037166E01C4587330C8538CF /* Frameworks */,
+				A72D5A45267589C025D1B868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED6F12DF65AA91275278DD8E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				49F4BDE9BD9B89498463F86E /* IndonesianSmallTalkTests */,
+			);
+			name = IndonesianSmallTalkTests;
+			productName = IndonesianSmallTalkTests;
+			productReference = 8ACA0DE6B6B2D8E733F153EE /* IndonesianSmallTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		KEXT_TARGET /* KeyboardExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = KEXT_CFGLIST /* Build configuration list for PBXNativeTarget "KeyboardExtension" */;
@@ -538,11 +586,28 @@
 			targets = (
 				TARGET /* IndonesianSmallTalk */,
 				KEXT_TARGET /* KeyboardExtension */,
+				55D1CD7238E7C5466509D740 /* IndonesianSmallTalkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A72D5A45267589C025D1B868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		KEXT_RESPHASE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */,
+				F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		RESPHASE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,18 +630,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		KEXT_RESPHASE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F381DCCBC5F51065B5C4E178 /* Localizable.xcstrings in Resources */,
-				F4A96D137CFA394F8954C154 /* InfoPlist.xcstrings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		66AC5BD0E7917DF1D6A1FFED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		KEXT_SRCPHASE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +737,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		ED6F12DF65AA91275278DD8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IndonesianSmallTalk;
+			target = TARGET /* IndonesianSmallTalk */;
+			targetProxy = C4CC3B93B2A1A42CD5608953 /* PBXContainerItemProxy */;
+		};
 		KEXT_DEP /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = KEXT_TARGET /* KeyboardExtension */;
@@ -682,6 +751,45 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AEBB58494A227FF518516C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.IndonesianSmallTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IndonesianSmallTalk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IndonesianSmallTalk";
+			};
+			name = Debug;
+		};
+		FBB75AC2515432B720D05377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.IndonesianSmallTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IndonesianSmallTalk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IndonesianSmallTalk";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		KEXT_DBG /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = VERSION_XCCONFIG_REF /* Version.xcconfig */;
@@ -697,10 +805,10 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -722,11 +830,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -874,11 +982,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -910,11 +1018,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.IndonesianSmallTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -924,6 +1032,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B6576D1173188E2B0857CCC0 /* Build configuration list for PBXNativeTarget "IndonesianSmallTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB75AC2515432B720D05377 /* Release */,
+				AEBB58494A227FF518516C37 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		KEXT_CFGLIST /* Build configuration list for PBXNativeTarget "KeyboardExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
