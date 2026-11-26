@@ -62,7 +62,7 @@ final class PhraseStore: ObservableObject {
     @Published private(set) var allPhrases: [MyPhrase] = []
 
     /// 지금 배우는 언어의 표현만
-    var phrases: [MyPhrase] { allPhrases.filter { $0.language == AppLanguage.learning.rawValue } }
+    var phrases: [MyPhrase] { allPhrases.filter { [learning = AppLanguage.learning.rawValue] in $0.language == learning } }
 
     static let appGroupID = "group.com.devkoan.IndonesianSmallTalk"
 

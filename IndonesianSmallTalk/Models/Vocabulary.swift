@@ -150,7 +150,7 @@ final class VocabularyStore: ObservableObject {
     @Published private(set) var allWords: [VocabWord] = []
 
     /// 지금 배우는 언어의 단어만
-    var words: [VocabWord] { allWords.filter { $0.language == AppLanguage.learning.rawValue } }
+    var words: [VocabWord] { allWords.filter { [learning = AppLanguage.learning.rawValue] in $0.language == learning } }
 
     /// 기본 단어 (인도네시아어만 있음)
     private static var seedItems: [VocabWord] {

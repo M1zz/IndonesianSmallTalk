@@ -111,7 +111,10 @@ enum LanguagePrefs {
     static let learningKey = "learningLanguage"
     static let appGroupID = "group.com.devkoan.IndonesianSmallTalk"
 
-    static var defaults: UserDefaults { UserDefaults(suiteName: appGroupID) ?? .standard }
+    /// 한 번 만들어 둔다. 단어 · 문장 목록이 항목마다 `AppLanguage.learning` 을 읽어서,
+    /// 읽을 때마다 새로 만들면 화면 한 번 그리는 데 단어 수만큼 App Group 저장소를 다시 열었다.
+    /// 같은 스위트의 UserDefaults 는 저장소를 함께 쓰므로 키보드 익스텐션이 바꾼 값도 그대로 보인다.
+    static let defaults: UserDefaults = UserDefaults(suiteName: appGroupID) ?? .standard
 
     /// 한 번도 고르지 않았을 때: 기존(한국어) 사용자는 하던 인도네시아어 그대로,
     /// 다른 나라 사용자는 영어(영어 사용자는 한국어)부터.

@@ -357,7 +357,16 @@ enum SpeechVoice {
         best(code: language.speechCode)
     }
 
+    /// 한 언어에 한 번만 고른다. `speechVoices()` 는 기기에 깔린 목소리를 음성 서비스에 물어
+    /// 전부 객체로 만들어 오는 무거운 호출인데, 말할 때마다 · 홈을 그릴 때마다 메인 스레드에서 불러
+    /// 앱이 멈칫했다. 목소리를 새로 받거나 지우면 시스템이 알려 주니 그때만 다시 고른다.
     static func best(code: String) -> AVSpeechSynthesisVoice? {
+        cache.voice(for: code) { lookup(code: code) }
+    }
+
+    private static let cache = VoiceCache()
+
+    private static func lookup(code: String) -> AVSpeechSynthesisVoice? {
         let system = AVSpeechSynthesisVoice(language: code)
         let natural = AVSpeechSynthesisVoice.speechVoices().filter {
             $0.language == code
@@ -368,6 +377,31 @@ enum SpeechVoice {
         guard let top = natural.max(by: { $0.quality.rawValue < $1.quality.rawValue }),
               top.quality.rawValue > (system?.quality.rawValue ?? 0) else { return system }
         return top
+    }
+}
+
+/// 언어 코드 → 고른 목소리. 목소리 목록이 바뀌면 비운다.
+private final class VoiceCache: @unchecked Sendable {
+    private let lock = NSLock()
+    private var voices: [String: AVSpeechSynthesisVoice?] = [:]
+    private var observer: NSObjectProtocol?
+
+    init() {
+        observer = NotificationCenter.default.addObserver(
+            forName: AVSpeechSynthesizer.availableVoicesDidChangeNotification,
+            object: nil,
+            queue: nil
+        ) { [weak self] _ in
+            guard let self else { return }
+            self.lock.withLock { self.voices.removeAll() }
+        }
+    }
+
+    func voice(for code: String, pick: () -> AVSpeechSynthesisVoice?) -> AVSpeechSynthesisVoice? {
+        if let known = lock.withLock({ voices[code] }) { return known }
+        let picked = pick()
+        lock.withLock { voices[code] = .some(picked) }
+        return picked
     }
 }
 
