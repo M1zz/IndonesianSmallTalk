@@ -1,4 +1,5 @@
 import SwiftUI
+import LeeoKit
 
 /// 첫 실행 시 자동 노출. 도움말 메뉴에서 재진입 가능.
 struct OnboardingView: View {
@@ -43,7 +44,7 @@ struct OnboardingView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Button("건너뛰기") { finish() }
+                    Button("건너뛰기") { finish(skipped: true) }
                         .scaledFont(size: 13, weight: .medium)
                         .foregroundColor(.secondary)
                         .padding(.top, 12)
@@ -395,7 +396,7 @@ struct OnboardingView: View {
             }
             .buttonStyle(.plain)
         } else {
-            Button(action: { finish() }) {
+            Button(action: { finish(skipped: false) }) {
                 Text("시작하기")
                     .scaledFont(size: 16, weight: .semibold)
                     .foregroundColor(.white)
@@ -413,8 +414,12 @@ struct OnboardingView: View {
         }
     }
 
-    private func finish() {
+    private func finish(skipped: Bool) {
         learningRaw = language.rawValue
+        // 설정·홈에서 다시 본 안내는 세지 않는다 — 첫 안내만 한 번.
+        if !hasSeenOnboarding {
+            LeeoAnalyticsCenter.track(.custom(name: skipped ? "onboarding_skipped" : "onboarding_completed", parameters: [:]))
+        }
         hasSeenOnboarding = true
         dismiss()
     }

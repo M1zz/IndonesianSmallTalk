@@ -97,6 +97,7 @@ final class PracticeHistoryStore: ObservableObject {
         allRecords.insert(rec, at: 0)
         if allRecords.count > maxRecords { allRecords.removeLast(allRecords.count - maxRecords) }
         save()
+        LeeoAnalyticsCenter.track(.custom(name: "practice_finished", parameters: [:]))
     }
 
     func delete(id: UUID) {
